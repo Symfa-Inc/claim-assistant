@@ -1,0 +1,17 @@
+[project]
+name = "claim-assistant"
+version = "0.1.0"
+description = "AI-powered automation tool that streamlines claim handling by replacing repetitive adjuster tasks (data collection, form filling, validation) with intelligent LLM-based assistants."
+readme = "README.md"
+authors = [
+    { name = "Viacheslav Danilov", email = "viacheslav.v.danilov@gmail.com" }
+]
+requires-python = ">=3.13"
+dependencies = []
+
+[project.scripts]
+claim-assistant = "claim_assistant:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
