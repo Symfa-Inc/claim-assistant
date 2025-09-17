@@ -1,0 +1,232 @@
+[
+  {
+    "question": "Insurer name",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Claim number",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "ANZSIC code",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Policy number",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "WorkCover number",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Has employer contacted medical practitioner?",
+    "description": null,
+    "data_type": "boolean"
+  },
+  {
+    "question": "Estimated time off work",
+    "description": "Options: less than one day, 1–4 work days, 5–9 work days, 10–20 work days, more than 20 work days, fatality",
+    "data_type": "enum"
+  },
+  {
+    "question": "Employer name (policy holder)",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Trading as (if different)",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Employer ABN",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Employer address",
+    "description": "Street, postcode",
+    "data_type": "string"
+  },
+  {
+    "question": "Employer contact person",
+    "description": "Include phone and email",
+    "data_type": "string"
+  },
+  {
+    "question": "Address of injured worker’s usual workplace/base",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Major activity of workplace",
+    "description": "e.g., sheep farming, plumbing",
+    "data_type": "string"
+  },
+  {
+    "question": "Worker surname",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Worker other names",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Worker address",
+    "description": "Street, city/town, postcode",
+    "data_type": "string"
+  },
+  {
+    "question": "Worker email",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Worker daytime contact number",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Occupation",
+    "description": "e.g., first class welder",
+    "data_type": "string"
+  },
+  {
+    "question": "Main tasks/duties performed",
+    "description": "e.g., welding of high-pressure steam pipes",
+    "data_type": "string"
+  },
+  {
+    "question": "Employment type",
+    "description": "Full time, part time, permanent, temporary, casual",
+    "data_type": "enum"
+  },
+  {
+    "question": "Worker date of birth",
+    "description": null,
+    "data_type": "date"
+  },
+  {
+    "question": "Worker gender",
+    "description": "Male, Female, Unspecified",
+    "data_type": "enum"
+  },
+  {
+    "question": "Preferred language (if not English)",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Worker role at time of injury",
+    "description": "Direct employee, working director, contractor, employee of contractor, subcontractor, visa worker, other",
+    "data_type": "enum"
+  },
+  {
+    "question": "Other employment",
+    "description": "If more than one employer, provide employer name, phone, hours",
+    "data_type": "boolean"
+  },
+  {
+    "question": "Day, date, and time of occurrence",
+    "description": "Includes AM/PM",
+    "data_type": "datetime"
+  },
+  {
+    "question": "Address of occurrence",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Did you have to stop working?",
+    "description": "If yes, provide date and time",
+    "data_type": "boolean"
+  },
+  {
+    "question": "Duty status at time of occurrence",
+    "description": "e.g., working at normal workplace, working from home, on break, road traffic accident, commuting",
+    "data_type": "enum"
+  },
+  {
+    "question": "Occurrence details",
+    "description": "Action, object/machine/substance, nature of injury, bodily location",
+    "data_type": "string"
+  },
+  {
+    "question": "Where did occurrence happen?",
+    "description": "e.g., store room, machinery shop",
+    "data_type": "string"
+  },
+  {
+    "question": "What were you doing at the time?",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Normal working hours for that day",
+    "description": "Start and finish time",
+    "data_type": "time_range"
+  },
+  {
+    "question": "When did you first report the occurrence?",
+    "description": "Date and time, with AM/PM",
+    "data_type": "datetime"
+  },
+  {
+    "question": "Who did you report the occurrence to?",
+    "description": "Name, position, phone",
+    "data_type": "string"
+  },
+  {
+    "question": "Witness details",
+    "description": "Up to 2 names and daytime phone numbers",
+    "data_type": "table"
+  },
+  {
+    "question": "When did you first seek medical attention?",
+    "description": "Date, time, reason if not immediate",
+    "data_type": "datetime"
+  },
+  {
+    "question": "Was body part healthy before occurrence?",
+    "description": "If no, give details",
+    "data_type": "boolean"
+  },
+  {
+    "question": "Is present injury completely related to this occurrence?",
+    "description": "If not, give details",
+    "data_type": "boolean"
+  },
+  {
+    "question": "Similar injury details (prior to this occurrence)",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Usual medical practitioner details",
+    "description": "Name, address, phone",
+    "data_type": "string"
+  },
+  {
+    "question": "Concurrent claims",
+    "description": "Are you claiming compensation from another source? If yes, from whom?",
+    "data_type": "boolean"
+  },
+  {
+    "question": "Worker’s declaration",
+    "description": "Signature, print name, date",
+    "data_type": "signature_date"
+  },
+  {
+    "question": "Consent authority (optional)",
+    "description": "Authorisation for insurer to collect/disclose sensitive information; signature, print name, date",
+    "data_type": "signature_date"
+  }
+]

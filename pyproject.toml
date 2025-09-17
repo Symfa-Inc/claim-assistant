@@ -7,7 +7,10 @@ authors = [
     { name = "Viacheslav Danilov", email = "viacheslav.v.danilov@gmail.com" }
 ]
 requires-python = ">=3.13"
-dependencies = []
+dependencies = [
+    "openai>=1.107.3",
+    "pydantic-settings>=2.10.1",
+]
 
 [tool.uv]
 default-groups = ["dev", "data", "ci"]
@@ -22,8 +25,15 @@ data = [
 ]
 dev = [
     "joblib>=1.5.2",
+    "mypy>=1.18.1",
     "python-dotenv>=1.1.1",
 ]
+
+[tool.mypy]
+install_types = true
+no_strict_optional = true
+ignore_missing_imports = true
+explicit_package_bases = true
 
 [project.scripts]
 claim-assistant = "claim_assistant:main"

@@ -1,0 +1,140 @@
+**[10:03 AM] Operator:** Good morning! Can I start by getting your claim number, please?
+**[10:03 AM] Client:** Yes, it’s 1234567.
+
+**[10:04 AM] Operator:** Thank you! Can I also have your employer's ABN?
+**[10:04 AM] Client:** Sure, it’s 12 345 678 910.
+
+**[10:05 AM] Operator:** Great! Where did the occurrence happen?
+**[10:05 AM] Client:** It happened at our building site on Maple Street.
+
+**[10:06 AM] Operator:** I see. What was the estimated time off work due to the injury?
+**[10:06 AM] Client:** I expect to be off for about three weeks.
+
+**[10:07 AM] Operator:** Understood. Could you provide your email, please?
+**[10:07 AM] Client:** My email is john.smith@email.com.
+
+**[10:08 AM] Operator:** Perfect. Can you share the day, date, and time of the occurrence?
+**[10:08 AM] Client:** It was on Tuesday, October 10th at around 2 PM.
+
+**[10:09 AM] Operator:** Can you tell me who the employer contact person is?
+**[10:09 AM] Client:** That would be Karen Jones.
+
+**[10:10 AM] Operator:** Is your present injury completely related to this occurrence?
+**[10:10 AM] Client:** Yes, it is directly linked to the incident.
+
+**[10:11 AM] Operator:** What was your role at the time of the injury?
+**[10:11 AM] Client:** I was a site foreman.
+
+**[10:12 AM] Operator:** Thank you. Can I have your surname, please?
+**[10:12 AM] Client:** Smith.
+
+**[10:13 AM] Operator:** What is the major activity of your workplace?
+**[10:13 AM] Client:** We primarily focus on construction and renovations.
+
+**[10:14 AM] Operator:** Could I also ask if there’s a consent authority you’d like to provide (optional)?
+**[10:14 AM] Client:** No, there’s no consent authority to provide.
+
+**[10:15 AM] Operator:** Did you have to stop working as a result of this incident?
+**[10:15 AM] Client:** Yes, I had to stop immediately.
+
+**[10:16 AM] Operator:** What is your daytime contact number?
+**[10:16 AM] Client:** It’s 0400 123 456.
+
+**[10:17 AM] Operator:** And what were your normal working hours for the day of the incident?
+**[10:17 AM] Client:** 7 AM to 4 PM.
+
+**[10:18 AM] Operator:** Can I have the address of the occurrence, please?
+**[10:18 AM] Client:** It’s 45 Maple Street, REH 3000.
+
+**[10:19 AM] Operator:** What’s your employer's address?
+**[10:19 AM] Client:** The address is 12 Industrial Drive, Buildtown.
+
+**[10:20 AM] Operator:** Has your employer contacted a medical practitioner regarding this matter?
+**[10:20 AM] Client:** Yes, they have.
+
+**[10:21 AM] Operator:** What is your gender?
+**[10:21 AM] Client:** Male.
+
+**[10:22 AM] Operator:** Can you tell me about your employment type?
+**[10:22 AM] Client:** I’m a full-time employee.
+
+**[10:23 AM] Operator:** Do you have any other employment aside from this job?
+**[10:23 AM] Client:** No, this is my only job.
+
+**[10:24 AM] Operator:** Could you provide the ANZSIC code for your industry?
+**[10:24 AM] Client:** I believe it’s 2332 for Building Construction.
+
+**[10:25 AM] Operator:** When did you first report the occurrence?
+**[10:25 AM] Client:** I reported it on the same day, October 10th.
+
+**[10:26 AM] Operator:** What is your date of birth?
+**[10:26 AM] Client:** It’s June 15, 1990.
+
+**[10:27 AM] Operator:** Do you prefer a language other than English?
+**[10:27 AM] Client:** No, I’m fine with English.
+
+**[10:28 AM] Operator:** Can we go over the occurrence details?
+**[10:28 AM] Client:** I fell from a ladder while I was trying to fix some panels.
+
+**[10:29 AM] Operator:** What is the address of your usual workplace or base?
+**[10:29 AM] Client:** It’s also at 12 Industrial Drive, Buildtown.
+
+**[10:30 AM] Operator:** Who did you report the occurrence to at work?
+**[10:30 AM] Client:** I reported it to my supervisor, Karen Jones.
+
+**[10:31 AM] Operator:** Did you have any similar injury details prior to this occurrence?
+**[10:31 AM] Client:** No, this is the first injury I have had on the job.
+
+**[10:32 AM] Operator:** Do you have any concurrent claims?
+**[10:32 AM] Client:** No, I do not.
+
+**[10:33 AM] Operator:** What was your duty status at the time of the occurrence?
+**[10:33 AM] Client:** I was on duty.
+
+**[10:34 AM] Operator:** Can you provide your WorkCover number?
+**[10:34 AM] Client:** Yes, it’s WCO-9876543.
+
+**[10:35 AM] Operator:** What are your usual medical practitioner details?
+**[10:35 AM] Client:** My doctor is Dr. Hughes at Main Street Clinic.
+
+**[10:36 AM] Operator:** What’s your occupation?
+**[10:36 AM] Client:** I’m a construction worker.
+
+**[10:37 AM] Operator:** Can you describe the main tasks or duties you perform?
+**[10:37 AM] Client:** I supervise crew members and ensure site safety and completion of tasks.
+
+**[10:38 AM] Operator:** I’ll need your worker's declaration if applicable.
+**[10:38 AM] Client:** Yes, I declare that all the information is true and accurate.
+
+**[10:39 AM] Operator:** Finally, what’s your employer's name, or the policy holder?
+**[10:39 AM] Client:** The employer name is BuildWell Construction.
+
+**[10:40 AM] Operator:** And is there a trading name you’d like to mention?
+**[10:40 AM] Client:** Yes, they trade as BuildWell Inc.
+
+**[10:41 AM] Operator:** Can I collect any witness details from you?
+**[10:41 AM] Client:** Yes, my colleague, Sam Brown, was present during the occurrence.
+
+**[10:42 AM] Operator:** What is the name of your insurer?
+**[10:42 AM] Client:** It’s ABC Insurance.
+
+**[10:43 AM] Operator:** Can you please provide your address?
+**[10:43 AM] Client:** My address is 22 Oak Avenue, Suburbia.
+
+**[10:44 AM] Operator:** Do you have any other names?
+**[10:44 AM] Client:** No, just John Smith.
+
+**[10:45 AM] Operator:** Was the body part that was injured healthy before the occurrence?
+**[10:45 AM] Client:** Yes, it was.
+
+**[10:46 AM] Operator:** Lastly, can you give me your policy number for verification?
+**[10:46 AM] Client:** It’s POL-12345678.
+
+**[10:47 AM] Operator:** Thank you for that! When did you first seek medical attention after the occurrence?
+**[10:47 AM] Client:** I went to the clinic the next day, on October 11th.
+
+**[10:48 AM] Operator:** Lastly, what were you doing at the time of the injury?
+**[10:48 AM] Client:** I was climbing the ladder to perform some maintenance tasks.
+
+**[10:49 AM] Operator:** Thank you, John! Your information is very helpful. I’ll explore the next steps now.
+**[10:49 AM] Client:** You’re welcome! Thank you for your assistance.

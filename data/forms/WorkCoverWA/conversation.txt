@@ -1,0 +1,101 @@
+**[10:15 AM] Operator:** Hello! Thank you for calling. Can I please start with your name?
+
+**[10:15 AM] Client:** Sure, it's Sarah Thompson.
+
+**[10:16 AM] Operator:** Thank you, Sarah! Can you provide the worker's daytime contact phone number?
+
+**[10:16 AM] Client:** Yes, it's 0412 345 678.
+
+**[10:17 AM] Operator:** Great! What’s your worker email?
+
+**[10:17 AM] Client:** It's sarah.thompson@email.com.
+
+**[10:18 AM] Operator:** Thank you! Can you share your worker surname and any other names you might go by?
+
+**[10:18 AM] Client:** Thompson is my surname, and I sometimes use "Sally."
+
+**[10:19 AM] Operator:** Noted! And what’s your date of birth, Sarah?
+
+**[10:19 AM] Client:** I was born on March 5, 1985.
+
+**[10:20 AM] Operator:** Thank you. What is your gender?
+
+**[10:20 AM] Client:** Female.
+
+**[10:21 AM] Operator:** Are you currently employed? If so, what’s your occupation and employment type?
+
+**[10:21 AM] Client:** I’m a marketing manager, and I'm employed full-time.
+
+**[10:22 AM] Operator:** What role did you have at the time of your injury?
+
+**[10:22 AM] Client:** I was still working as a marketing manager.
+
+**[10:23 AM] Operator:** And what was your duty status at the time of occurrence?
+
+**[10:23 AM] Client:** Full duties.
+
+**[10:24 AM] Operator:** Can you let me know the date, time, and details of the occurrence?
+
+**[10:24 AM] Client:** The incident happened on Tuesday, February 14, at around 3 PM. I slipped and fell at the office.
+
+**[10:25 AM] Operator:** Thank you. What is the address of your workplace?
+
+**[10:25 AM] Client:** 123 Business St, Melbourne.
+
+**[10:26 AM] Operator:** And the address where the injury occurred?
+
+**[10:26 AM] Client:** Same address, 123 Business St, Melbourne.
+
+**[10:27 AM] Operator:** Okay. Did you have to stop working after the incident?
+
+**[10:27 AM] Client:** Yes, I needed to take some time off due to my injury.
+
+**[10:28 AM] Operator:** How long do you estimate you'll be off work?
+
+**[10:28 AM] Client:** About four weeks, potentially longer if recovery takes time.
+
+**[10:29 AM] Operator:** Did you see a medical practitioner? When was your first medical appointment?
+
+**[10:29 AM] Client:** Yes, I saw my doctor the day after the injury, on February 15.
+
+**[10:30 AM] Operator:** That's good to know. Can you provide the doctor's details?
+
+**[10:30 AM] Client:** Dr. Carrie Bell, at Melb City Medical Centre.
+
+**[10:31 AM] Operator:** And have you made any prior claims for similar injuries?
+
+**[10:31 AM] Client:** No, this is my first injury claim.
+
+**[10:32 AM] Operator:** Was the body part injured healthy prior to this occurrence?
+
+**[10:32 AM] Client:** Yes, it was completely healthy.
+
+**[10:33 AM] Operator:** What will be your main tasks performed in your role?
+
+**[10:33 AM] Client:** Managing marketing campaigns and coordinating with team members.
+
+**[10:34 AM] Operator:** What's your insurer name and policy number?
+
+**[10:34 AM] Client:** Insurer is ABC Insurance, and my policy number is 123456789.
+
+**[10:35 AM] Operator:** Thank you! Could you share your claim number once you have it?
+
+**[10:35 AM] Client:** Sure, I will keep an eye on that.
+
+**[10:36 AM] Operator:** Excellent! Have you or the employer contacted the medical practitioner since the injury?
+
+**[10:36 AM] Client:** My employer called to check on my condition last week.
+
+**[10:37 AM] Operator:** Thank you, Sarah! Can I note down your preferred language for communication if needed?
+
+**[10:37 AM] Client:** English works just fine.
+
+**[10:38 AM] Operator:** Perfect! Finally, could you share the name of your employer and their address?
+
+**[10:38 AM] Client:** The employer is XYZ Marketing Solutions, located at 123 Business St, Melbourne too.
+
+**[10:39 AM] Operator:** Thank you for all this information, Sarah. Is there anything else you’d like to add?
+
+**[10:39 AM] Client:** No, that’s everything for now. Thank you!
+
+**[10:40 AM] Operator:** You're very welcome! Take care, and we hope you have a speedy recovery.
