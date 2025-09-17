@@ -1,0 +1,157 @@
+[
+  {
+    "question": "Name of worker",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Claim number",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Name of employer",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Date of injury",
+    "description": null,
+    "data_type": "date"
+  },
+  {
+    "question": "Employer phone number",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Employer fax number",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Employment details",
+    "description": "Section must be completed by the employer. Employment suitability to be confirmed by nominated treating doctor.",
+    "data_type": "table"
+  },
+  {
+    "question": "Further comments",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Doctor’s name",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Doctor’s signature",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Date (Doctor’s signature)",
+    "description": null,
+    "data_type": "date"
+  },
+  {
+    "question": "Date of program",
+    "description": "Date when the RTW program is created.",
+    "data_type": "date"
+  },
+  {
+    "question": "Date program will be reviewed",
+    "description": null,
+    "data_type": "date"
+  },
+  {
+    "question": "RTW Program number",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Date of injury (RTW Program)",
+    "description": null,
+    "data_type": "date"
+  },
+  {
+    "question": "Worker’s name",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Worker’s number",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Employer/company",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Pre-injury job title",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Pre-injury location",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Pre-injury days and hours",
+    "description": "Schedule of days and hours worked before injury.",
+    "data_type": "table"
+  },
+  {
+    "question": "Description of pre-injury employment",
+    "description": "Includes physical requirements associated with work tasks (e.g., lifting up to 20kg).",
+    "data_type": "string"
+  },
+  {
+    "question": "Overall RTW goal",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Date expected to achieve RTW goal",
+    "description": null,
+    "data_type": "date"
+  },
+  {
+    "question": "Current certificate of capacity (start and end date)",
+    "description": "Dates covered by medical certificate.",
+    "data_type": "date_range"
+  },
+  {
+    "question": "Current capacity (as per certificate)",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "RTW Program Stage (1–3) details",
+    "description": "For each stage: role, location, commencement date, completion date, person monitoring RTW, contact details, RTW days/hours, duties to be performed, duties to be avoided.",
+    "data_type": "table"
+  },
+  {
+    "question": "Treatment details",
+    "description": "Appointments scheduled outside work hours unless agreed to by insurer.",
+    "data_type": "string"
+  },
+  {
+    "question": "Worker’s signature and date",
+    "description": null,
+    "data_type": "signature_date"
+  },
+  {
+    "question": "Employer representative’s signature and date",
+    "description": null,
+    "data_type": "signature_date"
+  },
+  {
+    "question": "Nominated treating doctor’s signature and date",
+    "description": null,
+    "data_type": "signature_date"
+  }
+]

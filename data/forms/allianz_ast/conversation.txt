@@ -1,0 +1,131 @@
+**Operator**: 10:00 AM
+Hi there! I’ll need some details to help you with your RTW program. Could you please provide your name?
+
+**Client**: 10:01 AM
+Sure! My name is Alex Martinez.
+
+**Operator**: 10:01 AM
+Thanks, Alex. Can you tell me the date of your injury?
+
+**Client**: 10:02 AM
+It happened on March 15, 2023.
+
+**Operator**: 10:02 AM
+Got it. What’s your RTW Program number?
+
+**Client**: 10:03 AM
+It’s 456738.
+
+**Operator**: 10:03 AM
+And what’s your current capacity as per the certificate?
+
+**Client**: 10:04 AM
+I'm currently at 50% capacity.
+
+**Operator**: 10:04 AM
+What’s the date on your current certificate of capacity?
+
+**Client**: 10:05 AM
+The start date is April 1, 2023, and it ends on June 30, 2023.
+
+**Operator**: 10:06 AM
+Thanks! What about your type of employment before the injury? What was your job title?
+
+**Client**: 10:07 AM
+I was a warehouse supervisor.
+
+**Operator**: 10:07 AM
+And can you share your pre-injury location?
+
+**Client**: 10:08 AM
+It was at the main warehouse facility on 5th Street.
+
+**Operator**: 10:08 AM
+Great! Can you tell me the name of your employer?
+
+**Client**: 10:09 AM
+I work for Green Tech Supplies.
+
+**Operator**: 10:09 AM
+Could you please provide their phone number?
+
+**Client**: 10:10 AM
+Sure, it’s 555-0123.
+
+**Operator**: 10:10 AM
+Thanks, and what’s their fax number?
+
+**Client**: 10:11 AM
+The fax number is 555-0456.
+
+**Operator**: 10:11 AM
+Moving on, what’s your claim number?
+
+**Client**: 10:12 AM
+The claim number is 789012.
+
+**Operator**: 10:12 AM
+Do you have the name of your nominated treating doctor?
+
+**Client**: 10:13 AM
+Yep, it's Dr. Emily Swanson.
+
+**Operator**: 10:13 AM
+Can you provide the date on her signature?
+
+**Client**: 10:14 AM
+Her signature is dated April 2, 2023.
+
+**Operator**: 10:14 AM
+When do you expect to achieve your RTW goal?
+
+**Client**: 10:15 AM
+I'm hoping to be back to full capacity by July 15, 2023.
+
+**Operator**: 10:15 AM
+What are your overall RTW goals?
+
+**Client**: 10:16 AM
+To return to my supervisor role at full capacity.
+
+**Operator**: 10:16 AM
+Could you share some treatment details?
+
+**Client**: 10:17 AM
+I’ve been receiving physical therapy twice a week.
+
+**Operator**: 10:17 AM
+Alright. What stage of the RTW program are you currently in?
+
+**Client**: 10:18 AM
+I’m in Stage 2 right now.
+
+**Operator**: 10:18 AM
+What’s the description of your pre-injury employment?
+
+**Client**: 10:19 AM
+I managed daily operations in the warehouse and supervised a team of 10 people.
+
+**Operator**: 10:19 AM
+Can I have the worker’s signature and date?
+
+**Client**: 10:20 AM
+That would be my signature dated right now, October 12, 2023.
+
+**Operator**: 10:20 AM
+Thank you, Alex! Any further comments?
+
+**Client**: 10:21 AM
+I’m eager to get back to work, and my therapist believes I’m progressing well.
+
+**Operator**: 10:21 AM
+Awesome, thank you for all this information! How about the doctor’s name and signature date?
+
+**Client**: 10:22 AM
+Dr. Swanson, dated April 2, 2023.
+
+**Operator**: 10:22 AM
+Finally, when will your program be reviewed?
+
+**Client**: 10:23 AM
+It'll be reviewed on June 15, 2023.

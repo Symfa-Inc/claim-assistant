@@ -1,0 +1,247 @@
+[
+  {
+    "question": "Worker title",
+    "description": "Mr, Mrs, Ms, Miss, Mx",
+    "data_type": "enum"
+  },
+  {
+    "question": "Worker surname",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Worker given name(s)",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Other names known by",
+    "description": "e.g., maiden name",
+    "data_type": "string"
+  },
+  {
+    "question": "Gender",
+    "description": "Male, Female, Gender diverse",
+    "data_type": "enum"
+  },
+  {
+    "question": "Date of birth",
+    "description": null,
+    "data_type": "date"
+  },
+  {
+    "question": "Age",
+    "description": null,
+    "data_type": "number"
+  },
+  {
+    "question": "Home address",
+    "description": "Street, suburb, state, postcode",
+    "data_type": "string"
+  },
+  {
+    "question": "Postal address",
+    "description": "If different from home address",
+    "data_type": "string"
+  },
+  {
+    "question": "Contact details",
+    "description": "Home number, mobile, work number, email",
+    "data_type": "string"
+  },
+  {
+    "question": "Country of birth",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Language spoken at home",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Marital status",
+    "description": "Single, Married, De facto",
+    "data_type": "enum"
+  },
+  {
+    "question": "Dependants",
+    "description": "Spouse (Y/N), Children (Y/N), Number and DOB of children",
+    "data_type": "table"
+  },
+  {
+    "question": "Employer name",
+    "description": "Employer at time of injury/disease",
+    "data_type": "string"
+  },
+  {
+    "question": "Occupation and job title",
+    "description": "Worker’s role at time of injury/disease",
+    "data_type": "string"
+  },
+  {
+    "question": "Employment type",
+    "description": "Direct employee, working director, contractor, sub-contractor, employee of contractor, visa worker, other",
+    "data_type": "enum"
+  },
+  {
+    "question": "Apprentice or trainee",
+    "description": null,
+    "data_type": "boolean"
+  },
+  {
+    "question": "Employment status",
+    "description": "Full time, part time, permanent, temporary, casual",
+    "data_type": "enum"
+  },
+  {
+    "question": "Other paid employment",
+    "description": "If yes, provide employer details",
+    "data_type": "boolean"
+  },
+  {
+    "question": "Where did injury or disease occur",
+    "description": "Options include workplace, elsewhere, break, travelling, training, working from home",
+    "data_type": "enum"
+  },
+  {
+    "question": "Exact location of occurrence",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Date and time of injury/knowledge of disease",
+    "description": "With AM/PM",
+    "data_type": "datetime"
+  },
+  {
+    "question": "Incident description",
+    "description": "What worker was doing, how injury happened, objects/substances involved",
+    "data_type": "string"
+  },
+  {
+    "question": "Part of body affected",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Type of injury/disease",
+    "description": "e.g., fracture, burn",
+    "data_type": "string"
+  },
+  {
+    "question": "Most serious injury (if multiple)",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Witness details",
+    "description": "Name, address, contact numbers, email",
+    "data_type": "table"
+  },
+  {
+    "question": "Reported to employer",
+    "description": "Yes/No, if yes date/time, name and position of person",
+    "data_type": "boolean"
+  },
+  {
+    "question": "Stopped work due to injury/disease",
+    "description": "Yes/No, if yes date/time, return to work details",
+    "data_type": "boolean"
+  },
+  {
+    "question": "Medical treatment received",
+    "description": "Yes/No, if yes professional details",
+    "data_type": "boolean"
+  },
+  {
+    "question": "Hospital admission",
+    "description": "Yes/No, hospital details if yes",
+    "data_type": "boolean"
+  },
+  {
+    "question": "Still receiving treatment",
+    "description": "Yes/No, if yes provide details",
+    "data_type": "boolean"
+  },
+  {
+    "question": "Claiming for",
+    "description": "Time off work, medical expenses, rehab, hospital",
+    "data_type": "enum"
+  },
+  {
+    "question": "Similar injury/disease before",
+    "description": "Yes/No, previous treatment details",
+    "data_type": "boolean"
+  },
+  {
+    "question": "Previous workers compensation claims",
+    "description": "Yes/No, include date, employer, insurer",
+    "data_type": "boolean"
+  },
+  {
+    "question": "Previous employer details",
+    "description": "If injury/disease may have occurred in prior employment",
+    "data_type": "string"
+  },
+  {
+    "question": "Worker’s authority and declaration",
+    "description": "Worker’s consent for release of medical/personal information and declaration of truth. Requires signature, date, DOB, injury details.",
+    "data_type": "signature_date"
+  },
+  {
+    "question": "Employer report – Notifiable incident",
+    "description": "Is the injury/disease notifiable to NT WorkSafe? If yes, provide date and reference number",
+    "data_type": "boolean"
+  },
+  {
+    "question": "Employer business details",
+    "description": "Business entity name, trading name, ABN, ACN, address, contacts",
+    "data_type": "string"
+  },
+  {
+    "question": "Workers compensation insurer details",
+    "description": "Insurer name, policy number, expiry date",
+    "data_type": "string"
+  },
+  {
+    "question": "Gross weekly remuneration before injury",
+    "description": "Include allowances, overtime, benefits in kind, FIFO/DIDO status",
+    "data_type": "currency"
+  },
+  {
+    "question": "Workplace details",
+    "description": "Section and address where worker normally works",
+    "data_type": "string"
+  },
+  {
+    "question": "Number of employees at location",
+    "description": "Select range (1–4, 5–9, 10–19, etc.)",
+    "data_type": "enum"
+  },
+  {
+    "question": "Worker employment start date",
+    "description": null,
+    "data_type": "date"
+  },
+  {
+    "question": "Is the worker a contractor?",
+    "description": null,
+    "data_type": "boolean"
+  },
+  {
+    "question": "Is the worker on a visa?",
+    "description": "If yes, provide expiry date",
+    "data_type": "boolean"
+  },
+  {
+    "question": "Industry type",
+    "description": "Main type of activity/business/service of the establishment",
+    "data_type": "string"
+  },
+  {
+    "question": "Employer declaration",
+    "description": "Signature, name, date, position",
+    "data_type": "signature_date"
+  }
+]

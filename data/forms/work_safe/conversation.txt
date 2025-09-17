@@ -1,0 +1,115 @@
+**[10:00 AM] Operator:** Good morning! Thank you for reaching out. Could you please provide your name?
+
+**[10:00 AM] Client:** Morning! It’s Jason Smith.
+
+**[10:01 AM] Operator:** Thank you, Jason! Can I confirm your date of birth, please?
+
+**[10:01 AM] Client:** Sure, it's May 15, 1985.
+
+**[10:02 AM] Operator:** Great! And what is your gender?
+
+**[10:02 AM] Client:** Male.
+
+**[10:03 AM] Operator:** Got it. Where were you born?
+
+**[10:03 AM] Client:** I was born in Australia.
+
+**[10:04 AM] Operator:** Thanks! Now, could I have your postal address for our records?
+
+**[10:04 AM] Client:** Yes, it’s 45 Elm Street, Sydney, NSW 2000.
+
+**[10:05 AM] Operator:** And what are your contact details, such as a phone number?
+
+**[10:05 AM] Client:** You can reach me at 0412 345 678.
+
+**[10:06 AM] Operator:** And are you currently employed? If so, what is your employer's name?
+
+**[10:06 AM] Client:** Yes, I work for Tech Innovations.
+
+**[10:07 AM] Operator:** Could you describe the nature of Tech Innovations' business?
+
+**[10:07 AM] Client:** We specialize in developing software solutions for various industries.
+
+**[10:08 AM] Operator:** Great! And what is your job title there?
+
+**[10:08 AM] Client:** I'm a software developer.
+
+**[10:09 AM] Operator:** Thank you. How long have you been with the company?
+
+**[10:09 AM] Client:** Since January 2020.
+
+**[10:10 AM] Operator:** Now, can you tell me about the incident that prompted this conversation? What happened?
+
+**[10:10 AM] Client:** I slipped and fell while carrying equipment last Friday.
+
+**[10:11 AM] Operator:** I’m sorry to hear that. Could you tell me the exact location where the incident occurred?
+
+**[10:11 AM] Client:** It was in the main office area, by the exit door.
+
+**[10:12 AM] Operator:** And what part of your body was affected?
+
+**[10:12 AM] Client:** I injured my ankle pretty badly.
+
+**[10:13 AM] Operator:** Ouch! Have you received any medical treatment for this injury?
+
+**[10:13 AM] Client:** Yes, I went to the hospital and got an x-ray.
+
+**[10:14 AM] Operator:** Were you admitted to the hospital?
+
+**[10:14 AM] Client:** No, just treated at the emergency department.
+
+**[10:15 AM] Operator:** Thank you for that. Did you stop working due to this injury?
+
+**[10:15 AM] Client:** Yes, I’ve been off work since the accident.
+
+**[10:16 AM] Operator:** And are you still receiving treatment?
+
+**[10:16 AM] Client:** Yes, I’ve been going for physical therapy.
+
+**[10:17 AM] Operator:** Have you ever had a similar injury or claim in the past?
+
+**[10:17 AM] Client:** No, this is the first time.
+
+**[10:18 AM] Operator:** How about your marital status? Are you married, single, etc.?
+
+**[10:18 AM] Client:** I’m married.
+
+**[10:19 AM] Operator:** And do you have dependents?
+
+**[10:19 AM] Client:** Yes, I have two children.
+
+**[10:20 AM] Operator:** Thank you. Could you also tell me your employment type? Is it full-time, part-time, or casual?
+
+**[10:20 AM] Client:** I'm a full-time employee.
+
+**[10:21 AM] Operator:** Thank you! Now, are you currently a contractor, or strictly an employee?
+
+**[10:21 AM] Client:** No, I’m not a contractor; I'm an employee.
+
+**[10:22 AM] Operator:** Understood. Now, what was your gross weekly remuneration before the injury?
+
+**[10:22 AM] Client:** I was earning about $1,200 a week.
+
+**[10:23 AM] Operator:** Alright! Now, could you let me know if you claimed this injury through workers’ compensation, and if you have an insurer?
+
+**[10:24 AM] Client:** Yes, I’m claiming workers’ compensation. Our insurer is Workers Comp Australia.
+
+**[10:25 AM] Operator:** Thanks for that information. Lastly, do you speak any other languages at home?
+
+**[10:25 AM] Client:** Just English, that’s the only language spoken at home.
+
+**[10:26 AM] Operator:** Thank you for all that information, Jason. If I could ask just a couple more just to finalize your record; did you report this incident to your employer?
+
+**[10:26 AM] Client:** Yes, I reported it to my supervisor right after it happened.
+
+**[10:27 AM] Operator:** Perfect! And do you have any witness details from the incident?
+
+**[10:27 AM] Client:** Yes, my colleague Rachel was there.
+
+**[10:28 AM] Operator:** Great! Is there anything else you think we should address today?
+
+**[10:28 AM] Client:** No, that's everything for now.
+
+**[10:29 AM] Operator:** Thank you for initializing this claim, Jason. We’ll be in touch with updates! Have a great day!
+
+**[10:29 AM] Client:** Thank you, you too!

@@ -1,2 +1,3 @@
-def main() -> None:
-    print("Hello from claim-assistant!")
+from pathlib import Path
+
+PROJECT_DIR = str(Path(__file__).resolve().parents[2])

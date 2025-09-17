@@ -1,0 +1,134 @@
+**[Operator - 09:00 AM]**
+Hi there! I’d like to assist you with your claims process today. Can I start with your name, please?
+
+**[Client - 09:01 AM]**
+Sure! It’s John Smith.
+
+**[Operator - 09:02 AM]**
+Thank you, John! And what is the name of your employer?
+
+**[Client - 09:03 AM]**
+It’s TechWorks Inc.
+
+**[Operator - 09:04 AM]**
+Great! Can you provide the employee's email address?
+
+**[Client - 09:05 AM]**
+Of course, it’s john.smith@email.com.
+
+**[Operator - 09:06 AM]**
+Perfect. Can you please tell me the zip code where you live?
+
+**[Client - 09:07 AM]**
+Sure, it's 90210.
+
+**[Operator - 09:08 AM]**
+Thanks! Could you give me your home address?
+
+**[Client - 09:09 AM]**
+Yes, it’s 123 Maple Street, Beverly Hills, CA.
+
+**[Operator - 09:10 AM]**
+Thank you, John. Now, can you tell me the city and state where you work?
+
+**[Client - 09:11 AM]**
+I work in Los Angeles, California.
+
+**[Operator - 09:12 AM]**
+And, what is the employer's address?
+
+**[Client - 09:13 AM]**
+Their address is 456 Oak Avenue, Los Angeles, CA.
+
+**[Operator - 09:14 AM]**
+Thanks! Now, we’ll need your Social Security Number.
+
+**[Client - 09:15 AM]**
+It’s 123-45-6789.
+
+**[Operator - 09:16 AM]**
+Got it! And what is the insurance policy number?
+
+**[Client - 09:17 AM]**
+It's ABC123456.
+
+**[Operator - 09:18 AM]**
+Thanks. Can you provide the name and address of the insurance carrier or adjusting agency?
+
+**[Client - 09:19 AM]**
+Yes, it’s Reliable Insurance Co., 789 Pine Blvd, Los Angeles, CA.
+
+**[Operator - 09:20 AM]**
+Awesome! What is your title at TechWorks?
+
+**[Client - 09:21 AM]**
+I’m a software engineer.
+
+**[Operator - 09:22 AM]**
+Can you also tell me the time and date of the injury?
+
+**[Client - 09:23 AM]**
+The injury happened on March 15, at around 3 PM.
+
+**[Operator - 09:24 AM]**
+Can you describe the injury and the part of the body that was affected?
+
+**[Client - 09:25 AM]**
+I sprained my wrist while lifting a heavy box.
+
+**[Operator - 09:26 AM]**
+Thank you. When did the employer first know about the injury?
+
+**[Client - 09:27 AM]**
+They were informed on March 17.
+
+**[Operator - 09:28 AM]**
+And when did you provide the claim form to your employer?
+
+**[Client - 09:29 AM]**
+I submitted it on March 18.
+
+**[Operator - 09:30 AM]**
+What is the date the employer received the claim form?
+
+**[Client - 09:31 AM]**
+They received it on March 19.
+
+**[Operator - 09:32 AM]**
+Now, what is the name and title of the employer representative?
+
+**[Client - 09:33 AM]**
+Her name is Sarah Johnson, and she’s the HR manager.
+
+**[Operator - 09:34 AM]**
+Could you please provide their phone number?
+
+**[Client - 09:35 AM]**
+It’s (555) 123-4567.
+
+**[Operator - 09:36 AM]**
+Thank you! One last thing: do you consent to receive claim notices by email only?
+
+**[Client - 09:37 AM]**
+Yes, I do.
+
+**[Operator - 09:38 AM]**
+And what day is today’s date?
+
+**[Client - 09:39 AM]**
+It’s March 20.
+
+**[Operator - 09:40 AM]**
+Perfect. Can you please provide your signature, or confirm that permission has been given?
+
+**[Client - 09:41 AM]**
+I authorize it - John Smith.
+
+**[Operator - 09:42 AM]**
+Thank you, John! All of your information is noted, and we can proceed with processing your claim.
+
+**[Client - 09:43 AM]**
+Thank you for your help!
+
+**[Operator - 09:44 AM]**
+You're welcome! Have a great day!

@@ -1,0 +1,207 @@
+[
+  {
+    "question": "Insurer name",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Claim number",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "ANZSIC Code",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Policy number",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "WorkCover number",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Has employer contacted medical practitioner?",
+    "description": null,
+    "data_type": "boolean"
+  },
+  {
+    "question": "Estimated time off work",
+    "description": "Select one: less than one day, 1–4 days, 5–9 days, 10–20 days, more than 20 days, fatality",
+    "data_type": "enum"
+  },
+  {
+    "question": "Name of policy holder/employer",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Trading as (if different)",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Employer address",
+    "description": "Street, postcode",
+    "data_type": "string"
+  },
+  {
+    "question": "Employer contact person name",
+    "description": "Include phone number and email",
+    "data_type": "string"
+  },
+  {
+    "question": "Address of injured worker’s usual workplace or base",
+    "description": "Include postcode",
+    "data_type": "string"
+  },
+  {
+    "question": "Major activity of workplace",
+    "description": "Example: sheep farming, plumbing",
+    "data_type": "string"
+  },
+  {
+    "question": "Dates employer received/sent claim form and First Certificate of Capacity",
+    "description": "Includes three separate dates",
+    "data_type": "date"
+  },
+  {
+    "question": "Worker surname",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Worker other names",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Worker address",
+    "description": "Street, suburb/city/town, postcode",
+    "data_type": "string"
+  },
+  {
+    "question": "Worker email",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Worker daytime contact phone number",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Occupation",
+    "description": "e.g., first class welder",
+    "data_type": "string"
+  },
+  {
+    "question": "Main tasks/duties performed",
+    "description": "e.g., welding of high-pressure steam pipes",
+    "data_type": "string"
+  },
+  {
+    "question": "Worker date of birth",
+    "description": null,
+    "data_type": "date"
+  },
+  {
+    "question": "Worker gender",
+    "description": "Male/Female",
+    "data_type": "enum"
+  },
+  {
+    "question": "Preferred language (if not English)",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Employment type",
+    "description": "Full time, part time, permanent, temporary, casual",
+    "data_type": "enum"
+  },
+  {
+    "question": "Worker role at time of injury",
+    "description": "Direct employee, working director, contractor, employee of contractor, subcontractor, visa worker, or other",
+    "data_type": "enum"
+  },
+  {
+    "question": "Other employment",
+    "description": "If more than one employer, provide details",
+    "data_type": "boolean"
+  },
+  {
+    "question": "Day, date, and time of occurrence",
+    "description": "Includes AM/PM",
+    "data_type": "datetime"
+  },
+  {
+    "question": "Address of occurrence",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Did you have to stop working?",
+    "description": "If yes, specify date and time",
+    "data_type": "boolean"
+  },
+  {
+    "question": "Duty status at time of occurrence",
+    "description": "e.g., working at normal workplace, on work break, working away, commuting, road traffic accident",
+    "data_type": "enum"
+  },
+  {
+    "question": "Occurrence details",
+    "description": "Action involved, object/machine/substance, most serious injury/disease, bodily location",
+    "data_type": "string"
+  },
+  {
+    "question": "When did you first seek medical attention?",
+    "description": "Provide date and time",
+    "data_type": "datetime"
+  },
+  {
+    "question": "Was body part healthy before this occurrence?",
+    "description": "If not, provide details",
+    "data_type": "boolean"
+  },
+  {
+    "question": "Is the present injury completely related to this occurrence?",
+    "description": "If not, provide details",
+    "data_type": "boolean"
+  },
+  {
+    "question": "Details of similar injury prior to this occurrence",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Medical practitioner details",
+    "description": "Name, address, phone number of usual provider",
+    "data_type": "string"
+  },
+  {
+    "question": "Witness details",
+    "description": "Name and daytime phone number of witnesses",
+    "data_type": "table"
+  },
+  {
+    "question": "Other/previous claims",
+    "description": "If yes, provide employer, insurer, type of injury/disease",
+    "data_type": "boolean"
+  },
+  {
+    "question": "Worker’s declaration",
+    "description": "Worker signature, witness signature, date",
+    "data_type": "signature_date"
+  },
+  {
+    "question": "Consent authority",
+    "description": "Optional signature to allow insurer to discuss medical condition with employer/insurer",
+    "data_type": "signature_date"
+  }
+]
