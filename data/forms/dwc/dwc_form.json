@@ -1,0 +1,31 @@
+{
+  "data": [
+    {
+      "city": "Los Angeles",
+      "state": "California",
+      "zip_code": "90210",
+      "todays_date": "March 20",
+      "home_address": "123 Maple Street, Beverly Hills, CA",
+      "employee_name": "John Smith",
+      "date_of_injury": "March 15",
+      "time_of_injury": "3 PM",
+      "employees_email": "john.smith@email.com",
+      "employer_address": "456 Oak Avenue, Los Angeles, CA",
+      "name_of_employer": "TechWorks Inc.",
+      "signature_of_employee": "John Smith",
+      "social_security_number": "123-45-6789",
+      "insurance_policy_number": "ABC123456",
+      "title_of_employer_representative": "HR manager",
+      "date_employer_received_claim_form": "March 19",
+      "date_employer_first_knew_of_injury": "March 17",
+      "signature_of_employer_representative": "Sarah Johnson",
+      "date_claim_form_was_provided_to_employee": "March 18",
+      "describe_injury_and_part_of_body_affected": "I sprained my wrist while lifting a heavy box",
+      "telephone_number_of_employer_representative": "(555) 123-4567",
+      "consent_to_receive_claim_notices_by_email_only": true,
+      "address_and_description_of_where_injury_happened": "Not provided",
+      "name_and_address_of_insurance_carrier_or_adjusting_agency": "Reliable Insurance Co., 789 Pine Blvd, Los Angeles, CA"
+    }
+  ],
+  "content_too_long": false
+}
