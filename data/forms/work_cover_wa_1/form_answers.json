@@ -1,0 +1,265 @@
+[
+  {
+    "question": "Insurer name",
+    "description": null,
+    "data_type": "string",
+    "answer": "Global Insurance Co."
+  },
+  {
+    "question": "Claim number",
+    "description": null,
+    "data_type": "string",
+    "answer": "GI123456789"
+  },
+  {
+    "question": "ANZSIC Code",
+    "description": null,
+    "data_type": "string",
+    "answer": "9331"
+  },
+  {
+    "question": "Policy number",
+    "description": null,
+    "data_type": "string",
+    "answer": "ABC1234567"
+  },
+  {
+    "question": "WorkCover number",
+    "description": null,
+    "data_type": "string",
+    "answer": "WC998877"
+  },
+  {
+    "question": "Has employer contacted medical practitioner?",
+    "description": null,
+    "data_type": "boolean",
+    "answer": true
+  },
+  {
+    "question": "Estimated time off work",
+    "description": "Select one: less than one day, 1–4 days, 5–9 days, 10–20 days, more than 20 days, fatality",
+    "data_type": "enum",
+    "answer": "10–20 days"
+  },
+  {
+    "question": "Name of policy holder/employer",
+    "description": null,
+    "data_type": "string",
+    "answer": "XYZ Construction Pty Ltd"
+  },
+  {
+    "question": "Trading as (if different)",
+    "description": null,
+    "data_type": "string",
+    "answer": "XYZ Custom Builds"
+  },
+  {
+    "question": "Employer address",
+    "description": "Street, postcode",
+    "data_type": "string",
+    "answer": "45 Bricks Way, 3456"
+  },
+  {
+    "question": "Employer contact person name",
+    "description": "Include phone number and email",
+    "data_type": "string",
+    "answer": "John Smith, 0412 345 678, john.smith@xyzconstruction.com"
+  },
+  {
+    "question": "Address of injured worker’s usual workplace or base",
+    "description": "Include postcode",
+    "data_type": "string",
+    "answer": "45 Bricks Way, 3456"
+  },
+  {
+    "question": "Major activity of workplace",
+    "description": "Example: sheep farming, plumbing",
+    "data_type": "string",
+    "answer": "Residential construction"
+  },
+  {
+    "question": "Dates employer received/sent claim form and First Certificate of Capacity",
+    "description": "Includes three separate dates",
+    "data_type": "date",
+    "answer": "2023-09-15, 2023-09-16, 2023-09-17"
+  },
+  {
+    "question": "Worker surname",
+    "description": null,
+    "data_type": "string",
+    "answer": "Doe"
+  },
+  {
+    "question": "Worker other names",
+    "description": null,
+    "data_type": "string",
+    "answer": "John"
+  },
+  {
+    "question": "Worker address",
+    "description": "Street, suburb/city/town, postcode",
+    "data_type": "string",
+    "answer": "123 Main St, Hometown, 5678"
+  },
+  {
+    "question": "Worker email",
+    "description": null,
+    "data_type": "string",
+    "answer": "john.doe@email.com"
+  },
+  {
+    "question": "Worker daytime contact phone number",
+    "description": null,
+    "data_type": "string",
+    "answer": "0400 123 456"
+  },
+  {
+    "question": "Occupation",
+    "description": "e.g., first class welder",
+    "data_type": "string",
+    "answer": "Carpenter"
+  },
+  {
+    "question": "Main tasks/duties performed",
+    "description": "e.g., welding of high-pressure steam pipes",
+    "data_type": "string",
+    "answer": "Constructing wooden frameworks and roofing on residential sites."
+  },
+  {
+    "question": "Worker date of birth",
+    "description": null,
+    "data_type": "date",
+    "answer": "1985-01-25"
+  },
+  {
+    "question": "Worker gender",
+    "description": "Male/Female",
+    "data_type": "enum",
+    "answer": "Male"
+  },
+  {
+    "question": "Preferred language (if not English)",
+    "description": null,
+    "data_type": "string",
+    "answer": "N/A"
+  },
+  {
+    "question": "Employment type",
+    "description": "Full time, part time, permanent, temporary, casual",
+    "data_type": "enum",
+    "answer": "Full time"
+  },
+  {
+    "question": "Worker role at time of injury",
+    "description": "Direct employee, working director, contractor, employee of contractor, subcontractor, visa worker, or other",
+    "data_type": "enum",
+    "answer": "Direct employee"
+  },
+  {
+    "question": "Other employment",
+    "description": "If more than one employer, provide details",
+    "data_type": "boolean",
+    "answer": false
+  },
+  {
+    "question": "Day, date, and time of occurrence",
+    "description": "Includes AM/PM",
+    "data_type": "datetime",
+    "answer": "2023-09-14T15:30:00"
+  },
+  {
+    "question": "Address of occurrence",
+    "description": null,
+    "data_type": "string",
+    "answer": "Construction site at 45 Bricks Way, 3456"
+  },
+  {
+    "question": "Did you have to stop working?",
+    "description": "If yes, specify date and time",
+    "data_type": "boolean",
+    "answer": true
+  },
+  {
+    "question": "Duty status at time of occurrence",
+    "description": "e.g., working at normal workplace, on work break, working away, commuting, road traffic accident",
+    "data_type": "enum",
+    "answer": "working at normal workplace"
+  },
+  {
+    "question": "Occurrence details",
+    "description": "Action involved, object/machine/substance, most serious injury/disease, bodily location",
+    "data_type": "string",
+    "answer": "Fell from a platform while installing beams, resulting in a fractured wrist."
+  },
+  {
+    "question": "When did you first seek medical attention?",
+    "description": "Provide date and time",
+    "data_type": "datetime",
+    "answer": "2023-09-14T17:00:00"
+  },
+  {
+    "question": "Was body part healthy before this occurrence?",
+    "description": "If not, provide details",
+    "data_type": "boolean",
+    "answer": true
+  },
+  {
+    "question": "Is the present injury completely related to this occurrence?",
+    "description": "If not, provide details",
+    "data_type": "boolean",
+    "answer": true
+  },
+  {
+    "question": "Details of similar injury prior to this occurrence",
+    "description": null,
+    "data_type": "string",
+    "answer": "N/A"
+  },
+  {
+    "question": "Medical practitioner details",
+    "description": "Name, address, phone number of usual provider",
+    "data_type": "string",
+    "answer": "Dr. Emily Carter, 234 Health St, Hometown, 5678, 0456 789 012"
+  },
+  {
+    "question": "Witness details",
+    "description": "Name and daytime phone number of witnesses",
+    "data_type": "table",
+    "answer": [
+      {
+        "name": "Lisa White",
+        "phone": "0405 678 910"
+      },
+      {
+        "name": "Mike Brown",
+        "phone": "0411 223 344"
+      }
+    ]
+  },
+  {
+    "question": "Other/previous claims",
+    "description": "If yes, provide employer, insurer, type of injury/disease",
+    "data_type": "boolean",
+    "answer": false
+  },
+  {
+    "question": "Worker’s declaration",
+    "description": "Worker signature, witness signature, date",
+    "data_type": "signature_date",
+    "answer": {
+      "worker_signature": "john_doe_sign",
+      "witness_signature": "lisa_white_sign",
+      "date": "2023-09-18"
+    }
+  },
+  {
+    "question": "Consent authority",
+    "description": "Optional signature to allow insurer to discuss medical condition with employer/insurer",
+    "data_type": "signature_date",
+    "answer": {
+      "worker_signature": "john_doe_sign",
+      "witness_signature": "",
+      "date": "2023-09-18"
+    }
+  }
+]

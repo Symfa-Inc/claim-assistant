@@ -1,0 +1,146 @@
+[
+  {
+    "question": "Employee name",
+    "description": null,
+    "data_type": "string",
+    "answer": "John Doe"
+  },
+  {
+    "question": "Today’s date",
+    "description": null,
+    "data_type": "date",
+    "answer": "2023-10-15"
+  },
+  {
+    "question": "Home address",
+    "description": "Street address of employee",
+    "data_type": "string",
+    "answer": "123 Elm Street"
+  },
+  {
+    "question": "City",
+    "description": null,
+    "data_type": "string",
+    "answer": "Springfield"
+  },
+  {
+    "question": "State",
+    "description": null,
+    "data_type": "string",
+    "answer": "IL"
+  },
+  {
+    "question": "Zip code",
+    "description": null,
+    "data_type": "string",
+    "answer": "62701"
+  },
+  {
+    "question": "Date of injury",
+    "description": "Date when accident or illness occurred",
+    "data_type": "date",
+    "answer": "2023-10-10"
+  },
+  {
+    "question": "Time of injury",
+    "description": "Specify AM or PM",
+    "data_type": "time",
+    "answer": "03:45 PM"
+  },
+  {
+    "question": "Address and description of where injury happened",
+    "description": null,
+    "data_type": "string",
+    "answer": "456 Industrial Rd, Warehouse Loading Dock A"
+  },
+  {
+    "question": "Describe injury and part of body affected",
+    "description": null,
+    "data_type": "string",
+    "answer": "Left ankle sprain following a fall while unloading boxes."
+  },
+  {
+    "question": "Social Security Number",
+    "description": "Employee’s SSN",
+    "data_type": "string",
+    "answer": "123-45-6789"
+  },
+  {
+    "question": "Employee’s email",
+    "description": "Only required if notices are to be received electronically",
+    "data_type": "string",
+    "answer": "john.doe@example.com"
+  },
+  {
+    "question": "Consent to receive claim notices by email only",
+    "description": null,
+    "data_type": "boolean",
+    "answer": true
+  },
+  {
+    "question": "Signature of employee",
+    "description": null,
+    "data_type": "signature",
+    "answer": "[Signature Image]"
+  },
+  {
+    "question": "Name of employer",
+    "description": null,
+    "data_type": "string",
+    "answer": "ABC Logistics Inc."
+  },
+  {
+    "question": "Employer address",
+    "description": null,
+    "data_type": "string",
+    "answer": "789 Corporate Drive"
+  },
+  {
+    "question": "Date employer first knew of injury",
+    "description": null,
+    "data_type": "date",
+    "answer": "2023-10-11"
+  },
+  {
+    "question": "Date claim form was provided to employee",
+    "description": null,
+    "data_type": "date",
+    "answer": "2023-10-12"
+  },
+  {
+    "question": "Date employer received claim form",
+    "description": null,
+    "data_type": "date",
+    "answer": "2023-10-13"
+  },
+  {
+    "question": "Name and address of insurance carrier or adjusting agency",
+    "description": null,
+    "data_type": "string",
+    "answer": "Statewide Insurance Co., 321 Insurance Ave, Springfield, IL"
+  },
+  {
+    "question": "Insurance policy number",
+    "description": null,
+    "data_type": "string",
+    "answer": "POL123456"
+  },
+  {
+    "question": "Signature of employer representative",
+    "description": null,
+    "data_type": "signature",
+    "answer": "[Signature Image]"
+  },
+  {
+    "question": "Title of employer representative",
+    "description": null,
+    "data_type": "string",
+    "answer": "Safety Officer"
+  },
+  {
+    "question": "Telephone number of employer representative",
+    "description": null,
+    "data_type": "string",
+    "answer": "(555) 123-4567"
+  }
+]

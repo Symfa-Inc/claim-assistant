@@ -1,0 +1,212 @@
+[
+  {
+    "question": "Policy number",
+    "description": null,
+    "data_type": "string",
+    "answer": "WCP123456"
+  },
+  {
+    "question": "Incident number",
+    "description": null,
+    "data_type": "string",
+    "answer": "INC987654"
+  },
+  {
+    "question": "Employer name",
+    "description": null,
+    "data_type": "string",
+    "answer": "ABC Construction Ltd."
+  },
+  {
+    "question": "Full name of worker",
+    "description": null,
+    "data_type": "string",
+    "answer": "John Smith"
+  },
+  {
+    "question": "Gender",
+    "description": "Male or Female",
+    "data_type": "enum",
+    "answer": "Male"
+  },
+  {
+    "question": "Address",
+    "description": "Street, state, and postcode",
+    "data_type": "string",
+    "answer": "123 Elm St, Sydney, NSW, 2000"
+  },
+  {
+    "question": "Telephone numbers",
+    "description": "Work, home, and mobile",
+    "data_type": "string",
+    "answer": "(02) 1234 5678, 0412 345 678, (02) 8765 4321"
+  },
+  {
+    "question": "Email",
+    "description": null,
+    "data_type": "string",
+    "answer": "john.smith@example.com"
+  },
+  {
+    "question": "Date of birth",
+    "description": null,
+    "data_type": "date",
+    "answer": "1985-05-15"
+  },
+  {
+    "question": "Country of birth",
+    "description": null,
+    "data_type": "string",
+    "answer": "Australia"
+  },
+  {
+    "question": "Language",
+    "description": null,
+    "data_type": "string",
+    "answer": "English"
+  },
+  {
+    "question": "Is an interpreter required?",
+    "description": null,
+    "data_type": "boolean",
+    "answer": false
+  },
+  {
+    "question": "Are you temporarily in Australia on a visa?",
+    "description": null,
+    "data_type": "boolean",
+    "answer": false
+  },
+  {
+    "question": "Visa details",
+    "description": "Expiry date and visa type if applicable",
+    "data_type": "string",
+    "answer": "N/A"
+  },
+  {
+    "question": "Marital status",
+    "description": null,
+    "data_type": "string",
+    "answer": "Married"
+  },
+  {
+    "question": "Dependent details",
+    "description": "Name, relationship, and date of birth",
+    "data_type": "table",
+    "answer": "[{'name':'Emily Smith','relationship':'Daughter','date_of_birth':'2015-01-20'},{'name':'James Smith','relationship':'Son','date_of_birth':'2018-04-10'}]"
+  },
+  {
+    "question": "How did the injury occur?",
+    "description": null,
+    "data_type": "string",
+    "answer": "Trip and fall on the construction site."
+  },
+  {
+    "question": "What were you doing when the injury happened?",
+    "description": "Example: slipped when climbing a ladder",
+    "data_type": "string",
+    "answer": "Was walking on uneven ground carrying materials."
+  },
+  {
+    "question": "Part(s) of body injured",
+    "description": null,
+    "data_type": "string",
+    "answer": "Ankle and wrist"
+  },
+  {
+    "question": "Was this part of your body fully functional before the injury?",
+    "description": "If no, provide details",
+    "data_type": "boolean",
+    "answer": true
+  },
+  {
+    "question": "Address where the injury happened",
+    "description": "If different to work address",
+    "data_type": "string",
+    "answer": "456 Work Rd, Construction Site, Sydney, NSW, 2000"
+  },
+  {
+    "question": "Date of injury",
+    "description": null,
+    "data_type": "date",
+    "answer": "2023-09-15"
+  },
+  {
+    "question": "Time of injury",
+    "description": "AM or PM",
+    "data_type": "time",
+    "answer": "10:30 AM"
+  },
+  {
+    "question": "Did anyone see your injury occur?",
+    "description": "If yes, provide witness names",
+    "data_type": "boolean",
+    "answer": true
+  },
+  {
+    "question": "Person at workplace you reported the injury to",
+    "description": "Name, job title, and date reported",
+    "data_type": "string",
+    "answer": "Sarah Johnson, Supervisor, reported on 2023-09-15."
+  },
+  {
+    "question": "Nominated treating doctor",
+    "description": "Name and telephone",
+    "data_type": "string",
+    "answer": "Dr. Emily Baker, (02) 3322 4455"
+  },
+  {
+    "question": "Previous similar injuries",
+    "description": "If yes, provide details",
+    "data_type": "boolean",
+    "answer": false
+  },
+  {
+    "question": "Do you have a second job?",
+    "description": "Name of second employer, contact name, telephone",
+    "data_type": "boolean",
+    "answer": false
+  },
+  {
+    "question": "Average weekly earnings from this job",
+    "description": null,
+    "data_type": "currency",
+    "answer": "$1,200"
+  },
+  {
+    "question": "Average weekly hours from this job",
+    "description": null,
+    "data_type": "number",
+    "answer": 38
+  },
+  {
+    "question": "Declaration signature and date",
+    "description": "Worker\u00019s confirmation that information is correct",
+    "data_type": "signature_date",
+    "answer": "John Smith, 2023-09-20"
+  },
+  {
+    "question": "Authority signature and date",
+    "description": "Worker authorises release of medical/factual history",
+    "data_type": "signature_date",
+    "answer": "John Smith, 2023-09-20"
+  },
+  {
+    "question": "Date form was provided to employer",
+    "description": null,
+    "data_type": "date",
+    "answer": "2023-09-20"
+  },
+  {
+    "question": "Received by employer details",
+    "description": "Name, job title, signature, and date",
+    "data_type": "string",
+    "answer": "Tom Green, HR Manager, Signed on 2023-09-21."
+  },
+  {
+    "question": "Additional information",
+    "description": "From either worker or employer",
+    "data_type": "string",
+    "answer": "Please consider my case for urgent processing."
+  }
+]
