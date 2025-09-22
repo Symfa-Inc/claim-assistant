@@ -2,7 +2,6 @@ import json
 import os
 import random
 from datetime import timedelta
-from typing import Any
 
 from openai import OpenAI
 
@@ -52,13 +51,13 @@ def fill_form(questions: list[dict]) -> list[dict]:
                                     "question": {"type": "string"},
                                     "description": {"type": ["string", "null"]},
                                     "data_type": {"type": "string"},
-                                    "answer": {}
+                                    "answer": {},
                                 },
-                                "required": ["question", "data_type", "answer"]
-                            }
-                        }
+                                "required": ["question", "data_type", "answer"],
+                            },
+                        },
                     },
-                    "required": ["items"]
+                    "required": ["items"],
                 },
             },
         },
@@ -87,7 +86,7 @@ def fill_form(questions: list[dict]) -> list[dict]:
     # Ensure length matches
     if len(answers) != len(questions):
         raise ValueError(
-            f"Number of answers ({len(answers)}) does not match number of questions ({len(questions)})"
+            f"Number of answers ({len(answers)}) does not match number of questions ({len(questions)})",
         )
 
     # Ensure every question has an answer
@@ -157,15 +156,5 @@ def process_forms(base_dir=BASE_DIR):
             print(f"Saved conversation: {convo_file}")
 
 
-
 if __name__ == "__main__":
     conversations = process_forms()
-
-    # Save conversations to output files
-
-    for form_name, convo in conversations.items():
-        out_file = os.path.join(out_dir, form_name, "conversation.txt")
-        with open(out_file, "w", encoding="utf-8") as f:
-            f.write(convo)
-
-        print(f"Saved conversation: {out_file}")

@@ -3,31 +3,31 @@
     "question": "Insurer name",
     "description": null,
     "data_type": "string",
-    "answer": "Global Insurance Co."
+    "answer": "Aegis Insurance Co."
   },
   {
     "question": "Claim number",
     "description": null,
     "data_type": "string",
-    "answer": "GI123456789"
+    "answer": "C123456789"
   },
   {
     "question": "ANZSIC Code",
     "description": null,
     "data_type": "string",
-    "answer": "9331"
+    "answer": "1111"
   },
   {
     "question": "Policy number",
     "description": null,
     "data_type": "string",
-    "answer": "ABC1234567"
+    "answer": "P87654321"
   },
   {
     "question": "WorkCover number",
     "description": null,
     "data_type": "string",
-    "answer": "WC998877"
+    "answer": "WC1234567"
   },
   {
     "question": "Has employer contacted medical practitioner?",
@@ -37,7 +37,7 @@
   },
   {
     "question": "Estimated time off work",
-    "description": "Select one: less than one day, 1–4 days, 5–9 days, 10–20 days, more than 20 days, fatality",
+    "description": "Options: less than one day, 1–4 days, 5–9 days, 10–20 days, more than 20 days, fatality",
     "data_type": "enum",
     "answer": "10–20 days"
   },
@@ -45,91 +45,115 @@
     "question": "Name of policy holder/employer",
     "description": null,
     "data_type": "string",
-    "answer": "XYZ Construction Pty Ltd"
+    "answer": "Smith & Sons Construction"
   },
   {
     "question": "Trading as (if different)",
     "description": null,
     "data_type": "string",
-    "answer": "XYZ Custom Builds"
+    "answer": "Smith Construction"
   },
   {
     "question": "Employer address",
     "description": "Street, postcode",
     "data_type": "string",
-    "answer": "45 Bricks Way, 3456"
+    "answer": "123 Builder Ave, 2000"
   },
   {
     "question": "Employer contact person name",
-    "description": "Include phone number and email",
+    "description": null,
     "data_type": "string",
-    "answer": "John Smith, 0412 345 678, john.smith@xyzconstruction.com"
+    "answer": "John Smith"
+  },
+  {
+    "question": "Employer contact phone number",
+    "description": null,
+    "data_type": "string",
+    "answer": "0412 345 678"
+  },
+  {
+    "question": "Employer contact email",
+    "description": null,
+    "data_type": "string",
+    "answer": "johnsmith@smithconstruction.com.au"
   },
   {
     "question": "Address of injured worker’s usual workplace or base",
     "description": "Include postcode",
     "data_type": "string",
-    "answer": "45 Bricks Way, 3456"
+    "answer": "456 Worksite Rd, 2000"
   },
   {
     "question": "Major activity of workplace",
     "description": "Example: sheep farming, plumbing",
     "data_type": "string",
-    "answer": "Residential construction"
+    "answer": "Construction"
   },
   {
-    "question": "Dates employer received/sent claim form and First Certificate of Capacity",
-    "description": "Includes three separate dates",
+    "question": "Date employer received claim form",
+    "description": null,
     "data_type": "date",
-    "answer": "2023-09-15, 2023-09-16, 2023-09-17"
+    "answer": "2023-10-01"
+  },
+  {
+    "question": "Date employer sent claim form",
+    "description": null,
+    "data_type": "date",
+    "answer": "2023-10-03"
+  },
+  {
+    "question": "Date employer received First Certificate of Capacity",
+    "description": null,
+    "data_type": "date",
+    "answer": "2023-10-04"
   },
   {
     "question": "Worker surname",
     "description": null,
     "data_type": "string",
-    "answer": "Doe"
+    "answer": "Johnson"
   },
   {
     "question": "Worker other names",
     "description": null,
     "data_type": "string",
-    "answer": "John"
+    "answer": "Max"
   },
   {
     "question": "Worker address",
     "description": "Street, suburb/city/town, postcode",
     "data_type": "string",
-    "answer": "123 Main St, Hometown, 5678"
+    "answer": "789 Safety St, Sydney, 2000"
   },
   {
     "question": "Worker email",
     "description": null,
     "data_type": "string",
-    "answer": "john.doe@email.com"
+    "answer": "maxjohnson@email.com"
   },
   {
     "question": "Worker daytime contact phone number",
     "description": null,
     "data_type": "string",
-    "answer": "0400 123 456"
+    "answer": "0410 123 456"
   },
   {
     "question": "Occupation",
     "description": "e.g., first class welder",
     "data_type": "string",
-    "answer": "Carpenter"
+    "answer": "Site Supervisor"
   },
   {
     "question": "Main tasks/duties performed",
     "description": "e.g., welding of high-pressure steam pipes",
     "data_type": "string",
-    "answer": "Constructing wooden frameworks and roofing on residential sites."
+    "answer": "Overseeing construction projects, managing workers"
   },
   {
     "question": "Worker date of birth",
     "description": null,
     "data_type": "date",
-    "answer": "1985-01-25"
+    "answer": "1985-07-12"
   },
   {
     "question": "Worker gender",
@@ -157,27 +181,81 @@
   },
   {
     "question": "Other employment",
-    "description": "If more than one employer, provide details",
+    "description": "Does the worker have more than one employer?",
     "data_type": "boolean",
     "answer": false
   },
   {
+    "question": "Other employer name",
+    "description": null,
+    "data_type": "string",
+    "answer": "N/A"
+  },
+  {
+    "question": "Other employer phone number",
+    "description": null,
+    "data_type": "string",
+    "answer": "N/A"
+  },
+  {
+    "question": "Other employer contact name",
+    "description": null,
+    "data_type": "string",
+    "answer": "N/A"
+  },
+  {
+    "question": "Other employment hours per week",
+    "description": null,
+    "data_type": "number",
+    "answer": 0
+  },
+  {
     "question": "Day, date, and time of occurrence",
-    "description": "Includes AM/PM",
+    "description": null,
     "data_type": "datetime",
-    "answer": "2023-09-14T15:30:00"
+    "answer": "2023-09-30T14:30:00"
+  },
+  {
+    "question": "Where did the occurrence happen?",
+    "description": "e.g., store room, machinery shop",
+    "data_type": "string",
+    "answer": "Main construction site, southern wing"
+  },
+  {
+    "question": "What were you doing at the time of the occurrence?",
+    "description": null,
+    "data_type": "string",
+    "answer": "Inspecting scaffolding safety"
+  },
+  {
+    "question": "Normal working hours start time (that day)",
+    "description": "AM/PM",
+    "data_type": "time",
+    "answer": "08:00 AM"
+  },
+  {
+    "question": "Normal working hours finish time (that day)",
+    "description": null,
+    "data_type": "time",
+    "answer": "05:00 PM"
   },
   {
     "question": "Address of occurrence",
     "description": null,
     "data_type": "string",
-    "answer": "Construction site at 45 Bricks Way, 3456"
+    "answer": "Main construction site, southern wing, 456 Worksite Rd"
   },
   {
     "question": "Did you have to stop working?",
-    "description": "If yes, specify date and time",
+    "description": null,
     "data_type": "boolean",
     "answer": true
+  },
+  {
+    "question": "Date and time you stopped working",
+    "description": null,
+    "data_type": "datetime",
+    "answer": "2023-09-30T15:00:00"
   },
   {
     "question": "Duty status at time of occurrence",
@@ -186,28 +264,94 @@
     "answer": "working at normal workplace"
   },
   {
-    "question": "Occurrence details",
-    "description": "Action involved, object/machine/substance, most serious injury/disease, bodily location",
+    "question": "Action involved in occurrence",
+    "description": null,
     "data_type": "string",
-    "answer": "Fell from a platform while installing beams, resulting in a fractured wrist."
+    "answer": "Fell from scaffolding"
+  },
+  {
+    "question": "Object, machine, or substance involved",
+    "description": null,
+    "data_type": "string",
+    "answer": "Scaffolding frame"
+  },
+  {
+    "question": "Most serious injury/disease sustained",
+    "description": null,
+    "data_type": "string",
+    "answer": "Fractured ankle"
+  },
+  {
+    "question": "Bodily location of injury",
+    "description": null,
+    "data_type": "string",
+    "answer": "Right ankle"
+  },
+  {
+    "question": "When did you first report the occurrence?",
+    "description": "Date",
+    "data_type": "date",
+    "answer": "2023-10-01"
+  },
+  {
+    "question": "Who did you report the occurrence to? Name",
+    "description": null,
+    "data_type": "string",
+    "answer": "Susanne Brown"
+  },
+  {
+    "question": "Who did you report the occurrence to? Position",
+    "description": null,
+    "data_type": "string",
+    "answer": "HR Manager"
+  },
+  {
+    "question": "Who did you report the occurrence to? Phone number",
+    "description": null,
+    "data_type": "string",
+    "answer": "0412 998 765"
+  },
+  {
+    "question": "If you didn’t report immediately, reason",
+    "description": null,
+    "data_type": "string",
+    "answer": "N/A"
   },
   {
     "question": "When did you first seek medical attention?",
-    "description": "Provide date and time",
+    "description": "Date and time",
     "data_type": "datetime",
-    "answer": "2023-09-14T17:00:00"
+    "answer": "2023-10-01T10:00:00"
   },
   {
-    "question": "Was body part healthy before this occurrence?",
-    "description": "If not, provide details",
+    "question": "If not immediately, reason for delay in medical attention",
+    "description": null,
+    "data_type": "string",
+    "answer": "Initially thought it was a sprain"
+  },
+  {
+    "question": "Was the body part healthy before this occurrence?",
+    "description": null,
     "data_type": "boolean",
     "answer": true
+  },
+  {
+    "question": "Details if body part was not healthy",
+    "description": null,
+    "data_type": "string",
+    "answer": "N/A"
   },
   {
     "question": "Is the present injury completely related to this occurrence?",
-    "description": "If not, provide details",
+    "description": null,
     "data_type": "boolean",
     "answer": true
+  },
+  {
+    "question": "If not completely related, provide details",
+    "description": null,
+    "data_type": "string",
+    "answer": "N/A"
   },
   {
     "question": "Details of similar injury prior to this occurrence",
@@ -216,50 +360,63 @@
     "answer": "N/A"
   },
   {
-    "question": "Medical practitioner details",
-    "description": "Name, address, phone number of usual provider",
+    "question": "Medical practitioner name",
+    "description": null,
     "data_type": "string",
-    "answer": "Dr. Emily Carter, 234 Health St, Hometown, 5678, 0456 789 012"
+    "answer": "Dr. Emily Chang"
   },
   {
-    "question": "Witness details",
-    "description": "Name and daytime phone number of witnesses",
-    "data_type": "table",
-    "answer": [
-      {
-        "name": "Lisa White",
-        "phone": "0405 678 910"
-      },
-      {
-        "name": "Mike Brown",
-        "phone": "0411 223 344"
-      }
-    ]
+    "question": "Medical practitioner address",
+    "description": null,
+    "data_type": "string",
+    "answer": "7 Health St, Sydney, 2000"
   },
   {
-    "question": "Other/previous claims",
-    "description": "If yes, provide employer, insurer, type of injury/disease",
+    "question": "Medical practitioner phone number",
+    "description": null,
+    "data_type": "string",
+    "answer": "0298765432"
+  },
+  {
+    "question": "Medical practitioner usual provider? (yes/no)",
+    "description": null,
+    "data_type": "boolean",
+    "answer": true
+  },
+  {
+    "question": "Witness name",
+    "description": null,
+    "data_type": "string",
+    "answer": "Tom Harper"
+  },
+  {
+    "question": "Witness daytime phone number",
+    "description": null,
+    "data_type": "string",
+    "answer": "0414 555 678"
+  },
+  {
+    "question": "Other/previous claims?",
+    "description": null,
     "data_type": "boolean",
     "answer": false
   },
   {
-    "question": "Worker’s declaration",
-    "description": "Worker signature, witness signature, date",
-    "data_type": "signature_date",
-    "answer": {
-      "worker_signature": "john_doe_sign",
-      "witness_signature": "lisa_white_sign",
-      "date": "2023-09-18"
-    }
+    "question": "Previous claim employer",
+    "description": null,
+    "data_type": "string",
+    "answer": "N/A"
   },
   {
-    "question": "Consent authority",
-    "description": "Optional signature to allow insurer to discuss medical condition with employer/insurer",
-    "data_type": "signature_date",
-    "answer": {
-      "worker_signature": "john_doe_sign",
-      "witness_signature": "",
-      "date": "2023-09-18"
-    }
+    "question": "Previous claim insurer",
+    "description": null,
+    "data_type": "string",
+    "answer": "N/A"
+  },
+  {
+    "question": "Previous claim type of injury/disease",
+    "description": null,
+    "data_type": "string",
+    "answer": "N/A"
   }
 ]

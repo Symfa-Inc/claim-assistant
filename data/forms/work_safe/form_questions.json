@@ -45,8 +45,23 @@
     "data_type": "string"
   },
   {
-    "question": "Contact details",
-    "description": "Home number, mobile, work number, email",
+    "question": "Home telephone",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Work telephone",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Mobile telephone",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Email",
+    "description": null,
     "data_type": "string"
   },
   {
@@ -65,13 +80,68 @@
     "data_type": "enum"
   },
   {
-    "question": "Dependants",
-    "description": "Spouse (Y/N), Children (Y/N), Number and DOB of children",
-    "data_type": "table"
+    "question": "Dependants spouse",
+    "description": "Yes/No",
+    "data_type": "boolean"
   },
   {
-    "question": "Employer name",
-    "description": "Employer at time of injury/disease",
+    "question": "Dependants children",
+    "description": "Yes/No",
+    "data_type": "boolean"
+  },
+  {
+    "question": "Number of children",
+    "description": null,
+    "data_type": "number"
+  },
+  {
+    "question": "Dates of birth of children",
+    "description": null,
+    "data_type": "date"
+  },
+  {
+    "question": "Employer business entity name",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Employer trading name",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Employer ABN",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Employer ACN",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Employer address",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Employer contact person name",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Employer contact person position",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Employer contact phone",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Employer email",
+    "description": null,
     "data_type": "string"
   },
   {
@@ -81,7 +151,7 @@
   },
   {
     "question": "Employment type",
-    "description": "Direct employee, working director, contractor, sub-contractor, employee of contractor, visa worker, other",
+    "description": "Direct employee, working director, contractor, subcontractor, employee of contractor, visa worker, other",
     "data_type": "enum"
   },
   {
@@ -96,12 +166,37 @@
   },
   {
     "question": "Other paid employment",
-    "description": "If yes, provide employer details",
+    "description": "Yes/No",
     "data_type": "boolean"
   },
   {
-    "question": "Where did injury or disease occur",
-    "description": "Options include workplace, elsewhere, break, travelling, training, working from home",
+    "question": "Other employer name",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Other employer address",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Other employer phone",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Other employer suburb/state/postcode",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Other employment hours per week",
+    "description": null,
+    "data_type": "number"
+  },
+  {
+    "question": "Where did injury/disease occur?",
+    "description": "Workplace, elsewhere, break, travelling, training, working from home",
     "data_type": "enum"
   },
   {
@@ -110,9 +205,14 @@
     "data_type": "string"
   },
   {
-    "question": "Date and time of injury/knowledge of disease",
-    "description": "With AM/PM",
-    "data_type": "datetime"
+    "question": "Date of injury/disease",
+    "description": null,
+    "data_type": "date"
+  },
+  {
+    "question": "Time of injury/disease",
+    "description": "AM/PM",
+    "data_type": "time"
   },
   {
     "question": "Incident description",
@@ -135,34 +235,134 @@
     "data_type": "string"
   },
   {
-    "question": "Witness details",
-    "description": "Name, address, contact numbers, email",
-    "data_type": "table"
+    "question": "Normal working hours start",
+    "description": "AM/PM",
+    "data_type": "time"
   },
   {
-    "question": "Reported to employer",
-    "description": "Yes/No, if yes date/time, name and position of person",
+    "question": "Normal working hours finish",
+    "description": null,
+    "data_type": "time"
+  },
+  {
+    "question": "Witness name",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Witness address",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Witness contact number",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Witness email",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Reported to employer?",
+    "description": null,
     "data_type": "boolean"
   },
   {
-    "question": "Stopped work due to injury/disease",
-    "description": "Yes/No, if yes date/time, return to work details",
+    "question": "Reported to employer date",
+    "description": null,
+    "data_type": "date"
+  },
+  {
+    "question": "Reported to employer time",
+    "description": null,
+    "data_type": "time"
+  },
+  {
+    "question": "Person reported to name",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Person reported to position",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Stopped work due to injury/disease?",
+    "description": null,
     "data_type": "boolean"
   },
   {
-    "question": "Medical treatment received",
-    "description": "Yes/No, if yes professional details",
+    "question": "Date stopped work",
+    "description": null,
+    "data_type": "date"
+  },
+  {
+    "question": "Time stopped work",
+    "description": "AM/PM",
+    "data_type": "time"
+  },
+  {
+    "question": "Returned to work?",
+    "description": null,
     "data_type": "boolean"
   },
   {
-    "question": "Hospital admission",
-    "description": "Yes/No, hospital details if yes",
+    "question": "Date returned to work",
+    "description": null,
+    "data_type": "date"
+  },
+  {
+    "question": "Medical treatment received?",
+    "description": null,
     "data_type": "boolean"
   },
   {
-    "question": "Still receiving treatment",
-    "description": "Yes/No, if yes provide details",
+    "question": "Medical treatment provider name",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Medical treatment provider address",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Medical treatment provider phone",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Hospital admission?",
+    "description": null,
     "data_type": "boolean"
+  },
+  {
+    "question": "Hospital name",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Hospital address",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Hospital suburb/state/postcode",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Still receiving treatment?",
+    "description": null,
+    "data_type": "boolean"
+  },
+  {
+    "question": "Person providing ongoing treatment name",
+    "description": null,
+    "data_type": "string"
   },
   {
     "question": "Claiming for",
@@ -170,14 +370,34 @@
     "data_type": "enum"
   },
   {
-    "question": "Similar injury/disease before",
-    "description": "Yes/No, previous treatment details",
+    "question": "Similar injury/disease before?",
+    "description": null,
     "data_type": "boolean"
   },
   {
-    "question": "Previous workers compensation claims",
-    "description": "Yes/No, include date, employer, insurer",
+    "question": "If yes, details of previous injury/disease",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Previous workers compensation claims?",
+    "description": null,
     "data_type": "boolean"
+  },
+  {
+    "question": "Previous claim date",
+    "description": null,
+    "data_type": "date"
+  },
+  {
+    "question": "Previous claim employer",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Previous claim insurer",
+    "description": null,
+    "data_type": "string"
   },
   {
     "question": "Previous employer details",
@@ -185,24 +405,34 @@
     "data_type": "string"
   },
   {
-    "question": "Worker’s authority and declaration",
-    "description": "Worker’s consent for release of medical/personal information and declaration of truth. Requires signature, date, DOB, injury details.",
-    "data_type": "signature_date"
-  },
-  {
-    "question": "Employer report – Notifiable incident",
-    "description": "Is the injury/disease notifiable to NT WorkSafe? If yes, provide date and reference number",
+    "question": "Employer report – Notifiable incident?",
+    "description": null,
     "data_type": "boolean"
   },
   {
-    "question": "Employer business details",
-    "description": "Business entity name, trading name, ABN, ACN, address, contacts",
+    "question": "Employer report – Date notified",
+    "description": null,
+    "data_type": "date"
+  },
+  {
+    "question": "Employer report – Reference number",
+    "description": null,
     "data_type": "string"
   },
   {
-    "question": "Workers compensation insurer details",
-    "description": "Insurer name, policy number, expiry date",
+    "question": "Workers compensation insurer name",
+    "description": null,
     "data_type": "string"
+  },
+  {
+    "question": "Policy number",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Policy expiry date",
+    "description": null,
+    "data_type": "date"
   },
   {
     "question": "Gross weekly remuneration before injury",
@@ -210,8 +440,8 @@
     "data_type": "currency"
   },
   {
-    "question": "Workplace details",
-    "description": "Section and address where worker normally works",
+    "question": "Worker’s section and workplace address",
+    "description": null,
     "data_type": "string"
   },
   {
@@ -231,17 +461,17 @@
   },
   {
     "question": "Is the worker on a visa?",
-    "description": "If yes, provide expiry date",
+    "description": null,
     "data_type": "boolean"
   },
   {
-    "question": "Industry type",
-    "description": "Main type of activity/business/service of the establishment",
-    "data_type": "string"
+    "question": "Visa expiry date",
+    "description": null,
+    "data_type": "date"
   },
   {
-    "question": "Employer declaration",
-    "description": "Signature, name, date, position",
-    "data_type": "signature_date"
+    "question": "Industry type",
+    "description": "Main activity/business/service of establishment",
+    "data_type": "string"
   }
 ]

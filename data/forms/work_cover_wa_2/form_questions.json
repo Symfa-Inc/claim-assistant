@@ -55,8 +55,18 @@
     "data_type": "string"
   },
   {
-    "question": "Employer contact person",
-    "description": "Include phone and email",
+    "question": "Employer contact name",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Employer contact phone",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Employer contact email",
+    "description": null,
     "data_type": "string"
   },
   {
@@ -68,6 +78,21 @@
     "question": "Major activity of workplace",
     "description": "e.g., sheep farming, plumbing",
     "data_type": "string"
+  },
+  {
+    "question": "Date employer received completed claim form",
+    "description": null,
+    "data_type": "date"
+  },
+  {
+    "question": "Date employer sent claim form to insurer",
+    "description": null,
+    "data_type": "date"
+  },
+  {
+    "question": "Date employer sent First Certificate of Capacity",
+    "description": null,
+    "data_type": "date"
   },
   {
     "question": "Worker surname",
@@ -130,14 +155,34 @@
     "data_type": "enum"
   },
   {
-    "question": "Other employment",
-    "description": "If more than one employer, provide employer name, phone, hours",
+    "question": "Other employment?",
+    "description": "Does worker have another job?",
     "data_type": "boolean"
   },
   {
-    "question": "Day, date, and time of occurrence",
-    "description": "Includes AM/PM",
-    "data_type": "datetime"
+    "question": "Other employer name",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Other employer phone",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Other employment hours per week",
+    "description": null,
+    "data_type": "number"
+  },
+  {
+    "question": "Day of occurrence",
+    "description": null,
+    "data_type": "date"
+  },
+  {
+    "question": "Time of occurrence",
+    "description": "AM/PM",
+    "data_type": "time"
   },
   {
     "question": "Address of occurrence",
@@ -145,22 +190,7 @@
     "data_type": "string"
   },
   {
-    "question": "Did you have to stop working?",
-    "description": "If yes, provide date and time",
-    "data_type": "boolean"
-  },
-  {
-    "question": "Duty status at time of occurrence",
-    "description": "e.g., working at normal workplace, working from home, on break, road traffic accident, commuting",
-    "data_type": "enum"
-  },
-  {
-    "question": "Occurrence details",
-    "description": "Action, object/machine/substance, nature of injury, bodily location",
-    "data_type": "string"
-  },
-  {
-    "question": "Where did occurrence happen?",
+    "question": "Where did the occurrence happen?",
     "description": "e.g., store room, machinery shop",
     "data_type": "string"
   },
@@ -170,63 +200,158 @@
     "data_type": "string"
   },
   {
-    "question": "Normal working hours for that day",
-    "description": "Start and finish time",
-    "data_type": "time_range"
-  },
-  {
-    "question": "When did you first report the occurrence?",
-    "description": "Date and time, with AM/PM",
-    "data_type": "datetime"
-  },
-  {
-    "question": "Who did you report the occurrence to?",
-    "description": "Name, position, phone",
-    "data_type": "string"
-  },
-  {
-    "question": "Witness details",
-    "description": "Up to 2 names and daytime phone numbers",
-    "data_type": "table"
-  },
-  {
-    "question": "When did you first seek medical attention?",
-    "description": "Date, time, reason if not immediate",
-    "data_type": "datetime"
-  },
-  {
-    "question": "Was body part healthy before occurrence?",
-    "description": "If no, give details",
+    "question": "Did you have to stop working?",
+    "description": null,
     "data_type": "boolean"
   },
   {
-    "question": "Is present injury completely related to this occurrence?",
-    "description": "If not, give details",
-    "data_type": "boolean"
+    "question": "If stopped working, date",
+    "description": null,
+    "data_type": "date"
   },
   {
-    "question": "Similar injury details (prior to this occurrence)",
+    "question": "If stopped working, time",
+    "description": "AM/PM",
+    "data_type": "time"
+  },
+  {
+    "question": "Duty status at time of occurrence",
+    "description": "e.g., working at normal workplace, working from home, on break, road traffic accident, commuting",
+    "data_type": "enum"
+  },
+  {
+    "question": "Occurrence action involved",
     "description": null,
     "data_type": "string"
   },
   {
-    "question": "Usual medical practitioner details",
-    "description": "Name, address, phone",
+    "question": "Occurrence object/machine/substance",
+    "description": null,
     "data_type": "string"
   },
   {
-    "question": "Concurrent claims",
-    "description": "Are you claiming compensation from another source? If yes, from whom?",
+    "question": "Nature of injury or disease",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Bodily location of injury/disease",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Normal working hours start",
+    "description": "AM/PM",
+    "data_type": "time"
+  },
+  {
+    "question": "Normal working hours finish",
+    "description": null,
+    "data_type": "time"
+  },
+  {
+    "question": "When did you first report the occurrence?",
+    "description": "Date and time",
+    "data_type": "datetime"
+  },
+  {
+    "question": "If not reported immediately, reason",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Report recipient name",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Report recipient position",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Report recipient phone",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Witness 1 name",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Witness 1 daytime phone",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Witness 2 name",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Witness 2 daytime phone",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "When did you first seek medical attention?",
+    "description": "Date and time",
+    "data_type": "datetime"
+  },
+  {
+    "question": "Reason for delay in medical attention",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Was the body part healthy before this occurrence?",
+    "description": null,
     "data_type": "boolean"
   },
   {
-    "question": "Worker’s declaration",
-    "description": "Signature, print name, date",
-    "data_type": "signature_date"
+    "question": "If not healthy, details",
+    "description": null,
+    "data_type": "string"
   },
   {
-    "question": "Consent authority (optional)",
-    "description": "Authorisation for insurer to collect/disclose sensitive information; signature, print name, date",
-    "data_type": "signature_date"
+    "question": "Is the present injury completely related to this occurrence?",
+    "description": null,
+    "data_type": "boolean"
+  },
+  {
+    "question": "If not completely related, details",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Similar injury details prior to this occurrence",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Usual medical practitioner name",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Usual medical practitioner address",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Usual medical practitioner phone",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Concurrent claims?",
+    "description": "Are you claiming from another source?",
+    "data_type": "boolean"
+  },
+  {
+    "question": "If yes, from whom?",
+    "description": null,
+    "data_type": "string"
   }
 ]

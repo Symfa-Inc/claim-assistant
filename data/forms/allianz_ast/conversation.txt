@@ -1,73 +1,99 @@
-**[10:00 AM] Operator:** Hello! I need to gather some information for your Return to Work program. Can we start with your name?
+**[10:00 AM] Operator:** Hi there! Thank you for reaching out today. Can you please confirm your name?
 
-**[10:00 AM] Client:** Sure! My name is John Smith.
+**[10:00 AM] Client:** Sure, it's John Smith.
 
-**[10:01 AM] Operator:** Thanks, John. Could you please provide your claim number?
+**[10:01 AM] Operator:** Great, John! What's your worker's number?
 
-**[10:01 AM] Client:** It's WC12345678.
+**[10:01 AM] Client:** It’s WS-56473.
 
-**[10:02 AM] Operator:** Great! What date did your injury occur?
+**[10:02 AM] Operator:** Thank you! Could you let me know the RTW Program number?
 
-**[10:02 AM] Client:** The injury happened on 2023-10-10.
+**[10:02 AM] Client:** It’s RTW-3010.
 
-**[10:03 AM] Operator:** Understood. Can you tell me the name of your employer?
+**[10:03 AM] Operator:** And what’s the employer's name?
 
-**[10:03 AM] Client:** I work at Acme Manufacturing Co.
+**[10:03 AM] Client:** The employer is ABC Manufacturing Ltd.
 
-**[10:04 AM] Operator:** Perfect. What is your pre-injury job title?
+**[10:04 AM] Operator:** Thanks! When did the injury occur?
 
-**[10:04 AM] Client:** I was a CNC Machinist.
+**[10:04 AM] Client:** The injury happened on 2023-10-04.
 
-**[10:05 AM] Operator:** Got it. Can you describe your pre-injury employment?
+**[10:05 AM] Operator:** Got it. What’s your date of program?
 
-**[10:05 AM] Client:** I was responsible for operating CNC machines, lifting up to 20kg, and ensuring quality control of processed materials.
+**[10:05 AM] Client:** The date of the program is 2023-10-10.
 
-**[10:06 AM] Operator:** Thanks for that detail. What was your work location prior to the injury?
+**[10:06 AM] Operator:** Looks good. Can you share the completion date for RTW Program Stage 1?
 
-**[10:06 AM] Client:** I was on the Production Floor in Building A.
+**[10:06 AM] Client:** That would be on 2023-11-15.
 
-**[10:07 AM] Operator:** Could you also provide the physical fax number and phone number of your employer?
+**[10:07 AM] Operator:** Thank you! Next, can you tell me about the current certificate of capacity's end date?
 
-**[10:07 AM] Client:** The fax number is 555-5678, and the phone number is 555-1234.
+**[10:07 AM] Client:** It ends on 2023-11-11.
 
-**[10:08 AM] Operator:** Thanks! Moving on, who is your nominated treating doctor and the date of their signature?
+**[10:08 AM] Operator:** And what’s your role in the company?
 
-**[10:08 AM] Client:** It's Dr. Mary Johnson, signed on 2023-10-12.
+**[10:08 AM] Client:** I'm a Production Supervisor.
 
-**[10:09 AM] Operator:** And what is the current capacity as per your medical certificate?
+**[10:09 AM] Operator:** Great! What duties are you performing in RTW Program Stage 1?
 
-**[10:09 AM] Client:** I have light duties only, able to work for 4 hours a day.
+**[10:09 AM] Client:** I'm assisting with administrative duties and supervising peers.
 
-**[10:10 AM] Operator:** Can you provide the current certificate of capacity's start and end date?
+**[10:10 AM] Operator:** Sounds good. How are you monitoring Stage 1?
 
-**[10:10 AM] Client:** The start date is 2023-10-10, and the end date is 2023-10-24.
+**[10:10 AM] Client:** Martha Lee is the monitoring person.
 
-**[10:11 AM] Operator:** Thank you. What are the treatment details?
+**[10:11 AM] Operator:** And what about the duties to be avoided in that stage?
 
-**[10:11 AM] Client:** I have weekly physiotherapy on Thursdays at 5 PM.
+**[10:11 AM] Client:** I need to avoid operating heavy machinery and lifting over 10kg.
 
-**[10:12 AM] Operator:** How about your return to work goals? What is the overall RTW goal in your case?
+**[10:12 AM] Operator:** Understood. Now moving to Stage 2, what’s the completion date for that?
 
-**[10:12 AM] Client:** My goal is to return to full duties as a CNC Machinist.
+**[10:12 AM] Client:** It’s set for 2023-12-20.
 
-**[10:13 AM] Operator:** Great! What are the specifics of the RTW Program?
+**[10:13 AM] Operator:** Thank you! Can you describe the duties to be performed in Stage 2?
 
-**[10:13 AM] Client:** It will have two stages. Stage 1 starts on 2023-10-15, where I'll assist with machine setups at Workstation 5, working 4 hours on M, W, and F. Stage 2 will run from 2023-10-21 to 2023-10-28, where I'll operate machines with supervision at Workstation 6 for 6 hours on the same days.
+**[10:13 AM] Client:** I’ll supervise a small team with minimal physical tasks.
 
-**[10:15 AM] Operator:** Sounds good! Who's monitoring your RTW and their contact details?
+**[10:14 AM] Operator:** What are the days and hours for Stage 2?
 
-**[10:15 AM] Client:** Mike Roberts will monitor Stage 1, and Tim Green will monitor Stage 2. Mike's email is mike.roberts@acmeco.com, and Tim's is tim.green@acmeco.com.
+**[10:14 AM] Client:** It’s Monday, Tuesday, and Wednesday; 6 hours each day.
 
-**[10:16 AM] Operator:** Can you provide the expected completion date for the RTW program? 
+**[10:15 AM] Operator:** Who is the monitoring person for Stage 2?
 
-**[10:16 AM] Client:** The program will be reviewed on 2023-10-30, with an expected return by 2023-11-01.
+**[10:15 AM] Client:** Michael Chan is the monitoring person.
 
-**[10:17 AM] Operator:** Lastly, is there anything else you’d like to mention?
+**[10:16 AM] Operator:** And what duties should be avoided in this stage?
 
-**[10:17 AM] Client:** Yes, John has shown significant improvement and is eager to return to work.
+**[10:16 AM] Client:** I should avoid lifting over 15kg and operating heavy machinery.
 
-**[10:18 AM] Operator:** Thank you so much for the detailed information, John! Is there anything else I can help you with today?
+**[10:17 AM] Operator:** Thanks for sharing that. When is the expected goal for your return to work?
 
-**[10:18 AM] Client:** No, that will be all. Thank you!
+**[10:17 AM] Client:** I expect to achieve my RTW goal by 2023-12-01.
 
-**[10:19 AM] Operator:** You're welcome! Have a great day and take care!
+**[10:18 AM] Operator:** Good to know! And what are the treatment appointment dates and times?
+
+**[10:18 AM] Client:** Every Wednesday at 10:00 AM for physiotherapy.
+
+**[10:19 AM] Operator:** Thanks for that information. Could you tell me the RTW Program Stage 3 role?
+
+**[10:19 AM] Client:** The role is again a Production Supervisor.
+
+**[10:20 AM] Operator:** Great! What’s the completion date for Stage 3?
+
+**[10:20 AM] Client:** It’s on 2024-01-31.
+
+**[10:21 AM] Operator:** And what are the duties to be performed in Stage 3?
+
+**[10:21 AM] Client:** I’ll perform full supervisory duties with safe lifting up to 20kg.
+
+**[10:22 AM] Operator:** Who will be monitoring Stage 3?
+
+**[10:22 AM] Client:** Sarah Kim will be the monitoring person.
+
+**[10:23 AM] Operator:** Lastly, do you have any further comments regarding your return?
+
+**[10:23 AM] Client:** Worker exhibits good motivation for a return to work.
+
+**[10:24 AM] Operator:** Thank you for your thorough responses, John! This information is really helpful. If you have any questions or need assistance, feel free to ask!
+
+**[10:24 AM] Client:** Appreciate it! Thanks for your help!

@@ -30,8 +30,18 @@
     "data_type": "string"
   },
   {
-    "question": "Telephone numbers",
-    "description": "Work, home, and mobile",
+    "question": "Work telephone",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Home telephone",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Mobile telephone",
+    "description": null,
     "data_type": "string"
   },
   {
@@ -65,8 +75,13 @@
     "data_type": "boolean"
   },
   {
-    "question": "Visa details",
-    "description": "Expiry date and visa type if applicable",
+    "question": "Visa expiry date",
+    "description": "If applicable",
+    "data_type": "date"
+  },
+  {
+    "question": "Visa type",
+    "description": "If applicable",
     "data_type": "string"
   },
   {
@@ -96,8 +111,13 @@
   },
   {
     "question": "Was this part of your body fully functional before the injury?",
-    "description": "If no, provide details",
+    "description": null,
     "data_type": "boolean"
+  },
+  {
+    "question": "Details if not fully functional",
+    "description": null,
+    "data_type": "string"
   },
   {
     "question": "Address where the injury happened",
@@ -116,28 +136,68 @@
   },
   {
     "question": "Did anyone see your injury occur?",
-    "description": "If yes, provide witness names",
+    "description": null,
     "data_type": "boolean"
   },
   {
-    "question": "Person at workplace you reported the injury to",
-    "description": "Name, job title, and date reported",
+    "question": "Witness names",
+    "description": null,
     "data_type": "string"
   },
   {
-    "question": "Nominated treating doctor",
-    "description": "Name and telephone",
+    "question": "Person at workplace you reported the injury to - name",
+    "description": null,
     "data_type": "string"
   },
   {
-    "question": "Previous similar injuries",
-    "description": "If yes, provide details",
+    "question": "Person at workplace you reported the injury to - job title",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Date reported to workplace",
+    "description": null,
+    "data_type": "date"
+  },
+  {
+    "question": "Nominated treating doctor name",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Nominated treating doctor telephone",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Have you previously suffered any similar injuries or conditions?",
+    "description": null,
     "data_type": "boolean"
+  },
+  {
+    "question": "Details of previous similar injuries or conditions",
+    "description": null,
+    "data_type": "string"
   },
   {
     "question": "Do you have a second job?",
-    "description": "Name of second employer, contact name, telephone",
+    "description": null,
     "data_type": "boolean"
+  },
+  {
+    "question": "Other employer name",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Other employer contact name",
+    "description": null,
+    "data_type": "string"
+  },
+  {
+    "question": "Other employer telephone",
+    "description": null,
+    "data_type": "string"
   },
   {
     "question": "Average weekly earnings from this job",
@@ -148,30 +208,5 @@
     "question": "Average weekly hours from this job",
     "description": null,
     "data_type": "number"
-  },
-  {
-    "question": "Declaration signature and date",
-    "description": "Worker’s confirmation that information is correct",
-    "data_type": "signature_date"
-  },
-  {
-    "question": "Authority signature and date",
-    "description": "Worker authorises release of medical/factual history",
-    "data_type": "signature_date"
-  },
-  {
-    "question": "Date form was provided to employer",
-    "description": null,
-    "data_type": "date"
-  },
-  {
-    "question": "Received by employer details",
-    "description": "Name, job title, signature, and date",
-    "data_type": "string"
-  },
-  {
-    "question": "Additional information",
-    "description": "From either worker or employer",
-    "data_type": "string"
   }
 ]

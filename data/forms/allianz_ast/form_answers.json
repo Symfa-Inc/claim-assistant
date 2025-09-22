@@ -9,232 +9,324 @@
     "question": "Claim number",
     "description": null,
     "data_type": "string",
-    "answer": "WC12345678"
+    "answer": "WC-2023-0421"
   },
   {
     "question": "Name of employer",
     "description": null,
     "data_type": "string",
-    "answer": "Acme Manufacturing Co."
+    "answer": "ABC Manufacturing Ltd."
   },
   {
     "question": "Date of injury",
     "description": null,
     "data_type": "date",
-    "answer": "2023-10-10"
+    "answer": "2023-10-04"
   },
   {
     "question": "Employer phone number",
     "description": null,
     "data_type": "string",
-    "answer": "555-1234"
+    "answer": "(555) 123-4567"
   },
   {
     "question": "Employer fax number",
     "description": null,
     "data_type": "string",
-    "answer": "555-5678"
+    "answer": "(555) 765-4321"
   },
   {
-    "question": "Employment details",
-    "description": "Section must be completed by the employer. Employment suitability to be confirmed by nominated treating doctor.",
-    "data_type": "table",
-    "answer": [
-      {
-        "job_title": "Machine Operator",
-        "employment_type": "Full-time",
-        "duration": "5 years"
-      },
-      {
-        "job_title": "Warehouse Associate",
-        "employment_type": "Part-time",
-        "duration": "2 years"
-      }
-    ]
+    "question": "Employment role",
+    "description": "Role title in suitable duties list",
+    "data_type": "string",
+    "answer": "Production Supervisor"
+  },
+  {
+    "question": "Is this employment currently suitable?",
+    "description": "Completed by nominated treating doctor",
+    "data_type": "boolean",
+    "answer": true
+  },
+  {
+    "question": "Employment modifications or timeframes",
+    "description": "If employment not fully suitable",
+    "data_type": "string",
+    "answer": "Part-time hours; avoid heavy lifting for 6 weeks."
   },
   {
     "question": "Further comments",
     "description": null,
     "data_type": "string",
-    "answer": "John has shown significant improvement and is eager to return to work."
+    "answer": "Worker exhibits good motivation for a return to work."
   },
   {
     "question": "Doctor’s name",
     "description": null,
     "data_type": "string",
-    "answer": "Dr. Mary Johnson"
-  },
-  {
-    "question": "Doctor’s signature",
-    "description": null,
-    "data_type": "string",
-    "answer": "DrMJohnson"
-  },
-  {
-    "question": "Date (Doctor’s signature)",
-    "description": null,
-    "data_type": "date",
-    "answer": "2023-10-12"
+    "answer": "Dr. Emily Johnson"
   },
   {
     "question": "Date of program",
-    "description": "Date when the RTW program is created.",
+    "description": "Date when the RTW program is created",
     "data_type": "date",
-    "answer": "2023-10-15"
+    "answer": "2023-10-10"
   },
   {
     "question": "Date program will be reviewed",
     "description": null,
     "data_type": "date",
-    "answer": "2023-10-30"
+    "answer": "2023-10-17"
   },
   {
     "question": "RTW Program number",
     "description": null,
     "data_type": "string",
-    "answer": "RTW-2023-003"
-  },
-  {
-    "question": "Date of injury (RTW Program)",
-    "description": null,
-    "data_type": "date",
-    "answer": "2023-10-10"
-  },
-  {
-    "question": "Worker’s name",
-    "description": null,
-    "data_type": "string",
-    "answer": "John Smith"
+    "answer": "RTW-3010"
   },
   {
     "question": "Worker’s number",
     "description": null,
     "data_type": "string",
-    "answer": "1001"
+    "answer": "WS-56473"
   },
   {
     "question": "Employer/company",
     "description": null,
     "data_type": "string",
-    "answer": "Acme Manufacturing Co."
+    "answer": "ABC Manufacturing Ltd."
   },
   {
     "question": "Pre-injury job title",
     "description": null,
     "data_type": "string",
-    "answer": "CNC Machinist"
+    "answer": "Production Team Lead"
   },
   {
     "question": "Pre-injury location",
     "description": null,
     "data_type": "string",
-    "answer": "Building A, Production Floor"
+    "answer": "Factory Floor A"
   },
   {
-    "question": "Pre-injury days and hours",
-    "description": "Schedule of days and hours worked before injury.",
+    "question": "Pre-injury days",
+    "description": "Schedule of days worked before injury",
     "data_type": "table",
-    "answer": [
-      {
-        "day": "Monday",
-        "hours": "8AM-5PM"
-      },
-      {
-        "day": "Wednesday",
-        "hours": "8AM-5PM"
-      },
-      {
-        "day": "Friday",
-        "hours": "8AM-5PM"
-      }
-    ]
+    "answer": "M, T, W, Th, F"
+  },
+  {
+    "question": "Pre-injury hours",
+    "description": "Hours worked before injury",
+    "data_type": "string",
+    "answer": "40 hours per week"
   },
   {
     "question": "Description of pre-injury employment",
-    "description": "Includes physical requirements associated with work tasks (e.g., lifting up to 20kg).",
+    "description": "Includes physical requirements (e.g., lifting up to 20kg)",
     "data_type": "string",
-    "answer": "Responsible for operating CNC machines, lifting up to 20kg, ensuring quality control of processed materials."
+    "answer": "Managed production line workers and lifted loads up to 15kg."
   },
   {
     "question": "Overall RTW goal",
     "description": null,
     "data_type": "string",
-    "answer": "Return to full duties as CNC Machinist"
+    "answer": "Full reinstatement to full duties."
   },
   {
     "question": "Date expected to achieve RTW goal",
     "description": null,
     "data_type": "date",
-    "answer": "2023-11-01"
+    "answer": "2023-12-01"
   },
   {
-    "question": "Current certificate of capacity (start and end date)",
-    "description": "Dates covered by medical certificate.",
-    "data_type": "date_range",
-    "answer": {
-      "start_date": "2023-10-10",
-      "end_date": "2023-10-24"
-    }
+    "question": "Current certificate of capacity start date",
+    "description": null,
+    "data_type": "date",
+    "answer": "2023-10-11"
+  },
+  {
+    "question": "Current certificate of capacity end date",
+    "description": null,
+    "data_type": "date",
+    "answer": "2023-11-11"
   },
   {
     "question": "Current capacity (as per certificate)",
     "description": null,
     "data_type": "string",
-    "answer": "Light duties only, able to work for 4 hours a day."
+    "answer": "Able to work part-time, no heavy lifting."
   },
   {
-    "question": "RTW Program Stage (1–3) details",
-    "description": "For each stage: role, location, commencement date, completion date, person monitoring RTW, contact details, RTW days/hours, duties to be performed, duties to be avoided.",
-    "data_type": "table",
-    "answer": [
-      {
-        "stage": 1,
-        "role": "Machine Operator",
-        "location": "Workstation 5",
-        "commencement_date": "2023-10-15",
-        "completion_date": "2023-10-20",
-        "person_monitoring_RTW": "Mike Roberts",
-        "contact_details": "mike.roberts@acmeco.com",
-        "RTW_days_hours": "M,W,F, 4 hours",
-        "duties_to_be_performed": "Assisting with machine setups",
-        "duties_to_be_avoided": "Heavy lifting and repetitive motions"
-      },
-      {
-        "stage": 2,
-        "role": "Machine Operator",
-        "location": "Workstation 6",
-        "commencement_date": "2023-10-21",
-        "completion_date": "2023-10-28",
-        "person_monitoring_RTW": "Tim Green",
-        "contact_details": "tim.green@acmeco.com",
-        "RTW_days_hours": "M,W,F, 6 hours",
-        "duties_to_be_performed": "Operating machines with supervision",
-        "duties_to_be_avoided": "Lifting over 10kg"
-      }
-    ]
-  },
-  {
-    "question": "Treatment details",
-    "description": "Appointments scheduled outside work hours unless agreed to by insurer.",
+    "question": "RTW Program Stage 1 role",
+    "description": null,
     "data_type": "string",
-    "answer": "Weekly physiotherapy on Thursdays at 5 PM."
+    "answer": "Assistant Supervisor"
   },
   {
-    "question": "Worker’s signature and date",
+    "question": "RTW Program Stage 1 location",
     "description": null,
-    "data_type": "signature_date",
-    "answer": "John Smith, 2023-10-13"
+    "data_type": "string",
+    "answer": "Office Area B"
   },
   {
-    "question": "Employer representative’s signature and date",
+    "question": "RTW Program Stage 1 commencement date",
     "description": null,
-    "data_type": "signature_date",
-    "answer": "Jane Doe, 2023-10-14"
+    "data_type": "date",
+    "answer": "2023-10-15"
   },
   {
-    "question": "Nominated treating doctor’s signature and date",
+    "question": "RTW Program Stage 1 completion date",
     "description": null,
-    "data_type": "signature_date",
-    "answer": "Dr. Mary Johnson, 2023-10-12"
+    "data_type": "date",
+    "answer": "2023-11-15"
+  },
+  {
+    "question": "RTW Program Stage 1 monitoring person",
+    "description": null,
+    "data_type": "string",
+    "answer": "Martha Lee"
+  },
+  {
+    "question": "RTW Program Stage 1 contact details",
+    "description": null,
+    "data_type": "string",
+    "answer": "(555) 987-6543"
+  },
+  {
+    "question": "RTW Program Stage 1 days and hours",
+    "description": null,
+    "data_type": "table",
+    "answer": "M, W, F; 4 hours each day"
+  },
+  {
+    "question": "RTW Program Stage 1 duties to be performed",
+    "description": null,
+    "data_type": "string",
+    "answer": "Assist with administrative duties and help supervise peers."
+  },
+  {
+    "question": "RTW Program Stage 1 duties to be avoided",
+    "description": null,
+    "data_type": "string",
+    "answer": "Avoid heavy machinery operation and lifting over 10kg."
+  },
+  {
+    "question": "RTW Program Stage 2 role",
+    "description": null,
+    "data_type": "string",
+    "answer": "Senior Production Associate"
+  },
+  {
+    "question": "RTW Program Stage 2 location",
+    "description": null,
+    "data_type": "string",
+    "answer": "Production Floor B"
+  },
+  {
+    "question": "RTW Program Stage 2 commencement date",
+    "description": null,
+    "data_type": "date",
+    "answer": "2023-11-20"
+  },
+  {
+    "question": "RTW Program Stage 2 completion date",
+    "description": null,
+    "data_type": "date",
+    "answer": "2023-12-20"
+  },
+  {
+    "question": "RTW Program Stage 2 monitoring person",
+    "description": null,
+    "data_type": "string",
+    "answer": "Michael Chan"
+  },
+  {
+    "question": "RTW Program Stage 2 contact details",
+    "description": null,
+    "data_type": "string",
+    "answer": "(555) 654-3210"
+  },
+  {
+    "question": "RTW Program Stage 2 days and hours",
+    "description": null,
+    "data_type": "table",
+    "answer": "M, T, W; 6 hours each day"
+  },
+  {
+    "question": "RTW Program Stage 2 duties to be performed",
+    "description": null,
+    "data_type": "string",
+    "answer": "Supervise a small team with minimal physical tasks."
+  },
+  {
+    "question": "RTW Program Stage 2 duties to be avoided",
+    "description": null,
+    "data_type": "string",
+    "answer": "Lifting over 15kg and operating heavy machinery."
+  },
+  {
+    "question": "RTW Program Stage 3 role",
+    "description": null,
+    "data_type": "string",
+    "answer": "Production Supervisor"
+  },
+  {
+    "question": "RTW Program Stage 3 location",
+    "description": null,
+    "data_type": "string",
+    "answer": "Factory Floor A"
+  },
+  {
+    "question": "RTW Program Stage 3 commencement date",
+    "description": null,
+    "data_type": "date",
+    "answer": "2024-01-02"
+  },
+  {
+    "question": "RTW Program Stage 3 completion date",
+    "description": null,
+    "data_type": "date",
+    "answer": "2024-01-31"
+  },
+  {
+    "question": "RTW Program Stage 3 monitoring person",
+    "description": null,
+    "data_type": "string",
+    "answer": "Sarah Kim"
+  },
+  {
+    "question": "RTW Program Stage 3 contact details",
+    "description": null,
+    "data_type": "string",
+    "answer": "(555) 321-1234"
+  },
+  {
+    "question": "RTW Program Stage 3 days and hours",
+    "description": null,
+    "data_type": "table",
+    "answer": "M-F; 8 hours each day"
+  },
+  {
+    "question": "RTW Program Stage 3 duties to be performed",
+    "description": null,
+    "data_type": "string",
+    "answer": "Full supervisory duties with safe lifting up to 20kg."
+  },
+  {
+    "question": "RTW Program Stage 3 duties to be avoided",
+    "description": null,
+    "data_type": "string",
+    "answer": "Avoid tasks involving excessive physical strain."
+  },
+  {
+    "question": "Treatment type",
+    "description": null,
+    "data_type": "string",
+    "answer": "Physiotherapy"
+  },
+  {
+    "question": "Treatment appointment dates and times",
+    "description": null,
+    "data_type": "string",
+    "answer": "Every Wednesday at 10:00 AM."
   }
 ]
