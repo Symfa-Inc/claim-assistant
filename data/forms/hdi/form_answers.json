@@ -1,0 +1,68 @@
+[
+  {
+    "question": "Insured name",
+    "description": null,
+    "data_type": "string",
+    "answer": "Acme Corp."
+  },
+  {
+    "question": "Policy number",
+    "description": null,
+    "data_type": "string",
+    "answer": "WC123456789"
+  },
+  {
+    "question": "Contact person",
+    "description": null,
+    "data_type": "string",
+    "answer": "John Smith"
+  },
+  {
+    "question": "Primary phone",
+    "description": null,
+    "data_type": "string",
+    "answer": "555-123-4567"
+  },
+  {
+    "question": "Secondary phone",
+    "description": null,
+    "data_type": "string",
+    "answer": "555-765-4321"
+  },
+  {
+    "question": "Email",
+    "description": null,
+    "data_type": "string",
+    "answer": "john.smith@acmecorp.com"
+  },
+  {
+    "question": "Address line",
+    "description": null,
+    "data_type": "string",
+    "answer": "123 Business Rd."
+  },
+  {
+    "question": "City",
+    "description": null,
+    "data_type": "string",
+    "answer": "Industrial City"
+  },
+  {
+    "question": "State",
+    "description": null,
+    "data_type": "string",
+    "answer": "CA"
+  },
+  {
+    "question": "Zip code",
+    "description": null,
+    "data_type": "string",
+    "answer": "90210"
+  },
+  {
+    "question": "Brief description of incident",
+    "description": "Provide a short summary of what happened",
+    "data_type": "string",
+    "answer": "Employee slipped on wet floor while transporting materials in the warehouse."
+  }
+]

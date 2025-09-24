@@ -1,0 +1,374 @@
+[
+  {
+    "question": "Reporter title",
+    "description": null,
+    "data_type": "string",
+    "answer": "Mr."
+  },
+  {
+    "question": "Reporter first name",
+    "description": null,
+    "data_type": "string",
+    "answer": "John"
+  },
+  {
+    "question": "Reporter last name",
+    "description": null,
+    "data_type": "string",
+    "answer": "Smith"
+  },
+  {
+    "question": "Reporter company name",
+    "description": null,
+    "data_type": "string",
+    "answer": "Smith Insurance Group"
+  },
+  {
+    "question": "Reporter mailing address",
+    "description": "Street/Post Office Box",
+    "data_type": "string",
+    "answer": "123 Main St"
+  },
+  {
+    "question": "Reporter city",
+    "description": null,
+    "data_type": "string",
+    "answer": "Springfield"
+  },
+  {
+    "question": "Reporter state/province",
+    "description": null,
+    "data_type": "string",
+    "answer": "IL"
+  },
+  {
+    "question": "Reporter country",
+    "description": null,
+    "data_type": "string",
+    "answer": "USA"
+  },
+  {
+    "question": "Reporter zip/postal code",
+    "description": null,
+    "data_type": "string",
+    "answer": "62701"
+  },
+  {
+    "question": "Reporter contact preference",
+    "description": "Best way to contact: Telephone or Email",
+    "data_type": "enum",
+    "answer": "Email"
+  },
+  {
+    "question": "Reporter telephone",
+    "description": "Include country and area code",
+    "data_type": "string",
+    "answer": "+1-217-555-0199"
+  },
+  {
+    "question": "Reporter email",
+    "description": null,
+    "data_type": "string",
+    "answer": "john.smith@smithinsurance.com"
+  },
+  {
+    "question": "Reporter reference number",
+    "description": null,
+    "data_type": "string",
+    "answer": "REF123456"
+  },
+  {
+    "question": "Reporter role in relation to loss",
+    "description": "Insured/Policy holder, Agent/Broker, Claimant, Claimant Agent/Broker, Other",
+    "data_type": "enum",
+    "answer": "Agent/Broker"
+  },
+  {
+    "question": "Insured/policy holder name",
+    "description": null,
+    "data_type": "string",
+    "answer": "Alice Johnson"
+  },
+  {
+    "question": "Policy number",
+    "description": null,
+    "data_type": "string",
+    "answer": "XYZ987654321"
+  },
+  {
+    "question": "Insurance company name",
+    "description": null,
+    "data_type": "string",
+    "answer": "Comprehensive Cover Co."
+  },
+  {
+    "question": "Type of policy",
+    "description": "Options: Auto/Motor, General/Public Liability, Property, Workers Compensation, Accident & Health, Marine, Art, Equine/Livestock, Aerospace, Cyber, Professional/Financial (D&O, E&O), Environmental/Pollution, Other",
+    "data_type": "enum",
+    "answer": "Workers Compensation"
+  },
+  {
+    "question": "Insured contact title",
+    "description": null,
+    "data_type": "string",
+    "answer": "Ms."
+  },
+  {
+    "question": "Insured contact first name",
+    "description": null,
+    "data_type": "string",
+    "answer": "Alice"
+  },
+  {
+    "question": "Insured contact last name",
+    "description": null,
+    "data_type": "string",
+    "answer": "Johnson"
+  },
+  {
+    "question": "Insured contact mailing address",
+    "description": "Street/Post Office Box",
+    "data_type": "string",
+    "answer": "456 Elm St"
+  },
+  {
+    "question": "Insured contact city",
+    "description": null,
+    "data_type": "string",
+    "answer": "Springfield"
+  },
+  {
+    "question": "Insured contact state/province",
+    "description": null,
+    "data_type": "string",
+    "answer": "IL"
+  },
+  {
+    "question": "Insured contact country",
+    "description": null,
+    "data_type": "string",
+    "answer": "USA"
+  },
+  {
+    "question": "Insured contact zip/postal code",
+    "description": null,
+    "data_type": "string",
+    "answer": "62702"
+  },
+  {
+    "question": "Insured contact telephone",
+    "description": "Include country and area code",
+    "data_type": "string",
+    "answer": "+1-217-555-1234"
+  },
+  {
+    "question": "Insured contact email",
+    "description": null,
+    "data_type": "string",
+    "answer": "alice.johnson@email.com"
+  },
+  {
+    "question": "Date of loss",
+    "description": "Occurrence or claims made date (dd/mm/yyyy)",
+    "data_type": "date",
+    "answer": "15/10/2023"
+  },
+  {
+    "question": "Loss description",
+    "description": null,
+    "data_type": "string",
+    "answer": "Employee injured while lifting heavy equipment, resulting in back strain."
+  },
+  {
+    "question": "Automobile/motor vehicle accident?",
+    "description": null,
+    "data_type": "boolean",
+    "answer": false
+  },
+  {
+    "question": "Loss location street",
+    "description": null,
+    "data_type": "string",
+    "answer": "789 Industrial Way"
+  },
+  {
+    "question": "Loss location city",
+    "description": null,
+    "data_type": "string",
+    "answer": "Springfield"
+  },
+  {
+    "question": "Loss location state/province",
+    "description": null,
+    "data_type": "string",
+    "answer": "IL"
+  },
+  {
+    "question": "Loss location country",
+    "description": null,
+    "data_type": "string",
+    "answer": "USA"
+  },
+  {
+    "question": "Loss location zip/postal code",
+    "description": null,
+    "data_type": "string",
+    "answer": "62703"
+  },
+  {
+    "question": "Witnesses to loss?",
+    "description": "If yes, provide names and contact details",
+    "data_type": "boolean",
+    "answer": true
+  },
+  {
+    "question": "Authorities notified?",
+    "description": "If yes, provide type of authority and report number",
+    "data_type": "boolean",
+    "answer": false
+  },
+  {
+    "question": "Has suit been filed?",
+    "description": "If yes, attach suit papers when reporting",
+    "data_type": "boolean",
+    "answer": false
+  },
+  {
+    "question": "Additional information",
+    "description": null,
+    "data_type": "string",
+    "answer": "The employee is currently undergoing physical therapy and is expected to miss at least four weeks of work."
+  },
+  {
+    "question": "Claimant title",
+    "description": null,
+    "data_type": "string",
+    "answer": "Ms."
+  },
+  {
+    "question": "Claimant first name",
+    "description": null,
+    "data_type": "string",
+    "answer": "Sara"
+  },
+  {
+    "question": "Claimant last name",
+    "description": null,
+    "data_type": "string",
+    "answer": "Jones"
+  },
+  {
+    "question": "Claimant mailing address",
+    "description": "Street/Post Office Box",
+    "data_type": "string",
+    "answer": "321 Maple Ave"
+  },
+  {
+    "question": "Claimant city",
+    "description": null,
+    "data_type": "string",
+    "answer": "Springfield"
+  },
+  {
+    "question": "Claimant state/province",
+    "description": null,
+    "data_type": "string",
+    "answer": "IL"
+  },
+  {
+    "question": "Claimant country",
+    "description": null,
+    "data_type": "string",
+    "answer": "USA"
+  },
+  {
+    "question": "Claimant zip/postal code",
+    "description": null,
+    "data_type": "string",
+    "answer": "62704"
+  },
+  {
+    "question": "Claimant telephone",
+    "description": "Include country and area code",
+    "data_type": "string",
+    "answer": "+1-217-555-8888"
+  },
+  {
+    "question": "Claimant email",
+    "description": null,
+    "data_type": "string",
+    "answer": "sara.jones@email.com"
+  },
+  {
+    "question": "Claim contact role",
+    "description": "Reporter, Insured, or Other",
+    "data_type": "enum",
+    "answer": "Claimant"
+  },
+  {
+    "question": "Claim contact title",
+    "description": null,
+    "data_type": "string",
+    "answer": "Ms."
+  },
+  {
+    "question": "Claim contact first name",
+    "description": null,
+    "data_type": "string",
+    "answer": "Sara"
+  },
+  {
+    "question": "Claim contact last name",
+    "description": null,
+    "data_type": "string",
+    "answer": "Jones"
+  },
+  {
+    "question": "Claim contact company name",
+    "description": null,
+    "data_type": "string",
+    "answer": "N/A"
+  },
+  {
+    "question": "Claim contact mailing address",
+    "description": "Street/Post Office Box",
+    "data_type": "string",
+    "answer": "321 Maple Ave"
+  },
+  {
+    "question": "Claim contact city",
+    "description": null,
+    "data_type": "string",
+    "answer": "Springfield"
+  },
+  {
+    "question": "Claim contact state/province",
+    "description": null,
+    "data_type": "string",
+    "answer": "IL"
+  },
+  {
+    "question": "Claim contact country",
+    "description": null,
+    "data_type": "string",
+    "answer": "USA"
+  },
+  {
+    "question": "Claim contact zip/postal code",
+    "description": null,
+    "data_type": "string",
+    "answer": "62704"
+  },
+  {
+    "question": "Claim contact telephone",
+    "description": "Include country and area code",
+    "data_type": "string",
+    "answer": "+1-217-555-8888"
+  },
+  {
+    "question": "Claim contact email",
+    "description": null,
+    "data_type": "string",
+    "answer": "sara.jones@email.com"
+  }
+]
