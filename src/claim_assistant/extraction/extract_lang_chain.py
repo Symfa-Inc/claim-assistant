@@ -3,11 +3,11 @@ from uuid import uuid4
 
 import requests
 
-from claim_assistant.extraction.data_form_classes import AllianzFormData
-from claim_assistant.extraction.data_form_classes import DWCFormData
 from claim_assistant.extraction.data_form_classes import WorkSafeFormData
 
-conversation_path = "/home/maken/symfa/claim-assistant/data/forms/work_safe/conversation.txt"
+conversation_path = (
+    "/home/maken/symfa/claim-assistant/data/forms/work_safe/conversation.txt"
+)
 file_name = "work_safe_form"
 
 # Get txt bytes
