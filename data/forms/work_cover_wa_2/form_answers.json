@@ -2,356 +2,427 @@
   {
     "question": "Insurer name",
     "description": null,
-    "data_type": "string"
+    "data_type": "string",
+    "answer": "Quest Insurance Ltd."
   },
   {
     "question": "Claim number",
     "description": null,
-    "data_type": "string"
+    "data_type": "string",
+    "answer": "CLM-9876543"
   },
   {
     "question": "ANZSIC code",
     "description": null,
-    "data_type": "string"
+    "data_type": "string",
+    "answer": "7212"
   },
   {
     "question": "Policy number",
     "description": null,
-    "data_type": "string"
+    "data_type": "string",
+    "answer": "POL-1234567890"
   },
   {
     "question": "WorkCover number",
     "description": null,
-    "data_type": "string"
+    "data_type": "string",
+    "answer": "WC-2345678"
   },
   {
     "question": "Has employer contacted medical practitioner?",
     "description": null,
-    "data_type": "boolean"
+    "data_type": "boolean",
+    "answer": true
   },
   {
     "question": "Estimated time off work",
     "description": "Options: less than one day, 1–4 work days, 5–9 work days, 10–20 work days, more than 20 work days, fatality",
-    "data_type": "enum"
+    "data_type": "enum",
+    "answer": "5–9 work days"
   },
   {
     "question": "Employer name (policy holder)",
     "description": null,
-    "data_type": "string"
+    "data_type": "string",
+    "answer": "Big Tech Industries"
   },
   {
     "question": "Trading as (if different)",
     "description": null,
-    "data_type": "string"
+    "data_type": "string",
+    "answer": "Big Tech Widgets"
   },
   {
     "question": "Employer ABN",
     "description": null,
-    "data_type": "string"
+    "data_type": "string",
+    "answer": "82 123 456 789"
   },
   {
     "question": "Employer address",
     "description": "Street, postcode",
-    "data_type": "string"
+    "data_type": "string",
+    "answer": "123 Innovation Drive, 2000"
   },
   {
     "question": "Employer contact name",
     "description": null,
-    "data_type": "string"
+    "data_type": "string",
+    "answer": "Jane Smith"
   },
   {
     "question": "Employer contact phone",
     "description": null,
-    "data_type": "string"
+    "data_type": "string",
+    "answer": "02 9876 5432"
   },
   {
     "question": "Employer contact email",
     "description": null,
-    "data_type": "string"
+    "data_type": "string",
+    "answer": "jane.smith@bigtech.com"
   },
   {
     "question": "Address of injured worker’s usual workplace/base",
     "description": null,
-    "data_type": "string"
+    "data_type": "string",
+    "answer": "45 Worker Lane, 2000"
   },
   {
     "question": "Major activity of workplace",
     "description": "e.g., sheep farming, plumbing",
-    "data_type": "string"
+    "data_type": "string",
+    "answer": "Manufacturing Widgets"
   },
   {
     "question": "Date employer received completed claim form",
     "description": null,
-    "data_type": "date"
+    "data_type": "date",
+    "answer": "2023-10-10"
   },
   {
     "question": "Date employer sent claim form to insurer",
     "description": null,
-    "data_type": "date"
+    "data_type": "date",
+    "answer": "2023-10-12"
   },
   {
     "question": "Date employer sent First Certificate of Capacity",
     "description": null,
-    "data_type": "date"
+    "data_type": "date",
+    "answer": "2023-10-10"
   },
   {
     "question": "Worker surname",
     "description": null,
-    "data_type": "string"
+    "data_type": "string",
+    "answer": "Anderson"
   },
   {
     "question": "Worker other names",
     "description": null,
-    "data_type": "string"
+    "data_type": "string",
+    "answer": "Michael John"
   },
   {
     "question": "Worker address",
     "description": "Street, city/town, postcode",
-    "data_type": "string"
+    "data_type": "string",
+    "answer": "789 worker Road, Sydney, 2000"
   },
   {
     "question": "Worker email",
     "description": null,
-    "data_type": "string"
+    "data_type": "string",
+    "answer": "michael.anderson@email.com"
   },
   {
     "question": "Worker daytime contact number",
     "description": null,
-    "data_type": "string"
+    "data_type": "string",
+    "answer": "0400 123 456"
   },
   {
     "question": "Occupation",
     "description": "e.g., first class welder",
-    "data_type": "string"
+    "data_type": "string",
+    "answer": "Machine Operator"
   },
   {
     "question": "Main tasks/duties performed",
     "description": "e.g., welding of high-pressure steam pipes",
-    "data_type": "string"
+    "data_type": "string",
+    "answer": "Operating CNC machines to cut materials."
   },
   {
     "question": "Employment type",
     "description": "Full time, part time, permanent, temporary, casual",
-    "data_type": "enum"
+    "data_type": "enum",
+    "answer": "Full time"
   },
   {
     "question": "Worker date of birth",
     "description": null,
-    "data_type": "date"
+    "data_type": "date",
+    "answer": "1985-05-15"
   },
   {
     "question": "Worker gender",
     "description": "Male, Female, Unspecified",
-    "data_type": "enum"
+    "data_type": "enum",
+    "answer": "Male"
   },
   {
     "question": "Preferred language (if not English)",
     "description": null,
-    "data_type": "string"
+    "data_type": "string",
+    "answer": "Spanish"
   },
   {
     "question": "Worker role at time of injury",
     "description": "Direct employee, working director, contractor, employee of contractor, subcontractor, visa worker, other",
-    "data_type": "enum"
+    "data_type": "enum",
+    "answer": "Direct employee"
   },
   {
     "question": "Other employment?",
     "description": "Does worker have another job?",
-    "data_type": "boolean"
+    "data_type": "boolean",
+    "answer": false
   },
   {
     "question": "Other employer name",
     "description": null,
-    "data_type": "string"
+    "data_type": "string",
+    "answer": "N/A"
   },
   {
     "question": "Other employer phone",
     "description": null,
-    "data_type": "string"
+    "data_type": "string",
+    "answer": "N/A"
   },
   {
     "question": "Other employment hours per week",
     "description": null,
-    "data_type": "number"
+    "data_type": "number",
+    "answer": 0
   },
   {
     "question": "Day of occurrence",
     "description": null,
-    "data_type": "date"
+    "data_type": "date",
+    "answer": "2023-10-09"
   },
   {
     "question": "Time of occurrence",
     "description": "AM/PM",
-    "data_type": "time"
+    "data_type": "time",
+    "answer": "10:30 AM"
   },
   {
     "question": "Address of occurrence",
     "description": null,
-    "data_type": "string"
+    "data_type": "string",
+    "answer": "45 Worker Lane, 2000"
   },
   {
     "question": "Where did the occurrence happen?",
     "description": "e.g., store room, machinery shop",
-    "data_type": "string"
+    "data_type": "string",
+    "answer": "Production floor"
   },
   {
     "question": "What were you doing at the time?",
     "description": null,
-    "data_type": "string"
+    "data_type": "string",
+    "answer": "Operating the CNC machine."
   },
   {
     "question": "Did you have to stop working?",
     "description": null,
-    "data_type": "boolean"
+    "data_type": "boolean",
+    "answer": true
   },
   {
     "question": "If stopped working, date",
     "description": null,
-    "data_type": "date"
+    "data_type": "date",
+    "answer": "2023-10-09"
   },
   {
     "question": "If stopped working, time",
     "description": "AM/PM",
-    "data_type": "time"
+    "data_type": "time",
+    "answer": "11:00 AM"
   },
   {
     "question": "Duty status at time of occurrence",
     "description": "e.g., working at normal workplace, working from home, on break, road traffic accident, commuting",
-    "data_type": "enum"
+    "data_type": "enum",
+    "answer": "Working at normal workplace"
   },
   {
     "question": "Occurrence action involved",
     "description": null,
-    "data_type": "string"
+    "data_type": "string",
+    "answer": "Manipulating machine controls."
   },
   {
     "question": "Occurrence object/machine/substance",
     "description": null,
-    "data_type": "string"
+    "data_type": "string",
+    "answer": "CNC lathe machine."
   },
   {
     "question": "Nature of injury or disease",
     "description": null,
-    "data_type": "string"
+    "data_type": "string",
+    "answer": "Repetitive strain injury."
   },
   {
     "question": "Bodily location of injury/disease",
     "description": null,
-    "data_type": "string"
+    "data_type": "string",
+    "answer": "Wrist and forearm."
   },
   {
     "question": "Normal working hours start",
     "description": "AM/PM",
-    "data_type": "time"
+    "data_type": "time",
+    "answer": "08:00 AM"
   },
   {
     "question": "Normal working hours finish",
     "description": null,
-    "data_type": "time"
+    "data_type": "time",
+    "answer": "04:30 PM"
   },
   {
     "question": "When did you first report the occurrence?",
     "description": "Date and time",
-    "data_type": "datetime"
+    "data_type": "datetime",
+    "answer": "2023-10-09T11:15:00"
   },
   {
     "question": "If not reported immediately, reason",
     "description": null,
-    "data_type": "string"
+    "data_type": "string",
+    "answer": "Assumed it was just fatigue."
   },
   {
     "question": "Report recipient name",
     "description": null,
-    "data_type": "string"
+    "data_type": "string",
+    "answer": "John Green"
   },
   {
     "question": "Report recipient position",
     "description": null,
-    "data_type": "string"
+    "data_type": "string",
+    "answer": "Superintendent"
   },
   {
     "question": "Report recipient phone",
     "description": null,
-    "data_type": "string"
+    "data_type": "string",
+    "answer": "02 8765 4321"
   },
   {
     "question": "Witness 1 name",
     "description": null,
-    "data_type": "string"
+    "data_type": "string",
+    "answer": "Alice Brown"
   },
   {
     "question": "Witness 1 daytime phone",
     "description": null,
-    "data_type": "string"
+    "data_type": "string",
+    "answer": "02 2345 6789"
   },
   {
     "question": "Witness 2 name",
     "description": null,
-    "data_type": "string"
+    "data_type": "string",
+    "answer": "Bob White"
   },
   {
     "question": "Witness 2 daytime phone",
     "description": null,
-    "data_type": "string"
+    "data_type": "string",
+    "answer": "04 1234 5678"
   },
   {
     "question": "When did you first seek medical attention?",
     "description": "Date and time",
-    "data_type": "datetime"
+    "data_type": "datetime",
+    "answer": "2023-10-10T09:00:00"
   },
   {
     "question": "Reason for delay in medical attention",
     "description": null,
-    "data_type": "string"
+    "data_type": "string",
+    "answer": "Sought advice from colleagues first."
   },
   {
     "question": "Was the body part healthy before this occurrence?",
     "description": null,
-    "data_type": "boolean"
+    "data_type": "boolean",
+    "answer": true
   },
   {
     "question": "If not healthy, details",
     "description": null,
-    "data_type": "string"
+    "data_type": "string",
+    "answer": "N/A"
   },
   {
     "question": "Is the present injury completely related to this occurrence?",
     "description": null,
-    "data_type": "boolean"
+    "data_type": "boolean",
+    "answer": true
   },
   {
     "question": "If not completely related, details",
     "description": null,
-    "data_type": "string"
+    "data_type": "string",
+    "answer": "N/A"
   },
   {
     "question": "Similar injury details prior to this occurrence",
     "description": null,
-    "data_type": "string"
+    "data_type": "string",
+    "answer": "N/A"
   },
   {
     "question": "Usual medical practitioner name",
     "description": null,
-    "data_type": "string"
+    "data_type": "string",
+    "answer": "Dr. Sarah Lee"
   },
   {
     "question": "Usual medical practitioner address",
     "description": null,
-    "data_type": "string"
+    "data_type": "string",
+    "answer": "456 Health St., 2000"
   },
   {
     "question": "Usual medical practitioner phone",
     "description": null,
-    "data_type": "string"
+    "data_type": "string",
+    "answer": "02 3456 7890"
   },
   {
     "question": "Concurrent claims?",
     "description": "Are you claiming from another source?",
-    "data_type": "boolean"
+    "data_type": "boolean",
+    "answer": false
   },
   {
     "question": "If yes, from whom?",
     "description": null,
-    "data_type": "string"
+    "data_type": "string",
+    "answer": "N/A"
   }
 ]

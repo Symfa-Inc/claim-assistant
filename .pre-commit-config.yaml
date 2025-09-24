@@ -51,7 +51,7 @@ repos:
   rev: v1.18.1
   hooks:
   - id: mypy
-    args: [--config-file, pyproject.toml]
+    args: [--config-file, pyproject.toml, --non-interactive]
 
 # exclude given directories from checking
 exclude: |

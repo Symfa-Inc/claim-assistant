@@ -1,131 +1,99 @@
-**Operator**: 10:00 AM
-Hi there! I’ll need some details to help you with your RTW program. Could you please provide your name?
+**[10:00 AM] Operator:** Hi there! Thank you for reaching out today. Can you please confirm your name?
 
-**Client**: 10:01 AM
-Sure! My name is Alex Martinez.
+**[10:00 AM] Client:** Sure, it's John Smith.
 
-**Operator**: 10:01 AM
-Thanks, Alex. Can you tell me the date of your injury?
+**[10:01 AM] Operator:** Great, John! What's your worker's number?
 
-**Client**: 10:02 AM
-It happened on March 15, 2023.
+**[10:01 AM] Client:** It’s WS-56473.
 
-**Operator**: 10:02 AM
-Got it. What’s your RTW Program number?
+**[10:02 AM] Operator:** Thank you! Could you let me know the RTW Program number?
 
-**Client**: 10:03 AM
-It’s 456738.
+**[10:02 AM] Client:** It’s RTW-3010.
 
-**Operator**: 10:03 AM
-And what’s your current capacity as per the certificate?
+**[10:03 AM] Operator:** And what’s the employer's name?
 
-**Client**: 10:04 AM
-I'm currently at 50% capacity.
+**[10:03 AM] Client:** The employer is ABC Manufacturing Ltd.
 
-**Operator**: 10:04 AM
-What’s the date on your current certificate of capacity?
+**[10:04 AM] Operator:** Thanks! When did the injury occur?
 
-**Client**: 10:05 AM
-The start date is April 1, 2023, and it ends on June 30, 2023.
+**[10:04 AM] Client:** The injury happened on 2023-10-04.
 
-**Operator**: 10:06 AM
-Thanks! What about your type of employment before the injury? What was your job title?
+**[10:05 AM] Operator:** Got it. What’s your date of program?
 
-**Client**: 10:07 AM
-I was a warehouse supervisor.
+**[10:05 AM] Client:** The date of the program is 2023-10-10.
 
-**Operator**: 10:07 AM
-And can you share your pre-injury location?
+**[10:06 AM] Operator:** Looks good. Can you share the completion date for RTW Program Stage 1?
 
-**Client**: 10:08 AM
-It was at the main warehouse facility on 5th Street.
+**[10:06 AM] Client:** That would be on 2023-11-15.
 
-**Operator**: 10:08 AM
-Great! Can you tell me the name of your employer?
+**[10:07 AM] Operator:** Thank you! Next, can you tell me about the current certificate of capacity's end date?
 
-**Client**: 10:09 AM
-I work for Green Tech Supplies.
+**[10:07 AM] Client:** It ends on 2023-11-11.
 
-**Operator**: 10:09 AM
-Could you please provide their phone number?
+**[10:08 AM] Operator:** And what’s your role in the company?
 
-**Client**: 10:10 AM
-Sure, it’s 555-0123.
+**[10:08 AM] Client:** I'm a Production Supervisor.
 
-**Operator**: 10:10 AM
-Thanks, and what’s their fax number?
+**[10:09 AM] Operator:** Great! What duties are you performing in RTW Program Stage 1?
 
-**Client**: 10:11 AM
-The fax number is 555-0456.
+**[10:09 AM] Client:** I'm assisting with administrative duties and supervising peers.
 
-**Operator**: 10:11 AM
-Moving on, what’s your claim number?
+**[10:10 AM] Operator:** Sounds good. How are you monitoring Stage 1?
 
-**Client**: 10:12 AM
-The claim number is 789012.
+**[10:10 AM] Client:** Martha Lee is the monitoring person.
 
-**Operator**: 10:12 AM
-Do you have the name of your nominated treating doctor?
+**[10:11 AM] Operator:** And what about the duties to be avoided in that stage?
 
-**Client**: 10:13 AM
-Yep, it's Dr. Emily Swanson.
+**[10:11 AM] Client:** I need to avoid operating heavy machinery and lifting over 10kg.
 
-**Operator**: 10:13 AM
-Can you provide the date on her signature?
+**[10:12 AM] Operator:** Understood. Now moving to Stage 2, what’s the completion date for that?
 
-**Client**: 10:14 AM
-Her signature is dated April 2, 2023.
+**[10:12 AM] Client:** It’s set for 2023-12-20.
 
-**Operator**: 10:14 AM
-When do you expect to achieve your RTW goal?
+**[10:13 AM] Operator:** Thank you! Can you describe the duties to be performed in Stage 2?
 
-**Client**: 10:15 AM
-I'm hoping to be back to full capacity by July 15, 2023.
+**[10:13 AM] Client:** I’ll supervise a small team with minimal physical tasks.
 
-**Operator**: 10:15 AM
-What are your overall RTW goals?
+**[10:14 AM] Operator:** What are the days and hours for Stage 2?
 
-**Client**: 10:16 AM
-To return to my supervisor role at full capacity.
+**[10:14 AM] Client:** It’s Monday, Tuesday, and Wednesday; 6 hours each day.
 
-**Operator**: 10:16 AM
-Could you share some treatment details?
+**[10:15 AM] Operator:** Who is the monitoring person for Stage 2?
 
-**Client**: 10:17 AM
-I’ve been receiving physical therapy twice a week.
+**[10:15 AM] Client:** Michael Chan is the monitoring person.
 
-**Operator**: 10:17 AM
-Alright. What stage of the RTW program are you currently in?
+**[10:16 AM] Operator:** And what duties should be avoided in this stage?
 
-**Client**: 10:18 AM
-I’m in Stage 2 right now.
+**[10:16 AM] Client:** I should avoid lifting over 15kg and operating heavy machinery.
 
-**Operator**: 10:18 AM
-What’s the description of your pre-injury employment?
+**[10:17 AM] Operator:** Thanks for sharing that. When is the expected goal for your return to work?
 
-**Client**: 10:19 AM
-I managed daily operations in the warehouse and supervised a team of 10 people.
+**[10:17 AM] Client:** I expect to achieve my RTW goal by 2023-12-01.
 
-**Operator**: 10:19 AM
-Can I have the worker’s signature and date?
+**[10:18 AM] Operator:** Good to know! And what are the treatment appointment dates and times?
 
-**Client**: 10:20 AM
-That would be my signature dated right now, October 12, 2023.
+**[10:18 AM] Client:** Every Wednesday at 10:00 AM for physiotherapy.
 
-**Operator**: 10:20 AM
-Thank you, Alex! Any further comments?
+**[10:19 AM] Operator:** Thanks for that information. Could you tell me the RTW Program Stage 3 role?
 
-**Client**: 10:21 AM
-I’m eager to get back to work, and my therapist believes I’m progressing well.
+**[10:19 AM] Client:** The role is again a Production Supervisor.
 
-**Operator**: 10:21 AM
-Awesome, thank you for all this information! How about the doctor’s name and signature date?
+**[10:20 AM] Operator:** Great! What’s the completion date for Stage 3?
 
-**Client**: 10:22 AM
-Dr. Swanson, dated April 2, 2023.
+**[10:20 AM] Client:** It’s on 2024-01-31.
 
-**Operator**: 10:22 AM
-Finally, when will your program be reviewed?
+**[10:21 AM] Operator:** And what are the duties to be performed in Stage 3?
 
-**Client**: 10:23 AM
-It'll be reviewed on June 15, 2023.
+**[10:21 AM] Client:** I’ll perform full supervisory duties with safe lifting up to 20kg.
+
+**[10:22 AM] Operator:** Who will be monitoring Stage 3?
+
+**[10:22 AM] Client:** Sarah Kim will be the monitoring person.
+
+**[10:23 AM] Operator:** Lastly, do you have any further comments regarding your return?
+
+**[10:23 AM] Client:** Worker exhibits good motivation for a return to work.
+
+**[10:24 AM] Operator:** Thank you for your thorough responses, John! This information is really helpful. If you have any questions or need assistance, feel free to ask!
+
+**[10:24 AM] Client:** Appreciate it! Thanks for your help!
