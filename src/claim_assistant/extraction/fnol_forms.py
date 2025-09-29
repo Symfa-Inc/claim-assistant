@@ -58,7 +58,7 @@ class CIDForm(BaseModel):
     city: str = Field(..., description="City")
     state: str = Field(..., description="State")
     zip_code: str = Field(..., description="ZIP code")
-    briefly_describe_incident: str = Field(
+    brief_description_of_incident: str = Field(
         ...,
         description="Brief description of incident",
     )

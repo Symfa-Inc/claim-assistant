@@ -3,12 +3,10 @@ from uuid import uuid4
 
 import requests
 
-from claim_assistant.extraction.data_form_classes import WorkSafeFormData
+from claim_assistant.extraction.fnol_forms import CIDForm
 
-conversation_path = (
-    "/home/maken/symfa/claim-assistant/data/forms/work_safe/conversation.txt"
-)
-file_name = "work_safe_form"
+conversation_path = "/home/maken/symfa/claim-assistant/data/forms/cid/conversation.txt"
+file_name = "extracted_answers"
 
 # Get txt bytes
 with open(conversation_path, "rb") as f:
@@ -23,9 +21,9 @@ url = "https://extract-server-f34kggfazq-uc.a.run.app"
 data = {
     "user_id": user_id,
     "description": "Insurance claim form data extraction from worker injury claims.",
-    "schema": WorkSafeFormData.model_json_schema(),
+    "schema": CIDForm.model_json_schema(),
     "instruction": (
-        "Extract worker injury claim information from insurance forms. "
+        "Extract worker injury claim information from FNOL forms. "
         "Focus on personal details, injury specifics, employment information, and medical data."
     ),
 }
