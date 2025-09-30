@@ -5,7 +5,7 @@ import requests
 
 from claim_assistant.extraction.fnol_forms import DWCForm
 
-conversation_path = "/home/maken/symfa/claim-assistant/data/forms/dwc/conversation.txt"
+conversation_path = "/home/maken/symfa/claim-assistant/data/forms/dwc/form_filled.pdf"
 file_name = "extracted_answers"
 
 # Get txt bytes

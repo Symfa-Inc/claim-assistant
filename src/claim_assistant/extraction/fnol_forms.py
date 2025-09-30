@@ -75,12 +75,21 @@ class DWCForm(BaseModel):
         ...,
         description="Date when accident or illness occurred",
     )
-    time_of_injury: time = Field(..., description="Specify AM or PM")
-    address_and_description_of_where_injury_happened: str = Field(
+    time_of_injury_am: time = Field(..., description="AM")
+    time_of_injury_pm: time = Field(..., description="PM")
+    address_and_description_of_where_injury_happened_line_1: str = Field(
         ...,
         description="Address and description of where injury happened",
     )
-    describe_injury_and_part_of_body_affected: str = Field(
+    address_and_description_of_where_injury_happened_line_2: str = Field(
+        ...,
+        description="Address and description of where injury happened",
+    )
+    describe_injury_and_part_of_body_affected_line_1: str = Field(
+        ...,
+        description="Describe injury and part of body affected",
+    )
+    describe_injury_and_part_of_body_affected_line_2: str = Field(
         ...,
         description="Describe injury and part of body affected",
     )
@@ -125,3 +134,7 @@ class DWCForm(BaseModel):
         ...,
         description="Telephone number of employer representative",
     )
+    employer_copy: bool = Field(..., description="Employer copy")
+    employee_copy: bool = Field(..., description="Employee copy")
+    claim_administrator: bool = Field(..., description="Claim administrator")
+    temporary_reciept: bool = Field(..., description="Temporary receipt")
