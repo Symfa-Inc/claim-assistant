@@ -7,16 +7,16 @@ from claim_assistant.metrics.moverscore.moverscore import word_mover_score
 
 
 def sentence_score(hypothesis: str, references: list[str], trace=0):
-    idf_dict_hyp = defaultdict(lambda: 1.0)
-    idf_dict_ref = defaultdict(lambda: 1.0)
+    idf_dict_hyp: defaultdict[str, float] = defaultdict(lambda: 1.0)
+    idf_dict_ref: defaultdict[str, float] = defaultdict(lambda: 1.0)
 
-    hypothesis = [hypothesis] * len(references)
+    hypothesis_list = [hypothesis] * len(references)
 
     sentence_score = 0
 
     scores = word_mover_score(
         references,
-        hypothesis,
+        hypothesis_list,
         idf_dict_ref,
         idf_dict_hyp,
         stop_words=[],
@@ -143,7 +143,7 @@ def compare_extraction_results(
         print(f"Total score: {total_score:.4f}")
 
         # Show quality distribution
-        quality_counts = {}
+        quality_counts: dict[str, int] = {}
         for comp in comparisons:
             quality = comp["quality"]
             quality_counts[quality] = quality_counts.get(quality, 0) + 1

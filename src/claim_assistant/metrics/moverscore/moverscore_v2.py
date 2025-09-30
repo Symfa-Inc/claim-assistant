@@ -7,10 +7,11 @@ from itertools import chain
 from math import log
 from multiprocessing import Pool
 
+import matplotlib.pyplot as plt
 import numpy as np
 import torch
 from pyemd import emd_with_flow
-from transformers import *
+from transformers import DistilBertConfig, DistilBertModel, DistilBertTokenizer
 
 model_name = "distilbert-base-uncased"
 device = "cuda:0"
@@ -232,9 +233,6 @@ def word_mover_score(
     return preds
 
 
-import matplotlib.pyplot as plt
-
-
 def plot_example(is_flow, reference, translation, device="cuda:0"):
     idf_dict_ref = defaultdict(lambda: 1.0)
     idf_dict_hyp = defaultdict(lambda: 1.0)
@@ -296,7 +294,7 @@ def plot_example(is_flow, reference, translation, device="cuda:0"):
     h_tokens = hyp_tokens[i]
 
     fig, ax = plt.subplots(figsize=(len(r_tokens) * 0.8, len(h_tokens) * 0.8))
-    im = ax.imshow(res, cmap="Blues")
+    ax.imshow(res, cmap="Blues")
 
     ax.set_xticks(np.arange(len(h_tokens)))
     ax.set_yticks(np.arange(len(r_tokens)))

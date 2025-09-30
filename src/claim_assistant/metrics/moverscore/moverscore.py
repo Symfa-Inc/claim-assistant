@@ -219,28 +219,44 @@ def get_bert_embedding(
     return total_embedding, lens, mask, padded_idf, tokens
 
 
-plus_mask = lambda x, m: x + (1.0 - m).unsqueeze(-1) * 1e30
-minus_mask = lambda x, m: x - (1.0 - m).unsqueeze(-1) * 1e30
-mul_mask = lambda x, m: x * m.unsqueeze(-1)
-masked_reduce_min = lambda x, m: torch.min(plus_mask(x, m), dim=1, out=None)
-masked_reduce_max = lambda x, m: torch.max(minus_mask(x, m), dim=1, out=None)
-masked_reduce_mean = lambda x, m: mul_mask(x, m).sum(1) / (
-    m.sum(1, keepdim=True) + 1e-10
-)
-masked_reduce_geomean = lambda x, m: np.exp(
-    mul_mask(np.log(x), m).sum(1) / (m.sum(1, keepdim=True) + 1e-10),
-)
-idf_reduce_mean = lambda x, m: mul_mask(x, m).sum(1)
-idf_reduce_max = lambda x, m, idf: torch.max(
-    mul_mask(minus_mask(x, m), idf),
-    dim=1,
-    out=None,
-)
-idf_reduce_min = lambda x, m, idf: torch.min(
-    mul_mask(plus_mask(x, m), idf),
-    dim=1,
-    out=None,
-)
+def plus_mask(x, m):
+    return x + (1.0 - m).unsqueeze(-1) * 1e30
+
+
+def minus_mask(x, m):
+    return x - (1.0 - m).unsqueeze(-1) * 1e30
+
+
+def mul_mask(x, m):
+    return x * m.unsqueeze(-1)
+
+
+def masked_reduce_min(x, m):
+    return torch.min(plus_mask(x, m), dim=1, out=None)
+
+
+def masked_reduce_max(x, m):
+    return torch.max(minus_mask(x, m), dim=1, out=None)
+
+
+def masked_reduce_mean(x, m):
+    return mul_mask(x, m).sum(1) / (m.sum(1, keepdim=True) + 1e-10)
+
+
+def masked_reduce_geomean(x, m):
+    return np.exp(mul_mask(np.log(x), m).sum(1) / (m.sum(1, keepdim=True) + 1e-10))
+
+
+def idf_reduce_mean(x, m):
+    return mul_mask(x, m).sum(1)
+
+
+def idf_reduce_max(x, m, idf):
+    return torch.max(mul_mask(minus_mask(x, m), idf), dim=1, out=None)
+
+
+def idf_reduce_min(x, m, idf):
+    return torch.min(mul_mask(plus_mask(x, m), idf), dim=1, out=None)
 
 
 def pairwise_distances(x, y=None):
