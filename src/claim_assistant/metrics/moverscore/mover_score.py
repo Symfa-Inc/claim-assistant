@@ -2,7 +2,8 @@ import json
 from collections import defaultdict
 
 import numpy as np
-from moverscore import word_mover_score
+
+from claim_assistant.metrics.moverscore.moverscore import word_mover_score
 
 
 def sentence_score(hypothesis: str, references: list[str], trace=0):
@@ -47,9 +48,9 @@ def compare_extraction_results(extracted_file: str = None, ground_truth_file: st
 
     # Default file paths if not provided
     if extracted_file is None:
-        extracted_file = "data/forms/cid/extracted_answers.json"
+        extracted_file = "data/forms/dwc/extracted_answers.json"
     if ground_truth_file is None:
-        ground_truth_file = "data/forms/cid/form_answers.json"
+        ground_truth_file = "data/forms/dwc/form_answers.json"
 
     try:
         # Load the data files

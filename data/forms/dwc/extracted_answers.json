@@ -1,0 +1,31 @@
+{
+  "data": [
+    {
+      "city": "Springfield",
+      "state": "IL",
+      "zip_code": "62704",
+      "todays_date": "2023-10-15",
+      "home_address": "4567 Distribution Dr.",
+      "employee_name": "John Smith",
+      "employer_name": "ABC Logistics",
+      "date_of_injury": "2023-10-12",
+      "time_of_injury": "02:30 PM",
+      "employees_email": "john.smith@example.com",
+      "employer_address": "4567 Distribution Dr.",
+      "signature_of_employee": "",
+      "social_security_number": "123-45-6789",
+      "insurance_policy_number": "SIC123456789",
+      "title_of_employer_representative": "HR Manager",
+      "date_employer_received_claim_form": "2023-10-16",
+      "date_employer_first_knew_of_injury": "2023-10-13",
+      "signature_of_employer_representative": "",
+      "date_claim_form_was_provided_to_employee": "2023-10-15",
+      "describe_injury_and_part_of_body_affected": "John suffered a sprained ankle while loading boxes",
+      "telephone_number_of_employer_representative": "(555) 555-7890",
+      "consent_to_receive_claim_notices_by_email_only": true,
+      "address_and_description_of_where_injury_happened": "Warehouse 7, 235 Industrial Park Rd, Springfield, IL",
+      "name_and_address_of_insurance_carrier_or_adjusting_agency": "Secure Insurance Co, 890 Protection Blvd, Chicago, IL"
+    }
+  ],
+  "content_too_long": false
+}

@@ -3,9 +3,9 @@ from uuid import uuid4
 
 import requests
 
-from claim_assistant.extraction.fnol_forms import CIDForm
+from claim_assistant.extraction.fnol_forms import DWCForm
 
-conversation_path = "/home/maken/symfa/claim-assistant/data/forms/cid/conversation.txt"
+conversation_path = "/home/maken/symfa/claim-assistant/data/forms/dwc/conversation.txt"
 file_name = "extracted_answers"
 
 # Get txt bytes
@@ -21,7 +21,7 @@ url = "https://extract-server-f34kggfazq-uc.a.run.app"
 data = {
     "user_id": user_id,
     "description": "Insurance claim form data extraction from worker injury claims.",
-    "schema": CIDForm.model_json_schema(),
+    "schema": DWCForm.model_json_schema(),
     "instruction": (
         "Extract worker injury claim information from FNOL forms. "
         "Focus on personal details, injury specifics, employment information, and medical data."
