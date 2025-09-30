@@ -43,7 +43,10 @@ def normalize_field_name(name: str) -> str:
     return name.lower().replace(" ", "_").replace("-", "_")
 
 
-def compare_extraction_results(extracted_file: str = None, ground_truth_file: str = None):
+def compare_extraction_results(
+    extracted_file: str = None,
+    ground_truth_file: str = None,
+):
     """Compare extracted answers with ground truth answers using MoverScore."""
 
     # Default file paths if not provided
@@ -117,7 +120,7 @@ def compare_extraction_results(extracted_file: str = None, ground_truth_file: st
                         "extracted": extracted_value,
                         "score": score,
                         "quality": match_quality,
-                    }
+                    },
                 )
 
                 total_score += score
@@ -127,7 +130,7 @@ def compare_extraction_results(extracted_file: str = None, ground_truth_file: st
                 print(f"Error calculating score for field '{field_name}': {e}")
         else:
             print(
-                f"\nField '{field_name}' (normalized: '{normalized_field}') not found in ground truth data"
+                f"\nField '{field_name}' (normalized: '{normalized_field}') not found in ground truth data",
             )
 
     # Calculate average score
@@ -153,10 +156,10 @@ def compare_extraction_results(extracted_file: str = None, ground_truth_file: st
         if comparisons:
             comparisons.sort(key=lambda x: x["score"], reverse=True)
             print(
-                f"\nBest performing field: {comparisons[0]['field']} (Score: {comparisons[0]['score']:.4f})"
+                f"\nBest performing field: {comparisons[0]['field']} (Score: {comparisons[0]['score']:.4f})",
             )
             print(
-                f"Worst performing field: {comparisons[-1]['field']} (Score: {comparisons[-1]['score']:.4f})"
+                f"Worst performing field: {comparisons[-1]['field']} (Score: {comparisons[-1]['score']:.4f})",
             )
 
         return {
