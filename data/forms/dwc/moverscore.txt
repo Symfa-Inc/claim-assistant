@@ -1,0 +1,160 @@
+Comparing extracted answers with ground truth using MoverScore:
+======================================================================
+
+Field: city
+Ground Truth: Springfield
+Extracted:    Springfield
+MoverScore:   1.0000
+Match Quality: EXCELLENT
+--------------------------------------------------
+
+Field: state
+Ground Truth: IL
+Extracted:    IL
+MoverScore:   1.0000
+Match Quality: EXCELLENT
+--------------------------------------------------
+
+Field: zip_code
+Ground Truth: 62704
+Extracted:    62704
+MoverScore:   1.0000
+Match Quality: EXCELLENT
+--------------------------------------------------
+
+Field 'todays_date' (normalized: 'todays_date') not found in ground truth data
+
+Field: home_address
+Ground Truth: 1234 Elm St
+Extracted:    4567 Distribution Dr.
+MoverScore:   0.2367
+Match Quality: POOR
+--------------------------------------------------
+
+Field: employee_name
+Ground Truth: John Smith
+Extracted:    John Smith
+MoverScore:   1.0000
+Match Quality: EXCELLENT
+--------------------------------------------------
+
+Field 'employer_name' (normalized: 'employer_name') not found in ground truth data
+
+Field: date_of_injury
+Ground Truth: 2023-10-12
+Extracted:    2023-10-12
+MoverScore:   1.0000
+Match Quality: EXCELLENT
+--------------------------------------------------
+
+Field: time_of_injury
+Ground Truth: 02:30 PM
+Extracted:    02:30 PM
+MoverScore:   1.0000
+Match Quality: EXCELLENT
+--------------------------------------------------
+
+Field 'employees_email' (normalized: 'employees_email') not found in ground truth data
+
+Field: employer_address
+Ground Truth: 4567 Distribution Dr
+Extracted:    4567 Distribution Dr.
+MoverScore:   0.8964
+Match Quality: GOOD
+--------------------------------------------------
+
+Field 'signature_of_employee' (normalized: 'signature_of_employee') not found in ground truth data
+
+Field: social_security_number
+Ground Truth: 123-45-6789
+Extracted:    123-45-6789
+MoverScore:   1.0000
+Match Quality: EXCELLENT
+--------------------------------------------------
+
+Field: insurance_policy_number
+Ground Truth: SIC123456789
+Extracted:    SIC123456789
+MoverScore:   1.0000
+Match Quality: EXCELLENT
+--------------------------------------------------
+
+Field: title_of_employer_representative
+Ground Truth: HR Manager
+Extracted:    HR Manager
+MoverScore:   1.0000
+Match Quality: EXCELLENT
+--------------------------------------------------
+
+Field: date_employer_received_claim_form
+Ground Truth: 2023-10-16
+Extracted:    2023-10-16
+MoverScore:   1.0000
+Match Quality: EXCELLENT
+--------------------------------------------------
+
+Field: date_employer_first_knew_of_injury
+Ground Truth: 2023-10-13
+Extracted:    2023-10-13
+MoverScore:   1.0000
+Match Quality: EXCELLENT
+--------------------------------------------------
+
+Field 'signature_of_employer_representative' (normalized: 'signature_of_employer_representative') not found in ground truth data
+
+Field: date_claim_form_was_provided_to_employee
+Ground Truth: 2023-10-15
+Extracted:    2023-10-15
+MoverScore:   1.0000
+Match Quality: EXCELLENT
+--------------------------------------------------
+
+Field: describe_injury_and_part_of_body_affected
+Ground Truth: Sprained ankle while loading boxes.
+Extracted:    John suffered a sprained ankle while loading boxes
+MoverScore:   0.6103
+Match Quality: FAIR
+--------------------------------------------------
+
+Field: telephone_number_of_employer_representative
+Ground Truth: (555) 555-7890
+Extracted:    (555) 555-7890
+MoverScore:   1.0000
+Match Quality: EXCELLENT
+--------------------------------------------------
+
+Field: consent_to_receive_claim_notices_by_email_only
+Ground Truth: True
+Extracted:    True
+MoverScore:   1.0000
+Match Quality: EXCELLENT
+--------------------------------------------------
+
+Field: address_and_description_of_where_injury_happened
+Ground Truth: Warehouse 7, 235 Industrial Park Rd, Springfield, IL
+Extracted:    Warehouse 7, 235 Industrial Park Rd, Springfield, IL
+MoverScore:   1.0000
+Match Quality: EXCELLENT
+--------------------------------------------------
+
+Field: name_and_address_of_insurance_carrier_or_adjusting_agency
+Ground Truth: Secure Insurance Co, 890 Protection Blvd, Chicago, IL
+Extracted:    Secure Insurance Co, 890 Protection Blvd, Chicago, IL
+MoverScore:   1.0000
+Match Quality: EXCELLENT
+--------------------------------------------------
+
+Overall Results:
+==================================================
+Total fields compared: 19
+Average MoverScore: 0.9339
+Total score: 17.7434
+
+Quality Distribution:
+  EXCELLENT: 16 fields
+  POOR: 1 fields
+  GOOD: 1 fields
+  FAIR: 1 fields
+
+Best performing field: city (Score: 1.0000)
+Worst performing field: home_address (Score: 0.2367)
