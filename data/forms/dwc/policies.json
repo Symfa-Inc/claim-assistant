@@ -2,31 +2,36 @@
   {
     "policy_number": "SIC123456789",
     "policy_holder_name": "John Smith",
-    "date_until_valid": "2024-05-15",
+    "start_date": "2023-05-15",
+    "end_data": "2024-05-15",
     "policy_coverage": "Workplace injury compensation including medical expenses, rehabilitation services, and wage replacement."
   },
   {
     "policy_number": "POL123456789",
     "policy_holder_name": "John Doe",
-    "date_until_valid": "2024-03-20",
+    "start_date": "2022-03-20",
+    "end_data": "2024-03-20",
     "policy_coverage": "Occupational accident insurance covering hospital bills, temporary disability payments, and emergency treatment costs."
   },
   {
     "policy_number": "POL123456789",
     "policy_holder_name": "Emily Johnson",
-    "date_until_valid": "2025-01-12",
+    "start_date": "2023-01-12",
+    "end_data": "2025-01-12",
     "policy_coverage": "Work-related illness coverage including diagnostic tests, prescribed medication, and return-to-work therapy sessions."
   },
   {
     "policy_number": "POL123456",
     "policy_holder_name": "John Doe",
-    "date_until_valid": "2023-09-28",
+    "start_date": "2020-09-28",
+    "end_data": "2023-09-28",
     "policy_coverage": "Short-term work insurance policy covering only minor workplace injuries and outpatient medical consultations."
   },
   {
     "policy_number": "POL3231234545",
     "policy_holder_name": "Sophia Martinez",
-    "date_until_valid": "2024-11-03",
+    "start_date": "2022-11-03",
+    "end_data": "2024-11-03",
     "policy_coverage": "Comprehensive work insurance plan covering on-site accidents, occupational disease treatment, long-term disability benefits, and legal liability protection for workplace hazards."
   }
 ]
