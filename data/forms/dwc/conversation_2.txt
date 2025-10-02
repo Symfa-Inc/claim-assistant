@@ -1,0 +1,83 @@
+**[10:00 AM] Operator:** Hi there! Can I start by getting your zip code, please?
+
+**[10:01 AM] Client:** Sure, it’s 62704.
+
+**[10:02 AM] Operator:** Thank you! And could you tell me the city?
+
+**[10:02 AM] Client:** Springfield.
+
+**[10:03 AM] Operator:** Great! What’s the home address?
+
+**[10:03 AM] Client:** It’s 123 Maple Street.
+
+**[10:04 AM] Operator:** Thank you! Now, could you please share the name of the employee?
+
+**[10:04 AM] Client:** That would be Emily Johnson.
+
+**[10:05 AM] Operator:** And do you have the employee’s email address?
+
+**[10:05 AM] Client:** Yes, it’s emily.johnson@email.com.
+
+**[10:06 AM] Operator:** Perfect! Did Emily provide consent to receive claim notices by email only?
+
+**[10:06 AM] Client:** Yes, that's true.
+
+**[10:07 AM] Operator:** Thank you. Now, can you tell me the name of the employer?
+
+**[10:07 AM] Client:** It’s ABC Shipping Inc.
+
+**[10:08 AM] Operator:** And the employer's address?
+
+**[10:08 AM] Client:** It’s 789 Corporate Blvd.
+
+**[10:09 AM] Operator:** Got it! What’s the telephone number of the employer representative?
+
+**[10:09 AM] Client:** (555) 123-4567.
+
+**[10:10 AM] Operator:** Thank you! What is the title of the employer representative?
+
+**[10:10 AM] Client:** HR Manager.
+
+**[10:11 AM] Operator:** Great! Now, could you describe the injury and the part of the body affected?
+
+**[10:11 AM] Client:** Emily has a sprained wrist from lifting heavy boxes.
+
+**[10:12 AM] Operator:** I’m so sorry to hear that. When did the injury occur?
+
+**[10:12 AM] Client:** The injury happened on 2023-10-03.
+
+**[10:13 AM] Operator:** And what time was the injury?
+
+**[10:13 AM] Client:** It was at 02:30 PM.
+
+**[10:14 AM] Operator:** Thank you! Where exactly did the injury happen?
+
+**[10:14 AM] Client:** At 456 Warehouse Ave, loading dock area.
+
+**[10:15 AM] Operator:** Appreciate that detail. Could you share the date the claim form was provided to the employee?
+
+**[10:15 AM] Client:** Sure, it was on 2023-10-05.
+
+**[10:16 AM] Operator:** Great! When did the employer first know of the injury?
+
+**[10:16 AM] Client:** The employer found out on 2023-10-04.
+
+**[10:17 AM] Operator:** And when did the employer receive the claim form?
+
+**[10:17 AM] Client:** They received it on 2023-10-07.
+
+**[10:18 AM] Operator:** Thank you for that info! What is the insurance policy number?
+
+**[10:18 AM] Client:** It’s POL123456789.
+
+**[10:19 AM] Operator:** And can I have the name and address of the insurance carrier or adjusting agency?
+
+**[10:19 AM] Client:** Sure, it’s XYZ Insurance Corp., 4567 Insurance St., IL, 62705.
+
+**[10:20 AM] Operator:** Thank you! Lastly, what is today’s date?
+
+**[10:20 AM] Client:** Today is 2023-10-10.
+
+**[10:21 AM] Operator:** That wraps it up! Thanks for providing all the info. If you need further assistance, feel free to reach out!
+
+**[10:21 AM] Client:** Thanks for your help!
