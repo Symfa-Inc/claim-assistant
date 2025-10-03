@@ -71,22 +71,23 @@
 
 import os
 from pathlib import Path
-from typing import Type
 
 from openai import OpenAI
-from pydantic import BaseModel
 
-from claim_assistant.pdf.fnol_forms import DWCForm
+from claim_assistant.pdf.summary_form import SummaryForm
 
 
 def extract_form_fields(
-    pdf_path: Path,
-    form_model: Type[BaseModel],
+    pdf_path: str | Path,
 ) -> dict[str, str]:
     """
     Extract FNOL data from a PDF using OpenAI with structured (Pydantic) output.
     Returns a dict matching form_pydanitc_model.
     """
+    pdf_path = Path(pdf_path)
+    if not pdf_path.exists():
+        raise FileNotFoundError(f"PDF file not found: {pdf_path}")
+
     client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
     if not client.api_key:
         raise RuntimeError("OPENAI_API_KEY is not set")
@@ -100,7 +101,7 @@ def extract_form_fields(
 
     instruction = (
         "You are an expert at extracting workers' compensation FNOL data. "
-        f"Extract values to fit the {form_model.__name__} schema. Use ISO formats: dates=YYYY-MM-DD, "
+        f"Extract values to fit the {SummaryForm.__name__} schema. Use ISO formats: dates=YYYY-MM-DD, "
         "times=HH:MM PM or AM. Use true/false for booleans. If a field is missing/unclear, use null. "
         "Do not invent data."
     )
@@ -123,7 +124,7 @@ def extract_form_fields(
             },
         ],
         # Parse directly into the Pydantic model
-        text_format=form_model,
+        text_format=SummaryForm,
         # temperature=0.0,
     )
 
@@ -135,5 +136,5 @@ if __name__ == "__main__":
     pdf_path = Path(
         "/home/maken/symfa/claim-assistant/data/forms/dwc/form_filled_flat.pdf",
     )
-    form_fields = extract_form_fields(pdf_path, form_model=DWCForm)
+    form_fields = extract_form_fields(pdf_path)
     print(form_fields)

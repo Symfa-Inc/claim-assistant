@@ -1,431 +1,281 @@
-import json
 from datetime import datetime
-import openai
-from pypdf import PdfWriter, PdfReader
-from reportlab.pdfgen import canvas
-from reportlab.lib.pagesizes import letter
+from pathlib import Path
+from typing import Iterable
+
 from reportlab.lib import colors
-import io
+from reportlab.lib.pagesizes import letter
+from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet
+from reportlab.lib.units import inch
+from reportlab.platypus import (
+    Paragraph,
+    SimpleDocTemplate,
+    Spacer,
+    Table,
+    TableStyle,
+)
 
-# Set your OpenAI API key
-# openai.api_key = os.getenv("OPENAI_API_KEY")  # Make sure to set this environment variable
-openai.api_key = "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"
+
+def _yes_no(value: bool | None) -> str:
+    if value is True:
+        return "Yes"
+    if value is False:
+        return "No"
+    return ""  # empty if missing/None
 
 
-def analyze_claim_with_openai(form_data: dict) -> dict:
-    """Use OpenAI to analyze the claim and generate structured summary."""
+def _to_str(v) -> str:
+    if isinstance(v, bool):
+        return _yes_no(v)
+    if v is None:
+        return ""
+    return str(v)
 
-    # Prepare the prompt with form data
-    prompt = f"""
-    Analyze the following workers' compensation claim form data and provide a structured analysis:
 
-    Form Data:
-    {json.dumps(form_data, indent=2)}
+def _para(text: str, style_name: str = "BodyText") -> Paragraph:
+    styles = getSampleStyleSheet()
+    return Paragraph((text or "").replace("\n", "<br/>"), styles[style_name])
 
-    Please provide a JSON response with the following structure:
-    {{
-        "claim_summary": {{
-            "case_number": "Generated case number or 'N/A'",
-            "submission_date": "Date when claim was submitted"
-        }},
-        "employee_info": {{
-            "name": "Employee full name",
-            "contact": "Contact information (phone, email, address)",
-            "position": "Job title/position if available"
-        }},
-        "employer_info": {{
-            "name": "Employer name",
-            "address": "Employer address",
-            "contact": "Employer contact information",
-            "insurance_info": "Insurance carrier details"
-        }},
-        "incident_info": {{
-            "description": "Detailed description of the incident",
-            "date": "Date of injury",
-            "time": "Time of injury if available",
-            "location": "Where the incident occurred",
-            "circumstances": "Circumstances leading to the incident"
-        }},
-        "policy_check": {{
-            "policy_number": "Insurance policy number",
-            "coverage_period": "Policy effective period if available",
-            "coverage_details": "What is covered under the policy"
-        }},
-        "decision_draft": {{
-            "status": "Covered/Not covered/Missing data",
-            "reasoning": "Explanation for the decision",
-            "missing_information": "List any missing critical information",
-            "recommendations": "Next steps or recommendations"
-        }}
-    }}
 
-    Make sure to extract all relevant information from the form data and provide a comprehensive analysis.
+def _section_header(text: str) -> Paragraph:
+    styles = getSampleStyleSheet()
+    hdr = ParagraphStyle(
+        "SectionHeader",
+        parent=styles["Heading2"],
+        fontSize=13,
+        textColor=colors.darkgreen,
+        spaceBefore=12,
+        spaceAfter=6,
+    )
+    return Paragraph(text, hdr)
+
+
+def _title(text: str) -> Paragraph:
+    styles = getSampleStyleSheet()
+    ttl = ParagraphStyle(
+        "DocTitle",
+        parent=styles["Heading1"],
+        textColor=colors.darkblue,
+        fontSize=16,
+        spaceAfter=16,
+    )
+    return Paragraph(text, ttl)
+
+
+def _kv_table(
+    rows: Iterable[tuple[str, str]],
+    col_widths=(2.0 * inch, 4.5 * inch),
+) -> Table:
     """
+    Build a two-column key/value table with consistent styling and wrapping.
+    Always renders all rows; empty values are shown as empty strings.
+    """
+    data = []
+    for k, v in rows:
+        key_p = _para(f"<b>{k}:</b>")
+        val_p = _para(v or "")
+        data.append([key_p, val_p])
 
-    try:
-        response = openai.chat.completions.create(
-            model="gpt-5-nano-2025-08-07",
-            messages=[
-                {
-                    "role": "system",
-                    "content": "You are a workers' compensation claim analyst. Analyze claim forms and provide structured summaries.",
-                },
-                {"role": "user", "content": prompt},
+    tbl = Table(data, colWidths=list(col_widths), hAlign="LEFT")
+    tbl.setStyle(
+        TableStyle(
+            [
+                ("BACKGROUND", (0, 0), (0, -1), colors.whitesmoke),
+                ("TEXTCOLOR", (0, 0), (-1, -1), colors.black),
+                ("VALIGN", (0, 0), (-1, -1), "TOP"),
+                ("LEFTPADDING", (0, 0), (-1, -1), 6),
+                ("RIGHTPADDING", (0, 0), (-1, -1), 6),
+                ("TOPPADDING", (0, 0), (-1, -1), 4),
+                ("BOTTOMPADDING", (0, 0), (-1, -1), 4),
+                ("BOX", (0, 0), (-1, -1), 0.25, colors.lightgrey),
+                ("INNERGRID", (0, 0), (-1, -1), 0.25, colors.lightgrey),
             ],
-            # temperature=0.3,
-        )
-
-        # Parse the JSON response
-        analysis_json = response.choices[0].message.content
-        # Remove any markdown formatting if present
-        if analysis_json.startswith("```json"):
-            analysis_json = analysis_json.replace("```json", "").replace("```", "").strip()
-
-        return json.loads(analysis_json)
-
-    except Exception as e:
-        print(f"Error with OpenAI API: {e}")
-        # Return a fallback structure with basic data
-        return create_fallback_analysis(form_data)
+        ),
+    )
+    return tbl
 
 
-def create_fallback_analysis(form_data: dict) -> dict:
-    """Create a fallback analysis if OpenAI API fails."""
-    return {
-        "claim_summary": {
-            "case_number": "CASE-" + datetime.now().strftime("%Y%m%d-%H%M%S"),
-            "submission_date": form_data.get("Today's Date (mm/dd/yyyy)", "N/A"),
-        },
-        "employee_info": {
-            "name": form_data.get("Employee Name", "N/A"),
-            "contact": f"Email: {form_data.get("Employee's e-mail", 'N/A')}, Address: {form_data.get('Home Address', 'N/A')}",
-            "position": "N/A",
-        },
-        "employer_info": {
-            "name": form_data.get("Name of employer", "N/A"),
-            "address": form_data.get("Employer Address", "N/A"),
-            "contact": form_data.get("Telephone", "N/A"),
-            "insurance_info": form_data.get(
-                "Name and address of insurance carrier or adjusting agency", "N/A"
-            ),
-        },
-        "incident_info": {
-            "description": f"{form_data.get('Describe injury and part of body affected Line 1', '')} {form_data.get('Describe injury and part of body affected Line 2', '')}",
-            "date": form_data.get("Date of Injury (mm/dd/yyyy)", "N/A"),
-            "time": form_data.get("Time of Injury", "N/A"),
-            "location": f"{form_data.get('Address and description of where injury happened Line 1', '')} {form_data.get('Address and description of where injury happened Line 2', '')}",
-            "circumstances": "Manual review required",
-        },
-        "policy_check": {
-            "policy_number": form_data.get("Insurance Policy Number", "N/A"),
-            "coverage_period": "Manual verification required",
-            "coverage_details": "Manual review required",
-        },
-        "decision_draft": {
-            "status": "Missing data",
-            "reasoning": "Automated analysis not available - manual review required",
-            "missing_information": "API analysis failed",
-            "recommendations": "Conduct manual review of all claim documents",
-        },
-    }
+def _page_number(canvas, doc):
+    canvas.setFont("Helvetica", 9)
+    canvas.setFillColor(colors.grey)
+    text = f"Page {doc.page}"
+    canvas.drawRightString(doc.pagesize[0] - 36, 20, text)
 
 
-def format_contact_info(contact_data):
-    """Format contact information nicely from nested dictionary."""
-    if isinstance(contact_data, dict):
-        formatted_parts = []
-        
-        # Handle phone numbers
-        if 'phone_primary' in contact_data:
-            formatted_parts.append(f"Primary Phone: {contact_data['phone_primary']}")
-        if 'phone_secondary' in contact_data:
-            formatted_parts.append(f"Secondary Phone: {contact_data['phone_secondary']}")
-        
-        # Handle email
-        if 'email' in contact_data:
-            formatted_parts.append(f"Email: {contact_data['email']}")
-        
-        # Handle address
-        if 'address' in contact_data and isinstance(contact_data['address'], dict):
-            address = contact_data['address']
-            address_parts = []
-            
-            if 'line1' in address:
-                address_parts.append(address['line1'])
-            if 'line2' in address:
-                address_parts.append(address['line2'])
-            
-            # Add city, state, zip
-            location_parts = []
-            if 'city' in address:
-                location_parts.append(address['city'])
-            if 'state' in address:
-                location_parts.append(address['state'])
-            if 'zip' in address:
-                location_parts.append(address['zip'])
-            
-            if location_parts:
-                address_parts.append(', '.join(location_parts))
-            
-            if address_parts:
-                formatted_parts.append(f"Address: {', '.join(address_parts)}")
-        
-        return ' | '.join(formatted_parts) if formatted_parts else str(contact_data)
-    
-    return str(contact_data)
+def _rows_all(data: dict, mapping: list[tuple[str, str]]) -> list[tuple[str, str]]:
+    """
+    Build table rows from label->key mapping.
+    Includes every mapped key; missing/None -> empty string.
+    """
+    rows: list[tuple[str, str]] = []
+    for label, key in mapping:
+        rows.append((label, _to_str(data.get(key))))
+    return rows
 
-def format_value(key, value):
-    """Format values based on their type and key."""
-    if key == 'contact' and isinstance(value, dict):
-        return format_contact_info(value)
-    elif isinstance(value, dict):
-        # Handle other nested dictionaries
-        formatted_items = []
-        for k, v in value.items():
-            formatted_key = k.replace('_', ' ').title()
-            formatted_items.append(f"{formatted_key}: {v}")
-        return ' | '.join(formatted_items)
-    elif isinstance(value, list):
-        return ', '.join(str(item) for item in value)
-    else:
-        return str(value)
 
-def create_advanced_text_pdf_pypdf(analysis: dict, output_path: str):
-    """Create a more advanced PDF with better text handling."""
-    buffer = io.BytesIO()
-    c = canvas.Canvas(buffer, pagesize=letter)
-    width, height = letter
-    
-    # Layout settings
-    left_margin = 50
-    right_margin = width - 50
-    top_margin = height - 50
-    bottom_margin = 50
-    max_width = right_margin - left_margin
-    
-    y_pos = top_margin
-    line_height = 14
-    section_spacing = 20
-    
-    def get_text_width(text, font_name, font_size):
-        """Calculate actual text width."""
-        return c.stringWidth(text, font_name, font_size)
-    
-    def add_wrapped_text(text, x, y, max_width, font_name="Helvetica", font_size=10, bold=False):
-        """Add text with proper wrapping and return the final y position."""
-        nonlocal y_pos
-        
-        if bold:
-            font_name = "Helvetica-Bold"
-        
-        c.setFont(font_name, font_size)
-        
-        # Split text into words
-        words = str(text).split()
-        lines = []
-        current_line = ""
-        
-        for word in words:
-            test_line = current_line + " " + word if current_line else word
-            text_width = get_text_width(test_line, font_name, font_size)
-            
-            if text_width <= max_width:
-                current_line = test_line
-            else:
-                if current_line:
-                    lines.append(current_line)
-                current_line = word
-                # Check if single word is too long
-                if get_text_width(word, font_name, font_size) > max_width:
-                    # Break long word
-                    while word:
-                        for i in range(len(word), 0, -1):
-                            if get_text_width(word[:i], font_name, font_size) <= max_width:
-                                lines.append(word[:i])
-                                word = word[i:]
-                                break
-                        else:
-                            # Fallback if word is still too long
-                            lines.append(word)
-                            word = ""
-        
-        if current_line:
-            lines.append(current_line)
-        
-        # Draw the lines
-        for line in lines:
-            if y < bottom_margin:
-                c.showPage()
-                y = top_margin
-            
-            c.drawString(x, y, line)
-            y -= line_height
-        
-        return y
-    
-    def add_section_header(title, y):
-        """Add a section header."""
-        if y < bottom_margin + 30:
-            c.showPage()
-            y = top_margin
-        
-        # Add some space before section
-        y -= section_spacing
-        
-        # Draw section header
-        c.setFont("Helvetica-Bold", 14)
-        c.drawString(left_margin, y, title)
-        y -= line_height + 5
-        
-        # Add underline
-        c.line(left_margin, y + 2, left_margin + get_text_width(title, "Helvetica-Bold", 14), y + 2)
-        y -= 10
-        
-        return y
-    
-    def add_formatted_section(section_title, section_data, y_pos):
-        """Add a section with properly formatted data."""
-        y_pos = add_section_header(section_title, y_pos)
-        
-        for key, value in section_data.items():
-            display_key = key.replace("_", " ").title()
-            formatted_value = format_value(key, value)
-            
-            # Special handling for contact information
-            if key == 'contact' and isinstance(value, dict):
-                y_pos = add_wrapped_text(f"{display_key}:", left_margin, y_pos, max_width, font_size=10, bold=True)
-                
-                # Format contact details nicely
-                contact_lines = []
-                if 'phone_primary' in value:
-                    contact_lines.append(f"Primary Phone: {value['phone_primary']}")
-                if 'phone_secondary' in value:
-                    contact_lines.append(f"Secondary Phone: {value['phone_secondary']}")
-                if 'email' in value:
-                    contact_lines.append(f"Email: {value['email']}")
-                
-                # Format address separately
-                if 'address' in value and isinstance(value['address'], dict):
-                    addr = value['address']
-                    address_line = "Address: "
-                    addr_parts = []
-                    
-                    if 'line1' in addr:
-                        addr_parts.append(addr['line1'])
-                    if 'line2' in addr:
-                        addr_parts.append(addr['line2'])
-                    
-                    # City, State, ZIP on same line
-                    location = []
-                    if 'city' in addr:
-                        location.append(addr['city'])
-                    if 'state' in addr:
-                        location.append(addr['state'])
-                    if 'zip' in addr:
-                        location.append(addr['zip'])
-                    
-                    if location:
-                        addr_parts.append(', '.join(location))
-                    
-                    address_line += ', '.join(addr_parts)
-                    contact_lines.append(address_line)
-                
-                # Add each contact line
-                for contact_line in contact_lines:
-                    y_pos = add_wrapped_text(contact_line, left_margin + 20, y_pos, max_width - 20, font_size=10)
-                    y_pos -= 3
-                
-            elif len(formatted_value) > 60:
-                # Long values on separate lines
-                y_pos = add_wrapped_text(f"{display_key}:", left_margin, y_pos, max_width, font_size=10, bold=True)
-                y_pos = add_wrapped_text(formatted_value, left_margin + 20, y_pos, max_width - 20, font_size=10)
-            else:
-                # Short values on same line
-                y_pos = add_wrapped_text(f"{display_key}: {formatted_value}", left_margin, y_pos, max_width, font_size=10)
-            
-            y_pos -= 5
-        
-        return y_pos
-    
-    # Title
-    c.setFont("Helvetica-Bold", 16)
-    title = "WORKERS' COMPENSATION CLAIM SUMMARY"
-    title_width = get_text_width(title, "Helvetica-Bold", 16)
-    title_x = (width - title_width) / 2  # Center the title
-    c.drawString(title_x, y_pos, title)
-    y_pos -= 30
-    
-    # Add all sections using the new formatted function
-    y_pos = add_formatted_section("CLAIM SUMMARY", analysis["claim_summary"], y_pos)
-    y_pos = add_formatted_section("EMPLOYEE INFORMATION", analysis["employee_info"], y_pos)
-    y_pos = add_formatted_section("EMPLOYER INFORMATION", analysis["employer_info"], y_pos)
-    y_pos = add_formatted_section("INCIDENT INFORMATION", analysis["incident_info"], y_pos)
-    y_pos = add_formatted_section("POLICY INFORMATION", analysis["policy_check"], y_pos)
-    
-    # Decision Draft with special status highlighting
-    y_pos = add_section_header("DECISION DRAFT", y_pos)
-    
-    # Highlight status
-    status = analysis["decision_draft"]["status"]
-    y_pos = add_wrapped_text(f"STATUS: {status.upper()}", left_margin, y_pos, max_width, font_size=12, bold=True)
-    y_pos -= 10
-    
-    # Other decision fields
-    decision_fields = ["reasoning", "missing_information", "recommendations"]
-    for field in decision_fields:
-        if field in analysis["decision_draft"]:
-            display_name = field.replace("_", " ").title()
-            value = analysis["decision_draft"][field]
-            
-            y_pos = add_wrapped_text(f"{display_name}:", left_margin, y_pos, max_width, font_size=10, bold=True)
-            y_pos = add_wrapped_text(str(value), left_margin + 20, y_pos, max_width - 20, font_size=10)
-            y_pos -= 5
-    
-    c.save()
-    buffer.seek(0)
-    
-    # Use PyPDF to write the final file
-    reader = PdfReader(buffer)
-    writer = PdfWriter()
-    
-    for page in reader.pages:
-        writer.add_page(page)
-    
-    with open(output_path, 'wb') as output_file:
-        writer.write(output_file)
-    
-    print(f"Advanced claim summary PDF created: {output_path}")
+def _label_from_key(key: str) -> str:
+    return key.replace("_", " ").title()
 
-# Update your main function
-def main():
-    """Main function to process the claim and generate PDF."""
-    
-    # Load the extracted form fields
-    json_path = "/home/maken/symfa/claim-assistant/data/forms/dwc/extracted_form_fields.json"
-    
-    with open(json_path, "r") as f:
-        form_data = json.load(f)
-    
-    print("Analyzing claim with OpenAI...")
-    
-    # Analyze with OpenAI (your existing function)
-    analysis = analyze_claim_with_openai(form_data)
-    
-    # Create PDF using PyPDF approach
-    output_pdf_path = "/home/maken/symfa/claim-assistant/data/forms/dwc/claim_summary_pypdf.pdf"
-    
-    # # Method 1: Simple text version with wrapping
-    # create_simple_text_pdf_pypdf(analysis, output_pdf_path.replace('.pdf', '_simple.pdf'))
-    
-    # Method 2: Advanced version with better formatting
-    create_advanced_text_pdf_pypdf(analysis, output_pdf_path.replace('.pdf', '_advanced.pdf'))
-    
-    # Also save the analysis as JSON for reference
-    analysis_json_path = "/home/maken/symfa/claim-assistant/data/forms/dwc/claim_analysis.json"
-    with open(analysis_json_path, "w") as f:
-        json.dump(analysis, f, indent=2)
-    
-    print(f"Analysis saved to: {analysis_json_path}")
+
+def write_summary_pdf(data: dict, output_pdf: str | Path) -> Path:
+    """
+    Create a human-readable summary PDF from a dict.
+    Prints all mapped fields; missing/empty -> empty string.
+    Also adds an 'Other Fields' section for keys not in the mapping.
+    """
+    output_path = Path(output_pdf)
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+
+    doc = SimpleDocTemplate(
+        str(output_path),
+        pagesize=letter,
+        leftMargin=54,
+        rightMargin=54,
+        topMargin=54,
+        bottomMargin=54,
+        title="Workers' Compensation Claim Summary",
+        author="Claim Assistant",
+    )
+
+    story: list = []
+    story.append(_title("Workers’ Compensation Claim Summary"))
+
+    # Define sections and field order
+    claim_summary_map = [
+        ("Case Number", "__generated_case_number__"),
+        ("Submission Date", "todays_date"),
+        ("Policy Number", "insurance_policy_number"),
+    ]
+
+    employee_info_map = [
+        ("Name", "employee_name"),
+        ("Email", "employees_email"),
+        ("SSN", "social_security_number"),
+        ("Home Address", "home_address"),
+        ("City", "city"),
+        ("State", "state"),
+        ("Zip Code", "zip_code"),
+        ("Consent to Email Notices", "consent_to_receive_claim_notices_by_email_only"),
+        ("Employee Signature", "signature_of_employee"),
+    ]
+
+    employer_info_map = [
+        ("Employer Name", "employer_name"),
+        ("Employer Address", "employer_address"),
+        ("Representative Title", "title_of_employer_representative"),
+        ("Representative Phone", "telephone_number_of_employer_representative"),
+        ("Representative Signature", "signature_of_employer_representative"),
+        ("Date Employer First Knew of Injury", "date_employer_first_knew_of_injury"),
+        (
+            "Date Claim Form Provided to Employee",
+            "date_claim_form_was_provided_to_employee",
+        ),
+        ("Date Employer Received Claim Form", "date_employer_received_claim_form"),
+    ]
+
+    incident_info_map = [
+        ("Date of Injury", "date_of_injury"),
+        ("Time of Injury", "time_of_injury"),
+        ("Location / Address", "address_and_description_of_where_injury_happened"),
+        ("Injury Description", "describe_injury_and_part_of_body_affected"),
+    ]
+
+    policy_info_map = [
+        ("Policy Number", "insurance_policy_number"),
+        (
+            "Carrier / Adjuster",
+            "name_and_address_of_insurance_carrier_or_adjusting_agency",
+        ),
+    ]
+
+    # Claim Summary
+    story.append(_section_header("Claim Summary"))
+    case_number = f"CASE-{datetime.now().strftime('%Y%m%d-%H%M%S')}"
+    # mapped_claim = dict(data)
+    # mapped_claim["__generated_case_number__"] = case_number
+    # story.append(_kv_table(_rows_all(mapped_claim, claim_summary_map)))
+    data["__generated_case_number__"] = case_number
+    story.append(_kv_table(_rows_all(data, claim_summary_map)))
+    story.append(Spacer(1, 10))
+
+    # Employee Information
+    story.append(_section_header("Employee Information"))
+    story.append(_kv_table(_rows_all(data, employee_info_map)))
+    story.append(Spacer(1, 10))
+
+    # Employer Information
+    story.append(_section_header("Employer Information"))
+    story.append(_kv_table(_rows_all(data, employer_info_map)))
+    story.append(Spacer(1, 10))
+
+    # Incident Information
+    story.append(_section_header("Incident Information"))
+    story.append(_kv_table(_rows_all(data, incident_info_map)))
+    story.append(Spacer(1, 10))
+
+    # Policy Information
+    story.append(_section_header("Policy Information"))
+    story.append(_kv_table(_rows_all(data, policy_info_map)))
+
+    # Other fields not in the mapping
+    mapped_keys = (
+        {k for _, k in claim_summary_map}
+        | {k for _, k in employee_info_map}
+        | {k for _, k in employer_info_map}
+        | {k for _, k in incident_info_map}
+        | {k for _, k in policy_info_map}
+    )
+
+    extras = [k for k in data.keys() if k not in mapped_keys]
+    if extras:
+        story.append(Spacer(1, 14))
+        story.append(_section_header("Other Fields"))
+        extra_rows = [
+            (_label_from_key(k), _to_str(data.get(k))) for k in sorted(extras)
+        ]
+        story.append(_kv_table(extra_rows))
+
+    # Footer note
+    story.append(Spacer(1, 16))
+    story.append(
+        _para(
+            "<font size=9 color=grey>"
+            "This summary is generated from the FNOL form data and is intended for human review."
+            "</font>",
+        ),
+    )
+
+    doc.build(story, onFirstPage=_page_number, onLaterPages=_page_number)
+    return output_path
+
 
 if __name__ == "__main__":
-    main()
+    example = {
+        "employee_name": "John Smith",
+        "todays_date": "2025-10-03",
+        "home_address": "",
+        "city": "Springfield",
+        "state": "IL",
+        "zip_code": "62704",
+        "date_of_injury": "2025-09-28",
+        "time_of_injury": "14:35:00",
+        "address_and_description_of_where_injury_happened": "Warehouse 7, 235 Industrial Park Rd, Springfield, IL",
+        "describe_injury_and_part_of_body_affected": "",
+        "social_security_number": "XXX-XX-1234",
+        "employees_email": "john.smith@example.com",
+        "consent_to_receive_claim_notices_by_email_only": True,
+        "signature_of_employee": "",
+        "employer_name": "Acme Manufacturing Inc.",
+        "employer_address": "",
+        "date_employer_first_knew_of_injury": "2025-09-28",
+        "date_claim_form_was_provided_to_employee": "2025-09-29",
+        "date_employer_received_claim_form": "",
+        "name_and_address_of_insurance_carrier_or_adjusting_agency": "NorthBank Insurance Co., 77 Coverage Ave, Chicago, IL",
+        "insurance_policy_number": "PO123456",
+        "signature_of_employer_representative": "",
+        "title_of_employer_representative": "HR Manager",
+        "telephone_number_of_employer_representative": "555-012-3456",
+        "some_extra_field": "Extra value",
+    }
+
+    out = write_summary_pdf(example, Path("data/forms/dwc/claim_summary.pdf"))
+    print(f"Wrote {out.resolve()}")

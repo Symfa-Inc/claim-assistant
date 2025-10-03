@@ -1,21 +1,20 @@
 from pathlib import Path
-from typing import Type
-
-from pydantic import BaseModel
 
 # from claim_assistant.storage.db import check_db
-from claim_assistant.pdf.fnol_forms import DWCForm, CIDForm
 from claim_assistant.pdf.read_pdf import extract_form_fields
-# from claim_assistant.pdf.write_pdf import make_summary_pdf
+from claim_assistant.pdf.write_pdf import write_summary_pdf
 
 
-def main(path: Path, form_model: Type[BaseModel]):
-    claim = extract_form_fields(path, form_model)
-    # claim = check_db(claim)
-    # make_summary_pdf(claim)
+def main(
+    input_pdf_path: str | Path,
+    ouptut_pdf_path: str | Path = "data/forms/dwc/claim_summary.pdf",
+):
+    claim_dict = extract_form_fields(input_pdf_path)
+    # claim_dict = check_db(claim_dict)
+    print(claim_dict)
+    write_summary_pdf(claim_dict, ouptut_pdf_path)
 
 
 if __name__ == "__main__":
-    path = Path("/home/maken/symfa/claim-assistant/data/forms/cid/form_filled_flat.pdf")
-    form_model = CIDForm
-    main(path, form_model)
+    path = "/home/maken/symfa/claim-assistant/data/forms/dwc/form_filled_flat.pdf"
+    main(path)
