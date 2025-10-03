@@ -155,7 +155,7 @@ def write_summary_pdf(data: dict, output_pdf: str | Path) -> Path:
         ("State", "state"),
         ("Zip Code", "zip_code"),
         ("Consent to Email Notices", "consent_to_receive_claim_notices_by_email_only"),
-        ("Employee Signature", "signature_of_employee"),
+        # ("Employee Signature", "signature_of_employee"),
     ]
 
     employer_info_map = [
@@ -163,13 +163,13 @@ def write_summary_pdf(data: dict, output_pdf: str | Path) -> Path:
         ("Employer Address", "employer_address"),
         ("Representative Title", "title_of_employer_representative"),
         ("Representative Phone", "telephone_number_of_employer_representative"),
-        ("Representative Signature", "signature_of_employer_representative"),
         ("Date Employer First Knew of Injury", "date_employer_first_knew_of_injury"),
         (
             "Date Claim Form Provided to Employee",
             "date_claim_form_was_provided_to_employee",
         ),
         ("Date Employer Received Claim Form", "date_employer_received_claim_form"),
+        # ("Representative Signature", "signature_of_employer_representative"),
     ]
 
     incident_info_map = [
@@ -185,6 +185,11 @@ def write_summary_pdf(data: dict, output_pdf: str | Path) -> Path:
             "Carrier / Adjuster",
             "name_and_address_of_insurance_carrier_or_adjusting_agency",
         ),
+        ("Policy Holder Name", "policy_holder_name"),
+        ("Policy Start Date", "start_date"),
+        ("Policy End Date", "end_date"),
+        ("Policy Coverage", "policy_coverage"),
+        ("Adjuster advice", "adjuster_advice"),
     ]
 
     # Claim Summary

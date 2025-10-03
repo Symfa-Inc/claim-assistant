@@ -56,13 +56,13 @@ def llm_coverage_analysis(
             {"role": "user", "content": prompt},
         ],
         temperature=0.2,
-        max_tokens=250,
+        max_tokens=1000,
     )
 
     return response.choices[0].message.content.strip()
 
 
-def validate_claim_against_policies(
+def validate_claim(
     claim: dict[str, Any],
     policies: list[dict[str, Any]],
 ) -> dict[str, Any]:
@@ -212,5 +212,5 @@ if __name__ == "__main__":
     for label, claim in claims_to_test.items():
         print("=" * 40)
         print(f"Test case: {label}")
-        enriched_claim = validate_claim_against_policies(claim, policies)
+        enriched_claim = validate_claim(claim, policies)
         print(json.dumps(enriched_claim, indent=2))
