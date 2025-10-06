@@ -70,27 +70,69 @@ def _kv_table(
     Always renders all rows; empty values are shown as empty strings.
     """
     data = []
+    bg = ""
     for k, v in rows:
+        if v == "Positive":
+            # bg = colors.lightgreen
+            bg = "pos"
+        elif v == "Negative":
+            # bg = colors.red
+            bg = "neg"
         key_p = _para(f"<b>{k}:</b>")
         val_p = _para(v or "")
         data.append([key_p, val_p])
 
     tbl = Table(data, colWidths=list(col_widths), hAlign="LEFT")
-    tbl.setStyle(
-        TableStyle(
-            [
-                ("BACKGROUND", (0, 0), (0, -1), colors.whitesmoke),
-                ("TEXTCOLOR", (0, 0), (-1, -1), colors.black),
-                ("VALIGN", (0, 0), (-1, -1), "TOP"),
-                ("LEFTPADDING", (0, 0), (-1, -1), 6),
-                ("RIGHTPADDING", (0, 0), (-1, -1), 6),
-                ("TOPPADDING", (0, 0), (-1, -1), 4),
-                ("BOTTOMPADDING", (0, 0), (-1, -1), 4),
-                ("BOX", (0, 0), (-1, -1), 0.25, colors.lightgrey),
-                ("INNERGRID", (0, 0), (-1, -1), 0.25, colors.lightgrey),
-            ],
-        ),
-    )
+    if bg and bg == "pos":
+        tbl.setStyle(
+            TableStyle(
+                [
+                    ("BACKGROUND", (0, 0), (0, -1), colors.whitesmoke),
+                    ("BACKGROUND", (-1, -1), (-1, -1), colors.lightgreen),
+                    ("TEXTCOLOR", (0, 0), (-1, -1), colors.black),
+                    ("VALIGN", (0, 0), (-1, -1), "TOP"),
+                    ("LEFTPADDING", (0, 0), (-1, -1), 6),
+                    ("RIGHTPADDING", (0, 0), (-1, -1), 6),
+                    ("TOPPADDING", (0, 0), (-1, -1), 4),
+                    ("BOTTOMPADDING", (0, 0), (-1, -1), 4),
+                    ("BOX", (0, 0), (-1, -1), 0.25, colors.lightgrey),
+                    ("INNERGRID", (0, 0), (-1, -1), 0.25, colors.lightgrey),
+                ],
+            ),
+        )
+    elif bg and bg == "neg":
+        tbl.setStyle(
+            TableStyle(
+                [
+                    ("BACKGROUND", (0, 0), (0, -1), colors.whitesmoke),
+                    ("BACKGROUND", (-1, -1), (-1, -1), colors.salmon),
+                    ("TEXTCOLOR", (0, 0), (-1, -1), colors.black),
+                    ("VALIGN", (0, 0), (-1, -1), "TOP"),
+                    ("LEFTPADDING", (0, 0), (-1, -1), 6),
+                    ("RIGHTPADDING", (0, 0), (-1, -1), 6),
+                    ("TOPPADDING", (0, 0), (-1, -1), 4),
+                    ("BOTTOMPADDING", (0, 0), (-1, -1), 4),
+                    ("BOX", (0, 0), (-1, -1), 0.25, colors.lightgrey),
+                    ("INNERGRID", (0, 0), (-1, -1), 0.25, colors.lightgrey),
+                ],
+            ),
+        )
+    else:
+        tbl.setStyle(
+            TableStyle(
+                [
+                    ("BACKGROUND", (0, 0), (0, -1), colors.whitesmoke),
+                    ("TEXTCOLOR", (0, 0), (-1, -1), colors.black),
+                    ("VALIGN", (0, 0), (-1, -1), "TOP"),
+                    ("LEFTPADDING", (0, 0), (-1, -1), 6),
+                    ("RIGHTPADDING", (0, 0), (-1, -1), 6),
+                    ("TOPPADDING", (0, 0), (-1, -1), 4),
+                    ("BOTTOMPADDING", (0, 0), (-1, -1), 4),
+                    ("BOX", (0, 0), (-1, -1), 0.25, colors.lightgrey),
+                    ("INNERGRID", (0, 0), (-1, -1), 0.25, colors.lightgrey),
+                ],
+            ),
+        )
     return tbl
 
 
@@ -108,7 +150,15 @@ def _rows_all(data: dict, mapping: list[tuple[str, str]]) -> list[tuple[str, str
     """
     rows: list[tuple[str, str]] = []
     for label, key in mapping:
-        rows.append((label, _to_str(data.get(key))))
+        if key == "conclusion" and data.get(key) == "positive":
+            # Special case for conclusion field with limited enum values
+            key = "Positive"
+            rows.append((label, _to_str(key)))
+        elif key == "conclusion" and data.get(key) == "negative":
+            key = "Negative"
+            rows.append((label, _to_str(key)))
+        else:
+            rows.append((label, _to_str(data.get(key))))
     return rows
 
 

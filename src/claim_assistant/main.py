@@ -13,8 +13,11 @@ def main(
     policies: list[dict],
     ouptut_pdf_path: str | Path = "./claim_summary.pdf",
 ):
+    print("Extracting form fields...")
     claim_dict = extract_form_fields(input_pdf_path)
+    print("Validating claim against policies...")
     claim_dict = validate_claim(claim_dict, policies)
+    print("Writing summary PDF...")
     write_summary_pdf(claim_dict, ouptut_pdf_path)
 
 
