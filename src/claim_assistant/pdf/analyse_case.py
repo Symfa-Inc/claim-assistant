@@ -19,11 +19,15 @@ def llm_coverage_analysis(
     claim_injury_desc: str,
     claim_injury_place: str,
     policy_coverage: str,
-) -> str:
+) -> dict[str, str]:
     """
     Use OpenAI LLM to analyze whether the reported case
-    appears covered by the policy. The output is advisory,
-    highlighting possible coverage and potential reasons for denial.
+    appears covered by the policy.
+    The LLM returns structured JSON with fields such as:
+      {
+        "executive_summary": "...",
+        "conclusion": "positive" | "negative"
+      }
     """
     settings = OpenAISettings()
     client = OpenAI(api_key=settings.openai_api_key)
@@ -42,8 +46,10 @@ def llm_coverage_analysis(
 
     Task:
     - Explain whether the injury and place plausibly fall under the policy coverage.
-    - Identify possible reasons for denial (e.g., location mismatch, type of injury not covered).
-    - Keep the response advisory in tone, not a final decision.
+    - Identify possible reasons for denial (if any).
+    - Respond strictly as a JSON object with fields:
+        "executive_summary": string,
+        "conclusion": "positive" or "negative".
     """
 
     response = client.chat.completions.create(
@@ -57,9 +63,36 @@ def llm_coverage_analysis(
         ],
         temperature=0.2,
         max_tokens=1000,
+        response_format={
+            "type": "json_schema",
+            "json_schema": {
+                "name": "coverage_assessment",
+                "schema": {
+                    "type": "object",
+                    "properties": {
+                        "executive_summary": {
+                            "type": "string",
+                            "description": (
+                                "A short, managerial-level summary analyzing whether "
+                                "the injury and location fall under the policy coverage."
+                            ),
+                        },
+                        "conclusion": {
+                            "type": "string",
+                            "enum": ["positive", "negative"],
+                            "description": (
+                                "A concise assessment: 'positive' if the coverage likely applies, "
+                                "'negative' if it likely does not."
+                            ),
+                        },
+                    },
+                    "required": ["executive_summary", "conclusion"],
+                    "additionalProperties": False,
+                },
+            },
+        },
     )
-
-    return response.choices[0].message.content.strip()
+    return json.loads(response.choices[0].message.content)
 
 
 def validate_claim(
@@ -77,7 +110,8 @@ def validate_claim(
     ]
 
     if not matching_policies:
-        claim["adjuster_advice"] = "Policy not found in database."
+        claim["executive_summary"] = "Policy not found in database."
+        claim["conclusion"] = "negative"
         return claim
 
     # If multiple policies with same number, pick latest end_date
@@ -97,9 +131,10 @@ def validate_claim(
         claim["employee_name"].strip().lower()
         != policy["policy_holder_name"].strip().lower()
     ):
-        claim["adjuster_advice"] = (
+        claim["executive_summary"] = (
             "Policy number found, but employee name differs from policy holder."
         )
+        claim["conclusion"] = "negative"
         return claim
 
     # Step 3: Date Coverage Check
@@ -108,13 +143,15 @@ def validate_claim(
     end_date = parse_date(policy["end_date"])
 
     if not (date_of_injury and start_date and end_date):
-        claim["adjuster_advice"] = "Date parsing error in claim or policy."
+        claim["executive_summary"] = "Date parsing error in claim or policy."
+        claim["conclusion"] = "negative"
         return claim
 
     if not (start_date <= date_of_injury <= end_date):
-        claim["adjuster_advice"] = (
+        claim["executive_summary"] = (
             "Incident date not covered by policy validity period."
         )
+        claim["conclusion"] = "negative"
         return claim
 
     # Step 4: Coverage Analysis
@@ -123,8 +160,8 @@ def validate_claim(
         claim.get("address_and_description_of_where_injury_happened", ""),
         policy["policy_coverage"],
     )
-    claim["adjuster_advice"] = analysis
 
+    claim.update(analysis)
     return claim
 
 

@@ -189,7 +189,8 @@ def write_summary_pdf(data: dict, output_pdf: str | Path) -> Path:
         ("Policy Start Date", "start_date"),
         ("Policy End Date", "end_date"),
         ("Policy Coverage", "policy_coverage"),
-        ("Adjuster advice", "adjuster_advice"),
+        ("Executive Summary", "executive_summary"),
+        ("Conclusion", "conclusion"),
     ]
 
     # Claim Summary
