@@ -1,6 +1,8 @@
 import json
+import os
 from pathlib import Path
 
+from claim_assistant import PROJECT_DIR
 from claim_assistant.pdf.analyse_case import validate_claim
 from claim_assistant.pdf.read_pdf import extract_form_fields
 from claim_assistant.pdf.write_pdf import write_summary_pdf
@@ -36,5 +38,5 @@ if __name__ == "__main__":
     ]
     """
     policies = json.loads(policies_json)
-    path = "/home/maken/symfa/claim-assistant/data/forms/dwc/form_filled_flat.pdf"
+    path = os.path.join(PROJECT_DIR, "data", "forms", "dwc", "form_filled_flat.pdf")
     main(path, policies)
