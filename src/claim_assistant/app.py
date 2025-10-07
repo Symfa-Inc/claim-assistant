@@ -32,22 +32,31 @@ DEFAULT_POLICIES = [
 
 
 def display_pdf(pdf_bytes: bytes, download_name: str):
-    """Display PDF with consistent styling."""
-    # Download button
+    """Display PDF with modern, minimalist styling."""
+    # Modern download button
     st.download_button(
-        label=f"📥 Download {download_name}",
+        label=f"↓ {download_name}",
         data=pdf_bytes,
         file_name=f"{download_name.lower().replace(' ', '_')}.pdf",
         mime="application/pdf",
         use_container_width=True,
     )
 
-    # Display PDF using iframe
+    # Modern PDF viewer with subtle shadows and clean borders
     import base64
 
     base64_pdf = base64.b64encode(pdf_bytes).decode("utf-8")
     pdf_display = f"""
-    <div style="width: 100%; height: 600px; border: 2px solid #e1e5e9; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin-top: 10px;">
+    <div style="
+        width: 100%;
+        height: 650px;
+        border: 1px solid #e5e7eb;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        margin-top: 12px;
+        background: white;
+    ">
         <iframe
             src="data:application/pdf;base64,{base64_pdf}"
             width="100%"
@@ -61,10 +70,26 @@ def display_pdf(pdf_bytes: bytes, download_name: str):
 
 
 def create_placeholder():
-    """Create placeholder with consistent styling."""
+    """Create modern, minimalist placeholder."""
     placeholder = """
-    <div style="width: 100%; height: 676px; border: 2px dashed #e1e5e9; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #8e9297; font-size: 18px; background-color: #f8f9fa; margin-top: 58px;">
-        PDF will appear here
+    <div style="
+        width: 100%;
+        height: 720px;
+        border: 2px dashed #d1d5db;
+        border-radius: 12px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: #6b7280;
+        font-size: 16px;
+        font-weight: 500;
+        background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
+        margin-top: 58px;
+        transition: all 0.3s ease;
+    ">
+        <div style="font-size: 48px; margin-bottom: 16px; opacity: 0.5;">📄</div>
+        <div>PDF will appear here</div>
     </div>
     """
     st.markdown(placeholder, unsafe_allow_html=True)
@@ -72,24 +97,78 @@ def create_placeholder():
 
 def main():
     st.set_page_config(
-        page_title="Claim Assistant - PDF Processor",
-        page_icon="📄",
+        page_title="Claim Assistant",
+        page_icon="🤖",
         layout="wide",
+        initial_sidebar_state="collapsed",
     )
 
-    st.title("🏥 Claim Assistant - PDF Form Processor")
+    # Modern CSS styling
     st.markdown(
-        "Upload a PDF form, process it with AI, and get a comprehensive summary report.",
+        """
+    <style>
+    .main-header {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #1f2937;
+        margin-bottom: 0.5rem;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+    .sub-header {
+        font-size: 1.1rem;
+        color: #6b7280;
+        font-weight: 400;
+        margin-bottom: 2rem;
+    }
+    .section-header {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: #374151;
+        margin-bottom: 1rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 2px solid #e5e7eb;
+    }
+    .stButton > button {
+        border-radius: 8px;
+        border: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+    }
+    .stButton > button:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+    .metric-card {
+        background: white;
+        padding: 1rem;
+        border-radius: 12px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        border: 1px solid #e5e7eb;
+    }
+    </style>
+    """,
+        unsafe_allow_html=True,
     )
 
-    # Sidebar configuration
+    # Modern header
+    st.markdown('<h1 class="main-header">Claim Assistant</h1>', unsafe_allow_html=True)
+    st.markdown(
+        '<p class="sub-header">AI-powered insurance claim processing made simple</p>',
+        unsafe_allow_html=True,
+    )
+
+    # Modern sidebar configuration
     with st.sidebar:
-        st.header("⚙️ Configuration")
+        st.markdown("### ⚙️ Configuration")
 
         api_key = st.text_input(
             "OpenAI API Key",
             type="password",
-            help="Required for PDF processing",
+            placeholder="sk-...",
+            help="🔐 Required for AI processing",
             value=os.getenv("OPENAI_API_KEY", ""),
         )
 
@@ -98,31 +177,33 @@ def main():
 
         st.markdown("---")
 
-        st.subheader("📋 Insurance Policies")
+        st.markdown("### 📋 Policies")
         use_default_policies = st.checkbox("Use default policies", value=True)
 
         if use_default_policies:
             policies = DEFAULT_POLICIES
-            st.success(f"Using {len(policies)} default policies")
+            st.success(f"✓ {len(policies)} policies loaded")
         else:
             policies_json = st.text_area(
                 "Custom Policies (JSON)",
                 value=json.dumps(DEFAULT_POLICIES, indent=2),
-                height=200,
+                height=180,
                 help="Enter policies as JSON array",
             )
             try:
                 policies = json.loads(policies_json)
-                st.success(f"Loaded {len(policies)} custom policies")
+                st.success(f"✓ {len(policies)} custom policies loaded")
             except json.JSONDecodeError as e:
-                st.error(f"Invalid JSON: {e}")
+                st.error(f"❌ Invalid JSON: {e}")
                 policies = DEFAULT_POLICIES
 
-    # File uploader
+    # Modern file uploader section
+    st.markdown("### 📎 Upload Document")
     uploaded_file = st.file_uploader(
-        "📤 Choose a PDF file to process",
+        "Choose a PDF file to process",
         type="pdf",
-        help="Upload the claim form PDF to process",
+        help="Drag and drop or browse for your claim form PDF",
+        label_visibility="collapsed",
     )
 
     # Control buttons in a single row
@@ -135,21 +216,22 @@ def main():
             st.session_state.uploaded_pdf_bytes = uploaded_file.read()
             st.session_state.uploaded_filename = uploaded_file.name
 
-        col_process, col_reset, col_time = st.columns([2, 2, 2])
+        # Modern control panel
+        col_process, col_reset, col_time = st.columns([3, 2, 2])
 
         with col_process:
             if st.button(
-                "🚀 Start Processing",
+                "✨ Process Document",
                 type="primary",
                 use_container_width=True,
             ):
                 if not api_key:
-                    st.error("⚠️ Please provide an OpenAI API key in the sidebar")
+                    st.error("🔑 Please provide an OpenAI API key in the sidebar")
                     return
 
                 start_time = time.time()
 
-                with st.spinner("🔄 Processing PDF..."):
+                with st.spinner("🤖 AI is analyzing your document..."):
                     try:
                         # Save to temporary files
                         with tempfile.NamedTemporaryFile(
@@ -189,7 +271,7 @@ def main():
                         os.unlink(tmp_output_path)
 
                         st.success(
-                            f"✅ Processing completed in {processing_time:.1f} seconds!",
+                            f"🎉 Analysis complete! Processed in {processing_time:.1f}s",
                         )
                         st.rerun()
 
@@ -202,7 +284,7 @@ def main():
                 hasattr(st.session_state, "processing_complete")
                 and st.session_state.processing_complete
             ):
-                if st.button("🔄 Reset", use_container_width=True):
+                if st.button("↻ New Document", use_container_width=True):
                     for key in [
                         "processing_complete",
                         "summary_pdf",
@@ -219,40 +301,67 @@ def main():
                 hasattr(st.session_state, "processing_complete")
                 and st.session_state.processing_complete
             ):
-                st.metric(
-                    "⚡ Processing Time",
-                    f"{st.session_state.get('processing_time', 0):.1f}s",
+                st.markdown(
+                    f"""
+                <div class="metric-card">
+                    <div style="color: #6b7280; font-size: 0.875rem; margin-bottom: 4px;">Processing Time</div>
+                    <div style="color: #059669; font-size: 1.5rem; font-weight: 700;">
+                        {st.session_state.get("processing_time", 0):.1f}s
+                    </div>
+                </div>
+                """,
+                    unsafe_allow_html=True,
                 )
 
-    st.markdown("---")
+    # Modern divider
+    st.markdown(
+        """
+    <div style="height: 1px; background: linear-gradient(90deg, transparent, #e5e7eb, transparent); margin: 2rem 0;"></div>
+    """,
+        unsafe_allow_html=True,
+    )
 
-    # Perfect PDF alignment - simple and clean
-    col1, col2 = st.columns([1, 1])
+    # Clean document viewer section
+    col1, col2 = st.columns([1, 1], gap="large")
 
     with col1:
-        st.subheader("📄 Original Form")
+        st.markdown(
+            '<div class="section-header">📄 Original Document</div>',
+            unsafe_allow_html=True,
+        )
         if uploaded_file is not None and hasattr(
             st.session_state,
             "uploaded_pdf_bytes",
         ):
-            display_pdf(st.session_state.uploaded_pdf_bytes, "Original Form")
+            display_pdf(st.session_state.uploaded_pdf_bytes, "Original Document")
         else:
             create_placeholder()
 
     with col2:
-        st.subheader("📊 Summary Report")
+        st.markdown(
+            '<div class="section-header">📊 AI Analysis Report</div>',
+            unsafe_allow_html=True,
+        )
         if (
             hasattr(st.session_state, "processing_complete")
             and st.session_state.processing_complete
             and hasattr(st.session_state, "summary_pdf")
         ):
-            display_pdf(st.session_state.summary_pdf, "Summary Report")
+            display_pdf(st.session_state.summary_pdf, "Analysis Report")
         else:
             create_placeholder()
 
-    # Footer
-    st.markdown("---")
-    st.markdown("**Claim Assistant** - Automated claim processing powered by AI")
+    # Modern footer
+    st.markdown(
+        """
+    <div style="margin-top: 3rem; padding: 2rem 0; border-top: 1px solid #e5e7eb; text-align: center;">
+        <div style="color: #6b7280; font-size: 0.875rem;">
+            <strong>Claim Assistant</strong> • Powered by AI • Built for efficiency
+        </div>
+    </div>
+    """,
+        unsafe_allow_html=True,
+    )
 
 
 if __name__ == "__main__":
