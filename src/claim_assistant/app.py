@@ -339,7 +339,7 @@ def main():
 
     with col2:
         st.markdown(
-            '<div class="section-header">📊 AI Analysis Report</div>',
+            '<div class="section-header">📊 Analysis Report</div>',
             unsafe_allow_html=True,
         )
         if (
