@@ -1,0 +1,191 @@
+import logging
+from datetime import datetime
+from pathlib import Path
+from typing import Union
+
+from reportlab.lib import colors
+from reportlab.lib.pagesizes import letter
+from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
+from reportlab.lib.units import inch
+from reportlab.platypus import (
+    Paragraph,
+    SimpleDocTemplate,
+    Spacer,
+    Table,
+    TableStyle,
+    PageBreak,
+)
+
+from claim_assistant.models.form import Form
+from claim_assistant.schemas.coverage_analysis import CoverageAnalysis
+from claim_assistant.schemas.mock_policy_record import MockPolicyRecord
+
+
+class PDFMappingProcessor:
+    """
+    Responsible for mapping a filled claim form and validation results
+    back into a generated PDF report.
+
+    This processor consolidates extracted form data, matched policy details,
+    and LLM analysis results into a human-readable report.
+    """
+
+    def __init__(self, logger: logging.Logger) -> None:
+        self.logger = logger
+
+    # ------------------------------------------------------------
+    # Utility helpers
+    # ------------------------------------------------------------
+    def _para(self, text: str, style_name: str = "BodyText") -> Paragraph:
+        styles = getSampleStyleSheet()
+        return Paragraph((text or "").replace("\n", "<br/>"), styles[style_name])
+
+    def _section_header(self, text: str) -> Paragraph:
+        styles = getSampleStyleSheet()
+        hdr = ParagraphStyle(
+            "SectionHeader",
+            parent=styles["Heading2"],
+            fontSize=13,
+            textColor=colors.darkgreen,
+            spaceBefore=12,
+            spaceAfter=6,
+        )
+        return Paragraph(text, hdr)
+
+    def _title(self, text: str) -> Paragraph:
+        styles = getSampleStyleSheet()
+        ttl = ParagraphStyle(
+            "DocTitle",
+            parent=styles["Heading1"],
+            textColor=colors.darkblue,
+            fontSize=16,
+            spaceAfter=16,
+        )
+        return Paragraph(text, ttl)
+
+    def _kv_table(self, rows: list[tuple[str, str]]) -> Table:
+        """Create a simple key-value table."""
+        data = []
+        for key, val in rows:
+            key_p = self._para(f"<b>{key}:</b>")
+            val_p = self._para(val or "")
+            data.append([key_p, val_p])
+
+        tbl = Table(data, colWidths=[2.0 * inch, 4.5 * inch], hAlign="LEFT")
+        tbl.setStyle(
+            TableStyle(
+                [
+                    ("BACKGROUND", (0, 0), (0, -1), colors.whitesmoke),
+                    ("VALIGN", (0, 0), (-1, -1), "TOP"),
+                    ("BOX", (0, 0), (-1, -1), 0.25, colors.lightgrey),
+                    ("INNERGRID", (0, 0), (-1, -1), 0.25, colors.lightgrey),
+                    ("LEFTPADDING", (0, 0), (-1, -1), 6),
+                    ("RIGHTPADDING", (0, 0), (-1, -1), 6),
+                ]
+            )
+        )
+        return tbl
+
+    def _page_number(self, canvas, doc):
+        canvas.setFont("Helvetica", 9)
+        canvas.setFillColor(colors.grey)
+        canvas.drawRightString(doc.pagesize[0] - 36, 20, f"Page {doc.page}")
+
+    # ------------------------------------------------------------
+    # Main generation logic
+    # ------------------------------------------------------------
+    def process(
+        self,
+        form: Form,
+        policy: MockPolicyRecord,
+        analysis: CoverageAnalysis,
+        output_path: Union[str, Path],
+    ) -> Path:
+        """
+        Create a multi-section PDF report:
+          1. Executive summary (LLM conclusion and short text)
+          2. Form contents (all extracted questions and answers)
+          3. Policy metadata and full policy coverage as appendix
+
+        Args:
+            form: Filled Form object.
+            policy: Matching MockPolicyRecord.
+            analysis: CoverageAnalysis result.
+            output_path: Path to save generated PDF.
+
+        Returns:
+            Path to saved PDF file.
+        """
+        self.logger.info("Generating claim report PDF...")
+        output = Path(output_path)
+        output.parent.mkdir(parents=True, exist_ok=True)
+
+        doc = SimpleDocTemplate(
+            str(output),
+            pagesize=letter,
+            leftMargin=54,
+            rightMargin=54,
+            topMargin=54,
+            bottomMargin=54,
+            title="Insurance Claim Report",
+            author="Claim Assistant",
+        )
+
+        story: list = []
+        story.append(self._title("Insurance Claim Report"))
+        story.append(
+            self._para(
+                f"Generated on {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}",
+                style_name="Italic",
+            )
+        )
+        story.append(Spacer(1, 16))
+
+        # --- Section 1: Executive Summary ---
+        story.append(self._section_header("Executive Summary"))
+        story.append(
+            self._kv_table(
+                [
+                    ("Conclusion", analysis.conclusion.capitalize()),
+                    ("Summary", analysis.executive_summary),
+                ]
+            )
+        )
+
+        story.append(Spacer(1, 18))
+
+        # --- Section 2: Extracted Form Fields ---
+        story.append(self._section_header("Extracted Form Fields"))
+        form_rows = [(f.text, str(f.answer or "N/A")) for f in form.fields]
+        story.append(self._kv_table(form_rows))
+
+        story.append(PageBreak())
+
+        # --- Section 3: Policy Information ---
+        story.append(self._section_header("Policy Information"))
+        policy_rows = [
+            ("Policy Number", policy.policy_number),
+            ("Policy Holder", f"{policy.policy_holder_first_name} {policy.policy_holder_last_name}"),
+            ("Coverage Start Date", policy.start_date.isoformat()),
+            ("Coverage End Date", policy.end_date.isoformat()),
+        ]
+        story.append(self._kv_table(policy_rows))
+
+        # --- Appendix: Full Coverage Description ---
+        story.append(PageBreak())
+        story.append(self._section_header("Appendix: Full Policy Coverage"))
+        story.append(
+            self._para(policy.policy_coverage or "No coverage details available.")
+        )
+
+        # Footer
+        story.append(Spacer(1, 24))
+        story.append(
+            self._para(
+                "<font size=9 color=grey>This report is auto-generated by Claim Assistant.</font>"
+            )
+        )
+
+        doc.build(story, onFirstPage=self._page_number, onLaterPages=self._page_number)
+        self.logger.info(f"PDF report successfully written to {output}")
+        return output
