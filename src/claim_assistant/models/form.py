@@ -1,10 +1,12 @@
-from typing import Any, get_type_hints
+from pathlib import Path
+from typing import Any, Union, get_type_hints
 
 from claim_assistant.models.form_field import FormField
 
 
 class Form:
     """Generic Form containing both logic attributes and an ordered list of FormFields."""
+
     # --- Used for database logic ---
     policy_id: FormField
     first_name: FormField
@@ -49,7 +51,8 @@ class Form:
 
         # 4. Assign attributes by alias
         declared_attrs = {
-            name for name, typ in get_type_hints(self.__class__).items()
+            name
+            for name, typ in get_type_hints(self.__class__).items()
             if typ is FormField
         }
 
@@ -63,10 +66,12 @@ class Form:
         # 5. Check that all declared attributes are present
         missing = [attr for attr in declared_attrs if not hasattr(self, attr)]
         if missing:
-            raise ValueError(f"Missing required fields for declared attributes: {missing}")
+            raise ValueError(
+                f"Missing required fields for declared attributes: {missing}",
+            )
 
     @classmethod
-    def from_json(cls, path: str) -> "Form":
+    def from_json(cls, path: Union[str, Path]) -> "Form":
         """
         Factory method that loads form definition from a JSON file
         and returns a Form instance.
@@ -78,7 +83,6 @@ class Form:
             Form: a fully initialized Form object.
         """
         import json
-        from pathlib import Path
 
         path = Path(path)
         if not path.exists() or not path.is_file():
@@ -91,17 +95,29 @@ class Form:
             raise ValueError(f"Invalid JSON in form file: {path}\n{e}")
 
         if not isinstance(data, list):
-            raise TypeError(f"Form JSON must be a list of field definitions, got {type(data)}")
+            raise TypeError(
+                f"Form JSON must be a list of field definitions, got {type(data)}",
+            )
 
         return cls(data)
 
 
 if __name__ == "__main__":
     form_data = [
-        {"order": 2, "text": "First name", "alias": "first_name", "data_type": "string"},
+        {
+            "order": 2,
+            "text": "First name",
+            "alias": "first_name",
+            "data_type": "string",
+        },
         {"order": 1, "text": "Policy ID", "alias": "policy_id", "data_type": "string"},
         {"order": 3, "text": "Last name", "alias": "last_name", "data_type": "string"},
-        {"order": 4, "text": "Date of incident", "alias": "date_of_incident", "data_type": "date"},
+        {
+            "order": 4,
+            "text": "Date of incident",
+            "alias": "date_of_incident",
+            "data_type": "date",
+        },
     ]
 
     form = Form(form_data)

@@ -1,5 +1,6 @@
 from typing import Any, Literal
-from pydantic import BaseModel, Field, field_validator, create_model
+
+from pydantic import BaseModel, Field, create_model, field_validator
 from pydantic_core.core_schema import ValidationInfo
 
 
@@ -13,12 +14,12 @@ class FormField(BaseModel):
 
     order: int = Field(
         None,
-        description="Numeric order of the field in the form. "
+        description="Numeric order of the field in the form. ",
     )
 
     text: str = Field(
         ...,
-        description="Human-readable field text or prompt as it appears in the form."
+        description="Human-readable field text or prompt as it appears in the form.",
     )
     description: str | None = Field(
         None,
@@ -38,14 +39,20 @@ class FormField(BaseModel):
         ),
     )
     data_type: Literal[
-        "string", "number", "date", "time", "boolean", "text", "enum"
+        "string",
+        "number",
+        "date",
+        "time",
+        "boolean",
+        "text",
+        "enum",
     ] = Field(
         ...,
         description=(
             "Defines how the LLM should represent the field in structured output "
             "and what validation applies."
             "Allowed options are specified in meta"
-        )
+        ),
     )
     meta: dict[str, Any] | None = Field(
         default_factory=dict,
@@ -58,9 +65,9 @@ class FormField(BaseModel):
         ),
     )
     answer: Any = Field(
-        None, description="Value extracted or entered by user."
+        None,
+        description="Value extracted or entered by user.",
     )
-
 
     @field_validator("order")
     @classmethod
@@ -74,12 +81,18 @@ class FormField(BaseModel):
     def validate_data_type(cls, v: str) -> str:
         allowed = {"string", "number", "date", "time", "boolean", "text", "enum"}
         if v not in allowed:
-            raise ValueError(f"Invalid data_type '{v}'. Must be one of {sorted(allowed)}.")
+            raise ValueError(
+                f"Invalid data_type '{v}'. Must be one of {sorted(allowed)}.",
+            )
         return v
 
     @field_validator("meta")
     @classmethod
-    def validate_meta(cls, meta: dict[str, Any], info: ValidationInfo) -> dict[str, Any]:
+    def validate_meta(
+        cls,
+        meta: dict[str, Any],
+        info: ValidationInfo,
+    ) -> dict[str, Any]:
         """Ensure meta contains only allowed keys and required ones if applicable."""
         if not meta:
             return meta
@@ -87,12 +100,20 @@ class FormField(BaseModel):
         allowed_keys = {"format", "labels"}
         invalid = set(meta.keys()) - allowed_keys
         if invalid:
-            raise ValueError(f"Invalid meta key(s): {invalid}. Allowed keys: {allowed_keys}.")
+            raise ValueError(
+                f"Invalid meta key(s): {invalid}. Allowed keys: {allowed_keys}.",
+            )
 
         dtype = info.data.get("data_type")  # <-- Correct Pydantic v2 access
         if dtype == "enum" and "labels" not in meta:
-            raise ValueError("Enum fields must define meta['labels'] with allowed options.")
-        if dtype in {"date", "time"} and "format" in meta and not isinstance(meta["format"], str):
+            raise ValueError(
+                "Enum fields must define meta['labels'] with allowed options.",
+            )
+        if (
+            dtype in {"date", "time"}
+            and "format" in meta
+            and not isinstance(meta["format"], str)
+        ):
             raise ValueError("meta['format'] must be a string for date/time fields.")
         return meta
 
@@ -140,6 +161,7 @@ class FormField(BaseModel):
 
 if __name__ == "__main__":
     import json
+
     field = FormField(
         order=1,
         text="Type of incident",

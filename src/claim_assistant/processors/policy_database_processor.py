@@ -37,7 +37,9 @@ class PolicyDatabaseProcessor:
             record["policy_number"]: MockPolicyRecord(**record) for record in data
         }
 
-        self.logger.info(f"Loaded {len(self._policies)} policy records from {path.name}.")
+        self.logger.info(
+            f"Loaded {len(self._policies)} policy records from {path.name}.",
+        )
 
     def process(self, form: Form) -> MockPolicyRecord | None:
         """

@@ -1,5 +1,6 @@
-from pydantic import BaseModel, Field
 from datetime import date
+
+from pydantic import BaseModel, Field
 
 
 class MockPolicyRecord(BaseModel):
@@ -9,28 +10,28 @@ class MockPolicyRecord(BaseModel):
 
     policy_number: str = Field(
         ...,
-        description="Unique policy identifier, typically alphanumeric (e.g., 'POL123456789')."
+        description="Unique policy identifier, typically alphanumeric (e.g., 'POL123456789').",
     )
     policy_holder_first_name: str = Field(
         ...,
-        description="First name of the policyholder."
+        description="First name of the policyholder.",
     )
     policy_holder_last_name: str = Field(
         ...,
-        description="Last name of the policyholder."
+        description="Last name of the policyholder.",
     )
     start_date: date = Field(
         ...,
-        description="Date when the policy coverage begins (ISO format: YYYY-MM-DD)."
+        description="Date when the policy coverage begins (ISO format: YYYY-MM-DD).",
     )
     end_date: date = Field(
         ...,
         alias="end_data",
-        description="Date when the policy coverage ends (ISO format: YYYY-MM-DD)."
+        description="Date when the policy coverage ends (ISO format: YYYY-MM-DD).",
     )
     policy_coverage: str = Field(
         ...,
-        description="Detailed description of what the policy covers."
+        description="Detailed description of what the policy covers.",
     )
 
     class Config:
@@ -45,5 +46,5 @@ class MockPolicyRecord(BaseModel):
                     "Work-related illness coverage including diagnostic tests, "
                     "prescribed medication, and return-to-work therapy sessions."
                 ),
-            }
+            },
         }

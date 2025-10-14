@@ -1,4 +1,3 @@
-import json
 import logging
 import os
 import time
@@ -9,10 +8,14 @@ from openai import OpenAI
 
 from claim_assistant import PROJECT_DIR
 from claim_assistant.models.form import Form
-from claim_assistant.processors import FormFillingProcessor, PDFMappingProcessor, PolicyDatabaseProcessor, ClaimValidationProcessor
+from claim_assistant.processors import (
+    ClaimValidationProcessor,
+    FormFillingProcessor,
+    PDFMappingProcessor,
+    PolicyDatabaseProcessor,
+)
 from claim_assistant.schemas.coverage_analysis import CoverageAnalysis
 from claim_assistant.schemas.mock_policy_record import MockPolicyRecord
-
 from claim_assistant.settings import OpenAISettings
 
 logger = logging.getLogger(__name__)
@@ -35,7 +38,12 @@ def main(
     start_time = time.time()
 
     # --- output directory ---
-    run_dir = os.path.join(PROJECT_DIR, "data", "runs", datetime.now().strftime("%Y%m%d_%H%M%S"))
+    run_dir = os.path.join(
+        PROJECT_DIR,
+        "data",
+        "runs",
+        datetime.now().strftime("%Y%m%d_%H%M%S"),
+    )
     os.makedirs(run_dir, exist_ok=True)
     output_pdf_path = os.path.join(run_dir, "claim_summary.pdf")
     log_path = os.path.join(run_dir, "run.log")
@@ -52,12 +60,16 @@ def main(
     # Console handler
     console_handler = logging.StreamHandler()
     console_handler.setLevel(logging.INFO)
-    console_handler.setFormatter(logging.Formatter("%(asctime)s - %(levelname)s - %(message)s"))
+    console_handler.setFormatter(
+        logging.Formatter("%(asctime)s - %(levelname)s - %(message)s"),
+    )
 
     # File handler
     file_handler = logging.FileHandler(log_path, mode="w", encoding="utf-8")
     file_handler.setLevel(logging.INFO)
-    file_handler.setFormatter(logging.Formatter("%(asctime)s - %(levelname)s - %(message)s"))
+    file_handler.setFormatter(
+        logging.Formatter("%(asctime)s - %(levelname)s - %(message)s"),
+    )
 
     # Attach both handlers once
     logger.addHandler(console_handler)
@@ -80,7 +92,10 @@ def main(
     logger.info("Step 2: Fetching policy from database...")
     policy: MockPolicyRecord | None = db_processor.process(form)
     if not policy:
-        logger.error("No matching policy found for Policy ID: %s", form.policy_id.answer)
+        logger.error(
+            "No matching policy found for Policy ID: %s",
+            form.policy_id.answer,
+        )
         return
 
     logger.info("Step 3: Validating claim against policy record...")
@@ -92,16 +107,27 @@ def main(
     elapsed = time.time() - start_time
     logger.info(f"Claim processing completed in {elapsed:.1f} seconds")
     logger.info(f"Artifacts saved in: {run_dir}")
-    logger.info(f"Report: {output_pdf_path}", )
+    logger.info(f"Report: {output_pdf_path}")
     logger.info(f"Log: {log_path}")
 
 
 if __name__ == "__main__":
-
     # Paths for input and form template
-    policy_db_path = os.path.join(PROJECT_DIR, "data", "forms", "dwc", "policies.json")
-    input_pdf_path = os.path.join(PROJECT_DIR, "data", "forms", "dwc", "form_filled_flat.pdf")
-    form_json_path = os.path.join(PROJECT_DIR, "data", "forms", "dwc", "form_questions.json")
+    policy_db_path = os.path.join(PROJECT_DIR, "data", "policies", "policies_old.json")
+    input_pdf_path = os.path.join(
+        PROJECT_DIR,
+        "data",
+        "deprecated",
+        "dwc",
+        "form_filled_flat.pdf",
+    )
+    form_json_path = os.path.join(
+        PROJECT_DIR,
+        "data",
+        "deprecated",
+        "dwc",
+        "form_questions.json",
+    )
 
     # --- Run full processing pipeline ---
     main(input_pdf_path, form_json_path, policy_db_path)

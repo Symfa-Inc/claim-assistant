@@ -25,7 +25,11 @@ class ClaimValidationProcessor:
             "gpt-5-nano-2025-08-07",
         ] = "gpt-5-nano-2025-08-07",
     ) -> None:
-        if model_name not in {"gpt-5-2025-08-07", "gpt-5-mini-2025-08-07", "gpt-5-nano-2025-08-07"}:
+        if model_name not in {
+            "gpt-5-2025-08-07",
+            "gpt-5-mini-2025-08-07",
+            "gpt-5-nano-2025-08-07",
+        }:
             raise ValueError("Invalid model name: must be one of the GPT-5 family.")
         self.client = model_client
         self.model_name = model_name
@@ -45,7 +49,11 @@ class ClaimValidationProcessor:
     # -------------------------------
     # Core LLM analysis
     # -------------------------------
-    def _llm_coverage_analysis(self, form: Form, policy: MockPolicyRecord) -> CoverageAnalysis:
+    def _llm_coverage_analysis(
+        self,
+        form: Form,
+        policy: MockPolicyRecord,
+    ) -> CoverageAnalysis:
         """
         Perform LLM-based reasoning on whether the described injury
         in a filled claim form is likely covered by a given policy.
@@ -91,14 +99,16 @@ class ClaimValidationProcessor:
                                 ),
                             },
                         ],
-                    }
+                    },
                 ],
                 text_format=CoverageAnalysis,
             )
 
             result = parsed.output_parsed
             if not result:
-                self.logger.warning("LLM returned empty structured output; using fallback result.")
+                self.logger.warning(
+                    "LLM returned empty structured output; using fallback result.",
+                )
                 return CoverageAnalysis(
                     executive_summary="Analysis unavailable due to missing model output.",
                     conclusion="negative",
@@ -119,9 +129,9 @@ class ClaimValidationProcessor:
     # Main validation logic
     # -------------------------------
     def process(
-            self,
-            form: Form,
-            policy: MockPolicyRecord,
+        self,
+        form: Form,
+        policy: MockPolicyRecord,
     ) -> CoverageAnalysis:
         """
         Validate a filled insurance claim form against stored policy data

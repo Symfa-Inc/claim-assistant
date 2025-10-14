@@ -1,9 +1,8 @@
 import logging
 from pathlib import Path
-from typing import Union, Literal
+from typing import Literal, Union
 
 from openai import OpenAI
-from tqdm import tqdm
 
 from claim_assistant.models.form import Form
 from claim_assistant.models.form_field import FormField
@@ -19,14 +18,14 @@ class FormFillingProcessor:
     """
 
     def __init__(
-            self,
-            model_client: OpenAI,
-            logger: logging.Logger,
-            model_name: Literal[
-                "gpt-5-2025-08-07",
-                "gpt-5-mini-2025-08-07",
-                "gpt-5-nano-2025-08-07",
-            ] = "gpt-5-nano-2025-08-07",
+        self,
+        model_client: OpenAI,
+        logger: logging.Logger,
+        model_name: Literal[
+            "gpt-5-2025-08-07",
+            "gpt-5-mini-2025-08-07",
+            "gpt-5-nano-2025-08-07",
+        ] = "gpt-5-nano-2025-08-07",
     ) -> None:
         """
         Args:
@@ -38,9 +37,13 @@ class FormFillingProcessor:
                         - gpt-5-mini-2025-08-07
                         - gpt-5-nano-2025-08-07
         """
-        if model_name not in {"gpt-5-2025-08-07", "gpt-5-mini-2025-08-07", "gpt-5-nano-2025-08-07"}:
+        if model_name not in {
+            "gpt-5-2025-08-07",
+            "gpt-5-mini-2025-08-07",
+            "gpt-5-nano-2025-08-07",
+        }:
             raise ValueError(
-                f"Invalid model '{model_name}'. Must be one of: GPT-5 models."
+                f"Invalid model '{model_name}'. Must be one of: GPT-5 models.",
             )
         self.client = model_client
         self.model_name = model_name
@@ -113,7 +116,7 @@ class FormFillingProcessor:
                             },
                             {"type": "input_file", "file_id": file_id},
                         ],
-                    }
+                    },
                 ],
                 text_format=field.build_answer_schema(),
             )
