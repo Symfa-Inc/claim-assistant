@@ -1,0 +1,740 @@
+[
+  {
+    "order": 1,
+    "text": "First name",
+    "description": "Given name of the injured worker (from 'First name, middle initial, last name').",
+    "alias": "first_name",
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 2,
+    "text": "Middle initial",
+    "description": "Middle initial of the injured worker (from 'First name, middle initial, last name').",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 3,
+    "text": "Last name",
+    "description": "Family name of the injured worker (from 'First name, middle initial, last name').",
+    "alias": "last_name",
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 4,
+    "text": "Date of injury/disease",
+    "description": "Date when the injury or occupational disease occurred.",
+    "alias": "date_of_incident",
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 5,
+    "text": "Social Security number",
+    "description": "Injured worker's Social Security number.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 6,
+    "text": "Date of birth",
+    "description": "Injured worker's birth date.",
+    "alias": null,
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 7,
+    "text": "Mailing address; add apartment number or P.O. Box, if applicable",
+    "description": "Mailing street address for the injured worker.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 8,
+    "text": "City",
+    "description": "Mailing city of injured worker.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 9,
+    "text": "State",
+    "description": "Mailing state of injured worker.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 10,
+    "text": "ZIP code",
+    "description": "Mailing ZIP code of injured worker.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 11,
+    "text": "Sex",
+    "description": "Select injured worker's sex.",
+    "alias": null,
+    "data_type": "enum",
+    "meta": {
+      "labels": [
+        "Male",
+        "Female"
+      ]
+    }
+  },
+  {
+    "order": 12,
+    "text": "Email address",
+    "description": "Injured worker's email address.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 13,
+    "text": "Home phone number",
+    "description": "Injured worker's home telephone number.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 14,
+    "text": "Cell phone number",
+    "description": "Injured worker's mobile phone number.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 15,
+    "text": "Employer name",
+    "description": "Name of the injured worker's employer.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 16,
+    "text": "Employer address",
+    "description": "Street address of the employer.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 17,
+    "text": "City",
+    "description": "Employer city.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 18,
+    "text": "State",
+    "description": "Employer state.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 19,
+    "text": "ZIP code",
+    "description": "Employer ZIP code.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 20,
+    "text": "Was the injured worker hired through a temp agency?",
+    "description": "Indicate if the injured worker was hired via a temporary staffing agency.",
+    "alias": null,
+    "data_type": "boolean",
+    "meta": {}
+  },
+  {
+    "order": 21,
+    "text": "If yes, name of temp agency",
+    "description": "Name of the temporary agency that hired the worker, if applicable.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 22,
+    "text": "Mark the days of the week you usually work",
+    "description": "Select all days typically worked by the injured worker.",
+    "alias": null,
+    "data_type": "enum",
+    "meta": {
+      "labels": [
+        "Sun",
+        "Mon",
+        "Tues",
+        "Wed",
+        "Thurs",
+        "Fri",
+        "Sat"
+      ]
+    }
+  },
+  {
+    "order": 23,
+    "text": "Regular work hours - From",
+    "description": "Start of regular work hours (include a.m./p.m.).",
+    "alias": null,
+    "data_type": "time",
+    "meta": {
+      "format": "HH:mm:ss"
+    }
+  },
+  {
+    "order": 24,
+    "text": "Regular work hours - To",
+    "description": "End of regular work hours (include a.m./p.m.).",
+    "alias": null,
+    "data_type": "time",
+    "meta": {
+      "format": "HH:mm:ss"
+    }
+  },
+  {
+    "order": 25,
+    "text": "Date hired",
+    "description": "Date the injured worker was hired.",
+    "alias": null,
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 26,
+    "text": "Job title",
+    "description": "Injured worker's job title at time of injury.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 27,
+    "text": "State where hired",
+    "description": "State where the injured worker was hired.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 28,
+    "text": "State where supervised",
+    "description": "State where the injured worker was supervised when injured.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 29,
+    "text": "Wage rate; $ per hour",
+    "description": "Hourly wage rate at time of injury.",
+    "alias": null,
+    "data_type": "number",
+    "meta": {}
+  },
+  {
+    "order": 30,
+    "text": "Number of hours scheduled to work the week of this injury",
+    "description": "Scheduled hours for the week when the injury occurred.",
+    "alias": null,
+    "data_type": "number",
+    "meta": {}
+  },
+  {
+    "order": 31,
+    "text": "Work number for call-offs (Number injured worker calls to reach supervisor)",
+    "description": "Phone number the injured worker uses to call supervisor for call-offs.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 32,
+    "text": "Part(s) of body affected (For example: Left knee, right index finger)",
+    "description": "Describe body part(s) injured.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 33,
+    "text": "Accident description (Describe the sequence of events that directly caused the injury or death.)",
+    "description": "Detailed description of sequence of events causing the injury or death.",
+    "alias": null,
+    "data_type": "text",
+    "meta": {}
+  },
+  {
+    "order": 34,
+    "text": "Will the incident cause the injured worker to miss 8 or more days from work?",
+    "description": "Indicate if the injury will result in missing eight or more days of work.",
+    "alias": null,
+    "data_type": "boolean",
+    "meta": {}
+  },
+  {
+    "order": 35,
+    "text": "Injured worker start time",
+    "description": "Start time of the injured worker's shift on the day of the incident.",
+    "alias": null,
+    "data_type": "time",
+    "meta": {
+      "format": "HH:mm:ss"
+    }
+  },
+  {
+    "order": 36,
+    "text": "Time of injury",
+    "description": "Clock time when the injury occurred.",
+    "alias": null,
+    "data_type": "time",
+    "meta": {
+      "format": "HH:mm:ss"
+    }
+  },
+  {
+    "order": 37,
+    "text": "Date employer notified",
+    "description": "Date the employer was notified of the injury.",
+    "alias": null,
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 38,
+    "text": "Was any part of a workday missed due to the injury?",
+    "description": "Indicate if any work time was missed because of the injury.",
+    "alias": null,
+    "data_type": "boolean",
+    "meta": {}
+  },
+  {
+    "order": 39,
+    "text": "Date last worked",
+    "description": "If the injured worker has returned to work, provide the date they last worked due to this injury.",
+    "alias": null,
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 40,
+    "text": "Was the place of the accident or exposure on employer's premises?",
+    "description": "Indicate whether the accident location was on employer property.",
+    "alias": null,
+    "data_type": "boolean",
+    "meta": {}
+  },
+  {
+    "order": 41,
+    "text": "If no, give accident location, street address",
+    "description": "Street address of accident location when not on employer premises.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 42,
+    "text": "If no, give accident location, city",
+    "description": "City of accident location when not on employer premises.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 43,
+    "text": "If no, give accident location, state",
+    "description": "State of accident location when not on employer premises.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 44,
+    "text": "If no, give accident location, ZIP code",
+    "description": "ZIP code of accident location when not on employer premises.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 45,
+    "text": "Was injured worker hospitalized overnight?",
+    "description": "Indicate whether the injured worker was admitted to the hospital overnight.",
+    "alias": null,
+    "data_type": "boolean",
+    "meta": {}
+  },
+  {
+    "order": 46,
+    "text": "Initial treatment date",
+    "description": "Date of initial medical treatment for this injury.",
+    "alias": null,
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 47,
+    "text": "Health-care office/Facility name",
+    "description": "Name of the facility where initial treatment was provided.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 48,
+    "text": "Treating physician/Provider name",
+    "description": "Name of the treating provider.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 49,
+    "text": "Telephone number",
+    "description": "Phone number for the treating provider or facility.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 50,
+    "text": "Fax number",
+    "description": "Fax number for the treating provider or facility.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 51,
+    "text": "Health-care office/Facility street address",
+    "description": "Street address of the treating facility.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 52,
+    "text": "City",
+    "description": "City of the treating facility.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 53,
+    "text": "State",
+    "description": "State of the treating facility.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 54,
+    "text": "ZIP code",
+    "description": "ZIP code of the treating facility.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 55,
+    "text": "Date of death",
+    "description": "If applicable, date of death resulting from the injury.",
+    "alias": null,
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 56,
+    "text": "Decedent’s marital status",
+    "description": "Marital status of the decedent (if injury resulted in death).",
+    "alias": null,
+    "data_type": "enum",
+    "meta": {
+      "labels": [
+        "Single",
+        "Married",
+        "Divorced",
+        "Separated",
+        "Widowed"
+      ]
+    }
+  },
+  {
+    "order": 57,
+    "text": "Decedent’s number of dependents",
+    "description": "Number of dependents of the decedent (if applicable).",
+    "alias": null,
+    "data_type": "number",
+    "meta": {}
+  },
+  {
+    "order": 58,
+    "text": "Injured worker signature",
+    "description": "Signature of the injured worker certifying the statements on the form.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 59,
+    "text": "Date",
+    "description": "Date the injured worker signed the form.",
+    "alias": null,
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 60,
+    "text": "Diagnosis(es)-narrative description including as appropriate, the location and body part, and ICD code(s).",
+    "description": "Detailed diagnosis description from treating provider (list condition/disease and ICD code(s)).",
+    "alias": null,
+    "data_type": "text",
+    "meta": {}
+  },
+  {
+    "order": 61,
+    "text": "Initial treatment date",
+    "description": "Initial treatment date reported by treating provider (may duplicate earlier field).",
+    "alias": null,
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 62,
+    "text": "Are the medical conditions you have listed above causally related to the reported work-related accident or occupational disease?",
+    "description": "Treating provider indicates if listed conditions are causally related to the reported work event.",
+    "alias": null,
+    "data_type": "boolean",
+    "meta": {}
+  },
+  {
+    "order": 63,
+    "text": "Are you the physician of record?",
+    "description": "Treating provider indicates whether they are the physician of record.",
+    "alias": null,
+    "data_type": "boolean",
+    "meta": {}
+  },
+  {
+    "order": 64,
+    "text": "Treating physician/Provider’s name (Print)",
+    "description": "Printed name of treating physician or provider.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 65,
+    "text": "Treating physician/Provider’s signature",
+    "description": "Signature of treating physician or provider.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 66,
+    "text": "BWC provider number",
+    "description": "Provider's BWC (Bureau of Workers' Compensation) provider number.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 67,
+    "text": "Date",
+    "description": "Date the treating provider signed/completed their section.",
+    "alias": null,
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 68,
+    "text": "Employer name",
+    "description": "Employer name in employer's section (may duplicate earlier employer name).",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 69,
+    "text": "Employer county",
+    "description": "County of the employer.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 70,
+    "text": "Phone number",
+    "description": "Employer phone number.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 71,
+    "text": "Fax number",
+    "description": "Employer fax number.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 72,
+    "text": "Email address",
+    "description": "Employer email address.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 73,
+    "text": "Employer policy number",
+    "description": "Policy number associated with the employer's workers' compensation coverage.",
+    "alias": "policy_id",
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 74,
+    "text": "Federal ID number",
+    "description": "Employer's federal identification number (EIN).",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 75,
+    "text": "Injured worker is (Check box, if applicable.)",
+    "description": "Check if injured worker is Owner/Sole proprietor, Partner, or Individual incorporated as a corporation.",
+    "alias": null,
+    "data_type": "enum",
+    "meta": {
+      "labels": [
+        "Owner/Sole proprietor",
+        "Partner",
+        "Individual incorporated as a corporation"
+      ]
+    }
+  },
+  {
+    "order": 76,
+    "text": "Certification – I certify the facts in this application are correct and valid.",
+    "description": "Employer certifies the facts in the application.",
+    "alias": null,
+    "data_type": "boolean",
+    "meta": {}
+  },
+  {
+    "order": 77,
+    "text": "Rejection – I reject the validity of this claim for the reason(s) listed below.",
+    "description": "Employer indicates rejection of the claim; provide reasons in the area below if checked.",
+    "alias": null,
+    "data_type": "boolean",
+    "meta": {}
+  },
+  {
+    "order": 78,
+    "text": "Rejection reasons",
+    "description": "If rejecting the claim, list the reason(s) for rejection.",
+    "alias": null,
+    "data_type": "text",
+    "meta": {}
+  },
+  {
+    "order": 79,
+    "text": "For self-insuring employers only: Medical only / Lost time",
+    "description": "For self-insuring employers, indicate if claim is medical only or lost time.",
+    "alias": null,
+    "data_type": "enum",
+    "meta": {
+      "labels": [
+        "Medical only",
+        "Lost time"
+      ]
+    }
+  },
+  {
+    "order": 80,
+    "text": "Clarification – I clarify and allow the claim for the condition(s) below.",
+    "description": "Space for employer to clarify and list allowed conditions.",
+    "alias": null,
+    "data_type": "text",
+    "meta": {}
+  },
+  {
+    "order": 81,
+    "text": "Employer signature and title",
+    "description": "Signature and title of employer representative completing this section.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 82,
+    "text": "Date",
+    "description": "Date employer signed this section.",
+    "alias": null,
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 83,
+    "text": "Signature of person completing this form",
+    "description": "Signature of the submitter if someone other than the injured worker, treating physician, or employer completed the form.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 84,
+    "text": "Date",
+    "description": "Date the submitter signed the form.",
+    "alias": null,
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  }
+]

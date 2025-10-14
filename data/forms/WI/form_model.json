@@ -1,0 +1,618 @@
+[
+  {
+    "order": 1,
+    "text": "Employee Name (First)",
+    "description": "Given name of the injured employee (from 'Employee Name (First, Middle, Last)').",
+    "alias": "first_name",
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 2,
+    "text": "Employee Name (Middle)",
+    "description": "Middle name of the injured employee.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 3,
+    "text": "Employee Name (Last)",
+    "description": "Family name of the injured employee.",
+    "alias": "last_name",
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 4,
+    "text": "Social Security Number*",
+    "description": "Provision of SSN is voluntary; may speed processing.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 5,
+    "text": "Sex",
+    "description": "Select employee sex.",
+    "alias": null,
+    "data_type": "enum",
+    "meta": {
+      "labels": [
+        "M",
+        "F"
+      ]
+    }
+  },
+  {
+    "order": 6,
+    "text": "Employee Home Telephone No.",
+    "description": "Include area code.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 7,
+    "text": "Employee Street Address",
+    "description": "Street address of the employee's residence.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 8,
+    "text": "City",
+    "description": "City of employee residence.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 9,
+    "text": "State",
+    "description": "State of employee residence.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 10,
+    "text": "Zip Code",
+    "description": "Postal code of employee residence.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 11,
+    "text": "Occupation",
+    "description": "Employee's job title or occupation at time of injury.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 12,
+    "text": "Birthdate",
+    "description": "Employee date of birth.",
+    "alias": null,
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 13,
+    "text": "Date of Hire",
+    "description": "Date employee was hired for the job where injured.",
+    "alias": null,
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 14,
+    "text": "County and State Where Accident or Exposure Occurred?",
+    "description": "Location (county and state) of the accident or exposure.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 15,
+    "text": "Employer Name",
+    "description": "Name of the employer at time of injury.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 16,
+    "text": "WI Unemployment Ins. Acct No.",
+    "description": "Wisconsin unemployment insurance account number.",
+    "alias": "policy_id",
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 17,
+    "text": "Self-Insured?",
+    "description": "Is the employer self-insured?",
+    "alias": null,
+    "data_type": "boolean",
+    "meta": {}
+  },
+  {
+    "order": 18,
+    "text": "Nature of Business (Specific Product)",
+    "description": "Describe employer's business or product.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 19,
+    "text": "Employer Mailing Address",
+    "description": "Mailing address for the employer.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 20,
+    "text": "City",
+    "description": "City for employer mailing address.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 21,
+    "text": "State",
+    "description": "State for employer mailing address.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 22,
+    "text": "Zip Code",
+    "description": "ZIP code for employer mailing address.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 23,
+    "text": "Employer FEIN",
+    "description": "Employer Federal Employer Identification Number.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 24,
+    "text": "Name of Worker's Compensation Insurance Co. or Self-Insured Employer",
+    "description": "Carrier name or self-insured employer responsible for claim.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 25,
+    "text": "Insurer FEIN",
+    "description": "Federal Employer Identification Number of insurer.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 26,
+    "text": "Name and Address of Third Party Administrator (TPA) Used by the Insurance Company or Self-Insured Employer",
+    "description": "TPA contact details, if used.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 27,
+    "text": "TPA FEIN",
+    "description": "Federal Employer Identification Number of the TPA.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 28,
+    "text": "Wage at Time of Injury $",
+    "description": "Employee wage amount at time of injury (numeric).",
+    "alias": null,
+    "data_type": "number",
+    "meta": {}
+  },
+  {
+    "order": 29,
+    "text": "Specify per hr., wk., mo., yr., etc.",
+    "description": "Specify pay period for the wage (e.g., per hr., wk., mo.).",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 30,
+    "text": "Per:",
+    "description": "Unit corresponding to wage amount.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 31,
+    "text": "Meals (In Addition to Wages, Employee Received)",
+    "description": "Check if employee received meals in addition to wages.",
+    "alias": null,
+    "data_type": "boolean",
+    "meta": {}
+  },
+  {
+    "order": 32,
+    "text": "Room (In Addition to Wages, Employee Received)",
+    "description": "Check if employee received room in addition to wages.",
+    "alias": null,
+    "data_type": "boolean",
+    "meta": {}
+  },
+  {
+    "order": 33,
+    "text": "Tips (In Addition to Wages, Employee Received)",
+    "description": "Check if employee received tips in addition to wages.",
+    "alias": null,
+    "data_type": "boolean",
+    "meta": {}
+  },
+  {
+    "order": 34,
+    "text": "No. of Meals/wk.",
+    "description": "Number of meals per week received (if applicable).",
+    "alias": null,
+    "data_type": "number",
+    "meta": {}
+  },
+  {
+    "order": 35,
+    "text": "No. of Days/wk",
+    "description": "Number of days per week room is provided (if applicable).",
+    "alias": null,
+    "data_type": "number",
+    "meta": {}
+  },
+  {
+    "order": 36,
+    "text": "Avg. Weekly Amt. $",
+    "description": "Average weekly amount of meals/room/tips included.",
+    "alias": null,
+    "data_type": "number",
+    "meta": {}
+  },
+  {
+    "order": 37,
+    "text": "Is Worker Paid for Overtime?",
+    "description": "Indicate if employee is paid overtime.",
+    "alias": null,
+    "data_type": "boolean",
+    "meta": {}
+  },
+  {
+    "order": 38,
+    "text": "If Yes, After How Many Hours of Work Per Week?",
+    "description": "Number of hours per week after which overtime pay begins.",
+    "alias": null,
+    "data_type": "number",
+    "meta": {}
+  },
+  {
+    "order": 39,
+    "text": "No. of Weeks:",
+    "description": "Number of weeks worked in same kind of work in prior 52 weeks.",
+    "alias": null,
+    "data_type": "number",
+    "meta": {}
+  },
+  {
+    "order": 40,
+    "text": "Gross Amount Excluding Tips: $",
+    "description": "Total gross wages (excluding tips) for the reported weeks.",
+    "alias": null,
+    "data_type": "number",
+    "meta": {}
+  },
+  {
+    "order": 41,
+    "text": "If Piece-Work, No. of Hrs. Excluding Overtime:",
+    "description": "Number of hours for piece-work excluding overtime.",
+    "alias": null,
+    "data_type": "number",
+    "meta": {}
+  },
+  {
+    "order": 42,
+    "text": "Start Time",
+    "description": "Start time of employee's usual work schedule (HH:MM).",
+    "alias": null,
+    "data_type": "time",
+    "meta": {
+      "format": "HH:mm:ss"
+    }
+  },
+  {
+    "order": 43,
+    "text": "Hours Per Day",
+    "description": "Usual hours worked per day.",
+    "alias": null,
+    "data_type": "number",
+    "meta": {}
+  },
+  {
+    "order": 44,
+    "text": "Hours Per Week",
+    "description": "Usual hours worked per week.",
+    "alias": null,
+    "data_type": "number",
+    "meta": {}
+  },
+  {
+    "order": 45,
+    "text": "Days Per Week",
+    "description": "Usual days worked per week.",
+    "alias": null,
+    "data_type": "number",
+    "meta": {}
+  },
+  {
+    "order": 46,
+    "text": "Employee’s Usual Work Schedule When Injured (AM/PM)",
+    "description": "Indicate whether the schedule is AM or PM.",
+    "alias": null,
+    "data_type": "enum",
+    "meta": {
+      "labels": [
+        "AM",
+        "PM"
+      ]
+    }
+  },
+  {
+    "order": 47,
+    "text": "Employer’s Usual Full-Time Schedule for This Type of Work at Time of Employee’s Injury",
+    "description": "Employer's typical full-time schedule for the type of work.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 48,
+    "text": "Are there Other Part-Time Workers Doing the Same Work With the Same Schedule?",
+    "description": "Indicate whether other part-time workers do the same work and schedule.",
+    "alias": null,
+    "data_type": "boolean",
+    "meta": {}
+  },
+  {
+    "order": 49,
+    "text": "If Yes, how many?",
+    "description": "Number of other part-time workers doing the same work and schedule.",
+    "alias": null,
+    "data_type": "number",
+    "meta": {}
+  },
+  {
+    "order": 50,
+    "text": "Number of Full-Time Employees Doing The Same Type Of Work:",
+    "description": "Count of full-time employees performing the same work.",
+    "alias": null,
+    "data_type": "number",
+    "meta": {}
+  },
+  {
+    "order": 51,
+    "text": "Injury Date",
+    "description": "Date when the injury or occupational illness occurred.",
+    "alias": "date_of_incident",
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 52,
+    "text": "Time of Injury",
+    "description": "Time of day when injury occurred; include AM/PM.",
+    "alias": null,
+    "data_type": "time",
+    "meta": {
+      "format": "HH:mm:ss"
+    }
+  },
+  {
+    "order": 53,
+    "text": "Last Day Worked",
+    "description": "Last day employee worked before time off (if applicable).",
+    "alias": null,
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 54,
+    "text": "Date Employer Notified",
+    "description": "Date employer was notified of the injury.",
+    "alias": null,
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 55,
+    "text": "Date Returned to Work",
+    "description": "Date employee returned to work (if applicable).",
+    "alias": null,
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 56,
+    "text": "Estimated Date of Return",
+    "description": "Estimated date employee is expected to return to work.",
+    "alias": null,
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 57,
+    "text": "Did Injury Cause Death?",
+    "description": "Indicate if the injury resulted in death.",
+    "alias": null,
+    "data_type": "boolean",
+    "meta": {}
+  },
+  {
+    "order": 58,
+    "text": "Date of Death",
+    "description": "Date of employee's death if injury caused death.",
+    "alias": null,
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 59,
+    "text": "Was This a Lost Time or Other Compensable Injury?",
+    "description": "Indicate if this injury resulted in lost time or other compensable benefits.",
+    "alias": null,
+    "data_type": "boolean",
+    "meta": {}
+  },
+  {
+    "order": 60,
+    "text": "Did Injury Occur Because of: Substance Abuse",
+    "description": "Check if substance abuse contributed to the injury.",
+    "alias": null,
+    "data_type": "boolean",
+    "meta": {}
+  },
+  {
+    "order": 61,
+    "text": "Did Injury Occur Because of: Failure to Use Safety Devices",
+    "description": "Check if failure to use safety devices contributed to the injury.",
+    "alias": null,
+    "data_type": "boolean",
+    "meta": {}
+  },
+  {
+    "order": 62,
+    "text": "Did Injury Occur Because of: Failure to Obey Rules",
+    "description": "Check if failure to obey rules contributed to the injury.",
+    "alias": null,
+    "data_type": "boolean",
+    "meta": {}
+  },
+  {
+    "order": 63,
+    "text": "Was Employee Treated in an Emergency Room?",
+    "description": "Indicate whether treatment was provided in an ER.",
+    "alias": null,
+    "data_type": "boolean",
+    "meta": {}
+  },
+  {
+    "order": 64,
+    "text": "Was Employee Hospitalized Overnight as an In-Patient?",
+    "description": "Indicate whether the employee was admitted as an in-patient overnight.",
+    "alias": null,
+    "data_type": "boolean",
+    "meta": {}
+  },
+  {
+    "order": 65,
+    "text": "Name and Address of Treating Practitioner and Hospital",
+    "description": "Provide practitioner and hospital name and address where treated.",
+    "alias": null,
+    "data_type": "text",
+    "meta": {}
+  },
+  {
+    "order": 66,
+    "text": "Case Number from the OSHA Log",
+    "description": "OSHA log case number, if applicable.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 67,
+    "text": "Injury Description - Describe Activities of Employee When Injury or Illness Occurred and What Tools, Machinery, Objects, Chemicals, Etc. Were Involved.",
+    "description": "Detailed description of activities and equipment involved.",
+    "alias": null,
+    "data_type": "text",
+    "meta": {}
+  },
+  {
+    "order": 68,
+    "text": "What Happened to Cause This Injury or Illness? (Describe How The Injury Occurred)",
+    "description": "Narrative describing how the injury occurred.",
+    "alias": null,
+    "data_type": "text",
+    "meta": {}
+  },
+  {
+    "order": 69,
+    "text": "What Was The Injury or Illness? (State the Part of Body Affected and How It Was Affected)",
+    "description": "Describe the injury/illness and body part(s) affected.",
+    "alias": null,
+    "data_type": "text",
+    "meta": {}
+  },
+  {
+    "order": 70,
+    "text": "Report Prepared By",
+    "description": "Name of the person preparing this report.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 71,
+    "text": "Work Phone Number",
+    "description": "Phone number for the person preparing the report.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 72,
+    "text": "Position",
+    "description": "Position/title of the person preparing the report.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 73,
+    "text": "Date Signed",
+    "description": "Date the report was signed.",
+    "alias": null,
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  }
+]

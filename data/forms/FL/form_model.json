@@ -1,0 +1,791 @@
+[
+  {
+    "order": 1,
+    "text": "RECEIVED BY CLAIMS-HANDLING ENTITY",
+    "description": "Identifier or name of the claims-handling entity receiving the form.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 2,
+    "text": "SENT TO DIVISION DATE",
+    "description": "Date the form was sent to the division.",
+    "alias": null,
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 3,
+    "text": "DIVISION RECEIVED DATE",
+    "description": "Date the division received the form.",
+    "alias": null,
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 4,
+    "text": "NAME (First, Middle, Last) - First",
+    "description": "Employee given (first) name extracted from full name field.",
+    "alias": "first_name",
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 5,
+    "text": "NAME (First, Middle, Last) - Middle",
+    "description": "Employee middle name or initial.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 6,
+    "text": "NAME (First, Middle, Last) - Last",
+    "description": "Employee family (last) name extracted from full name field.",
+    "alias": "last_name",
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 7,
+    "text": "Social Security Number",
+    "description": "Employee SSN (used as unique identifier).",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 8,
+    "text": "Date of Accident (Month-Day-Year)",
+    "description": "Date when the accident occurred.",
+    "alias": "date_of_incident",
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 9,
+    "text": "Time of Accident",
+    "description": "Time of day accident occurred (time field).",
+    "alias": null,
+    "data_type": "time",
+    "meta": {
+      "format": "HH:mm:ss"
+    }
+  },
+  {
+    "order": 10,
+    "text": "Time of Accident AM/PM",
+    "description": "Select AM or PM for time of accident.",
+    "alias": null,
+    "data_type": "enum",
+    "meta": {
+      "labels": [
+        "AM",
+        "PM"
+      ]
+    }
+  },
+  {
+    "order": 11,
+    "text": "HOME ADDRESS Street/Apt #",
+    "description": "Employee street address and apartment number.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 12,
+    "text": "HOME ADDRESS City",
+    "description": "Employee city of residence.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 13,
+    "text": "HOME ADDRESS State",
+    "description": "Employee state of residence.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 14,
+    "text": "HOME ADDRESS Zip",
+    "description": "Employee ZIP code.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 15,
+    "text": "EMPLOYEE'S DESCRIPTION OF ACCIDENT (Include Cause of Injury)",
+    "description": "Detailed description of how the accident occurred.",
+    "alias": null,
+    "data_type": "text",
+    "meta": {}
+  },
+  {
+    "order": 16,
+    "text": "TELEPHONE Area Code",
+    "description": "Telephone area code for employee contact number.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 17,
+    "text": "TELEPHONE Number",
+    "description": "Employee telephone number.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 18,
+    "text": "OCCUPATION",
+    "description": "Employee occupation or job title.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 19,
+    "text": "INJURY/ILLNESS THAT OCCURRED",
+    "description": "Brief description or diagnosis of injury/illness.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 20,
+    "text": "PART OF BODY AFFECTED",
+    "description": "Body part(s) affected by the injury/illness.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 21,
+    "text": "DATE OF BIRTH",
+    "description": "Employee date of birth.",
+    "alias": null,
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 22,
+    "text": "SEX",
+    "description": "Employee sex selection.",
+    "alias": null,
+    "data_type": "enum",
+    "meta": {
+      "labels": [
+        "M",
+        "F"
+      ]
+    }
+  },
+  {
+    "order": 23,
+    "text": "COMPANY NAME",
+    "description": "Employer company name.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 24,
+    "text": "D. B. A.",
+    "description": "Doing Business As name, if applicable.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 25,
+    "text": "FEDERAL I.D. NUMBER (FEIN)",
+    "description": "Employer federal tax identification number.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 26,
+    "text": "DATE FIRST REPORTED (Month/Day/Year)",
+    "description": "Date employer first reported the claim.",
+    "alias": null,
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 27,
+    "text": "Street (Employer)",
+    "description": "Employer street address.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 28,
+    "text": "City (Employer)",
+    "description": "Employer city.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 29,
+    "text": "State (Employer)",
+    "description": "Employer state.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 30,
+    "text": "Zip (Employer)",
+    "description": "Employer ZIP code.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 31,
+    "text": "NATURE OF BUSINESS",
+    "description": "Description of employer's business activity.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 32,
+    "text": "POLICY/MEMBER NUMBER",
+    "description": "Insurance policy or member number.",
+    "alias": "policy_id",
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 33,
+    "text": "TELEPHONE Area Code (Employer)",
+    "description": "Employer telephone area code.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 34,
+    "text": "TELEPHONE Number (Employer)",
+    "description": "Employer telephone number.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 35,
+    "text": "DATE EMPLOYED",
+    "description": "Employee hire date.",
+    "alias": null,
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 36,
+    "text": "PAID FOR DATE OF INJURY",
+    "description": "Whether employee was paid for the date of injury (Yes/No).",
+    "alias": null,
+    "data_type": "boolean",
+    "meta": {}
+  },
+  {
+    "order": 37,
+    "text": "EMPLOYER'S LOCATION ADDRESS Street (If different)",
+    "description": "Employer location street if different from main address.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 38,
+    "text": "EMPLOYER'S LOCATION ADDRESS City",
+    "description": "Employer location city.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 39,
+    "text": "EMPLOYER'S LOCATION ADDRESS State",
+    "description": "Employer location state.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 40,
+    "text": "EMPLOYER'S LOCATION ADDRESS Zip",
+    "description": "Employer location ZIP code.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 41,
+    "text": "LOCATION # (If applicable)",
+    "description": "Location number of the employer facility, if applicable.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 42,
+    "text": "LAST DATE EMPLOYEE WORKED",
+    "description": "Last date the employee worked prior to injury/illness.",
+    "alias": null,
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 43,
+    "text": "RETURNED TO WORK YES NO",
+    "description": "Indicate if employee returned to work.",
+    "alias": null,
+    "data_type": "boolean",
+    "meta": {}
+  },
+  {
+    "order": 44,
+    "text": "IF YES, GIVE DATE (Returned to work)",
+    "description": "Date employee returned to work (if applicable).",
+    "alias": null,
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 45,
+    "text": "WILL YOU CONTINUE TO PAY WAGES INSTEAD OF WORKERS' COMP?",
+    "description": "Employer indicated intent to continue paying wages instead of workers' compensation.",
+    "alias": null,
+    "data_type": "boolean",
+    "meta": {}
+  },
+  {
+    "order": 46,
+    "text": "LAST DAY WAGES WILL BE PAID INSTEAD OF WORKERS' COMP",
+    "description": "Last date wages will be paid instead of workers' comp.",
+    "alias": null,
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 47,
+    "text": "PLACE OF ACCIDENT Street",
+    "description": "Street address where the accident occurred.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 48,
+    "text": "PLACE OF ACCIDENT City",
+    "description": "City where the accident occurred.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 49,
+    "text": "PLACE OF ACCIDENT State",
+    "description": "State where the accident occurred.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 50,
+    "text": "PLACE OF ACCIDENT Zip",
+    "description": "ZIP code where the accident occurred.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 51,
+    "text": "DATE OF DEATH (If applicable)",
+    "description": "Date of death if the claim involves a fatality.",
+    "alias": null,
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 52,
+    "text": "RATE OF PAY $",
+    "description": "Employee rate of pay (numeric amount).",
+    "alias": null,
+    "data_type": "number",
+    "meta": {}
+  },
+  {
+    "order": 53,
+    "text": "RATE OF PAY PER",
+    "description": "Unit for rate of pay.",
+    "alias": null,
+    "data_type": "enum",
+    "meta": {
+      "labels": [
+        "HR",
+        "WK",
+        "DAY",
+        "MO"
+      ]
+    }
+  },
+  {
+    "order": 54,
+    "text": "COUNTY OF ACCIDENT",
+    "description": "County where the accident occurred.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 55,
+    "text": "AGREE WITH DESCRIPTION OF ACCIDENT?",
+    "description": "Whether employer/claimant agrees with the provided description.",
+    "alias": null,
+    "data_type": "boolean",
+    "meta": {}
+  },
+  {
+    "order": 56,
+    "text": "Number of hours per day",
+    "description": "Usual number of hours worked per day.",
+    "alias": null,
+    "data_type": "number",
+    "meta": {}
+  },
+  {
+    "order": 57,
+    "text": "Number of hours per week",
+    "description": "Usual number of hours worked per week.",
+    "alias": null,
+    "data_type": "number",
+    "meta": {}
+  },
+  {
+    "order": 58,
+    "text": "Number of days per week",
+    "description": "Usual number of working days per week.",
+    "alias": null,
+    "data_type": "number",
+    "meta": {}
+  },
+  {
+    "order": 59,
+    "text": "EMPLOYEE SIGNATURE (If available to sign)",
+    "description": "Employee signature line.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 60,
+    "text": "EMPLOYEE SIGNATURE DATE",
+    "description": "Date employee signed the form.",
+    "alias": null,
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 61,
+    "text": "EMPLOYER SIGNATURE",
+    "description": "Employer signature line.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 62,
+    "text": "EMPLOYER SIGNATURE DATE",
+    "description": "Date employer signed the form.",
+    "alias": null,
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 63,
+    "text": "NAME, ADDRESS AND TELEPHONE OF PHYSICIAN OR HOSPITAL",
+    "description": "Physician or hospital contact information authorized by employer.",
+    "alias": null,
+    "data_type": "text",
+    "meta": {}
+  },
+  {
+    "order": 64,
+    "text": "AUTHORIZED BY EMPLOYER YES NO",
+    "description": "Whether the physician/hospital was authorized by the employer.",
+    "alias": null,
+    "data_type": "boolean",
+    "meta": {}
+  },
+  {
+    "order": 65,
+    "text": "1(a) Denied Case - DWC-12, Notice of Denial Attached",
+    "description": "Check if this is a denied case with DWC-12 attached.",
+    "alias": null,
+    "data_type": "boolean",
+    "meta": {}
+  },
+  {
+    "order": 66,
+    "text": "1(b) Indemnity Only Denied Case - DWC-12, Notice of Denial Attached",
+    "description": "Check if this is an indemnity-only denied case with DWC-12 attached.",
+    "alias": null,
+    "data_type": "boolean",
+    "meta": {}
+  },
+  {
+    "order": 67,
+    "text": "2. Medical Only which became Lost Time Case (Complete all required information in #3)",
+    "description": "Check if medical-only case converted to lost time.",
+    "alias": null,
+    "data_type": "boolean",
+    "meta": {}
+  },
+  {
+    "order": 68,
+    "text": "Employee’s 8TH Day of Disability",
+    "description": "Date representing employee's 8th day of disability.",
+    "alias": null,
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 69,
+    "text": "Entity’s Knowledge of 8TH Day of Disability",
+    "description": "Date entity became aware of the 8th day of disability.",
+    "alias": null,
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 70,
+    "text": "3. Lost Time Case - 1st day of disability",
+    "description": "First date of disability for lost time cases.",
+    "alias": null,
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 71,
+    "text": "Full Salary in lieu of comp? (Yes/No)",
+    "description": "Indicate if full salary is paid in lieu of workers' compensation.",
+    "alias": null,
+    "data_type": "boolean",
+    "meta": {}
+  },
+  {
+    "order": 72,
+    "text": "Full Salary End Date",
+    "description": "End date for full salary paid in lieu of comp.",
+    "alias": null,
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 73,
+    "text": "Date First Payment Mailed",
+    "description": "Date the first payment was mailed.",
+    "alias": null,
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 74,
+    "text": "AWW",
+    "description": "Average weekly wage.",
+    "alias": null,
+    "data_type": "number",
+    "meta": {}
+  },
+  {
+    "order": 75,
+    "text": "Comp Rate",
+    "description": "Compensation rate used for benefit calculations.",
+    "alias": null,
+    "data_type": "number",
+    "meta": {}
+  },
+  {
+    "order": 76,
+    "text": "T.T.",
+    "description": "Temporary total disability payment type checkbox.",
+    "alias": null,
+    "data_type": "boolean",
+    "meta": {}
+  },
+  {
+    "order": 77,
+    "text": "T.T. - 80%",
+    "description": "Temporary total at 80% payment type checkbox.",
+    "alias": null,
+    "data_type": "boolean",
+    "meta": {}
+  },
+  {
+    "order": 78,
+    "text": "T.P.",
+    "description": "Temporary partial payment type checkbox.",
+    "alias": null,
+    "data_type": "boolean",
+    "meta": {}
+  },
+  {
+    "order": 79,
+    "text": "I.B.",
+    "description": "Impairment benefits payment type checkbox.",
+    "alias": null,
+    "data_type": "boolean",
+    "meta": {}
+  },
+  {
+    "order": 80,
+    "text": "P.T.",
+    "description": "Partial temporary or other payment type checkbox.",
+    "alias": null,
+    "data_type": "boolean",
+    "meta": {}
+  },
+  {
+    "order": 81,
+    "text": "DEATH",
+    "description": "Death benefit payment type checkbox.",
+    "alias": null,
+    "data_type": "boolean",
+    "meta": {}
+  },
+  {
+    "order": 82,
+    "text": "SETTLEMENT ONLY",
+    "description": "Settlement-only payment type checkbox.",
+    "alias": null,
+    "data_type": "boolean",
+    "meta": {}
+  },
+  {
+    "order": 83,
+    "text": "Penalty Amount Paid in 1st Payment $",
+    "description": "Penalty amount (dollars) included in first payment.",
+    "alias": null,
+    "data_type": "number",
+    "meta": {}
+  },
+  {
+    "order": 84,
+    "text": "Interest Amount Paid in 1st Payment $",
+    "description": "Interest amount (dollars) included in first payment.",
+    "alias": null,
+    "data_type": "number",
+    "meta": {}
+  },
+  {
+    "order": 85,
+    "text": "REMARKS",
+    "description": "Additional notes or comments regarding the claim.",
+    "alias": null,
+    "data_type": "text",
+    "meta": {}
+  },
+  {
+    "order": 86,
+    "text": "INSURER NAME",
+    "description": "Name of the insurer.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 87,
+    "text": "CLAIMS-HANDLING ENTITY NAME, ADDRESS & TELEPHONE",
+    "description": "Claims-handling entity contact information.",
+    "alias": null,
+    "data_type": "text",
+    "meta": {}
+  },
+  {
+    "order": 88,
+    "text": "INSURER CODE #",
+    "description": "Numeric or alphanumeric insurer code.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 89,
+    "text": "EMPLOYEE'S CLASS CODE",
+    "description": "Classification code for the employee.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 90,
+    "text": "EMPLOYER'S NAICS CODE",
+    "description": "Employer's NAICS industry code.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 91,
+    "text": "SERVICE CO/TPA CODE #",
+    "description": "Service company or TPA code number.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 92,
+    "text": "CLAIMS-HANDLING ENTITY FILE #",
+    "description": "Internal file number used by the claims-handling entity.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  }
+]

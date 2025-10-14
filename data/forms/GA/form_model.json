@@ -1,0 +1,648 @@
+[
+  {
+    "order": 1,
+    "text": "First Name",
+    "description": "Given name of the employee.",
+    "alias": "first_name",
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 2,
+    "text": "Last Name",
+    "description": "Family name of the employee.",
+    "alias": "last_name",
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 3,
+    "text": "Policy Number",
+    "description": "Employer's insurance policy identifier.",
+    "alias": "policy_id",
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 4,
+    "text": "Date of Injury",
+    "description": "Date when the injury or occupational disease occurred.",
+    "alias": "date_of_incident",
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 5,
+    "text": "Employer Name",
+    "description": "Name of the employer.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 6,
+    "text": "Address",
+    "description": "Employer street address.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 7,
+    "text": "Phone Number",
+    "description": "Employer phone number.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 8,
+    "text": "Employer FEIN",
+    "description": "Federal employer identification number.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 9,
+    "text": "City",
+    "description": "Employer city.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 10,
+    "text": "State",
+    "description": "Employer state.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 11,
+    "text": "Zip Code",
+    "description": "Employer ZIP code.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 12,
+    "text": "Employer E-mail",
+    "description": "Employer email address.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 13,
+    "text": "INSURER / SELF-INSURER Name",
+    "description": "Name of insurer or self-insurer.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 14,
+    "text": "Insurer/Self-Insurer FEIN",
+    "description": "FEIN for insurer or self-insurer.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 15,
+    "text": "Insurer/ Self-Insurer File #",
+    "description": "File number used by insurer.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 16,
+    "text": "CLAIMS OFFICE Name",
+    "description": "Claims office name.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 17,
+    "text": "Claims Office FEIN #",
+    "description": "Claims office FEIN.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 18,
+    "text": "Claims Office Phone",
+    "description": "Claims office telephone number.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 19,
+    "text": "Claims Office E-mail",
+    "description": "Claims office email address.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 20,
+    "text": "SBWC ID (five digit no.)",
+    "description": "State Board of Workers' Compensation ID number.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 21,
+    "text": "Claims Office Address",
+    "description": "Claims office street address.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 22,
+    "text": "Claims Office City",
+    "description": "Claims office city.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 23,
+    "text": "Claims Office State",
+    "description": "Claims office state.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 24,
+    "text": "Claims Office Zip Code",
+    "description": "Claims office ZIP code.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 25,
+    "text": "Date Hired by Employer",
+    "description": "Employee hire date.",
+    "alias": null,
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 26,
+    "text": "Job Classified Code No.",
+    "description": "Employer job classification code.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 27,
+    "text": "Number of Days Worked Per Week",
+    "description": "Typical number of work days per week.",
+    "alias": null,
+    "data_type": "number",
+    "meta": {}
+  },
+  {
+    "order": 28,
+    "text": "Wage rate at time of injury or Disease",
+    "description": "Wage amount at time of injury.",
+    "alias": null,
+    "data_type": "number",
+    "meta": {}
+  },
+  {
+    "order": 29,
+    "text": "Wage rate unit",
+    "description": "Select unit for wage rate.",
+    "alias": null,
+    "data_type": "enum",
+    "meta": {
+      "labels": [
+        "per Hour",
+        "per Day",
+        "per Week",
+        "per Month"
+      ]
+    }
+  },
+  {
+    "order": 30,
+    "text": "Insurer Type Code",
+    "description": "Indicate insurer type.",
+    "alias": null,
+    "data_type": "enum",
+    "meta": {
+      "labels": [
+        "Insurer",
+        "Self-insurer",
+        "Group Fund"
+      ]
+    }
+  },
+  {
+    "order": 31,
+    "text": "List Normally Scheduled Days Off",
+    "description": "Regular days off for the employee.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 32,
+    "text": "Time of Injury",
+    "description": "Time when injury occurred.",
+    "alias": null,
+    "data_type": "time",
+    "meta": {
+      "format": "HH:mm:ss"
+    }
+  },
+  {
+    "order": 33,
+    "text": "Time of Injury AM/PM",
+    "description": "AM or PM indicator for time of injury.",
+    "alias": null,
+    "data_type": "enum",
+    "meta": {
+      "labels": [
+        "am",
+        "pm"
+      ]
+    }
+  },
+  {
+    "order": 34,
+    "text": "County of Injury",
+    "description": "County where injury occurred.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 35,
+    "text": "Date Employer had knowledge of Injury",
+    "description": "Date employer became aware of the injury.",
+    "alias": null,
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 36,
+    "text": "Enter First Date Employee Failed to Work a Full Day",
+    "description": "First date employee missed work due to injury.",
+    "alias": null,
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 37,
+    "text": "Did Employee Receive Full Pay on Date of Injury?",
+    "description": "Indicate if full pay was received on the injury date.",
+    "alias": null,
+    "data_type": "boolean",
+    "meta": {}
+  },
+  {
+    "order": 38,
+    "text": "Did Injury/Illness Occur on Employer's Premises?",
+    "description": "Indicate if incident occurred on employer property.",
+    "alias": null,
+    "data_type": "boolean",
+    "meta": {}
+  },
+  {
+    "order": 39,
+    "text": "Type of Injury/Illness",
+    "description": "Brief description or classification of injury/illness.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 40,
+    "text": "Body Part Affected",
+    "description": "Specify body part(s) affected.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 41,
+    "text": "How injury or illness / Abnormal Health Condition Occurred",
+    "description": "Detailed description of how the injury or illness happened.",
+    "alias": null,
+    "data_type": "text",
+    "meta": {}
+  },
+  {
+    "order": 42,
+    "text": "Treating Physician (Name and Address)",
+    "description": "Name and address of the treating physician.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 43,
+    "text": "Initial Treatment Given",
+    "description": "Type of initial treatment provided.",
+    "alias": null,
+    "data_type": "enum",
+    "meta": {
+      "labels": [
+        "None",
+        "Minor: By Employer",
+        "Minor: Clinical/Hospital",
+        "Emergency Room",
+        "Hospitalized > 24hrs"
+      ]
+    }
+  },
+  {
+    "order": 44,
+    "text": "Hospital / Treating Facility (Name and Address)",
+    "description": "Name and address of hospital or treating facility.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 45,
+    "text": "If Returned to Work, Give Date",
+    "description": "Date employee returned to work.",
+    "alias": null,
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 46,
+    "text": "Returned at what wage",
+    "description": "Wage at which employee returned to work (amount).",
+    "alias": null,
+    "data_type": "number",
+    "meta": {}
+  },
+  {
+    "order": 47,
+    "text": "If Fatal, Enter Complete Date of Death",
+    "description": "Date of death if injury was fatal.",
+    "alias": null,
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 48,
+    "text": "Report Prepared By (Print or Type)",
+    "description": "Name of person preparing the report.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 49,
+    "text": "Telephone Number (Report Preparer)",
+    "description": "Contact number for the person preparing the report.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 50,
+    "text": "Date of Report",
+    "description": "Date this report was prepared.",
+    "alias": null,
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 51,
+    "text": "Previously Medical Only",
+    "description": "Indicate if previously medical only claim.",
+    "alias": null,
+    "data_type": "boolean",
+    "meta": {}
+  },
+  {
+    "order": 52,
+    "text": "Average Weekly Wage $",
+    "description": "Employee's average weekly wage in dollars.",
+    "alias": null,
+    "data_type": "number",
+    "meta": {}
+  },
+  {
+    "order": 53,
+    "text": "Weekly benefit $",
+    "description": "Weekly benefit amount in dollars.",
+    "alias": null,
+    "data_type": "number",
+    "meta": {}
+  },
+  {
+    "order": 54,
+    "text": "Date of disability",
+    "description": "Date employee became disabled.",
+    "alias": null,
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 55,
+    "text": "Date of first Payment",
+    "description": "Date first compensation payment was made.",
+    "alias": null,
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 56,
+    "text": "Compensation paid $",
+    "description": "Amount of compensation paid in dollars.",
+    "alias": null,
+    "data_type": "number",
+    "meta": {}
+  },
+  {
+    "order": 57,
+    "text": "Or Date salary paid",
+    "description": "Date salary payment was made instead of compensation.",
+    "alias": null,
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 58,
+    "text": "Penalty paid $",
+    "description": "Penalty amount paid in dollars.",
+    "alias": null,
+    "data_type": "number",
+    "meta": {}
+  },
+  {
+    "order": 59,
+    "text": "BENEFITS ARE PAYABLE FROM",
+    "description": "Start date benefits are payable from.",
+    "alias": null,
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 60,
+    "text": "FOR",
+    "description": "Description of period or reason benefits are payable for.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 61,
+    "text": "Temporary total disability",
+    "description": "Select if benefits are for temporary total disability.",
+    "alias": null,
+    "data_type": "boolean",
+    "meta": {}
+  },
+  {
+    "order": 62,
+    "text": "Temporary partial disability",
+    "description": "Select if benefits are for temporary partial disability.",
+    "alias": null,
+    "data_type": "boolean",
+    "meta": {}
+  },
+  {
+    "order": 63,
+    "text": "Permanent partial disability",
+    "description": "Select if benefits are for permanent partial disability.",
+    "alias": null,
+    "data_type": "boolean",
+    "meta": {}
+  },
+  {
+    "order": 64,
+    "text": "Permanent partial disability of ___ %",
+    "description": "Percent of permanent partial disability.",
+    "alias": null,
+    "data_type": "number",
+    "meta": {}
+  },
+  {
+    "order": 65,
+    "text": "to ___",
+    "description": "Range end for percentage (if applicable).",
+    "alias": null,
+    "data_type": "number",
+    "meta": {}
+  },
+  {
+    "order": 66,
+    "text": "for ___ weeks",
+    "description": "Number of weeks benefits are payable.",
+    "alias": null,
+    "data_type": "number",
+    "meta": {}
+  },
+  {
+    "order": 67,
+    "text": "UNTIL",
+    "description": "Date until which benefits are payable.",
+    "alias": null,
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 68,
+    "text": "Benefits will not be paid because:",
+    "description": "Reason benefits will not be paid (if Section C).",
+    "alias": null,
+    "data_type": "text",
+    "meta": {}
+  },
+  {
+    "order": 69,
+    "text": "D. MEDICAL ONLY - No disability paid or controverted",
+    "description": "Check if medical only and no disability paid or controverted.",
+    "alias": null,
+    "data_type": "boolean",
+    "meta": {}
+  },
+  {
+    "order": 70,
+    "text": "Insurer / Self-Insurer: Type or Print Name of Person Filing Form",
+    "description": "Name of person filing this form on behalf of insurer/self-insurer.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 71,
+    "text": "Signature",
+    "description": "Signature of person filing the form.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 72,
+    "text": "Date (Signature)",
+    "description": "Date signature was provided.",
+    "alias": null,
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 73,
+    "text": "Phone and Ext.",
+    "description": "Contact phone and extension for person filing form.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 74,
+    "text": "E-mail (Person Filing)",
+    "description": "Email address of person filing the form.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  }
+]
