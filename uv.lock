@@ -160,6 +160,7 @@ dependencies = [
     { name = "requests" },
     { name = "streamlit" },
     { name = "streamlit-pdf" },
+    { name = "streamlit-sortables" },
     { name = "torch" },
     { name = "transformers" },
 ]
@@ -191,6 +192,7 @@ requires-dist = [
     { name = "requests", specifier = ">=2.32.5" },
     { name = "streamlit", specifier = ">=1.50.0" },
     { name = "streamlit-pdf", specifier = ">=1.0.8" },
+    { name = "streamlit-sortables", specifier = ">=0.3.1" },
     { name = "torch", specifier = ">=1.0.0" },
     { name = "transformers", specifier = ">=4.56.2" },
 ]
@@ -1463,6 +1465,18 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/2a/a0/96e293ca8478674f6cb937d5ad66382ac9c413ccd74bce139a421ea11a38/streamlit_pdf-1.0.8.tar.gz", hash = "sha256:4cfb4cd8713cd5988e8e3ce04eee45bb79fb6551e8be746b45977b2fada86931", size = 1971810, upload-time = "2025-10-13T14:30:26.519Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/69/7e/b762ae5d331b869aab1b612ed2ea6f18d9822e9b2946b3d420c5041cfab5/streamlit_pdf-1.0.8-py3-none-any.whl", hash = "sha256:6ba76ef1dc12250bc63f42cd0c90388eb2af25a62fc0e1c19c7ed27667e74355", size = 2103431, upload-time = "2025-10-13T14:30:24.574Z" },
+]
+
+[[package]]
+name = "streamlit-sortables"
+version = "0.3.1"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "streamlit" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/11/10/00c3ae0f183d41bb3608157283a2c92e4f4db87cb21a73e96b3c2c2ca58f/streamlit_sortables-0.3.1.tar.gz", hash = "sha256:9bed78f4407f2b9b1ddead8b6459d1af839aab427b7b5fe4c091e6870630acfe", size = 564139, upload-time = "2025-01-13T07:37:44.533Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/3d/b4/edbef9fa8e49f5df2745a178c44b23553d8472c22fb23f44f6949d544410/streamlit_sortables-0.3.1-py3-none-any.whl", hash = "sha256:1847b2fa2041762b6442e21224bd8c0316c5412e4eb3a38fa748cf7ced834d49", size = 570356, upload-time = "2025-01-13T07:37:42.852Z" },
 ]
 
 [[package]]

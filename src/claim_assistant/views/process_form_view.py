@@ -91,3 +91,5 @@ class ProcessFormView(BaseView):
                     import traceback
 
                     st.text(traceback.format_exc())
+        if st.button("🏠 Back to Home", use_container_width=True):
+            self.app.set_view(View.HOME)
