@@ -3,7 +3,7 @@ from collections import defaultdict
 
 import numpy as np
 
-from claim_assistant.metrics.moverscore.moverscore import word_mover_score
+from deprecated.metrics.moverscore.moverscore import word_mover_score
 
 
 def sentence_score(hypothesis: str, references: list[str], trace=0):
