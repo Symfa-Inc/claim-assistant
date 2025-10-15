@@ -1,10 +1,12 @@
 from pathlib import Path
 from typing import Any, get_type_hints
 
+from pydantic import BaseModel
+
 from claim_assistant.models.form_field import FormField
 
 
-class Form:
+class Form(BaseModel):
     """Generic Form containing both logic attributes and an ordered list of FormFields."""
 
     # --- Used for database logic ---
@@ -30,6 +32,7 @@ class Form:
         4. For fields whose alias matches a declared attribute name, assign them.
         5. Validate that all declared attributes are present.
         """
+        super().__init__()
 
         if not isinstance(data, list):
             raise TypeError("Form expects a list of field definitions (dicts).")
