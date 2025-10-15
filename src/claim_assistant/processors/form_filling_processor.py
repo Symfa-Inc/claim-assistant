@@ -6,6 +6,7 @@ from openai import OpenAI
 
 from claim_assistant.models.form import Form
 from claim_assistant.models.form_field import FormField
+from claim_assistant.utils import openai_file, validate_pdf
 
 
 class FormFillingProcessor:
@@ -54,35 +55,6 @@ class FormFillingProcessor:
         Load the form structure from a JSON definition file.
         """
         return Form.from_json(form_json_path)
-
-    def _validate_pdf(self, input_source: Union[str, Path]) -> Path:
-        """
-        Validate input source and ensure it is a PDF file.
-
-        Returns:
-            Path to the validated PDF file.
-        Raises:
-            ValueError if the file does not exist or is not a PDF.
-        """
-        pdf_path = Path(input_source)
-        if not pdf_path.exists() or pdf_path.suffix.lower() != ".pdf":
-            raise ValueError(f"Expected a PDF file, got: {pdf_path}")
-        return pdf_path
-
-    def _upload_pdf(self, pdf_path: Path) -> str:
-        """
-        Upload a PDF file to OpenAI and return its file ID.
-
-        Raises:
-            RuntimeError if upload fails.
-        """
-        try:
-            with open(pdf_path, "rb") as f:
-                uploaded = self.client.files.create(file=f, purpose="user_data")
-            file_id = uploaded.id
-            return file_id
-        except Exception as e:
-            raise RuntimeError(f"Failed to upload PDF file: {e}")
 
     def _process_field(self, field: FormField, file_id: str) -> None:
         """
@@ -141,19 +113,12 @@ class FormFillingProcessor:
         form = self._load_form(form_json_path)
 
         self.logger.info("Validating and uploading PDF...")
-        pdf_path = self._validate_pdf(input_source)
-        file_id = self._upload_pdf(pdf_path)
+        pdf_path = validate_pdf(input_source)
 
-        self.logger.info("Starting field extraction...")
-        for field in form.fields:
-            self._process_field(field, file_id)
-
-        # Cleanup
-        try:
-            self.client.files.delete(file_id)
-            self.logger.info("Temporary file deleted from OpenAI storage.")
-        except Exception as e:
-            self.logger.warning(f"Failed to delete uploaded file: {e}")
+        with openai_file(self.client, pdf_path, self.logger) as file_id:
+            self.logger.info("Starting field extraction...")
+            for field in form.fields:
+                self._process_field(field, file_id)
 
         self.logger.info("Form processing completed.")
         return form
