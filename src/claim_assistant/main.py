@@ -22,6 +22,7 @@ logger = logging.getLogger(__name__)
 
 
 def main(
+    run_dir: str,
     input_pdf_path: str | Path,
     form_json_path: str | Path,
     policy_db_path: str | Path,
@@ -38,13 +39,6 @@ def main(
     start_time = time.time()
 
     # --- output directory ---
-    run_dir = os.path.join(
-        PROJECT_DIR,
-        "data",
-        "runs",
-        datetime.now().strftime("%Y%m%d_%H%M%S"),
-    )
-    os.makedirs(run_dir, exist_ok=True)
     output_pdf_path = os.path.join(run_dir, "claim_summary.pdf")
     log_path = os.path.join(run_dir, "run.log")
     file_handler = logging.FileHandler(log_path, mode="w", encoding="utf-8")
@@ -129,5 +123,13 @@ if __name__ == "__main__":
         "form_questions.json",
     )
 
+    run_dir = os.path.join(
+        PROJECT_DIR,
+        "data",
+        "runs",
+        datetime.now().strftime("%Y%m%d_%H%M%S"),
+    )
+    os.makedirs(run_dir, exist_ok=True)
+
     # --- Run full processing pipeline ---
-    main(input_pdf_path, form_json_path, policy_db_path)
+    main(run_dir, input_pdf_path, form_json_path, policy_db_path)
