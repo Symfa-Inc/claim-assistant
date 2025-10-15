@@ -1,6 +1,6 @@
 import logging
 from pathlib import Path
-from typing import Literal, Union
+from typing import Literal
 
 from openai import OpenAI
 
@@ -50,7 +50,7 @@ class FormFillingProcessor:
         self.model_name = model_name
         self.logger = logger
 
-    def _load_form(self, form_json_path: Union[str, Path]) -> Form:
+    def _load_form(self, form_json_path: str | Path) -> Form:
         """
         Load the form structure from a JSON definition file.
         """
@@ -103,8 +103,8 @@ class FormFillingProcessor:
 
     def process(
         self,
-        input_source: Union[str, Path],
-        form_json_path: Union[str, Path],
+        input_source: str | Path,
+        form_json_path: str | Path,
     ) -> Form:
         """
         Process a PDF claim form and populate a Form instance.

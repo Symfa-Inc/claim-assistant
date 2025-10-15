@@ -1,7 +1,6 @@
 import json
 import logging
 from pathlib import Path
-from typing import Union
 
 from claim_assistant.models.form import Form
 from claim_assistant.schemas.mock_policy_record import MockPolicyRecord
@@ -15,7 +14,7 @@ class PolicyDatabaseProcessor:
     of specific policies based on information extracted from a filled form.
     """
 
-    def __init__(self, json_path: Union[str, Path], logger: logging.Logger) -> None:
+    def __init__(self, json_path: str | Path, logger: logging.Logger) -> None:
         """
         Args:
             json_path: Path to the JSON file containing policy records.

@@ -1,5 +1,5 @@
 from pathlib import Path
-from typing import Any, Union, get_type_hints
+from typing import Any, get_type_hints
 
 from claim_assistant.models.form_field import FormField
 
@@ -71,7 +71,7 @@ class Form:
             )
 
     @classmethod
-    def from_json(cls, path: Union[str, Path]) -> "Form":
+    def from_json(cls, path: str | Path) -> "Form":
         """
         Factory method that loads form definition from a JSON file
         and returns a Form instance.

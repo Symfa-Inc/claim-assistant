@@ -1,8 +1,7 @@
 from pathlib import Path
-from typing import Union
 
 
-def _validate_pdf(input_source: Union[str, Path]) -> Path:
+def validate_pdf(input_source: str | Path) -> Path:
     """
     Validate input source and ensure it is a PDF file.
 

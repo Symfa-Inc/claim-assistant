@@ -69,11 +69,12 @@ class ProcessFormView(BaseView):
                         / selected_form
                         / "form_model.json"
                     )
-                    # TODO: switch back to new policies when ready
-                    # policy_db_path = Path(PROJECT_DIR) / "data" / "policies" / "policies.json"
                     policy_db_path = (
-                        Path(PROJECT_DIR) / "data" / "policies" / "policies_old.json"
+                        Path(PROJECT_DIR) / "data" / "policies" / "policies.json"
                     )
+                    # policy_db_path = (
+                    #     Path(PROJECT_DIR) / "data" / "policies" / "policies_old.json"
+                    # )
 
                     process_claim(
                         run_dir=run_dir,

@@ -1,6 +1,9 @@
 from datetime import date
+from pathlib import Path
 
 from pydantic import BaseModel, Field
+
+from claim_assistant import PROJECT_DIR
 
 
 class MockPolicyRecord(BaseModel):
@@ -29,10 +32,15 @@ class MockPolicyRecord(BaseModel):
         alias="end_data",
         description="Date when the policy coverage ends (ISO format: YYYY-MM-DD).",
     )
-    policy_coverage: str = Field(
+    policy_file_name: str | None = Field(
         ...,
-        description="Detailed description of what the policy covers.",
+        description="Name of the policy document PDF stored locally.",
     )
+
+    def get_policy_path(self) -> Path | None:
+        if not self.policy_file_name:
+            return None
+        return Path(PROJECT_DIR) / "data" / "policies" / self.policy_file_name
 
     class Config:
         populate_by_name = True
@@ -42,9 +50,6 @@ class MockPolicyRecord(BaseModel):
                 "policy_holder_name": "John Doe",
                 "start_date": "2023-01-12",
                 "end_data": "2025-01-12",
-                "policy_coverage": (
-                    "Work-related illness coverage including diagnostic tests, "
-                    "prescribed medication, and return-to-work therapy sessions."
-                ),
+                "policy_file_name": "policy1.pdf",
             },
         }

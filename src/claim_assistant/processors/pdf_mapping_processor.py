@@ -1,8 +1,9 @@
+import io
 import logging
 from datetime import datetime
 from pathlib import Path
-from typing import Union
 
+from PyPDF2 import PdfReader, PdfWriter
 from reportlab.lib import colors
 from reportlab.lib.pagesizes import letter
 from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet
@@ -99,7 +100,7 @@ class PDFMappingProcessor:
         form: Form,
         policy: MockPolicyRecord,
         analysis: CoverageAnalysis,
-        output_path: Union[str, Path],
+        output_path: str | Path,
     ) -> Path:
         """
         Create a multi-section PDF report:
@@ -120,8 +121,9 @@ class PDFMappingProcessor:
         output = Path(output_path)
         output.parent.mkdir(parents=True, exist_ok=True)
 
+        temp_buffer = io.BytesIO()
         doc = SimpleDocTemplate(
-            str(output),
+            temp_buffer,
             pagesize=letter,
             leftMargin=54,
             rightMargin=54,
@@ -171,17 +173,9 @@ class PDFMappingProcessor:
             ),
             ("Coverage Start Date", policy.start_date.isoformat()),
             ("Coverage End Date", policy.end_date.isoformat()),
+            ("Policy Document Path", str(policy.get_policy_path())),
         ]
         story.append(self._kv_table(policy_rows))
-
-        # --- Appendix: Full Coverage Description ---
-        story.append(PageBreak())
-        story.append(self._section_header("Appendix: Full Policy Coverage"))
-        story.append(
-            self._para(policy.policy_coverage or "No coverage details available."),
-        )
-
-        # Footer
         story.append(Spacer(1, 24))
         story.append(
             self._para(
@@ -189,6 +183,29 @@ class PDFMappingProcessor:
             ),
         )
 
+        # Build PDF into buffer
         doc.build(story, onFirstPage=self._page_number, onLaterPages=self._page_number)
+        temp_buffer.seek(0)
+
+        # --- Combine base report with policy PDF ---
+        writer = PdfWriter()
+        report_reader = PdfReader(temp_buffer)
+        for page in report_reader.pages:
+            writer.add_page(page)
+
+        policy_path = policy.get_policy_path()
+        if policy_path and policy_path.exists():
+            try:
+                policy_reader = PdfReader(str(policy_path))
+                for page in policy_reader.pages:
+                    writer.add_page(page)
+                self.logger.info(f"Appended {len(policy_reader.pages)} policy pages.")
+            except Exception as e:
+                self.logger.error(f"Failed to append policy PDF: {e}")
+
+        # --- Save final combined report ---
+        with open(output, "wb") as f:
+            writer.write(f)
+
         self.logger.info(f"PDF report successfully written to {output}")
         return output

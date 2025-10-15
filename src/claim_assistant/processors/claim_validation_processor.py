@@ -7,6 +7,7 @@ from openai import OpenAI
 from claim_assistant.models.form import Form
 from claim_assistant.schemas.coverage_analysis import CoverageAnalysis
 from claim_assistant.schemas.mock_policy_record import MockPolicyRecord
+from claim_assistant.utils import openai_file, validate_pdf
 
 
 class ClaimValidationProcessor:
@@ -52,7 +53,7 @@ class ClaimValidationProcessor:
     def _llm_coverage_analysis(
         self,
         form: Form,
-        policy: MockPolicyRecord,
+        file_id: str,
     ) -> CoverageAnalysis:
         """
         Perform LLM-based reasoning on whether the described injury
@@ -88,7 +89,6 @@ class ClaimValidationProcessor:
                                     "You are an insurance adjuster assistant.\n"
                                     "Analyze whether the injury described in the claim form "
                                     "is likely covered under the provided policy terms.\n\n"
-                                    f"Policy coverage description:\n{policy.policy_coverage}\n\n"
                                     f"Claim form details:\n{filled_answers}\n\n"
                                     "Task:\n"
                                     "- Determine whether the reported incident plausibly falls within policy coverage.\n"
@@ -98,6 +98,7 @@ class ClaimValidationProcessor:
                                     "  'conclusion': 'positive' or 'negative'."
                                 ),
                             },
+                            {"type": "input_file", "file_id": file_id},
                         ],
                     },
                 ],
@@ -195,9 +196,20 @@ class ClaimValidationProcessor:
             )
 
         # --- Step 4: LLM-based coverage analysis ---
-        self.logger.info("Performing coverage reasoning via LLM...")
         self.logger.info("Performing LLM-based policy coverage analysis...")
-        analysis = self._llm_coverage_analysis(form, policy)
+
+        policy_path = policy.get_policy_path()
+        if not policy_path:
+            self.logger.error("Policy document file is missing.")
+            return CoverageAnalysis(
+                executive_summary="Policy document not available for analysis.",
+                conclusion="negative",
+            )
+
+        pdf_path = validate_pdf(policy_path)
+
+        with openai_file(self.client, pdf_path, self.logger) as file_id:
+            analysis = self._llm_coverage_analysis(form, file_id)
 
         self.logger.info("Claim validation completed successfully.")
         return analysis
