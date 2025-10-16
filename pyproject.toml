@@ -12,6 +12,7 @@ dependencies = [
     "numpy>=1.26.4",
     "openai>=2.3.0",
     "pydantic-settings>=2.10.1",
+    "python-Levenshtein",
     "pyemd>=1.0.0",
     "pypdf>=6.1.1",
     "pytorch-transformers>=1.1.0",
