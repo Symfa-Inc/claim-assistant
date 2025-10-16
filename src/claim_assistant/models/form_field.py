@@ -117,7 +117,7 @@ class FormField(BaseModel):
             raise ValueError("meta['format'] must be a string for date/time fields.")
         return meta
 
-    def build_answer_schema(self) -> type[BaseModel]:
+    def build_response_schema(self) -> type[BaseModel]:
         """
         Dynamically construct and return a Pydantic model class
         representing the expected answer schema for this field.
@@ -208,9 +208,9 @@ if __name__ == "__main__":
         ),
     ]
 
-    print("🔍 Testing FormField.build_answer_schema()\n")
+    print("🔍 Testing FormField.build_response_schema()\n")
     for field in test_fields:
         print(f"Field: {field.text} (type={field.data_type})")
-        schema = field.build_answer_schema()
+        schema = field.build_response_schema()
         print(json.dumps(schema, indent=2))
         print("-" * 60)

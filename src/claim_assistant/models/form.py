@@ -1,7 +1,7 @@
 from pathlib import Path
 from typing import Any, get_type_hints
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, create_model
 
 from claim_assistant.models.form_field import FormField
 
@@ -62,6 +62,27 @@ class Form(BaseModel):
             raise ValueError(
                 f"Missing required fields for declared attributes: {missing}",
             )
+
+    # ----------------------------------------------------------------
+    # Unified structured-response schema builder
+    # ----------------------------------------------------------------
+    def build_response_schema(self) -> type[BaseModel]:
+        """
+        Dynamically construct a single response schema model
+        that includes all form fields in one structure.
+        """
+
+        fields_dict = {}
+        for i, f in enumerate(self.fields, start=1):
+            name = f"{i}_{f.alias or f.text.replace(' ', '_').lower()}"
+            fields_dict[name] = f.build_response_schema()
+
+        DynamicFormResponseModel = create_model(
+            "FormResponseModel",
+            **fields_dict,
+            __base__=BaseModel,
+        )
+        return DynamicFormResponseModel
 
     @classmethod
     def from_json(cls, path: str | Path) -> "Form":

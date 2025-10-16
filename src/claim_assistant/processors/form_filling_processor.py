@@ -90,7 +90,7 @@ class FormFillingProcessor:
                         ],
                     },
                 ],
-                text_format=field.build_answer_schema(),
+                text_format=field.build_response_schema(),
             )
 
             result = parsed_response.output_parsed
@@ -100,6 +100,70 @@ class FormFillingProcessor:
         except Exception as e:
             self.logger.error(f"Failed to extract field '{field.text}': {e}")
             field.answer = None
+
+    def _process_fields(self, form: Form, file_id: str) -> None:
+        """
+        Process all FormFields in a single structured-output LLM request.
+
+        Args:
+            form: Form object containing multiple FormField definitions.
+            file_id: ID of the uploaded PDF file for model reference.
+        """
+        self.logger.info(
+            f"Extracting {len(form.fields)} fields from PDF in a single request..."
+        )
+        try:
+            # Build combined structured schema
+            response_schema = form.build_response_schema()
+
+            # Prepare compact textual summary
+            questions_text = "\n".join(
+                f"{f.order}. {f.text} ({f.data_type})" for f in form.fields
+            )
+
+            # Call OpenAI structured response API
+            parsed_response = self.client.responses.parse(
+                model=self.model_name,
+                input=[
+                    {
+                        "role": "user",
+                        "content": [
+                            {
+                                "type": "input_text",
+                                "text": (
+                                    "You are reading a filled insurance claim form PDF.\n"
+                                    "Extract all answers for the following fields.\n\n"
+                                    f"Questions:\n{questions_text}\n\n"
+                                    "Return a structured JSON with one key per field, "
+                                    "matching the names and order of the provided list."
+                                ),
+                            },
+                            {"type": "input_file", "file_id": file_id},
+                        ],
+                    },
+                ],
+                text_format=response_schema,
+            )
+
+            result_dict = parsed_response.output_parsed.model_dump()
+
+            for field in form.fields:
+                key = f"{field.order}_{(field.alias or field.text.replace(' ', '_')).lower()}"
+                value = result_dict.get(key)
+
+                # flatten nested dicts that come from structured parsing
+                if isinstance(value, dict) and "answer" in value:
+                    value = value["answer"]
+
+                field.answer = value
+                self.logger.info(
+                    f"Extracted field {field.order}: {field.text} → {value}"
+                )
+
+        except Exception as e:
+            self.logger.error(f"Failed to extract multiple fields: {e}")
+            for f in form.fields:
+                f.answer = None
 
     def process(
         self,
@@ -117,8 +181,9 @@ class FormFillingProcessor:
 
         with openai_file(self.client, pdf_path, self.logger) as file_id:
             self.logger.info("Starting field extraction...")
-            for field in form.fields:
-                self._process_field(field, file_id)
+            self._process_fields(form, file_id)
+            # for field in form.fields:
+            #     self._process_field(field, file_id)
 
         self.logger.info("Form processing completed.")
         return form
