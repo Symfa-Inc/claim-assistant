@@ -2,6 +2,7 @@ import logging
 from datetime import datetime
 from typing import Literal
 
+from Levenshtein import ratio as levenshtein_ratio
 from openai import OpenAI
 
 from claim_assistant.models.form import Form
@@ -170,11 +171,33 @@ class ClaimValidationProcessor:
         policy_first = policy.policy_holder_first_name.strip().lower()
         policy_last = policy.policy_holder_last_name.strip().lower()
 
+        # compute similarity for both names
+        first_sim = (
+            levenshtein_ratio(form_first, policy_first)
+            if form_first and policy_first
+            else 0.0
+        )
+        last_sim = (
+            levenshtein_ratio(form_last, policy_last)
+            if form_last and policy_last
+            else 0.0
+        )
+        confidence = round((first_sim + last_sim) / 2, 3)
+        ocr_uncertain = False
+
+        if confidence < 0.85:
+            self.logger.warning(
+                f"Low OCR name match confidence: {confidence:.2f} "
+                f"(form='{form_first} {form_last}', policy='{policy_first} {policy_last}')",
+            )
+            ocr_uncertain = True
+
         if form_first != policy_first or form_last != policy_last:
             self.logger.warning("Claimant name does not match policyholder record.")
             return CoverageAnalysis(
                 executive_summary="Policy found, but claimant name differs from policy holder.",
                 conclusion="negative",
+                confidence=confidence,
             )
 
         # --- Step 3: Date coverage check ---
@@ -186,6 +209,7 @@ class ClaimValidationProcessor:
             return CoverageAnalysis(
                 executive_summary="Invalid date format in claim form.",
                 conclusion="negative",
+                confidence=confidence,
             )
 
         if not (policy.start_date <= date_of_injury.date() <= policy.end_date):
@@ -193,6 +217,7 @@ class ClaimValidationProcessor:
             return CoverageAnalysis(
                 executive_summary="Incident date not covered by policy validity period.",
                 conclusion="negative",
+                confidence=confidence,
             )
 
         # --- Step 4: LLM-based coverage analysis ---
@@ -204,12 +229,22 @@ class ClaimValidationProcessor:
             return CoverageAnalysis(
                 executive_summary="Policy document not available for analysis.",
                 conclusion="negative",
+                confidence=confidence,
             )
 
         pdf_path = validate_pdf(policy_path)
 
         with openai_file(self.client, pdf_path, self.logger) as file_id:
             analysis = self._llm_coverage_analysis(form, file_id)
+
+        # if low name confidence, mark as uncertain
+        if ocr_uncertain:
+            analysis.conclusion = "uncertain"
+            analysis.executive_summary += (
+                f"\n\n⚠️ Low OCR name match confidence ({confidence:.2f}). "
+                f"Claim appears to correspond to policyholder but cannot be confirmed."
+            )
+        analysis.confidence = confidence
 
         self.logger.info("Claim validation completed successfully.")
         return analysis

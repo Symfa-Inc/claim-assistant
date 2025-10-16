@@ -107,7 +107,7 @@ def main(
 
 if __name__ == "__main__":
     # Paths for input and form template
-    policy_db_path = os.path.join(PROJECT_DIR, "data", "policies", "policies_old.json")
+    policy_db_path = os.path.join(PROJECT_DIR, "data", "policies", "policies.json")
     input_pdf_path = os.path.join(
         PROJECT_DIR,
         "data",
@@ -118,9 +118,9 @@ if __name__ == "__main__":
     form_json_path = os.path.join(
         PROJECT_DIR,
         "data",
-        "deprecated",
-        "dwc",
-        "form_questions.json",
+        "forms",
+        "TMP_DWC",
+        "form_model.json",
     )
 
     run_dir = os.path.join(

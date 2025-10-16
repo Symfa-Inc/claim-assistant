@@ -13,11 +13,17 @@ class CoverageAnalysis(BaseModel):
     )
     conclusion: str = Field(
         ...,
-        pattern="^(positive|negative)$",
+        pattern="^(positive|negative|uncertain)$",
         description=(
-            "Binary conclusion: 'positive' if coverage likely applies, "
-            "'negative' if it likely does not."
+            "Result of analysis: 'positive', 'negative', or 'uncertain' if validation "
+            "confidence is too low due to name/OCR ambiguity."
         ),
+    )
+    confidence: float = Field(
+        ...,
+        ge=0.0,
+        le=1.0,
+        description="Confidence score (0–1) reflecting certainty of claimant-policy match.",
     )
 
     @classmethod

@@ -150,6 +150,7 @@ class PDFMappingProcessor:
                 [
                     ("Conclusion", analysis.conclusion.capitalize()),
                     ("Summary", analysis.executive_summary),
+                    ("Confidence Score", f"{analysis.confidence:.2f}"),
                 ],
             ),
         )
