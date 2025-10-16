@@ -110,7 +110,7 @@ class FormFillingProcessor:
             file_id: ID of the uploaded PDF file for model reference.
         """
         self.logger.info(
-            f"Extracting {len(form.fields)} fields from PDF in a single request..."
+            f"Extracting {len(form.fields)} fields from PDF in a single request...",
         )
         try:
             # Build combined structured schema
@@ -157,7 +157,7 @@ class FormFillingProcessor:
 
                 field.answer = value
                 self.logger.info(
-                    f"Extracted field {field.order}: {field.text} → {value}"
+                    f"Extracted field {field.order}: {field.text} → {value}",
                 )
 
         except Exception as e:
