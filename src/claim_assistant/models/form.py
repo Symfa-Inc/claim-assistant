@@ -1,73 +1,63 @@
 from pathlib import Path
 from typing import Any, get_type_hints
 
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 
 from claim_assistant.models.form_field import FormField
 
 
 class Form(BaseModel):
-    """Generic Form containing both logic attributes and an ordered list of FormFields."""
+    """
+    Represents a structured insurance form composed of ordered FormFields.
+    Dynamically maps required aliases (policy_id, first_name, etc.)
+    and provides safe per-instance field management.
+    """
 
     # --- Used for database logic ---
-    policy_id: FormField
-    first_name: FormField
-    last_name: FormField
-    date_of_incident: FormField
+    policy_id: FormField | None = Field(default=None)
+    first_name: FormField | None = Field(default=None)
+    last_name: FormField | None = Field(default=None)
+    date_of_incident: FormField | None = Field(default=None)
 
     # --- Used for report generation logic ---
     # (You can add more declared fields here later.)
 
     # --- All fields ---
-    fields: list[FormField]
+    fields: list[FormField] = Field(
+        ...,
+        description="List of all fields defined in the form model (ordered).",
+    )
 
     def __init__(self, data: list[dict[str, Any]]) -> None:
         """
-        Initialize form from list of dicts.
-
-        Steps:
-        1. Convert all elements into FormField instances.
-        2. Sort fields by their 'order' attribute.
-        3. Store them in self.fields.
-        4. For fields whose alias matches a declared attribute name, assign them.
-        5. Validate that all declared attributes are present.
+        Initialize from a list of field definitions, preserving reference links.
         """
-        super().__init__()
-
         if not isinstance(data, list):
             raise TypeError("Form expects a list of field definitions (dicts).")
 
-        # 1. Convert each entry into a FormField
-        fields: list[FormField] = []
-        for entry in data:
-            try:
-                field = FormField(**entry)
-            except Exception as e:
-                raise ValueError(f"Invalid field definition: {entry}\n{e}")
-            fields.append(field)
-
-        # 2. Sort by 'order'
+        # 1. Convert to FormField instances and sort
+        fields = [FormField(**entry) for entry in data]
         fields.sort(key=lambda f: f.order)
 
-        # 3. Save to form
-        self.fields = fields
+        # 2. Map aliases
+        alias_map = {f.alias: f for f in fields if f.alias}
 
-        # 4. Assign attributes by alias
+        # 3. Call BaseModel init first with all fields
+        super().__init__(fields=fields)
+
+        # 4. Dynamically assign attributes (shared references)
         declared_attrs = {
             name
             for name, typ in get_type_hints(self.__class__).items()
-            if typ is FormField
+            if typ in {FormField, FormField | None}
         }
 
-        alias_map = {f.alias: f for f in fields}
-
         for attr_name in declared_attrs:
-            field_obj = alias_map.get(attr_name)
-            if field_obj is not None:
-                setattr(self, attr_name, field_obj)
+            if attr_name in alias_map:
+                object.__setattr__(self, attr_name, alias_map[attr_name])
 
-        # 5. Check that all declared attributes are present
-        missing = [attr for attr in declared_attrs if not hasattr(self, attr)]
+        # 5. Check that all declared fields exist
+        missing = [a for a in declared_attrs if getattr(self, a, None) is None]
         if missing:
             raise ValueError(
                 f"Missing required fields for declared attributes: {missing}",
