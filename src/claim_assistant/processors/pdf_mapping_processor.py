@@ -66,25 +66,56 @@ class PDFMappingProcessor:
 
     def _kv_table(self, rows: list[tuple[str, str]]) -> Table:
         """Create a simple key-value table."""
+        if rows[2][0] == "Confidence Score":
+            confidence_score = float(rows[2][1])
         data = []
+        conclusion_color = None
         for key, val in rows:
+            if val == "Positive" and confidence_score >= 0.9:
+                conclusion_color = colors.lightgreen
+            elif val == "Positive":
+                conclusion_color = colors.yellow
+            elif val == "Negative" and confidence_score >= 0.9:
+                conclusion_color = colors.salmon
+            elif val == "Negative":
+                conclusion_color = colors.yellow
             key_p = self._para(f"<b>{key}:</b>")
             val_p = self._para(val or "")
             data.append([key_p, val_p])
 
         tbl = Table(data, colWidths=[2.0 * inch, 4.5 * inch], hAlign="LEFT")
-        tbl.setStyle(
-            TableStyle(
-                [
-                    ("BACKGROUND", (0, 0), (0, -1), colors.whitesmoke),
-                    ("VALIGN", (0, 0), (-1, -1), "TOP"),
-                    ("BOX", (0, 0), (-1, -1), 0.25, colors.lightgrey),
-                    ("INNERGRID", (0, 0), (-1, -1), 0.25, colors.lightgrey),
-                    ("LEFTPADDING", (0, 0), (-1, -1), 6),
-                    ("RIGHTPADDING", (0, 0), (-1, -1), 6),
-                ],
-            ),
-        )
+        if conclusion_color:
+            tbl.setStyle(
+                TableStyle(
+                    [
+                        ("BACKGROUND", (0, 0), (0, -1), colors.whitesmoke),
+                        (
+                            "BACKGROUND",
+                            (-1, 0),
+                            (-1, 0),
+                            conclusion_color,
+                        ),  # highlight conclusion (certain position)
+                        ("VALIGN", (0, 0), (-1, -1), "TOP"),
+                        ("BOX", (0, 0), (-1, -1), 0.25, colors.lightgrey),
+                        ("INNERGRID", (0, 0), (-1, -1), 0.25, colors.lightgrey),
+                        ("LEFTPADDING", (0, 0), (-1, -1), 6),
+                        ("RIGHTPADDING", (0, 0), (-1, -1), 6),
+                    ],
+                ),
+            )
+        else:
+            tbl.setStyle(
+                TableStyle(
+                    [
+                        ("BACKGROUND", (0, 0), (0, -1), colors.whitesmoke),
+                        ("VALIGN", (0, 0), (-1, -1), "TOP"),
+                        ("BOX", (0, 0), (-1, -1), 0.25, colors.lightgrey),
+                        ("INNERGRID", (0, 0), (-1, -1), 0.25, colors.lightgrey),
+                        ("LEFTPADDING", (0, 0), (-1, -1), 6),
+                        ("RIGHTPADDING", (0, 0), (-1, -1), 6),
+                    ],
+                ),
+            )
         return tbl
 
     def _page_number(self, canvas, doc):

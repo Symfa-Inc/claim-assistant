@@ -113,7 +113,7 @@ if __name__ == "__main__":
         "data",
         "deprecated",
         "dwc",
-        "form_filled_flat.pdf",
+        "dwc_filled_handwriting_julia_one_page.pdf",
     )
     form_json_path = os.path.join(
         PROJECT_DIR,

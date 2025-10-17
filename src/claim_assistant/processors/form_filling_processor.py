@@ -1,9 +1,11 @@
 import logging
+import os
 from pathlib import Path
 from typing import Literal
 
 from openai import OpenAI
 
+from claim_assistant import PROJECT_DIR
 from claim_assistant.models.form import Form
 from claim_assistant.models.form_field import FormField
 from claim_assistant.utils import openai_file, validate_pdf
@@ -165,6 +167,19 @@ class FormFillingProcessor:
             for f in form.fields:
                 f.answer = None
 
+    @staticmethod
+    def _postprocess_policy_id(policy_id: str | None) -> str | None:
+        """
+        Post-process the extracted policy ID to ensure correct formatting.
+        """
+        if policy_id is None:
+            return None
+
+        processed_id = (
+            policy_id.replace(" ", "").replace("-", "").replace("/", "").upper()
+        )
+        return processed_id
+
     def process(
         self,
         input_source: str | Path,
@@ -185,5 +200,40 @@ class FormFillingProcessor:
             # for field in form.fields:
             #     self._process_field(field, file_id)
 
+        form.policy_id.answer = FormFillingProcessor._postprocess_policy_id(
+            form.policy_id.answer,
+        )
+
         self.logger.info("Form processing completed.")
         return form
+
+
+if __name__ == "__main__":
+    input_pdf_path = os.path.join(
+        PROJECT_DIR,
+        "data",
+        "deprecated",
+        "dwc",
+        "form_filled_flat.pdf",
+    )
+    form_json_path = os.path.join(
+        PROJECT_DIR,
+        "data",
+        "forms",
+        "TMP_DWC",
+        "form_model.json",
+    )
+
+    logger = logging.getLogger("FormFillingProcessor")
+    logger.setLevel(logging.INFO)
+    console_handler = logging.StreamHandler()
+    console_handler.setLevel(logging.INFO)
+    logger.addHandler(console_handler)
+
+    processor = FormFillingProcessor(
+        model_client=OpenAI(api_key="api_key"),
+        logger=logger,
+        model_name="gpt-5-nano-2025-08-07",
+    )
+
+    processor.process(input_pdf_path, form_json_path)
