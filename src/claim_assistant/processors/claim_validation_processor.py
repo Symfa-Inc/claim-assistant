@@ -8,7 +8,6 @@ from openai import OpenAI
 from claim_assistant.models.form import Form
 from claim_assistant.schemas.coverage_analysis import CoverageAnalysis
 from claim_assistant.schemas.mock_policy_record import MockPolicyRecord
-from claim_assistant.utils import openai_file, validate_pdf
 
 
 class ClaimValidationProcessor:
@@ -51,19 +50,19 @@ class ClaimValidationProcessor:
     # -------------------------------
     # Core LLM analysis
     # -------------------------------
-    def _llm_coverage_analysis(
+    def _llm_coverage_analysis_pdf(
         self,
         form: Form,
         file_id: str,
     ) -> CoverageAnalysis:
         """
-        Perform LLM-based reasoning on whether the described injury
-        in a filled claim form is likely covered by a given policy.
+        Perform LLM-based reasoning on whether the incident described
+        in a filled claim form is covered by the policy document provided
+        as a PDF (uploaded to OpenAI as a file reference).
 
         Args:
             form: Filled Form object containing all extracted answers.
-            policy: MockPolicyRecord instance representing the matched policy
-                    (with fields like policy_coverage, policy_number, etc.).
+            file_id: OpenAI file ID referencing the uploaded policy PDF.
 
         Returns:
             A CoverageAnalysis instance containing:
@@ -100,6 +99,90 @@ class ClaimValidationProcessor:
                                 ),
                             },
                             {"type": "input_file", "file_id": file_id},
+                        ],
+                    },
+                ],
+                text_format=CoverageAnalysis,
+            )
+
+            result = parsed.output_parsed
+            if not result:
+                self.logger.warning(
+                    "LLM returned empty structured output; using fallback result.",
+                )
+                return CoverageAnalysis(
+                    executive_summary="Analysis unavailable due to missing model output.",
+                    conclusion="negative",
+                )
+
+            if isinstance(result, dict):
+                return CoverageAnalysis(**result)
+            return result
+
+        except Exception as e:
+            self.logger.error(f"Coverage reasoning failed: {e}")
+            return CoverageAnalysis(
+                executive_summary="Error occurred during analysis.",
+                conclusion="negative",
+            )
+
+    def _llm_coverage_analysis_text(
+        self,
+        form: Form,
+        policy: MockPolicyRecord,
+    ) -> CoverageAnalysis:
+        """
+        Perform LLM-based reasoning on whether the incident described
+        in a filled claim form is covered by the provided policy text.
+
+        Unlike the PDF-based version, this method uses raw textual
+        policy data (e.g., policy_coverage) for analysis.
+
+        Args:
+            form: Filled Form object containing all extracted answers.
+            policy: MockPolicyRecord with coverage description and metadata
+                    (policy_number, holder names, validity period, etc.).
+
+        Returns:
+            A CoverageAnalysis instance containing:
+              - executive_summary: str — concise reasoning summary.
+              - conclusion: Literal["positive", "negative"] — coverage assessment result.
+        """
+        self.logger.info("Performing LLM coverage reasoning...")
+
+        # Combine filled answers into a readable summary block
+        filled_answers = "\n".join(
+            f"{field.text}: {field.answer}" for field in form.fields if field.answer
+        )
+
+        try:
+            parsed = self.client.responses.parse(
+                model=self.model_name,
+                input=[
+                    {
+                        "role": "user",
+                        "content": [
+                            {
+                                "type": "input_text",
+                                "text": (
+                                    "You are an insurance adjuster assistant.\n"
+                                    "Analyze whether the injury described in the claim form "
+                                    "is likely covered under the provided policy terms.\n\n"
+                                    "=== CLAIM FORM DETAILS ===\n"
+                                    f"{filled_answers}\n\n"
+                                    "=== POLICY DETAILS ===\n"
+                                    f"Policy Number: {policy.policy_number}\n"
+                                    f"Policy Holder: {policy.policy_holder_first_name} {policy.policy_holder_last_name}\n"
+                                    f"Coverage Period: {policy.start_date} to {policy.end_date}\n\n"
+                                    f"Coverage Description:\n{policy.policy_coverage or 'No coverage text available.'}\n\n"
+                                    "=== TASK ===\n"
+                                    "- Determine whether the reported incident plausibly falls within policy coverage.\n"
+                                    "- Identify possible reasons for denial, if applicable.\n"
+                                    "- Return only a JSON object with fields:\n"
+                                    "  'executive_summary': string,\n"
+                                    "  'conclusion': 'positive' or 'negative'."
+                                ),
+                            },
                         ],
                     },
                 ],
@@ -232,10 +315,12 @@ class ClaimValidationProcessor:
                 confidence=confidence,
             )
 
-        pdf_path = validate_pdf(policy_path)
+        # pdf_path = validate_pdf(policy_path)
+        #
+        # with openai_file(self.client, pdf_path, self.logger) as file_id:
+        #     analysis = self._llm_coverage_analysis_pdf(form, file_id)
 
-        with openai_file(self.client, pdf_path, self.logger) as file_id:
-            analysis = self._llm_coverage_analysis(form, file_id)
+        analysis = self._llm_coverage_analysis_text(form, policy)
 
         # if low name confidence, mark as uncertain
         if ocr_uncertain:

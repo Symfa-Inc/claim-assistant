@@ -32,6 +32,13 @@ class MockPolicyRecord(BaseModel):
         alias="end_data",
         description="Date when the policy coverage ends (ISO format: YYYY-MM-DD).",
     )
+    policy_coverage: str = Field(
+        ...,
+        description=(
+            "Full policy coverage text, describing what incidents or situations are covered. "
+            "This may be directly stored as text or extracted from a PDF via `load_policy_text()`."
+        ),
+    )
     policy_file_name: str | None = Field(
         ...,
         description="Name of the policy document PDF stored locally.",
