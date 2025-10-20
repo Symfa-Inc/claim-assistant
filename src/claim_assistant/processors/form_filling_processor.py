@@ -194,15 +194,35 @@ class FormFillingProcessor:
         self.logger.info("Validating and uploading PDF...")
         pdf_path = validate_pdf(input_source)
 
-        with openai_file(self.client, pdf_path, self.logger) as file_id:
-            self.logger.info("Starting field extraction...")
-            self._process_fields(form, file_id)
-            # for field in form.fields:
-            #     self._process_field(field, file_id)
+        max_retries = 3
+        for attempt in range(1, max_retries + 1):
+            self.logger.info(
+                f"Starting field extraction (attempt {attempt}/{max_retries})...",
+            )
 
-        form.policy_id.answer = FormFillingProcessor._postprocess_policy_id(
-            form.policy_id.answer,
-        )
+            with openai_file(self.client, pdf_path, self.logger) as file_id:
+                self._process_fields(form, file_id)
+
+            # Post-process policy_id (e.g., strip, normalize)
+            form.policy_id.answer = FormFillingProcessor._postprocess_policy_id(
+                form.policy_id.answer,
+            )
+
+            # Check if policy_id looks valid (non-empty string)
+            if form.policy_id.answer and str(form.policy_id.answer).strip():
+                self.logger.info(
+                    f"Successfully extracted policy ID: {form.policy_id.answer}",
+                )
+                break
+            else:
+                self.logger.warning(
+                    f"Empty or invalid policy ID after attempt {attempt}/{max_retries}. Retrying...",
+                )
+
+                if attempt > max_retries:
+                    self.logger.error(
+                        "Failed to extract valid policy ID after maximum retries.",
+                    )
 
         self.logger.info("Form processing completed.")
         return form

@@ -246,44 +246,51 @@ class ClaimValidationProcessor:
             return CoverageAnalysis(
                 executive_summary="Policy not found in database.",
                 conclusion="negative",
+                confidence=1,
             )
 
-        # --- Step 2: Name verification ---
+        # --- Step 2: Compute weighted Levenshtein similarity ---
         form_first = getattr(form.first_name, "answer", "").strip().lower()
         form_last = getattr(form.last_name, "answer", "").strip().lower()
+        form_policy_id = getattr(form.policy_id, "answer", "").strip().lower()
+
         policy_first = policy.policy_holder_first_name.strip().lower()
         policy_last = policy.policy_holder_last_name.strip().lower()
+        policy_id = policy.policy_number.strip().lower()
 
-        # compute similarity for both names
-        first_sim = (
-            levenshtein_ratio(form_first, policy_first)
-            if form_first and policy_first
-            else 0.0
+        sim_policy = (
+            levenshtein_ratio(form_policy_id, policy_id) if form_policy_id else 0.0
         )
-        last_sim = (
-            levenshtein_ratio(form_last, policy_last)
-            if form_last and policy_last
-            else 0.0
+        sim_first = levenshtein_ratio(form_first, policy_first) if form_first else 0.0
+        sim_last = levenshtein_ratio(form_last, policy_last) if form_last else 0.0
+        confidence = round(
+            0.6 * sim_policy + 0.15 * sim_first + 0.25 * sim_last,
+            3,
         )
-        confidence = round((first_sim + last_sim) / 2, 3)
         ocr_uncertain = False
 
-        if confidence < 0.85:
+        if confidence < 1:
             self.logger.warning(
                 f"Low OCR name match confidence: {confidence:.2f} "
                 f"(form='{form_first} {form_last}', policy='{policy_first} {policy_last}')",
             )
             ocr_uncertain = True
 
-        if form_first != policy_first or form_last != policy_last:
-            self.logger.warning("Claimant name does not match policyholder record.")
+        # --- Step 3: Handle very low confidence ---
+        if confidence < 0.5:
+            self.logger.warning(
+                f"Very low integrated confidence ({confidence:.2f}) — likely no matching policy found.",
+            )
             return CoverageAnalysis(
-                executive_summary="Policy found, but claimant name differs from policy holder.",
+                executive_summary=(
+                    f"No sufficiently similar policy record found. "
+                    f"Integrated confidence score ({confidence:.2f}) indicates no reliable match."
+                ),
                 conclusion="negative",
                 confidence=confidence,
             )
 
-        # --- Step 3: Date coverage check ---
+        # --- Step 4: Date coverage check ---
         date_field = getattr(form.date_of_incident, "answer", None)
         try:
             date_of_injury = self._parse_date(date_field)
@@ -303,7 +310,7 @@ class ClaimValidationProcessor:
                 confidence=confidence,
             )
 
-        # --- Step 4: LLM-based coverage analysis ---
+        # --- Step 5: LLM-based coverage analysis ---
         self.logger.info("Performing LLM-based policy coverage analysis...")
 
         policy_path = policy.get_policy_path()
@@ -326,7 +333,7 @@ class ClaimValidationProcessor:
         if ocr_uncertain:
             analysis.conclusion = "uncertain"
             analysis.executive_summary += (
-                f"\n\n⚠️ Low OCR name match confidence ({confidence:.2f}). "
+                f"\n\nLow OCR name match confidence ({confidence:.2f}). "
                 f"Claim appears to correspond to policyholder but cannot be confirmed."
             )
         analysis.confidence = confidence
