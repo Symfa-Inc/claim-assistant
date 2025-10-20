@@ -1,0 +1,230 @@
+[
+  {
+    "order": 1,
+    "text": "Name. Nombre. (First)",
+    "description": "Given name from the employee's full name.",
+    "alias": "first_name",
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 2,
+    "text": "Name. Nombre. (Last)",
+    "description": "Family name from the employee's full name.",
+    "alias": "last_name",
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 3,
+    "text": "Today’s Date. Fecha de Hoy.",
+    "description": "Date the employee completes the form.",
+    "alias": null,
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 4,
+    "text": "Home Address. Dirección Residencial.",
+    "description": "Employee's street address.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 5,
+    "text": "City. Ciudad.",
+    "description": "City of the employee's residence.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 6,
+    "text": "State. Estado.",
+    "description": "State of the employee's residence.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 7,
+    "text": "Zip. Código Postal.",
+    "description": "Postal code of the employee's residence.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 8,
+    "text": "Date of Injury. Fecha de la lesión (accidente).",
+    "description": "Date when the injury or accident occurred.",
+    "alias": "date_of_incident",
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 9,
+    "text": "Time of Injury. Hora en que ocurrió.",
+    "description": "Time of day when the injury occurred.",
+    "alias": null,
+    "data_type": "time",
+    "meta": {
+      "format": "HH:mm:ss"
+    }
+  },
+  {
+    "order": 10,
+    "text": "Address and description of where injury happened. Dirección/lugar dónde occurió el accidente.",
+    "description": "Location and brief description of the place where the injury happened.",
+    "alias": null,
+    "data_type": "text",
+    "meta": {}
+  },
+  {
+    "order": 11,
+    "text": "Describe injury and part of body affected. Describa la lesión y parte del cuerpo afectada.",
+    "description": "Detailed description of the injury and body parts affected.",
+    "alias": null,
+    "data_type": "text",
+    "meta": {}
+  },
+  {
+    "order": 12,
+    "text": "Social Security Number. Número de Seguro Social del Empleado.",
+    "description": "Employee's SSN.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 13,
+    "text": "Check if you agree to receive notices about your claim by email only. Marque si usted acepta recibir notificaciones sobre su reclamo solo por correo electrónico.",
+    "description": "Employee consent to receive claim notices exclusively by email.",
+    "alias": null,
+    "data_type": "boolean",
+    "meta": {}
+  },
+  {
+    "order": 14,
+    "text": "Employee’s e-mail. Correo electrónico del empleado.",
+    "description": "Email address to receive electronic notices if consent given.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 15,
+    "text": "Name of employer. Nombre del empleador.",
+    "description": "Legal name of the employer.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 16,
+    "text": "Address. Dirección.",
+    "description": "Employer's address.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 17,
+    "text": "Date employer first knew of injury. Fecha en que el empleador supo por primera vez de la lesión o accidente.",
+    "description": "Date employer first became aware of the injury.",
+    "alias": null,
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 18,
+    "text": "Date claim form was provided to employee. Fecha en que se le entregó al empleado la petición.",
+    "description": "Date the employer provided the claim form to the employee.",
+    "alias": null,
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 19,
+    "text": "Date employer received claim form. Fecha en que el empleado devolvió la petición al empleador.",
+    "description": "Date the employer received the completed claim form from the employee.",
+    "alias": null,
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 20,
+    "text": "Name and address of insurance carrier or adjusting agency. Nombre y dirección de la compañía de seguros o agencia administradora de seguros.",
+    "description": "Insurance carrier or adjusting agency name and address.",
+    "alias": null,
+    "data_type": "text",
+    "meta": {}
+  },
+  {
+    "order": 21,
+    "text": "Insurance Policy Number. El número de la póliza de Seguro.",
+    "description": "Policy number for the employer's insurance.",
+    "alias": "policy_id",
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 22,
+    "text": "Title. Título.",
+    "description": "Job title of the employer representative.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 23,
+    "text": "Telephone. Teléfono.",
+    "description": "Telephone number of the employer or representative.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 23,
+    "text": "Employer copy/Copia del Empleador",
+    "description": "Checkbox indicating distribution of employer copy.",
+    "alias": null,
+    "data_type": "boolean",
+    "meta": {}
+  },
+  {
+    "order": 24,
+    "text": "Employee copy/Copia del Empleado",
+    "description": "Checkbox indicating distribution of employee copy.",
+    "alias": null,
+    "data_type": "boolean",
+    "meta": {}
+  },
+  {
+    "order": 25,
+    "text": "Claims Administrator/Administrador de Reclamos",
+    "description": "Checkbox indicating distribution of claims administrator copy.",
+    "alias": null,
+    "data_type": "boolean",
+    "meta": {}
+  },
+  {
+    "order": 26,
+    "text": "Temporary Receipt/Recibo del Empleado",
+    "description": "Checkbox indicating distribution of temporary receipt to the employee.",
+    "alias": null,
+    "data_type": "boolean",
+    "meta": {}
+  }
+]
