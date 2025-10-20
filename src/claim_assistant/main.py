@@ -119,7 +119,7 @@ if __name__ == "__main__":
         PROJECT_DIR,
         "data",
         "forms",
-        "TMP_DWC",
+        "demo_DWC",
         "form_model.json",
     )
 
