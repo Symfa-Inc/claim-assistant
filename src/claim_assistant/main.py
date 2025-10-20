@@ -111,9 +111,9 @@ if __name__ == "__main__":
     input_pdf_path = os.path.join(
         PROJECT_DIR,
         "data",
-        "deprecated",
+        "demo",
         "dwc",
-        "form_filled_flat.pdf",
+        "filled_handwritten.pdf",
     )
     form_json_path = os.path.join(
         PROJECT_DIR,

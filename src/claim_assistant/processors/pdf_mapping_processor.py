@@ -9,7 +9,6 @@ from reportlab.lib.pagesizes import letter
 from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet
 from reportlab.lib.units import inch
 from reportlab.platypus import (
-    PageBreak,
     Paragraph,
     SimpleDocTemplate,
     Spacer,
@@ -66,8 +65,8 @@ class PDFMappingProcessor:
 
     def _kv_table(self, rows: list[tuple[str, str]]) -> Table:
         """Create a simple key-value table."""
-        if rows[2][0] == "Confidence Score":
-            confidence_score = float(rows[2][1])
+        if rows[1][0] == "Confidence Score":
+            confidence_score = float(rows[1][1])
         data = []
         conclusion_color = None
         for key, val in rows:
@@ -79,6 +78,10 @@ class PDFMappingProcessor:
                 conclusion_color = colors.salmon
             elif val == "Negative":
                 conclusion_color = colors.yellow
+
+            if key == "Confidence Score" and confidence_score is not None:
+                val = f"{int(confidence_score * 100)}%"
+
             key_p = self._para(f"<b>{key}:</b>")
             val_p = self._para(val or "")
             data.append([key_p, val_p])
@@ -180,8 +183,8 @@ class PDFMappingProcessor:
             self._kv_table(
                 [
                     ("Conclusion", analysis.conclusion.capitalize()),
-                    ("Summary", analysis.executive_summary),
                     ("Confidence Score", f"{analysis.confidence:.2f}"),
+                    ("Summary", analysis.executive_summary),
                 ],
             ),
         )
@@ -193,7 +196,7 @@ class PDFMappingProcessor:
         form_rows = [(f.text, str(f.answer or "N/A")) for f in form.fields]
         story.append(self._kv_table(form_rows))
 
-        story.append(PageBreak())
+        # story.append(PageBreak())
 
         # --- Section 3: Policy Information ---
         story.append(self._section_header("Policy Information"))
@@ -205,7 +208,7 @@ class PDFMappingProcessor:
             ),
             ("Coverage Start Date", policy.start_date.isoformat()),
             ("Coverage End Date", policy.end_date.isoformat()),
-            ("Policy Document Path", str(policy.get_policy_path())),
+            # ("Policy Document Path", str(policy.get_policy_path())),
         ]
         story.append(self._kv_table(policy_rows))
         story.append(Spacer(1, 24))
@@ -225,15 +228,15 @@ class PDFMappingProcessor:
         for page in report_reader.pages:
             writer.add_page(page)
 
-        policy_path = policy.get_policy_path()
-        if policy_path and policy_path.exists():
-            try:
-                policy_reader = PdfReader(str(policy_path))
-                for page in policy_reader.pages:
-                    writer.add_page(page)
-                self.logger.info(f"Appended {len(policy_reader.pages)} policy pages.")
-            except Exception as e:
-                self.logger.error(f"Failed to append policy PDF: {e}")
+        # policy_path = policy.get_policy_path()
+        # if policy_path and policy_path.exists():
+        #     try:
+        #         policy_reader = PdfReader(str(policy_path))
+        #         for page in policy_reader.pages:
+        #             writer.add_page(page)
+        #         self.logger.info(f"Appended {len(policy_reader.pages)} policy pages.")
+        #     except Exception as e:
+        #         self.logger.error(f"Failed to append policy PDF: {e}")
 
         # --- Save final combined report ---
         with open(output, "wb") as f:
