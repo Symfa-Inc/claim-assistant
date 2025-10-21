@@ -351,8 +351,10 @@ class ClaimValidationProcessor:
         if ocr_uncertain:
             analysis.conclusion = "uncertain"
             analysis.executive_summary += (
-                f"\n\nLow OCR name match confidence ({confidence:.2f}). "
-                f"Claim appears to correspond to policyholder but cannot be confirmed."
+                f"\n\nLow overall OCR match confidence ({confidence:.2f}). "
+                f"Form fields (policy ID, first name, last name) show partial similarity "
+                f"to the policy record. Claim likely corresponds to the correct policyholder "
+                f"but cannot be verified with high certainty due to extraction inconsistencies."
             )
         analysis.confidence = confidence
 
