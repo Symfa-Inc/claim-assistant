@@ -77,7 +77,7 @@ class PDFMappingProcessor:
             elif val == "Negative" and confidence_score == 1.0:
                 conclusion_color = colors.salmon
             elif val == "Negative":
-                conclusion_color = colors.yellow
+                conclusion_color = colors.salmon
 
             if key == "Confidence Score" and confidence_score is not None:
                 val = f"{int(confidence_score * 100)}%"
