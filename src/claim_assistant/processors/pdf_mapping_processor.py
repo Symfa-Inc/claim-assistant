@@ -70,11 +70,11 @@ class PDFMappingProcessor:
         data = []
         conclusion_color = None
         for key, val in rows:
-            if val == "Positive" and confidence_score >= 0.9:
+            if val == "Positive" and confidence_score == 1.0:
                 conclusion_color = colors.lightgreen
-            elif val == "Positive":
+            elif val == "Uncertain":
                 conclusion_color = colors.yellow
-            elif val == "Negative" and confidence_score >= 0.9:
+            elif val == "Negative" and confidence_score == 1.0:
                 conclusion_color = colors.salmon
             elif val == "Negative":
                 conclusion_color = colors.yellow
