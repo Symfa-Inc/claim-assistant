@@ -297,7 +297,11 @@ class ClaimValidationProcessor:
         # --- Step 3: Handle very low confidence ---
         if confidence < 0.5:
             self.logger.warning(
-                f"Very low integrated confidence ({confidence:.2f}) — likely no matching policy found.",
+                f"Low OCR match confidence: {confidence:.2f}\n"
+                f"→ Extracted (form): policy_id='{form_policy_id}', "
+                f"first_name='{form_first}', last_name='{form_last}'\n"
+                f"→ Reference (policy): policy_id='{policy_id}', "
+                f"first_name='{policy_first}', last_name='{policy_last}'",
             )
             return CoverageAnalysis(
                 executive_summary=(
