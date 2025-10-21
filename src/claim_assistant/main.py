@@ -113,7 +113,7 @@ if __name__ == "__main__":
         "data",
         "demo",
         "dwc",
-        "filled_handwritten.pdf",
+        "filled_digital.pdf",
     )
     form_json_path = os.path.join(
         PROJECT_DIR,

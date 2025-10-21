@@ -240,6 +240,24 @@ class ClaimValidationProcessor:
         """
         self.logger.info("Starting claim validation...")
 
+        # --- Step 0: Ensure OCR didn't fail completely ---
+        policy_id = getattr(form.policy_id, "answer", None)
+        first_name = getattr(form.first_name, "answer", None)
+        last_name = getattr(form.last_name, "answer", None)
+        incident_date = getattr(form.date_of_incident, "answer", None)
+
+        # Step 0: Ensure form is not empty
+        if not any([policy_id, first_name, last_name, incident_date]):
+            self.logger.error("OCR extraction failed — all critical fields are empty.")
+            return CoverageAnalysis(
+                executive_summary=(
+                    "OCR extraction failed. No valid data was extracted from the claim form. "
+                    "The form contains empty policy number, name, and incident date fields."
+                ),
+                conclusion="negative",
+                confidence=0.0,
+            )
+
         # Step 1: Match by policy number
         if not policy:
             self.logger.warning("No policy found for the given policy ID.")
