@@ -1,65 +1,135 @@
-import json
 import logging
 import os
 import time
+from datetime import datetime
 from pathlib import Path
 
+from openai import OpenAI
+
 from claim_assistant import PROJECT_DIR
-from claim_assistant.pdf.analyse_case import validate_claim
-from claim_assistant.pdf.read_pdf import extract_form_fields
-from claim_assistant.pdf.write_pdf import write_summary_pdf
+from claim_assistant.models.form import Form
+from claim_assistant.processors import (
+    ClaimValidationProcessor,
+    FormFillingProcessor,
+    PDFMappingProcessor,
+    PolicyDatabaseProcessor,
+)
+from claim_assistant.schemas.coverage_analysis import CoverageAnalysis
+from claim_assistant.schemas.mock_policy_record import MockPolicyRecord
+from claim_assistant.settings import OpenAISettings
 
 logger = logging.getLogger(__name__)
 
 
 def main(
+    run_dir: str,
     input_pdf_path: str | Path,
-    policies: list[dict],
-    ouptut_pdf_path: str | Path = "./claim_summary.pdf",
-):
+    form_json_path: str | Path,
+    policy_db_path: str | Path,
+) -> None:
+    """
+    Main entry point for the claim processing workflow.
+
+    Steps:
+        1. Fill the form using LLM extraction from the input PDF.
+        2. Load the mock policy database and find the matching record.
+        3. Validate the claim against policy coverage.
+        4. Generate a structured PDF summary report.
+    """
     start_time = time.time()
-    logger.info("Starting claim processing workflow")
 
-    logger.info("Extracting form fields from PDF: %s", input_pdf_path)
-    claim_dict = extract_form_fields(input_pdf_path)
+    # --- output directory ---
+    output_pdf_path = os.path.join(run_dir, "claim_summary.pdf")
+    log_path = os.path.join(run_dir, "run.log")
+    file_handler = logging.FileHandler(log_path, mode="w", encoding="utf-8")
+    file_handler.setLevel(logging.INFO)
 
-    logger.info("Validating claim against %d policies", len(policies))
-    claim_dict = validate_claim(claim_dict, policies)
+    # --- Setup logging and output directory ---
+    logger = logging.getLogger("claim_pipeline")
+    logger.setLevel(logging.INFO)
+    # Clear any pre-existing handlers to avoid duplicates
+    if logger.hasHandlers():
+        logger.handlers.clear()
 
-    logger.info("Writing summary PDF to: %s", ouptut_pdf_path)
-    write_summary_pdf(claim_dict, ouptut_pdf_path)
+    # Console handler
+    console_handler = logging.StreamHandler()
+    console_handler.setLevel(logging.INFO)
+    console_handler.setFormatter(
+        logging.Formatter("%(asctime)s - %(levelname)s - %(message)s"),
+    )
 
-    end_time = time.time()
-    total_time = end_time - start_time
-    logger.info("Claim processing completed in %.1f seconds", total_time)
+    # File handler
+    file_handler = logging.FileHandler(log_path, mode="w", encoding="utf-8")
+    file_handler.setLevel(logging.INFO)
+    file_handler.setFormatter(
+        logging.Formatter("%(asctime)s - %(levelname)s - %(message)s"),
+    )
+
+    # Attach both handlers once
+    logger.addHandler(console_handler)
+    logger.addHandler(file_handler)
+
+    logging.getLogger("httpx").setLevel(logging.WARNING)
+
+    # --- Initialize processors ---
+    settings = OpenAISettings()
+    client = OpenAI(api_key=settings.openai_api_key)
+    form_processor = FormFillingProcessor(client, logger)
+    db_processor = PolicyDatabaseProcessor(policy_db_path, logger)
+    validation_processor = ClaimValidationProcessor(client, logger)
+    report_processor = PDFMappingProcessor(logger)
+
+    # --- Workflow ---
+    logger.info("Step 1: Extracting and filling form fields from PDF...")
+    form: Form = form_processor.process(input_pdf_path, form_json_path)
+
+    logger.info("Step 2: Fetching policy from database...")
+    policy: MockPolicyRecord | None = db_processor.process(form)
+    if not policy:
+        logger.error(
+            "No matching policy found for Policy ID: %s",
+            form.policy_id.answer,
+        )
+        return
+
+    logger.info("Step 3: Validating claim against policy record...")
+    analysis: CoverageAnalysis = validation_processor.process(form, policy)
+
+    logger.info("Step 4: Generating structured summary report...")
+    report_processor.process(form, policy, analysis, output_pdf_path)
+
+    elapsed = time.time() - start_time
+    logger.info(f"Claim processing completed in {elapsed:.1f} seconds")
+    logger.info(f"Artifacts saved in: {run_dir}")
+    logger.info(f"Report: {output_pdf_path}")
+    logger.info(f"Log: {log_path}")
 
 
 if __name__ == "__main__":
-    # Configure logging for standalone execution
-    logging.basicConfig(
-        level=logging.INFO,
-        format="%(asctime)s - %(levelname)s - %(message)s",
+    # Paths for input and form template
+    policy_db_path = os.path.join(PROJECT_DIR, "data", "policies", "policies.json")
+    input_pdf_path = os.path.join(
+        PROJECT_DIR,
+        "data",
+        "demo",
+        "dwc",
+        "filled_digital.pdf",
     )
-    logging.getLogger("httpx").setLevel(logging.WARNING)
+    form_json_path = os.path.join(
+        PROJECT_DIR,
+        "data",
+        "forms",
+        "demo_DWC",
+        "form_model.json",
+    )
 
-    policies_json = """
-    [
-      {
-        "policy_number": "SIC123456789",
-        "policy_holder_name": "John Smith",
-        "start_date": "2023-05-15",
-        "end_date": "2024-05-15",
-        "policy_coverage": "Workplace injury compensation including medical expenses, rehabilitation services, and wage replacement."
-      },
-      {
-        "policy_number": "POL123456789",
-        "policy_holder_name": "John Doe",
-        "start_date": "2022-03-20",
-        "end_date": "2024-03-20",
-        "policy_coverage": "Occupational accident insurance covering hospital bills, temporary disability payments, and emergency treatment costs."
-      }
-    ]
-    """
-    policies = json.loads(policies_json)
-    path = os.path.join(PROJECT_DIR, "data", "forms", "dwc", "form_filled_flat.pdf")
-    main(path, policies)
+    run_dir = os.path.join(
+        PROJECT_DIR,
+        "data",
+        "runs",
+        datetime.now().strftime("%Y%m%d_%H%M%S"),
+    )
+    os.makedirs(run_dir, exist_ok=True)
+
+    # --- Run full processing pipeline ---
+    main(run_dir, input_pdf_path, form_json_path, policy_db_path)

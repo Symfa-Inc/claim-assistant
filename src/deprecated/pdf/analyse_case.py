@@ -1,10 +1,9 @@
-import json
 from datetime import datetime
 from typing import Any, Optional
 
 from openai import OpenAI
 
-from claim_assistant.pdf.settings import OpenAISettings
+from deprecated.pdf.settings import OpenAISettings
 
 
 def parse_date(date_str: str) -> Optional[datetime]:

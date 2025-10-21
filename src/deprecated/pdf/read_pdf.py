@@ -74,7 +74,7 @@ from pathlib import Path
 
 from openai import OpenAI
 
-from claim_assistant.pdf.summary_form import SummaryForm
+from deprecated.pdf.summary_form import SummaryForm
 
 
 def extract_form_fields(
