@@ -237,15 +237,23 @@
     "text": "Specify per hr., wk., mo., yr., etc.",
     "description": "Specify pay period for the wage (e.g., per hr., wk., mo.).",
     "alias": null,
-    "data_type": "string",
-    "meta": {}
+    "data_type": "enum",
+    "meta": {
+        "labels": [
+            "hr",
+            "wk",
+            "mo",
+            "yr",
+            "Other"
+        ]
+    }
   },
   {
     "order": 30,
     "text": "Per:",
     "description": "Unit corresponding to wage amount.",
     "alias": null,
-    "data_type": "string",
+    "data_type": "number",
     "meta": {}
   },
   {
@@ -369,19 +377,6 @@
     "alias": null,
     "data_type": "number",
     "meta": {}
-  },
-  {
-    "order": 46,
-    "text": "Employee’s Usual Work Schedule When Injured (AM/PM)",
-    "description": "Indicate whether the schedule is AM or PM.",
-    "alias": null,
-    "data_type": "enum",
-    "meta": {
-      "labels": [
-        "AM",
-        "PM"
-      ]
-    }
   },
   {
     "order": 47,
@@ -604,15 +599,5 @@
     "alias": null,
     "data_type": "string",
     "meta": {}
-  },
-  {
-    "order": 73,
-    "text": "Date Signed",
-    "description": "Date the report was signed.",
-    "alias": null,
-    "data_type": "date",
-    "meta": {
-      "format": "YYYY-MM-DD"
-    }
   }
 ]

@@ -27,19 +27,16 @@
   },
   {
     "order": 4,
-    "text": "am",
-    "description": "AM checkbox for time employee began work",
+    "text": "Time employee began work on date of injury (am/pm)",
+    "description": "AM/PM checkbox for time employee began work",
     "alias": null,
-    "data_type": "boolean",
-    "meta": {}
-  },
-  {
-    "order": 5,
-    "text": "pm",
-    "description": "PM checkbox for time employee began work",
-    "alias": null,
-    "data_type": "boolean",
-    "meta": {}
+    "data_type": "enum",
+    "meta": {
+        "labels": [
+            "AM",
+            "PM"
+        ]
+    }
   },
   {
     "order": 6,
@@ -63,19 +60,16 @@
   },
   {
     "order": 8,
-    "text": "am",
-    "description": "AM checkbox for time of injury",
+    "text": "Time of injury(am/pm)",
+    "description": "AM/PM checkbox for time of injury",
     "alias": null,
-    "data_type": "boolean",
-    "meta": {}
-  },
-  {
-    "order": 9,
-    "text": "pm",
-    "description": "PM checkbox for time of injury",
-    "alias": null,
-    "data_type": "boolean",
-    "meta": {}
+    "data_type": "enum",
+    "meta": {
+        "labels": [
+            "AM",
+            "PM"
+        ]
+    }
   },
   {
     "order": 10,
@@ -100,14 +94,6 @@
     "text": "EMPLOYEE Last name",
     "description": "Employee family name (from 'EMPLOYEE Name (last, suffix, first, middle)')",
     "alias": "last_name",
-    "data_type": "string",
-    "meta": {}
-  },
-  {
-    "order": 13,
-    "text": "EMPLOYEE Suffix",
-    "description": "Name suffix (Jr., Sr., III, etc.)",
-    "alias": null,
     "data_type": "string",
     "meta": {}
   },
@@ -327,35 +313,18 @@
   },
   {
     "order": 39,
-    "text": "Employment status - Full time",
+    "text": "Employment status",
     "description": "Employment status (check all that apply)",
     "alias": null,
-    "data_type": "boolean",
-    "meta": {}
-  },
-  {
-    "order": 40,
-    "text": "Employment status - Seasonal",
-    "description": "Employment status (check all that apply)",
-    "alias": null,
-    "data_type": "boolean",
-    "meta": {}
-  },
-  {
-    "order": 41,
-    "text": "Employment status - Part time",
-    "description": "Employment status (check all that apply)",
-    "alias": null,
-    "data_type": "boolean",
-    "meta": {}
-  },
-  {
-    "order": 42,
-    "text": "Employment status - Volunteer",
-    "description": "Employment status (check all that apply)",
-    "alias": null,
-    "data_type": "boolean",
-    "meta": {}
+    "data_type": "enum",
+    "meta": {
+        "labels": [
+            "Full time",
+            "Part time",
+            "Seasonal",
+            "Volunteer"
+        ]
+    }
   },
   {
     "order": 43,
@@ -393,30 +362,6 @@
     "order": 47,
     "text": "Name and address of the place of the occurrence",
     "description": "Name and address where occurrence took place (if not employer premises)",
-    "alias": null,
-    "data_type": "string",
-    "meta": {}
-  },
-  {
-    "order": 48,
-    "text": "City (place of occurrence)",
-    "description": "City for place of occurrence",
-    "alias": null,
-    "data_type": "string",
-    "meta": {}
-  },
-  {
-    "order": 49,
-    "text": "State (place of occurrence)",
-    "description": "State for place of occurrence",
-    "alias": null,
-    "data_type": "string",
-    "meta": {}
-  },
-  {
-    "order": 50,
-    "text": "Zip Code (place of occurrence)",
-    "description": "ZIP code for place of occurrence",
     "alias": null,
     "data_type": "string",
     "meta": {}
@@ -500,6 +445,14 @@
     "meta": {}
   },
   {
+    "order": 65,
+    "text": "Certified Managed Care Organization (if any)",
+    "description": "Name of CMO if applicable",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
     "order": 59,
     "text": "Extent of medical treatment - None",
     "description": "Check if no medical treatment was provided",
@@ -548,14 +501,6 @@
     "meta": {}
   },
   {
-    "order": 65,
-    "text": "Certified Managed Care Organization (if any)",
-    "description": "Name of CMO if applicable",
-    "alias": null,
-    "data_type": "string",
-    "meta": {}
-  },
-  {
     "order": 66,
     "text": "EMPLOYER Legal name",
     "description": "Legal name of the employer",
@@ -575,6 +520,30 @@
     "order": 68,
     "text": "Mailing address",
     "description": "Employer mailing street address",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 73,
+    "text": "City (mailing)",
+    "description": "City for employer mailing address",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 74,
+    "text": "State (mailing)",
+    "description": "State for employer mailing address",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 75,
+    "text": "Zip Code (mailing)",
+    "description": "ZIP for employer mailing address",
     "alias": null,
     "data_type": "string",
     "meta": {}
@@ -607,30 +576,6 @@
     "order": 72,
     "text": "Employer’s contact phone #",
     "description": "Contact phone number",
-    "alias": null,
-    "data_type": "string",
-    "meta": {}
-  },
-  {
-    "order": 73,
-    "text": "City (mailing)",
-    "description": "City for employer mailing address",
-    "alias": null,
-    "data_type": "string",
-    "meta": {}
-  },
-  {
-    "order": 74,
-    "text": "State (mailing)",
-    "description": "State for employer mailing address",
-    "alias": null,
-    "data_type": "string",
-    "meta": {}
-  },
-  {
-    "order": 75,
-    "text": "Zip Code (mailing)",
-    "description": "ZIP for employer mailing address",
     "alias": null,
     "data_type": "string",
     "meta": {}
@@ -669,7 +614,15 @@
   },
   {
     "order": 80,
-    "text": "Witness (name and phone)",
+    "text": "Witness (name)",
+    "description": "Witness contact information (if more than one attach separate sheet)",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 80,
+    "text": "Witness (and phone)",
     "description": "Witness contact information (if more than one attach separate sheet)",
     "alias": null,
     "data_type": "string",
@@ -705,14 +658,6 @@
     "order": 84,
     "text": "Insured legal name",
     "description": "Legal name of the insured (from item 47)",
-    "alias": null,
-    "data_type": "string",
-    "meta": {}
-  },
-  {
-    "order": 85,
-    "text": "Insured FEIN",
-    "description": "FEIN for the insured entity (from item 47)",
     "alias": null,
     "data_type": "string",
     "meta": {}
@@ -810,46 +755,6 @@
     "description": "Claims administrator claim number",
     "alias": null,
     "data_type": "string",
-    "meta": {}
-  },
-  {
-    "order": 97,
-    "text": "Claim type code",
-    "description": "To be completed by CA",
-    "alias": null,
-    "data_type": "string",
-    "meta": {}
-  },
-  {
-    "order": 98,
-    "text": "Type of loss code",
-    "description": "To be completed by CA",
-    "alias": null,
-    "data_type": "string",
-    "meta": {}
-  },
-  {
-    "order": 99,
-    "text": "Late reason code",
-    "description": "To be completed by CA if applicable",
-    "alias": null,
-    "data_type": "string",
-    "meta": {}
-  },
-  {
-    "order": 100,
-    "text": "Salary paid in lieu of comp?",
-    "description": "Indicate if salary paid instead of compensation",
-    "alias": null,
-    "data_type": "boolean",
-    "meta": {}
-  },
-  {
-    "order": 101,
-    "text": "Death result of injury?",
-    "description": "Indicate if death was a result of the injury",
-    "alias": null,
-    "data_type": "boolean",
     "meta": {}
   }
 ]

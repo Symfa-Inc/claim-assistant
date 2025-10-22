@@ -8,14 +8,6 @@
     "meta": {}
   },
   {
-    "order": 2,
-    "text": "Jurisdiction Claim Number",
-    "description": null,
-    "alias": null,
-    "data_type": "string",
-    "meta": {}
-  },
-  {
     "order": 3,
     "text": "Claim Administrator Name",
     "description": null,
@@ -104,14 +96,6 @@
     "meta": {}
   },
   {
-    "order": 14,
-    "text": "Industry Code",
-    "description": null,
-    "alias": null,
-    "data_type": "string",
-    "meta": {}
-  },
-  {
     "order": 15,
     "text": "Employer Type Code",
     "description": "Check applicable: Employer (E) or Lessor (L)",
@@ -136,6 +120,14 @@
     "order": 17,
     "text": "Mailing Address, City, State, & Postal Code",
     "description": "Employer mailing address",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 14,
+    "text": "Industry Code",
+    "description": null,
     "alias": null,
     "data_type": "string",
     "meta": {}
@@ -173,16 +165,6 @@
     "meta": {}
   },
   {
-    "order": 22,
-    "text": "Coverage Effective Date",
-    "description": null,
-    "alias": null,
-    "data_type": "date",
-    "meta": {
-      "format": "YYYY-MM-DD"
-    }
-  },
-  {
     "order": 23,
     "text": "Insured Name (parent company if different than employer)",
     "description": null,
@@ -215,6 +197,16 @@
     "meta": {}
   },
   {
+    "order": 22,
+    "text": "Coverage Effective Date",
+    "description": null,
+    "alias": null,
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
     "order": 27,
     "text": "Coverage Expiration Date",
     "description": null,
@@ -231,22 +223,6 @@
     "alias": null,
     "data_type": "string",
     "meta": {}
-  },
-  {
-    "order": 29,
-    "text": "Gender",
-    "description": "Select employee gender",
-    "alias": null,
-    "data_type": "enum",
-    "meta": {
-      "labels": [
-        "Male (M)",
-        "Female (F)",
-        "Transgender (T)",
-        "Non-Binary (X)",
-        "Unknown (U)"
-      ]
-    }
   },
   {
     "order": 30,
@@ -273,14 +249,6 @@
     "meta": {}
   },
   {
-    "order": 33,
-    "text": "Employee Name - Suffix",
-    "description": "Name suffix (Jr, Sr, III, etc.)",
-    "alias": null,
-    "data_type": "string",
-    "meta": {}
-  },
-  {
     "order": 34,
     "text": "Date of Birth",
     "description": null,
@@ -288,6 +256,22 @@
     "data_type": "date",
     "meta": {
       "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 29,
+    "text": "Gender",
+    "description": "Select employee gender",
+    "alias": null,
+    "data_type": "enum",
+    "meta": {
+      "labels": [
+        "Male (M)",
+        "Female (F)",
+        "Transgender (T)",
+        "Non-Binary (X)",
+        "Unknown (U)"
+      ]
     }
   },
   {
@@ -306,6 +290,14 @@
     }
   },
   {
+    "order": 42,
+    "text": "Mailing Address, City, State, & Postal Code",
+    "description": "Employee mailing address",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
     "order": 36,
     "text": "Date of Hire",
     "description": null,
@@ -316,9 +308,57 @@
     }
   },
   {
+    "order": 50,
+    "text": "State of Hire",
+    "description": null,
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
     "order": 37,
     "text": "Educational Level (grade completed)",
     "description": "Enter grade completed (GED = 12)",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 41,
+    "text": "Phone Number (include area code)",
+    "description": null,
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 49,
+    "text": "Email",
+    "description": "Employee email address",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 44,
+    "text": "Occupation Description",
+    "description": null,
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 46,
+    "text": "NCCI Classification Code",
+    "description": null,
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 47,
+    "text": "Department Where Regularly Worked",
+    "description": null,
     "alias": null,
     "data_type": "string",
     "meta": {}
@@ -367,22 +407,6 @@
     "meta": {}
   },
   {
-    "order": 41,
-    "text": "Phone Number (include area code)",
-    "description": null,
-    "alias": null,
-    "data_type": "string",
-    "meta": {}
-  },
-  {
-    "order": 42,
-    "text": "Mailing Address, City, State, & Postal Code",
-    "description": "Employee mailing address",
-    "alias": null,
-    "data_type": "string",
-    "meta": {}
-  },
-  {
     "order": 43,
     "text": "Marital Status",
     "description": "Check one",
@@ -397,14 +421,6 @@
     }
   },
   {
-    "order": 44,
-    "text": "Occupation Description",
-    "description": null,
-    "alias": null,
-    "data_type": "string",
-    "meta": {}
-  },
-  {
     "order": 45,
     "text": "Employee’s Authorization to Release Medical Records",
     "description": "Employee authorization: yes/no",
@@ -413,59 +429,11 @@
     "meta": {}
   },
   {
-    "order": 46,
-    "text": "NCCI Classification Code",
-    "description": null,
-    "alias": null,
-    "data_type": "string",
-    "meta": {}
-  },
-  {
-    "order": 47,
-    "text": "Department Where Regularly Worked",
-    "description": null,
-    "alias": null,
-    "data_type": "string",
-    "meta": {}
-  },
-  {
     "order": 48,
     "text": "Employee’s Authorization to Release Social Security Number",
     "description": "Employee authorization to release SSN: yes/no",
     "alias": null,
     "data_type": "boolean",
-    "meta": {}
-  },
-  {
-    "order": 49,
-    "text": "Email",
-    "description": "Employee email address",
-    "alias": null,
-    "data_type": "string",
-    "meta": {}
-  },
-  {
-    "order": 50,
-    "text": "State of Hire",
-    "description": null,
-    "alias": null,
-    "data_type": "string",
-    "meta": {}
-  },
-  {
-    "order": 51,
-    "text": "Describe the nature of the injury",
-    "description": "e.g., amputation, burn, cut, fracture",
-    "alias": null,
-    "data_type": "text",
-    "meta": {}
-  },
-  {
-    "order": 52,
-    "text": "Part(s) of body directly affected by the injury or illness",
-    "description": "e.g., hand, arm, circulatory system",
-    "alias": null,
-    "data_type": "text",
     "meta": {}
   },
   {
@@ -495,6 +463,14 @@
     }
   },
   {
+    "order": 61,
+    "text": "Number of Days Regularly Worked Per Week",
+    "description": null,
+    "alias": null,
+    "data_type": "number",
+    "meta": {}
+  },
+  {
     "order": 55,
     "text": "Salary Continued In Lieu of Compensation",
     "description": "yes/no",
@@ -508,6 +484,14 @@
     "description": "yes/no",
     "alias": null,
     "data_type": "boolean",
+    "meta": {}
+  },
+  {
+    "order": 60,
+    "text": "Discontinued Fringe Benefits $",
+    "description": "Dollar amount",
+    "alias": null,
+    "data_type": "number",
     "meta": {}
   },
   {
@@ -538,30 +522,6 @@
         "Withholding"
       ]
     }
-  },
-  {
-    "order": 60,
-    "text": "Discontinued Fringe Benefits $",
-    "description": "Dollar amount",
-    "alias": null,
-    "data_type": "number",
-    "meta": {}
-  },
-  {
-    "order": 61,
-    "text": "Number of Days Regularly Worked Per Week",
-    "description": null,
-    "alias": null,
-    "data_type": "number",
-    "meta": {}
-  },
-  {
-    "order": 62,
-    "text": "Type of Injury / Illness Code",
-    "description": null,
-    "alias": null,
-    "data_type": "string",
-    "meta": {}
   },
   {
     "order": 63,
@@ -658,22 +618,6 @@
     }
   },
   {
-    "order": 72,
-    "text": "Part of Body Affected Code",
-    "description": "Code for the body part affected",
-    "alias": null,
-    "data_type": "string",
-    "meta": {}
-  },
-  {
-    "order": 73,
-    "text": "Part(s) of body directly affected by the injury or illness (detailed)",
-    "description": "e.g., hand, arm, circulatory system",
-    "alias": null,
-    "data_type": "text",
-    "meta": {}
-  },
-  {
     "order": 74,
     "text": "Accident Premises Code",
     "description": "Check one",
@@ -689,25 +633,9 @@
     }
   },
   {
-    "order": 75,
-    "text": "Describe the events that caused the injury",
-    "description": "e.g., fell, operating machinery, chemical exposure",
-    "alias": null,
-    "data_type": "text",
-    "meta": {}
-  },
-  {
     "order": 76,
     "text": "Accident Site Organization Name",
     "description": null,
-    "alias": null,
-    "data_type": "string",
-    "meta": {}
-  },
-  {
-    "order": 77,
-    "text": "Name the object or substance that directly injured the employee",
-    "description": "e.g., knife, floor, acid, oil",
     "alias": null,
     "data_type": "string",
     "meta": {}
@@ -729,14 +657,6 @@
     "meta": {}
   },
   {
-    "order": 80,
-    "text": "Specify activity the employee was engaged in when the event occurred",
-    "description": "Indicate if activity was part of normal duties",
-    "alias": null,
-    "data_type": "text",
-    "meta": {}
-  },
-  {
     "order": 81,
     "text": "Accident Site County/Parish",
     "description": null,
@@ -745,8 +665,72 @@
     "meta": {}
   },
   {
+    "order": 62,
+    "text": "Type of Injury / Illness Code",
+    "description": null,
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 51,
+    "text": "Describe the nature of the injury",
+    "description": "e.g., amputation, burn, cut, fracture",
+    "alias": null,
+    "data_type": "text",
+    "meta": {}
+  },
+  {
+    "order": 72,
+    "text": "Part of Body Affected Code",
+    "description": "Code for the body part affected",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 52,
+    "text": "Part(s) of body directly affected by the injury or illness",
+    "description": "e.g., hand, arm, circulatory system",
+    "alias": null,
+    "data_type": "text",
+    "meta": {}
+  },
+  {
+    "order": 75,
+    "text": "Describe the events that caused the injury",
+    "description": "e.g., fell, operating machinery, chemical exposure",
+    "alias": null,
+    "data_type": "text",
+    "meta": {}
+  },
+  {
+    "order": 77,
+    "text": "Name the object or substance that directly injured the employee",
+    "description": "e.g., knife, floor, acid, oil",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 80,
+    "text": "Specify activity the employee was engaged in when the event occurred",
+    "description": "Indicate if activity was part of normal duties",
+    "alias": null,
+    "data_type": "text",
+    "meta": {}
+  },
+  {
     "order": 82,
-    "text": "Witness Name & Business Phone Number",
+    "text": "Witness Name",
+    "description": null,
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 82,
+    "text": "Witness Business Phone Number",
     "description": null,
     "alias": null,
     "data_type": "string",
@@ -778,16 +762,16 @@
     "meta": {}
   },
   {
-    "order": 85,
-    "text": "Managed Care Organization Name or ID Number",
+    "order": 86,
+    "text": "Initial Medical Provider Physical Address, City, State, & Postal Code",
     "description": null,
     "alias": null,
     "data_type": "string",
     "meta": {}
   },
   {
-    "order": 86,
-    "text": "Initial Medical Provider Physical Address, City, State, & Postal Code",
+    "order": 85,
+    "text": "Managed Care Organization Name or ID Number",
     "description": null,
     "alias": null,
     "data_type": "string",

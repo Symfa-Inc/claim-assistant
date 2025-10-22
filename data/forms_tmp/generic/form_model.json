@@ -8,22 +8,6 @@
     "meta": {}
   },
   {
-    "order": 2,
-    "text": "CARRIER/ADMINISTRATOR CLAIM NUMBER",
-    "description": "Claim number assigned by carrier or administrator.",
-    "alias": null,
-    "data_type": "string",
-    "meta": {}
-  },
-  {
-    "order": 3,
-    "text": "OSHA LOG CASE #",
-    "description": "OSHA recordable case number, if applicable.",
-    "alias": null,
-    "data_type": "string",
-    "meta": {}
-  },
-  {
     "order": 4,
     "text": "REPORT PURPOSE CODE",
     "description": "Code indicating purpose of this report.",
@@ -35,22 +19,6 @@
     "order": 5,
     "text": "JURISDICTION",
     "description": "State or jurisdiction for this claim.",
-    "alias": null,
-    "data_type": "string",
-    "meta": {}
-  },
-  {
-    "order": 6,
-    "text": "JURISDICTION CLAIM NUMBER",
-    "description": "Claim number assigned by the jurisdiction, if any.",
-    "alias": null,
-    "data_type": "string",
-    "meta": {}
-  },
-  {
-    "order": 7,
-    "text": "INSURED REPORT NUMBER",
-    "description": "Insured's internal report number.",
     "alias": null,
     "data_type": "string",
     "meta": {}
@@ -72,6 +40,14 @@
     "meta": {}
   },
   {
+    "order": 12,
+    "text": "PHONE #",
+    "description": "Employer phone number.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
     "order": 10,
     "text": "INDUSTRY CODE",
     "description": "Industry code (SIC/NAICS) representing employer's business.",
@@ -88,14 +64,6 @@
     "meta": {}
   },
   {
-    "order": 12,
-    "text": "PHONE #",
-    "description": "Employer phone number.",
-    "alias": null,
-    "data_type": "string",
-    "meta": {}
-  },
-  {
     "order": 13,
     "text": "CARRIER (NAME, ADDRESS, & PHONE #)",
     "description": "Insurance carrier name, address and phone number.",
@@ -105,18 +73,30 @@
   },
   {
     "order": 14,
-    "text": "POLICY PERIOD",
+    "text": "POLICY PERIOD (start)",
     "description": "Coverage policy period (start).",
     "alias": null,
-    "data_type": "string",
-    "meta": {}
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
   },
   {
     "order": 15,
-    "text": "TO",
+    "text": "POLICY PERIOD (end)",
     "description": "Coverage policy period (end).",
     "alias": null,
-    "data_type": "string",
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+    {
+    "order": 17,
+    "text": "SELF INSURANCE",
+    "description": "Check if the employer is self-insured.",
+    "alias": null,
+    "data_type": "boolean",
     "meta": {}
   },
   {
@@ -125,14 +105,6 @@
     "description": "Claims administrator name, address and phone.",
     "alias": null,
     "data_type": "text",
-    "meta": {}
-  },
-  {
-    "order": 17,
-    "text": "SELF INSURANCE",
-    "description": "Check if the employer is self-insured.",
-    "alias": null,
-    "data_type": "boolean",
     "meta": {}
   },
   {
@@ -265,18 +237,17 @@
     "data_type": "enum",
     "meta": {
       "labels": [
-        "Full-Time",
-        "Part-Time",
-        "On Strike",
-        "Unknown",
-        "Volunteer",
-        "Disabled",
-        "Apprenticeship Full-Time",
-        "Apprenticeship Part-Time",
-        "Seasonal",
-        "Not Employed",
-        "Retired",
-        "Piece Worker"
+        "1-Full-Time",
+        "2-Part-Time",
+        "3-Unemployed",
+        "4-Laid Off",
+        "5-Disabled",
+        "6-Retired",
+        "7-Other",
+        "8-On Strike",
+        "9-Volunteer",
+        "10-Piece Worker",
+        "11-Volunteer"
       ]
     }
   },
@@ -429,8 +400,16 @@
   },
   {
     "order": 48,
-    "text": "CONTACT NAME/PHONE NUMBER",
-    "description": "Contact person and phone number at employer for more info.",
+    "text": "CONTACT NAME",
+    "description": "Contact person at employer for more info.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 48,
+    "text": "CONTACT PHONE NUMBER",
+    "description": "Contact person's phone number at employer for more info.",
     "alias": null,
     "data_type": "string",
     "meta": {}
@@ -440,16 +419,134 @@
     "text": "TYPE OF INJURY/ILLNESS",
     "description": "Brief description of nature of injury or illness.",
     "alias": null,
-    "data_type": "string",
-    "meta": {}
+    "data_type": "enum",
+    "meta": {
+        "labels": [
+          "01-No Physical Injury",
+          "02-Amputation",
+          "03-Angina Pectoris",
+          "04-Burn (Heat)",
+          "07-Concussion",
+          "10-Contusion",
+          "13-Crushing",
+          "16-Dislocation",
+          "19-Electric Shock",
+          "22-Enucleation",
+          "25-Foreign Body",
+          "28-Fracture",
+          "30-Freezing",
+          "31-Hearing Loss or Impairment",
+          "32-Heat Prostration",
+          "34-Hernia",
+          "36-Infection",
+          "37-Inflammation",
+          "40-Laceration",
+          "41-Myocardial Infarction",
+          "42-Poisoning - General",
+          "43-Puncture",
+          "46-Rupture",
+          "47-Severance",
+          "49-Sprain or Tear",
+          "52-Strain or Tear",
+          "53-Syncope",
+          "54-Asphyxiation",
+          "55-Vascular",
+          "58-Vision Loss",
+          "59-All Other Specific Injuries, NOC",
+          "60-Dust Disease, NOC",
+          "61-Asbestosis",
+          "62-Black Lung",
+          "63-Byssinosis",
+          "64-Silicosis",
+          "65-Respiratory Disorders",
+          "66-Poisoning - Chemical",
+          "67-Poisoning - Metal",
+          "68-Dermatitis",
+          "69-Mental Disorder",
+          "70-Radiation",
+          "71-All Other Occupational Disease, NOC",
+          "72-Loss of Hearing",
+          "73-Contagious Disease",
+          "74-Cancer",
+          "75-AIDS",
+          "76-VDT - Related Diseases",
+          "77-Mental Stress",
+          "78-Carpal Tunnel Syndrome",
+          "79-Hepatitis C",
+          "80-All Other Cumulative Injury, NOC",
+          "90-Multiple (Physical w/ Psychological)",
+          "99-Unknown",
+          "5-Abrasion",
+          "6-Allergic Reaction",
+          "8-Bite",
+          "9-Blood/Body Fluid"
+        ]
+    }
   },
   {
     "order": 50,
     "text": "PART OF BODY AFFECTED",
     "description": "Describe body part(s) affected by the injury/illness.",
     "alias": null,
-    "data_type": "string",
-    "meta": {}
+    "data_type": "enum",
+    "meta": {
+      "labels": [
+        "10-Multiple Head Injury",
+        "11-Skull",
+        "12-Brain",
+        "13-Ear(s)",
+        "14-Eye(s)",
+        "15-Nose",
+        "16-Teeth",
+        "17-Mouth",
+        "18-Face Soft Tissue",
+        "19-Facial Bones",
+        "20-Multiple Neck Injury",
+        "21-Vertebrae",
+        "22-Disc (Neck)",
+        "23-Spinal Cord (Cervical)",
+        "24-Larynx",
+        "25-Trachea",
+        "30-Multiple Upper Extremities",
+        "31-Upper Arm",
+        "32-Elbow",
+        "33-Lower Arm",
+        "34-Wrist",
+        "35-Hand",
+        "36-Finger(s)",
+        "38-Shoulder(s)",
+        "39-Wrist(s) & Hand(s)",
+        "40-Multiple Trunk",
+        "41-Upper Back Area",
+        "42-Lower Back Area",
+        "43-Disc (Back)",
+        "44-Chest",
+        "45-Sacrum and Coccyx",
+        "46-Pelvis",
+        "47-Spinal Cord (Thoracic/Lumbar)",
+        "48-Internal Organs",
+        "49-Heart",
+        "50-Multiple Lower Extremities",
+        "51-Hip",
+        "52-Upper Leg",
+        "53-Knee",
+        "54-Lower Leg",
+        "55-Ankle",
+        "56-Foot",
+        "57-Toes",
+        "58-Big Toe",
+        "60-Lungs",
+        "61-Abdomen (Including Groin)",
+        "62-Buttocks",
+        "63-Lumbar and/or Sacral Vertebrae",
+        "64-Artificial Appliance",
+        "65-Insufficient Information to Identify",
+        "66-No Physical Injury (Used for psychological only)",
+        "90-Multiple Body Parts",
+        "91-Body Systems and Multiple Body Systems",
+        "99-Whole Body"
+      ]
+    }
   },
   {
     "order": 51,
@@ -488,7 +585,7 @@
     "text": "ALL EQUIPMENT, MATERIALS, OR CHEMICALS EMPLOYEE WAS USING WHEN ACCIDENT OR ILLNESS EXPOSURE OCCURRED",
     "description": "List all equipment, materials or chemicals in use at time of incident (enter 'NA' if none).",
     "alias": null,
-    "data_type": "text",
+    "data_type": "string",
     "meta": {}
   },
   {
@@ -496,8 +593,86 @@
     "text": "SPECIFIC ACTIVITY THE EMPLOYEE WAS ENGAGED IN WHEN THE ACCIDENT OR ILLNESS EXPOSURE OCCURRED",
     "description": "Describe the specific activity performed at time of incident.",
     "alias": null,
-    "data_type": "text",
-    "meta": {}
+    "data_type": "enum",
+    "meta": {
+      "labels": [
+        "01-Chemicals",
+        "02-Hot Objects or Substances",
+        "03-Temperature Extremes",
+        "04-Fire or Flame",
+        "05-Steam or Hot Fluids",
+        "06-Dust, Gases, Fumes or Vapors",
+        "07-Welding Operation",
+        "08-Radiation",
+        "09-Contact With, NOC",
+        "10-Machine or Machinery",
+        "11-Cold Objects or Substances",
+        "12-Object Handled",
+        "13-Caught In, Under or Between, NOC",
+        "14-Abnormal Air Pressure",
+        "15-Broken Glass",
+        "16-Hand Tool or Utensil, Not Powered",
+        "17-Object Being Lifted or Handled",
+        "18-Powered Hand Tool or Appliance",
+        "19-Caught, Puncture, Scrape, NOC",
+        "20-Collapsing Materials (Slide of Earth, etc.)",
+        "25-From Different Level (Elevation) — Wall, Catwalk, Bridge, etc.",
+        "26-From Ladder or Scaffolding",
+        "27-From Liquid or Grease Spills",
+        "28-Into Openings, Shafts, Excavations, Floor Openings, etc.",
+        "29-On Same Level",
+        "30-Slipped, Did Not Fall",
+        "31-Fall, Slip or Trip, NOC",
+        "32-On Ice or Snow",
+        "33-On Stairs",
+        "40-Crash of Water Vehicle",
+        "41-Crash of Rail Vehicle",
+        "45-Collision or Sideswipe With Another Vehicle",
+        "46-Collision With Fixed Object or Standing Vehicle",
+        "47-Crash of Airplane",
+        "48-Vehicle Upset, Overturned or Jackknifed",
+        "50-Motor Vehicle, NOC",
+        "52-Continual Noise",
+        "53-Twisting",
+        "54-Jumping",
+        "55-Holding or Carrying",
+        "56-Lifting",
+        "57-Pushing or Pulling",
+        "58-Reaching",
+        "59-Using Tool or Machinery",
+        "60-Strain or Injury By, NOC",
+        "61-Wielding or Throwing",
+        "65-Moving Part of Machine",
+        "66-Object Being Lifted or Handled",
+        "67-Sanding, Scraping, Cleaning Operation",
+        "68-Stationary Object",
+        "69-Stepping on Sharp Object",
+        "70-Striking Against or Stepping On, NOC",
+        "74-Fellow Worker or Patient",
+        "75-Falling or Flying Object",
+        "76-Hand Tool or Machine in Use",
+        "77-Motor Vehicle",
+        "78-Moving Parts of Machine",
+        "79-Object Being Lifted or Handled",
+        "80-Object Handled by Others",
+        "81-Struck or Injured, NOC",
+        "82-Absorption, Ingestion or Inhalation, NOC",
+        "84-Electrical Current",
+        "85-Animal or Insect",
+        "86-Explosion or Flare Back",
+        "87-Foreign Matter (Body) in Eye(s)",
+        "88-Natural Disasters",
+        "89-Person in Act of a Crime",
+        "90-Other Than Physical Cause of Injury",
+        "91-Mold",
+        "94-Repetitive Motion (Callous, Blister, etc.)",
+        "95-Rubbed or Abraded, NOC",
+        "96-Terrorism",
+        "97-Repetitive Motion (Carpal Tunnel Syndrome)",
+        "98-Cumulative, NOC",
+        "99-Other – Miscellaneous, NOC"
+  ]
+    }
   },
   {
     "order": 57,
@@ -560,23 +735,6 @@
     "meta": {}
   },
   {
-    "order": 64,
-    "text": "INITIAL TREATMENT",
-    "description": "Initial medical treatment classification.",
-    "alias": null,
-    "data_type": "enum",
-    "meta": {
-      "labels": [
-        "0 NO MEDICAL TREATMENT",
-        "1 MINOR: BY EMPLOYER",
-        "2 MINOR CLINIC/HOSP",
-        "3 EMERGENCY CARE",
-        "4 HOSPITALIZED > 24 HOURS",
-        "5 FUTURE MAJOR MEDICAL/LOST TIME ANTICIPATED"
-      ]
-    }
-  },
-  {
     "order": 65,
     "text": "PHYSICIAN/HEALTH CARE PROVIDER (NAME & ADDRESS)",
     "description": "Name and address of physician or health care provider.",
@@ -591,6 +749,23 @@
     "alias": null,
     "data_type": "text",
     "meta": {}
+  },
+  {
+    "order": 64,
+    "text": "INITIAL TREATMENT",
+    "description": "Initial medical treatment classification.",
+    "alias": null,
+    "data_type": "enum",
+    "meta": {
+      "labels": [
+        "NO MEDICAL TREATMENT",
+        "MINOR: BY EMPLOYER",
+        "MINOR CLINIC/HOSP",
+        "EMERGENCY CARE",
+        "HOSPITALIZED > 24 HOURS",
+        "FUTURE MAJOR MEDICAL/LOST TIME ANTICIPATED"
+      ]
+    }
   },
   {
     "order": 67,

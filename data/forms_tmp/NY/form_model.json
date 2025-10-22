@@ -184,6 +184,14 @@
     "meta": {"format": "YYYY-MM-DD"}
   },
   {
+    "order": 28,
+    "text": "Gender",
+    "description": "Employee gender selection.",
+    "alias": null,
+    "data_type": "enum",
+    "meta": {"labels": ["Male", "Female", "X", "Unknown"]}
+  },
+  {
     "order": 24,
     "text": "Date of Hire",
     "description": "Date employee was hired.",
@@ -214,14 +222,6 @@
     "alias": null,
     "data_type": "string",
     "meta": {}
-  },
-  {
-    "order": 28,
-    "text": "Gender",
-    "description": "Employee gender selection.",
-    "alias": null,
-    "data_type": "enum",
-    "meta": {"labels": ["Male", "Female", "X", "Unknown"]}
   },
   {
     "order": 29,
@@ -284,8 +284,8 @@
     "text": "Work Days Scheduled",
     "description": "Days employee is scheduled to work.",
     "alias": null,
-    "data_type": "enum",
-    "meta": {"labels": ["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"]}
+    "data_type": "string",
+    "meta": {}
   },
   {
     "order": 37,
@@ -654,45 +654,5 @@
     "alias": null,
     "data_type": "enum",
     "meta": {"labels": ["Insured", "Self-Insured", "Uninsured"]}
-  },
-  {
-    "order": 83,
-    "text": "Signature of Person Preparing Form",
-    "description": null,
-    "alias": null,
-    "data_type": "string",
-    "meta": {}
-  },
-  {
-    "order": 84,
-    "text": "Date (Form Prepared)",
-    "description": null,
-    "alias": null,
-    "data_type": "date",
-    "meta": {"format": "YYYY-MM-DD"}
-  },
-  {
-    "order": 85,
-    "text": "Print Name",
-    "description": "Printed name of person completing form.",
-    "alias": null,
-    "data_type": "string",
-    "meta": {}
-  },
-  {
-    "order": 86,
-    "text": "Title",
-    "description": "Job title of person completing form.",
-    "alias": null,
-    "data_type": "string",
-    "meta": {}
-  },
-  {
-    "order": 87,
-    "text": "Phone Number (Preparer)",
-    "description": null,
-    "alias": null,
-    "data_type": "string",
-    "meta": {}
   }
 ]

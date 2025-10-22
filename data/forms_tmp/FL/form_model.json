@@ -1,33 +1,5 @@
 [
   {
-    "order": 1,
-    "text": "RECEIVED BY CLAIMS-HANDLING ENTITY",
-    "description": "Identifier or name of the claims-handling entity receiving the form.",
-    "alias": null,
-    "data_type": "string",
-    "meta": {}
-  },
-  {
-    "order": 2,
-    "text": "SENT TO DIVISION DATE",
-    "description": "Date the form was sent to the division.",
-    "alias": null,
-    "data_type": "date",
-    "meta": {
-      "format": "YYYY-MM-DD"
-    }
-  },
-  {
-    "order": 3,
-    "text": "DIVISION RECEIVED DATE",
-    "description": "Date the division received the form.",
-    "alias": null,
-    "data_type": "date",
-    "meta": {
-      "format": "YYYY-MM-DD"
-    }
-  },
-  {
     "order": 4,
     "text": "NAME (First, Middle, Last) - First",
     "description": "Employee given (first) name extracted from full name field.",
@@ -80,19 +52,6 @@
     }
   },
   {
-    "order": 10,
-    "text": "Time of Accident AM/PM",
-    "description": "Select AM or PM for time of accident.",
-    "alias": null,
-    "data_type": "enum",
-    "meta": {
-      "labels": [
-        "AM",
-        "PM"
-      ]
-    }
-  },
-  {
     "order": 11,
     "text": "HOME ADDRESS Street/Apt #",
     "description": "Employee street address and apartment number.",
@@ -133,16 +92,8 @@
     "meta": {}
   },
   {
-    "order": 16,
-    "text": "TELEPHONE Area Code",
-    "description": "Telephone area code for employee contact number.",
-    "alias": null,
-    "data_type": "string",
-    "meta": {}
-  },
-  {
     "order": 17,
-    "text": "TELEPHONE Number",
+    "text": "TELEPHONE",
     "description": "Employee telephone number.",
     "alias": null,
     "data_type": "string",
@@ -159,18 +110,136 @@
   {
     "order": 19,
     "text": "INJURY/ILLNESS THAT OCCURRED",
-    "description": "Brief description or diagnosis of injury/illness.",
+    "description": "Type of injury/illness.",
     "alias": null,
-    "data_type": "string",
-    "meta": {}
+    "data_type": "enum",
+    "meta": {
+        "labels": [
+          "01-No Physical Injury",
+          "02-Amputation",
+          "03-Angina Pectoris",
+          "04-Burn (Heat)",
+          "07-Concussion",
+          "10-Contusion",
+          "13-Crushing",
+          "16-Dislocation",
+          "19-Electric Shock",
+          "22-Enucleation",
+          "25-Foreign Body",
+          "28-Fracture",
+          "30-Freezing",
+          "31-Hearing Loss or Impairment",
+          "32-Heat Prostration",
+          "34-Hernia",
+          "36-Infection",
+          "37-Inflammation",
+          "40-Laceration",
+          "41-Myocardial Infarction",
+          "42-Poisoning - General",
+          "43-Puncture",
+          "46-Rupture",
+          "47-Severance",
+          "49-Sprain or Tear",
+          "52-Strain or Tear",
+          "53-Syncope",
+          "54-Asphyxiation",
+          "55-Vascular",
+          "58-Vision Loss",
+          "59-All Other Specific Injuries, NOC",
+          "60-Dust Disease, NOC",
+          "61-Asbestosis",
+          "62-Black Lung",
+          "63-Byssinosis",
+          "64-Silicosis",
+          "65-Respiratory Disorders",
+          "66-Poisoning - Chemical",
+          "67-Poisoning - Metal",
+          "68-Dermatitis",
+          "69-Mental Disorder",
+          "70-Radiation",
+          "71-All Other Occupational Disease, NOC",
+          "72-Loss of Hearing",
+          "73-Contagious Disease",
+          "74-Cancer",
+          "75-AIDS",
+          "76-VDT - Related Diseases",
+          "77-Mental Stress",
+          "78-Carpal Tunnel Syndrome",
+          "79-Hepatitis C",
+          "80-All Other Cumulative Injury, NOC",
+          "90-Multiple (Physical w/ Psychological)",
+          "99-Unknown",
+          "5-Abrasion",
+          "6-Allergic Reaction",
+          "8-Bite",
+          "9-Blood/Body Fluid"
+        ]
+    }
   },
   {
     "order": 20,
     "text": "PART OF BODY AFFECTED",
     "description": "Body part(s) affected by the injury/illness.",
     "alias": null,
-    "data_type": "string",
-    "meta": {}
+    "data_type": "enum",
+    "meta": {
+      "labels": [
+        "10-Multiple Head Injury",
+        "11-Skull",
+        "12-Brain",
+        "13-Ear(s)",
+        "14-Eye(s)",
+        "15-Nose",
+        "16-Teeth",
+        "17-Mouth",
+        "18-Face Soft Tissue",
+        "19-Facial Bones",
+        "20-Multiple Neck Injury",
+        "21-Vertebrae",
+        "22-Disc (Neck)",
+        "23-Spinal Cord (Cervical)",
+        "24-Larynx",
+        "25-Trachea",
+        "30-Multiple Upper Extremities",
+        "31-Upper Arm",
+        "32-Elbow",
+        "33-Lower Arm",
+        "34-Wrist",
+        "35-Hand",
+        "36-Finger(s)",
+        "38-Shoulder(s)",
+        "39-Wrist(s) & Hand(s)",
+        "40-Multiple Trunk",
+        "41-Upper Back Area",
+        "42-Lower Back Area",
+        "43-Disc (Back)",
+        "44-Chest",
+        "45-Sacrum and Coccyx",
+        "46-Pelvis",
+        "47-Spinal Cord (Thoracic/Lumbar)",
+        "48-Internal Organs",
+        "49-Heart",
+        "50-Multiple Lower Extremities",
+        "51-Hip",
+        "52-Upper Leg",
+        "53-Knee",
+        "54-Lower Leg",
+        "55-Ankle",
+        "56-Foot",
+        "57-Toes",
+        "58-Big Toe",
+        "60-Lungs",
+        "61-Abdomen (Including Groin)",
+        "62-Buttocks",
+        "63-Lumbar and/or Sacral Vertebrae",
+        "64-Artificial Appliance",
+        "65-Insufficient Information to Identify",
+        "66-No Physical Injury (Used for psychological only)",
+        "90-Multiple Body Parts",
+        "91-Body Systems and Multiple Body Systems",
+        "99-Whole Body"
+      ]
+    }
   },
   {
     "order": 21,
@@ -278,16 +347,8 @@
     "meta": {}
   },
   {
-    "order": 33,
-    "text": "TELEPHONE Area Code (Employer)",
-    "description": "Employer telephone area code.",
-    "alias": null,
-    "data_type": "string",
-    "meta": {}
-  },
-  {
     "order": 34,
-    "text": "TELEPHONE Number (Employer)",
+    "text": "TELEPHONE",
     "description": "Employer telephone number.",
     "alias": null,
     "data_type": "string",
@@ -430,6 +491,14 @@
     "meta": {}
   },
   {
+    "order": 54,
+    "text": "COUNTY OF ACCIDENT",
+    "description": "County where the accident occurred.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
     "order": 51,
     "text": "DATE OF DEATH (If applicable)",
     "description": "Date of death if the claim involves a fatality.",
@@ -438,6 +507,14 @@
     "meta": {
       "format": "YYYY-MM-DD"
     }
+  },
+  {
+    "order": 55,
+    "text": "AGREE WITH DESCRIPTION OF ACCIDENT?",
+    "description": "Whether employer/claimant agrees with the provided description.",
+    "alias": null,
+    "data_type": "boolean",
+    "meta": {}
   },
   {
     "order": 52,
@@ -461,22 +538,6 @@
         "MO"
       ]
     }
-  },
-  {
-    "order": 54,
-    "text": "COUNTY OF ACCIDENT",
-    "description": "County where the accident occurred.",
-    "alias": null,
-    "data_type": "string",
-    "meta": {}
-  },
-  {
-    "order": 55,
-    "text": "AGREE WITH DESCRIPTION OF ACCIDENT?",
-    "description": "Whether employer/claimant agrees with the provided description.",
-    "alias": null,
-    "data_type": "boolean",
-    "meta": {}
   },
   {
     "order": 56,
@@ -503,42 +564,6 @@
     "meta": {}
   },
   {
-    "order": 59,
-    "text": "EMPLOYEE SIGNATURE (If available to sign)",
-    "description": "Employee signature line.",
-    "alias": null,
-    "data_type": "string",
-    "meta": {}
-  },
-  {
-    "order": 60,
-    "text": "EMPLOYEE SIGNATURE DATE",
-    "description": "Date employee signed the form.",
-    "alias": null,
-    "data_type": "date",
-    "meta": {
-      "format": "YYYY-MM-DD"
-    }
-  },
-  {
-    "order": 61,
-    "text": "EMPLOYER SIGNATURE",
-    "description": "Employer signature line.",
-    "alias": null,
-    "data_type": "string",
-    "meta": {}
-  },
-  {
-    "order": 62,
-    "text": "EMPLOYER SIGNATURE DATE",
-    "description": "Date employer signed the form.",
-    "alias": null,
-    "data_type": "date",
-    "meta": {
-      "format": "YYYY-MM-DD"
-    }
-  },
-  {
     "order": 63,
     "text": "NAME, ADDRESS AND TELEPHONE OF PHYSICIAN OR HOSPITAL",
     "description": "Physician or hospital contact information authorized by employer.",
@@ -552,240 +577,6 @@
     "description": "Whether the physician/hospital was authorized by the employer.",
     "alias": null,
     "data_type": "boolean",
-    "meta": {}
-  },
-  {
-    "order": 65,
-    "text": "1(a) Denied Case - DWC-12, Notice of Denial Attached",
-    "description": "Check if this is a denied case with DWC-12 attached.",
-    "alias": null,
-    "data_type": "boolean",
-    "meta": {}
-  },
-  {
-    "order": 66,
-    "text": "1(b) Indemnity Only Denied Case - DWC-12, Notice of Denial Attached",
-    "description": "Check if this is an indemnity-only denied case with DWC-12 attached.",
-    "alias": null,
-    "data_type": "boolean",
-    "meta": {}
-  },
-  {
-    "order": 67,
-    "text": "2. Medical Only which became Lost Time Case (Complete all required information in #3)",
-    "description": "Check if medical-only case converted to lost time.",
-    "alias": null,
-    "data_type": "boolean",
-    "meta": {}
-  },
-  {
-    "order": 68,
-    "text": "Employee’s 8TH Day of Disability",
-    "description": "Date representing employee's 8th day of disability.",
-    "alias": null,
-    "data_type": "date",
-    "meta": {
-      "format": "YYYY-MM-DD"
-    }
-  },
-  {
-    "order": 69,
-    "text": "Entity’s Knowledge of 8TH Day of Disability",
-    "description": "Date entity became aware of the 8th day of disability.",
-    "alias": null,
-    "data_type": "date",
-    "meta": {
-      "format": "YYYY-MM-DD"
-    }
-  },
-  {
-    "order": 70,
-    "text": "3. Lost Time Case - 1st day of disability",
-    "description": "First date of disability for lost time cases.",
-    "alias": null,
-    "data_type": "date",
-    "meta": {
-      "format": "YYYY-MM-DD"
-    }
-  },
-  {
-    "order": 71,
-    "text": "Full Salary in lieu of comp? (Yes/No)",
-    "description": "Indicate if full salary is paid in lieu of workers' compensation.",
-    "alias": null,
-    "data_type": "boolean",
-    "meta": {}
-  },
-  {
-    "order": 72,
-    "text": "Full Salary End Date",
-    "description": "End date for full salary paid in lieu of comp.",
-    "alias": null,
-    "data_type": "date",
-    "meta": {
-      "format": "YYYY-MM-DD"
-    }
-  },
-  {
-    "order": 73,
-    "text": "Date First Payment Mailed",
-    "description": "Date the first payment was mailed.",
-    "alias": null,
-    "data_type": "date",
-    "meta": {
-      "format": "YYYY-MM-DD"
-    }
-  },
-  {
-    "order": 74,
-    "text": "AWW",
-    "description": "Average weekly wage.",
-    "alias": null,
-    "data_type": "number",
-    "meta": {}
-  },
-  {
-    "order": 75,
-    "text": "Comp Rate",
-    "description": "Compensation rate used for benefit calculations.",
-    "alias": null,
-    "data_type": "number",
-    "meta": {}
-  },
-  {
-    "order": 76,
-    "text": "T.T.",
-    "description": "Temporary total disability payment type checkbox.",
-    "alias": null,
-    "data_type": "boolean",
-    "meta": {}
-  },
-  {
-    "order": 77,
-    "text": "T.T. - 80%",
-    "description": "Temporary total at 80% payment type checkbox.",
-    "alias": null,
-    "data_type": "boolean",
-    "meta": {}
-  },
-  {
-    "order": 78,
-    "text": "T.P.",
-    "description": "Temporary partial payment type checkbox.",
-    "alias": null,
-    "data_type": "boolean",
-    "meta": {}
-  },
-  {
-    "order": 79,
-    "text": "I.B.",
-    "description": "Impairment benefits payment type checkbox.",
-    "alias": null,
-    "data_type": "boolean",
-    "meta": {}
-  },
-  {
-    "order": 80,
-    "text": "P.T.",
-    "description": "Partial temporary or other payment type checkbox.",
-    "alias": null,
-    "data_type": "boolean",
-    "meta": {}
-  },
-  {
-    "order": 81,
-    "text": "DEATH",
-    "description": "Death benefit payment type checkbox.",
-    "alias": null,
-    "data_type": "boolean",
-    "meta": {}
-  },
-  {
-    "order": 82,
-    "text": "SETTLEMENT ONLY",
-    "description": "Settlement-only payment type checkbox.",
-    "alias": null,
-    "data_type": "boolean",
-    "meta": {}
-  },
-  {
-    "order": 83,
-    "text": "Penalty Amount Paid in 1st Payment $",
-    "description": "Penalty amount (dollars) included in first payment.",
-    "alias": null,
-    "data_type": "number",
-    "meta": {}
-  },
-  {
-    "order": 84,
-    "text": "Interest Amount Paid in 1st Payment $",
-    "description": "Interest amount (dollars) included in first payment.",
-    "alias": null,
-    "data_type": "number",
-    "meta": {}
-  },
-  {
-    "order": 85,
-    "text": "REMARKS",
-    "description": "Additional notes or comments regarding the claim.",
-    "alias": null,
-    "data_type": "text",
-    "meta": {}
-  },
-  {
-    "order": 86,
-    "text": "INSURER NAME",
-    "description": "Name of the insurer.",
-    "alias": null,
-    "data_type": "string",
-    "meta": {}
-  },
-  {
-    "order": 87,
-    "text": "CLAIMS-HANDLING ENTITY NAME, ADDRESS & TELEPHONE",
-    "description": "Claims-handling entity contact information.",
-    "alias": null,
-    "data_type": "text",
-    "meta": {}
-  },
-  {
-    "order": 88,
-    "text": "INSURER CODE #",
-    "description": "Numeric or alphanumeric insurer code.",
-    "alias": null,
-    "data_type": "string",
-    "meta": {}
-  },
-  {
-    "order": 89,
-    "text": "EMPLOYEE'S CLASS CODE",
-    "description": "Classification code for the employee.",
-    "alias": null,
-    "data_type": "string",
-    "meta": {}
-  },
-  {
-    "order": 90,
-    "text": "EMPLOYER'S NAICS CODE",
-    "description": "Employer's NAICS industry code.",
-    "alias": null,
-    "data_type": "string",
-    "meta": {}
-  },
-  {
-    "order": 91,
-    "text": "SERVICE CO/TPA CODE #",
-    "description": "Service company or TPA code number.",
-    "alias": null,
-    "data_type": "string",
-    "meta": {}
-  },
-  {
-    "order": 92,
-    "text": "CLAIMS-HANDLING ENTITY FILE #",
-    "description": "Internal file number used by the claims-handling entity.",
-    "alias": null,
-    "data_type": "string",
     "meta": {}
   }
 ]
