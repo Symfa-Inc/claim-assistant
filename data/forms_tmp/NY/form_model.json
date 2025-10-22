@@ -21,7 +21,9 @@
     "description": "Date when the injury or illness occurred.",
     "alias": "date_of_incident",
     "data_type": "date",
-    "meta": {"format": "YYYY-MM-DD"}
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
   },
   {
     "order": 4,
@@ -181,26 +183,37 @@
     "description": "Employee's date of birth.",
     "alias": null,
     "data_type": "date",
-    "meta": {"format": "YYYY-MM-DD"}
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
   },
   {
-    "order": 28,
+    "order": 24,
     "text": "Gender",
     "description": "Employee gender selection.",
     "alias": null,
     "data_type": "enum",
-    "meta": {"labels": ["Male", "Female", "X", "Unknown"]}
+    "meta": {
+      "labels": [
+        "Male",
+        "Female",
+        "X",
+        "Unknown"
+      ]
+    }
   },
   {
-    "order": 24,
+    "order": 25,
     "text": "Date of Hire",
     "description": "Date employee was hired.",
     "alias": null,
     "data_type": "date",
-    "meta": {"format": "YYYY-MM-DD"}
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
   },
   {
-    "order": 25,
+    "order": 26,
     "text": "Employee SSN",
     "description": "Social Security Number.",
     "alias": null,
@@ -208,7 +221,7 @@
     "meta": {}
   },
   {
-    "order": 26,
+    "order": 27,
     "text": "Occupation Description",
     "description": "Job title or description of duties.",
     "alias": null,
@@ -216,7 +229,7 @@
     "meta": {}
   },
   {
-    "order": 27,
+    "order": 28,
     "text": "Employee Email Address",
     "description": null,
     "alias": null,
@@ -229,7 +242,9 @@
     "description": null,
     "alias": null,
     "data_type": "time",
-    "meta": {"format": "HH:mm:ss"}
+    "meta": {
+      "format": "HH:mm:ss"
+    }
   },
   {
     "order": 30,
@@ -237,7 +252,9 @@
     "description": null,
     "alias": null,
     "data_type": "date",
-    "meta": {"format": "YYYY-MM-DD"}
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
   },
   {
     "order": 31,
@@ -253,7 +270,9 @@
     "description": null,
     "alias": null,
     "data_type": "date",
-    "meta": {"format": "YYYY-MM-DD"}
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
   },
   {
     "order": 33,
@@ -277,7 +296,13 @@
     "description": "Type of work schedule.",
     "alias": null,
     "data_type": "enum",
-    "meta": {"labels": ["Standard Work Week", "Fixed Work Week", "Varied Work Week"]}
+    "meta": {
+      "labels": [
+        "Standard Work Week",
+        "Fixed Work Week",
+        "Varied Work Week"
+      ]
+    }
   },
   {
     "order": 36,
@@ -309,7 +334,16 @@
     "description": "Select one option describing the initial medical treatment.",
     "alias": null,
     "data_type": "enum",
-    "meta": {"labels": ["No Medical Treatment", "Minor On-Site Treatment By Employer", "Minor Clinic/Hospital Treatment", "Emergency Evaluation", "Hospitalization Greater Than 24 Hours", "Future Major Medical/Lost Time Anticipated"]}
+    "meta": {
+      "labels": [
+        "No Medical Treatment",
+        "Minor On-Site Treatment By Employer",
+        "Minor Clinic/Hospital Treatment",
+        "Emergency Evaluation",
+        "Hospitalization Greater Than 24 Hours",
+        "Future Major Medical/Lost Time Anticipated"
+      ]
+    }
   },
   {
     "order": 40,
@@ -317,7 +351,13 @@
     "description": "Indicates if injury resulted in death.",
     "alias": null,
     "data_type": "enum",
-    "meta": {"labels": ["Yes", "No", "Unknown"]}
+    "meta": {
+      "labels": [
+        "Yes",
+        "No",
+        "Unknown"
+      ]
+    }
   },
   {
     "order": 41,
@@ -325,7 +365,9 @@
     "description": null,
     "alias": null,
     "data_type": "date",
-    "meta": {"format": "YYYY-MM-DD"}
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
   },
   {
     "order": 42,
@@ -373,7 +415,9 @@
     "description": null,
     "alias": null,
     "data_type": "date",
-    "meta": {"format": "YYYY-MM-DD"}
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
   },
   {
     "order": 48,
@@ -381,7 +425,9 @@
     "description": null,
     "alias": null,
     "data_type": "date",
-    "meta": {"format": "YYYY-MM-DD"}
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
   },
   {
     "order": 49,
@@ -389,7 +435,9 @@
     "description": null,
     "alias": null,
     "data_type": "date",
-    "meta": {"format": "YYYY-MM-DD"}
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
   },
   {
     "order": 50,
@@ -397,7 +445,12 @@
     "description": null,
     "alias": null,
     "data_type": "enum",
-    "meta": {"labels": ["Actual", "Released"]}
+    "meta": {
+      "labels": [
+        "Actual",
+        "Released"
+      ]
+    }
   },
   {
     "order": 51,
@@ -477,7 +530,13 @@
     "description": "Identify premises ownership.",
     "alias": null,
     "data_type": "enum",
-    "meta": {"labels": ["Employer", "Lessee", "Other"]}
+    "meta": {
+      "labels": [
+        "Employer",
+        "Lessee",
+        "Other"
+      ]
+    }
   },
   {
     "order": 61,
@@ -637,7 +696,9 @@
     "description": "Start date of the insurance policy.",
     "alias": null,
     "data_type": "date",
-    "meta": {"format": "YYYY-MM-DD"}
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
   },
   {
     "order": 81,
@@ -645,7 +706,9 @@
     "description": "End date of the insurance policy.",
     "alias": null,
     "data_type": "date",
-    "meta": {"format": "YYYY-MM-DD"}
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
   },
   {
     "order": 82,
@@ -653,6 +716,12 @@
     "description": null,
     "alias": null,
     "data_type": "enum",
-    "meta": {"labels": ["Insured", "Self-Insured", "Uninsured"]}
+    "meta": {
+      "labels": [
+        "Insured",
+        "Self-Insured",
+        "Uninsured"
+      ]
+    }
   }
 ]

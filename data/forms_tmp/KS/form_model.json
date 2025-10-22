@@ -289,7 +289,7 @@
     "meta": {}
   },
   {
-    "order": 36,
+    "order": 35,
     "text": "Place of accident or last exposure (City)",
     "description": "City of accident or exposure",
     "alias": null,
@@ -297,7 +297,7 @@
     "meta": {}
   },
   {
-    "order": 37,
+    "order": 36,
     "text": "Place of accident or last exposure (County)",
     "description": "County of accident or exposure",
     "alias": null,
@@ -305,7 +305,7 @@
     "meta": {}
   },
   {
-    "order": 38,
+    "order": 37,
     "text": "Place of accident or last exposure (State)",
     "description": "State of accident or exposure",
     "alias": null,
@@ -313,7 +313,7 @@
     "meta": {}
   },
   {
-    "order": 39,
+    "order": 38,
     "text": "Was accident or last exposure on employer's premises?",
     "description": "",
     "alias": null,
@@ -321,7 +321,7 @@
     "meta": {}
   },
   {
-    "order": 40,
+    "order": 39,
     "text": "How did accident occur?",
     "description": "",
     "alias": null,
@@ -329,7 +329,7 @@
     "meta": {}
   },
   {
-    "order": 41,
+    "order": 40,
     "text": "What was employee doing when injured?",
     "description": "",
     "alias": null,
@@ -337,7 +337,7 @@
     "meta": {}
   },
   {
-    "order": 42,
+    "order": 41,
     "text": "Name substance or object that directly caused injury*",
     "description": "Identify object or substance directly causing the injury",
     "alias": null,
@@ -345,7 +345,7 @@
     "meta": {}
   },
   {
-    "order": 43,
+    "order": 42,
     "text": "Describe in detail nature and extent of injury, indicate part of body involved*",
     "description": "Be as specific as possible; name part(s) of body injured",
     "alias": null,
@@ -353,7 +353,7 @@
     "meta": {}
   },
   {
-    "order": 44,
+    "order": 43,
     "text": "Was worker admitted to hospital?",
     "description": "",
     "alias": null,
@@ -361,7 +361,7 @@
     "meta": {}
   },
   {
-    "order": 45,
+    "order": 44,
     "text": "Date",
     "description": "Date of hospital admission",
     "alias": null,
@@ -371,7 +371,7 @@
     }
   },
   {
-    "order": 46,
+    "order": 45,
     "text": "Treated by emergency room only?",
     "description": "",
     "alias": null,
@@ -379,7 +379,7 @@
     "meta": {}
   },
   {
-    "order": 47,
+    "order": 46,
     "text": "Hospital name and address",
     "description": "",
     "alias": null,
@@ -387,7 +387,7 @@
     "meta": {}
   },
   {
-    "order": 48,
+    "order": 47,
     "text": "Name and address of attending physician or clinic",
     "description": "",
     "alias": null,
@@ -395,7 +395,7 @@
     "meta": {}
   },
   {
-    "order": 49,
+    "order": 48,
     "text": "Has employee returned to regular duty?",
     "description": "",
     "alias": null,
@@ -403,7 +403,7 @@
     "meta": {}
   },
   {
-    "order": 50,
+    "order": 49,
     "text": "Light duty?",
     "description": "Is employee on light duty",
     "alias": null,
@@ -411,7 +411,7 @@
     "meta": {}
   },
   {
-    "order": 51,
+    "order": 50,
     "text": "Date",
     "description": "Date employee returned or began light duty",
     "alias": null,
@@ -421,7 +421,7 @@
     }
   },
   {
-    "order": 52,
+    "order": 51,
     "text": "Is compensation now being paid?",
     "description": "",
     "alias": null,
@@ -429,7 +429,7 @@
     "meta": {}
   },
   {
-    "order": 53,
+    "order": 52,
     "text": "Date first/initial payment",
     "description": "",
     "alias": null,
@@ -439,7 +439,7 @@
     }
   },
   {
-    "order": 54,
+    "order": 53,
     "text": "Weekly compensation rate $",
     "description": "",
     "alias": null,
@@ -447,7 +447,7 @@
     "meta": {}
   },
   {
-    "order": 55,
+    "order": 54,
     "text": "Is further medical aid needed?",
     "description": "",
     "alias": null,
@@ -461,7 +461,7 @@
     }
   },
   {
-    "order": 56,
+    "order": 55,
     "text": "Did employee die?",
     "description": "",
     "alias": null,
@@ -469,7 +469,7 @@
     "meta": {}
   },
   {
-    "order": 57,
+    "order": 56,
     "text": "If YES, give date of death",
     "description": "",
     "alias": null,
@@ -479,7 +479,7 @@
     }
   },
   {
-    "order": 58,
+    "order": 57,
     "text": "Name(s) and address(es) of dependents (death cases only)",
     "description": "",
     "alias": null,
@@ -487,7 +487,7 @@
     "meta": {}
   },
   {
-    "order": 59,
+    "order": 58,
     "text": "Insurance carrier and third party administrator",
     "description": "",
     "alias": null,
@@ -495,7 +495,7 @@
     "meta": {}
   },
   {
-    "order": 60,
+    "order": 59,
     "text": "Insurance address (Street)",
     "description": "",
     "alias": null,
@@ -503,7 +503,7 @@
     "meta": {}
   },
   {
-    "order": 61,
+    "order": 60,
     "text": "Insurance address (City)",
     "description": "",
     "alias": null,
@@ -511,7 +511,7 @@
     "meta": {}
   },
   {
-    "order": 62,
+    "order": 61,
     "text": "Insurance address (State)",
     "description": "",
     "alias": null,
@@ -519,7 +519,7 @@
     "meta": {}
   },
   {
-    "order": 63,
+    "order": 62,
     "text": "Insurance address (ZIP)",
     "description": "",
     "alias": null,
@@ -527,7 +527,7 @@
     "meta": {}
   },
   {
-    "order": 64,
+    "order": 63,
     "text": "Phone",
     "description": "Insurance carrier phone number",
     "alias": null,
@@ -535,7 +535,7 @@
     "meta": {}
   },
   {
-    "order": 65,
+    "order": 64,
     "text": "Policy number",
     "description": "",
     "alias": "policy_id",
@@ -543,7 +543,7 @@
     "meta": {}
   },
   {
-    "order": 66,
+    "order": 65,
     "text": "Name of agent",
     "description": "",
     "alias": null,
@@ -551,7 +551,7 @@
     "meta": {}
   },
   {
-    "order": 67,
+    "order": 66,
     "text": "Claim number",
     "description": "",
     "alias": null,
@@ -559,7 +559,7 @@
     "meta": {}
   },
   {
-    "order": 68,
+    "order": 67,
     "text": "Name of claim representative",
     "description": "",
     "alias": null,
@@ -567,7 +567,7 @@
     "meta": {}
   },
   {
-    "order": 69,
+    "order": 68,
     "text": "Date of report",
     "description": "",
     "alias": null,
@@ -577,7 +577,7 @@
     }
   },
   {
-    "order": 70,
+    "order": 69,
     "text": "Completed by",
     "description": "Name of person completing report",
     "alias": null,
@@ -585,7 +585,7 @@
     "meta": {}
   },
   {
-    "order": 71,
+    "order": 70,
     "text": "Title",
     "description": "Title of person completing report",
     "alias": null,

@@ -1,6 +1,6 @@
 [
   {
-    "order": 4,
+    "order": 1,
     "text": "NAME (First, Middle, Last) - First",
     "description": "Employee given (first) name extracted from full name field.",
     "alias": "first_name",
@@ -8,7 +8,7 @@
     "meta": {}
   },
   {
-    "order": 5,
+    "order": 2,
     "text": "NAME (First, Middle, Last) - Middle",
     "description": "Employee middle name or initial.",
     "alias": null,
@@ -16,7 +16,7 @@
     "meta": {}
   },
   {
-    "order": 6,
+    "order": 3,
     "text": "NAME (First, Middle, Last) - Last",
     "description": "Employee family (last) name extracted from full name field.",
     "alias": "last_name",
@@ -24,7 +24,7 @@
     "meta": {}
   },
   {
-    "order": 7,
+    "order": 4,
     "text": "Social Security Number",
     "description": "Employee SSN (used as unique identifier).",
     "alias": null,
@@ -32,7 +32,7 @@
     "meta": {}
   },
   {
-    "order": 8,
+    "order": 5,
     "text": "Date of Accident (Month-Day-Year)",
     "description": "Date when the accident occurred.",
     "alias": "date_of_incident",
@@ -42,7 +42,7 @@
     }
   },
   {
-    "order": 9,
+    "order": 6,
     "text": "Time of Accident",
     "description": "Time of day accident occurred (time field).",
     "alias": null,
@@ -52,7 +52,7 @@
     }
   },
   {
-    "order": 11,
+    "order": 7,
     "text": "HOME ADDRESS Street/Apt #",
     "description": "Employee street address and apartment number.",
     "alias": null,
@@ -60,7 +60,7 @@
     "meta": {}
   },
   {
-    "order": 12,
+    "order": 8,
     "text": "HOME ADDRESS City",
     "description": "Employee city of residence.",
     "alias": null,
@@ -68,7 +68,7 @@
     "meta": {}
   },
   {
-    "order": 13,
+    "order": 9,
     "text": "HOME ADDRESS State",
     "description": "Employee state of residence.",
     "alias": null,
@@ -76,7 +76,7 @@
     "meta": {}
   },
   {
-    "order": 14,
+    "order": 10,
     "text": "HOME ADDRESS Zip",
     "description": "Employee ZIP code.",
     "alias": null,
@@ -84,7 +84,7 @@
     "meta": {}
   },
   {
-    "order": 15,
+    "order": 11,
     "text": "EMPLOYEE'S DESCRIPTION OF ACCIDENT (Include Cause of Injury)",
     "description": "Detailed description of how the accident occurred.",
     "alias": null,
@@ -92,7 +92,7 @@
     "meta": {}
   },
   {
-    "order": 17,
+    "order": 12,
     "text": "TELEPHONE",
     "description": "Employee telephone number.",
     "alias": null,
@@ -100,7 +100,7 @@
     "meta": {}
   },
   {
-    "order": 18,
+    "order": 13,
     "text": "OCCUPATION",
     "description": "Employee occupation or job title.",
     "alias": null,
@@ -108,76 +108,76 @@
     "meta": {}
   },
   {
-    "order": 19,
+    "order": 14,
     "text": "INJURY/ILLNESS THAT OCCURRED",
     "description": "Type of injury/illness.",
     "alias": null,
     "data_type": "enum",
     "meta": {
-        "labels": [
-          "01-No Physical Injury",
-          "02-Amputation",
-          "03-Angina Pectoris",
-          "04-Burn (Heat)",
-          "07-Concussion",
-          "10-Contusion",
-          "13-Crushing",
-          "16-Dislocation",
-          "19-Electric Shock",
-          "22-Enucleation",
-          "25-Foreign Body",
-          "28-Fracture",
-          "30-Freezing",
-          "31-Hearing Loss or Impairment",
-          "32-Heat Prostration",
-          "34-Hernia",
-          "36-Infection",
-          "37-Inflammation",
-          "40-Laceration",
-          "41-Myocardial Infarction",
-          "42-Poisoning - General",
-          "43-Puncture",
-          "46-Rupture",
-          "47-Severance",
-          "49-Sprain or Tear",
-          "52-Strain or Tear",
-          "53-Syncope",
-          "54-Asphyxiation",
-          "55-Vascular",
-          "58-Vision Loss",
-          "59-All Other Specific Injuries, NOC",
-          "60-Dust Disease, NOC",
-          "61-Asbestosis",
-          "62-Black Lung",
-          "63-Byssinosis",
-          "64-Silicosis",
-          "65-Respiratory Disorders",
-          "66-Poisoning - Chemical",
-          "67-Poisoning - Metal",
-          "68-Dermatitis",
-          "69-Mental Disorder",
-          "70-Radiation",
-          "71-All Other Occupational Disease, NOC",
-          "72-Loss of Hearing",
-          "73-Contagious Disease",
-          "74-Cancer",
-          "75-AIDS",
-          "76-VDT - Related Diseases",
-          "77-Mental Stress",
-          "78-Carpal Tunnel Syndrome",
-          "79-Hepatitis C",
-          "80-All Other Cumulative Injury, NOC",
-          "90-Multiple (Physical w/ Psychological)",
-          "99-Unknown",
-          "5-Abrasion",
-          "6-Allergic Reaction",
-          "8-Bite",
-          "9-Blood/Body Fluid"
-        ]
+      "labels": [
+        "01-No Physical Injury",
+        "02-Amputation",
+        "03-Angina Pectoris",
+        "04-Burn (Heat)",
+        "07-Concussion",
+        "10-Contusion",
+        "13-Crushing",
+        "16-Dislocation",
+        "19-Electric Shock",
+        "22-Enucleation",
+        "25-Foreign Body",
+        "28-Fracture",
+        "30-Freezing",
+        "31-Hearing Loss or Impairment",
+        "32-Heat Prostration",
+        "34-Hernia",
+        "36-Infection",
+        "37-Inflammation",
+        "40-Laceration",
+        "41-Myocardial Infarction",
+        "42-Poisoning - General",
+        "43-Puncture",
+        "46-Rupture",
+        "47-Severance",
+        "49-Sprain or Tear",
+        "52-Strain or Tear",
+        "53-Syncope",
+        "54-Asphyxiation",
+        "55-Vascular",
+        "58-Vision Loss",
+        "59-All Other Specific Injuries, NOC",
+        "60-Dust Disease, NOC",
+        "61-Asbestosis",
+        "62-Black Lung",
+        "63-Byssinosis",
+        "64-Silicosis",
+        "65-Respiratory Disorders",
+        "66-Poisoning - Chemical",
+        "67-Poisoning - Metal",
+        "68-Dermatitis",
+        "69-Mental Disorder",
+        "70-Radiation",
+        "71-All Other Occupational Disease, NOC",
+        "72-Loss of Hearing",
+        "73-Contagious Disease",
+        "74-Cancer",
+        "75-AIDS",
+        "76-VDT - Related Diseases",
+        "77-Mental Stress",
+        "78-Carpal Tunnel Syndrome",
+        "79-Hepatitis C",
+        "80-All Other Cumulative Injury, NOC",
+        "90-Multiple (Physical w/ Psychological)",
+        "99-Unknown",
+        "5-Abrasion",
+        "6-Allergic Reaction",
+        "8-Bite",
+        "9-Blood/Body Fluid"
+      ]
     }
   },
   {
-    "order": 20,
+    "order": 15,
     "text": "PART OF BODY AFFECTED",
     "description": "Body part(s) affected by the injury/illness.",
     "alias": null,
@@ -242,7 +242,7 @@
     }
   },
   {
-    "order": 21,
+    "order": 16,
     "text": "DATE OF BIRTH",
     "description": "Employee date of birth.",
     "alias": null,
@@ -252,7 +252,7 @@
     }
   },
   {
-    "order": 22,
+    "order": 17,
     "text": "SEX",
     "description": "Employee sex selection.",
     "alias": null,
@@ -265,7 +265,7 @@
     }
   },
   {
-    "order": 23,
+    "order": 18,
     "text": "COMPANY NAME",
     "description": "Employer company name.",
     "alias": null,
@@ -273,7 +273,7 @@
     "meta": {}
   },
   {
-    "order": 24,
+    "order": 19,
     "text": "D. B. A.",
     "description": "Doing Business As name, if applicable.",
     "alias": null,
@@ -281,7 +281,7 @@
     "meta": {}
   },
   {
-    "order": 25,
+    "order": 20,
     "text": "FEDERAL I.D. NUMBER (FEIN)",
     "description": "Employer federal tax identification number.",
     "alias": null,
@@ -289,7 +289,7 @@
     "meta": {}
   },
   {
-    "order": 26,
+    "order": 21,
     "text": "DATE FIRST REPORTED (Month/Day/Year)",
     "description": "Date employer first reported the claim.",
     "alias": null,
@@ -299,7 +299,7 @@
     }
   },
   {
-    "order": 27,
+    "order": 22,
     "text": "Street (Employer)",
     "description": "Employer street address.",
     "alias": null,
@@ -307,7 +307,7 @@
     "meta": {}
   },
   {
-    "order": 28,
+    "order": 23,
     "text": "City (Employer)",
     "description": "Employer city.",
     "alias": null,
@@ -315,7 +315,7 @@
     "meta": {}
   },
   {
-    "order": 29,
+    "order": 24,
     "text": "State (Employer)",
     "description": "Employer state.",
     "alias": null,
@@ -323,7 +323,7 @@
     "meta": {}
   },
   {
-    "order": 30,
+    "order": 25,
     "text": "Zip (Employer)",
     "description": "Employer ZIP code.",
     "alias": null,
@@ -331,7 +331,7 @@
     "meta": {}
   },
   {
-    "order": 31,
+    "order": 26,
     "text": "NATURE OF BUSINESS",
     "description": "Description of employer's business activity.",
     "alias": null,
@@ -339,7 +339,7 @@
     "meta": {}
   },
   {
-    "order": 32,
+    "order": 27,
     "text": "POLICY/MEMBER NUMBER",
     "description": "Insurance policy or member number.",
     "alias": "policy_id",
@@ -347,7 +347,7 @@
     "meta": {}
   },
   {
-    "order": 34,
+    "order": 28,
     "text": "TELEPHONE",
     "description": "Employer telephone number.",
     "alias": null,
@@ -355,7 +355,7 @@
     "meta": {}
   },
   {
-    "order": 35,
+    "order": 29,
     "text": "DATE EMPLOYED",
     "description": "Employee hire date.",
     "alias": null,
@@ -365,7 +365,7 @@
     }
   },
   {
-    "order": 36,
+    "order": 30,
     "text": "PAID FOR DATE OF INJURY",
     "description": "Whether employee was paid for the date of injury (Yes/No).",
     "alias": null,
@@ -373,7 +373,7 @@
     "meta": {}
   },
   {
-    "order": 37,
+    "order": 31,
     "text": "EMPLOYER'S LOCATION ADDRESS Street (If different)",
     "description": "Employer location street if different from main address.",
     "alias": null,
@@ -381,7 +381,7 @@
     "meta": {}
   },
   {
-    "order": 38,
+    "order": 32,
     "text": "EMPLOYER'S LOCATION ADDRESS City",
     "description": "Employer location city.",
     "alias": null,
@@ -389,7 +389,7 @@
     "meta": {}
   },
   {
-    "order": 39,
+    "order": 33,
     "text": "EMPLOYER'S LOCATION ADDRESS State",
     "description": "Employer location state.",
     "alias": null,
@@ -397,7 +397,7 @@
     "meta": {}
   },
   {
-    "order": 40,
+    "order": 34,
     "text": "EMPLOYER'S LOCATION ADDRESS Zip",
     "description": "Employer location ZIP code.",
     "alias": null,
@@ -405,7 +405,7 @@
     "meta": {}
   },
   {
-    "order": 41,
+    "order": 35,
     "text": "LOCATION # (If applicable)",
     "description": "Location number of the employer facility, if applicable.",
     "alias": null,
@@ -413,7 +413,7 @@
     "meta": {}
   },
   {
-    "order": 42,
+    "order": 36,
     "text": "LAST DATE EMPLOYEE WORKED",
     "description": "Last date the employee worked prior to injury/illness.",
     "alias": null,
@@ -423,7 +423,7 @@
     }
   },
   {
-    "order": 43,
+    "order": 37,
     "text": "RETURNED TO WORK YES NO",
     "description": "Indicate if employee returned to work.",
     "alias": null,
@@ -431,7 +431,7 @@
     "meta": {}
   },
   {
-    "order": 44,
+    "order": 38,
     "text": "IF YES, GIVE DATE (Returned to work)",
     "description": "Date employee returned to work (if applicable).",
     "alias": null,
@@ -441,7 +441,7 @@
     }
   },
   {
-    "order": 45,
+    "order": 39,
     "text": "WILL YOU CONTINUE TO PAY WAGES INSTEAD OF WORKERS' COMP?",
     "description": "Employer indicated intent to continue paying wages instead of workers' compensation.",
     "alias": null,
@@ -449,7 +449,7 @@
     "meta": {}
   },
   {
-    "order": 46,
+    "order": 40,
     "text": "LAST DAY WAGES WILL BE PAID INSTEAD OF WORKERS' COMP",
     "description": "Last date wages will be paid instead of workers' comp.",
     "alias": null,
@@ -459,7 +459,7 @@
     }
   },
   {
-    "order": 47,
+    "order": 41,
     "text": "PLACE OF ACCIDENT Street",
     "description": "Street address where the accident occurred.",
     "alias": null,
@@ -467,7 +467,7 @@
     "meta": {}
   },
   {
-    "order": 48,
+    "order": 42,
     "text": "PLACE OF ACCIDENT City",
     "description": "City where the accident occurred.",
     "alias": null,
@@ -475,7 +475,7 @@
     "meta": {}
   },
   {
-    "order": 49,
+    "order": 43,
     "text": "PLACE OF ACCIDENT State",
     "description": "State where the accident occurred.",
     "alias": null,
@@ -483,7 +483,7 @@
     "meta": {}
   },
   {
-    "order": 50,
+    "order": 44,
     "text": "PLACE OF ACCIDENT Zip",
     "description": "ZIP code where the accident occurred.",
     "alias": null,
@@ -491,7 +491,7 @@
     "meta": {}
   },
   {
-    "order": 54,
+    "order": 45,
     "text": "COUNTY OF ACCIDENT",
     "description": "County where the accident occurred.",
     "alias": null,
@@ -499,7 +499,7 @@
     "meta": {}
   },
   {
-    "order": 51,
+    "order": 46,
     "text": "DATE OF DEATH (If applicable)",
     "description": "Date of death if the claim involves a fatality.",
     "alias": null,
@@ -509,7 +509,7 @@
     }
   },
   {
-    "order": 55,
+    "order": 47,
     "text": "AGREE WITH DESCRIPTION OF ACCIDENT?",
     "description": "Whether employer/claimant agrees with the provided description.",
     "alias": null,
@@ -517,7 +517,7 @@
     "meta": {}
   },
   {
-    "order": 52,
+    "order": 48,
     "text": "RATE OF PAY $",
     "description": "Employee rate of pay (numeric amount).",
     "alias": null,
@@ -525,7 +525,7 @@
     "meta": {}
   },
   {
-    "order": 53,
+    "order": 49,
     "text": "RATE OF PAY PER",
     "description": "Unit for rate of pay.",
     "alias": null,
@@ -540,7 +540,7 @@
     }
   },
   {
-    "order": 56,
+    "order": 50,
     "text": "Number of hours per day",
     "description": "Usual number of hours worked per day.",
     "alias": null,
@@ -548,7 +548,7 @@
     "meta": {}
   },
   {
-    "order": 57,
+    "order": 51,
     "text": "Number of hours per week",
     "description": "Usual number of hours worked per week.",
     "alias": null,
@@ -556,7 +556,7 @@
     "meta": {}
   },
   {
-    "order": 58,
+    "order": 52,
     "text": "Number of days per week",
     "description": "Usual number of working days per week.",
     "alias": null,
@@ -564,7 +564,7 @@
     "meta": {}
   },
   {
-    "order": 63,
+    "order": 53,
     "text": "NAME, ADDRESS AND TELEPHONE OF PHYSICIAN OR HOSPITAL",
     "description": "Physician or hospital contact information authorized by employer.",
     "alias": null,
@@ -572,7 +572,7 @@
     "meta": {}
   },
   {
-    "order": 64,
+    "order": 54,
     "text": "AUTHORIZED BY EMPLOYER YES NO",
     "description": "Whether the physician/hospital was authorized by the employer.",
     "alias": null,

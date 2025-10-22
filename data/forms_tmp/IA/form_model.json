@@ -8,7 +8,7 @@
     "meta": {}
   },
   {
-    "order": 3,
+    "order": 2,
     "text": "Claim Administrator Name",
     "description": null,
     "alias": null,
@@ -16,7 +16,7 @@
     "meta": {}
   },
   {
-    "order": 4,
+    "order": 3,
     "text": "Claim Representative Business Phone Number",
     "description": "Include area code",
     "alias": null,
@@ -24,7 +24,7 @@
     "meta": {}
   },
   {
-    "order": 5,
+    "order": 4,
     "text": "Insurer Name (if different than claim administrator)",
     "description": null,
     "alias": null,
@@ -32,7 +32,7 @@
     "meta": {}
   },
   {
-    "order": 6,
+    "order": 5,
     "text": "Mailing Address, City, State, & Postal Code",
     "description": "Claim administrator mailing address",
     "alias": null,
@@ -40,7 +40,7 @@
     "meta": {}
   },
   {
-    "order": 7,
+    "order": 6,
     "text": "Claim Administrator Claim Number",
     "description": null,
     "alias": null,
@@ -48,7 +48,7 @@
     "meta": {}
   },
   {
-    "order": 8,
+    "order": 7,
     "text": "Insurer FEIN",
     "description": "Federal Employer Identification Number for insurer",
     "alias": null,
@@ -56,7 +56,7 @@
     "meta": {}
   },
   {
-    "order": 9,
+    "order": 8,
     "text": "Claim Administrator FEIN",
     "description": "Federal Employer Identification Number for claim administrator",
     "alias": null,
@@ -64,7 +64,7 @@
     "meta": {}
   },
   {
-    "order": 10,
+    "order": 9,
     "text": "Claim Type Code",
     "description": null,
     "alias": null,
@@ -72,7 +72,7 @@
     "meta": {}
   },
   {
-    "order": 11,
+    "order": 10,
     "text": "Employer Name",
     "description": null,
     "alias": null,
@@ -80,7 +80,7 @@
     "meta": {}
   },
   {
-    "order": 12,
+    "order": 11,
     "text": "Employer FEIN",
     "description": null,
     "alias": null,
@@ -88,7 +88,7 @@
     "meta": {}
   },
   {
-    "order": 13,
+    "order": 12,
     "text": "Insured Report Number",
     "description": null,
     "alias": null,
@@ -96,7 +96,7 @@
     "meta": {}
   },
   {
-    "order": 15,
+    "order": 13,
     "text": "Employer Type Code",
     "description": "Check applicable: Employer (E) or Lessor (L)",
     "alias": null,
@@ -109,7 +109,7 @@
     }
   },
   {
-    "order": 16,
+    "order": 14,
     "text": "Physical Address, City, State, & Postal Code",
     "description": "Employer physical address",
     "alias": null,
@@ -117,7 +117,7 @@
     "meta": {}
   },
   {
-    "order": 17,
+    "order": 15,
     "text": "Mailing Address, City, State, & Postal Code",
     "description": "Employer mailing address",
     "alias": null,
@@ -125,7 +125,7 @@
     "meta": {}
   },
   {
-    "order": 14,
+    "order": 16,
     "text": "Industry Code",
     "description": null,
     "alias": null,
@@ -133,7 +133,7 @@
     "meta": {}
   },
   {
-    "order": 18,
+    "order": 17,
     "text": "Insured Location Number",
     "description": null,
     "alias": null,
@@ -141,7 +141,7 @@
     "meta": {}
   },
   {
-    "order": 19,
+    "order": 18,
     "text": "Employer UI Number",
     "description": "Unemployment Insurance account number",
     "alias": null,
@@ -149,7 +149,7 @@
     "meta": {}
   },
   {
-    "order": 20,
+    "order": 19,
     "text": "Nature of Business",
     "description": null,
     "alias": null,
@@ -157,7 +157,7 @@
     "meta": {}
   },
   {
-    "order": 21,
+    "order": 20,
     "text": "Employer Contact Name and Business Phone Number",
     "description": null,
     "alias": null,
@@ -165,7 +165,7 @@
     "meta": {}
   },
   {
-    "order": 23,
+    "order": 21,
     "text": "Insured Name (parent company if different than employer)",
     "description": null,
     "alias": null,
@@ -173,7 +173,7 @@
     "meta": {}
   },
   {
-    "order": 24,
+    "order": 22,
     "text": "Insured FEIN",
     "description": null,
     "alias": null,
@@ -181,7 +181,7 @@
     "meta": {}
   },
   {
-    "order": 25,
+    "order": 23,
     "text": "Insured Postal Code",
     "description": null,
     "alias": null,
@@ -189,7 +189,7 @@
     "meta": {}
   },
   {
-    "order": 26,
+    "order": 24,
     "text": "Policy/Contract Number",
     "description": "Identifier for the insurance policy or contract",
     "alias": "policy_id",
@@ -197,7 +197,7 @@
     "meta": {}
   },
   {
-    "order": 22,
+    "order": 25,
     "text": "Coverage Effective Date",
     "description": null,
     "alias": null,
@@ -207,7 +207,7 @@
     }
   },
   {
-    "order": 27,
+    "order": 26,
     "text": "Coverage Expiration Date",
     "description": null,
     "alias": null,
@@ -217,7 +217,7 @@
     }
   },
   {
-    "order": 28,
+    "order": 27,
     "text": "Self Insurance License/ Certificate Number",
     "description": null,
     "alias": null,
@@ -225,7 +225,7 @@
     "meta": {}
   },
   {
-    "order": 30,
+    "order": 28,
     "text": "Employee Name - First",
     "description": "Employee given name (from 'Employee Name (First, Middle, Last, & Suffix)')",
     "alias": "first_name",
@@ -233,7 +233,7 @@
     "meta": {}
   },
   {
-    "order": 31,
+    "order": 29,
     "text": "Employee Name - Middle",
     "description": "Employee middle name",
     "alias": null,
@@ -241,7 +241,7 @@
     "meta": {}
   },
   {
-    "order": 32,
+    "order": 30,
     "text": "Employee Name - Last",
     "description": "Employee family name",
     "alias": "last_name",
@@ -249,7 +249,7 @@
     "meta": {}
   },
   {
-    "order": 34,
+    "order": 31,
     "text": "Date of Birth",
     "description": null,
     "alias": null,
@@ -259,7 +259,7 @@
     }
   },
   {
-    "order": 29,
+    "order": 32,
     "text": "Gender",
     "description": "Select employee gender",
     "alias": null,
@@ -275,7 +275,7 @@
     }
   },
   {
-    "order": 35,
+    "order": 33,
     "text": "Tax Filing Status",
     "description": "Check one",
     "alias": null,
@@ -290,7 +290,7 @@
     }
   },
   {
-    "order": 42,
+    "order": 34,
     "text": "Mailing Address, City, State, & Postal Code",
     "description": "Employee mailing address",
     "alias": null,
@@ -298,7 +298,7 @@
     "meta": {}
   },
   {
-    "order": 36,
+    "order": 35,
     "text": "Date of Hire",
     "description": null,
     "alias": null,
@@ -308,7 +308,7 @@
     }
   },
   {
-    "order": 50,
+    "order": 36,
     "text": "State of Hire",
     "description": null,
     "alias": null,
@@ -324,7 +324,7 @@
     "meta": {}
   },
   {
-    "order": 41,
+    "order": 38,
     "text": "Phone Number (include area code)",
     "description": null,
     "alias": null,
@@ -332,7 +332,7 @@
     "meta": {}
   },
   {
-    "order": 49,
+    "order": 39,
     "text": "Email",
     "description": "Employee email address",
     "alias": null,
@@ -340,7 +340,7 @@
     "meta": {}
   },
   {
-    "order": 44,
+    "order": 40,
     "text": "Occupation Description",
     "description": null,
     "alias": null,
@@ -348,7 +348,7 @@
     "meta": {}
   },
   {
-    "order": 46,
+    "order": 41,
     "text": "NCCI Classification Code",
     "description": null,
     "alias": null,
@@ -356,7 +356,7 @@
     "meta": {}
   },
   {
-    "order": 47,
+    "order": 42,
     "text": "Department Where Regularly Worked",
     "description": null,
     "alias": null,
@@ -364,7 +364,7 @@
     "meta": {}
   },
   {
-    "order": 38,
+    "order": 43,
     "text": "Employment Status",
     "description": "Check one",
     "alias": null,
@@ -383,7 +383,7 @@
     }
   },
   {
-    "order": 39,
+    "order": 44,
     "text": "Employee ID Number (ID Type)",
     "description": "Check the type of ID provided",
     "alias": null,
@@ -399,7 +399,7 @@
     }
   },
   {
-    "order": 40,
+    "order": 45,
     "text": "ID #",
     "description": "Employee identification number",
     "alias": null,
@@ -407,7 +407,7 @@
     "meta": {}
   },
   {
-    "order": 43,
+    "order": 46,
     "text": "Marital Status",
     "description": "Check one",
     "alias": null,
@@ -421,7 +421,7 @@
     }
   },
   {
-    "order": 45,
+    "order": 47,
     "text": "Employee’s Authorization to Release Medical Records",
     "description": "Employee authorization: yes/no",
     "alias": null,
@@ -437,7 +437,7 @@
     "meta": {}
   },
   {
-    "order": 53,
+    "order": 49,
     "text": "Average Wage $",
     "description": "Numeric dollar amount",
     "alias": null,
@@ -445,7 +445,7 @@
     "meta": {}
   },
   {
-    "order": 54,
+    "order": 50,
     "text": "Average Wage Frequency",
     "description": "Check one (how average wage is paid)",
     "alias": null,
@@ -463,7 +463,7 @@
     }
   },
   {
-    "order": 61,
+    "order": 51,
     "text": "Number of Days Regularly Worked Per Week",
     "description": null,
     "alias": null,
@@ -471,7 +471,7 @@
     "meta": {}
   },
   {
-    "order": 55,
+    "order": 52,
     "text": "Salary Continued In Lieu of Compensation",
     "description": "yes/no",
     "alias": null,
@@ -479,7 +479,7 @@
     "meta": {}
   },
   {
-    "order": 56,
+    "order": 53,
     "text": "Full Wages Paid for Date of Injury",
     "description": "yes/no",
     "alias": null,
@@ -487,7 +487,7 @@
     "meta": {}
   },
   {
-    "order": 60,
+    "order": 54,
     "text": "Discontinued Fringe Benefits $",
     "description": "Dollar amount",
     "alias": null,
@@ -495,7 +495,7 @@
     "meta": {}
   },
   {
-    "order": 57,
+    "order": 55,
     "text": "Employee Number of Dependents",
     "description": null,
     "alias": null,
@@ -503,7 +503,7 @@
     "meta": {}
   },
   {
-    "order": 58,
+    "order": 56,
     "text": "Employee Number of Exemptions",
     "description": null,
     "alias": null,
@@ -511,7 +511,7 @@
     "meta": {}
   },
   {
-    "order": 59,
+    "order": 57,
     "text": "Exemptions Type",
     "description": "Check one",
     "alias": null,
@@ -524,7 +524,7 @@
     }
   },
   {
-    "order": 63,
+    "order": 58,
     "text": "Date of Injury",
     "description": "Date when the injury occurred",
     "alias": "date_of_incident",
@@ -534,7 +534,7 @@
     }
   },
   {
-    "order": 64,
+    "order": 59,
     "text": "Date Employer Had Knowledge of the Injury",
     "description": null,
     "alias": null,
@@ -544,7 +544,7 @@
     }
   },
   {
-    "order": 65,
+    "order": 60,
     "text": "Date Claim Administrator Had Knowledge of the Injury",
     "description": null,
     "alias": null,
@@ -554,7 +554,7 @@
     }
   },
   {
-    "order": 66,
+    "order": 61,
     "text": "Initial Date Last Day Worked",
     "description": null,
     "alias": null,
@@ -564,7 +564,7 @@
     }
   },
   {
-    "order": 67,
+    "order": 62,
     "text": "Initial Return to Work Date (if applicable)",
     "description": null,
     "alias": null,
@@ -574,7 +574,7 @@
     }
   },
   {
-    "order": 68,
+    "order": 63,
     "text": "Employee Date of Death (if applicable)",
     "description": null,
     "alias": null,
@@ -584,7 +584,7 @@
     }
   },
   {
-    "order": 69,
+    "order": 64,
     "text": "Time of Injury",
     "description": null,
     "alias": null,
@@ -594,7 +594,7 @@
     }
   },
   {
-    "order": 70,
+    "order": 65,
     "text": "Time Employee Began Work",
     "description": null,
     "alias": null,
@@ -604,7 +604,7 @@
     }
   },
   {
-    "order": 71,
+    "order": 66,
     "text": "Pre-Existing Disability Code",
     "description": "Check one",
     "alias": null,
@@ -618,7 +618,7 @@
     }
   },
   {
-    "order": 74,
+    "order": 67,
     "text": "Accident Premises Code",
     "description": "Check one",
     "alias": null,
@@ -633,7 +633,7 @@
     }
   },
   {
-    "order": 76,
+    "order": 68,
     "text": "Accident Site Organization Name",
     "description": null,
     "alias": null,
@@ -641,7 +641,7 @@
     "meta": {}
   },
   {
-    "order": 78,
+    "order": 69,
     "text": "Accident Site Street, City, State, & Postal Code",
     "description": null,
     "alias": null,
@@ -649,7 +649,7 @@
     "meta": {}
   },
   {
-    "order": 79,
+    "order": 70,
     "text": "Accident Location Narrative (if no street address)",
     "description": null,
     "alias": null,
@@ -657,7 +657,7 @@
     "meta": {}
   },
   {
-    "order": 81,
+    "order": 71,
     "text": "Accident Site County/Parish",
     "description": null,
     "alias": null,
@@ -665,7 +665,7 @@
     "meta": {}
   },
   {
-    "order": 62,
+    "order": 72,
     "text": "Type of Injury / Illness Code",
     "description": null,
     "alias": null,
@@ -673,7 +673,7 @@
     "meta": {}
   },
   {
-    "order": 51,
+    "order": 73,
     "text": "Describe the nature of the injury",
     "description": "e.g., amputation, burn, cut, fracture",
     "alias": null,
@@ -681,7 +681,7 @@
     "meta": {}
   },
   {
-    "order": 72,
+    "order": 74,
     "text": "Part of Body Affected Code",
     "description": "Code for the body part affected",
     "alias": null,
@@ -689,7 +689,7 @@
     "meta": {}
   },
   {
-    "order": 52,
+    "order": 75,
     "text": "Part(s) of body directly affected by the injury or illness",
     "description": "e.g., hand, arm, circulatory system",
     "alias": null,
@@ -697,7 +697,7 @@
     "meta": {}
   },
   {
-    "order": 75,
+    "order": 76,
     "text": "Describe the events that caused the injury",
     "description": "e.g., fell, operating machinery, chemical exposure",
     "alias": null,
@@ -713,7 +713,7 @@
     "meta": {}
   },
   {
-    "order": 80,
+    "order": 78,
     "text": "Specify activity the employee was engaged in when the event occurred",
     "description": "Indicate if activity was part of normal duties",
     "alias": null,
@@ -721,7 +721,7 @@
     "meta": {}
   },
   {
-    "order": 82,
+    "order": 79,
     "text": "Witness Name",
     "description": null,
     "alias": null,
@@ -729,7 +729,7 @@
     "meta": {}
   },
   {
-    "order": 82,
+    "order": 80,
     "text": "Witness Business Phone Number",
     "description": null,
     "alias": null,
@@ -737,7 +737,7 @@
     "meta": {}
   },
   {
-    "order": 83,
+    "order": 81,
     "text": "Initial Treatment Code",
     "description": "Check one for initial treatment",
     "alias": null,
@@ -754,7 +754,7 @@
     }
   },
   {
-    "order": 84,
+    "order": 82,
     "text": "Initial Medical Provider Name",
     "description": null,
     "alias": null,
@@ -762,7 +762,7 @@
     "meta": {}
   },
   {
-    "order": 86,
+    "order": 83,
     "text": "Initial Medical Provider Physical Address, City, State, & Postal Code",
     "description": null,
     "alias": null,
@@ -770,7 +770,7 @@
     "meta": {}
   },
   {
-    "order": 85,
+    "order": 84,
     "text": "Managed Care Organization Name or ID Number",
     "description": null,
     "alias": null,
@@ -778,7 +778,7 @@
     "meta": {}
   },
   {
-    "order": 87,
+    "order": 85,
     "text": "ICD Primary Diagnostic Code (if known)",
     "description": null,
     "alias": null,
@@ -786,7 +786,7 @@
     "meta": {}
   },
   {
-    "order": 88,
+    "order": 86,
     "text": "Preparer’s Name & Title",
     "description": null,
     "alias": null,
@@ -794,7 +794,7 @@
     "meta": {}
   },
   {
-    "order": 89,
+    "order": 87,
     "text": "Preparer's Company Name",
     "description": null,
     "alias": null,
@@ -802,7 +802,7 @@
     "meta": {}
   },
   {
-    "order": 90,
+    "order": 88,
     "text": "Preparer Phone Number",
     "description": null,
     "alias": null,
@@ -810,7 +810,7 @@
     "meta": {}
   },
   {
-    "order": 91,
+    "order": 89,
     "text": "Preparer Date",
     "description": null,
     "alias": null,
