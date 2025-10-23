@@ -1,12 +1,12 @@
 import json
 import logging
 from pathlib import Path
+
 from openai import OpenAI
 from pydantic import BaseModel, Field
 
 from claim_assistant import PROJECT_DIR
 from claim_assistant.data.settings import OpenAISettings
-
 
 
 # ----------------------------------------------------------------------
@@ -16,6 +16,7 @@ class FieldAnswer(BaseModel):
     order: int = Field(..., description="Order index from form definition.")
     text: str = Field(..., description="Field text label.")
     answer: str | bool | None = Field(..., description="Generated answer content.")
+
 
 class GeneratedFormAnswers(BaseModel):
     answers: list[FieldAnswer]
@@ -30,6 +31,7 @@ class GeneratedFormAnswers(BaseModel):
             },
         }
 
+
 # ----------------------------------------------------------------------
 # Script configuration
 # ----------------------------------------------------------------------
@@ -37,9 +39,13 @@ SAMPLES_DIR = Path(PROJECT_DIR) / "data/samples"
 FORMS_DIR = Path(PROJECT_DIR) / "data/forms_tmp"  # Adjust if forms live elsewhere
 
 logger = logging.getLogger("sample_generator")
-logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s - %(levelname)s - %(message)s",
+)
 
 client = OpenAI(api_key=OpenAISettings().openai_api_key)
+
 
 # ----------------------------------------------------------------------
 # Main generator
@@ -50,7 +56,9 @@ def generate_sample(form_path: Path, policy: dict) -> list[dict]:
         form_def = json.load(f)
 
     form_name = form_path.parent.name
-    logger.info(f"Generating filled form for {form_name} and policy {policy['policy_number']}")
+    logger.info(
+        f"Generating filled form for {form_name} and policy {policy['policy_number']}",
+    )
 
     # Prompt
     prompt = (
@@ -95,6 +103,7 @@ def generate_sample(form_path: Path, policy: dict) -> list[dict]:
     else:
         logger.error("Unexpected model output structure.")
         return []
+
 
 # ----------------------------------------------------------------------
 # Execution entry
