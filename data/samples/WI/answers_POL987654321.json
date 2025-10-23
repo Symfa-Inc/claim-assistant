@@ -1,0 +1,142 @@
+[
+  {
+    "order": 1,
+    "text": "Employee Name (First)",
+    "answer": "Emily"
+  },
+  {
+    "order": 2,
+    "text": "Employee Name (Middle)",
+    "answer": "Grace"
+  },
+  {
+    "order": 3,
+    "text": "Employee Name (Last)",
+    "answer": "Johnson"
+  },
+  {
+    "order": 4,
+    "text": "Social Security Number*",
+    "answer": "123-45-6789"
+  },
+  {
+    "order": 5,
+    "text": "Sex",
+    "answer": "F"
+  },
+  {
+    "order": 6,
+    "text": "Employee Home Telephone No.",
+    "answer": "608-555-0147"
+  },
+  {
+    "order": 7,
+    "text": "Employee Street Address",
+    "answer": "123 Willow Way"
+  },
+  {
+    "order": 8,
+    "text": "City",
+    "answer": "Madison"
+  },
+  {
+    "order": 9,
+    "text": "State",
+    "answer": "WI"
+  },
+  {
+    "order": 10,
+    "text": "Zip Code",
+    "answer": "53704"
+  },
+  {
+    "order": 11,
+    "text": "Occupation",
+    "answer": "Administrative Assistant"
+  },
+  {
+    "order": 12,
+    "text": "Birthdate",
+    "answer": "1990-04-12"
+  },
+  {
+    "order": 13,
+    "text": "Date of Hire",
+    "answer": "2020-03-01"
+  },
+  {
+    "order": 14,
+    "text": "County and State Where Accident or Exposure Occurred?",
+    "answer": "Dane County, Wisconsin"
+  },
+  {
+    "order": 15,
+    "text": "Employer Name",
+    "answer": "Midwest Packaging Co."
+  },
+  {
+    "order": 16,
+    "text": "WI Unemployment Ins. Acct No.",
+    "answer": "WI-UI-0123456"
+  },
+  {
+    "order": 17,
+    "text": "Self-Insured?",
+    "answer": false
+  },
+  {
+    "order": 18,
+    "text": "Nature of Business (Specific Product)",
+    "answer": "Packaging solutions and labeling"
+  },
+  {
+    "order": 19,
+    "text": "Employer Mailing Address",
+    "answer": "200 Industrial Park, Suite 400"
+  },
+  {
+    "order": 20,
+    "text": "City",
+    "answer": "Madison"
+  },
+  {
+    "order": 21,
+    "text": "State",
+    "answer": "WI"
+  },
+  {
+    "order": 22,
+    "text": "Zip Code",
+    "answer": "53704"
+  },
+  {
+    "order": 23,
+    "text": "Employer FEIN",
+    "answer": "77-1234567"
+  },
+  {
+    "order": 24,
+    "text": "Name of Worker's Compensation Insurance Co. or Self-Insured Employer",
+    "answer": "Great Lakes WCI Insurance"
+  },
+  {
+    "order": 25,
+    "text": "Insurer FEIN",
+    "answer": "12-3456789"
+  },
+  {
+    "order": 26,
+    "text": "Name and Address of Third Party Administrator (TPA) Used by the Insurance Company or Self-Insured Employer",
+    "answer": "Acme Claims Admin, 123 Liberty St, Milwaukee, WI 53202"
+  },
+  {
+    "order": 27,
+    "text": "TPA FEIN",
+    "answer": "98-7654321"
+  },
+  {
+    "order": 28,
+    "text": "Wage at Time of Injury $",
+    "answer": ""
+  }
+]

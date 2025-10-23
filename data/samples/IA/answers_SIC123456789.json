@@ -1,0 +1,457 @@
+[
+  {
+    "order": 1,
+    "text": "Jurisdiction Code",
+    "answer": "US-IL"
+  },
+  {
+    "order": 2,
+    "text": "Claim Administrator Name",
+    "answer": "BluePeak Claims Services, LLC"
+  },
+  {
+    "order": 3,
+    "text": "Claim Representative Business Phone Number",
+    "answer": "217-555-0173"
+  },
+  {
+    "order": 4,
+    "text": "Insurer Name (if different than claim administrator)",
+    "answer": "NorthBridge Insurance Co."
+  },
+  {
+    "order": 5,
+    "text": "Mailing Address, City, State, & Postal Code",
+    "answer": "1000 Liberty Ave, Springfield, IL 62704"
+  },
+  {
+    "order": 6,
+    "text": "Claim Administrator Claim Number",
+    "answer": "CLAIM-2024-000055"
+  },
+  {
+    "order": 7,
+    "text": "Insurer FEIN",
+    "answer": "98-7654321"
+  },
+  {
+    "order": 8,
+    "text": "Claim Administrator FEIN",
+    "answer": "12-3456789"
+  },
+  {
+    "order": 9,
+    "text": "Claim Type Code",
+    "answer": "BI"
+  },
+  {
+    "order": 10,
+    "text": "Employer Name",
+    "answer": "Acme Manufacturing, Inc."
+  },
+  {
+    "order": 11,
+    "text": "Employer FEIN",
+    "answer": "12-3456789"
+  },
+  {
+    "order": 12,
+    "text": "Insured Report Number",
+    "answer": "IRN-2024-02-19-01"
+  },
+  {
+    "order": 13,
+    "text": "Employer Type Code",
+    "answer": "Employer (E)"
+  },
+  {
+    "order": 14,
+    "text": "Physical Address, City, State, & Postal Code",
+    "answer": "100 Industrial Way, Springfield, IL 62701"
+  },
+  {
+    "order": 15,
+    "text": "Mailing Address, City, State, & Postal Code",
+    "answer": "123 Maple St, Springfield, IL 62703"
+  },
+  {
+    "order": 16,
+    "text": "Industry Code",
+    "answer": "311"
+  },
+  {
+    "order": 17,
+    "text": "Insured Location Number",
+    "answer": "LOC-1001"
+  },
+  {
+    "order": 18,
+    "text": "Employer UI Number",
+    "answer": "UI-8910112"
+  },
+  {
+    "order": 19,
+    "text": "Nature of Business",
+    "answer": "Metal fabrication and assembly"
+  },
+  {
+    "order": 20,
+    "text": "Employer Contact Name and Business Phone Number",
+    "answer": "Jane Doe, 217-555-0120"
+  },
+  {
+    "order": 21,
+    "text": "Insured Name (parent company if different than employer)",
+    "answer": "Acme Holdings, LLC"
+  },
+  {
+    "order": 22,
+    "text": "Insured FEIN",
+    "answer": "12-3456789"
+  },
+  {
+    "order": 23,
+    "text": "Insured Postal Code",
+    "answer": "62701"
+  },
+  {
+    "order": 24,
+    "text": "Policy/Contract Number",
+    "answer": "SIC123456789"
+  },
+  {
+    "order": 25,
+    "text": "Coverage Effective Date",
+    "answer": "2023-05-15"
+  },
+  {
+    "order": 26,
+    "text": "Coverage Expiration Date",
+    "answer": "2024-05-15"
+  },
+  {
+    "order": 27,
+    "text": "Self Insurance License/ Certificate Number",
+    "answer": "N/A"
+  },
+  {
+    "order": 28,
+    "text": "Employee Name - First",
+    "answer": "John"
+  },
+  {
+    "order": 29,
+    "text": "Employee Name - Middle",
+    "answer": "A"
+  },
+  {
+    "order": 30,
+    "text": "Employee Name - Last",
+    "answer": "Smith"
+  },
+  {
+    "order": 31,
+    "text": "Date of Birth",
+    "answer": "1980-04-15"
+  },
+  {
+    "order": 32,
+    "text": "Gender",
+    "answer": "Male (M)"
+  },
+  {
+    "order": 33,
+    "text": "Tax Filing Status",
+    "answer": "Married/Filing Joint (C)"
+  },
+  {
+    "order": 34,
+    "text": "Mailing Address, City, State, & Postal Code",
+    "answer": "123 Maple St, Springfield, IL 62703"
+  },
+  {
+    "order": 35,
+    "text": "Date of Hire",
+    "answer": "2015-03-01"
+  },
+  {
+    "order": 36,
+    "text": "State of Hire",
+    "answer": "IL"
+  },
+  {
+    "order": 37,
+    "text": "Educational Level (grade completed)",
+    "answer": "Bachelor"
+  },
+  {
+    "order": 38,
+    "text": "Phone Number (include area code)",
+    "answer": "217-555-0133"
+  },
+  {
+    "order": 39,
+    "text": "Email",
+    "answer": "john.smith@example.com"
+  },
+  {
+    "order": 40,
+    "text": "Occupation Description",
+    "answer": "Maintenance Technician"
+  },
+  {
+    "order": 41,
+    "text": "NCCI Classification Code",
+    "answer": "5311"
+  },
+  {
+    "order": 42,
+    "text": "Department Where Regularly Worked",
+    "answer": "Maintenance"
+  },
+  {
+    "order": 43,
+    "text": "Employment Status",
+    "answer": "Regular Employee/Full-Time"
+  },
+  {
+    "order": 44,
+    "text": "Employee ID Number (ID Type)",
+    "answer": "Social Security Number"
+  },
+  {
+    "order": 45,
+    "text": "ID #",
+    "answer": "111-22-3333"
+  },
+  {
+    "order": 46,
+    "text": "Marital Status",
+    "answer": "Married (M)"
+  },
+  {
+    "order": 47,
+    "text": "Employee’s Authorization to Release Medical Records",
+    "answer": true
+  },
+  {
+    "order": 48,
+    "text": "Employee’s Authorization to Release Social Security Number",
+    "answer": true
+  },
+  {
+    "order": 49,
+    "text": "Average Wage $",
+    "answer": ""
+  },
+  {
+    "order": 49,
+    "text": "Average Wage $",
+    "answer": ""
+  },
+  {
+    "order": 49,
+    "text": "Average Wage $",
+    "answer": ""
+  },
+  {
+    "order": 50,
+    "text": "Average Wage Frequency",
+    "answer": "weekly"
+  },
+  {
+    "order": 51,
+    "text": "Number of Days Regularly Worked Per Week",
+    "answer": ""
+  },
+  {
+    "order": 52,
+    "text": "Salary Continued In Lieu of Compensation",
+    "answer": false
+  },
+  {
+    "order": 53,
+    "text": "Full Wages Paid for Date of Injury",
+    "answer": true
+  },
+  {
+    "order": 54,
+    "text": "Discontinued Fringe Benefits $",
+    "answer": ""
+  },
+  {
+    "order": 55,
+    "text": "Employee Number of Dependents",
+    "answer": ""
+  },
+  {
+    "order": 56,
+    "text": "Employee Number of Exemptions",
+    "answer": ""
+  },
+  {
+    "order": 57,
+    "text": "Exemptions Type",
+    "answer": "Entitled"
+  },
+  {
+    "order": 58,
+    "text": "Date of Injury",
+    "answer": "2024-02-19"
+  },
+  {
+    "order": 59,
+    "text": "Date Employer Had Knowledge of the Injury",
+    "answer": "2024-02-19"
+  },
+  {
+    "order": 60,
+    "text": "Date Claim Administrator Had Knowledge of the Injury",
+    "answer": "2024-02-20"
+  },
+  {
+    "order": 61,
+    "text": "Initial Date Last Day Worked",
+    "answer": "2024-02-19"
+  },
+  {
+    "order": 62,
+    "text": "Initial Return to Work Date (if applicable)",
+    "answer": "2024-03-04"
+  },
+  {
+    "order": 63,
+    "text": "Employee Date of Death (if applicable)",
+    "answer": null
+  },
+  {
+    "order": 64,
+    "text": "Time of Injury",
+    "answer": "08:45:00"
+  },
+  {
+    "order": 65,
+    "text": "Time Employee Began Work",
+    "answer": "07:30:00"
+  },
+  {
+    "order": 66,
+    "text": "Pre-Existing Disability Code",
+    "answer": "No"
+  },
+  {
+    "order": 67,
+    "text": "Accident Premises Code",
+    "answer": "Employer (E)"
+  },
+  {
+    "order": 68,
+    "text": "Accident Site Organization Name",
+    "answer": "Acme Plant"
+  },
+  {
+    "order": 69,
+    "text": "Accident Site Street, City, State, & Postal Code",
+    "answer": "100 Industrial Ave, Springfield, IL 62701"
+  },
+  {
+    "order": 70,
+    "text": "Accident Location Narrative (if no street address)",
+    "answer": "Employee tripped over a loose floor tile in the production area, leading to a fracture of the left tibia."
+  },
+  {
+    "order": 71,
+    "text": "Accident Site County/Parish",
+    "answer": "Sangamon"
+  },
+  {
+    "order": 72,
+    "text": "Type of Injury / Illness Code",
+    "answer": "S82.20"
+  },
+  {
+    "order": 73,
+    "text": "Describe the nature of the injury",
+    "answer": "Fracture of left tibia"
+  },
+  {
+    "order": 74,
+    "text": "Part of Body Affected Code",
+    "answer": "L-LEG-01"
+  },
+  {
+    "order": 75,
+    "text": "Part(s) of body directly affected by the injury or illness",
+    "answer": "Left leg; tibia"
+  },
+  {
+    "order": 76,
+    "text": "Describe the events that caused the injury",
+    "answer": "Employee tripped on a loose floor tile in the production area and fell, injuring the left leg."
+  },
+  {
+    "order": 77,
+    "text": "Name the object or substance that directly injured the employee",
+    "answer": "Loose floor tile"
+  },
+  {
+    "order": 78,
+    "text": "Specify activity the employee was engaged in when the event occurred",
+    "answer": "Carrying a heavy component during maintenance duties on the production line"
+  },
+  {
+    "order": 79,
+    "text": "Witness Name",
+    "answer": "David Chen"
+  },
+  {
+    "order": 80,
+    "text": "Witness Business Phone Number",
+    "answer": "217-555-2310"
+  },
+  {
+    "order": 81,
+    "text": "Initial Treatment Code",
+    "answer": "clinic/hospital visit (2)"
+  },
+  {
+    "order": 82,
+    "text": "Initial Medical Provider Name",
+    "answer": "Springfield General Hospital"
+  },
+  {
+    "order": 83,
+    "text": "Initial Medical Provider Physical Address, City, State, & Postal Code",
+    "answer": "88 Health Ave, Springfield, IL 62704"
+  },
+  {
+    "order": 84,
+    "text": "Managed Care Organization Name or ID Number",
+    "answer": "BlueCross BlueShield IL"
+  },
+  {
+    "order": 85,
+    "text": "ICD Primary Diagnostic Code (if known)",
+    "answer": "S82.20"
+  },
+  {
+    "order": 86,
+    "text": "Preparer’s Name & Title",
+    "answer": "Emily Carter, Claims Specialist"
+  },
+  {
+    "order": 87,
+    "text": "Preparer's Company Name",
+    "answer": "Acme Claims LLC"
+  },
+  {
+    "order": 88,
+    "text": "Preparer Phone Number",
+    "answer": "312-555-0149"
+  },
+  {
+    "order": 89,
+    "text": "Preparer Date",
+    "answer": "2024-02-28"
+  }
+]

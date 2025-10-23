@@ -1,0 +1,97 @@
+[
+  {
+    "order": 1,
+    "text": "Federal Employer's Identification Number",
+    "answer": "12-3456789"
+  },
+  {
+    "order": 2,
+    "text": "Date of hire",
+    "answer": "2015-08-10"
+  },
+  {
+    "order": 3,
+    "text": "Name of employer",
+    "answer": "Acme Manufacturing, Inc."
+  },
+  {
+    "order": 4,
+    "text": "Phone",
+    "answer": "+1-555-800-1000"
+  },
+  {
+    "order": 5,
+    "text": "Mailing address (Street)",
+    "answer": "100 Industrial Way"
+  },
+  {
+    "order": 6,
+    "text": "Mailing address (City)",
+    "answer": "Springfield"
+  },
+  {
+    "order": 7,
+    "text": "Mailing address (State)",
+    "answer": "IL"
+  },
+  {
+    "order": 8,
+    "text": "Mailing address (ZIP)",
+    "answer": "62701"
+  },
+  {
+    "order": 9,
+    "text": "Location, if different from mailing address (Street)",
+    "answer": "200 Dock Street"
+  },
+  {
+    "order": 10,
+    "text": "Location (City)",
+    "answer": "Springfield"
+  },
+  {
+    "order": 11,
+    "text": "Location (State)",
+    "answer": "IL"
+  },
+  {
+    "order": 12,
+    "text": "Location (ZIP)",
+    "answer": "62704"
+  },
+  {
+    "order": 13,
+    "text": "Nature of business",
+    "answer": "Manufacturing"
+  },
+  {
+    "order": 14,
+    "text": "NAICS or S.I.C. Code",
+    "answer": "333111"
+  },
+  {
+    "order": 15,
+    "text": "Dept. or division",
+    "answer": "Warehouse Operations"
+  },
+  {
+    "order": 16,
+    "text": "First",
+    "answer": "John"
+  },
+  {
+    "order": 17,
+    "text": "Middle",
+    "answer": "A."
+  },
+  {
+    "order": 18,
+    "text": "Last",
+    "answer": "Doe"
+  },
+  {
+    "order": 19,
+    "text": "Age",
+    "answer": ""
+  }
+]

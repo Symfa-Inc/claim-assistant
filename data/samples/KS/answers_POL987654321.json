@@ -1,0 +1,352 @@
+[
+  {
+    "order": 1,
+    "text": "Federal Employer's Identification Number",
+    "answer": "12-3456789"
+  },
+  {
+    "order": 2,
+    "text": "Date of hire",
+    "answer": "2018-05-20"
+  },
+  {
+    "order": 3,
+    "text": "Name of employer",
+    "answer": "Northview Manufacturing Co."
+  },
+  {
+    "order": 4,
+    "text": "Phone",
+    "answer": "+1 (555) 123-4567"
+  },
+  {
+    "order": 5,
+    "text": "Mailing address (Street)",
+    "answer": "100 Industrial Way"
+  },
+  {
+    "order": 6,
+    "text": "Mailing address (City)",
+    "answer": "Springfield"
+  },
+  {
+    "order": 7,
+    "text": "Mailing address (State)",
+    "answer": "IL"
+  },
+  {
+    "order": 8,
+    "text": "Mailing address (ZIP)",
+    "answer": "62704"
+  },
+  {
+    "order": 9,
+    "text": "Location, if different from mailing address (Street)",
+    "answer": "Same as mailing address"
+  },
+  {
+    "order": 10,
+    "text": "Location (City)",
+    "answer": "Springfield"
+  },
+  {
+    "order": 11,
+    "text": "Location (State)",
+    "answer": "IL"
+  },
+  {
+    "order": 12,
+    "text": "Location (ZIP)",
+    "answer": "62704"
+  },
+  {
+    "order": 13,
+    "text": "Nature of business",
+    "answer": "Manufacturing"
+  },
+  {
+    "order": 14,
+    "text": "NAICS or S.I.C. Code",
+    "answer": "326199"
+  },
+  {
+    "order": 15,
+    "text": "Dept. or division",
+    "answer": "Operations"
+  },
+  {
+    "order": 16,
+    "text": "First",
+    "answer": "Emily"
+  },
+  {
+    "order": 17,
+    "text": "Middle",
+    "answer": "A"
+  },
+  {
+    "order": 18,
+    "text": "Last",
+    "answer": "Johnson"
+  },
+  {
+    "order": 19,
+    "text": "Age",
+    "answer": "34"
+  },
+  {
+    "order": 20,
+    "text": "Sex",
+    "answer": "Female"
+  },
+  {
+    "order": 21,
+    "text": "Home address (Street)",
+    "answer": "123 Maple Street"
+  },
+  {
+    "order": 22,
+    "text": "Home address (City)",
+    "answer": "Springfield"
+  },
+  {
+    "order": 23,
+    "text": "Home address (State)",
+    "answer": "IL"
+  },
+  {
+    "order": 24,
+    "text": "Home address (ZIP)",
+    "answer": "62704"
+  },
+  {
+    "order": 25,
+    "text": "SSN",
+    "answer": "123-45-6789"
+  },
+  {
+    "order": 26,
+    "text": "Birth date",
+    "answer": "1990-04-22"
+  },
+  {
+    "order": 27,
+    "text": "occupation",
+    "answer": "Manufacturing Technician"
+  },
+  {
+    "order": 28,
+    "text": "phone",
+    "answer": "+1-555-789-0123"
+  },
+  {
+    "order": 29,
+    "text": "Date of injury or occupational disease",
+    "answer": "2024-06-15"
+  },
+  {
+    "order": 30,
+    "text": "Time of injury",
+    "answer": "13:45:00"
+  },
+  {
+    "order": 31,
+    "text": "a.m. / p.m.",
+    "answer": "p.m."
+  },
+  {
+    "order": 32,
+    "text": "Date reported to employer",
+    "answer": "2024-06-16"
+  },
+  {
+    "order": 33,
+    "text": "Date disability began",
+    "answer": "2024-06-16"
+  },
+  {
+    "order": 34,
+    "text": "Gross average weekly wage $",
+    "answer": "1200"
+  },
+  {
+    "order": 35,
+    "text": "Place of accident or last exposure (City)",
+    "answer": "Springfield"
+  },
+  {
+    "order": 36,
+    "text": "Place of accident or last exposure (County)",
+    "answer": "Sangamon"
+  },
+  {
+    "order": 37,
+    "text": "Place of accident or last exposure (State)",
+    "answer": "IL"
+  },
+  {
+    "order": 38,
+    "text": "Was accident or last exposure on employer's premises?",
+    "answer": true
+  },
+  {
+    "order": 39,
+    "text": "How did accident occur?",
+    "answer": "The operator's hydraulic press activated unexpectedly; glove caught in mechanism, pinching the left hand."
+  },
+  {
+    "order": 40,
+    "text": "What was employee doing when injured?",
+    "answer": "Operating hydraulic press"
+  },
+  {
+    "order": 41,
+    "text": "Name substance or object that directly caused injury*",
+    "answer": "Hydraulic press"
+  },
+  {
+    "order": 42,
+    "text": "Describe in detail nature and extent of injury, indicate part of body involved*",
+    "answer": "Crush injury to left index and middle fingers with contusions and minor laceration; treated on-site, possible soft tissue damage; no fracture diagnosed at time of report."
+  },
+  {
+    "order": 43,
+    "text": "Was worker admitted to hospital?",
+    "answer": true
+  },
+  {
+    "order": 44,
+    "text": "Date",
+    "answer": "2024-06-17"
+  },
+  {
+    "order": 45,
+    "text": "Treated by emergency room only?",
+    "answer": false
+  },
+  {
+    "order": 46,
+    "text": "Hospital name and address",
+    "answer": "Springfield General Hospital, 101 Health Ave, Springfield, IL 62701"
+  },
+  {
+    "order": 47,
+    "text": "Name and address of attending physician or clinic",
+    "answer": "Dr. Laura Chen, Springfield General Hospital, 101 Health Ave, Springfield, IL 62701"
+  },
+  {
+    "order": 48,
+    "text": "Has employee returned to regular duty?",
+    "answer": false
+  },
+  {
+    "order": 49,
+    "text": "Light duty?",
+    "answer": true
+  },
+  {
+    "order": 50,
+    "text": "Date",
+    "answer": "2024-07-15"
+  },
+  {
+    "order": 51,
+    "text": "Is compensation now being paid?",
+    "answer": true
+  },
+  {
+    "order": 52,
+    "text": "Date first/initial payment",
+    "answer": "2024-07-10"
+  },
+  {
+    "order": 53,
+    "text": "Weekly compensation rate $",
+    "answer": "520"
+  },
+  {
+    "order": 54,
+    "text": "Is further medical aid needed?",
+    "answer": "YES"
+  },
+  {
+    "order": 55,
+    "text": "Did employee die?",
+    "answer": false
+  },
+  {
+    "order": 56,
+    "text": "If YES, give date of death",
+    "answer": null
+  },
+  {
+    "order": 57,
+    "text": "Name(s) and address(es) of dependents (death cases only)",
+    "answer": "None"
+  },
+  {
+    "order": 58,
+    "text": "Insurance carrier and third party administrator",
+    "answer": "SureStart Insurance Co."
+  },
+  {
+    "order": 59,
+    "text": "Insurance address (Street)",
+    "answer": "400 Insurance Plaza"
+  },
+  {
+    "order": 60,
+    "text": "Insurance address (City)",
+    "answer": "Springfield"
+  },
+  {
+    "order": 61,
+    "text": "Insurance address (State)",
+    "answer": "IL"
+  },
+  {
+    "order": 62,
+    "text": "Insurance address (ZIP)",
+    "answer": "62702"
+  },
+  {
+    "order": 63,
+    "text": "Phone",
+    "answer": "+1-555-112-2334"
+  },
+  {
+    "order": 64,
+    "text": "Policy number",
+    "answer": "POL987654321"
+  },
+  {
+    "order": 65,
+    "text": "Name of agent",
+    "answer": "Maria Lopez"
+  },
+  {
+    "order": 66,
+    "text": "Claim number",
+    "answer": "CLM-20240615-EJ"
+  },
+  {
+    "order": 67,
+    "text": "Name of claim representative",
+    "answer": "Alex Rivera"
+  },
+  {
+    "order": 68,
+    "text": "Date of report",
+    "answer": "2024-06-18"
+  },
+  {
+    "order": 69,
+    "text": "Completed by",
+    "answer": "Alex Rivera"
+  },
+  {
+    "order": 70,
+    "text": "Title",
+    "answer": "Claims Representative"
+  }
+]

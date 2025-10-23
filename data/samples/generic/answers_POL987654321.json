@@ -1,0 +1,157 @@
+[
+  {
+    "order": 1,
+    "text": "EMPLOYER (NAME & ADDRESS INCL ZIP)",
+    "answer": "Acme Global Industries, 100 Market Street, Springfield, IL 62704"
+  },
+  {
+    "order": 2,
+    "text": "REPORT PURPOSE CODE",
+    "answer": "IR01"
+  },
+  {
+    "order": 3,
+    "text": "JURISDICTION",
+    "answer": "Illinois"
+  },
+  {
+    "order": 4,
+    "text": "EMPLOYER\u0019s LOCATION ADDRESS (IF DIFFERENT)",
+    "answer": "900 Market Street, Springfield, IL 62704"
+  },
+  {
+    "order": 5,
+    "text": "LOCATION #",
+    "answer": "EMP-Loc-01"
+  },
+  {
+    "order": 6,
+    "text": "PHONE #",
+    "answer": "217-555-0111"
+  },
+  {
+    "order": 7,
+    "text": "INDUSTRY CODE",
+    "answer": "333999"
+  },
+  {
+    "order": 8,
+    "text": "EMPLOYER FEIN",
+    "answer": "12-3456789"
+  },
+  {
+    "order": 9,
+    "text": "CARRIER (NAME, ADDRESS, & PHONE #)",
+    "answer": "Acme Insurance Co., 300 Insurance Plaza, Springfield, IL 62704, 217-555-0123"
+  },
+  {
+    "order": 10,
+    "text": "POLICY PERIOD (start)",
+    "answer": "2023-01-12"
+  },
+  {
+    "order": 11,
+    "text": "POLICY PERIOD (end)",
+    "answer": "2025-01-12"
+  },
+  {
+    "order": 12,
+    "text": "SELF INSURANCE",
+    "answer": false
+  },
+  {
+    "order": 13,
+    "text": "CLAIMS ADMINISTRATOR (NAME, ADDRESS & PHONE NO)",
+    "answer": "Acme Claims Admin, 500 Claims Way, Springfield, IL 62704, 217-555-0146"
+  },
+  {
+    "order": 14,
+    "text": "CARRIER FEIN",
+    "answer": "98-7654321"
+  },
+  {
+    "order": 15,
+    "text": "POLICY/SELF-INSURED NUMBER",
+    "answer": "POL987654321"
+  },
+  {
+    "order": 16,
+    "text": "ADMINISTRATOR FEIN",
+    "answer": "98-7654322"
+  },
+  {
+    "order": 17,
+    "text": "First Name",
+    "answer": "Emily"
+  },
+  {
+    "order": 18,
+    "text": "Last Name",
+    "answer": "Johnson"
+  },
+  {
+    "order": 19,
+    "text": "DATE OF BIRTH",
+    "answer": "1988-06-12"
+  },
+  {
+    "order": 20,
+    "text": "SOCIAL SECURITY NUMBER",
+    "answer": "111-22-3333"
+  },
+  {
+    "order": 21,
+    "text": "DATE HIRED",
+    "answer": "2014-03-01"
+  },
+  {
+    "order": 22,
+    "text": "STATE OF HIRE",
+    "answer": "IL"
+  },
+  {
+    "order": 23,
+    "text": "ADDRESS (INCL ZIP)",
+    "answer": "456 Oak Ave, Springfield, IL 62704"
+  },
+  {
+    "order": 24,
+    "text": "SEX",
+    "answer": "Female"
+  },
+  {
+    "order": 25,
+    "text": "MARITAL STATUS",
+    "answer": "Married"
+  },
+  {
+    "order": 26,
+    "text": "OCCUPATION/JOB TITLE",
+    "answer": "Administrative Assistant"
+  },
+  {
+    "order": 27,
+    "text": "EMPLOYMENT STATUS",
+    "answer": "1-Full-Time"
+  },
+  {
+    "order": 28,
+    "text": "PHONE",
+    "answer": "217-555-0140"
+  },
+  {
+    "order": 29,
+    "text": "# OF DEPENDENTS",
+    "answer": ""
+  },
+  {
+    "order": 30,
+    "text": "NCCI CLASS CODE",
+    "answer": "12345"
+  },
+  {
+    "order": 31,
+    "text": "RATE",
+    "answer": ")]},{"
+  }
+]

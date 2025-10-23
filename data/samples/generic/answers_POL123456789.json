@@ -1,0 +1,342 @@
+[
+  {
+    "order": 1,
+    "text": "EMPLOYER (NAME & ADDRESS INCL ZIP)",
+    "answer": "Acme Manufacturing, 500 Industrial Way, Springfield, IL 62701"
+  },
+  {
+    "order": 2,
+    "text": "REPORT PURPOSE CODE",
+    "answer": "Initial Claim"
+  },
+  {
+    "order": 3,
+    "text": "JURISDICTION",
+    "answer": "Illinois"
+  },
+  {
+    "order": 4,
+    "text": "EMPLOYER\u00120S LOCATION ADDRESS (IF DIFFERENT)",
+    "answer": "1000 Warehouse Ave, Springfield, IL 62702"
+  },
+  {
+    "order": 5,
+    "text": "LOCATION #",
+    "answer": "LOC-003"
+  },
+  {
+    "order": 6,
+    "text": "PHONE #",
+    "answer": "+1 (555) 555-0100"
+  },
+  {
+    "order": 7,
+    "text": "INDUSTRY CODE",
+    "answer": "311999"
+  },
+  {
+    "order": 8,
+    "text": "EMPLOYER FEIN",
+    "answer": "36-1234567"
+  },
+  {
+    "order": 9,
+    "text": "CARRIER (NAME, ADDRESS, & PHONE #)",
+    "answer": "Acme Insurance Co., 123 Insurance Plaza, Chicago, IL 60601, Phone: (312) 555-0101"
+  },
+  {
+    "order": 10,
+    "text": "POLICY PERIOD (start)",
+    "answer": "2022-03-20"
+  },
+  {
+    "order": 11,
+    "text": "POLICY PERIOD (end)",
+    "answer": "2024-03-20"
+  },
+  {
+    "order": 12,
+    "text": "SELF INSURANCE",
+    "answer": false
+  },
+  {
+    "order": 13,
+    "text": "CLAIMS ADMINISTRATOR (NAME, ADDRESS & PHONE NO)",
+    "answer": "Claims Administration Co., 555 Claims Blvd, Chicago, IL 60607, Phone: (312) 555-0190"
+  },
+  {
+    "order": 14,
+    "text": "CARRIER FEIN",
+    "answer": "12-3456789"
+  },
+  {
+    "order": 15,
+    "text": "POLICY/SELF-INSURED NUMBER",
+    "answer": "POL123456789"
+  },
+  {
+    "order": 16,
+    "text": "ADMINISTRATOR FEIN",
+    "answer": "98-7654321"
+  },
+  {
+    "order": 17,
+    "text": "First Name",
+    "answer": "John"
+  },
+  {
+    "order": 18,
+    "text": "Last Name",
+    "answer": "Doe"
+  },
+  {
+    "order": 19,
+    "text": "DATE OF BIRTH",
+    "answer": "1985-06-15"
+  },
+  {
+    "order": 20,
+    "text": "SOCIAL SECURITY NUMBER",
+    "answer": "123-45-6789"
+  },
+  {
+    "order": 21,
+    "text": "DATE HIRED",
+    "answer": "2018-04-01"
+  },
+  {
+    "order": 22,
+    "text": "STATE OF HIRE",
+    "answer": "IL"
+  },
+  {
+    "order": 23,
+    "text": "ADDRESS (INCL ZIP)",
+    "answer": "123 Maple Street, Anytown, IL 62704"
+  },
+  {
+    "order": 24,
+    "text": "SEX",
+    "answer": "Male"
+  },
+  {
+    "order": 25,
+    "text": "MARITAL STATUS",
+    "answer": "Married"
+  },
+  {
+    "order": 26,
+    "text": "OCCUPATION/JOB TITLE",
+    "answer": "Quality Control Technician"
+  },
+  {
+    "order": 27,
+    "text": "EMPLOYMENT STATUS",
+    "answer": "1-Full-Time"
+  },
+  {
+    "order": 28,
+    "text": "PHONE",
+    "answer": "555-0100"
+  },
+  {
+    "order": 29,
+    "text": "# OF DEPENDENTS",
+    "answer": "1"
+  },
+  {
+    "order": 30,
+    "text": "NCCI CLASS CODE",
+    "answer": "1234"
+  },
+  {
+    "order": 31,
+    "text": "RATE",
+    "answer": "25"
+  },
+  {
+    "order": 32,
+    "text": "PER",
+    "answer": "Day"
+  },
+  {
+    "order": 33,
+    "text": "OTHER",
+    "answer": "N/A"
+  },
+  {
+    "order": 34,
+    "text": "DAYS WORKED/WEEK",
+    "answer": "5"
+  },
+  {
+    "order": 35,
+    "text": "FULL PAY FOR DAY OF INJURY?",
+    "answer": true
+  },
+  {
+    "order": 36,
+    "text": "DID SALARY CONTINUE?",
+    "answer": true
+  },
+  {
+    "order": 37,
+    "text": "TIME EMPLOYEE BEGAN WORK",
+    "answer": "08:00:00"
+  },
+  {
+    "order": 38,
+    "text": "DATE OF INJURY/ILLNESS",
+    "answer": "2023-09-14"
+  },
+  {
+    "order": 39,
+    "text": "TIME OF OCCURRENCE",
+    "answer": "08:15:00"
+  },
+  {
+    "order": 40,
+    "text": "CANNOT BE DETERMINED",
+    "answer": false
+  },
+  {
+    "order": 41,
+    "text": "LAST WORK DATE",
+    "answer": "2023-09-14"
+  },
+  {
+    "order": 42,
+    "text": "DATE EMPLOYER NOTIFIED",
+    "answer": "2023-09-15"
+  },
+  {
+    "order": 43,
+    "text": "DATE DISABILITY BEGAN",
+    "answer": "2023-09-16"
+  },
+  {
+    "order": 44,
+    "text": "CONTACT NAME",
+    "answer": "Maria Lopez"
+  },
+  {
+    "order": 45,
+    "text": "CONTACT PHONE NUMBER",
+    "answer": "555-0199"
+  },
+  {
+    "order": 46,
+    "text": "TYPE OF INJURY/ILLNESS",
+    "answer": "52-Strain or Tear"
+  },
+  {
+    "order": 47,
+    "text": "PART OF BODY AFFECTED",
+    "answer": "42-Lower Back Area"
+  },
+  {
+    "order": 48,
+    "text": "DID INJURY/ILLNESS/EXPOSURE OCCUR ON EMPLOYER\u00120S PREMISES?",
+    "answer": true
+  },
+  {
+    "order": 49,
+    "text": "TYPE OF INJURY/ILLNESS CODE",
+    "answer": "52"
+  },
+  {
+    "order": 50,
+    "text": "PART OF BODY AFFECTED CODE",
+    "answer": "42"
+  },
+  {
+    "order": 51,
+    "text": "DEPARTMENT OR LOCATION WHERE ACCIDENT OR ILLNESS EXPOSURE OCCURRED",
+    "answer": "Production Floor - Section A"
+  },
+  {
+    "order": 52,
+    "text": "ALL EQUIPMENT, MATERIALS, OR CHEMICALS EMPLOYEE WAS USING WHEN ACCIDENT OR ILLNESS EXPOSURE OCCURRED",
+    "answer": "Box cutter, pallet jack, forklift, and safety gloves; NA if none"
+  },
+  {
+    "order": 53,
+    "text": "SPECIFIC ACTIVITY THE EMPLOYEE WAS ENGAGED IN WHEN THE ACCIDENT OR ILLNESS EXPOSURE OCCURRED",
+    "answer": "31-Fall, Slip or Trip, NOC"
+  },
+  {
+    "order": 54,
+    "text": "WORK PROCESS THE EMPLOYEE WAS ENGAGED IN WHEN ACCIDENT OR ILLNESS EXPOSURE OCCURRED",
+    "answer": "Moving boxes from pallet to conveyor line on the loading dock."
+  },
+  {
+    "order": 55,
+    "text": "HOW INJURY OR ILLNESS/ABNORMAL HEALTH CONDITION OCCURRED. DESCRIBE THE SEQUENCE OF EVENTS AND INCLUDE ANY OBJECTS OR SUBSTANCES THAT DIRECTLY INJURED THE EMPLOYEE OR MADE THE EMPLOYEE ILL",
+    "answer": "The employee slipped on a wet concrete floor on the loading dock while carrying a 30 lb box, causing a lower back strain. A pallet jack was nearby; no objects penetrated the skin."
+  },
+  {
+    "order": 56,
+    "text": "CAUSE OF INJURY CODE",
+    "answer": "Slip on wet floor"
+  },
+  {
+    "order": 57,
+    "text": "DATE RETURN(ED) TO WORK",
+    "answer": "2023-10-30"
+  },
+  {
+    "order": 58,
+    "text": "IF FATAL, GIVE DATE OF DEATH",
+    "answer": null
+  },
+  {
+    "order": 59,
+    "text": "WERE SAFEGUARDS OR SAFETY EQUIPMENT PROVIDED?",
+    "answer": true
+  },
+  {
+    "order": 60,
+    "text": "WERE THEY USED?",
+    "answer": true
+  },
+  {
+    "order": 61,
+    "text": "PHYSICIAN/HEALTH CARE PROVIDER (NAME & ADDRESS)",
+    "answer": "Dr. Emily Carter, 789 Health Plaza, Metropolis, CA 94020"
+  },
+  {
+    "order": 62,
+    "text": "HOSPITAL OR OFF SITE TREATMENT (NAME & ADDRESS)",
+    "answer": "City General Hospital, 100 Main Street, Metropolis, CA 94010"
+  },
+  {
+    "order": 63,
+    "text": "INITIAL TREATMENT",
+    "answer": "EMERGENCY CARE"
+  },
+  {
+    "order": 64,
+    "text": "WITNESSES (NAME & PHONE #)",
+    "answer": "Alex Kim, 555-0123"
+  },
+  {
+    "order": 65,
+    "text": "DATE ADMINISTRATOR NOTIFIED",
+    "answer": "2023-09-16"
+  },
+  {
+    "order": 66,
+    "text": "DATE PREPARED",
+    "answer": "2023-09-18"
+  },
+  {
+    "order": 67,
+    "text": "PREPARER\u00120S NAME & TITLE",
+    "answer": "Jordan Lee, Claims Examiner"
+  },
+  {
+    "order": 68,
+    "text": "PHONE NUMBER",
+    "answer": "555-0187"
+  }
+]

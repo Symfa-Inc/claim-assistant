@@ -1,0 +1,127 @@
+[
+  {
+    "order": 1,
+    "text": "EMPLOYEE SOCIAL SECURITY #",
+    "answer": "123-45-6789"
+  },
+  {
+    "order": 2,
+    "text": "OSHA case #",
+    "answer": "OSHA-2024-01057"
+  },
+  {
+    "order": 3,
+    "text": "Time employee began work on date of injury",
+    "answer": "08:15:00"
+  },
+  {
+    "order": 4,
+    "text": "Time employee began work on date of injury (am/pm)",
+    "answer": "AM"
+  },
+  {
+    "order": 5,
+    "text": "DATE OF CLAIMED INJURY",
+    "answer": "2024-02-10"
+  },
+  {
+    "order": 6,
+    "text": "Time of injury",
+    "answer": "08:30:00"
+  },
+  {
+    "order": 7,
+    "text": "Time of injury(am/pm)",
+    "answer": "AM"
+  },
+  {
+    "order": 8,
+    "text": "Date of death",
+    "answer": null
+  },
+  {
+    "order": 9,
+    "text": "# of dependents (if death is related to injury)",
+    "answer": "0"
+  },
+  {
+    "order": 10,
+    "text": "EMPLOYEE Last name",
+    "answer": "Smith"
+  },
+  {
+    "order": 11,
+    "text": "EMPLOYEE First name",
+    "answer": "John"
+  },
+  {
+    "order": 12,
+    "text": "EMPLOYEE Middle name",
+    "answer": "A"
+  },
+  {
+    "order": 13,
+    "text": "Gender",
+    "answer": "M"
+  },
+  {
+    "order": 14,
+    "text": "Marital status",
+    "answer": "Married"
+  },
+  {
+    "order": 15,
+    "text": "Home address",
+    "answer": "123 Oak Street"
+  },
+  {
+    "order": 16,
+    "text": "Home phone #",
+    "answer": "555-0140"
+  },
+  {
+    "order": 17,
+    "text": "Date of birth",
+    "answer": "1985-04-12"
+  },
+  {
+    "order": 18,
+    "text": "Date hired",
+    "answer": "2010-06-01"
+  },
+  {
+    "order": 19,
+    "text": "City",
+    "answer": "Springfield"
+  },
+  {
+    "order": 20,
+    "text": "State",
+    "answer": "IL"
+  },
+  {
+    "order": 21,
+    "text": "Zip Code",
+    "answer": "62704"
+  },
+  {
+    "order": 22,
+    "text": "Occupation",
+    "answer": "Maintenance Technician"
+  },
+  {
+    "order": 23,
+    "text": "Regular department",
+    "answer": "Operations"
+  },
+  {
+    "order": 24,
+    "text": "Apprentice",
+    "answer": false
+  },
+  {
+    "order": 25,
+    "text": "Average weekly wage",
+    "answer": ","
+  }
+]

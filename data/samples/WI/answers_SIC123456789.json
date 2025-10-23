@@ -1,0 +1,432 @@
+[
+  {
+    "order": 1,
+    "text": "Employee Name (First)",
+    "answer": "John"
+  },
+  {
+    "order": 2,
+    "text": "Employee Name (Middle)",
+    "answer": "Alexander"
+  },
+  {
+    "order": 3,
+    "text": "Employee Name (Last)",
+    "answer": "Smith"
+  },
+  {
+    "order": 4,
+    "text": "Social Security Number*",
+    "answer": "123-45-6789"
+  },
+  {
+    "order": 5,
+    "text": "Sex",
+    "answer": "M"
+  },
+  {
+    "order": 6,
+    "text": "Employee Home Telephone No.",
+    "answer": "(608) 555-0101"
+  },
+  {
+    "order": 7,
+    "text": "Employee Street Address",
+    "answer": "123 Maple Street"
+  },
+  {
+    "order": 8,
+    "text": "City",
+    "answer": "Madison"
+  },
+  {
+    "order": 9,
+    "text": "State",
+    "answer": "WI"
+  },
+  {
+    "order": 10,
+    "text": "Zip Code",
+    "answer": "53703"
+  },
+  {
+    "order": 11,
+    "text": "Occupation",
+    "answer": "Operations Supervisor"
+  },
+  {
+    "order": 12,
+    "text": "Birthdate",
+    "answer": "1985-07-11"
+  },
+  {
+    "order": 13,
+    "text": "Date of Hire",
+    "answer": "2012-08-01"
+  },
+  {
+    "order": 14,
+    "text": "County and State Where Accident or Exposure Occurred?",
+    "answer": "Dane County, Wisconsin"
+  },
+  {
+    "order": 15,
+    "text": "Employer Name",
+    "answer": "Acme Manufacturing Co."
+  },
+  {
+    "order": 16,
+    "text": "WI Unemployment Ins. Acct No.",
+    "answer": "SIC123456789"
+  },
+  {
+    "order": 17,
+    "text": "Self-Insured?",
+    "answer": false
+  },
+  {
+    "order": 18,
+    "text": "Nature of Business (Specific Product)",
+    "answer": "Industrial manufacturing"
+  },
+  {
+    "order": 19,
+    "text": "Employer Mailing Address",
+    "answer": "500 Industrial Ave"
+  },
+  {
+    "order": 20,
+    "text": "City",
+    "answer": "Madison"
+  },
+  {
+    "order": 21,
+    "text": "State",
+    "answer": "WI"
+  },
+  {
+    "order": 22,
+    "text": "Zip Code",
+    "answer": "53713"
+  },
+  {
+    "order": 23,
+    "text": "Employer FEIN",
+    "answer": "12-3456789"
+  },
+  {
+    "order": 24,
+    "text": "Name of Worker's Compensation Insurance Co. or Self-Insured Employer",
+    "answer": "ShieldGuard Insurance Services"
+  },
+  {
+    "order": 25,
+    "text": "Insurer FEIN",
+    "answer": "98-7654321"
+  },
+  {
+    "order": 26,
+    "text": "Name and Address of Third Party Administrator (TPA) Used by the Insurance Company or Self-Insured Employer",
+    "answer": "ProCare Admin, 120 Commerce Way, Milwaukee, WI 53202"
+  },
+  {
+    "order": 27,
+    "text": "TPA FEIN",
+    "answer": "27-6543210"
+  },
+  {
+    "order": 28,
+    "text": "Wage at Time of Injury $",
+    "answer": ""
+  },
+  {
+    "order": 28,
+    "text": "Wage at Time of Injury $",
+    "answer": ""
+  },
+  {
+    "order": 28,
+    "text": "Wage at Time of Injury $",
+    "answer": ""
+  },
+  {
+    "order": 29,
+    "text": "Specify per hr., wk., mo., yr., etc.",
+    "answer": "hr"
+  },
+  {
+    "order": 30,
+    "text": "Per:",
+    "answer": ""
+  },
+  {
+    "order": 31,
+    "text": "Meals (In Addition to Wages, Employee Received)",
+    "answer": false
+  },
+  {
+    "order": 32,
+    "text": "Room (In Addition to Wages, Employee Received)",
+    "answer": false
+  },
+  {
+    "order": 33,
+    "text": "Tips (In Addition to Wages, Employee Received)",
+    "answer": false
+  },
+  {
+    "order": 34,
+    "text": "No. of Meals/wk.",
+    "answer": false
+  },
+  {
+    "order": 35,
+    "text": "No. of Days/wk",
+    "answer": false
+  },
+  {
+    "order": 36,
+    "text": "Avg. Weekly Amt. $",
+    "answer": false
+  },
+  {
+    "order": 37,
+    "text": "Is Worker Paid for Overtime?",
+    "answer": false
+  },
+  {
+    "order": 38,
+    "text": "If Yes, After How Many Hours of Work Per Week?",
+    "answer": null
+  },
+  {
+    "order": 39,
+    "text": "No. of Weeks:",
+    "answer": "52"
+  },
+  {
+    "order": 39,
+    "text": "No. of Weeks:",
+    "answer": ""
+  },
+  {
+    "order": 39,
+    "text": "No. of Weeks:",
+    "answer": ""
+  },
+  {
+    "order": 40,
+    "text": "Gross Amount Excluding Tips: $",
+    "answer": ""
+  },
+  {
+    "order": 40,
+    "text": "Gross Amount Excluding Tips: $",
+    "answer": ""
+  },
+  {
+    "order": 40,
+    "text": "Gross Amount Excluding Tips: $",
+    "answer": ""
+  },
+  {
+    "order": 40,
+    "text": "Gross Amount Excluding Tips: $",
+    "answer": ""
+  },
+  {
+    "order": 40,
+    "text": "Gross Amount Excluding Tips: $",
+    "answer": ""
+  },
+  {
+    "order": 40,
+    "text": "Gross Amount Excluding Tips: $",
+    "answer": ""
+  },
+  {
+    "order": 40,
+    "text": "Gross Amount Excluding Tips: $",
+    "answer": ""
+  },
+  {
+    "order": 40,
+    "text": "Gross Amount Excluding Tips: $",
+    "answer": ""
+  },
+  {
+    "order": 40,
+    "text": "Gross Amount Excluding Tips: $",
+    "answer": ""
+  },
+  {
+    "order": 40,
+    "text": "Gross Amount Excluding Tips: $",
+    "answer": ""
+  },
+  {
+    "order": 40,
+    "text": "Gross Amount Excluding Tips: $",
+    "answer": ""
+  },
+  {
+    "order": 40,
+    "text": "Gross Amount Excluding Tips: $",
+    "answer": ""
+  },
+  {
+    "order": 41,
+    "text": "If Piece-Work, No. of Hrs. Excluding Overtime:",
+    "answer": ""
+  },
+  {
+    "order": 42,
+    "text": "Start Time",
+    "answer": "08:00:00"
+  },
+  {
+    "order": 43,
+    "text": "Hours Per Day",
+    "answer": ""
+  },
+  {
+    "order": 44,
+    "text": "Hours Per Week",
+    "answer": ""
+  },
+  {
+    "order": 45,
+    "text": "Days Per Week",
+    "answer": ""
+  },
+  {
+    "order": 46,
+    "text": "Employer\u0019s Usual Full-Time Schedule for This Type of Work at Time of Employee\u0019s Injury",
+    "answer": "Mon-Fri, 8:00 AM to 4:30 PM"
+  },
+  {
+    "order": 47,
+    "text": "Are there Other Part-Time Workers Doing the Same Work With the Same Schedule?",
+    "answer": false
+  },
+  {
+    "order": 48,
+    "text": "If Yes, how many?",
+    "answer": ""
+  },
+  {
+    "order": 49,
+    "text": "Number of Full-Time Employees Doing The Same Type Of Work:",
+    "answer": ""
+  },
+  {
+    "order": 50,
+    "text": "Injury Date",
+    "answer": "2024-02-20"
+  },
+  {
+    "order": 51,
+    "text": "Time of Injury",
+    "answer": "14:30:00"
+  },
+  {
+    "order": 52,
+    "text": "Last Day Worked",
+    "answer": "2024-02-19"
+  },
+  {
+    "order": 53,
+    "text": "Date Employer Notified",
+    "answer": "2024-02-21"
+  },
+  {
+    "order": 54,
+    "text": "Date Returned to Work",
+    "answer": "2024-02-25"
+  },
+  {
+    "order": 55,
+    "text": "Estimated Date of Return",
+    "answer": "2024-04-15"
+  },
+  {
+    "order": 56,
+    "text": "Did Injury Cause Death?",
+    "answer": false
+  },
+  {
+    "order": 57,
+    "text": "Date of Death",
+    "answer": null
+  },
+  {
+    "order": 58,
+    "text": "Was This a Lost Time or Other Compensable Injury?",
+    "answer": true
+  },
+  {
+    "order": 59,
+    "text": "Did Injury Occur Because of: Substance Abuse",
+    "answer": false
+  },
+  {
+    "order": 60,
+    "text": "Did Injury Occur Because of: Failure to Use Safety Devices",
+    "answer": false
+  },
+  {
+    "order": 61,
+    "text": "Did Injury Occur Because of: Failure to Obey Rules",
+    "answer": false
+  },
+  {
+    "order": 62,
+    "text": "Was Employee Treated in an Emergency Room?",
+    "answer": true
+  },
+  {
+    "order": 63,
+    "text": "Was Employee Hospitalized Overnight as an In-Patient?",
+    "answer": false
+  },
+  {
+    "order": 64,
+    "text": "Name and Address of Treating Practitioner and Hospital",
+    "answer": "Dr. Lisa Chen, Madison General Hospital, 500 S. Park St, Madison, WI 53715"
+  },
+  {
+    "order": 65,
+    "text": "Case Number from the OSHA Log",
+    "answer": "OSHA-2024-00123"
+  },
+  {
+    "order": 66,
+    "text": "Injury Description - Describe Activities of Employee When Injury or Illness Occurred and What Tools, Machinery, Objects, Chemicals, Etc. Were Involved.",
+    "answer": "Employee was operating a pallet jack in the warehouse when a wet area near the loading dock caused him to slip. The pallet jack's wheel struck a pallet edge, causing the employee to twist the left ankle and fall to the concrete floor, resulting in a sprain. No chemicals involved."
+  },
+  {
+    "order": 67,
+    "text": "What Happened to Cause This Injury or Illness? (Describe How The Injury Occurred)",
+    "answer": "Employee slipped on wet floor near loading dock, twisted left ankle during fall while guiding a pallet jack; immediate pain; no other persons or equipment directly involved."
+  },
+  {
+    "order": 68,
+    "text": "What Was The Injury or Illness? (State the Part of Body Affected and How It Was Affected)",
+    "answer": "Left ankle sprain from inversion during a fall."
+  },
+  {
+    "order": 69,
+    "text": "Report Prepared By",
+    "answer": "Michael Carter"
+  },
+  {
+    "order": 70,
+    "text": "Work Phone Number",
+    "answer": "(608) 555-0140"
+  },
+  {
+    "order": 71,
+    "text": "Position",
+    "answer": "Claims Administrator"
+  }
+]

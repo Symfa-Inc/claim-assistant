@@ -1,0 +1,437 @@
+[
+  {
+    "order": 1,
+    "text": "EMPLOYEE SOCIAL SECURITY #",
+    "answer": "123-45-6789"
+  },
+  {
+    "order": 2,
+    "text": "OSHA case #",
+    "answer": "OSHA-2024-0815-01"
+  },
+  {
+    "order": 3,
+    "text": "Time employee began work on date of injury",
+    "answer": "08:00:00"
+  },
+  {
+    "order": 4,
+    "text": "Time employee began work on date of injury (am/pm)",
+    "answer": "AM"
+  },
+  {
+    "order": 5,
+    "text": "DATE OF CLAIMED INJURY",
+    "answer": "2024-08-15"
+  },
+  {
+    "order": 6,
+    "text": "Time of injury",
+    "answer": "08:15:00"
+  },
+  {
+    "order": 7,
+    "text": "Time of injury(am/pm)",
+    "answer": "AM"
+  },
+  {
+    "order": 8,
+    "text": "Date of death",
+    "answer": null
+  },
+  {
+    "order": 9,
+    "text": "# of dependents (if death is related to injury)",
+    "answer": ""
+  },
+  {
+    "order": 10,
+    "text": "EMPLOYEE Last name",
+    "answer": "Johnson"
+  },
+  {
+    "order": 11,
+    "text": "EMPLOYEE First name",
+    "answer": "Emily"
+  },
+  {
+    "order": 12,
+    "text": "EMPLOYEE Middle name",
+    "answer": "K"
+  },
+  {
+    "order": 13,
+    "text": "Gender",
+    "answer": "F"
+  },
+  {
+    "order": 14,
+    "text": "Marital status",
+    "answer": "Married"
+  },
+  {
+    "order": 15,
+    "text": "Home address",
+    "answer": "123 Maple Street"
+  },
+  {
+    "order": 16,
+    "text": "Home phone #",
+    "answer": "555-123-4567"
+  },
+  {
+    "order": 17,
+    "text": "Date of birth",
+    "answer": "1985-06-12"
+  },
+  {
+    "order": 18,
+    "text": "Date hired",
+    "answer": "2018-03-01"
+  },
+  {
+    "order": 19,
+    "text": "City",
+    "answer": "Springfield"
+  },
+  {
+    "order": 20,
+    "text": "State",
+    "answer": "IL"
+  },
+  {
+    "order": 21,
+    "text": "Zip Code",
+    "answer": "62704"
+  },
+  {
+    "order": 22,
+    "text": "Occupation",
+    "answer": "Administrative Assistant"
+  },
+  {
+    "order": 23,
+    "text": "Regular department",
+    "answer": "Operations"
+  },
+  {
+    "order": 24,
+    "text": "Apprentice",
+    "answer": false
+  },
+  {
+    "order": 25,
+    "text": "Average weekly wage",
+    "answer": ""
+  },
+  {
+    "order": 26,
+    "text": "Rate per hour",
+    "answer": ""
+  },
+  {
+    "order": 27,
+    "text": "Hours per day",
+    "answer": ""
+  },
+  {
+    "order": 28,
+    "text": "Days per week",
+    "answer": ""
+  },
+  {
+    "order": 29,
+    "text": "Normal work schedule Sun",
+    "answer": false
+  },
+  {
+    "order": 30,
+    "text": "Normal work schedule Mon",
+    "answer": true
+  },
+  {
+    "order": 31,
+    "text": "Normal work schedule Tue",
+    "answer": true
+  },
+  {
+    "order": 32,
+    "text": "Normal work schedule Wed",
+    "answer": true
+  },
+  {
+    "order": 33,
+    "text": "Normal work schedule Thu",
+    "answer": true
+  },
+  {
+    "order": 34,
+    "text": "Normal work schedule Fri",
+    "answer": true
+  },
+  {
+    "order": 35,
+    "text": "Normal work schedule Sat",
+    "answer": false
+  },
+  {
+    "order": 36,
+    "text": "Employment status",
+    "answer": "Full time"
+  },
+  {
+    "order": 37,
+    "text": "Tell us how the injury/illness occurred, what the employee was doing before the incident (give details), and what the injury/illness was.",
+    "answer": "While loading a pallet with a 60 lb box in the warehouse, I attempted to move the box using a hand truck. I slipped on a wet spot and twisted my left ankle, causing pain and swelling."
+  },
+  {
+    "order": 38,
+    "text": "What was the injury or illness (include the part(s) of body)?",
+    "answer": "Sprained left ankle with probable ligament strain"
+  },
+  {
+    "order": 39,
+    "text": "What tools, equipment, machines, objects, or substances were involved?",
+    "answer": "Box, pallet jack, hand truck"
+  },
+  {
+    "order": 40,
+    "text": "Did injury occur on employer\u00199s premises?",
+    "answer": true
+  },
+  {
+    "order": 41,
+    "text": "Name and address of the place of the occurrence",
+    "answer": "Acme Logistics Warehouse, 500 Riverside Ave, Springfield, IL 62704"
+  },
+  {
+    "order": 42,
+    "text": "Date of first day of any lost time",
+    "answer": "2024-08-16"
+  },
+  {
+    "order": 43,
+    "text": "Employer paid for lost time on day of injury (DOI)",
+    "answer": "Yes"
+  },
+  {
+    "order": 44,
+    "text": "Date employer notified of injury",
+    "answer": "2024-08-15"
+  },
+  {
+    "order": 45,
+    "text": "Date employer notified of lost time",
+    "answer": "2024-08-16"
+  },
+  {
+    "order": 46,
+    "text": "Return to work date",
+    "answer": "2024-08-20"
+  },
+  {
+    "order": 47,
+    "text": "RTW same employer",
+    "answer": true
+  },
+  {
+    "order": 48,
+    "text": "RTW with restrictions",
+    "answer": false
+  },
+  {
+    "order": 49,
+    "text": "Treating physician (name)",
+    "answer": "Dr. Laura Chen"
+  },
+  {
+    "order": 50,
+    "text": "Certified Managed Care Organization (if any)",
+    "answer": "None"
+  },
+  {
+    "order": 51,
+    "text": "Extent of medical treatment - None",
+    "answer": true
+  },
+  {
+    "order": 52,
+    "text": "Extent of medical treatment - Minor on-site by employer\u00199s medical staff",
+    "answer": false
+  },
+  {
+    "order": 53,
+    "text": "Extent of medical treatment - Minor clinic/hospital",
+    "answer": false
+  },
+  {
+    "order": 54,
+    "text": "Extent of medical treatment - Emergency room",
+    "answer": false
+  },
+  {
+    "order": 55,
+    "text": "Extent of medical treatment - Hospitalization more than 24 hours",
+    "answer": false
+  },
+  {
+    "order": 56,
+    "text": "Extent of medical treatment - Future major medical anticipated",
+    "answer": false
+  },
+  {
+    "order": 57,
+    "text": "EMPLOYER Legal name",
+    "answer": "Acme Logistics, LLC"
+  },
+  {
+    "order": 58,
+    "text": "EMPLOYER DBA name (if different)",
+    "answer": "Acme Logistics"
+  },
+  {
+    "order": 59,
+    "text": "Mailing address",
+    "answer": "100 Warehouse Way"
+  },
+  {
+    "order": 60,
+    "text": "City (mailing)",
+    "answer": "Springfield"
+  },
+  {
+    "order": 61,
+    "text": "State (mailing)",
+    "answer": "IL"
+  },
+  {
+    "order": 62,
+    "text": "Zip Code (mailing)",
+    "answer": "62704"
+  },
+  {
+    "order": 63,
+    "text": "Employer FEIN",
+    "answer": "36-1234567"
+  },
+  {
+    "order": 64,
+    "text": "Unemployment ID #",
+    "answer": "42-987654"
+  },
+  {
+    "order": 65,
+    "text": "Employer\u00199s contact name",
+    "answer": "James Carter"
+  },
+  {
+    "order": 66,
+    "text": "Employer\u00199s contact phone #",
+    "answer": "555-987-6543"
+  },
+  {
+    "order": 67,
+    "text": "Physical address (if different)",
+    "answer": "500 Riverside Ave"
+  },
+  {
+    "order": 68,
+    "text": "City (physical)",
+    "answer": "Springfield"
+  },
+  {
+    "order": 69,
+    "text": "State (physical)",
+    "answer": "IL"
+  },
+  {
+    "order": 70,
+    "text": "Zip Code (physical)",
+    "answer": "62704"
+  },
+  {
+    "order": 71,
+    "text": "Witness (name)",
+    "answer": "Sam Torres"
+  },
+  {
+    "order": 72,
+    "text": "Witness (and phone)",
+    "answer": "555-101-2020"
+  },
+  {
+    "order": 73,
+    "text": "NAICS code",
+    "answer": "493110"
+  },
+  {
+    "order": 74,
+    "text": "Date form completed",
+    "answer": "2024-08-17"
+  },
+  {
+    "order": 75,
+    "text": "INSURER name",
+    "answer": "Paramount Mutual Insurance"
+  },
+  {
+    "order": 76,
+    "text": "Insured legal name",
+    "answer": "Emily Johnson"
+  },
+  {
+    "order": 77,
+    "text": "Policy # (including effective dates) or self-insured certificate #",
+    "answer": "POL987654321 (2023-01-12 to 2025-01-12)"
+  },
+  {
+    "order": 78,
+    "text": "Insurer FEIN",
+    "answer": "12-3456789"
+  },
+  {
+    "order": 79,
+    "text": "Date insurer received notice",
+    "answer": "2024-08-17"
+  },
+  {
+    "order": 80,
+    "text": "CLAIMS ADMIN COMPANY (CA) name",
+    "answer": "FirstGuard Claims Services"
+  },
+  {
+    "order": 81,
+    "text": "CA type (check one)",
+    "answer": "Insurer"
+  },
+  {
+    "order": 82,
+    "text": "CA address",
+    "answer": "300 Claims Blvd"
+  },
+  {
+    "order": 83,
+    "text": "City (CA)",
+    "answer": "Springfield"
+  },
+  {
+    "order": 84,
+    "text": "State (CA)",
+    "answer": "IL"
+  },
+  {
+    "order": 85,
+    "text": "Zip Code (CA)",
+    "answer": "62705"
+  },
+  {
+    "order": 86,
+    "text": "CA FEIN",
+    "answer": "98-7654321"
+  },
+  {
+    "order": 87,
+    "text": "CA claim #",
+    "answer": "CA-2024-0817-00123"
+  }
+]

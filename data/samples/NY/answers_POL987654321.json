@@ -1,0 +1,412 @@
+[
+  {
+    "order": 1,
+    "text": "Employee Name",
+    "answer": "Emily Johnson"
+  },
+  {
+    "order": 2,
+    "text": "WCB Case Number (JCN)",
+    "answer": "WCB-2024-112-015"
+  },
+  {
+    "order": 3,
+    "text": "Date of Injury",
+    "answer": "2024-11-15"
+  },
+  {
+    "order": 4,
+    "text": "Claim Administrator Claim Number",
+    "answer": "CLAIM-2024-110-001"
+  },
+  {
+    "order": 5,
+    "text": "Insurer Name",
+    "answer": "SureGuard Insurance Co."
+  },
+  {
+    "order": 6,
+    "text": "Insurer ID",
+    "answer": "SG-INS-01"
+  },
+  {
+    "order": 7,
+    "text": "Claim Administrator Name",
+    "answer": "Elizabeth Moore, Claims Administrator"
+  },
+  {
+    "order": 8,
+    "text": "Claim Administrator Address",
+    "answer": "900 Insurance Plaza, Springfield, IL 62704"
+  },
+  {
+    "order": 9,
+    "text": "Claim Administrator City",
+    "answer": "Springfield"
+  },
+  {
+    "order": 10,
+    "text": "Claim Administrator State",
+    "answer": "IL"
+  },
+  {
+    "order": 11,
+    "text": "Claim Administrator Postal Code",
+    "answer": "62704"
+  },
+  {
+    "order": 12,
+    "text": "Claim Administrator Country",
+    "answer": "USA"
+  },
+  {
+    "order": 13,
+    "text": "Employee First Name",
+    "answer": "Emily"
+  },
+  {
+    "order": 14,
+    "text": "Employee Middle Name/Initial",
+    "answer": "A"
+  },
+  {
+    "order": 15,
+    "text": "Employee Last Name",
+    "answer": "Johnson"
+  },
+  {
+    "order": 16,
+    "text": "Employee Suffix",
+    "answer": ""
+  },
+  {
+    "order": 17,
+    "text": "Employee Mailing Address",
+    "answer": "456 Oak Street, Springfield, IL 62704"
+  },
+  {
+    "order": 18,
+    "text": "Employee City",
+    "answer": "Springfield"
+  },
+  {
+    "order": 19,
+    "text": "Employee State",
+    "answer": "IL"
+  },
+  {
+    "order": 20,
+    "text": "Employee Postal Code",
+    "answer": "62704"
+  },
+  {
+    "order": 21,
+    "text": "Employee Country",
+    "answer": "USA"
+  },
+  {
+    "order": 22,
+    "text": "Employee Phone Number",
+    "answer": "555-0123"
+  },
+  {
+    "order": 23,
+    "text": "Date of Birth",
+    "answer": "1985-07-22"
+  },
+  {
+    "order": 24,
+    "text": "Gender",
+    "answer": "Female"
+  },
+  {
+    "order": 25,
+    "text": "Date of Hire",
+    "answer": "2020-03-01"
+  },
+  {
+    "order": 26,
+    "text": "Employee SSN",
+    "answer": "123-45-6789"
+  },
+  {
+    "order": 27,
+    "text": "Occupation Description",
+    "answer": "Administrative Assistant"
+  },
+  {
+    "order": 28,
+    "text": "Employee Email Address",
+    "answer": "emily.johnson@example.com"
+  },
+  {
+    "order": 29,
+    "text": "Time of Injury",
+    "answer": "14:30:00"
+  },
+  {
+    "order": 30,
+    "text": "Date Employer Had Knowledge of the Injury",
+    "answer": "2024-11-16"
+  },
+  {
+    "order": 31,
+    "text": "Employment Status",
+    "answer": "Full-time"
+  },
+  {
+    "order": 32,
+    "text": "Date Employer Had Knowledge of Date of Disability",
+    "answer": "2024-11-16"
+  },
+  {
+    "order": 33,
+    "text": "Estimated Weekly Wage",
+    "answer": "},{"
+  },
+  {
+    "order": 34,
+    "text": "Number of Days Worked Per Week",
+    "answer": ""
+  },
+  {
+    "order": 35,
+    "text": "Work Week Type",
+    "answer": "Standard Work Week"
+  },
+  {
+    "order": 36,
+    "text": "Work Days Scheduled",
+    "answer": "Mon-Fri"
+  },
+  {
+    "order": 37,
+    "text": "Full Wages Paid for Date of Injury",
+    "answer": true
+  },
+  {
+    "order": 38,
+    "text": "Employer Paid Salary in Lieu of Compensation",
+    "answer": false
+  },
+  {
+    "order": 39,
+    "text": "Initial Treatment",
+    "answer": "Emergency Evaluation"
+  },
+  {
+    "order": 40,
+    "text": "Death Result of Injury",
+    "answer": "No"
+  },
+  {
+    "order": 41,
+    "text": "Date of Death",
+    "answer": null
+  },
+  {
+    "order": 42,
+    "text": "Number of Dependents",
+    "answer": ""
+  },
+  {
+    "order": 43,
+    "text": "Nature of Injury",
+    "answer": "Strain"
+  },
+  {
+    "order": 44,
+    "text": "Part of Body",
+    "answer": "Lower back"
+  },
+  {
+    "order": 45,
+    "text": "Cause of Injury",
+    "answer": "Lifting"
+  },
+  {
+    "order": 46,
+    "text": "Accident/Injury Description",
+    "answer": "While lifting a heavy box at the processing area, Emily strained her lower back. She felt a sharp pulling sensation, heard a thud, and experienced increasing lower back pain. She reported the incident to a supervisor and sought medical evaluation."
+  },
+  {
+    "order": 47,
+    "text": "Initial Date Last Day Worked",
+    "answer": "2024-11-15"
+  },
+  {
+    "order": 48,
+    "text": "Initial Date Disability Began",
+    "answer": "2024-11-16"
+  },
+  {
+    "order": 49,
+    "text": "Initial Return to Work Date",
+    "answer": "2024-12-02"
+  },
+  {
+    "order": 50,
+    "text": "Return To Work Type",
+    "answer": "Actual"
+  },
+  {
+    "order": 51,
+    "text": "Physical Restrictions",
+    "answer": true
+  },
+  {
+    "order": 52,
+    "text": "Return To Work Same Employer",
+    "answer": true
+  },
+  {
+    "order": 53,
+    "text": "Accident Location - Organization Name",
+    "answer": "Acme Manufacturing, Inc."
+  },
+  {
+    "order": 54,
+    "text": "Accident Location - Street",
+    "answer": "123 Industrial Way"
+  },
+  {
+    "order": 55,
+    "text": "Accident Location - City",
+    "answer": "Springfield"
+  },
+  {
+    "order": 56,
+    "text": "Accident Location - State",
+    "answer": "IL"
+  },
+  {
+    "order": 57,
+    "text": "Accident Location - Postal Code",
+    "answer": "62704"
+  },
+  {
+    "order": 58,
+    "text": "Accident Location - Country",
+    "answer": "USA"
+  },
+  {
+    "order": 59,
+    "text": "Location Narrative",
+    "answer": "In the loading dock area near the receiving bay; floor was wet due to recent cleaning; a pallet jack was moved past the box causing a strain."
+  },
+  {
+    "order": 60,
+    "text": "Premises",
+    "answer": "Employer"
+  },
+  {
+    "order": 61,
+    "text": "Witness Names",
+    "answer": "Jordan Lee, Mia Patel"
+  },
+  {
+    "order": 62,
+    "text": "Witness Business Phone Number",
+    "answer": "555-0101"
+  },
+  {
+    "order": 63,
+    "text": "Employer Name",
+    "answer": "Acme Manufacturing, Inc."
+  },
+  {
+    "order": 64,
+    "text": "Employer FEIN",
+    "answer": "36-1234567"
+  },
+  {
+    "order": 65,
+    "text": "UI Number",
+    "answer": "UI-987654"
+  },
+  {
+    "order": 66,
+    "text": "Manual Classification Code",
+    "answer": "MC-001"
+  },
+  {
+    "order": 67,
+    "text": "Industry Code",
+    "answer": "333999"
+  },
+  {
+    "order": 68,
+    "text": "Employer Mailing Address",
+    "answer": "123 Industrial Way, Springfield, IL 62704"
+  },
+  {
+    "order": 69,
+    "text": "Employer City",
+    "answer": "Springfield"
+  },
+  {
+    "order": 70,
+    "text": "Employer State",
+    "answer": "IL"
+  },
+  {
+    "order": 71,
+    "text": "Employer Postal Code",
+    "answer": "62704"
+  },
+  {
+    "order": 72,
+    "text": "Employer Country",
+    "answer": "USA"
+  },
+  {
+    "order": 73,
+    "text": "Employer Physical Address",
+    "answer": "123 Industrial Way, Springfield, IL 62704"
+  },
+  {
+    "order": 74,
+    "text": "Employer Contact Name",
+    "answer": "Sarah Collins"
+  },
+  {
+    "order": 75,
+    "text": "Employer Contact Business Phone Number",
+    "answer": "555-0110"
+  },
+  {
+    "order": 76,
+    "text": "Insured Name",
+    "answer": "Emily Johnson"
+  },
+  {
+    "order": 77,
+    "text": "Insured FEIN",
+    "answer": "12-3456789"
+  },
+  {
+    "order": 78,
+    "text": "Insured Location ID",
+    "answer": "LOC-001"
+  },
+  {
+    "order": 79,
+    "text": "Policy Number ID",
+    "answer": "POL987654321"
+  },
+  {
+    "order": 80,
+    "text": "Policy Effective Date",
+    "answer": "2023-01-12"
+  },
+  {
+    "order": 81,
+    "text": "Policy Expiration Date",
+    "answer": "2025-01-12"
+  },
+  {
+    "order": 82,
+    "text": "Insured Type",
+    "answer": "Insured"
+  }
+]

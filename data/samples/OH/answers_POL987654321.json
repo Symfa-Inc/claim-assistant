@@ -1,0 +1,382 @@
+[
+  {
+    "order": 1,
+    "text": "First name",
+    "answer": "Emily"
+  },
+  {
+    "order": 2,
+    "text": "Middle initial",
+    "answer": "A"
+  },
+  {
+    "order": 3,
+    "text": "Last name",
+    "answer": "Johnson"
+  },
+  {
+    "order": 4,
+    "text": "Date of injury/disease",
+    "answer": "2024-06-15"
+  },
+  {
+    "order": 5,
+    "text": "Social Security number",
+    "answer": "123-45-6789"
+  },
+  {
+    "order": 6,
+    "text": "Date of birth",
+    "answer": "1988-04-12"
+  },
+  {
+    "order": 7,
+    "text": "Mailing address; add apartment number or P.O. Box, if applicable",
+    "answer": "123 Maple Street"
+  },
+  {
+    "order": 8,
+    "text": "City",
+    "answer": "Springfield"
+  },
+  {
+    "order": 9,
+    "text": "State",
+    "answer": "IL"
+  },
+  {
+    "order": 10,
+    "text": "ZIP code",
+    "answer": "62704"
+  },
+  {
+    "order": 11,
+    "text": "Sex",
+    "answer": "Female"
+  },
+  {
+    "order": 12,
+    "text": "Email address",
+    "answer": "emily.johnson@example.com"
+  },
+  {
+    "order": 13,
+    "text": "Home phone number",
+    "answer": "(217) 555-0147"
+  },
+  {
+    "order": 14,
+    "text": "Cell phone number",
+    "answer": "(217) 555-0148"
+  },
+  {
+    "order": 15,
+    "text": "Employer name",
+    "answer": "Johnson Custom Woodworks, LLC"
+  },
+  {
+    "order": 16,
+    "text": "Employer address",
+    "answer": "125 Industrial Park Dr"
+  },
+  {
+    "order": 17,
+    "text": "City",
+    "answer": "Springfield"
+  },
+  {
+    "order": 18,
+    "text": "State",
+    "answer": "IL"
+  },
+  {
+    "order": 19,
+    "text": "ZIP code",
+    "answer": "62704"
+  },
+  {
+    "order": 20,
+    "text": "Was the injured worker hired through a temp agency?",
+    "answer": false
+  },
+  {
+    "order": 21,
+    "text": "If yes, name of temp agency",
+    "answer": "N/A"
+  },
+  {
+    "order": 22,
+    "text": "Mark the days of the week you usually work",
+    "answer": "Monday, Tuesday, Wednesday, Thursday, Friday"
+  },
+  {
+    "order": 23,
+    "text": "Regular work hours - From",
+    "answer": "08:00:00"
+  },
+  {
+    "order": 24,
+    "text": "Regular work hours - To",
+    "answer": "16:30:00"
+  },
+  {
+    "order": 25,
+    "text": "Date hired",
+    "answer": "2020-03-04"
+  },
+  {
+    "order": 26,
+    "text": "Job title",
+    "answer": "Woodworker / Carpenter"
+  },
+  {
+    "order": 27,
+    "text": "State where hired",
+    "answer": "IL"
+  },
+  {
+    "order": 28,
+    "text": "State where supervised",
+    "answer": "IL"
+  },
+  {
+    "order": 29,
+    "text": "Wage rate; $ per hour",
+    "answer": ""
+  },
+  {
+    "order": 29,
+    "text": "Wage rate; $ per hour",
+    "answer": ""
+  },
+  {
+    "order": 30,
+    "text": "Number of hours scheduled to work the week of this injury",
+    "answer": ""
+  },
+  {
+    "order": 31,
+    "text": "Work number for call-offs (Number injured worker calls to reach supervisor)",
+    "answer": ""
+  },
+  {
+    "order": 32,
+    "text": "Part(s) of body affected (For example: Left knee, right index finger)",
+    "answer": "Left shoulder"
+  },
+  {
+    "order": 33,
+    "text": "Accident description (Describe the sequence of events that directly caused the injury or death.)",
+    "answer": "While lifting a heavy box at the work area, the worker felt a sharp pain in the left shoulder and experienced reduced range of motion."
+  },
+  {
+    "order": 34,
+    "text": "Will the incident cause the injured worker to miss 8 or more days from work?",
+    "answer": true
+  },
+  {
+    "order": 35,
+    "text": "Injured worker start time",
+    "answer": "08:00:00"
+  },
+  {
+    "order": 36,
+    "text": "Time of injury",
+    "answer": "08:15:00"
+  },
+  {
+    "order": 37,
+    "text": "Date employer notified",
+    "answer": "2024-06-16"
+  },
+  {
+    "order": 38,
+    "text": "Was any part of a workday missed due to the injury?",
+    "answer": true
+  },
+  {
+    "order": 39,
+    "text": "Date last worked",
+    "answer": "2024-06-22"
+  },
+  {
+    "order": 40,
+    "text": "Was the place of the accident or exposure on employer's premises?",
+    "answer": true
+  },
+  {
+    "order": 41,
+    "text": "If no, give accident location, street address",
+    "answer": "N/A"
+  },
+  {
+    "order": 42,
+    "text": "If no, give accident location, city",
+    "answer": "N/A"
+  },
+  {
+    "order": 43,
+    "text": "If no, give accident location, state",
+    "answer": "N/A"
+  },
+  {
+    "order": 44,
+    "text": "If no, give accident location, ZIP code",
+    "answer": "N/A"
+  },
+  {
+    "order": 45,
+    "text": "Was injured worker hospitalized overnight?",
+    "answer": false
+  },
+  {
+    "order": 46,
+    "text": "Initial treatment date",
+    "answer": "2024-06-16"
+  },
+  {
+    "order": 47,
+    "text": "Health-care office/Facility name",
+    "answer": "Riverside Urgent Care"
+  },
+  {
+    "order": 48,
+    "text": "Treating physician/Provider name",
+    "answer": "Dr. Lisa Carter"
+  },
+  {
+    "order": 49,
+    "text": "Telephone number",
+    "answer": "(555) 332-1000"
+  },
+  {
+    "order": 50,
+    "text": "Fax number",
+    "answer": "(555) 332-1001"
+  },
+  {
+    "order": 51,
+    "text": "Health-care office/Facility street address",
+    "answer": "456 Riverside Dr"
+  },
+  {
+    "order": 52,
+    "text": "City",
+    "answer": "Springfield"
+  },
+  {
+    "order": 53,
+    "text": "State",
+    "answer": "IL"
+  },
+  {
+    "order": 54,
+    "text": "ZIP code",
+    "answer": "62701"
+  },
+  {
+    "order": 55,
+    "text": "Date of death",
+    "answer": null
+  },
+  {
+    "order": 56,
+    "text": "Decedent\u00159s marital status",
+    "answer": "Single"
+  },
+  {
+    "order": 57,
+    "text": "Decedent\u00159s number of dependents",
+    "answer": "},{"
+  },
+  {
+    "order": 58,
+    "text": "Diagnosis(es)-narrative description including as appropriate, the location and body part, and ICD code(s).",
+    "answer": "Left shoulder sprain; ICD-10 M75.102; mild rotator cuff strain"
+  },
+  {
+    "order": 59,
+    "text": "Initial treatment date",
+    "answer": "2024-06-16"
+  },
+  {
+    "order": 60,
+    "text": "Are the medical conditions you have listed above causally related to the reported work-related accident or occupational disease?",
+    "answer": true
+  },
+  {
+    "order": 61,
+    "text": "Are you the physician of record?",
+    "answer": false
+  },
+  {
+    "order": 62,
+    "text": "Treating physician/Provider\u00159s name (Print)",
+    "answer": "Dr. Lisa Carter"
+  },
+  {
+    "order": 63,
+    "text": "BWC provider number",
+    "answer": "BWC-98765"
+  },
+  {
+    "order": 64,
+    "text": "Date",
+    "answer": "2024-06-18"
+  },
+  {
+    "order": 65,
+    "text": "Employer name",
+    "answer": "Johnson Custom Woodworks, LLC"
+  },
+  {
+    "order": 66,
+    "text": "Employer county",
+    "answer": "Sangamon"
+  },
+  {
+    "order": 67,
+    "text": "Phone number",
+    "answer": "(555) 555-0100"
+  },
+  {
+    "order": 68,
+    "text": "Fax number",
+    "answer": "(555) 555-0102"
+  },
+  {
+    "order": 69,
+    "text": "Email address",
+    "answer": "claims@johnsonwoodworks.com"
+  },
+  {
+    "order": 70,
+    "text": "Employer policy number",
+    "answer": "POL987654321"
+  },
+  {
+    "order": 71,
+    "text": "Federal ID number",
+    "answer": "36-1234567"
+  },
+  {
+    "order": 72,
+    "text": "Injured worker is (Check box, if applicable.)",
+    "answer": "Owner/Sole proprietor"
+  },
+  {
+    "order": 73,
+    "text": "Employer certifies the facts in the application.",
+    "answer": "Certification \u0013 I certify the facts in this application are correct and valid."
+  },
+  {
+    "order": 74,
+    "text": "Rejection reasons",
+    "answer": ""
+  },
+  {
+    "order": 75,
+    "text": "For self-insuring employers only: Medical only / Lost time",
+    "answer": "Lost time"
+  }
+]

@@ -1,0 +1,297 @@
+[
+  {
+    "order": 1,
+    "text": "Submission Date",
+    "answer": "2023-11-20"
+  },
+  {
+    "order": 2,
+    "text": "NHDOL#",
+    "answer": "NH-DOL-2023-00075"
+  },
+  {
+    "order": 3,
+    "text": "Employee Name (First & Last) - First Name",
+    "answer": "John"
+  },
+  {
+    "order": 4,
+    "text": "Employee Name (First & Last) - Last Name",
+    "answer": "Doe"
+  },
+  {
+    "order": 5,
+    "text": "Gender",
+    "answer": "Male"
+  },
+  {
+    "order": 6,
+    "text": "Hired Date",
+    "answer": "2018-07-12"
+  },
+  {
+    "order": 7,
+    "text": "Hired in NH",
+    "answer": true
+  },
+  {
+    "order": 8,
+    "text": "ID Type",
+    "answer": "Employee ID"
+  },
+  {
+    "order": 9,
+    "text": "Employee ID",
+    "answer": "E12345"
+  },
+  {
+    "order": 10,
+    "text": "Date of Birth",
+    "answer": "1985-04-22"
+  },
+  {
+    "order": 11,
+    "text": "Age",
+    "answer": "=>38<="
+  },
+  {
+    "order": 12,
+    "text": "Occupation when Injured",
+    "answer": "Warehouse Associate"
+  },
+  {
+    "order": 13,
+    "text": "Employee Address",
+    "answer": "123 Maple Street, Manchester, NH 03101"
+  },
+  {
+    "order": 14,
+    "text": "Telephone",
+    "answer": "603-555-0123"
+  },
+  {
+    "order": 15,
+    "text": "Wages per Hour",
+    "answer": ":22.50:"
+  },
+  {
+    "order": 16,
+    "text": "Hrs per Day",
+    "answer": ""
+  },
+  {
+    "order": 17,
+    "text": "Days per Week",
+    "answer": ""
+  },
+  {
+    "order": 18,
+    "text": "Average Weekly Earnings",
+    "answer": ""
+  },
+  {
+    "order": 19,
+    "text": "Injury Date / Time",
+    "answer": "2023-11-14"
+  },
+  {
+    "order": 20,
+    "text": "Date Employer Notified of Injury",
+    "answer": "2023-11-15"
+  },
+  {
+    "order": 21,
+    "text": "Location/Jobsite & Business Name where accident occurred",
+    "answer": "Warehouse floor, ABC Logistics Center, 400 Industrial Way, Manchester, NH 03101; ABC Logistics, Inc."
+  },
+  {
+    "order": 22,
+    "text": "Disability Began Date",
+    "answer": "2023-11-15"
+  },
+  {
+    "order": 23,
+    "text": "Claim Type",
+    "answer": "Workers' Compensation"
+  },
+  {
+    "order": 24,
+    "text": "Full Wages Paid on Injury Date",
+    "answer": true
+  },
+  {
+    "order": 25,
+    "text": "Accident Description",
+    "answer": "While unloading pallets from a forklift in the warehouse, John Doe twisted his left ankle after a pallet shifted, causing a sprain. He attempted to steady the load and immediately reported pain; coworker assisted him and he was escorted to medical evaluation."
+  },
+  {
+    "order": 26,
+    "text": "Body part Injured",
+    "answer": "Left ankle"
+  },
+  {
+    "order": 27,
+    "text": "Cause of Injury",
+    "answer": "Twist/slip on uneven flooring while handling pallet jack"
+  },
+  {
+    "order": 28,
+    "text": "Nature of Injury",
+    "answer": "Sprain"
+  },
+  {
+    "order": 29,
+    "text": "Witness Name",
+    "answer": "Carlos Mendoza"
+  },
+  {
+    "order": 30,
+    "text": "Witness Phone",
+    "answer": "603-555-0130"
+  },
+  {
+    "order": 31,
+    "text": "Returned to work?",
+    "answer": false
+  },
+  {
+    "order": 32,
+    "text": "If so, what date?",
+    "answer": null
+  },
+  {
+    "order": 33,
+    "text": "If so, at what occupation?",
+    "answer": null
+  },
+  {
+    "order": 34,
+    "text": "If so, at what duty status?",
+    "answer": null
+  },
+  {
+    "order": 35,
+    "text": "Initial Treatment",
+    "answer": "On-site first aid; wound cleaned, ankle wrapped; referred to clinic for follow-up"
+  },
+  {
+    "order": 36,
+    "text": "Initial Treatment Date",
+    "answer": "2023-11-14"
+  },
+  {
+    "order": 37,
+    "text": "Name of Treating Physician",
+    "answer": "Dr. Lisa M. Carter"
+  },
+  {
+    "order": 38,
+    "text": "Name of Treating Hospital",
+    "answer": "Manchester General Hospital"
+  },
+  {
+    "order": 39,
+    "text": "Has injured died?",
+    "answer": false
+  },
+  {
+    "order": 40,
+    "text": "If so, what date",
+    "answer": null
+  },
+  {
+    "order": 41,
+    "text": "Employer Name",
+    "answer": "ABC Logistics, Inc."
+  },
+  {
+    "order": 42,
+    "text": "Employer FEIN",
+    "answer": "12-3456789"
+  },
+  {
+    "order": 43,
+    "text": "Industry Code",
+    "answer": "493110"
+  },
+  {
+    "order": 44,
+    "text": "Employer Contact Name",
+    "answer": "Angela Rivera"
+  },
+  {
+    "order": 45,
+    "text": "Contact Phone Number",
+    "answer": "603-555-0142"
+  },
+  {
+    "order": 46,
+    "text": "Employer Business Address",
+    "answer": "400 Industrial Way, Manchester, NH 03101"
+  },
+  {
+    "order": 47,
+    "text": "Managed Care Organization",
+    "answer": "NH Care Network"
+  },
+  {
+    "order": 48,
+    "text": "Leased Employee?",
+    "answer": false
+  },
+  {
+    "order": 49,
+    "text": "Client Company",
+    "answer": "ABC Logistics, Inc."
+  },
+  {
+    "order": 50,
+    "text": "OCIP/Wrap-Up Policy?",
+    "answer": false
+  },
+  {
+    "order": 51,
+    "text": "Name of policy holder",
+    "answer": "John Doe"
+  },
+  {
+    "order": 52,
+    "text": "Insurance Carrier",
+    "answer": "Northeast Mutual Insurance Co."
+  },
+  {
+    "order": 53,
+    "text": "Insurer Type",
+    "answer": "Private"
+  },
+  {
+    "order": 54,
+    "text": "Policy Number",
+    "answer": "POL123456789"
+  },
+  {
+    "order": 55,
+    "text": "Telephone Number",
+    "answer": "603-555-0100"
+  },
+  {
+    "order": 56,
+    "text": "Submitter Name",
+    "answer": "Emily Carter"
+  },
+  {
+    "order": 57,
+    "text": "Title of Submitter",
+    "answer": "Claims Clerk"
+  },
+  {
+    "order": 58,
+    "text": "Represents",
+    "answer": "ABC Logistics, Inc."
+  },
+  {
+    "order": 59,
+    "text": "Telephone Number",
+    "answer": "603-555-0188"
+  }
+]

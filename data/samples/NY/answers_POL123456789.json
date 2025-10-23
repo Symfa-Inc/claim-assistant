@@ -1,0 +1,412 @@
+[
+  {
+    "order": 1,
+    "text": "Employee Name",
+    "answer": "John A. Doe Jr."
+  },
+  {
+    "order": 2,
+    "text": "WCB Case Number (JCN)",
+    "answer": "WCB-2023-001234"
+  },
+  {
+    "order": 3,
+    "text": "Date of Injury",
+    "answer": "2023-11-15"
+  },
+  {
+    "order": 4,
+    "text": "Claim Administrator Claim Number",
+    "answer": "CLA-20231115-001"
+  },
+  {
+    "order": 5,
+    "text": "Insurer Name",
+    "answer": "Acme Insurance Co."
+  },
+  {
+    "order": 6,
+    "text": "Insurer ID",
+    "answer": "ACME-INS-001"
+  },
+  {
+    "order": 7,
+    "text": "Claim Administrator Name",
+    "answer": "FirstChoice Claims Services"
+  },
+  {
+    "order": 8,
+    "text": "Claim Administrator Address",
+    "answer": "345 Corporate Blvd, Suite 200"
+  },
+  {
+    "order": 9,
+    "text": "Claim Administrator City",
+    "answer": "Springfield"
+  },
+  {
+    "order": 10,
+    "text": "Claim Administrator State",
+    "answer": "IL"
+  },
+  {
+    "order": 11,
+    "text": "Claim Administrator Postal Code",
+    "answer": "62701"
+  },
+  {
+    "order": 12,
+    "text": "Claim Administrator Country",
+    "answer": "USA"
+  },
+  {
+    "order": 13,
+    "text": "Employee First Name",
+    "answer": "John"
+  },
+  {
+    "order": 14,
+    "text": "Employee Middle Name/Initial",
+    "answer": "A"
+  },
+  {
+    "order": 15,
+    "text": "Employee Last Name",
+    "answer": "Doe"
+  },
+  {
+    "order": 16,
+    "text": "Employee Suffix",
+    "answer": "Jr."
+  },
+  {
+    "order": 17,
+    "text": "Employee Mailing Address",
+    "answer": "123 Elm Street"
+  },
+  {
+    "order": 18,
+    "text": "Employee City",
+    "answer": "Anytown"
+  },
+  {
+    "order": 19,
+    "text": "Employee State",
+    "answer": "CA"
+  },
+  {
+    "order": 20,
+    "text": "Employee Postal Code",
+    "answer": "90001"
+  },
+  {
+    "order": 21,
+    "text": "Employee Country",
+    "answer": "USA"
+  },
+  {
+    "order": 22,
+    "text": "Employee Phone Number",
+    "answer": "+1-555-0123"
+  },
+  {
+    "order": 23,
+    "text": "Date of Birth",
+    "answer": "1985-06-15"
+  },
+  {
+    "order": 24,
+    "text": "Gender",
+    "answer": "Male"
+  },
+  {
+    "order": 25,
+    "text": "Date of Hire",
+    "answer": "2010-08-01"
+  },
+  {
+    "order": 26,
+    "text": "Employee SSN",
+    "answer": "123-45-6789"
+  },
+  {
+    "order": 27,
+    "text": "Occupation Description",
+    "answer": "Warehouse Associate"
+  },
+  {
+    "order": 28,
+    "text": "Employee Email Address",
+    "answer": "john.doe@example.com"
+  },
+  {
+    "order": 29,
+    "text": "Time of Injury",
+    "answer": "14:30:00"
+  },
+  {
+    "order": 30,
+    "text": "Date Employer Had Knowledge of the Injury",
+    "answer": "2023-11-16"
+  },
+  {
+    "order": 31,
+    "text": "Employment Status",
+    "answer": "Full-time"
+  },
+  {
+    "order": 32,
+    "text": "Date Employer Had Knowledge of Date of Disability",
+    "answer": "2023-11-17"
+  },
+  {
+    "order": 33,
+    "text": "Estimated Weekly Wage",
+    "answer": ""
+  },
+  {
+    "order": 34,
+    "text": "Number of Days Worked Per Week",
+    "answer": "5"
+  },
+  {
+    "order": 35,
+    "text": "Work Week Type",
+    "answer": "Standard Work Week"
+  },
+  {
+    "order": 36,
+    "text": "Work Days Scheduled",
+    "answer": "Mon-Fri"
+  },
+  {
+    "order": 37,
+    "text": "Full Wages Paid for Date of Injury",
+    "answer": false
+  },
+  {
+    "order": 38,
+    "text": "Employer Paid Salary in Lieu of Compensation",
+    "answer": false
+  },
+  {
+    "order": 39,
+    "text": "Initial Treatment",
+    "answer": "Emergency Evaluation"
+  },
+  {
+    "order": 40,
+    "text": "Death Result of Injury",
+    "answer": "No"
+  },
+  {
+    "order": 41,
+    "text": "Date of Death",
+    "answer": null
+  },
+  {
+    "order": 42,
+    "text": "Number of Dependents",
+    "answer": ""
+  },
+  {
+    "order": 43,
+    "text": "Nature of Injury",
+    "answer": "Laceration"
+  },
+  {
+    "order": 44,
+    "text": "Part of Body",
+    "answer": "Left forearm"
+  },
+  {
+    "order": 45,
+    "text": "Cause of Injury",
+    "answer": "Slip and fall on wet surface"
+  },
+  {
+    "order": 46,
+    "text": "Accident/Injury Description",
+    "answer": "While unloading boxes at the warehouse loading dock, the employee slipped on a wet floor near a spill and sustained a deep laceration to the left forearm. Immediate first aid was administered on-site; transported to urgent care for assessment and sutures. Incident witnessed by coworker Maria Lopez."
+  },
+  {
+    "order": 47,
+    "text": "Initial Date Last Day Worked",
+    "answer": "2023-11-15"
+  },
+  {
+    "order": 48,
+    "text": "Initial Date Disability Began",
+    "answer": "2023-11-16"
+  },
+  {
+    "order": 49,
+    "text": "Initial Return to Work Date",
+    "answer": "2023-12-04"
+  },
+  {
+    "order": 50,
+    "text": "Return To Work Type",
+    "answer": "Actual"
+  },
+  {
+    "order": 51,
+    "text": "Physical Restrictions",
+    "answer": true
+  },
+  {
+    "order": 52,
+    "text": "Return To Work Same Employer",
+    "answer": true
+  },
+  {
+    "order": 53,
+    "text": "Accident Location - Organization Name",
+    "answer": "Acme Warehouse Main Facility"
+  },
+  {
+    "order": 54,
+    "text": "Accident Location - Street",
+    "answer": "123 Dock Street"
+  },
+  {
+    "order": 55,
+    "text": "Accident Location - City",
+    "answer": "Anytown"
+  },
+  {
+    "order": 56,
+    "text": "Accident Location - State",
+    "answer": "CA"
+  },
+  {
+    "order": 57,
+    "text": "Accident Location - Postal Code",
+    "answer": "90001"
+  },
+  {
+    "order": 58,
+    "text": "Accident Location - Country",
+    "answer": "USA"
+  },
+  {
+    "order": 59,
+    "text": "Location Narrative",
+    "answer": "Loading dock area near the east doors; wet floor sign was in place but not clearly visible to some workers."
+  },
+  {
+    "order": 60,
+    "text": "Premises",
+    "answer": "Employer"
+  },
+  {
+    "order": 61,
+    "text": "Witness Names",
+    "answer": "Maria Lopez"
+  },
+  {
+    "order": 62,
+    "text": "Witness Business Phone Number",
+    "answer": "+1-555-0147"
+  },
+  {
+    "order": 63,
+    "text": "Employer Name",
+    "answer": "Acme Warehouse Co."
+  },
+  {
+    "order": 64,
+    "text": "Employer FEIN",
+    "answer": "12-3456789"
+  },
+  {
+    "order": 65,
+    "text": "UI Number",
+    "answer": "UI-2023-CA-0012"
+  },
+  {
+    "order": 66,
+    "text": "Manual Classification Code",
+    "answer": "541-02"
+  },
+  {
+    "order": 67,
+    "text": "Industry Code",
+    "answer": "4931"
+  },
+  {
+    "order": 68,
+    "text": "Employer Mailing Address",
+    "answer": "123 Industrial Ave, Anytown, CA 90001"
+  },
+  {
+    "order": 69,
+    "text": "Employer City",
+    "answer": "Anytown"
+  },
+  {
+    "order": 70,
+    "text": "Employer State",
+    "answer": "CA"
+  },
+  {
+    "order": 71,
+    "text": "Employer Postal Code",
+    "answer": "90001"
+  },
+  {
+    "order": 72,
+    "text": "Employer Country",
+    "answer": "USA"
+  },
+  {
+    "order": 73,
+    "text": "Employer Physical Address",
+    "answer": "123 Industrial Ave, Anytown, CA 90001"
+  },
+  {
+    "order": 74,
+    "text": "Employer Contact Name",
+    "answer": "Carlos Rivera"
+  },
+  {
+    "order": 75,
+    "text": "Employer Contact Business Phone Number",
+    "answer": "+1-555-0198"
+  },
+  {
+    "order": 76,
+    "text": "Insured Name",
+    "answer": "John Doe"
+  },
+  {
+    "order": 77,
+    "text": "Insured FEIN",
+    "answer": "12-9876543"
+  },
+  {
+    "order": 78,
+    "text": "Insured Location ID",
+    "answer": "LOC-0012"
+  },
+  {
+    "order": 79,
+    "text": "Policy Number ID",
+    "answer": "POL123456789"
+  },
+  {
+    "order": 80,
+    "text": "Policy Effective Date",
+    "answer": "2022-03-20"
+  },
+  {
+    "order": 81,
+    "text": "Policy Expiration Date",
+    "answer": "2024-03-20"
+  },
+  {
+    "order": 82,
+    "text": "Insured Type",
+    "answer": "Insured"
+  }
+]

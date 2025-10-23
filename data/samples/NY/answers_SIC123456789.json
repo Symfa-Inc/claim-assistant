@@ -1,0 +1,412 @@
+[
+  {
+    "order": 1,
+    "text": "Employee Name",
+    "answer": "John Smith"
+  },
+  {
+    "order": 2,
+    "text": "WCB Case Number (JCN)",
+    "answer": "WCB-2024-0001234"
+  },
+  {
+    "order": 3,
+    "text": "Date of Injury",
+    "answer": "2024-02-28"
+  },
+  {
+    "order": 4,
+    "text": "Claim Administrator Claim Number",
+    "answer": "CLAIM-2024-004567"
+  },
+  {
+    "order": 5,
+    "text": "Insurer Name",
+    "answer": "FirstGuard Insurance Co."
+  },
+  {
+    "order": 6,
+    "text": "Insurer ID",
+    "answer": "FG-4512"
+  },
+  {
+    "order": 7,
+    "text": "Claim Administrator Name",
+    "answer": "Global Claims Administrators LLC"
+  },
+  {
+    "order": 8,
+    "text": "Claim Administrator Address",
+    "answer": "500 Market Street"
+  },
+  {
+    "order": 9,
+    "text": "Claim Administrator City",
+    "answer": "Anytown"
+  },
+  {
+    "order": 10,
+    "text": "Claim Administrator State",
+    "answer": "CA"
+  },
+  {
+    "order": 11,
+    "text": "Claim Administrator Postal Code",
+    "answer": "90210"
+  },
+  {
+    "order": 12,
+    "text": "Claim Administrator Country",
+    "answer": "USA"
+  },
+  {
+    "order": 13,
+    "text": "Employee First Name",
+    "answer": "John"
+  },
+  {
+    "order": 14,
+    "text": "Employee Middle Name/Initial",
+    "answer": "A."
+  },
+  {
+    "order": 15,
+    "text": "Employee Last Name",
+    "answer": "Smith"
+  },
+  {
+    "order": 16,
+    "text": "Employee Suffix",
+    "answer": ""
+  },
+  {
+    "order": 17,
+    "text": "Employee Mailing Address",
+    "answer": "123 Pine Street, Apt 4B"
+  },
+  {
+    "order": 18,
+    "text": "Employee City",
+    "answer": "Chicago"
+  },
+  {
+    "order": 19,
+    "text": "Employee State",
+    "answer": "IL"
+  },
+  {
+    "order": 20,
+    "text": "Employee Postal Code",
+    "answer": "60601"
+  },
+  {
+    "order": 21,
+    "text": "Employee Country",
+    "answer": "USA"
+  },
+  {
+    "order": 22,
+    "text": "Employee Phone Number",
+    "answer": "(312) 555-0143"
+  },
+  {
+    "order": 23,
+    "text": "Date of Birth",
+    "answer": "1985-07-22"
+  },
+  {
+    "order": 24,
+    "text": "Gender",
+    "answer": "Male"
+  },
+  {
+    "order": 25,
+    "text": "Date of Hire",
+    "answer": "2013-08-26"
+  },
+  {
+    "order": 26,
+    "text": "Employee SSN",
+    "answer": "000-00-0000"
+  },
+  {
+    "order": 27,
+    "text": "Occupation Description",
+    "answer": "Warehouse Associate"
+  },
+  {
+    "order": 28,
+    "text": "Employee Email Address",
+    "answer": "john.smith@example.com"
+  },
+  {
+    "order": 29,
+    "text": "Time of Injury",
+    "answer": "14:30:00"
+  },
+  {
+    "order": 30,
+    "text": "Date Employer Had Knowledge of the Injury",
+    "answer": "2024-03-02"
+  },
+  {
+    "order": 31,
+    "text": "Employment Status",
+    "answer": "Full-time"
+  },
+  {
+    "order": 32,
+    "text": "Date Employer Had Knowledge of Date of Disability",
+    "answer": "2024-03-04"
+  },
+  {
+    "order": 33,
+    "text": "Estimated Weekly Wage",
+    "answer": ":1050"
+  },
+  {
+    "order": 34,
+    "text": "Number of Days Worked Per Week",
+    "answer": "5"
+  },
+  {
+    "order": 35,
+    "text": "Work Week Type",
+    "answer": "Standard Work Week"
+  },
+  {
+    "order": 36,
+    "text": "Work Days Scheduled",
+    "answer": "Mon-Fri"
+  },
+  {
+    "order": 37,
+    "text": "Full Wages Paid for Date of Injury",
+    "answer": true
+  },
+  {
+    "order": 38,
+    "text": "Employer Paid Salary in Lieu of Compensation",
+    "answer": false
+  },
+  {
+    "order": 39,
+    "text": "Initial Treatment",
+    "answer": "Emergency Evaluation"
+  },
+  {
+    "order": 40,
+    "text": "Death Result of Injury",
+    "answer": "No"
+  },
+  {
+    "order": 41,
+    "text": "Date of Death",
+    "answer": null
+  },
+  {
+    "order": 42,
+    "text": "Number of Dependents",
+    "answer": ""
+  },
+  {
+    "order": 43,
+    "text": "Nature of Injury",
+    "answer": "Sprain"
+  },
+  {
+    "order": 44,
+    "text": "Part of Body",
+    "answer": "Left Wrist"
+  },
+  {
+    "order": 45,
+    "text": "Cause of Injury",
+    "answer": "Lifting heavy box"
+  },
+  {
+    "order": 46,
+    "text": "Accident/Injury Description",
+    "answer": "While moving inventory, the employee twisted left wrist when a 25-lb box slipped from a shelf, causing a fall and wrist pain."
+  },
+  {
+    "order": 47,
+    "text": "Initial Date Last Day Worked",
+    "answer": "2024-02-28"
+  },
+  {
+    "order": 48,
+    "text": "Initial Date Disability Began",
+    "answer": "2024-03-01"
+  },
+  {
+    "order": 49,
+    "text": "Initial Return to Work Date",
+    "answer": "2024-04-15"
+  },
+  {
+    "order": 50,
+    "text": "Return To Work Type",
+    "answer": "Actual"
+  },
+  {
+    "order": 51,
+    "text": "Physical Restrictions",
+    "answer": true
+  },
+  {
+    "order": 52,
+    "text": "Return To Work Same Employer",
+    "answer": true
+  },
+  {
+    "order": 53,
+    "text": "Accident Location - Organization Name",
+    "answer": "Acme Distribution Center"
+  },
+  {
+    "order": 54,
+    "text": "Accident Location - Street",
+    "answer": "123 Warehouse Ave"
+  },
+  {
+    "order": 55,
+    "text": "Accident Location - City",
+    "answer": "Chicago"
+  },
+  {
+    "order": 56,
+    "text": "Accident Location - State",
+    "answer": "IL"
+  },
+  {
+    "order": 57,
+    "text": "Accident Location - Postal Code",
+    "answer": "60607"
+  },
+  {
+    "order": 58,
+    "text": "Accident Location - Country",
+    "answer": "USA"
+  },
+  {
+    "order": 59,
+    "text": "Location Narrative",
+    "answer": "In the receiving area of the warehouse near the loading dock; floor was slick due to spilled liquid; employee slipped while moving inventory."
+  },
+  {
+    "order": 60,
+    "text": "Premises",
+    "answer": "Employer"
+  },
+  {
+    "order": 61,
+    "text": "Witness Names",
+    "answer": "Maria Lopez"
+  },
+  {
+    "order": 62,
+    "text": "Witness Business Phone Number",
+    "answer": "(312) 555-0199"
+  },
+  {
+    "order": 63,
+    "text": "Employer Name",
+    "answer": "Acme Manufacturing Co."
+  },
+  {
+    "order": 64,
+    "text": "Employer FEIN",
+    "answer": "12-3456789"
+  },
+  {
+    "order": 65,
+    "text": "UI Number",
+    "answer": "UI-9876543"
+  },
+  {
+    "order": 66,
+    "text": "Manual Classification Code",
+    "answer": "5412"
+  },
+  {
+    "order": 67,
+    "text": "Industry Code",
+    "answer": "42-68"
+  },
+  {
+    "order": 68,
+    "text": "Employer Mailing Address",
+    "answer": "200 Industrial Pkwy, Suite 4"
+  },
+  {
+    "order": 69,
+    "text": "Employer City",
+    "answer": "Chicago"
+  },
+  {
+    "order": 70,
+    "text": "Employer State",
+    "answer": "IL"
+  },
+  {
+    "order": 71,
+    "text": "Employer Postal Code",
+    "answer": "60606"
+  },
+  {
+    "order": 72,
+    "text": "Employer Country",
+    "answer": "USA"
+  },
+  {
+    "order": 73,
+    "text": "Employer Physical Address",
+    "answer": "200 Industrial Pkwy, Chicago, IL 60606"
+  },
+  {
+    "order": 74,
+    "text": "Employer Contact Name",
+    "answer": "Sarah Johnson"
+  },
+  {
+    "order": 75,
+    "text": "Employer Contact Business Phone Number",
+    "answer": "(312) 555-0123"
+  },
+  {
+    "order": 76,
+    "text": "Insured Name",
+    "answer": "John Smith"
+  },
+  {
+    "order": 77,
+    "text": "Insured FEIN",
+    "answer": "98-7654321"
+  },
+  {
+    "order": 78,
+    "text": "Insured Location ID",
+    "answer": "INS-001"
+  },
+  {
+    "order": 79,
+    "text": "Policy Number ID",
+    "answer": "SIC123456789"
+  },
+  {
+    "order": 80,
+    "text": "Policy Effective Date",
+    "answer": "2023-05-15"
+  },
+  {
+    "order": 81,
+    "text": "Policy Expiration Date",
+    "answer": "2024-05-15"
+  },
+  {
+    "order": 82,
+    "text": "Insured Type",
+    "answer": "Insured"
+  }
+]

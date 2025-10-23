@@ -1,0 +1,147 @@
+[
+  {
+    "order": 1,
+    "text": "First name",
+    "answer": "John"
+  },
+  {
+    "order": 2,
+    "text": "Middle initial",
+    "answer": "A"
+  },
+  {
+    "order": 3,
+    "text": "Last name",
+    "answer": "Smith"
+  },
+  {
+    "order": 4,
+    "text": "Date of injury/disease",
+    "answer": "2024-01-12"
+  },
+  {
+    "order": 5,
+    "text": "Social Security number",
+    "answer": "123-45-6789"
+  },
+  {
+    "order": 6,
+    "text": "Date of birth",
+    "answer": "1985-06-14"
+  },
+  {
+    "order": 7,
+    "text": "Mailing address; add apartment number or P.O. Box, if applicable",
+    "answer": "123 Oak Street, Apt 4B"
+  },
+  {
+    "order": 8,
+    "text": "City",
+    "answer": "Springfield"
+  },
+  {
+    "order": 9,
+    "text": "State",
+    "answer": "IL"
+  },
+  {
+    "order": 10,
+    "text": "ZIP code",
+    "answer": "62704"
+  },
+  {
+    "order": 11,
+    "text": "Sex",
+    "answer": "Male"
+  },
+  {
+    "order": 12,
+    "text": "Email address",
+    "answer": "john.smith@example.com"
+  },
+  {
+    "order": 13,
+    "text": "Home phone number",
+    "answer": "(217) 555-0134"
+  },
+  {
+    "order": 14,
+    "text": "Cell phone number",
+    "answer": "(217) 555-0199"
+  },
+  {
+    "order": 15,
+    "text": "Employer name",
+    "answer": "Acme Manufacturing, Inc."
+  },
+  {
+    "order": 16,
+    "text": "Employer address",
+    "answer": "500 Industrial Ave"
+  },
+  {
+    "order": 17,
+    "text": "City",
+    "answer": "Springfield"
+  },
+  {
+    "order": 18,
+    "text": "State",
+    "answer": "IL"
+  },
+  {
+    "order": 19,
+    "text": "ZIP code",
+    "answer": "62703"
+  },
+  {
+    "order": 20,
+    "text": "Was the injured worker hired through a temp agency?",
+    "answer": false
+  },
+  {
+    "order": 21,
+    "text": "If yes, name of temp agency",
+    "answer": ""
+  },
+  {
+    "order": 22,
+    "text": "Mark the days of the week you usually work",
+    "answer": "Monday, Tuesday, Wednesday, Thursday, Friday"
+  },
+  {
+    "order": 23,
+    "text": "Regular work hours - From",
+    "answer": "09:00:00"
+  },
+  {
+    "order": 24,
+    "text": "Regular work hours - To",
+    "answer": "17:00:00"
+  },
+  {
+    "order": 25,
+    "text": "Date hired",
+    "answer": "2019-03-01"
+  },
+  {
+    "order": 26,
+    "text": "Job title",
+    "answer": "Maintenance Technician"
+  },
+  {
+    "order": 27,
+    "text": "State where hired",
+    "answer": "IL"
+  },
+  {
+    "order": 28,
+    "text": "State where supervised",
+    "answer": "IL"
+  },
+  {
+    "order": 29,
+    "text": "Wage rate; $ per hour",
+    "answer": "},{"
+  }
+]

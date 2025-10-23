@@ -1,0 +1,252 @@
+[
+  {
+    "order": 1,
+    "text": "NAME (First, Middle, Last) - First",
+    "answer": "John"
+  },
+  {
+    "order": 2,
+    "text": "NAME (First, Middle, Last) - Middle",
+    "answer": "A."
+  },
+  {
+    "order": 3,
+    "text": "NAME (First, Middle, Last) - Last",
+    "answer": "Doe"
+  },
+  {
+    "order": 4,
+    "text": "Social Security Number",
+    "answer": "123-45-6789"
+  },
+  {
+    "order": 5,
+    "text": "Date of Accident (Month-Day-Year)",
+    "answer": "2023-06-15"
+  },
+  {
+    "order": 6,
+    "text": "Time of Accident",
+    "answer": "09:15:00"
+  },
+  {
+    "order": 7,
+    "text": "HOME ADDRESS Street/Apt #",
+    "answer": "123 Maple Ave, Apt 4B"
+  },
+  {
+    "order": 8,
+    "text": "HOME ADDRESS City",
+    "answer": "Springfield"
+  },
+  {
+    "order": 9,
+    "text": "HOME ADDRESS State",
+    "answer": "IL"
+  },
+  {
+    "order": 10,
+    "text": "HOME ADDRESS Zip",
+    "answer": "62704"
+  },
+  {
+    "order": 11,
+    "text": "EMPLOYEE'S DESCRIPTION OF ACCIDENT (Include Cause of Injury)",
+    "answer": "During operation of a pallet jack in the loading dock, John Doe slipped on a wet surface caused by a leaking coolant line. He sustained a fracture of the left lower leg."
+  },
+  {
+    "order": 12,
+    "text": "TELEPHONE",
+    "answer": "217-555-0123"
+  },
+  {
+    "order": 13,
+    "text": "OCCUPATION",
+    "answer": "Maintenance Technician"
+  },
+  {
+    "order": 14,
+    "text": "INJURY/ILLNESS THAT OCCURRED",
+    "answer": "28-Fracture"
+  },
+  {
+    "order": 15,
+    "text": "PART OF BODY AFFECTED",
+    "answer": "54-Lower Leg"
+  },
+  {
+    "order": 16,
+    "text": "DATE OF BIRTH",
+    "answer": "1987-04-11"
+  },
+  {
+    "order": 17,
+    "text": "SEX",
+    "answer": "M"
+  },
+  {
+    "order": 18,
+    "text": "COMPANY NAME",
+    "answer": "Acme Widgets Inc."
+  },
+  {
+    "order": 19,
+    "text": "D. B. A.",
+    "answer": "Acme Widgets, LLC"
+  },
+  {
+    "order": 20,
+    "text": "FEDERAL I.D. NUMBER (FEIN)",
+    "answer": "12-3456789"
+  },
+  {
+    "order": 21,
+    "text": "DATE FIRST REPORTED (Month/Day/Year)",
+    "answer": "2023-06-16"
+  },
+  {
+    "order": 22,
+    "text": "Street (Employer)",
+    "answer": "100 Industrial Blvd"
+  },
+  {
+    "order": 23,
+    "text": "City (Employer)",
+    "answer": "Springfield"
+  },
+  {
+    "order": 24,
+    "text": "State (Employer)",
+    "answer": "IL"
+  },
+  {
+    "order": 25,
+    "text": "Zip (Employer)",
+    "answer": "62705"
+  },
+  {
+    "order": 26,
+    "text": "NATURE OF BUSINESS",
+    "answer": "Manufacturing - metal components"
+  },
+  {
+    "order": 27,
+    "text": "POLICY/MEMBER NUMBER",
+    "answer": "POL123456789"
+  },
+  {
+    "order": 28,
+    "text": "TELEPHONE",
+    "answer": "217-555-0110"
+  },
+  {
+    "order": 29,
+    "text": "DATE EMPLOYED",
+    "answer": "2018-09-01"
+  },
+  {
+    "order": 30,
+    "text": "PAID FOR DATE OF INJURY",
+    "answer": true
+  },
+  {
+    "order": 31,
+    "text": "EMPLOYER'S LOCATION ADDRESS Street (If different)",
+    "answer": "100 Industrial Blvd"
+  },
+  {
+    "order": 32,
+    "text": "EMPLOYER'S LOCATION ADDRESS City",
+    "answer": "Springfield"
+  },
+  {
+    "order": 33,
+    "text": "EMPLOYER'S LOCATION ADDRESS State",
+    "answer": "IL"
+  },
+  {
+    "order": 34,
+    "text": "EMPLOYER'S LOCATION ADDRESS Zip",
+    "answer": "62705"
+  },
+  {
+    "order": 35,
+    "text": "LOCATION # (If applicable)",
+    "answer": "Plant A-3"
+  },
+  {
+    "order": 36,
+    "text": "LAST DATE EMPLOYEE WORKED",
+    "answer": "2023-06-14"
+  },
+  {
+    "order": 37,
+    "text": "RETURNED TO WORK YES NO",
+    "answer": false
+  },
+  {
+    "order": 38,
+    "text": "IF YES, GIVE DATE (Returned to work)",
+    "answer": null
+  },
+  {
+    "order": 39,
+    "text": "WILL YOU CONTINUE TO PAY WAGES INSTEAD OF WORKERS' COMP?",
+    "answer": true
+  },
+  {
+    "order": 40,
+    "text": "LAST DAY WAGES WILL BE PAID INSTEAD OF WORKERS' COMP",
+    "answer": "2023-07-15"
+  },
+  {
+    "order": 41,
+    "text": "PLACE OF ACCIDENT Street",
+    "answer": "100 Industrial Way"
+  },
+  {
+    "order": 42,
+    "text": "PLACE OF ACCIDENT City",
+    "answer": "Springfield"
+  },
+  {
+    "order": 43,
+    "text": "PLACE OF ACCIDENT State",
+    "answer": "IL"
+  },
+  {
+    "order": 44,
+    "text": "PLACE OF ACCIDENT Zip",
+    "answer": "62704"
+  },
+  {
+    "order": 45,
+    "text": "COUNTY OF ACCIDENT",
+    "answer": "Sangamon"
+  },
+  {
+    "order": 46,
+    "text": "DATE OF DEATH (If applicable)",
+    "answer": null
+  },
+  {
+    "order": 47,
+    "text": "AGREE WITH DESCRIPTION OF ACCIDENT?",
+    "answer": true
+  },
+  {
+    "order": 48,
+    "text": "RATE OF PAY $",
+    "answer": ":"
+  },
+  {
+    "order": 49,
+    "text": "RATE OF PAY PER",
+    "answer": "HR"
+  },
+  {
+    "order": 50,
+    "text": "Number of hours per day",
+    "answer": "},{"
+  }
+]

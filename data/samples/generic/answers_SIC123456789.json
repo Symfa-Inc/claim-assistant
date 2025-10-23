@@ -1,0 +1,147 @@
+[
+  {
+    "order": 1,
+    "text": "EMPLOYER (NAME & ADDRESS INCL ZIP)",
+    "answer": "Acme Widgets Corp, 500 Main St, Anytown, CA 94000"
+  },
+  {
+    "order": 2,
+    "text": "REPORT PURPOSE CODE",
+    "answer": "01-INITIAL"
+  },
+  {
+    "order": 3,
+    "text": "JURISDICTION",
+    "answer": "California"
+  },
+  {
+    "order": 4,
+    "text": "EMPLOYER’S LOCATION ADDRESS (IF DIFFERENT)",
+    "answer": "500 Main St, Anytown, CA 94000"
+  },
+  {
+    "order": 5,
+    "text": "LOCATION #",
+    "answer": "PLANT-03"
+  },
+  {
+    "order": 6,
+    "text": "PHONE #",
+    "answer": "(555) 123-4567"
+  },
+  {
+    "order": 7,
+    "text": "INDUSTRY CODE",
+    "answer": "NAICS 333319"
+  },
+  {
+    "order": 8,
+    "text": "EMPLOYER FEIN",
+    "answer": "12-3456789"
+  },
+  {
+    "order": 9,
+    "text": "CARRIER (NAME, ADDRESS, & PHONE #)",
+    "answer": "Acme Insurance Co, 100 Insurance Ave, Suite 200, Metropolis, CA 94001, (555) 123-4567"
+  },
+  {
+    "order": 10,
+    "text": "POLICY PERIOD (start)",
+    "answer": "2023-05-15"
+  },
+  {
+    "order": 11,
+    "text": "POLICY PERIOD (end)",
+    "answer": "2024-05-15"
+  },
+  {
+    "order": 12,
+    "text": "SELF INSURANCE",
+    "answer": false
+  },
+  {
+    "order": 13,
+    "text": "CLAIMS ADMINISTRATOR (NAME, ADDRESS & PHONE NO)",
+    "answer": "ClaimsAssist LLC, 200 Claim St, Metropolis, CA 94002, (555) 987-6543"
+  },
+  {
+    "order": 14,
+    "text": "CARRIER FEIN",
+    "answer": "98-7654321"
+  },
+  {
+    "order": 15,
+    "text": "POLICY/SELF-INSURED NUMBER",
+    "answer": "SIC123456789"
+  },
+  {
+    "order": 16,
+    "text": "ADMINISTRATOR FEIN",
+    "answer": "21-9876543"
+  },
+  {
+    "order": 17,
+    "text": "First Name",
+    "answer": "John"
+  },
+  {
+    "order": 18,
+    "text": "Last Name",
+    "answer": "Smith"
+  },
+  {
+    "order": 19,
+    "text": "DATE OF BIRTH",
+    "answer": "1985-04-22"
+  },
+  {
+    "order": 20,
+    "text": "SOCIAL SECURITY NUMBER",
+    "answer": "123-45-6789"
+  },
+  {
+    "order": 21,
+    "text": "DATE HIRED",
+    "answer": "2012-06-01"
+  },
+  {
+    "order": 22,
+    "text": "STATE OF HIRE",
+    "answer": "CA"
+  },
+  {
+    "order": 23,
+    "text": "ADDRESS (INCL ZIP)",
+    "answer": "123 Oak Street, San Mateo, CA 94401"
+  },
+  {
+    "order": 24,
+    "text": "SEX",
+    "answer": "Male"
+  },
+  {
+    "order": 25,
+    "text": "MARITAL STATUS",
+    "answer": "Married"
+  },
+  {
+    "order": 26,
+    "text": "OCCUPATION/JOB TITLE",
+    "answer": "Warehouse Supervisor"
+  },
+  {
+    "order": 27,
+    "text": "EMPLOYMENT STATUS",
+    "answer": "1-Full-Time"
+  },
+  {
+    "order": 28,
+    "text": "PHONE",
+    "answer": "(415) 555-0112"
+  },
+  {
+    "order": 29,
+    "text": "# OF DEPENDENTS",
+    "answer": "},{"
+  }
+]
