@@ -2,12 +2,12 @@
   {
     "order": 1,
     "text": "Submission Date",
-    "answer": "2024-02-26"
+    "answer": "2023-11-06"
   },
   {
     "order": 2,
     "text": "NHDOL#",
-    "answer": "NHDOL-2024-000457"
+    "answer": "NHDOL-2023-45821"
   },
   {
     "order": 3,
@@ -27,7 +27,7 @@
   {
     "order": 6,
     "text": "Hired Date",
-    "answer": "2013-07-01"
+    "answer": "2021-06-01"
   },
   {
     "order": 7,
@@ -37,82 +37,82 @@
   {
     "order": 8,
     "text": "ID Type",
-    "answer": "SSN"
+    "answer": "Employee ID"
   },
   {
     "order": 9,
     "text": "Employee ID",
-    "answer": "EMP-100482"
+    "answer": "JS10457"
   },
   {
     "order": 10,
     "text": "Date of Birth",
-    "answer": "1985-04-12"
+    "answer": "1987-04-12"
   },
   {
     "order": 11,
     "text": "Age",
-    "answer": "38"
+    "answer": true
   },
   {
     "order": 12,
     "text": "Occupation when Injured",
-    "answer": "Construction Site Supervisor"
+    "answer": "Carpenter"
   },
   {
     "order": 13,
     "text": "Employee Address",
-    "answer": "123 Maple Street, Manchester NH 03101"
+    "answer": "17 Maple Street, Concord, NH 03301"
   },
   {
     "order": 14,
     "text": "Telephone",
-    "answer": "(603) 555-0147"
+    "answer": "603-555-0142"
   },
   {
     "order": 15,
     "text": "Wages per Hour",
-    "answer": "28.50"
+    "answer": true
   },
   {
     "order": 16,
     "text": "Hrs per Day",
-    "answer": "8"
+    "answer": true
   },
   {
     "order": 17,
     "text": "Days per Week",
-    "answer": "5"
+    "answer": true
   },
   {
     "order": 18,
     "text": "Average Weekly Earnings",
-    "answer": "1140"
+    "answer": true
   },
   {
     "order": 19,
     "text": "Injury Date / Time",
-    "answer": "2024-02-20"
+    "answer": "2023-11-02"
   },
   {
     "order": 20,
     "text": "Date Employer Notified of Injury",
-    "answer": "2024-02-21"
+    "answer": "2023-11-03"
   },
   {
     "order": 21,
     "text": "Location/Jobsite & Business Name where accident occurred",
-    "answer": "Main Street Construction Site, BuildCo LLC, 123 Main St, Manchester NH 03101"
+    "answer": "Riverfront Apartments jobsite, Granite Builders LLC, 220 Riverfront Ave, Manchester, NH 03101"
   },
   {
     "order": 22,
     "text": "Disability Began Date",
-    "answer": "2024-02-22"
+    "answer": "2023-11-03"
   },
   {
     "order": 23,
     "text": "Claim Type",
-    "answer": "Workers' Compensation"
+    "answer": "Lost Time"
   },
   {
     "order": 24,
@@ -122,72 +122,72 @@
   {
     "order": 25,
     "text": "Accident Description",
-    "answer": "While carrying materials on a wet concrete surface at the Main Street Construction Site, the employee slipped and twisted the lower back, landed on the right knee, causing immediate pain; first aid administered on-site, follow-up evaluation at hospital."
+    "answer": "While carrying 2x4 lumber up a stairwell at the Riverfront Apartments project, John slipped on a wet stair tread, twisted his right knee, and struck his right shin against the step. Pain and swelling were immediate. Incident was reported to site supervisor Mark Davis and first aid was provided on site before seeking urgent care."
   },
   {
     "order": 26,
     "text": "Body part Injured",
-    "answer": "Lower back"
+    "answer": "Right knee; right lower leg (shin)"
   },
   {
     "order": 27,
     "text": "Cause of Injury",
-    "answer": "Slipping on wet surface / loss of traction"
+    "answer": "Slip on wet stair tread while carrying materials"
   },
   {
     "order": 28,
     "text": "Nature of Injury",
-    "answer": "Lumbar strain"
+    "answer": "Right knee sprain and right shin contusion"
   },
   {
     "order": 29,
     "text": "Witness Name",
-    "answer": "N/A"
+    "answer": "Sarah Lee"
   },
   {
     "order": 30,
     "text": "Witness Phone",
-    "answer": "N/A"
+    "answer": "603-555-0198"
   },
   {
     "order": 31,
     "text": "Returned to work?",
-    "answer": false
+    "answer": true
   },
   {
     "order": 32,
     "text": "If so, what date?",
-    "answer": null
+    "answer": "2023-11-10"
   },
   {
     "order": 33,
     "text": "If so, at what occupation?",
-    "answer": null
+    "answer": "Carpenter"
   },
   {
     "order": 34,
     "text": "If so, at what duty status?",
-    "answer": null
+    "answer": "Light duty (no climbing; lifting under 20 lbs)"
   },
   {
     "order": 35,
     "text": "Initial Treatment",
-    "answer": "On-site first aid followed by clinic evaluation; X-ray ordered."
+    "answer": "Urgent care clinic evaluation and imaging; knee brace provided"
   },
   {
     "order": 36,
     "text": "Initial Treatment Date",
-    "answer": "2024-02-20"
+    "answer": "2023-11-02"
   },
   {
     "order": 37,
     "text": "Name of Treating Physician",
-    "answer": "Dr. Emily Carter"
+    "answer": "Dr. Emily Carter, MD"
   },
   {
     "order": 38,
     "text": "Name of Treating Hospital",
-    "answer": "Manchester General Hospital"
+    "answer": "Elliot Urgent Care - Manchester"
   },
   {
     "order": 39,
@@ -202,37 +202,37 @@
   {
     "order": 41,
     "text": "Employer Name",
-    "answer": "BuildCo LLC"
+    "answer": "Granite Builders LLC"
   },
   {
     "order": 42,
     "text": "Employer FEIN",
-    "answer": "12-3456789"
+    "answer": "02-7654321"
   },
   {
     "order": 43,
     "text": "Industry Code",
-    "answer": "236210"
+    "answer": "236116"
   },
   {
     "order": 44,
     "text": "Employer Contact Name",
-    "answer": "Michael Rivera"
+    "answer": "Mark Davis"
   },
   {
     "order": 45,
     "text": "Contact Phone Number",
-    "answer": "(603) 555-0172"
+    "answer": "603-555-0128"
   },
   {
     "order": 46,
     "text": "Employer Business Address",
-    "answer": "123 Corporate Dr, Manchester NH 03101"
+    "answer": "85 Industrial Park Rd, Manchester, NH 03109"
   },
   {
     "order": 47,
     "text": "Managed Care Organization",
-    "answer": "NH Medical Partners"
+    "answer": "N/A"
   },
   {
     "order": 48,
@@ -252,17 +252,17 @@
   {
     "order": 51,
     "text": "Name of policy holder",
-    "answer": "John Smith"
+    "answer": "N/A"
   },
   {
     "order": 52,
     "text": "Insurance Carrier",
-    "answer": "Liberty Mutual"
+    "answer": "Summit Insurance Company"
   },
   {
     "order": 53,
     "text": "Insurer Type",
-    "answer": "Private"
+    "answer": "Private carrier"
   },
   {
     "order": 54,
@@ -272,26 +272,26 @@
   {
     "order": 55,
     "text": "Telephone Number",
-    "answer": "800-555-0100"
+    "answer": "800-555-0183"
   },
   {
     "order": 56,
     "text": "Submitter Name",
-    "answer": "Alex Chen"
+    "answer": "Mark Davis"
   },
   {
     "order": 57,
     "text": "Title of Submitter",
-    "answer": "Claims Analyst"
+    "answer": "Site Supervisor"
   },
   {
     "order": 58,
     "text": "Represents",
-    "answer": "Policy Holder - John Smith"
+    "answer": "Employer"
   },
   {
     "order": 59,
     "text": "Telephone Number",
-    "answer": "603-555-0199"
+    "answer": "603-555-0128"
   }
 ]

@@ -2,77 +2,77 @@
   {
     "order": 1,
     "text": "Federal Employer's Identification Number",
-    "answer": "12-3456789"
+    "answer": "91-1045678"
   },
   {
     "order": 2,
     "text": "Date of hire",
-    "answer": "2020-02-15"
+    "answer": "2021-08-16"
   },
   {
     "order": 3,
     "text": "Name of employer",
-    "answer": "Acme Manufacturing Corp."
+    "answer": "Pacific Builders, Inc."
   },
   {
     "order": 4,
     "text": "Phone",
-    "answer": "555-0173"
+    "answer": "(206) 555-0142"
   },
   {
     "order": 5,
     "text": "Mailing address (Street)",
-    "answer": "123 Industry Way"
+    "answer": "2201 4th Ave, Suite 500"
   },
   {
     "order": 6,
     "text": "Mailing address (City)",
-    "answer": "Springfield"
+    "answer": "Seattle"
   },
   {
     "order": 7,
     "text": "Mailing address (State)",
-    "answer": "IL"
+    "answer": "WA"
   },
   {
     "order": 8,
     "text": "Mailing address (ZIP)",
-    "answer": "62704"
+    "answer": "98121"
   },
   {
     "order": 9,
     "text": "Location, if different from mailing address (Street)",
-    "answer": "2000 Market Street"
+    "answer": "7421 Greenwood Ave N"
   },
   {
     "order": 10,
     "text": "Location (City)",
-    "answer": "Springfield"
+    "answer": "Seattle"
   },
   {
     "order": 11,
     "text": "Location (State)",
-    "answer": "IL"
+    "answer": "WA"
   },
   {
     "order": 12,
     "text": "Location (ZIP)",
-    "answer": "62701"
+    "answer": "98103"
   },
   {
     "order": 13,
     "text": "Nature of business",
-    "answer": "Industrial machinery manufacturing"
+    "answer": "Residential remodeling and light commercial construction"
   },
   {
     "order": 14,
     "text": "NAICS or S.I.C. Code",
-    "answer": "3533"
+    "answer": "236118"
   },
   {
     "order": 15,
     "text": "Dept. or division",
-    "answer": "Operations"
+    "answer": "Field Operations"
   },
   {
     "order": 16,
@@ -82,7 +82,7 @@
   {
     "order": 17,
     "text": "Middle",
-    "answer": "A"
+    "answer": "A."
   },
   {
     "order": 18,
@@ -92,12 +92,7 @@
   {
     "order": 19,
     "text": "Age",
-    "answer": ""
-  },
-  {
-    "order": 19,
-    "text": "Age",
-    "answer": ""
+    "answer": "38"
   },
   {
     "order": 20,
@@ -107,112 +102,112 @@
   {
     "order": 21,
     "text": "Home address (Street)",
-    "answer": "789 Elm Street"
+    "answer": "812 NE 80th St"
   },
   {
     "order": 22,
     "text": "Home address (City)",
-    "answer": "Springfield"
+    "answer": "Seattle"
   },
   {
     "order": 23,
     "text": "Home address (State)",
-    "answer": "IL"
+    "answer": "WA"
   },
   {
     "order": 24,
     "text": "Home address (ZIP)",
-    "answer": "62704"
+    "answer": "98115"
   },
   {
     "order": 25,
     "text": "SSN",
-    "answer": "123-45-6789"
+    "answer": "555-23-0198"
   },
   {
     "order": 26,
     "text": "Birth date",
-    "answer": "1985-07-12"
+    "answer": "1986-02-15"
   },
   {
     "order": 27,
     "text": "occupation",
-    "answer": "Maintenance Technician"
+    "answer": "Lead Carpenter"
   },
   {
     "order": 28,
     "text": "phone",
-    "answer": "555-0199"
+    "answer": "(206) 555-0174"
   },
   {
     "order": 29,
     "text": "Date of injury or occupational disease",
-    "answer": "2023-11-15"
+    "answer": "2024-02-20"
   },
   {
     "order": 30,
     "text": "Time of injury",
-    "answer": "14:30:00"
+    "answer": "09:15:00"
   },
   {
     "order": 31,
     "text": "a.m. / p.m.",
-    "answer": "p.m."
+    "answer": "a.m."
   },
   {
     "order": 32,
     "text": "Date reported to employer",
-    "answer": "2023-11-16"
+    "answer": "2024-02-21"
   },
   {
     "order": 33,
     "text": "Date disability began",
-    "answer": "2023-11-16"
+    "answer": "2024-02-21"
   },
   {
     "order": 34,
     "text": "Gross average weekly wage $",
-    "answer": ""
+    "answer": "1230.75"
   },
   {
     "order": 35,
     "text": "Place of accident or last exposure (City)",
-    "answer": "Springfield"
+    "answer": "Seattle"
   },
   {
     "order": 36,
     "text": "Place of accident or last exposure (County)",
-    "answer": "Sangamon"
+    "answer": "King"
   },
   {
     "order": 37,
     "text": "Place of accident or last exposure (State)",
-    "answer": "IL"
+    "answer": "WA"
   },
   {
     "order": 38,
     "text": "Was accident or last exposure on employer's premises?",
-    "answer": true
+    "answer": false
   },
   {
     "order": 39,
     "text": "How did accident occur?",
-    "answer": "Employee slipped on wet concrete in loading dock after unloading a pallet."
+    "answer": "While carrying an aluminum extension ladder across a client’s driveway at a residential job site, the employee stepped on black ice, slipped, and twisted his left ankle as he fell to the ground."
   },
   {
     "order": 40,
     "text": "What was employee doing when injured?",
-    "answer": "Carrying a heavy box up a ramp; uneven footing"
+    "answer": "Transporting an 8-foot extension ladder from the truck to the work area to begin exterior trim repairs."
   },
   {
     "order": 41,
     "text": "Name substance or object that directly caused injury*",
-    "answer": "Wet floor and box"
+    "answer": "Aluminum extension ladder and icy pavement"
   },
   {
     "order": 42,
     "text": "Describe in detail nature and extent of injury, indicate part of body involved*",
-    "answer": "Deep laceration to left forearm requiring stitches; sprain of right ankle; no loss of consciousness."
+    "answer": "Acute left ankle sprain with suspected hairline fracture; significant swelling and tenderness over the lateral malleolus. Bruising to left hip from impact with ground. X-rays taken; ankle placed in immobilizer; follow-up with orthopedics recommended."
   },
   {
     "order": 43,
@@ -227,17 +222,17 @@
   {
     "order": 45,
     "text": "Treated by emergency room only?",
-    "answer": false
+    "answer": true
   },
   {
     "order": 46,
     "text": "Hospital name and address",
-    "answer": "N/A"
+    "answer": "UW Medicine Northwest Hospital – Emergency Department, 1550 N 115th St, Seattle, WA 98133"
   },
   {
     "order": 47,
     "text": "Name and address of attending physician or clinic",
-    "answer": "Dr. Emily Carter, Springfield Urgent Care, 123 Health Ave, Springfield, IL 62704"
+    "answer": "Dr. Emily Chen, Orthopedic Associates of Seattle, 2409 N 45th St, Seattle, WA 98103"
   },
   {
     "order": 48,
@@ -252,7 +247,7 @@
   {
     "order": 50,
     "text": "Date",
-    "answer": "2023-12-01"
+    "answer": "2024-03-04"
   },
   {
     "order": 51,
@@ -262,12 +257,12 @@
   {
     "order": 52,
     "text": "Date first/initial payment",
-    "answer": "2023-12-20"
+    "answer": "2024-02-28"
   },
   {
     "order": 53,
     "text": "Weekly compensation rate $",
-    "answer": ":520"
+    "answer": "820.50"
   },
   {
     "order": 54,
@@ -287,37 +282,37 @@
   {
     "order": 57,
     "text": "Name(s) and address(es) of dependents (death cases only)",
-    "answer": "None"
+    "answer": "N/A"
   },
   {
     "order": 58,
     "text": "Insurance carrier and third party administrator",
-    "answer": "Acme Insurance Co. - TPA Claims Partners"
+    "answer": "Summit Insurance Company (TPA: Northwest Claims Services)"
   },
   {
     "order": 59,
     "text": "Insurance address (Street)",
-    "answer": "500 Insurance Plaza"
+    "answer": "500 Pine St, Suite 1200"
   },
   {
     "order": 60,
     "text": "Insurance address (City)",
-    "answer": "Metropolis"
+    "answer": "Seattle"
   },
   {
     "order": 61,
     "text": "Insurance address (State)",
-    "answer": "IL"
+    "answer": "WA"
   },
   {
     "order": 62,
     "text": "Insurance address (ZIP)",
-    "answer": "60601"
+    "answer": "98101"
   },
   {
     "order": 63,
     "text": "Phone",
-    "answer": "555-0130"
+    "answer": "(206) 555-0190"
   },
   {
     "order": 64,
@@ -327,31 +322,31 @@
   {
     "order": 65,
     "text": "Name of agent",
-    "answer": "Alice Johnson"
+    "answer": "Laura Nguyen"
   },
   {
     "order": 66,
     "text": "Claim number",
-    "answer": "CLM-20231116-001"
+    "answer": "SIC-CLM-240220-001"
   },
   {
     "order": 67,
     "text": "Name of claim representative",
-    "answer": "Michael Lee"
+    "answer": "Michael Ortiz"
   },
   {
     "order": 68,
     "text": "Date of report",
-    "answer": "2023-11-16"
+    "answer": "2024-02-22"
   },
   {
     "order": 69,
     "text": "Completed by",
-    "answer": "John Smith"
+    "answer": "Sarah Davis"
   },
   {
     "order": 70,
     "text": "Title",
-    "answer": "Employee"
+    "answer": "HR Manager"
   }
 ]

@@ -2,12 +2,12 @@
   {
     "order": 1,
     "text": "EMPLOYEE SOCIAL SECURITY #",
-    "answer": "123-45-6789"
+    "answer": "529-87-1432"
   },
   {
     "order": 2,
     "text": "OSHA case #",
-    "answer": "OSHA-2024-0815-01"
+    "answer": "2024-0814-17"
   },
   {
     "order": 3,
@@ -22,12 +22,12 @@
   {
     "order": 5,
     "text": "DATE OF CLAIMED INJURY",
-    "answer": "2024-08-15"
+    "answer": "2024-08-14"
   },
   {
     "order": 6,
     "text": "Time of injury",
-    "answer": "08:15:00"
+    "answer": "10:35:00"
   },
   {
     "order": 7,
@@ -42,7 +42,7 @@
   {
     "order": 9,
     "text": "# of dependents (if death is related to injury)",
-    "answer": ""
+    "answer": null
   },
   {
     "order": 10,
@@ -57,7 +57,7 @@
   {
     "order": 12,
     "text": "EMPLOYEE Middle name",
-    "answer": "K"
+    "answer": "A."
   },
   {
     "order": 13,
@@ -67,52 +67,52 @@
   {
     "order": 14,
     "text": "Marital status",
-    "answer": "Married"
+    "answer": "Unmarried"
   },
   {
     "order": 15,
     "text": "Home address",
-    "answer": "123 Maple Street"
+    "answer": "742 Cedar Lane"
   },
   {
     "order": 16,
     "text": "Home phone #",
-    "answer": "555-123-4567"
+    "answer": "(614) 555-0198"
   },
   {
     "order": 17,
     "text": "Date of birth",
-    "answer": "1985-06-12"
+    "answer": "1990-05-23"
   },
   {
     "order": 18,
     "text": "Date hired",
-    "answer": "2018-03-01"
+    "answer": "2021-03-15"
   },
   {
     "order": 19,
     "text": "City",
-    "answer": "Springfield"
+    "answer": "Columbus"
   },
   {
     "order": 20,
     "text": "State",
-    "answer": "IL"
+    "answer": "OH"
   },
   {
     "order": 21,
     "text": "Zip Code",
-    "answer": "62704"
+    "answer": "43215"
   },
   {
     "order": 22,
     "text": "Occupation",
-    "answer": "Administrative Assistant"
+    "answer": "Warehouse Associate"
   },
   {
     "order": 23,
     "text": "Regular department",
-    "answer": "Operations"
+    "answer": "Shipping & Receiving"
   },
   {
     "order": 24,
@@ -122,22 +122,22 @@
   {
     "order": 25,
     "text": "Average weekly wage",
-    "answer": ""
+    "answer": null
   },
   {
     "order": 26,
     "text": "Rate per hour",
-    "answer": ""
+    "answer": null
   },
   {
     "order": 27,
     "text": "Hours per day",
-    "answer": ""
+    "answer": null
   },
   {
     "order": 28,
     "text": "Days per week",
-    "answer": ""
+    "answer": null
   },
   {
     "order": 29,
@@ -182,32 +182,32 @@
   {
     "order": 37,
     "text": "Tell us how the injury/illness occurred, what the employee was doing before the incident (give details), and what the injury/illness was.",
-    "answer": "While loading a pallet with a 60 lb box in the warehouse, I attempted to move the box using a hand truck. I slipped on a wet spot and twisted my left ankle, causing pain and swelling."
+    "answer": "While lifting a 35-lb corrugated box from a pallet onto a conveyor in the Shipping & Receiving area, the employee felt a sharp pain in her right wrist as the box shifted. She immediately set the box down and reported the incident to her supervisor. She was evaluated at an occupational health clinic the same day. The incident resulted in a right wrist sprain."
   },
   {
     "order": 38,
     "text": "What was the injury or illness (include the part(s) of body)?",
-    "answer": "Sprained left ankle with probable ligament strain"
+    "answer": "Acute right wrist sprain with localized swelling and tenderness; mild strain to right forearm extensors. No fractures noted on X-ray."
   },
   {
     "order": 39,
     "text": "What tools, equipment, machines, objects, or substances were involved?",
-    "answer": "Box, pallet jack, hand truck"
+    "answer": "Manual pallet jack, stretch-wrap dispenser, corrugated shipping box (~35 lb), pallet and conveyor workstation."
   },
   {
     "order": 40,
-    "text": "Did injury occur on employer\u00199s premises?",
+    "text": "Did injury occur on employer\u0019s premises?",
     "answer": true
   },
   {
     "order": 41,
     "text": "Name and address of the place of the occurrence",
-    "answer": "Acme Logistics Warehouse, 500 Riverside Ave, Springfield, IL 62704"
+    "answer": "Buckeye Logistics LLC, Warehouse A, 1500 Distribution Dr, Columbus, OH 43228"
   },
   {
     "order": 42,
     "text": "Date of first day of any lost time",
-    "answer": "2024-08-16"
+    "answer": "2024-08-14"
   },
   {
     "order": 43,
@@ -217,17 +217,17 @@
   {
     "order": 44,
     "text": "Date employer notified of injury",
-    "answer": "2024-08-15"
+    "answer": "2024-08-14"
   },
   {
     "order": 45,
     "text": "Date employer notified of lost time",
-    "answer": "2024-08-16"
+    "answer": "2024-08-14"
   },
   {
     "order": 46,
     "text": "Return to work date",
-    "answer": "2024-08-20"
+    "answer": "2024-08-19"
   },
   {
     "order": 47,
@@ -237,32 +237,32 @@
   {
     "order": 48,
     "text": "RTW with restrictions",
-    "answer": false
+    "answer": true
   },
   {
     "order": 49,
     "text": "Treating physician (name)",
-    "answer": "Dr. Laura Chen"
+    "answer": "Dr. Laura Chen, Riverside Occupational Health Clinic"
   },
   {
     "order": 50,
     "text": "Certified Managed Care Organization (if any)",
-    "answer": "None"
+    "answer": "N/A"
   },
   {
     "order": 51,
     "text": "Extent of medical treatment - None",
-    "answer": true
+    "answer": false
   },
   {
     "order": 52,
-    "text": "Extent of medical treatment - Minor on-site by employer\u00199s medical staff",
+    "text": "Extent of medical treatment - Minor on-site by employer\u0019s medical staff",
     "answer": false
   },
   {
     "order": 53,
     "text": "Extent of medical treatment - Minor clinic/hospital",
-    "answer": false
+    "answer": true
   },
   {
     "order": 54,
@@ -282,82 +282,82 @@
   {
     "order": 57,
     "text": "EMPLOYER Legal name",
-    "answer": "Acme Logistics, LLC"
+    "answer": "Buckeye Logistics LLC"
   },
   {
     "order": 58,
     "text": "EMPLOYER DBA name (if different)",
-    "answer": "Acme Logistics"
+    "answer": "Buckeye Logistics"
   },
   {
     "order": 59,
     "text": "Mailing address",
-    "answer": "100 Warehouse Way"
+    "answer": "1500 Distribution Dr"
   },
   {
     "order": 60,
     "text": "City (mailing)",
-    "answer": "Springfield"
+    "answer": "Columbus"
   },
   {
     "order": 61,
     "text": "State (mailing)",
-    "answer": "IL"
+    "answer": "OH"
   },
   {
     "order": 62,
     "text": "Zip Code (mailing)",
-    "answer": "62704"
+    "answer": "43228"
   },
   {
     "order": 63,
     "text": "Employer FEIN",
-    "answer": "36-1234567"
+    "answer": "31-0987654"
   },
   {
     "order": 64,
     "text": "Unemployment ID #",
-    "answer": "42-987654"
+    "answer": "OH-1234567"
   },
   {
     "order": 65,
-    "text": "Employer\u00199s contact name",
-    "answer": "James Carter"
+    "text": "Employer\u0019s contact name",
+    "answer": "Mark Stevens"
   },
   {
     "order": 66,
-    "text": "Employer\u00199s contact phone #",
-    "answer": "555-987-6543"
+    "text": "Employer\u0019s contact phone #",
+    "answer": "(614) 555-0127"
   },
   {
     "order": 67,
     "text": "Physical address (if different)",
-    "answer": "500 Riverside Ave"
+    "answer": "1500 Distribution Dr"
   },
   {
     "order": 68,
     "text": "City (physical)",
-    "answer": "Springfield"
+    "answer": "Columbus"
   },
   {
     "order": 69,
     "text": "State (physical)",
-    "answer": "IL"
+    "answer": "OH"
   },
   {
     "order": 70,
     "text": "Zip Code (physical)",
-    "answer": "62704"
+    "answer": "43228"
   },
   {
     "order": 71,
     "text": "Witness (name)",
-    "answer": "Sam Torres"
+    "answer": "Carlos Ramirez"
   },
   {
     "order": 72,
     "text": "Witness (and phone)",
-    "answer": "555-101-2020"
+    "answer": "Carlos Ramirez - (614) 555-0172"
   },
   {
     "order": 73,
@@ -367,12 +367,12 @@
   {
     "order": 74,
     "text": "Date form completed",
-    "answer": "2024-08-17"
+    "answer": "2024-08-16"
   },
   {
     "order": 75,
     "text": "INSURER name",
-    "answer": "Paramount Mutual Insurance"
+    "answer": "Guardian Mutual Insurance Company"
   },
   {
     "order": 76,
@@ -382,56 +382,56 @@
   {
     "order": 77,
     "text": "Policy # (including effective dates) or self-insured certificate #",
-    "answer": "POL987654321 (2023-01-12 to 2025-01-12)"
+    "answer": "POL987654321 (Effective: 2023-01-12 to 2025-01-12)"
   },
   {
     "order": 78,
     "text": "Insurer FEIN",
-    "answer": "12-3456789"
+    "answer": "52-3456789"
   },
   {
     "order": 79,
     "text": "Date insurer received notice",
-    "answer": "2024-08-17"
+    "answer": "2024-08-16"
   },
   {
     "order": 80,
     "text": "CLAIMS ADMIN COMPANY (CA) name",
-    "answer": "FirstGuard Claims Services"
+    "answer": "Midwest Claims Administrators, Inc."
   },
   {
     "order": 81,
     "text": "CA type (check one)",
-    "answer": "Insurer"
+    "answer": "TPA"
   },
   {
     "order": 82,
     "text": "CA address",
-    "answer": "300 Claims Blvd"
+    "answer": "500 Market St, Suite 900"
   },
   {
     "order": 83,
     "text": "City (CA)",
-    "answer": "Springfield"
+    "answer": "Columbus"
   },
   {
     "order": 84,
     "text": "State (CA)",
-    "answer": "IL"
+    "answer": "OH"
   },
   {
     "order": 85,
     "text": "Zip Code (CA)",
-    "answer": "62705"
+    "answer": "43215"
   },
   {
     "order": 86,
     "text": "CA FEIN",
-    "answer": "98-7654321"
+    "answer": "36-1122334"
   },
   {
     "order": 87,
     "text": "CA claim #",
-    "answer": "CA-2024-0817-00123"
+    "answer": "MCA-2024-10452"
   }
 ]

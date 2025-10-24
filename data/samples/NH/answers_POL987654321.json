@@ -2,12 +2,12 @@
   {
     "order": 1,
     "text": "Submission Date",
-    "answer": "2024-08-20"
+    "answer": "2024-09-23"
   },
   {
     "order": 2,
     "text": "NHDOL#",
-    "answer": "NHDOL-2024-4573"
+    "answer": "NHDOL-24-0918-5583"
   },
   {
     "order": 3,
@@ -27,7 +27,7 @@
   {
     "order": 6,
     "text": "Hired Date",
-    "answer": "2023-11-01"
+    "answer": "2021-05-10"
   },
   {
     "order": 7,
@@ -42,16 +42,256 @@
   {
     "order": 9,
     "text": "Employee ID",
-    "answer": "EMP-98765"
+    "answer": "EJ10258"
   },
   {
     "order": 10,
     "text": "Date of Birth",
-    "answer": "1990-04-12"
+    "answer": "1990-04-22"
   },
   {
     "order": 11,
     "text": "Age",
-    "answer": ":"
+    "answer": "34"
+  },
+  {
+    "order": 12,
+    "text": "Occupation when Injured",
+    "answer": "Warehouse Associate"
+  },
+  {
+    "order": 13,
+    "text": "Employee Address",
+    "answer": "442 Willow St, Apt 3B, Manchester, NH 03103"
+  },
+  {
+    "order": 14,
+    "text": "Telephone",
+    "answer": "603-555-0184"
+  },
+  {
+    "order": 15,
+    "text": "Wages per Hour",
+    "answer": "22.50"
+  },
+  {
+    "order": 16,
+    "text": "Hrs per Day",
+    "answer": "8"
+  },
+  {
+    "order": 17,
+    "text": "Days per Week",
+    "answer": "5"
+  },
+  {
+    "order": 18,
+    "text": "Average Weekly Earnings",
+    "answer": "900.00"
+  },
+  {
+    "order": 19,
+    "text": "Injury Date / Time",
+    "answer": "2024-09-18"
+  },
+  {
+    "order": 20,
+    "text": "Date Employer Notified of Injury",
+    "answer": "2024-09-19"
+  },
+  {
+    "order": 21,
+    "text": "Location/Jobsite & Business Name where accident occurred",
+    "answer": "Granite Home Goods, LLC – Receiving Dock, 215 Amoskeag St, Manchester, NH 03102"
+  },
+  {
+    "order": 22,
+    "text": "Disability Began Date",
+    "answer": "2024-09-19"
+  },
+  {
+    "order": 23,
+    "text": "Claim Type",
+    "answer": "Medical Only"
+  },
+  {
+    "order": 24,
+    "text": "Full Wages Paid on Injury Date",
+    "answer": true
+  },
+  {
+    "order": 25,
+    "text": "Accident Description",
+    "answer": "While unloading a pallet from a delivery truck at the receiving dock, employee stepped on a wet spot, slipped, and twisted her right ankle, falling to one knee and bracing with her right hand. Immediate swelling of the right ankle and soreness in the right wrist were noted. Wet area appeared to be from rain tracked in near the bay door."
+  },
+  {
+    "order": 26,
+    "text": "Body part Injured",
+    "answer": "Right ankle; Right wrist"
+  },
+  {
+    "order": 27,
+    "text": "Cause of Injury",
+    "answer": "Slip on wet surface while unloading pallet"
+  },
+  {
+    "order": 28,
+    "text": "Nature of Injury",
+    "answer": "Right ankle sprain and right wrist contusion"
+  },
+  {
+    "order": 29,
+    "text": "Witness Name",
+    "answer": "Michael Torres"
+  },
+  {
+    "order": 30,
+    "text": "Witness Phone",
+    "answer": "603-555-0197"
+  },
+  {
+    "order": 31,
+    "text": "Returned to work?",
+    "answer": true
+  },
+  {
+    "order": 32,
+    "text": "If so, what date?",
+    "answer": "2024-09-19"
+  },
+  {
+    "order": 33,
+    "text": "If so, at what occupation?",
+    "answer": "Sales floor associate (light duty)"
+  },
+  {
+    "order": 34,
+    "text": "If so, at what duty status?",
+    "answer": "Restricted/light duty"
+  },
+  {
+    "order": 35,
+    "text": "Initial Treatment",
+    "answer": "Urgent care clinic visit"
+  },
+  {
+    "order": 36,
+    "text": "Initial Treatment Date",
+    "answer": "2024-09-18"
+  },
+  {
+    "order": 37,
+    "text": "Name of Treating Physician",
+    "answer": "Laura Bennett, MD"
+  },
+  {
+    "order": 38,
+    "text": "Name of Treating Hospital",
+    "answer": "Elliot Urgent Care – River's Edge, Manchester, NH"
+  },
+  {
+    "order": 39,
+    "text": "Has injured died?",
+    "answer": false
+  },
+  {
+    "order": 40,
+    "text": "If so, what date",
+    "answer": null
+  },
+  {
+    "order": 41,
+    "text": "Employer Name",
+    "answer": "Granite Home Goods, LLC"
+  },
+  {
+    "order": 42,
+    "text": "Employer FEIN",
+    "answer": "02-9876543"
+  },
+  {
+    "order": 43,
+    "text": "Industry Code",
+    "answer": "444130"
+  },
+  {
+    "order": 44,
+    "text": "Employer Contact Name",
+    "answer": "Sarah McKenna"
+  },
+  {
+    "order": 45,
+    "text": "Contact Phone Number",
+    "answer": "603-555-0128"
+  },
+  {
+    "order": 46,
+    "text": "Employer Business Address",
+    "answer": "215 Amoskeag St, Manchester, NH 03102"
+  },
+  {
+    "order": 47,
+    "text": "Managed Care Organization",
+    "answer": "None"
+  },
+  {
+    "order": 48,
+    "text": "Leased Employee?",
+    "answer": false
+  },
+  {
+    "order": 49,
+    "text": "Client Company",
+    "answer": "N/A"
+  },
+  {
+    "order": 50,
+    "text": "OCIP/Wrap-Up Policy?",
+    "answer": false
+  },
+  {
+    "order": 51,
+    "text": "Name of policy holder",
+    "answer": "N/A"
+  },
+  {
+    "order": 52,
+    "text": "Insurance Carrier",
+    "answer": "Pioneer Mutual Insurance"
+  },
+  {
+    "order": 53,
+    "text": "Insurer Type",
+    "answer": "Private"
+  },
+  {
+    "order": 54,
+    "text": "Policy Number",
+    "answer": "POL987654321"
+  },
+  {
+    "order": 55,
+    "text": "Telephone Number",
+    "answer": "800-555-2471"
+  },
+  {
+    "order": 56,
+    "text": "Submitter Name",
+    "answer": "Sarah McKenna"
+  },
+  {
+    "order": 57,
+    "text": "Title of Submitter",
+    "answer": "HR Manager"
+  },
+  {
+    "order": 58,
+    "text": "Represents",
+    "answer": "Employer"
+  },
+  {
+    "order": 59,
+    "text": "Telephone Number",
+    "answer": "603-555-0128"
   }
 ]

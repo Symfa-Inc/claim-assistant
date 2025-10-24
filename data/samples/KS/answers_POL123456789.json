@@ -2,77 +2,77 @@
   {
     "order": 1,
     "text": "Federal Employer's Identification Number",
-    "answer": "12-3456789"
+    "answer": "91-6041234"
   },
   {
     "order": 2,
     "text": "Date of hire",
-    "answer": "2020-08-01"
+    "answer": "2021-06-07"
   },
   {
     "order": 3,
     "text": "Name of employer",
-    "answer": "Acme Manufacturing Co."
+    "answer": "Pacific Logistics LLC"
   },
   {
     "order": 4,
     "text": "Phone",
-    "answer": "555-123-4567"
+    "answer": "(206) 555-0126"
   },
   {
     "order": 5,
     "text": "Mailing address (Street)",
-    "answer": "100 Industrial Way"
+    "answer": "1301 4th Ave, Suite 2100"
   },
   {
     "order": 6,
     "text": "Mailing address (City)",
-    "answer": "Springfield"
+    "answer": "Seattle"
   },
   {
     "order": 7,
     "text": "Mailing address (State)",
-    "answer": "IL"
+    "answer": "WA"
   },
   {
     "order": 8,
     "text": "Mailing address (ZIP)",
-    "answer": "62701"
+    "answer": "98101"
   },
   {
     "order": 9,
     "text": "Location, if different from mailing address (Street)",
-    "answer": ""
+    "answer": "2600 W Commodore Way"
   },
   {
     "order": 10,
     "text": "Location (City)",
-    "answer": "Springfield"
+    "answer": "Seattle"
   },
   {
     "order": 11,
     "text": "Location (State)",
-    "answer": "IL"
+    "answer": "WA"
   },
   {
     "order": 12,
     "text": "Location (ZIP)",
-    "answer": "62701"
+    "answer": "98199"
   },
   {
     "order": 13,
     "text": "Nature of business",
-    "answer": "Manufacturing"
+    "answer": "Warehousing and distribution"
   },
   {
     "order": 14,
     "text": "NAICS or S.I.C. Code",
-    "answer": "333999"
+    "answer": "493110"
   },
   {
     "order": 15,
     "text": "Dept. or division",
-    "answer": "Operations"
+    "answer": "Warehouse Operations"
   },
   {
     "order": 16,
@@ -82,7 +82,7 @@
   {
     "order": 17,
     "text": "Middle",
-    "answer": "A"
+    "answer": "A."
   },
   {
     "order": 18,
@@ -92,7 +92,7 @@
   {
     "order": 19,
     "text": "Age",
-    "answer": "38"
+    "answer": "33"
   },
   {
     "order": 20,
@@ -102,87 +102,87 @@
   {
     "order": 21,
     "text": "Home address (Street)",
-    "answer": "123 Main Street"
+    "answer": "7422 Greenwood Ave N, Apt 3B"
   },
   {
     "order": 22,
     "text": "Home address (City)",
-    "answer": "Springfield"
+    "answer": "Seattle"
   },
   {
     "order": 23,
     "text": "Home address (State)",
-    "answer": "IL"
+    "answer": "WA"
   },
   {
     "order": 24,
     "text": "Home address (ZIP)",
-    "answer": "62704"
+    "answer": "98103"
   },
   {
     "order": 25,
     "text": "SSN",
-    "answer": "123-45-6789"
+    "answer": "987-65-4320"
   },
   {
     "order": 26,
     "text": "Birth date",
-    "answer": "1985-04-12"
+    "answer": "1990-05-02"
   },
   {
     "order": 27,
     "text": "occupation",
-    "answer": "Maintenance Technician"
+    "answer": "Warehouse Associate"
   },
   {
     "order": 28,
     "text": "phone",
-    "answer": "555-555-0111"
+    "answer": "(206) 555-0183"
   },
   {
     "order": 29,
     "text": "Date of injury or occupational disease",
-    "answer": "2023-11-15"
+    "answer": "2023-11-14"
   },
   {
     "order": 30,
     "text": "Time of injury",
-    "answer": "14:30:00"
+    "answer": "09:20:00"
   },
   {
     "order": 31,
     "text": "a.m. / p.m.",
-    "answer": "p.m."
+    "answer": "a.m."
   },
   {
     "order": 32,
     "text": "Date reported to employer",
-    "answer": "2023-11-16"
+    "answer": "2023-11-14"
   },
   {
     "order": 33,
     "text": "Date disability began",
-    "answer": "2023-11-16"
+    "answer": "2023-11-15"
   },
   {
     "order": 34,
     "text": "Gross average weekly wage $",
-    "answer": "950"
+    "answer": "980.00"
   },
   {
     "order": 35,
     "text": "Place of accident or last exposure (City)",
-    "answer": "Springfield"
+    "answer": "Seattle"
   },
   {
     "order": 36,
     "text": "Place of accident or last exposure (County)",
-    "answer": "Sangamon"
+    "answer": "King"
   },
   {
     "order": 37,
     "text": "Place of accident or last exposure (State)",
-    "answer": "IL"
+    "answer": "WA"
   },
   {
     "order": 38,
@@ -192,22 +192,22 @@
   {
     "order": 39,
     "text": "How did accident occur?",
-    "answer": "Worker tripped over a loose cable while carrying a loaded cart in the manufacturing area."
+    "answer": "While moving a loaded pallet jack across the loading dock, the employee stepped on a wet spot, slipped, and fell, striking his left forearm on the jack handle and twisting his lower back."
   },
   {
     "order": 40,
     "text": "What was employee doing when injured?",
-    "answer": "Carrying a 60 lb crate along aisle 3"
+    "answer": "Transporting shrink-wrapped pallets from the warehouse to the loading dock using a manual pallet jack."
   },
   {
     "order": 41,
     "text": "Name substance or object that directly caused injury*",
-    "answer": "Loose electrical cord"
+    "answer": "Wet concrete floor and manual pallet jack"
   },
   {
     "order": 42,
     "text": "Describe in detail nature and extent of injury, indicate part of body involved*",
-    "answer": "Acute lower back strain with mild sciatic irritation; no fractures; pain 6/10; advised rest and gradual return to duties."
+    "answer": "Acute lumbar strain with muscle spasm and contusion to the left forearm; pain rated 6/10 with decreased range of motion; no fracture on X-ray."
   },
   {
     "order": 43,
@@ -222,22 +222,22 @@
   {
     "order": 45,
     "text": "Treated by emergency room only?",
-    "answer": false
+    "answer": true
   },
   {
     "order": 46,
     "text": "Hospital name and address",
-    "answer": "Springfield General Hospital, 200 Healing Way, Springfield, IL 62701"
+    "answer": "Harborview Medical Center Emergency Department, 325 9th Ave, Seattle, WA 98104"
   },
   {
     "order": 47,
     "text": "Name and address of attending physician or clinic",
-    "answer": "Dr. Laura Chen, Springfield Clinic, 10 Health Ave, Springfield, IL 62702"
+    "answer": "Dr. Karen Smith, Harborview Occupational Health Clinic, 401 Broadway, Suite 202, Seattle, WA 98122"
   },
   {
     "order": 48,
     "text": "Has employee returned to regular duty?",
-    "answer": false
+    "answer": true
   },
   {
     "order": 49,
@@ -247,27 +247,27 @@
   {
     "order": 50,
     "text": "Date",
-    "answer": "2023-11-18"
+    "answer": "2023-11-16"
   },
   {
     "order": 51,
     "text": "Is compensation now being paid?",
-    "answer": true
+    "answer": false
   },
   {
     "order": 52,
     "text": "Date first/initial payment",
-    "answer": "2023-12-01"
+    "answer": null
   },
   {
     "order": 53,
     "text": "Weekly compensation rate $",
-    "answer": "600"
+    "answer": "0.00"
   },
   {
     "order": 54,
     "text": "Is further medical aid needed?",
-    "answer": "NO"
+    "answer": "YES"
   },
   {
     "order": 55,
@@ -282,37 +282,37 @@
   {
     "order": 57,
     "text": "Name(s) and address(es) of dependents (death cases only)",
-    "answer": ""
+    "answer": null
   },
   {
     "order": 58,
     "text": "Insurance carrier and third party administrator",
-    "answer": "Acme Assurance Co."
+    "answer": "Acme Insurance Company"
   },
   {
     "order": 59,
     "text": "Insurance address (Street)",
-    "answer": "400 Insurance Plaza"
+    "answer": "500 Pine St"
   },
   {
     "order": 60,
     "text": "Insurance address (City)",
-    "answer": "Chicago"
+    "answer": "Seattle"
   },
   {
     "order": 61,
     "text": "Insurance address (State)",
-    "answer": "IL"
+    "answer": "WA"
   },
   {
     "order": 62,
     "text": "Insurance address (ZIP)",
-    "answer": "60605"
+    "answer": "98101"
   },
   {
     "order": 63,
     "text": "Phone",
-    "answer": "312-555-0100"
+    "answer": "(206) 555-0199"
   },
   {
     "order": 64,
@@ -322,31 +322,31 @@
   {
     "order": 65,
     "text": "Name of agent",
-    "answer": "Mary Patel"
+    "answer": "Michael Turner"
   },
   {
     "order": 66,
     "text": "Claim number",
-    "answer": "CLM-2023-11001"
+    "answer": "CLM-2023-11-00127"
   },
   {
     "order": 67,
     "text": "Name of claim representative",
-    "answer": "Alex Rivera"
+    "answer": "Sara Patel"
   },
   {
     "order": 68,
     "text": "Date of report",
-    "answer": "2023-11-17"
+    "answer": "2023-11-15"
   },
   {
     "order": 69,
     "text": "Completed by",
-    "answer": "Jane Smith"
+    "answer": "Laura Chen"
   },
   {
     "order": 70,
     "text": "Title",
-    "answer": "Claims Processor"
+    "answer": "HR Manager"
   }
 ]

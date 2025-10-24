@@ -2,12 +2,12 @@
   {
     "order": 1,
     "text": "Employee Name",
-    "answer": "John A. Doe Jr."
+    "answer": "John Andrew Doe"
   },
   {
     "order": 2,
     "text": "WCB Case Number (JCN)",
-    "answer": "WCB-2023-001234"
+    "answer": "JCN-23-ALB-48216"
   },
   {
     "order": 3,
@@ -17,42 +17,42 @@
   {
     "order": 4,
     "text": "Claim Administrator Claim Number",
-    "answer": "CLA-20231115-001"
+    "answer": "ACM-2023-11015"
   },
   {
     "order": 5,
     "text": "Insurer Name",
-    "answer": "Acme Insurance Co."
+    "answer": "Pioneer Mutual Insurance Co."
   },
   {
     "order": 6,
     "text": "Insurer ID",
-    "answer": "ACME-INS-001"
+    "answer": "NAIC 19734"
   },
   {
     "order": 7,
     "text": "Claim Administrator Name",
-    "answer": "FirstChoice Claims Services"
+    "answer": "Sara Nguyen"
   },
   {
     "order": 8,
     "text": "Claim Administrator Address",
-    "answer": "345 Corporate Blvd, Suite 200"
+    "answer": "1700 Market St, Suite 2000"
   },
   {
     "order": 9,
     "text": "Claim Administrator City",
-    "answer": "Springfield"
+    "answer": "Philadelphia"
   },
   {
     "order": 10,
     "text": "Claim Administrator State",
-    "answer": "IL"
+    "answer": "PA"
   },
   {
     "order": 11,
     "text": "Claim Administrator Postal Code",
-    "answer": "62701"
+    "answer": "19103"
   },
   {
     "order": 12,
@@ -67,7 +67,7 @@
   {
     "order": 14,
     "text": "Employee Middle Name/Initial",
-    "answer": "A"
+    "answer": "Andrew"
   },
   {
     "order": 15,
@@ -77,27 +77,27 @@
   {
     "order": 16,
     "text": "Employee Suffix",
-    "answer": "Jr."
+    "answer": null
   },
   {
     "order": 17,
     "text": "Employee Mailing Address",
-    "answer": "123 Elm Street"
+    "answer": "742 Maple Avenue"
   },
   {
     "order": 18,
     "text": "Employee City",
-    "answer": "Anytown"
+    "answer": "Albany"
   },
   {
     "order": 19,
     "text": "Employee State",
-    "answer": "CA"
+    "answer": "NY"
   },
   {
     "order": 20,
     "text": "Employee Postal Code",
-    "answer": "90001"
+    "answer": "12208"
   },
   {
     "order": 21,
@@ -107,12 +107,12 @@
   {
     "order": 22,
     "text": "Employee Phone Number",
-    "answer": "+1-555-0123"
+    "answer": "(518) 555-0146"
   },
   {
     "order": 23,
     "text": "Date of Birth",
-    "answer": "1985-06-15"
+    "answer": "1986-07-12"
   },
   {
     "order": 24,
@@ -122,27 +122,27 @@
   {
     "order": 25,
     "text": "Date of Hire",
-    "answer": "2010-08-01"
+    "answer": "2021-05-03"
   },
   {
     "order": 26,
     "text": "Employee SSN",
-    "answer": "123-45-6789"
+    "answer": "987-65-4321"
   },
   {
     "order": 27,
     "text": "Occupation Description",
-    "answer": "Warehouse Associate"
+    "answer": "Carpenter / handyman"
   },
   {
     "order": 28,
     "text": "Employee Email Address",
-    "answer": "john.doe@example.com"
+    "answer": "john.doe@doehandyman.com"
   },
   {
     "order": 29,
     "text": "Time of Injury",
-    "answer": "14:30:00"
+    "answer": "10:35:00"
   },
   {
     "order": 30,
@@ -157,12 +157,12 @@
   {
     "order": 32,
     "text": "Date Employer Had Knowledge of Date of Disability",
-    "answer": "2023-11-17"
+    "answer": "2023-11-16"
   },
   {
     "order": 33,
     "text": "Estimated Weekly Wage",
-    "answer": ""
+    "answer": "1180.00"
   },
   {
     "order": 34,
@@ -177,12 +177,12 @@
   {
     "order": 36,
     "text": "Work Days Scheduled",
-    "answer": "Mon-Fri"
+    "answer": "Monday through Friday"
   },
   {
     "order": 37,
     "text": "Full Wages Paid for Date of Injury",
-    "answer": false
+    "answer": true
   },
   {
     "order": 38,
@@ -192,7 +192,7 @@
   {
     "order": 39,
     "text": "Initial Treatment",
-    "answer": "Emergency Evaluation"
+    "answer": "Minor Clinic/Hospital Treatment"
   },
   {
     "order": 40,
@@ -207,27 +207,27 @@
   {
     "order": 42,
     "text": "Number of Dependents",
-    "answer": ""
+    "answer": "2"
   },
   {
     "order": 43,
     "text": "Nature of Injury",
-    "answer": "Laceration"
+    "answer": "Strain/sprain"
   },
   {
     "order": 44,
     "text": "Part of Body",
-    "answer": "Left forearm"
+    "answer": "Lower back (lumbar) and left shoulder"
   },
   {
     "order": 45,
     "text": "Cause of Injury",
-    "answer": "Slip and fall on wet surface"
+    "answer": "Lifting and twisting while carrying materials"
   },
   {
     "order": 46,
     "text": "Accident/Injury Description",
-    "answer": "While unloading boxes at the warehouse loading dock, the employee slipped on a wet floor near a spill and sustained a deep laceration to the left forearm. Immediate first aid was administered on-site; transported to urgent care for assessment and sutures. Incident witnessed by coworker Maria Lopez."
+    "answer": "While carrying two 80-lb boxes of ceramic tile down a narrow basement stairwell at a customer’s residence, I misstepped near the bottom. To avoid falling I twisted to my left while holding the load and felt a sharp pull in my lower back with immediate pain radiating to the left shoulder. I set the boxes down and notified my supervisor later that day. Pain and stiffness increased that evening, and I sought evaluation at an urgent care clinic the next morning."
   },
   {
     "order": 47,
@@ -242,7 +242,7 @@
   {
     "order": 49,
     "text": "Initial Return to Work Date",
-    "answer": "2023-12-04"
+    "answer": "2023-11-20"
   },
   {
     "order": 50,
@@ -262,27 +262,27 @@
   {
     "order": 53,
     "text": "Accident Location - Organization Name",
-    "answer": "Acme Warehouse Main Facility"
+    "answer": "Doe Handyman Services LLC - Job Site"
   },
   {
     "order": 54,
     "text": "Accident Location - Street",
-    "answer": "123 Dock Street"
+    "answer": "1180 Central Ave"
   },
   {
     "order": 55,
     "text": "Accident Location - City",
-    "answer": "Anytown"
+    "answer": "Albany"
   },
   {
     "order": 56,
     "text": "Accident Location - State",
-    "answer": "CA"
+    "answer": "NY"
   },
   {
     "order": 57,
     "text": "Accident Location - Postal Code",
-    "answer": "90001"
+    "answer": "12205"
   },
   {
     "order": 58,
@@ -292,67 +292,67 @@
   {
     "order": 59,
     "text": "Location Narrative",
-    "answer": "Loading dock area near the east doors; wet floor sign was in place but not clearly visible to some workers."
+    "answer": "Residential renovation site (single-family home) in the basement stairwell/utility area; tight space with limited lighting and uneven stair treads."
   },
   {
     "order": 60,
     "text": "Premises",
-    "answer": "Employer"
+    "answer": "Other"
   },
   {
     "order": 61,
     "text": "Witness Names",
-    "answer": "Maria Lopez"
+    "answer": "Miguel Santos"
   },
   {
     "order": 62,
     "text": "Witness Business Phone Number",
-    "answer": "+1-555-0147"
+    "answer": "(518) 555-0177"
   },
   {
     "order": 63,
     "text": "Employer Name",
-    "answer": "Acme Warehouse Co."
+    "answer": "Doe Handyman Services LLC"
   },
   {
     "order": 64,
     "text": "Employer FEIN",
-    "answer": "12-3456789"
+    "answer": "84-7654321"
   },
   {
     "order": 65,
     "text": "UI Number",
-    "answer": "UI-2023-CA-0012"
+    "answer": "NY-1234567"
   },
   {
     "order": 66,
     "text": "Manual Classification Code",
-    "answer": "541-02"
+    "answer": "5645"
   },
   {
     "order": 67,
     "text": "Industry Code",
-    "answer": "4931"
+    "answer": "236118"
   },
   {
     "order": 68,
     "text": "Employer Mailing Address",
-    "answer": "123 Industrial Ave, Anytown, CA 90001"
+    "answer": "200 River Street, Suite 3"
   },
   {
     "order": 69,
     "text": "Employer City",
-    "answer": "Anytown"
+    "answer": "Troy"
   },
   {
     "order": 70,
     "text": "Employer State",
-    "answer": "CA"
+    "answer": "NY"
   },
   {
     "order": 71,
     "text": "Employer Postal Code",
-    "answer": "90001"
+    "answer": "12180"
   },
   {
     "order": 72,
@@ -362,17 +362,17 @@
   {
     "order": 73,
     "text": "Employer Physical Address",
-    "answer": "123 Industrial Ave, Anytown, CA 90001"
+    "answer": "415 Warehouse Row, Albany, NY 12206"
   },
   {
     "order": 74,
     "text": "Employer Contact Name",
-    "answer": "Carlos Rivera"
+    "answer": "Lisa Chen"
   },
   {
     "order": 75,
     "text": "Employer Contact Business Phone Number",
-    "answer": "+1-555-0198"
+    "answer": "(518) 555-0199"
   },
   {
     "order": 76,
@@ -382,12 +382,12 @@
   {
     "order": 77,
     "text": "Insured FEIN",
-    "answer": "12-9876543"
+    "answer": "N/A"
   },
   {
     "order": 78,
     "text": "Insured Location ID",
-    "answer": "LOC-0012"
+    "answer": "ALB-NY-01"
   },
   {
     "order": 79,

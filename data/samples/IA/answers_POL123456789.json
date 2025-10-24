@@ -2,62 +2,62 @@
   {
     "order": 1,
     "text": "Jurisdiction Code",
-    "answer": "IL-US"
+    "answer": "WA"
   },
   {
     "order": 2,
     "text": "Claim Administrator Name",
-    "answer": "Lumen Claims Administration"
+    "answer": "Northwest Claims Management, Inc."
   },
   {
     "order": 3,
     "text": "Claim Representative Business Phone Number",
-    "answer": "312-555-0100"
+    "answer": "(206) 555-0123"
   },
   {
     "order": 4,
     "text": "Insurer Name (if different than claim administrator)",
-    "answer": "Acme Insurance Company"
+    "answer": "Cascade Mutual Insurance Company"
   },
   {
     "order": 5,
     "text": "Mailing Address, City, State, & Postal Code",
-    "answer": "123 Market Street, Chicago, IL 60601"
+    "answer": "1201 3rd Ave, Suite 2400, Seattle, WA 98101"
   },
   {
     "order": 6,
     "text": "Claim Administrator Claim Number",
-    "answer": "CLAIM-20231115-0001"
+    "answer": "NCM-2023-0912-4587"
   },
   {
     "order": 7,
     "text": "Insurer FEIN",
-    "answer": "12-3456789"
+    "answer": "91-1122334"
   },
   {
     "order": 8,
     "text": "Claim Administrator FEIN",
-    "answer": "98-7654321"
+    "answer": "87-9988776"
   },
   {
     "order": 9,
     "text": "Claim Type Code",
-    "answer": "Initial Claim (First Report of Injury)"
+    "answer": "Medical Only"
   },
   {
     "order": 10,
     "text": "Employer Name",
-    "answer": "Acme Manufacturing Co."
+    "answer": "Rainier Logistics LLC"
   },
   {
     "order": 11,
     "text": "Employer FEIN",
-    "answer": "12-3456780"
+    "answer": "91-7654321"
   },
   {
     "order": 12,
     "text": "Insured Report Number",
-    "answer": "POL123456789-IRN-001"
+    "answer": "RL-IR-2023-0912"
   },
   {
     "order": 13,
@@ -67,52 +67,52 @@
   {
     "order": 14,
     "text": "Physical Address, City, State, & Postal Code",
-    "answer": "123 Industry Way, Springfield, IL 62704"
+    "answer": "4100 4th Ave S, Seattle, WA 98134"
   },
   {
     "order": 15,
     "text": "Mailing Address, City, State, & Postal Code",
-    "answer": "PO Box 789, Springfield, IL 62705"
+    "answer": "P.O. Box 34567, Seattle, WA 98124"
   },
   {
     "order": 16,
     "text": "Industry Code",
-    "answer": "311999"
+    "answer": "493110"
   },
   {
     "order": 17,
     "text": "Insured Location Number",
-    "answer": "IL-LOC-001"
+    "answer": "LOC-SEA-01"
   },
   {
     "order": 18,
     "text": "Employer UI Number",
-    "answer": "15-9876543"
+    "answer": "WA-0123456-7"
   },
   {
     "order": 19,
     "text": "Nature of Business",
-    "answer": "Manufacturing"
+    "answer": "Third-party logistics, warehousing and distribution"
   },
   {
     "order": 20,
     "text": "Employer Contact Name and Business Phone Number",
-    "answer": "Jane Smith, (217) 555-0123"
+    "answer": "Sarah Kim, Operations Manager, (206) 555-0144"
   },
   {
     "order": 21,
     "text": "Insured Name (parent company if different than employer)",
-    "answer": "Acme Holdings, Inc."
+    "answer": "Rainier Logistics Holdings, Inc."
   },
   {
     "order": 22,
     "text": "Insured FEIN",
-    "answer": "98-7654320"
+    "answer": "91-3344556"
   },
   {
     "order": 23,
     "text": "Insured Postal Code",
-    "answer": "60601"
+    "answer": "98134"
   },
   {
     "order": 24,
@@ -132,7 +132,7 @@
   {
     "order": 27,
     "text": "Self Insurance License/ Certificate Number",
-    "answer": "SC-34567"
+    "answer": "N/A"
   },
   {
     "order": 28,
@@ -142,7 +142,7 @@
   {
     "order": 29,
     "text": "Employee Name - Middle",
-    "answer": "A"
+    "answer": "Andrew"
   },
   {
     "order": 30,
@@ -152,7 +152,7 @@
   {
     "order": 31,
     "text": "Date of Birth",
-    "answer": "1985-04-12"
+    "answer": "1987-06-15"
   },
   {
     "order": 32,
@@ -167,47 +167,47 @@
   {
     "order": 34,
     "text": "Mailing Address, City, State, & Postal Code",
-    "answer": "123 Elm Street, Springfield, IL 62704"
+    "answer": "7423 8th Ave S, Apt 3B, Seattle, WA 98108"
   },
   {
     "order": 35,
     "text": "Date of Hire",
-    "answer": "2017-06-01"
+    "answer": "2021-07-12"
   },
   {
     "order": 36,
     "text": "State of Hire",
-    "answer": "Illinois"
+    "answer": "WA"
   },
   {
     "order": 37,
     "text": "Educational Level (grade completed)",
-    "answer": "Bachelor's"
+    "answer": "14"
   },
   {
     "order": 38,
     "text": "Phone Number (include area code)",
-    "answer": "555-0100"
+    "answer": "(206) 555-0196"
   },
   {
     "order": 39,
     "text": "Email",
-    "answer": "jdoe@example.com"
+    "answer": "john.doe@outlook.com"
   },
   {
     "order": 40,
     "text": "Occupation Description",
-    "answer": "Maintenance Technician"
+    "answer": "Warehouse associate / material handler"
   },
   {
     "order": 41,
     "text": "NCCI Classification Code",
-    "answer": "8810"
+    "answer": "8292"
   },
   {
     "order": 42,
     "text": "Department Where Regularly Worked",
-    "answer": "Maintenance"
+    "answer": "Shipping & Receiving"
   },
   {
     "order": 43,
@@ -222,7 +222,7 @@
   {
     "order": 45,
     "text": "ID #",
-    "answer": "123-45-6789"
+    "answer": "539-28-6147"
   },
   {
     "order": 46,
@@ -242,7 +242,7 @@
   {
     "order": 49,
     "text": "Average Wage $",
-    "answer": ""
+    "answer": "22.50"
   },
   {
     "order": 50,
@@ -252,7 +252,7 @@
   {
     "order": 51,
     "text": "Number of Days Regularly Worked Per Week",
-    "answer": ""
+    "answer": "5"
   },
   {
     "order": 52,
@@ -267,47 +267,47 @@
   {
     "order": 54,
     "text": "Discontinued Fringe Benefits $",
-    "answer": ""
+    "answer": "0.00"
   },
   {
     "order": 55,
     "text": "Employee Number of Dependents",
-    "answer": ""
+    "answer": "1"
   },
   {
     "order": 56,
     "text": "Employee Number of Exemptions",
-    "answer": ""
+    "answer": "2"
   },
   {
     "order": 57,
     "text": "Exemptions Type",
-    "answer": "Entitled"
+    "answer": "Withholding"
   },
   {
     "order": 58,
     "text": "Date of Injury",
-    "answer": "2023-11-15"
+    "answer": "2023-09-12"
   },
   {
     "order": 59,
     "text": "Date Employer Had Knowledge of the Injury",
-    "answer": "2023-11-16"
+    "answer": "2023-09-12"
   },
   {
     "order": 60,
     "text": "Date Claim Administrator Had Knowledge of the Injury",
-    "answer": "2023-11-17"
+    "answer": "2023-09-13"
   },
   {
     "order": 61,
     "text": "Initial Date Last Day Worked",
-    "answer": "2023-11-15"
+    "answer": "2023-09-12"
   },
   {
     "order": 62,
     "text": "Initial Return to Work Date (if applicable)",
-    "answer": "2023-12-15"
+    "answer": "2023-09-15"
   },
   {
     "order": 63,
@@ -317,7 +317,7 @@
   {
     "order": 64,
     "text": "Time of Injury",
-    "answer": "13:45:00"
+    "answer": "10:35:00"
   },
   {
     "order": 65,
@@ -337,111 +337,111 @@
   {
     "order": 68,
     "text": "Accident Site Organization Name",
-    "answer": "Acme Manufacturing Plant"
+    "answer": "Rainier Logistics LLC - Seattle Warehouse"
   },
   {
     "order": 69,
     "text": "Accident Site Street, City, State, & Postal Code",
-    "answer": "123 Industry Way, Springfield, IL 62704"
+    "answer": "4100 4th Ave S, Seattle, WA 98134"
   },
   {
     "order": 70,
     "text": "Accident Location Narrative (if no street address)",
-    "answer": "During routine material handling in the assembly area; employee tripped over a raised floor edge and fell, injuring left wrist."
+    "answer": "Not applicable—incident occurred on the main warehouse floor near Dock 3."
   },
   {
     "order": 71,
     "text": "Accident Site County/Parish",
-    "answer": "Sangamon"
+    "answer": "King County"
   },
   {
     "order": 72,
     "text": "Type of Injury / Illness Code",
-    "answer": "S62.5"
+    "answer": "072"
   },
   {
     "order": 73,
     "text": "Describe the nature of the injury",
-    "answer": "Displaced fracture of left wrist; swelling; moderate pain."
+    "answer": "Acute lumbar strain with muscle spasm; reported sharp pain in lower back after lifting and twisting."
   },
   {
     "order": 74,
     "text": "Part of Body Affected Code",
-    "answer": "LeftWrist"
+    "answer": "090"
   },
   {
     "order": 75,
     "text": "Part(s) of body directly affected by the injury or illness",
-    "answer": "Left wrist"
+    "answer": "Lower back (lumbar region)"
   },
   {
     "order": 76,
     "text": "Describe the events that caused the injury",
-    "answer": "Tripped over raised floor edge while carrying a pallet, fell to concrete floor, injuring left wrist."
+    "answer": "While lifting a 45-pound carton from a pallet, the employee pivoted to place it on a cart and felt a sudden pull in the lower back, losing balance briefly."
   },
   {
     "order": 77,
     "text": "Name the object or substance that directly injured the employee",
-    "answer": "Concrete floor"
+    "answer": "Manual pallet jack and cardboard carton"
   },
   {
     "order": 78,
     "text": "Specify activity the employee was engaged in when the event occurred",
-    "answer": "Carrying a pallet of components as part of normal duties"
+    "answer": "Lifting and staging inventory as part of normal warehouse duties."
   },
   {
     "order": 79,
     "text": "Witness Name",
-    "answer": "Maria Santos"
+    "answer": "Maria Lopez"
   },
   {
     "order": 80,
     "text": "Witness Business Phone Number",
-    "answer": "555-0120"
+    "answer": "(206) 555-0179"
   },
   {
     "order": 81,
     "text": "Initial Treatment Code",
-    "answer": "emergency care (3)"
+    "answer": "clinic/hospital visit (2)"
   },
   {
     "order": 82,
     "text": "Initial Medical Provider Name",
-    "answer": "St. Mary's Medical Center"
+    "answer": "CityMed Urgent Care - South Seattle"
   },
   {
     "order": 83,
     "text": "Initial Medical Provider Physical Address, City, State, & Postal Code",
-    "answer": "123 Health Blvd, Springfield, IL 62704"
+    "answer": "3820 Rainier Ave S, Seattle, WA 98118"
   },
   {
     "order": 84,
     "text": "Managed Care Organization Name or ID Number",
-    "answer": "MCO-1001"
+    "answer": "Northwest Health MCO - ID NW12345"
   },
   {
     "order": 85,
     "text": "ICD Primary Diagnostic Code (if known)",
-    "answer": "S62.5"
+    "answer": "S39.012A"
   },
   {
     "order": 86,
     "text": "Preparer’s Name & Title",
-    "answer": "Alice Kim, Claims Analyst"
+    "answer": "Paul Nguyen, HR Generalist"
   },
   {
     "order": 87,
     "text": "Preparer's Company Name",
-    "answer": "Northside Claims Services"
+    "answer": "Rainier Logistics LLC"
   },
   {
     "order": 88,
     "text": "Preparer Phone Number",
-    "answer": "555-0199"
+    "answer": "(206) 555-0132"
   },
   {
     "order": 89,
     "text": "Preparer Date",
-    "answer": "2023-11-22"
+    "answer": "2023-09-15"
   }
 ]

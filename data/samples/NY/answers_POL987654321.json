@@ -2,57 +2,57 @@
   {
     "order": 1,
     "text": "Employee Name",
-    "answer": "Emily Johnson"
+    "answer": "Sarah L. Martinez"
   },
   {
     "order": 2,
     "text": "WCB Case Number (JCN)",
-    "answer": "WCB-2024-112-015"
+    "answer": "Pending"
   },
   {
     "order": 3,
     "text": "Date of Injury",
-    "answer": "2024-11-15"
+    "answer": "2024-08-19"
   },
   {
     "order": 4,
     "text": "Claim Administrator Claim Number",
-    "answer": "CLAIM-2024-110-001"
+    "answer": "NCS-2024-0819-473"
   },
   {
     "order": 5,
     "text": "Insurer Name",
-    "answer": "SureGuard Insurance Co."
+    "answer": "Evergreen Mutual Insurance Company"
   },
   {
     "order": 6,
     "text": "Insurer ID",
-    "answer": "SG-INS-01"
+    "answer": "EMIC-WC-10293"
   },
   {
     "order": 7,
     "text": "Claim Administrator Name",
-    "answer": "Elizabeth Moore, Claims Administrator"
+    "answer": "Lisa Harper"
   },
   {
     "order": 8,
     "text": "Claim Administrator Address",
-    "answer": "900 Insurance Plaza, Springfield, IL 62704"
+    "answer": "600 University St, Suite 1200"
   },
   {
     "order": 9,
     "text": "Claim Administrator City",
-    "answer": "Springfield"
+    "answer": "Seattle"
   },
   {
     "order": 10,
     "text": "Claim Administrator State",
-    "answer": "IL"
+    "answer": "WA"
   },
   {
     "order": 11,
     "text": "Claim Administrator Postal Code",
-    "answer": "62704"
+    "answer": "98101"
   },
   {
     "order": 12,
@@ -62,17 +62,17 @@
   {
     "order": 13,
     "text": "Employee First Name",
-    "answer": "Emily"
+    "answer": "Sarah"
   },
   {
     "order": 14,
     "text": "Employee Middle Name/Initial",
-    "answer": "A"
+    "answer": "L"
   },
   {
     "order": 15,
     "text": "Employee Last Name",
-    "answer": "Johnson"
+    "answer": "Martinez"
   },
   {
     "order": 16,
@@ -82,22 +82,22 @@
   {
     "order": 17,
     "text": "Employee Mailing Address",
-    "answer": "456 Oak Street, Springfield, IL 62704"
+    "answer": "1120 E Pine St, Apt 5"
   },
   {
     "order": 18,
     "text": "Employee City",
-    "answer": "Springfield"
+    "answer": "Seattle"
   },
   {
     "order": 19,
     "text": "Employee State",
-    "answer": "IL"
+    "answer": "WA"
   },
   {
     "order": 20,
     "text": "Employee Postal Code",
-    "answer": "62704"
+    "answer": "98122"
   },
   {
     "order": 21,
@@ -107,12 +107,12 @@
   {
     "order": 22,
     "text": "Employee Phone Number",
-    "answer": "555-0123"
+    "answer": "206-555-0147"
   },
   {
     "order": 23,
     "text": "Date of Birth",
-    "answer": "1985-07-22"
+    "answer": "1991-03-14"
   },
   {
     "order": 24,
@@ -122,32 +122,32 @@
   {
     "order": 25,
     "text": "Date of Hire",
-    "answer": "2020-03-01"
+    "answer": "2022-06-01"
   },
   {
     "order": 26,
     "text": "Employee SSN",
-    "answer": "123-45-6789"
+    "answer": "987-65-4321"
   },
   {
     "order": 27,
     "text": "Occupation Description",
-    "answer": "Administrative Assistant"
+    "answer": "Warehouse Associate"
   },
   {
     "order": 28,
     "text": "Employee Email Address",
-    "answer": "emily.johnson@example.com"
+    "answer": "sarah.martinez@examplemail.com"
   },
   {
     "order": 29,
     "text": "Time of Injury",
-    "answer": "14:30:00"
+    "answer": "10:15:00"
   },
   {
     "order": 30,
     "text": "Date Employer Had Knowledge of the Injury",
-    "answer": "2024-11-16"
+    "answer": "2024-08-19"
   },
   {
     "order": 31,
@@ -157,17 +157,17 @@
   {
     "order": 32,
     "text": "Date Employer Had Knowledge of Date of Disability",
-    "answer": "2024-11-16"
+    "answer": "2024-08-20"
   },
   {
     "order": 33,
     "text": "Estimated Weekly Wage",
-    "answer": "},{"
+    "answer": "980.00"
   },
   {
     "order": 34,
     "text": "Number of Days Worked Per Week",
-    "answer": ""
+    "answer": "5"
   },
   {
     "order": 35,
@@ -177,7 +177,7 @@
   {
     "order": 36,
     "text": "Work Days Scheduled",
-    "answer": "Mon-Fri"
+    "answer": "Monday through Friday"
   },
   {
     "order": 37,
@@ -192,7 +192,7 @@
   {
     "order": 39,
     "text": "Initial Treatment",
-    "answer": "Emergency Evaluation"
+    "answer": "Minor Clinic/Hospital Treatment"
   },
   {
     "order": 40,
@@ -207,12 +207,12 @@
   {
     "order": 42,
     "text": "Number of Dependents",
-    "answer": ""
+    "answer": "1"
   },
   {
     "order": 43,
     "text": "Nature of Injury",
-    "answer": "Strain"
+    "answer": "Lumbar strain/sprain"
   },
   {
     "order": 44,
@@ -222,27 +222,27 @@
   {
     "order": 45,
     "text": "Cause of Injury",
-    "answer": "Lifting"
+    "answer": "Lifting a heavy box from pallet"
   },
   {
     "order": 46,
     "text": "Accident/Injury Description",
-    "answer": "While lifting a heavy box at the processing area, Emily strained her lower back. She felt a sharp pulling sensation, heard a thud, and experienced increasing lower back pain. She reported the incident to a supervisor and sought medical evaluation."
+    "answer": "While moving inventory in the warehouse, the employee lifted a 50–60 lb box from a lower pallet to a waist-high shelf. As she turned to place the box, she felt a sharp pain in her lower back and had to stop work. Supervisor was notified immediately and the employee was sent to an urgent care clinic for evaluation."
   },
   {
     "order": 47,
     "text": "Initial Date Last Day Worked",
-    "answer": "2024-11-15"
+    "answer": "2024-08-19"
   },
   {
     "order": 48,
     "text": "Initial Date Disability Began",
-    "answer": "2024-11-16"
+    "answer": "2024-08-20"
   },
   {
     "order": 49,
     "text": "Initial Return to Work Date",
-    "answer": "2024-12-02"
+    "answer": "2024-08-26"
   },
   {
     "order": 50,
@@ -262,27 +262,27 @@
   {
     "order": 53,
     "text": "Accident Location - Organization Name",
-    "answer": "Acme Manufacturing, Inc."
+    "answer": "Emily Johnson Design Studio - Warehouse"
   },
   {
     "order": 54,
     "text": "Accident Location - Street",
-    "answer": "123 Industrial Way"
+    "answer": "2457 1st Ave S, Loading Dock B"
   },
   {
     "order": 55,
     "text": "Accident Location - City",
-    "answer": "Springfield"
+    "answer": "Seattle"
   },
   {
     "order": 56,
     "text": "Accident Location - State",
-    "answer": "IL"
+    "answer": "WA"
   },
   {
     "order": 57,
     "text": "Accident Location - Postal Code",
-    "answer": "62704"
+    "answer": "98134"
   },
   {
     "order": 58,
@@ -292,7 +292,7 @@
   {
     "order": 59,
     "text": "Location Narrative",
-    "answer": "In the loading dock area near the receiving bay; floor was wet due to recent cleaning; a pallet jack was moved past the box causing a strain."
+    "answer": "Rear loading area near inventory racks A3–A5; concrete floor, adequate lighting, no liquids observed."
   },
   {
     "order": 60,
@@ -302,57 +302,57 @@
   {
     "order": 61,
     "text": "Witness Names",
-    "answer": "Jordan Lee, Mia Patel"
+    "answer": "Michael Chen; Laura Patel"
   },
   {
     "order": 62,
     "text": "Witness Business Phone Number",
-    "answer": "555-0101"
+    "answer": "206-555-0166"
   },
   {
     "order": 63,
     "text": "Employer Name",
-    "answer": "Acme Manufacturing, Inc."
+    "answer": "Emily Johnson Design Studio"
   },
   {
     "order": 64,
     "text": "Employer FEIN",
-    "answer": "36-1234567"
+    "answer": "84-7654321"
   },
   {
     "order": 65,
     "text": "UI Number",
-    "answer": "UI-987654"
+    "answer": "WA-UI-5567321"
   },
   {
     "order": 66,
     "text": "Manual Classification Code",
-    "answer": "MC-001"
+    "answer": "8017"
   },
   {
     "order": 67,
     "text": "Industry Code",
-    "answer": "333999"
+    "answer": "541430"
   },
   {
     "order": 68,
     "text": "Employer Mailing Address",
-    "answer": "123 Industrial Way, Springfield, IL 62704"
+    "answer": "2457 1st Ave S, Suite 300"
   },
   {
     "order": 69,
     "text": "Employer City",
-    "answer": "Springfield"
+    "answer": "Seattle"
   },
   {
     "order": 70,
     "text": "Employer State",
-    "answer": "IL"
+    "answer": "WA"
   },
   {
     "order": 71,
     "text": "Employer Postal Code",
-    "answer": "62704"
+    "answer": "98134"
   },
   {
     "order": 72,
@@ -362,32 +362,32 @@
   {
     "order": 73,
     "text": "Employer Physical Address",
-    "answer": "123 Industrial Way, Springfield, IL 62704"
+    "answer": "2457 1st Ave S, Suite 300, Seattle, WA 98134"
   },
   {
     "order": 74,
     "text": "Employer Contact Name",
-    "answer": "Sarah Collins"
+    "answer": "Emily Johnson"
   },
   {
     "order": 75,
     "text": "Employer Contact Business Phone Number",
-    "answer": "555-0110"
+    "answer": "206-555-0198"
   },
   {
     "order": 76,
     "text": "Insured Name",
-    "answer": "Emily Johnson"
+    "answer": "Emily Johnson Design Studio"
   },
   {
     "order": 77,
     "text": "Insured FEIN",
-    "answer": "12-3456789"
+    "answer": "84-7654321"
   },
   {
     "order": 78,
     "text": "Insured Location ID",
-    "answer": "LOC-001"
+    "answer": "SEA-01"
   },
   {
     "order": 79,

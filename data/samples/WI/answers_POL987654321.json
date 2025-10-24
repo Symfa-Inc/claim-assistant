@@ -7,7 +7,7 @@
   {
     "order": 2,
     "text": "Employee Name (Middle)",
-    "answer": "Grace"
+    "answer": "Anne"
   },
   {
     "order": 3,
@@ -17,7 +17,7 @@
   {
     "order": 4,
     "text": "Social Security Number*",
-    "answer": "123-45-6789"
+    "answer": "XXX-XX-7412"
   },
   {
     "order": 5,
@@ -27,17 +27,17 @@
   {
     "order": 6,
     "text": "Employee Home Telephone No.",
-    "answer": "608-555-0147"
+    "answer": "(414) 555-0127"
   },
   {
     "order": 7,
     "text": "Employee Street Address",
-    "answer": "123 Willow Way"
+    "answer": "1248 S Kinnickinnic Ave, Apt 3B"
   },
   {
     "order": 8,
     "text": "City",
-    "answer": "Madison"
+    "answer": "Milwaukee"
   },
   {
     "order": 9,
@@ -47,37 +47,37 @@
   {
     "order": 10,
     "text": "Zip Code",
-    "answer": "53704"
+    "answer": "53204"
   },
   {
     "order": 11,
     "text": "Occupation",
-    "answer": "Administrative Assistant"
+    "answer": "Marketing Coordinator"
   },
   {
     "order": 12,
     "text": "Birthdate",
-    "answer": "1990-04-12"
+    "answer": "1990-06-17"
   },
   {
     "order": 13,
     "text": "Date of Hire",
-    "answer": "2020-03-01"
+    "answer": "2022-03-21"
   },
   {
     "order": 14,
     "text": "County and State Where Accident or Exposure Occurred?",
-    "answer": "Dane County, Wisconsin"
+    "answer": "Milwaukee County, Wisconsin"
   },
   {
     "order": 15,
     "text": "Employer Name",
-    "answer": "Midwest Packaging Co."
+    "answer": "Harborview Marketing LLC"
   },
   {
     "order": 16,
     "text": "WI Unemployment Ins. Acct No.",
-    "answer": "WI-UI-0123456"
+    "answer": "POL987654321"
   },
   {
     "order": 17,
@@ -87,17 +87,17 @@
   {
     "order": 18,
     "text": "Nature of Business (Specific Product)",
-    "answer": "Packaging solutions and labeling"
+    "answer": "Marketing and advertising services (campaign management, print and digital collateral)"
   },
   {
     "order": 19,
     "text": "Employer Mailing Address",
-    "answer": "200 Industrial Park, Suite 400"
+    "answer": "412 E Mason St, Suite 700"
   },
   {
     "order": 20,
     "text": "City",
-    "answer": "Madison"
+    "answer": "Milwaukee"
   },
   {
     "order": 21,
@@ -107,36 +107,251 @@
   {
     "order": 22,
     "text": "Zip Code",
-    "answer": "53704"
+    "answer": "53202"
   },
   {
     "order": 23,
     "text": "Employer FEIN",
-    "answer": "77-1234567"
+    "answer": "47-8123456"
   },
   {
     "order": 24,
     "text": "Name of Worker's Compensation Insurance Co. or Self-Insured Employer",
-    "answer": "Great Lakes WCI Insurance"
+    "answer": "Midwest Mutual Insurance Co. (Policy No. POL987654321)"
   },
   {
     "order": 25,
     "text": "Insurer FEIN",
-    "answer": "12-3456789"
+    "answer": "39-8765432"
   },
   {
     "order": 26,
     "text": "Name and Address of Third Party Administrator (TPA) Used by the Insurance Company or Self-Insured Employer",
-    "answer": "Acme Claims Admin, 123 Liberty St, Milwaukee, WI 53202"
+    "answer": "North Shore Claims Services, 500 W Silver Spring Dr, Suite 240, Glendale, WI 53217"
   },
   {
     "order": 27,
     "text": "TPA FEIN",
-    "answer": "98-7654321"
+    "answer": "39-1122334"
   },
   {
     "order": 28,
     "text": "Wage at Time of Injury $",
-    "answer": ""
+    "answer": "26.50"
+  },
+  {
+    "order": 29,
+    "text": "Specify per hr., wk., mo., yr., etc.",
+    "answer": "hr"
+  },
+  {
+    "order": 30,
+    "text": "Per:",
+    "answer": "1"
+  },
+  {
+    "order": 31,
+    "text": "Meals (In Addition to Wages, Employee Received)",
+    "answer": false
+  },
+  {
+    "order": 32,
+    "text": "Room (In Addition to Wages, Employee Received)",
+    "answer": false
+  },
+  {
+    "order": 33,
+    "text": "Tips (In Addition to Wages, Employee Received)",
+    "answer": false
+  },
+  {
+    "order": 34,
+    "text": "No. of Meals/wk.",
+    "answer": "0"
+  },
+  {
+    "order": 35,
+    "text": "No. of Days/wk",
+    "answer": "0"
+  },
+  {
+    "order": 36,
+    "text": "Avg. Weekly Amt. $",
+    "answer": "0"
+  },
+  {
+    "order": 37,
+    "text": "Is Worker Paid for Overtime?",
+    "answer": true
+  },
+  {
+    "order": 38,
+    "text": "If Yes, After How Many Hours of Work Per Week?",
+    "answer": "40"
+  },
+  {
+    "order": 39,
+    "text": "No. of Weeks:",
+    "answer": "50"
+  },
+  {
+    "order": 40,
+    "text": "Gross Amount Excluding Tips: $",
+    "answer": "53000"
+  },
+  {
+    "order": 41,
+    "text": "If Piece-Work, No. of Hrs. Excluding Overtime:",
+    "answer": "0"
+  },
+  {
+    "order": 42,
+    "text": "Start Time",
+    "answer": "08:30:00"
+  },
+  {
+    "order": 43,
+    "text": "Hours Per Day",
+    "answer": "8"
+  },
+  {
+    "order": 44,
+    "text": "Hours Per Week",
+    "answer": "40"
+  },
+  {
+    "order": 45,
+    "text": "Days Per Week",
+    "answer": "5"
+  },
+  {
+    "order": 46,
+    "text": "Employer’s Usual Full-Time Schedule for This Type of Work at Time of Employee’s Injury",
+    "answer": "8:30 AM–5:00 PM, Monday–Friday (30-minute unpaid lunch)"
+  },
+  {
+    "order": 47,
+    "text": "Are there Other Part-Time Workers Doing the Same Work With the Same Schedule?",
+    "answer": false
+  },
+  {
+    "order": 48,
+    "text": "If Yes, how many?",
+    "answer": "0"
+  },
+  {
+    "order": 49,
+    "text": "Number of Full-Time Employees Doing The Same Type Of Work:",
+    "answer": "5"
+  },
+  {
+    "order": 50,
+    "text": "Injury Date",
+    "answer": "2024-08-14"
+  },
+  {
+    "order": 51,
+    "text": "Time of Injury",
+    "answer": "10:35:00"
+  },
+  {
+    "order": 52,
+    "text": "Last Day Worked",
+    "answer": "2024-08-14"
+  },
+  {
+    "order": 53,
+    "text": "Date Employer Notified",
+    "answer": "2024-08-14"
+  },
+  {
+    "order": 54,
+    "text": "Date Returned to Work",
+    "answer": "2024-08-19"
+  },
+  {
+    "order": 55,
+    "text": "Estimated Date of Return",
+    "answer": "2024-08-18"
+  },
+  {
+    "order": 56,
+    "text": "Did Injury Cause Death?",
+    "answer": false
+  },
+  {
+    "order": 57,
+    "text": "Date of Death",
+    "answer": null
+  },
+  {
+    "order": 58,
+    "text": "Was This a Lost Time or Other Compensable Injury?",
+    "answer": true
+  },
+  {
+    "order": 59,
+    "text": "Did Injury Occur Because of: Substance Abuse",
+    "answer": false
+  },
+  {
+    "order": 60,
+    "text": "Did Injury Occur Because of: Failure to Use Safety Devices",
+    "answer": false
+  },
+  {
+    "order": 61,
+    "text": "Did Injury Occur Because of: Failure to Obey Rules",
+    "answer": false
+  },
+  {
+    "order": 62,
+    "text": "Was Employee Treated in an Emergency Room?",
+    "answer": false
+  },
+  {
+    "order": 63,
+    "text": "Was Employee Hospitalized Overnight as an In-Patient?",
+    "answer": false
+  },
+  {
+    "order": 64,
+    "text": "Name and Address of Treating Practitioner and Hospital",
+    "answer": "Dr. Laura Chen, Aurora Urgent Care, 215 N Water St, Milwaukee, WI 53202. Phone: (414) 555-0142."
+  },
+  {
+    "order": 65,
+    "text": "Case Number from the OSHA Log",
+    "answer": "2024-017"
+  },
+  {
+    "order": 66,
+    "text": "Injury Description - Describe Activities of Employee When Injury or Illness Occurred and What Tools, Machinery, Objects, Chemicals, Etc. Were Involved.",
+    "answer": "Employee was lifting and moving boxes of printed brochures (approximately 35 lbs each) from a waist-high storage rack to a rolling cart for an offsite client meeting. A box, metal storage rack, and a two-shelf cart were involved. While repositioning a box onto the cart, employee twisted at the waist to avoid a coworker passing behind."
+  },
+  {
+    "order": 67,
+    "text": "What Happened to Cause This Injury or Illness? (Describe How The Injury Occurred)",
+    "answer": "While turning to set a 35-lb box onto a cart, employee rotated her torso without moving her feet, resulting in an acute twisting motion and immediate sharp pain in the lower back. No slip or fall occurred; injury was due to overexertion and awkward posture while lifting."
+  },
+  {
+    "order": 68,
+    "text": "What Was The Injury or Illness? (State the Part of Body Affected and How It Was Affected)",
+    "answer": "Lumbar strain to the lower back musculature with localized pain, muscle spasm, and limited range of motion. No radiating numbness reported. Treated conservatively with rest, NSAIDs, and light-duty recommendation."
+  },
+  {
+    "order": 69,
+    "text": "Report Prepared By",
+    "answer": "Michael Torres"
+  },
+  {
+    "order": 70,
+    "text": "Work Phone Number",
+    "answer": "(414) 555-0108"
+  },
+  {
+    "order": 71,
+    "text": "Position",
+    "answer": "HR Manager"
   }
 ]

@@ -2,47 +2,47 @@
   {
     "order": 1,
     "text": "EMPLOYER (NAME & ADDRESS INCL ZIP)",
-    "answer": "Acme Manufacturing, 500 Industrial Way, Springfield, IL 62701"
+    "answer": "Pacific Home Improvement, Inc., 9140 Carroll Way, Suite 105, San Diego, CA 92121"
   },
   {
     "order": 2,
     "text": "REPORT PURPOSE CODE",
-    "answer": "Initial Claim"
+    "answer": "01-Initial"
   },
   {
     "order": 3,
     "text": "JURISDICTION",
-    "answer": "Illinois"
+    "answer": "CA"
   },
   {
     "order": 4,
-    "text": "EMPLOYER\u00120S LOCATION ADDRESS (IF DIFFERENT)",
-    "answer": "1000 Warehouse Ave, Springfield, IL 62702"
+    "text": "EMPLOYER’S LOCATION ADDRESS (IF DIFFERENT)",
+    "answer": "Same as above"
   },
   {
     "order": 5,
     "text": "LOCATION #",
-    "answer": "LOC-003"
+    "answer": "001"
   },
   {
     "order": 6,
     "text": "PHONE #",
-    "answer": "+1 (555) 555-0100"
+    "answer": "(858) 555-0100"
   },
   {
     "order": 7,
     "text": "INDUSTRY CODE",
-    "answer": "311999"
+    "answer": "236118"
   },
   {
     "order": 8,
     "text": "EMPLOYER FEIN",
-    "answer": "36-1234567"
+    "answer": "84-2179036"
   },
   {
     "order": 9,
     "text": "CARRIER (NAME, ADDRESS, & PHONE #)",
-    "answer": "Acme Insurance Co., 123 Insurance Plaza, Chicago, IL 60601, Phone: (312) 555-0101"
+    "answer": "Acme Mutual Insurance Company, 2000 Commerce Plaza, Suite 600, Sacramento, CA 95814; (916) 555-0120"
   },
   {
     "order": 10,
@@ -62,12 +62,12 @@
   {
     "order": 13,
     "text": "CLAIMS ADMINISTRATOR (NAME, ADDRESS & PHONE NO)",
-    "answer": "Claims Administration Co., 555 Claims Blvd, Chicago, IL 60607, Phone: (312) 555-0190"
+    "answer": "Acme Mutual Claims Department, PO Box 12345, Sacramento, CA 95812; (800) 555-0145"
   },
   {
     "order": 14,
     "text": "CARRIER FEIN",
-    "answer": "12-3456789"
+    "answer": "45-9081726"
   },
   {
     "order": 15,
@@ -77,7 +77,7 @@
   {
     "order": 16,
     "text": "ADMINISTRATOR FEIN",
-    "answer": "98-7654321"
+    "answer": "27-6319204"
   },
   {
     "order": 17,
@@ -92,27 +92,27 @@
   {
     "order": 19,
     "text": "DATE OF BIRTH",
-    "answer": "1985-06-15"
+    "answer": "1987-07-14"
   },
   {
     "order": 20,
     "text": "SOCIAL SECURITY NUMBER",
-    "answer": "123-45-6789"
+    "answer": "541-22-9031"
   },
   {
     "order": 21,
     "text": "DATE HIRED",
-    "answer": "2018-04-01"
+    "answer": "2020-05-11"
   },
   {
     "order": 22,
     "text": "STATE OF HIRE",
-    "answer": "IL"
+    "answer": "CA"
   },
   {
     "order": 23,
     "text": "ADDRESS (INCL ZIP)",
-    "answer": "123 Maple Street, Anytown, IL 62704"
+    "answer": "1428 Market St, Apt 3B, San Diego, CA 92101"
   },
   {
     "order": 24,
@@ -127,7 +127,7 @@
   {
     "order": 26,
     "text": "OCCUPATION/JOB TITLE",
-    "answer": "Quality Control Technician"
+    "answer": "Carpenter"
   },
   {
     "order": 27,
@@ -137,27 +137,27 @@
   {
     "order": 28,
     "text": "PHONE",
-    "answer": "555-0100"
+    "answer": "(619) 555-0134"
   },
   {
     "order": 29,
     "text": "# OF DEPENDENTS",
-    "answer": "1"
+    "answer": "2"
   },
   {
     "order": 30,
     "text": "NCCI CLASS CODE",
-    "answer": "1234"
+    "answer": "5403"
   },
   {
     "order": 31,
     "text": "RATE",
-    "answer": "25"
+    "answer": "1140.00"
   },
   {
     "order": 32,
     "text": "PER",
-    "answer": "Day"
+    "answer": "Week"
   },
   {
     "order": 33,
@@ -177,22 +177,22 @@
   {
     "order": 36,
     "text": "DID SALARY CONTINUE?",
-    "answer": true
+    "answer": false
   },
   {
     "order": 37,
     "text": "TIME EMPLOYEE BEGAN WORK",
-    "answer": "08:00:00"
+    "answer": "07:00:00"
   },
   {
     "order": 38,
     "text": "DATE OF INJURY/ILLNESS",
-    "answer": "2023-09-14"
+    "answer": "2023-11-16"
   },
   {
     "order": 39,
     "text": "TIME OF OCCURRENCE",
-    "answer": "08:15:00"
+    "answer": "10:15:00"
   },
   {
     "order": 40,
@@ -202,17 +202,17 @@
   {
     "order": 41,
     "text": "LAST WORK DATE",
-    "answer": "2023-09-14"
+    "answer": "2023-11-16"
   },
   {
     "order": 42,
     "text": "DATE EMPLOYER NOTIFIED",
-    "answer": "2023-09-15"
+    "answer": "2023-11-16"
   },
   {
     "order": 43,
     "text": "DATE DISABILITY BEGAN",
-    "answer": "2023-09-16"
+    "answer": "2023-11-17"
   },
   {
     "order": 44,
@@ -222,7 +222,7 @@
   {
     "order": 45,
     "text": "CONTACT PHONE NUMBER",
-    "answer": "555-0199"
+    "answer": "(858) 555-0101"
   },
   {
     "order": 46,
@@ -236,8 +236,8 @@
   },
   {
     "order": 48,
-    "text": "DID INJURY/ILLNESS/EXPOSURE OCCUR ON EMPLOYER\u00120S PREMISES?",
-    "answer": true
+    "text": "DID INJURY/ILLNESS/EXPOSURE OCCUR ON EMPLOYER’S PREMISES?",
+    "answer": false
   },
   {
     "order": 49,
@@ -252,37 +252,37 @@
   {
     "order": 51,
     "text": "DEPARTMENT OR LOCATION WHERE ACCIDENT OR ILLNESS EXPOSURE OCCURRED",
-    "answer": "Production Floor - Section A"
+    "answer": "Client job site: 8450 Lemon Ave, La Mesa, CA 91941"
   },
   {
     "order": 52,
     "text": "ALL EQUIPMENT, MATERIALS, OR CHEMICALS EMPLOYEE WAS USING WHEN ACCIDENT OR ILLNESS EXPOSURE OCCURRED",
-    "answer": "Box cutter, pallet jack, forklift, and safety gloves; NA if none"
+    "answer": "Cordless drill, 2x4 lumber bundle, tool belt, work gloves"
   },
   {
     "order": 53,
     "text": "SPECIFIC ACTIVITY THE EMPLOYEE WAS ENGAGED IN WHEN THE ACCIDENT OR ILLNESS EXPOSURE OCCURRED",
-    "answer": "31-Fall, Slip or Trip, NOC"
+    "answer": "56-Lifting"
   },
   {
     "order": 54,
     "text": "WORK PROCESS THE EMPLOYEE WAS ENGAGED IN WHEN ACCIDENT OR ILLNESS EXPOSURE OCCURRED",
-    "answer": "Moving boxes from pallet to conveyor line on the loading dock."
+    "answer": "Unloading lumber from company pickup truck and staging materials for interior framing"
   },
   {
     "order": 55,
     "text": "HOW INJURY OR ILLNESS/ABNORMAL HEALTH CONDITION OCCURRED. DESCRIBE THE SEQUENCE OF EVENTS AND INCLUDE ANY OBJECTS OR SUBSTANCES THAT DIRECTLY INJURED THE EMPLOYEE OR MADE THE EMPLOYEE ILL",
-    "answer": "The employee slipped on a wet concrete floor on the loading dock while carrying a 30 lb box, causing a lower back strain. A pallet jack was nearby; no objects penetrated the skin."
+    "answer": "While lifting a bundled stack of 2x4 lumber from the truck bed to the garage at the client’s residence, John twisted to set the bundle down and felt a sharp pull in his lower back. He immediately stopped work and reported the injury to the site lead. No slip or fall occurred; the strain resulted from lifting and twisting with the load."
   },
   {
     "order": 56,
     "text": "CAUSE OF INJURY CODE",
-    "answer": "Slip on wet floor"
+    "answer": "66"
   },
   {
     "order": 57,
     "text": "DATE RETURN(ED) TO WORK",
-    "answer": "2023-10-30"
+    "answer": "2023-11-20"
   },
   {
     "order": 58,
@@ -297,46 +297,46 @@
   {
     "order": 60,
     "text": "WERE THEY USED?",
-    "answer": true
+    "answer": false
   },
   {
     "order": 61,
     "text": "PHYSICIAN/HEALTH CARE PROVIDER (NAME & ADDRESS)",
-    "answer": "Dr. Emily Carter, 789 Health Plaza, Metropolis, CA 94020"
+    "answer": "Dr. Lauren Chen, Sharp Rees-Stealy Urgent Care – La Mesa, 5525 Grossmont Center Dr, La Mesa, CA 91942; (619) 555-0160"
   },
   {
     "order": 62,
     "text": "HOSPITAL OR OFF SITE TREATMENT (NAME & ADDRESS)",
-    "answer": "City General Hospital, 100 Main Street, Metropolis, CA 94010"
+    "answer": "Sharp Rees-Stealy Urgent Care – La Mesa, 5525 Grossmont Center Dr, La Mesa, CA 91942"
   },
   {
     "order": 63,
     "text": "INITIAL TREATMENT",
-    "answer": "EMERGENCY CARE"
+    "answer": "MINOR CLINIC/HOSP"
   },
   {
     "order": 64,
     "text": "WITNESSES (NAME & PHONE #)",
-    "answer": "Alex Kim, 555-0123"
+    "answer": "Ethan Park – (619) 555-0198"
   },
   {
     "order": 65,
     "text": "DATE ADMINISTRATOR NOTIFIED",
-    "answer": "2023-09-16"
+    "answer": "2023-11-17"
   },
   {
     "order": 66,
     "text": "DATE PREPARED",
-    "answer": "2023-09-18"
+    "answer": "2023-11-18"
   },
   {
     "order": 67,
-    "text": "PREPARER\u00120S NAME & TITLE",
-    "answer": "Jordan Lee, Claims Examiner"
+    "text": "PREPARER’S NAME & TITLE",
+    "answer": "Maria Lopez, HR Manager"
   },
   {
     "order": 68,
     "text": "PHONE NUMBER",
-    "answer": "555-0187"
+    "answer": "(858) 555-0101"
   }
 ]

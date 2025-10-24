@@ -2,12 +2,12 @@
   {
     "order": 1,
     "text": "Submission Date",
-    "answer": "2023-11-20"
+    "answer": "2023-11-22"
   },
   {
     "order": 2,
     "text": "NHDOL#",
-    "answer": "NH-DOL-2023-00075"
+    "answer": "NHDOL-2023-114567"
   },
   {
     "order": 3,
@@ -27,7 +27,7 @@
   {
     "order": 6,
     "text": "Hired Date",
-    "answer": "2018-07-12"
+    "answer": "2018-06-12"
   },
   {
     "order": 7,
@@ -42,52 +42,52 @@
   {
     "order": 9,
     "text": "Employee ID",
-    "answer": "E12345"
+    "answer": "JD45821"
   },
   {
     "order": 10,
     "text": "Date of Birth",
-    "answer": "1985-04-22"
+    "answer": "1986-07-08"
   },
   {
     "order": 11,
     "text": "Age",
-    "answer": "=>38<="
+    "answer": "37"
   },
   {
     "order": 12,
     "text": "Occupation when Injured",
-    "answer": "Warehouse Associate"
+    "answer": "Warehouse Associate / Forklift Operator"
   },
   {
     "order": 13,
     "text": "Employee Address",
-    "answer": "123 Maple Street, Manchester, NH 03101"
+    "answer": "27 Maple St, Unit 2, Manchester, NH 03101"
   },
   {
     "order": 14,
     "text": "Telephone",
-    "answer": "603-555-0123"
+    "answer": "(603) 555-0143"
   },
   {
     "order": 15,
     "text": "Wages per Hour",
-    "answer": ":22.50:"
+    "answer": "24.50"
   },
   {
     "order": 16,
     "text": "Hrs per Day",
-    "answer": ""
+    "answer": "8"
   },
   {
     "order": 17,
     "text": "Days per Week",
-    "answer": ""
+    "answer": "5"
   },
   {
     "order": 18,
     "text": "Average Weekly Earnings",
-    "answer": ""
+    "answer": "980.00"
   },
   {
     "order": 19,
@@ -102,7 +102,7 @@
   {
     "order": 21,
     "text": "Location/Jobsite & Business Name where accident occurred",
-    "answer": "Warehouse floor, ABC Logistics Center, 400 Industrial Way, Manchester, NH 03101; ABC Logistics, Inc."
+    "answer": "Concord Distribution Center - Granite Logistics LLC, 125 Industrial Park Dr, Concord, NH 03301"
   },
   {
     "order": 22,
@@ -112,7 +112,7 @@
   {
     "order": 23,
     "text": "Claim Type",
-    "answer": "Workers' Compensation"
+    "answer": "Lost Time"
   },
   {
     "order": 24,
@@ -122,57 +122,57 @@
   {
     "order": 25,
     "text": "Accident Description",
-    "answer": "While unloading pallets from a forklift in the warehouse, John Doe twisted his left ankle after a pallet shifted, causing a sprain. He attempted to steady the load and immediately reported pain; coworker assisted him and he was escorted to medical evaluation."
+    "answer": "While lifting a 70-pound box from a lower pallet to a conveyor, employee felt a sharp pull in his lower back and strained his right shoulder when the load shifted and he twisted to avoid dropping it. Incident occurred on the warehouse floor near the receiving bay. No equipment malfunction noted; improper body mechanics during lift identified as primary factor."
   },
   {
     "order": 26,
     "text": "Body part Injured",
-    "answer": "Left ankle"
+    "answer": "Lower back and right shoulder"
   },
   {
     "order": 27,
     "text": "Cause of Injury",
-    "answer": "Twist/slip on uneven flooring while handling pallet jack"
+    "answer": "Overexertion while lifting and twisting"
   },
   {
     "order": 28,
     "text": "Nature of Injury",
-    "answer": "Sprain"
+    "answer": "Lumbar strain and right shoulder sprain"
   },
   {
     "order": 29,
     "text": "Witness Name",
-    "answer": "Carlos Mendoza"
+    "answer": "Maria Sanchez"
   },
   {
     "order": 30,
     "text": "Witness Phone",
-    "answer": "603-555-0130"
+    "answer": "(603) 555-0198"
   },
   {
     "order": 31,
     "text": "Returned to work?",
-    "answer": false
+    "answer": true
   },
   {
     "order": 32,
     "text": "If so, what date?",
-    "answer": null
+    "answer": "2023-11-20"
   },
   {
     "order": 33,
     "text": "If so, at what occupation?",
-    "answer": null
+    "answer": "Light-duty inventory clerk"
   },
   {
     "order": 34,
     "text": "If so, at what duty status?",
-    "answer": null
+    "answer": "Restricted duty (no lifting >10 lbs; no overhead reaching)"
   },
   {
     "order": 35,
     "text": "Initial Treatment",
-    "answer": "On-site first aid; wound cleaned, ankle wrapped; referred to clinic for follow-up"
+    "answer": "Urgent care clinic visit"
   },
   {
     "order": 36,
@@ -182,12 +182,12 @@
   {
     "order": 37,
     "text": "Name of Treating Physician",
-    "answer": "Dr. Lisa M. Carter"
+    "answer": "Dr. Alan Pritchard, DO"
   },
   {
     "order": 38,
     "text": "Name of Treating Hospital",
-    "answer": "Manchester General Hospital"
+    "answer": "Concord Urgent Care, 295 Loudon Rd, Concord, NH 03301"
   },
   {
     "order": 39,
@@ -202,7 +202,7 @@
   {
     "order": 41,
     "text": "Employer Name",
-    "answer": "ABC Logistics, Inc."
+    "answer": "Granite Logistics LLC"
   },
   {
     "order": 42,
@@ -217,22 +217,22 @@
   {
     "order": 44,
     "text": "Employer Contact Name",
-    "answer": "Angela Rivera"
+    "answer": "Lisa Chen"
   },
   {
     "order": 45,
     "text": "Contact Phone Number",
-    "answer": "603-555-0142"
+    "answer": "(603) 555-0127"
   },
   {
     "order": 46,
     "text": "Employer Business Address",
-    "answer": "400 Industrial Way, Manchester, NH 03101"
+    "answer": "Granite Logistics LLC, 125 Industrial Park Dr, Concord, NH 03301"
   },
   {
     "order": 47,
     "text": "Managed Care Organization",
-    "answer": "NH Care Network"
+    "answer": "Granite Health MCO"
   },
   {
     "order": 48,
@@ -242,7 +242,7 @@
   {
     "order": 49,
     "text": "Client Company",
-    "answer": "ABC Logistics, Inc."
+    "answer": "N/A"
   },
   {
     "order": 50,
@@ -252,17 +252,17 @@
   {
     "order": 51,
     "text": "Name of policy holder",
-    "answer": "John Doe"
+    "answer": "N/A"
   },
   {
     "order": 52,
     "text": "Insurance Carrier",
-    "answer": "Northeast Mutual Insurance Co."
+    "answer": "Granite Mutual Insurance Company"
   },
   {
     "order": 53,
     "text": "Insurer Type",
-    "answer": "Private"
+    "answer": "Private carrier"
   },
   {
     "order": 54,
@@ -272,26 +272,26 @@
   {
     "order": 55,
     "text": "Telephone Number",
-    "answer": "603-555-0100"
+    "answer": "(603) 555-0100"
   },
   {
     "order": 56,
     "text": "Submitter Name",
-    "answer": "Emily Carter"
+    "answer": "Lisa Chen"
   },
   {
     "order": 57,
     "text": "Title of Submitter",
-    "answer": "Claims Clerk"
+    "answer": "HR Manager"
   },
   {
     "order": 58,
     "text": "Represents",
-    "answer": "ABC Logistics, Inc."
+    "answer": "Employer"
   },
   {
     "order": 59,
     "text": "Telephone Number",
-    "answer": "603-555-0188"
+    "answer": "(603) 555-0127"
   }
 ]

@@ -2,57 +2,57 @@
   {
     "order": 1,
     "text": "Employee Name",
-    "answer": "John Smith"
+    "answer": "John Andrew Smith"
   },
   {
     "order": 2,
     "text": "WCB Case Number (JCN)",
-    "answer": "WCB-2024-0001234"
+    "answer": "NY-23-567890"
   },
   {
     "order": 3,
     "text": "Date of Injury",
-    "answer": "2024-02-28"
+    "answer": "2023-11-03"
   },
   {
     "order": 4,
     "text": "Claim Administrator Claim Number",
-    "answer": "CLAIM-2024-004567"
+    "answer": "SIC-2023-1103-001"
   },
   {
     "order": 5,
     "text": "Insurer Name",
-    "answer": "FirstGuard Insurance Co."
+    "answer": "Summit Indemnity Company"
   },
   {
     "order": 6,
     "text": "Insurer ID",
-    "answer": "FG-4512"
+    "answer": "NAIC 19999"
   },
   {
     "order": 7,
     "text": "Claim Administrator Name",
-    "answer": "Global Claims Administrators LLC"
+    "answer": "Summit Indemnity Claims Department"
   },
   {
     "order": 8,
     "text": "Claim Administrator Address",
-    "answer": "500 Market Street"
+    "answer": "100 Main St"
   },
   {
     "order": 9,
     "text": "Claim Administrator City",
-    "answer": "Anytown"
+    "answer": "Hartford"
   },
   {
     "order": 10,
     "text": "Claim Administrator State",
-    "answer": "CA"
+    "answer": "CT"
   },
   {
     "order": 11,
     "text": "Claim Administrator Postal Code",
-    "answer": "90210"
+    "answer": "06103"
   },
   {
     "order": 12,
@@ -67,7 +67,7 @@
   {
     "order": 14,
     "text": "Employee Middle Name/Initial",
-    "answer": "A."
+    "answer": "Andrew"
   },
   {
     "order": 15,
@@ -77,27 +77,27 @@
   {
     "order": 16,
     "text": "Employee Suffix",
-    "answer": ""
+    "answer": null
   },
   {
     "order": 17,
     "text": "Employee Mailing Address",
-    "answer": "123 Pine Street, Apt 4B"
+    "answer": "78 Maple St"
   },
   {
     "order": 18,
     "text": "Employee City",
-    "answer": "Chicago"
+    "answer": "Albany"
   },
   {
     "order": 19,
     "text": "Employee State",
-    "answer": "IL"
+    "answer": "NY"
   },
   {
     "order": 20,
     "text": "Employee Postal Code",
-    "answer": "60601"
+    "answer": "12208"
   },
   {
     "order": 21,
@@ -107,12 +107,12 @@
   {
     "order": 22,
     "text": "Employee Phone Number",
-    "answer": "(312) 555-0143"
+    "answer": "518-555-0196"
   },
   {
     "order": 23,
     "text": "Date of Birth",
-    "answer": "1985-07-22"
+    "answer": "1985-02-14"
   },
   {
     "order": 24,
@@ -122,17 +122,17 @@
   {
     "order": 25,
     "text": "Date of Hire",
-    "answer": "2013-08-26"
+    "answer": "2015-06-01"
   },
   {
     "order": 26,
     "text": "Employee SSN",
-    "answer": "000-00-0000"
+    "answer": "123-45-6789"
   },
   {
     "order": 27,
     "text": "Occupation Description",
-    "answer": "Warehouse Associate"
+    "answer": "Carpenter/Installer"
   },
   {
     "order": 28,
@@ -142,12 +142,12 @@
   {
     "order": 29,
     "text": "Time of Injury",
-    "answer": "14:30:00"
+    "answer": "10:35:00"
   },
   {
     "order": 30,
     "text": "Date Employer Had Knowledge of the Injury",
-    "answer": "2024-03-02"
+    "answer": "2023-11-03"
   },
   {
     "order": 31,
@@ -157,17 +157,17 @@
   {
     "order": 32,
     "text": "Date Employer Had Knowledge of Date of Disability",
-    "answer": "2024-03-04"
+    "answer": "2023-11-04"
   },
   {
     "order": 33,
     "text": "Estimated Weekly Wage",
-    "answer": ":1050"
+    "answer": null
   },
   {
     "order": 34,
     "text": "Number of Days Worked Per Week",
-    "answer": "5"
+    "answer": null
   },
   {
     "order": 35,
@@ -177,7 +177,7 @@
   {
     "order": 36,
     "text": "Work Days Scheduled",
-    "answer": "Mon-Fri"
+    "answer": "Monday–Friday"
   },
   {
     "order": 37,
@@ -192,7 +192,7 @@
   {
     "order": 39,
     "text": "Initial Treatment",
-    "answer": "Emergency Evaluation"
+    "answer": "Minor Clinic/Hospital Treatment"
   },
   {
     "order": 40,
@@ -207,42 +207,42 @@
   {
     "order": 42,
     "text": "Number of Dependents",
-    "answer": ""
+    "answer": null
   },
   {
     "order": 43,
     "text": "Nature of Injury",
-    "answer": "Sprain"
+    "answer": "Lumbar strain"
   },
   {
     "order": 44,
     "text": "Part of Body",
-    "answer": "Left Wrist"
+    "answer": "Lower back"
   },
   {
     "order": 45,
     "text": "Cause of Injury",
-    "answer": "Lifting heavy box"
+    "answer": "Lifting heavy materials"
   },
   {
     "order": 46,
     "text": "Accident/Injury Description",
-    "answer": "While moving inventory, the employee twisted left wrist when a 25-lb box slipped from a shelf, causing a fall and wrist pain."
+    "answer": "While lifting and positioning a bundle of laminate flooring onto a pallet at a client warehouse loading dock, the employee felt a sharp pull in his lower back. He immediately stopped work, reported the incident to the site supervisor, and sought evaluation at an urgent care clinic. Imaging was not required; he was diagnosed with a lumbar strain and given light-duty restrictions."
   },
   {
     "order": 47,
     "text": "Initial Date Last Day Worked",
-    "answer": "2024-02-28"
+    "answer": "2023-11-03"
   },
   {
     "order": 48,
     "text": "Initial Date Disability Began",
-    "answer": "2024-03-01"
+    "answer": "2023-11-04"
   },
   {
     "order": 49,
     "text": "Initial Return to Work Date",
-    "answer": "2024-04-15"
+    "answer": "2023-11-10"
   },
   {
     "order": 50,
@@ -262,27 +262,27 @@
   {
     "order": 53,
     "text": "Accident Location - Organization Name",
-    "answer": "Acme Distribution Center"
+    "answer": "Hudson Logistics - Client Site"
   },
   {
     "order": 54,
     "text": "Accident Location - Street",
-    "answer": "123 Warehouse Ave"
+    "answer": "250 River St"
   },
   {
     "order": 55,
     "text": "Accident Location - City",
-    "answer": "Chicago"
+    "answer": "Troy"
   },
   {
     "order": 56,
     "text": "Accident Location - State",
-    "answer": "IL"
+    "answer": "NY"
   },
   {
     "order": 57,
     "text": "Accident Location - Postal Code",
-    "answer": "60607"
+    "answer": "12180"
   },
   {
     "order": 58,
@@ -292,27 +292,27 @@
   {
     "order": 59,
     "text": "Location Narrative",
-    "answer": "In the receiving area of the warehouse near the loading dock; floor was slick due to spilled liquid; employee slipped while moving inventory."
+    "answer": "Incident occurred at the loading dock area of a client warehouse with concrete flooring and palletized materials adjacent to a forklift lane."
   },
   {
     "order": 60,
     "text": "Premises",
-    "answer": "Employer"
+    "answer": "Other"
   },
   {
     "order": 61,
     "text": "Witness Names",
-    "answer": "Maria Lopez"
+    "answer": "Maria Lopez; Kevin O'Neill"
   },
   {
     "order": 62,
     "text": "Witness Business Phone Number",
-    "answer": "(312) 555-0199"
+    "answer": "518-555-0134"
   },
   {
     "order": 63,
     "text": "Employer Name",
-    "answer": "Acme Manufacturing Co."
+    "answer": "John Smith dba Smith Home Services"
   },
   {
     "order": 64,
@@ -322,37 +322,37 @@
   {
     "order": 65,
     "text": "UI Number",
-    "answer": "UI-9876543"
+    "answer": "NY-1234567"
   },
   {
     "order": 66,
     "text": "Manual Classification Code",
-    "answer": "5412"
+    "answer": "5645"
   },
   {
     "order": 67,
     "text": "Industry Code",
-    "answer": "42-68"
+    "answer": "236118"
   },
   {
     "order": 68,
     "text": "Employer Mailing Address",
-    "answer": "200 Industrial Pkwy, Suite 4"
+    "answer": "1150 Central Ave, Suite 204"
   },
   {
     "order": 69,
     "text": "Employer City",
-    "answer": "Chicago"
+    "answer": "Albany"
   },
   {
     "order": 70,
     "text": "Employer State",
-    "answer": "IL"
+    "answer": "NY"
   },
   {
     "order": 71,
     "text": "Employer Postal Code",
-    "answer": "60606"
+    "answer": "12205"
   },
   {
     "order": 72,
@@ -362,17 +362,17 @@
   {
     "order": 73,
     "text": "Employer Physical Address",
-    "answer": "200 Industrial Pkwy, Chicago, IL 60606"
+    "answer": "1150 Central Ave, Suite 204, Albany, NY 12205"
   },
   {
     "order": 74,
     "text": "Employer Contact Name",
-    "answer": "Sarah Johnson"
+    "answer": "John Smith"
   },
   {
     "order": 75,
     "text": "Employer Contact Business Phone Number",
-    "answer": "(312) 555-0123"
+    "answer": "518-555-0148"
   },
   {
     "order": 76,
@@ -382,12 +382,12 @@
   {
     "order": 77,
     "text": "Insured FEIN",
-    "answer": "98-7654321"
+    "answer": "12-3456789"
   },
   {
     "order": 78,
     "text": "Insured Location ID",
-    "answer": "INS-001"
+    "answer": "ALB-001"
   },
   {
     "order": 79,

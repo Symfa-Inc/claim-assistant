@@ -2,62 +2,62 @@
   {
     "order": 1,
     "text": "Jurisdiction Code",
-    "answer": "IL-US"
+    "answer": "WA"
   },
   {
     "order": 2,
     "text": "Claim Administrator Name",
-    "answer": "Acme Claims Administration, Inc."
+    "answer": "Evergreen Casualty Claims Services"
   },
   {
     "order": 3,
     "text": "Claim Representative Business Phone Number",
-    "answer": "(217) 555-0199"
+    "answer": "(206) 555-0103"
   },
   {
     "order": 4,
     "text": "Insurer Name (if different than claim administrator)",
-    "answer": "NorthBridge Insurance Co."
+    "answer": "Evergreen Casualty Insurance Company"
   },
   {
     "order": 5,
     "text": "Mailing Address, City, State, & Postal Code",
-    "answer": "P.O. Box 4500, Springfield, IL 62711"
+    "answer": "2000 4th Ave, Suite 1200, Seattle, WA 98121"
   },
   {
     "order": 6,
     "text": "Claim Administrator Claim Number",
-    "answer": "CA-2024-001234"
+    "answer": "ECC-2024-WA-006784"
   },
   {
     "order": 7,
     "text": "Insurer FEIN",
-    "answer": "13-1234567"
+    "answer": "91-6543210"
   },
   {
     "order": 8,
     "text": "Claim Administrator FEIN",
-    "answer": "54-9876543"
+    "answer": "91-1234567"
   },
   {
     "order": 9,
     "text": "Claim Type Code",
-    "answer": "WC"
+    "answer": "LT - Lost Time"
   },
   {
     "order": 10,
     "text": "Employer Name",
-    "answer": "Acme Manufacturing, LLC"
+    "answer": "Harborview Market LLC"
   },
   {
     "order": 11,
     "text": "Employer FEIN",
-    "answer": "12-3456789"
+    "answer": "84-3021679"
   },
   {
     "order": 12,
     "text": "Insured Report Number",
-    "answer": "IRN-789456"
+    "answer": "IR-2024-0618-01"
   },
   {
     "order": 13,
@@ -67,52 +67,52 @@
   {
     "order": 14,
     "text": "Physical Address, City, State, & Postal Code",
-    "answer": "400 Industry Way, Springfield, IL 62711"
+    "answer": "500 Pine St, Seattle, WA 98101"
   },
   {
     "order": 15,
     "text": "Mailing Address, City, State, & Postal Code",
-    "answer": "P.O. Box 500, Springfield, IL 62711"
+    "answer": "500 Pine St, Seattle, WA 98101"
   },
   {
     "order": 16,
     "text": "Industry Code",
-    "answer": "311"
+    "answer": "NAICS 445110"
   },
   {
     "order": 17,
     "text": "Insured Location Number",
-    "answer": "IL-01"
+    "answer": "001-DTSEA"
   },
   {
     "order": 18,
     "text": "Employer UI Number",
-    "answer": "UI-9876543"
+    "answer": "WA-765432-1"
   },
   {
     "order": 19,
     "text": "Nature of Business",
-    "answer": "Food processing"
+    "answer": "Retail grocery store"
   },
   {
     "order": 20,
     "text": "Employer Contact Name and Business Phone Number",
-    "answer": "Sarah Collins, (217) 555-0100"
+    "answer": "Laura Chen, (206) 555-0144"
   },
   {
     "order": 21,
     "text": "Insured Name (parent company if different than employer)",
-    "answer": "Acme Manufacturing, LLC"
+    "answer": "Harborview Holdings Inc."
   },
   {
     "order": 22,
     "text": "Insured FEIN",
-    "answer": "12-3456789"
+    "answer": "88-7654321"
   },
   {
     "order": 23,
     "text": "Insured Postal Code",
-    "answer": "62711"
+    "answer": "98101"
   },
   {
     "order": 24,
@@ -132,7 +132,7 @@
   {
     "order": 27,
     "text": "Self Insurance License/ Certificate Number",
-    "answer": "LIC-0999"
+    "answer": "N/A"
   },
   {
     "order": 28,
@@ -142,7 +142,7 @@
   {
     "order": 29,
     "text": "Employee Name - Middle",
-    "answer": "A."
+    "answer": "Marie"
   },
   {
     "order": 30,
@@ -152,7 +152,7 @@
   {
     "order": 31,
     "text": "Date of Birth",
-    "answer": "1985-04-12"
+    "answer": "1991-03-14"
   },
   {
     "order": 32,
@@ -162,32 +162,32 @@
   {
     "order": 33,
     "text": "Tax Filing Status",
-    "answer": "Married/Filing Joint (C)"
+    "answer": "Single (A)"
   },
   {
     "order": 34,
     "text": "Mailing Address, City, State, & Postal Code",
-    "answer": "123 Willow Ave, Springfield, IL 62704"
+    "answer": "742 Pinehurst Ave, Apt 3B, Seattle, WA 98109"
   },
   {
     "order": 35,
     "text": "Date of Hire",
-    "answer": "2020-02-01"
+    "answer": "2023-04-10"
   },
   {
     "order": 36,
     "text": "State of Hire",
-    "answer": "IL"
+    "answer": "WA"
   },
   {
     "order": 37,
     "text": "Educational Level (grade completed)",
-    "answer": "Bachelor's Degree"
+    "answer": "14"
   },
   {
     "order": 38,
     "text": "Phone Number (include area code)",
-    "answer": "(217) 555-0123"
+    "answer": "(206) 555-0176"
   },
   {
     "order": 39,
@@ -197,17 +197,17 @@
   {
     "order": 40,
     "text": "Occupation Description",
-    "answer": "Sales Manager"
+    "answer": "Grocery stock clerk"
   },
   {
     "order": 41,
     "text": "NCCI Classification Code",
-    "answer": "8742"
+    "answer": "8033"
   },
   {
     "order": 42,
     "text": "Department Where Regularly Worked",
-    "answer": "Sales"
+    "answer": "Stocking and Receiving"
   },
   {
     "order": 43,
@@ -222,12 +222,12 @@
   {
     "order": 45,
     "text": "ID #",
-    "answer": "123-45-6789"
+    "answer": "987-65-4321"
   },
   {
     "order": 46,
     "text": "Marital Status",
-    "answer": "Married (M)"
+    "answer": "Unmarried/Single/Divorced (U)"
   },
   {
     "order": 47,
@@ -237,12 +237,12 @@
   {
     "order": 48,
     "text": "Employee’s Authorization to Release Social Security Number",
-    "answer": true
+    "answer": false
   },
   {
     "order": 49,
     "text": "Average Wage $",
-    "answer": "28.50"
+    "answer": "21.50"
   },
   {
     "order": 50,
@@ -262,7 +262,7 @@
   {
     "order": 53,
     "text": "Full Wages Paid for Date of Injury",
-    "answer": false
+    "answer": true
   },
   {
     "order": 54,
@@ -277,37 +277,37 @@
   {
     "order": 56,
     "text": "Employee Number of Exemptions",
-    "answer": "0"
+    "answer": "1"
   },
   {
     "order": 57,
     "text": "Exemptions Type",
-    "answer": "Entitled"
+    "answer": "Withholding"
   },
   {
     "order": 58,
     "text": "Date of Injury",
-    "answer": "2024-07-15"
+    "answer": "2024-06-18"
   },
   {
     "order": 59,
     "text": "Date Employer Had Knowledge of the Injury",
-    "answer": "2024-07-15"
+    "answer": "2024-06-18"
   },
   {
     "order": 60,
     "text": "Date Claim Administrator Had Knowledge of the Injury",
-    "answer": "2024-07-16"
+    "answer": "2024-06-20"
   },
   {
     "order": 61,
     "text": "Initial Date Last Day Worked",
-    "answer": "2024-07-15"
+    "answer": "2024-06-18"
   },
   {
     "order": 62,
     "text": "Initial Return to Work Date (if applicable)",
-    "answer": "2024-07-22"
+    "answer": "2024-06-20"
   },
   {
     "order": 63,
@@ -317,7 +317,7 @@
   {
     "order": 64,
     "text": "Time of Injury",
-    "answer": "09:15:00"
+    "answer": "10:20:00"
   },
   {
     "order": 65,
@@ -337,67 +337,67 @@
   {
     "order": 68,
     "text": "Accident Site Organization Name",
-    "answer": "Acme Manufacturing Facility"
+    "answer": "Harborview Market - Downtown"
   },
   {
     "order": 69,
     "text": "Accident Site Street, City, State, & Postal Code",
-    "answer": "400 Industry Way, Springfield, IL 62711"
+    "answer": "500 Pine St, Seattle, WA 98101"
   },
   {
     "order": 70,
     "text": "Accident Location Narrative (if no street address)",
-    "answer": "Slipped on wet floor near loading dock during morning shift."
+    "answer": "N/A - street address provided"
   },
   {
     "order": 71,
     "text": "Accident Site County/Parish",
-    "answer": "Sangamon County"
+    "answer": "King"
   },
   {
     "order": 72,
     "text": "Type of Injury / Illness Code",
-    "answer": "S93.401A"
+    "answer": "130 - Strain/Sprain"
   },
   {
     "order": 73,
     "text": "Describe the nature of the injury",
-    "answer": "Right ankle sprain with mild ligament strain after slip on wet floor."
+    "answer": "Acute lumbar strain with muscle spasm after lifting inventory; radiating pain but no neurological deficits."
   },
   {
     "order": 74,
     "text": "Part of Body Affected Code",
-    "answer": "R-ANKLE"
+    "answer": "311 - Lower Back Area"
   },
   {
     "order": 75,
-    "text": "Part(s) of body directly affected by the injury",
-    "answer": "Right ankle, lower leg"
+    "text": "Part(s) of body directly affected by the injury or illness",
+    "answer": "Lower back (lumbar region)"
   },
   {
     "order": 76,
     "text": "Describe the events that caused the injury",
-    "answer": "Employee slipped on wet floor in production area; attempted to break fall with right leg, resulting in ankle sprain."
+    "answer": "While lifting a ~40 lb box from a pallet and pivoting to place it on a shelf, employee felt a sudden sharp pain in the lower back followed by stiffness."
   },
   {
     "order": 77,
     "text": "Name the object or substance that directly injured the employee",
-    "answer": "Wet floor (spill)"
+    "answer": "Cardboard box being lifted; wooden pallet"
   },
   {
     "order": 78,
     "text": "Specify activity the employee was engaged in when the event occurred",
-    "answer": "Carrying boxes to the assembly line as part of normal duties"
+    "answer": "Unloading and shelving grocery inventory; part of normal job duties."
   },
   {
     "order": 79,
     "text": "Witness Name",
-    "answer": "Michael Chen"
+    "answer": "Jordan Patel"
   },
   {
     "order": 80,
     "text": "Witness Business Phone Number",
-    "answer": "(217) 555-0142"
+    "answer": "(206) 555-0162"
   },
   {
     "order": 81,
@@ -407,41 +407,41 @@
   {
     "order": 82,
     "text": "Initial Medical Provider Name",
-    "answer": "Springfield Medical Clinic"
+    "answer": "Swedish First Hill Occupational Health Clinic"
   },
   {
     "order": 83,
     "text": "Initial Medical Provider Physical Address, City, State, & Postal Code",
-    "answer": "200 Wellness Blvd, Springfield, IL 62704"
+    "answer": "1101 Madison St, Seattle, WA 98104"
   },
   {
     "order": 84,
     "text": "Managed Care Organization Name or ID Number",
-    "answer": "Midwest Care Network"
+    "answer": "Evergreen Occupational Health Network - MCO# EOHN5421"
   },
   {
     "order": 85,
     "text": "ICD Primary Diagnostic Code (if known)",
-    "answer": "S93.401A"
+    "answer": "M54.50 - Low back pain, unspecified"
   },
   {
     "order": 86,
     "text": "Preparer’s Name & Title",
-    "answer": "Alex Rivera, Claims Examiner"
+    "answer": "Laura Chen, HR Manager"
   },
   {
     "order": 87,
     "text": "Preparer's Company Name",
-    "answer": "Acme Claims Services"
+    "answer": "Harborview Market LLC"
   },
   {
     "order": 88,
     "text": "Preparer Phone Number",
-    "answer": "(773) 555-0183"
+    "answer": "(206) 555-0144"
   },
   {
     "order": 89,
     "text": "Preparer Date",
-    "answer": "2024-07-18"
+    "answer": "2024-06-20"
   }
 ]

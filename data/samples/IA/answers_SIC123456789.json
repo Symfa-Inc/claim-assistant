@@ -2,32 +2,32 @@
   {
     "order": 1,
     "text": "Jurisdiction Code",
-    "answer": "US-IL"
+    "answer": "CO"
   },
   {
     "order": 2,
     "text": "Claim Administrator Name",
-    "answer": "BluePeak Claims Services, LLC"
+    "answer": "Summit Insurance Claims"
   },
   {
     "order": 3,
     "text": "Claim Representative Business Phone Number",
-    "answer": "217-555-0173"
+    "answer": "720-555-0120"
   },
   {
     "order": 4,
     "text": "Insurer Name (if different than claim administrator)",
-    "answer": "NorthBridge Insurance Co."
+    "answer": "Summit Insurance Company"
   },
   {
     "order": 5,
     "text": "Mailing Address, City, State, & Postal Code",
-    "answer": "1000 Liberty Ave, Springfield, IL 62704"
+    "answer": "1010 17th St, Suite 500, Denver, CO 80202"
   },
   {
     "order": 6,
     "text": "Claim Administrator Claim Number",
-    "answer": "CLAIM-2024-000055"
+    "answer": "SIC-2024-0312-001"
   },
   {
     "order": 7,
@@ -37,27 +37,27 @@
   {
     "order": 8,
     "text": "Claim Administrator FEIN",
-    "answer": "12-3456789"
+    "answer": "91-2345678"
   },
   {
     "order": 9,
     "text": "Claim Type Code",
-    "answer": "BI"
+    "answer": "I"
   },
   {
     "order": 10,
     "text": "Employer Name",
-    "answer": "Acme Manufacturing, Inc."
+    "answer": "Front Range Logistics, LLC"
   },
   {
     "order": 11,
     "text": "Employer FEIN",
-    "answer": "12-3456789"
+    "answer": "84-2233445"
   },
   {
     "order": 12,
     "text": "Insured Report Number",
-    "answer": "IRN-2024-02-19-01"
+    "answer": "FRL-INC-2024-0312"
   },
   {
     "order": 13,
@@ -67,52 +67,52 @@
   {
     "order": 14,
     "text": "Physical Address, City, State, & Postal Code",
-    "answer": "100 Industrial Way, Springfield, IL 62701"
+    "answer": "2450 E 40th Ave, Denver, CO 80205"
   },
   {
     "order": 15,
     "text": "Mailing Address, City, State, & Postal Code",
-    "answer": "123 Maple St, Springfield, IL 62703"
+    "answer": "PO Box 1120, Denver, CO 80201"
   },
   {
     "order": 16,
     "text": "Industry Code",
-    "answer": "311"
+    "answer": "NAICS 493110"
   },
   {
     "order": 17,
     "text": "Insured Location Number",
-    "answer": "LOC-1001"
+    "answer": "LOC-DEN-01"
   },
   {
     "order": 18,
     "text": "Employer UI Number",
-    "answer": "UI-8910112"
+    "answer": "CO-1234567"
   },
   {
     "order": 19,
     "text": "Nature of Business",
-    "answer": "Metal fabrication and assembly"
+    "answer": "General warehousing and distribution"
   },
   {
     "order": 20,
     "text": "Employer Contact Name and Business Phone Number",
-    "answer": "Jane Doe, 217-555-0120"
+    "answer": "Laura Benson, HR Manager, 303-555-0147"
   },
   {
     "order": 21,
     "text": "Insured Name (parent company if different than employer)",
-    "answer": "Acme Holdings, LLC"
+    "answer": "Front Range Logistics Holdings, Inc."
   },
   {
     "order": 22,
     "text": "Insured FEIN",
-    "answer": "12-3456789"
+    "answer": "84-5566789"
   },
   {
     "order": 23,
     "text": "Insured Postal Code",
-    "answer": "62701"
+    "answer": "80205"
   },
   {
     "order": 24,
@@ -142,7 +142,7 @@
   {
     "order": 29,
     "text": "Employee Name - Middle",
-    "answer": "A"
+    "answer": "Michael"
   },
   {
     "order": 30,
@@ -152,7 +152,7 @@
   {
     "order": 31,
     "text": "Date of Birth",
-    "answer": "1980-04-15"
+    "answer": "1986-09-22"
   },
   {
     "order": 32,
@@ -167,27 +167,27 @@
   {
     "order": 34,
     "text": "Mailing Address, City, State, & Postal Code",
-    "answer": "123 Maple St, Springfield, IL 62703"
+    "answer": "1257 N Downing St, Apt 3, Denver, CO 80218"
   },
   {
     "order": 35,
     "text": "Date of Hire",
-    "answer": "2015-03-01"
+    "answer": "2021-08-23"
   },
   {
     "order": 36,
     "text": "State of Hire",
-    "answer": "IL"
+    "answer": "CO"
   },
   {
     "order": 37,
     "text": "Educational Level (grade completed)",
-    "answer": "Bachelor"
+    "answer": "14"
   },
   {
     "order": 38,
     "text": "Phone Number (include area code)",
-    "answer": "217-555-0133"
+    "answer": "720-555-0198"
   },
   {
     "order": 39,
@@ -197,17 +197,17 @@
   {
     "order": 40,
     "text": "Occupation Description",
-    "answer": "Maintenance Technician"
+    "answer": "Warehouse associate"
   },
   {
     "order": 41,
     "text": "NCCI Classification Code",
-    "answer": "5311"
+    "answer": "8291"
   },
   {
     "order": 42,
     "text": "Department Where Regularly Worked",
-    "answer": "Maintenance"
+    "answer": "Shipping & Receiving"
   },
   {
     "order": 43,
@@ -222,7 +222,7 @@
   {
     "order": 45,
     "text": "ID #",
-    "answer": "111-22-3333"
+    "answer": "XXX-XX-4821"
   },
   {
     "order": 46,
@@ -242,27 +242,17 @@
   {
     "order": 49,
     "text": "Average Wage $",
-    "answer": ""
-  },
-  {
-    "order": 49,
-    "text": "Average Wage $",
-    "answer": ""
-  },
-  {
-    "order": 49,
-    "text": "Average Wage $",
-    "answer": ""
+    "answer": "22.50"
   },
   {
     "order": 50,
     "text": "Average Wage Frequency",
-    "answer": "weekly"
+    "answer": "hourly"
   },
   {
     "order": 51,
     "text": "Number of Days Regularly Worked Per Week",
-    "answer": ""
+    "answer": "5"
   },
   {
     "order": 52,
@@ -277,47 +267,47 @@
   {
     "order": 54,
     "text": "Discontinued Fringe Benefits $",
-    "answer": ""
+    "answer": "0"
   },
   {
     "order": 55,
     "text": "Employee Number of Dependents",
-    "answer": ""
+    "answer": "1"
   },
   {
     "order": 56,
     "text": "Employee Number of Exemptions",
-    "answer": ""
+    "answer": "1"
   },
   {
     "order": 57,
     "text": "Exemptions Type",
-    "answer": "Entitled"
+    "answer": "Withholding"
   },
   {
     "order": 58,
     "text": "Date of Injury",
-    "answer": "2024-02-19"
+    "answer": "2024-03-12"
   },
   {
     "order": 59,
     "text": "Date Employer Had Knowledge of the Injury",
-    "answer": "2024-02-19"
+    "answer": "2024-03-12"
   },
   {
     "order": 60,
     "text": "Date Claim Administrator Had Knowledge of the Injury",
-    "answer": "2024-02-20"
+    "answer": "2024-03-13"
   },
   {
     "order": 61,
     "text": "Initial Date Last Day Worked",
-    "answer": "2024-02-19"
+    "answer": "2024-03-12"
   },
   {
     "order": 62,
     "text": "Initial Return to Work Date (if applicable)",
-    "answer": "2024-03-04"
+    "answer": "2024-03-15"
   },
   {
     "order": 63,
@@ -327,12 +317,12 @@
   {
     "order": 64,
     "text": "Time of Injury",
-    "answer": "08:45:00"
+    "answer": "10:35:00"
   },
   {
     "order": 65,
     "text": "Time Employee Began Work",
-    "answer": "07:30:00"
+    "answer": "07:00:00"
   },
   {
     "order": 66,
@@ -347,67 +337,67 @@
   {
     "order": 68,
     "text": "Accident Site Organization Name",
-    "answer": "Acme Plant"
+    "answer": "Front Range Logistics, LLC - Denver Warehouse"
   },
   {
     "order": 69,
     "text": "Accident Site Street, City, State, & Postal Code",
-    "answer": "100 Industrial Ave, Springfield, IL 62701"
+    "answer": "2450 E 40th Ave, Denver, CO 80205"
   },
   {
     "order": 70,
     "text": "Accident Location Narrative (if no street address)",
-    "answer": "Employee tripped over a loose floor tile in the production area, leading to a fracture of the left tibia."
+    "answer": "Warehouse loading dock area near Bay 3."
   },
   {
     "order": 71,
     "text": "Accident Site County/Parish",
-    "answer": "Sangamon"
+    "answer": "Denver County"
   },
   {
     "order": 72,
     "text": "Type of Injury / Illness Code",
-    "answer": "S82.20"
+    "answer": "072"
   },
   {
     "order": 73,
     "text": "Describe the nature of the injury",
-    "answer": "Fracture of left tibia"
+    "answer": "Acute sprain/strain to the right wrist with superficial contusion to the forearm; swelling and limited range of motion noted."
   },
   {
     "order": 74,
     "text": "Part of Body Affected Code",
-    "answer": "L-LEG-01"
+    "answer": "Right wrist (320)"
   },
   {
     "order": 75,
     "text": "Part(s) of body directly affected by the injury or illness",
-    "answer": "Left leg; tibia"
+    "answer": "Right wrist and right forearm"
   },
   {
     "order": 76,
     "text": "Describe the events that caused the injury",
-    "answer": "Employee tripped on a loose floor tile in the production area and fell, injuring the left leg."
+    "answer": "While lifting a 45-pound box from a pallet, employee’s grip slipped and the box fell. He instinctively reached to catch it, twisting his right wrist and bumping his forearm against the pallet edge."
   },
   {
     "order": 77,
     "text": "Name the object or substance that directly injured the employee",
-    "answer": "Loose floor tile"
+    "answer": "Falling cardboard box and wooden pallet"
   },
   {
     "order": 78,
     "text": "Specify activity the employee was engaged in when the event occurred",
-    "answer": "Carrying a heavy component during maintenance duties on the production line"
+    "answer": "Lifting and stacking boxes onto shelving as part of normal job duties in shipping/receiving."
   },
   {
     "order": 79,
     "text": "Witness Name",
-    "answer": "David Chen"
+    "answer": "Emily Nguyen"
   },
   {
     "order": 80,
     "text": "Witness Business Phone Number",
-    "answer": "217-555-2310"
+    "answer": "303-555-0175"
   },
   {
     "order": 81,
@@ -417,41 +407,41 @@
   {
     "order": 82,
     "text": "Initial Medical Provider Name",
-    "answer": "Springfield General Hospital"
+    "answer": "UCHealth Urgent Care - Central Park"
   },
   {
     "order": 83,
     "text": "Initial Medical Provider Physical Address, City, State, & Postal Code",
-    "answer": "88 Health Ave, Springfield, IL 62704"
+    "answer": "3401 N Quebec St, Denver, CO 80207"
   },
   {
     "order": 84,
     "text": "Managed Care Organization Name or ID Number",
-    "answer": "BlueCross BlueShield IL"
+    "answer": "Colorado Care Network - MCO ID CCN-4472"
   },
   {
     "order": 85,
     "text": "ICD Primary Diagnostic Code (if known)",
-    "answer": "S82.20"
+    "answer": "S63.501A"
   },
   {
     "order": 86,
     "text": "Preparer’s Name & Title",
-    "answer": "Emily Carter, Claims Specialist"
+    "answer": "Laura Benson, HR Manager"
   },
   {
     "order": 87,
     "text": "Preparer's Company Name",
-    "answer": "Acme Claims LLC"
+    "answer": "Front Range Logistics, LLC"
   },
   {
     "order": 88,
     "text": "Preparer Phone Number",
-    "answer": "312-555-0149"
+    "answer": "303-555-0147"
   },
   {
     "order": 89,
     "text": "Preparer Date",
-    "answer": "2024-02-28"
+    "answer": "2024-03-14"
   }
 ]

@@ -2,77 +2,77 @@
   {
     "order": 1,
     "text": "Federal Employer's Identification Number",
-    "answer": "12-3456789"
+    "answer": "93-1456789"
   },
   {
     "order": 2,
     "text": "Date of hire",
-    "answer": "2018-05-20"
+    "answer": "2019-03-18"
   },
   {
     "order": 3,
     "text": "Name of employer",
-    "answer": "Northview Manufacturing Co."
+    "answer": "Pacific Home Goods, Inc."
   },
   {
     "order": 4,
     "text": "Phone",
-    "answer": "+1 (555) 123-4567"
+    "answer": "(503) 555-0142"
   },
   {
     "order": 5,
     "text": "Mailing address (Street)",
-    "answer": "100 Industrial Way"
+    "answer": "1245 NE Riverside Way"
   },
   {
     "order": 6,
     "text": "Mailing address (City)",
-    "answer": "Springfield"
+    "answer": "Portland"
   },
   {
     "order": 7,
     "text": "Mailing address (State)",
-    "answer": "IL"
+    "answer": "OR"
   },
   {
     "order": 8,
     "text": "Mailing address (ZIP)",
-    "answer": "62704"
+    "answer": "97211"
   },
   {
     "order": 9,
     "text": "Location, if different from mailing address (Street)",
-    "answer": "Same as mailing address"
+    "answer": "1245 NE Riverside Way"
   },
   {
     "order": 10,
     "text": "Location (City)",
-    "answer": "Springfield"
+    "answer": "Portland"
   },
   {
     "order": 11,
     "text": "Location (State)",
-    "answer": "IL"
+    "answer": "OR"
   },
   {
     "order": 12,
     "text": "Location (ZIP)",
-    "answer": "62704"
+    "answer": "97211"
   },
   {
     "order": 13,
     "text": "Nature of business",
-    "answer": "Manufacturing"
+    "answer": "Home goods retail and warehouse operations"
   },
   {
     "order": 14,
     "text": "NAICS or S.I.C. Code",
-    "answer": "326199"
+    "answer": "442299"
   },
   {
     "order": 15,
     "text": "Dept. or division",
-    "answer": "Operations"
+    "answer": "Warehouse - Receiving"
   },
   {
     "order": 16,
@@ -82,7 +82,7 @@
   {
     "order": 17,
     "text": "Middle",
-    "answer": "A"
+    "answer": "Anne"
   },
   {
     "order": 18,
@@ -102,87 +102,87 @@
   {
     "order": 21,
     "text": "Home address (Street)",
-    "answer": "123 Maple Street"
+    "answer": "418 E 29th St"
   },
   {
     "order": 22,
     "text": "Home address (City)",
-    "answer": "Springfield"
+    "answer": "Vancouver"
   },
   {
     "order": 23,
     "text": "Home address (State)",
-    "answer": "IL"
+    "answer": "WA"
   },
   {
     "order": 24,
     "text": "Home address (ZIP)",
-    "answer": "62704"
+    "answer": "98661"
   },
   {
     "order": 25,
     "text": "SSN",
-    "answer": "123-45-6789"
+    "answer": "987-65-4321"
   },
   {
     "order": 26,
     "text": "Birth date",
-    "answer": "1990-04-22"
+    "answer": "1990-06-14"
   },
   {
     "order": 27,
     "text": "occupation",
-    "answer": "Manufacturing Technician"
+    "answer": "Warehouse associate"
   },
   {
     "order": 28,
     "text": "phone",
-    "answer": "+1-555-789-0123"
+    "answer": "(360) 555-0198"
   },
   {
     "order": 29,
     "text": "Date of injury or occupational disease",
-    "answer": "2024-06-15"
+    "answer": "2024-09-10"
   },
   {
     "order": 30,
     "text": "Time of injury",
-    "answer": "13:45:00"
+    "answer": "10:15:00"
   },
   {
     "order": 31,
     "text": "a.m. / p.m.",
-    "answer": "p.m."
+    "answer": "a.m."
   },
   {
     "order": 32,
     "text": "Date reported to employer",
-    "answer": "2024-06-16"
+    "answer": "2024-09-10"
   },
   {
     "order": 33,
     "text": "Date disability began",
-    "answer": "2024-06-16"
+    "answer": "2024-09-11"
   },
   {
     "order": 34,
     "text": "Gross average weekly wage $",
-    "answer": "1200"
+    "answer": "1225.50"
   },
   {
     "order": 35,
     "text": "Place of accident or last exposure (City)",
-    "answer": "Springfield"
+    "answer": "Portland"
   },
   {
     "order": 36,
     "text": "Place of accident or last exposure (County)",
-    "answer": "Sangamon"
+    "answer": "Multnomah"
   },
   {
     "order": 37,
     "text": "Place of accident or last exposure (State)",
-    "answer": "IL"
+    "answer": "OR"
   },
   {
     "order": 38,
@@ -192,47 +192,47 @@
   {
     "order": 39,
     "text": "How did accident occur?",
-    "answer": "The operator's hydraulic press activated unexpectedly; glove caught in mechanism, pinching the left hand."
+    "answer": "While unloading a pallet from a delivery truck at the warehouse loading dock, a top carton shifted and fell. Emily stepped back to avoid it, tripped over a parked pallet jack, twisting her right ankle and landing on her left wrist."
   },
   {
     "order": 40,
     "text": "What was employee doing when injured?",
-    "answer": "Operating hydraulic press"
+    "answer": "Unloading inbound shipment and moving cartons from pallet to staging area."
   },
   {
     "order": 41,
     "text": "Name substance or object that directly caused injury*",
-    "answer": "Hydraulic press"
+    "answer": "Falling carton and pallet jack"
   },
   {
     "order": 42,
     "text": "Describe in detail nature and extent of injury, indicate part of body involved*",
-    "answer": "Crush injury to left index and middle fingers with contusions and minor laceration; treated on-site, possible soft tissue damage; no fracture diagnosed at time of report."
+    "answer": "Right ankle inversion sprain (Grade II) with swelling; left wrist contusion/sprain. X-rays negative for fracture. Treated with aircast, wrist brace, NSAIDs, and referred to physical therapy."
   },
   {
     "order": 43,
     "text": "Was worker admitted to hospital?",
-    "answer": true
+    "answer": false
   },
   {
     "order": 44,
     "text": "Date",
-    "answer": "2024-06-17"
+    "answer": null
   },
   {
     "order": 45,
     "text": "Treated by emergency room only?",
-    "answer": false
+    "answer": true
   },
   {
     "order": 46,
     "text": "Hospital name and address",
-    "answer": "Springfield General Hospital, 101 Health Ave, Springfield, IL 62701"
+    "answer": "Legacy Emanuel Medical Center, 2801 N Gantenbein Ave, Portland, OR 97227"
   },
   {
     "order": 47,
     "text": "Name and address of attending physician or clinic",
-    "answer": "Dr. Laura Chen, Springfield General Hospital, 101 Health Ave, Springfield, IL 62701"
+    "answer": "Dr. Samuel Ortiz, Northwest Occupational Medicine Clinic, 1331 N Killingsworth St, Portland, OR 97217"
   },
   {
     "order": 48,
@@ -247,7 +247,7 @@
   {
     "order": 50,
     "text": "Date",
-    "answer": "2024-07-15"
+    "answer": "2024-09-16"
   },
   {
     "order": 51,
@@ -257,12 +257,12 @@
   {
     "order": 52,
     "text": "Date first/initial payment",
-    "answer": "2024-07-10"
+    "answer": "2024-09-20"
   },
   {
     "order": 53,
     "text": "Weekly compensation rate $",
-    "answer": "520"
+    "answer": "817.00"
   },
   {
     "order": 54,
@@ -282,37 +282,37 @@
   {
     "order": 57,
     "text": "Name(s) and address(es) of dependents (death cases only)",
-    "answer": "None"
+    "answer": ""
   },
   {
     "order": 58,
     "text": "Insurance carrier and third party administrator",
-    "answer": "SureStart Insurance Co."
+    "answer": "Acme Mutual Insurance Co. / Apex TPA Services"
   },
   {
     "order": 59,
     "text": "Insurance address (Street)",
-    "answer": "400 Insurance Plaza"
+    "answer": "500 Market St, Suite 900"
   },
   {
     "order": 60,
     "text": "Insurance address (City)",
-    "answer": "Springfield"
+    "answer": "San Francisco"
   },
   {
     "order": 61,
     "text": "Insurance address (State)",
-    "answer": "IL"
+    "answer": "CA"
   },
   {
     "order": 62,
     "text": "Insurance address (ZIP)",
-    "answer": "62702"
+    "answer": "94105"
   },
   {
     "order": 63,
     "text": "Phone",
-    "answer": "+1-555-112-2334"
+    "answer": "(800) 555-3478"
   },
   {
     "order": 64,
@@ -322,31 +322,31 @@
   {
     "order": 65,
     "text": "Name of agent",
-    "answer": "Maria Lopez"
+    "answer": "Michael Santos"
   },
   {
     "order": 66,
     "text": "Claim number",
-    "answer": "CLM-20240615-EJ"
+    "answer": "CLM-2024-0910-001"
   },
   {
     "order": 67,
     "text": "Name of claim representative",
-    "answer": "Alex Rivera"
+    "answer": "Laura Chen"
   },
   {
     "order": 68,
     "text": "Date of report",
-    "answer": "2024-06-18"
+    "answer": "2024-09-12"
   },
   {
     "order": 69,
     "text": "Completed by",
-    "answer": "Alex Rivera"
+    "answer": "Karen Patel"
   },
   {
     "order": 70,
     "text": "Title",
-    "answer": "Claims Representative"
+    "answer": "HR Manager"
   }
 ]
