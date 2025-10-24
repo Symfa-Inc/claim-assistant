@@ -247,17 +247,17 @@
   {
     "order": 50,
     "text": "Number of hours per day",
-    "answer": ""
+    "answer": "8"
   },
   {
     "order": 51,
     "text": "Number of hours per week",
-    "answer": ""
+    "answer": "40"
   },
   {
     "order": 52,
     "text": "Number of days per week",
-    "answer": ""
+    "answer": "5"
   },
   {
     "order": 53,
