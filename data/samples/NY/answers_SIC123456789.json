@@ -7,7 +7,7 @@
   {
     "order": 2,
     "text": "WCB Case Number (JCN)",
-    "answer": "NY-23-567890"
+    "answer": "A1234567"
   },
   {
     "order": 3,
@@ -27,285 +27,300 @@
   {
     "order": 6,
     "text": "Insurer ID",
-    "answer": "NAIC 19999"
+    "answer": "W010021"
   },
   {
     "order": 7,
     "text": "Claim Administrator Name",
-    "answer": "Summit Indemnity Claims Department"
+    "answer": "Martin Eden"
   },
   {
     "order": 8,
+    "text": "Claim Administrator Info/Attn",
+    "answer": null
+  },
+  {
+    "order": 9,
     "text": "Claim Administrator Address",
     "answer": "100 Main St"
   },
   {
-    "order": 9,
+    "order": 10,
     "text": "Claim Administrator City",
     "answer": "Hartford"
   },
   {
-    "order": 10,
+    "order": 11,
     "text": "Claim Administrator State",
     "answer": "CT"
   },
   {
-    "order": 11,
+    "order": 12,
     "text": "Claim Administrator Postal Code",
     "answer": "06103"
   },
   {
-    "order": 12,
+    "order": 13,
     "text": "Claim Administrator Country",
     "answer": "USA"
   },
   {
-    "order": 13,
+    "order": 15,
+    "text": "Claim Admin ID",
+    "answer": null
+  },
+  {
+    "order": 16,
     "text": "Employee First Name",
     "answer": "John"
   },
   {
-    "order": 14,
+    "order": 17,
     "text": "Employee Middle Name/Initial",
     "answer": "Andrew"
   },
   {
-    "order": 15,
+    "order": 18,
     "text": "Employee Last Name",
     "answer": "Smith"
   },
   {
-    "order": 16,
+    "order": 19,
     "text": "Employee Suffix",
     "answer": null
   },
   {
-    "order": 17,
+    "order": 20,
     "text": "Employee Mailing Address",
     "answer": "78 Maple St"
   },
   {
-    "order": 18,
+    "order": 21,
     "text": "Employee City",
     "answer": "Albany"
   },
   {
-    "order": 19,
+    "order": 22,
     "text": "Employee State",
     "answer": "NY"
   },
   {
-    "order": 20,
+    "order": 23,
     "text": "Employee Postal Code",
     "answer": "12208"
   },
   {
-    "order": 21,
+    "order": 24,
     "text": "Employee Country",
     "answer": "USA"
   },
   {
-    "order": 22,
+    "order": 25,
     "text": "Employee Phone Number",
     "answer": "518-555-0196"
   },
   {
-    "order": 23,
+    "order": 26,
     "text": "Date of Birth",
     "answer": "1985-02-14"
   },
   {
-    "order": 24,
+    "order": 27,
     "text": "Gender",
     "answer": "Male"
   },
   {
-    "order": 25,
+    "order": 28,
     "text": "Date of Hire",
     "answer": "2015-06-01"
   },
   {
-    "order": 26,
+    "order": 29,
     "text": "Employee SSN",
     "answer": "123-45-6789"
   },
   {
-    "order": 27,
+    "order": 30,
     "text": "Occupation Description",
     "answer": "Carpenter/Installer"
   },
   {
-    "order": 28,
+    "order": 31,
     "text": "Employee Email Address",
     "answer": "john.smith@example.com"
   },
   {
-    "order": 29,
+    "order": 32,
     "text": "Time of Injury",
     "answer": "10:35:00"
   },
   {
-    "order": 30,
+    "order": 33,
     "text": "Date Employer Had Knowledge of the Injury",
     "answer": "2023-11-03"
   },
   {
-    "order": 31,
+    "order": 34,
     "text": "Employment Status",
     "answer": "Full-time"
   },
   {
-    "order": 32,
+    "order": 35,
     "text": "Date Employer Had Knowledge of Date of Disability",
     "answer": "2023-11-04"
   },
   {
-    "order": 33,
+    "order": 36,
     "text": "Estimated Weekly Wage",
-    "answer": null
+    "answer": "1050.00"
   },
   {
-    "order": 34,
+    "order": 37,
     "text": "Number of Days Worked Per Week",
-    "answer": null
+    "answer": "5"
   },
   {
-    "order": 35,
+    "order": 38,
     "text": "Work Week Type",
     "answer": "Standard Work Week"
   },
   {
-    "order": 36,
+    "order": 39,
     "text": "Work Days Scheduled",
     "answer": "Monday–Friday"
   },
   {
-    "order": 37,
+    "order": 40,
     "text": "Full Wages Paid for Date of Injury",
     "answer": true
   },
   {
-    "order": 38,
+    "order": 41,
     "text": "Employer Paid Salary in Lieu of Compensation",
     "answer": false
   },
   {
-    "order": 39,
+    "order": 42,
     "text": "Initial Treatment",
     "answer": "Minor Clinic/Hospital Treatment"
   },
   {
-    "order": 40,
+    "order": 43,
     "text": "Death Result of Injury",
     "answer": "No"
   },
   {
-    "order": 41,
+    "order": 44,
     "text": "Date of Death",
     "answer": null
   },
   {
-    "order": 42,
+    "order": 45,
     "text": "Number of Dependents",
     "answer": null
   },
   {
-    "order": 43,
+    "order": 46,
     "text": "Nature of Injury",
     "answer": "Lumbar strain"
   },
   {
-    "order": 44,
+    "order": 47,
     "text": "Part of Body",
     "answer": "Lower back"
   },
   {
-    "order": 45,
+    "order": 48,
     "text": "Cause of Injury",
     "answer": "Lifting heavy materials"
   },
   {
-    "order": 46,
+    "order": 49,
     "text": "Accident/Injury Description",
-    "answer": "While lifting and positioning a bundle of laminate flooring onto a pallet at a client warehouse loading dock, the employee felt a sharp pull in his lower back. He immediately stopped work, reported the incident to the site supervisor, and sought evaluation at an urgent care clinic. Imaging was not required; he was diagnosed with a lumbar strain and given light-duty restrictions."
+    "answer": "While lifting and positioning a bundle of laminate flooring onto a pallet at a client warehouse loading dock, the employee felt a sharp pull in his lower back."
   },
   {
-    "order": 47,
+    "order": 50,
     "text": "Initial Date Last Day Worked",
     "answer": "2023-11-03"
   },
   {
-    "order": 48,
+    "order": 51,
     "text": "Initial Date Disability Began",
     "answer": "2023-11-04"
   },
   {
-    "order": 49,
+    "order": 52,
     "text": "Initial Return to Work Date",
     "answer": "2023-11-10"
   },
   {
-    "order": 50,
+    "order": 53,
     "text": "Return To Work Type",
     "answer": "Actual"
   },
   {
-    "order": 51,
+    "order": 54,
     "text": "Physical Restrictions",
     "answer": true
   },
   {
-    "order": 52,
+    "order": 55,
     "text": "Return To Work Same Employer",
     "answer": true
   },
   {
-    "order": 53,
+    "order": 56,
     "text": "Accident Location - Organization Name",
     "answer": "Hudson Logistics - Client Site"
   },
   {
-    "order": 54,
+    "order": 57,
     "text": "Accident Location - Street",
     "answer": "250 River St"
   },
   {
-    "order": 55,
+    "order": 58,
     "text": "Accident Location - City",
     "answer": "Troy"
   },
   {
-    "order": 56,
+    "order": 59,
     "text": "Accident Location - State",
     "answer": "NY"
   },
   {
-    "order": 57,
+    "order": 60,
     "text": "Accident Location - Postal Code",
     "answer": "12180"
   },
   {
-    "order": 58,
+    "order": 61,
+    "text": "Accident Location - County",
+    "answer": null
+  },
+  {
+    "order": 62,
     "text": "Accident Location - Country",
     "answer": "USA"
   },
   {
-    "order": 59,
+    "order": 63,
     "text": "Location Narrative",
-    "answer": "Incident occurred at the loading dock area of a client warehouse with concrete flooring and palletized materials adjacent to a forklift lane."
+    "answer": "Incident occurred at the loading dock area."
   },
   {
-    "order": 60,
+    "order": 64,
     "text": "Premises",
     "answer": "Other"
   },
   {
-    "order": 61,
+    "order": 65,
     "text": "Witness Names",
-    "answer": "Maria Lopez; Kevin O'Neill"
+    "answer": "Maria Lopez"
   },
   {
-    "order": 62,
+    "order": 66,
     "text": "Witness Business Phone Number",
     "answer": "518-555-0134"
   },
@@ -315,97 +330,102 @@
     "answer": "John Smith dba Smith Home Services"
   },
   {
-    "order": 64,
+    "order": 68,
     "text": "Employer FEIN",
     "answer": "12-3456789"
   },
   {
-    "order": 65,
+    "order": 69,
     "text": "UI Number",
     "answer": "NY-1234567"
   },
   {
-    "order": 66,
+    "order": 70,
     "text": "Manual Classification Code",
     "answer": "5645"
   },
   {
-    "order": 67,
+    "order": 71,
     "text": "Industry Code",
     "answer": "236118"
   },
   {
-    "order": 68,
+    "order": 72,
+    "text": "Employer Information Info/Attn",
+    "answer": null
+  },
+  {
+    "order": 73,
     "text": "Employer Mailing Address",
     "answer": "1150 Central Ave, Suite 204"
   },
   {
-    "order": 69,
+    "order": 74,
     "text": "Employer City",
     "answer": "Albany"
   },
   {
-    "order": 70,
+    "order": 75,
     "text": "Employer State",
     "answer": "NY"
   },
   {
-    "order": 71,
+    "order": 76,
     "text": "Employer Postal Code",
     "answer": "12205"
   },
   {
-    "order": 72,
+    "order": 77,
     "text": "Employer Country",
     "answer": "USA"
   },
   {
-    "order": 73,
-    "text": "Employer Physical Address",
+    "order": 78,
+    "text": "Employer Physical Addr",
     "answer": "1150 Central Ave, Suite 204, Albany, NY 12205"
   },
   {
-    "order": 74,
+    "order": 79,
     "text": "Employer Contact Name",
     "answer": "John Smith"
   },
   {
-    "order": 75,
+    "order": 80,
     "text": "Employer Contact Business Phone Number",
     "answer": "518-555-0148"
   },
   {
-    "order": 76,
+    "order": 81,
     "text": "Insured Name",
     "answer": "John Smith"
   },
   {
-    "order": 77,
+    "order": 82,
     "text": "Insured FEIN",
     "answer": "12-3456789"
   },
   {
-    "order": 78,
+    "order": 83,
     "text": "Insured Location ID",
     "answer": "ALB-001"
   },
   {
-    "order": 79,
+    "order": 84,
     "text": "Policy Number ID",
     "answer": "SIC123456789"
   },
   {
-    "order": 80,
+    "order": 85,
     "text": "Policy Effective Date",
     "answer": "2023-05-15"
   },
   {
-    "order": 81,
+    "order": 86,
     "text": "Policy Expiration Date",
     "answer": "2024-05-15"
   },
   {
-    "order": 82,
+    "order": 87,
     "text": "Insured Type",
     "answer": "Insured"
   }
