@@ -27,7 +27,7 @@
   {
     "order": 6,
     "text": "PHONE #",
-    "answer": "(858) 555-0100"
+    "answer": "8585550100"
   },
   {
     "order": 7,
@@ -92,17 +92,17 @@
   {
     "order": 19,
     "text": "DATE OF BIRTH",
-    "answer": "1987-07-14"
+    "answer": "Jul 14, 1987"
   },
   {
     "order": 20,
     "text": "SOCIAL SECURITY NUMBER",
-    "answer": "541-22-9031"
+    "answer": "541229031"
   },
   {
     "order": 21,
     "text": "DATE HIRED",
-    "answer": "2020-05-11"
+    "answer": "May 11, 2020"
   },
   {
     "order": 22,
@@ -137,7 +137,7 @@
   {
     "order": 28,
     "text": "PHONE",
-    "answer": "(619) 555-0134"
+    "answer": "6195550134"
   },
   {
     "order": 29,
@@ -182,17 +182,17 @@
   {
     "order": 37,
     "text": "TIME EMPLOYEE BEGAN WORK",
-    "answer": "07:00:00"
+    "answer": "07:00:00 AM"
   },
   {
     "order": 38,
     "text": "DATE OF INJURY/ILLNESS",
-    "answer": "2023-11-16"
+    "answer": "Nov 16, 2023"
   },
   {
     "order": 39,
     "text": "TIME OF OCCURRENCE",
-    "answer": "10:15:00"
+    "answer": "10:15:00 AM"
   },
   {
     "order": 40,
@@ -202,17 +202,17 @@
   {
     "order": 41,
     "text": "LAST WORK DATE",
-    "answer": "2023-11-16"
+    "answer": "Nov 16, 2023"
   },
   {
     "order": 42,
     "text": "DATE EMPLOYER NOTIFIED",
-    "answer": "2023-11-16"
+    "answer": "Nov 16, 2023"
   },
   {
     "order": 43,
     "text": "DATE DISABILITY BEGAN",
-    "answer": "2023-11-17"
+    "answer": "Nov 17, 2023"
   },
   {
     "order": 44,
@@ -222,7 +222,7 @@
   {
     "order": 45,
     "text": "CONTACT PHONE NUMBER",
-    "answer": "(858) 555-0101"
+    "answer": "8585550101"
   },
   {
     "order": 46,
@@ -262,7 +262,7 @@
   {
     "order": 53,
     "text": "SPECIFIC ACTIVITY THE EMPLOYEE WAS ENGAGED IN WHEN THE ACCIDENT OR ILLNESS EXPOSURE OCCURRED",
-    "answer": "56-Lifting"
+    "answer": "56-Strain or Injury by - Lifting"
   },
   {
     "order": 54,
@@ -272,7 +272,7 @@
   {
     "order": 55,
     "text": "HOW INJURY OR ILLNESS/ABNORMAL HEALTH CONDITION OCCURRED. DESCRIBE THE SEQUENCE OF EVENTS AND INCLUDE ANY OBJECTS OR SUBSTANCES THAT DIRECTLY INJURED THE EMPLOYEE OR MADE THE EMPLOYEE ILL",
-    "answer": "While lifting a bundled stack of 2x4 lumber from the truck bed to the garage at the client’s residence, John twisted to set the bundle down and felt a sharp pull in his lower back. He immediately stopped work and reported the injury to the site lead. No slip or fall occurred; the strain resulted from lifting and twisting with the load."
+    "answer": "While lifting a bundled stack of 2x4 lumber from the truck bed to the garage at the client’s residence, John twisted to set the bundle down and felt a sharp pull in his lower back. He immediately stopped work."
   },
   {
     "order": 56,
@@ -282,7 +282,7 @@
   {
     "order": 57,
     "text": "DATE RETURN(ED) TO WORK",
-    "answer": "2023-11-20"
+    "answer": "Nov 20, 2023"
   },
   {
     "order": 58,
@@ -302,7 +302,7 @@
   {
     "order": 61,
     "text": "PHYSICIAN/HEALTH CARE PROVIDER (NAME & ADDRESS)",
-    "answer": "Dr. Lauren Chen, Sharp Rees-Stealy Urgent Care – La Mesa, 5525 Grossmont Center Dr, La Mesa, CA 91942; (619) 555-0160"
+    "answer": "Dr. Lauren Chen, Sharp Rees-Stealy Urgent Care, 5525 Grossmont Center Dr, La Mesa, CA 91942"
   },
   {
     "order": 62,
@@ -317,17 +317,17 @@
   {
     "order": 64,
     "text": "WITNESSES (NAME & PHONE #)",
-    "answer": "Ethan Park – (619) 555-0198"
+    "answer": "Ethan Park – 6195550198"
   },
   {
     "order": 65,
     "text": "DATE ADMINISTRATOR NOTIFIED",
-    "answer": "2023-11-17"
+    "answer": "Nov 17, 2023"
   },
   {
     "order": 66,
     "text": "DATE PREPARED",
-    "answer": "2023-11-18"
+    "answer": "Nov 18, 2023"
   },
   {
     "order": 67,
@@ -337,6 +337,6 @@
   {
     "order": 68,
     "text": "PHONE NUMBER",
-    "answer": "(858) 555-0101"
+    "answer": "8585550101"
   }
 ]
