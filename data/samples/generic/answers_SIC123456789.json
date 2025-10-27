@@ -27,7 +27,7 @@
   {
     "order": 6,
     "text": "PHONE #",
-    "answer": "(614) 555-0125"
+    "answer": "6145550125"
   },
   {
     "order": 7,
@@ -92,17 +92,17 @@
   {
     "order": 19,
     "text": "DATE OF BIRTH",
-    "answer": "1984-03-22"
+    "answer": "03/22/1984"
   },
   {
     "order": 20,
     "text": "SOCIAL SECURITY NUMBER",
-    "answer": "987-65-4321"
+    "answer": "987654321"
   },
   {
     "order": 21,
     "text": "DATE HIRED",
-    "answer": "2022-08-01"
+    "answer": "08/01/2022"
   },
   {
     "order": 22,
@@ -137,12 +137,12 @@
   {
     "order": 28,
     "text": "PHONE",
-    "answer": "(614) 555-0147"
+    "answer": "6145550147"
   },
   {
     "order": 29,
     "text": "# OF DEPENDENTS",
-    "answer": "2"
+    "answer": "002"
   },
   {
     "order": 30,
@@ -152,7 +152,7 @@
   {
     "order": 31,
     "text": "RATE",
-    "answer": "22.5"
+    "answer": "022.50"
   },
   {
     "order": 32,
@@ -182,17 +182,17 @@
   {
     "order": 37,
     "text": "TIME EMPLOYEE BEGAN WORK",
-    "answer": "08:00:00"
+    "answer": "8:00:00 AM"
   },
   {
     "order": 38,
     "text": "DATE OF INJURY/ILLNESS",
-    "answer": "2023-11-14"
+    "answer": "Nov 14, 2023"
   },
   {
     "order": 39,
     "text": "TIME OF OCCURRENCE",
-    "answer": "10:20:00"
+    "answer": "10:20:00 AM"
   },
   {
     "order": 40,
@@ -202,17 +202,17 @@
   {
     "order": 41,
     "text": "LAST WORK DATE",
-    "answer": "2023-11-14"
+    "answer": "Nov 14, 2023"
   },
   {
     "order": 42,
     "text": "DATE EMPLOYER NOTIFIED",
-    "answer": "2023-11-15"
+    "answer": "Nov 15, 2023"
   },
   {
     "order": 43,
     "text": "DATE DISABILITY BEGAN",
-    "answer": "2023-11-15"
+    "answer": "Nov 15, 2023"
   },
   {
     "order": 44,
@@ -222,7 +222,7 @@
   {
     "order": 45,
     "text": "CONTACT PHONE NUMBER",
-    "answer": "(614) 555-0133"
+    "answer": "6145550133"
   },
   {
     "order": 46,
@@ -252,7 +252,7 @@
   {
     "order": 51,
     "text": "DEPARTMENT OR LOCATION WHERE ACCIDENT OR ILLNESS EXPOSURE OCCURRED",
-    "answer": "Receiving Dock, Building A, MidOhio Distribution, 2450 Westlake Industrial Dr, Columbus, OH 43228"
+    "answer": "Receiving Dock, Building A, MidOhio Distribution"
   },
   {
     "order": 52,
@@ -262,7 +262,7 @@
   {
     "order": 53,
     "text": "SPECIFIC ACTIVITY THE EMPLOYEE WAS ENGAGED IN WHEN THE ACCIDENT OR ILLNESS EXPOSURE OCCURRED",
-    "answer": "56-Lifting"
+    "answer": "56-Strain or Injury By - Lifting"
   },
   {
     "order": 54,
@@ -272,7 +272,7 @@
   {
     "order": 55,
     "text": "HOW INJURY OR ILLNESS/ABNORMAL HEALTH CONDITION OCCURRED. DESCRIBE THE SEQUENCE OF EVENTS AND INCLUDE ANY OBJECTS OR SUBSTANCES THAT DIRECTLY INJURED THE EMPLOYEE OR MADE THE EMPLOYEE ILL",
-    "answer": "While unloading a pallet on the receiving dock, employee lifted a ~55-lb carton from waist height and pivoted to place it on a shelf. During the twist, he felt a sharp pull in his lower back and immediately set the box down. He reported the incident to his supervisor, applied ice, and sought evaluation at urgent care. No fall or impact occurred; strain attributed to lifting and twisting while handling the box."
+    "answer": "While unloading a pallet on the receiving dock, employee lifted a ~55-lb carton from waist height and pivoted to place it on a shelf. During the twist, he felt a sharp pull in his lower back and immediately set the box down."
   },
   {
     "order": 56,
@@ -282,7 +282,7 @@
   {
     "order": 57,
     "text": "DATE RETURN(ED) TO WORK",
-    "answer": "2023-11-20"
+    "answer": "Nov 20, 2023"
   },
   {
     "order": 58,
@@ -302,7 +302,7 @@
   {
     "order": 61,
     "text": "PHYSICIAN/HEALTH CARE PROVIDER (NAME & ADDRESS)",
-    "answer": "Emily Chen, MD – Midtown Occupational Health Clinic, 225 Grant Ave, Columbus, OH 43215"
+    "answer": "Emily Chen, MD, Midtown Occupational Health Clinic, 225 Grant Ave, Columbus, OH 43215"
   },
   {
     "order": 62,
@@ -317,7 +317,7 @@
   {
     "order": 64,
     "text": "WITNESSES (NAME & PHONE #)",
-    "answer": "Miguel Alvarez – (614) 555-0199; Sarah Patel – (614) 555-0174"
+    "answer": "Miguel Alvarez, 6145550199; Sarah Patel, 6145550174"
   },
   {
     "order": 65,
