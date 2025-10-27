@@ -7,7 +7,7 @@
   {
     "order": 2,
     "text": "NAME (First, Middle, Last) - Middle",
-    "answer": "Andrew"
+    "answer": null
   },
   {
     "order": 3,
@@ -262,7 +262,7 @@
   {
     "order": 53,
     "text": "NAME, ADDRESS AND TELEPHONE OF PHYSICIAN OR HOSPITAL",
-    "answer": "St. Mary’s Urgent Care, 220 Montgomery St, Jersey City, NJ 07302. Phone: (201) 555-0118"
+    "answer": "St. Mary’s Urgent Care, 220 Montgomery St, Jersey City, NJ 07302, (201) 555-0118"
   },
   {
     "order": 54,
