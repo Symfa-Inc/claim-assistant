@@ -27,7 +27,7 @@
   {
     "order": 6,
     "text": "PHONE #",
-    "answer": "(213) 555-0100"
+    "answer": "2135550100"
   },
   {
     "order": 7,
@@ -92,17 +92,17 @@
   {
     "order": 19,
     "text": "DATE OF BIRTH",
-    "answer": "1990-05-14"
+    "answer": "05/14/1990"
   },
   {
     "order": 20,
     "text": "SOCIAL SECURITY NUMBER",
-    "answer": "555-43-9214"
+    "answer": "555439214"
   },
   {
     "order": 21,
     "text": "DATE HIRED",
-    "answer": "2021-06-07"
+    "answer": "06/07/2021"
   },
   {
     "order": 22,
@@ -137,12 +137,12 @@
   {
     "order": 28,
     "text": "PHONE",
-    "answer": "(213) 555-0198"
+    "answer": "2135550198"
   },
   {
     "order": 29,
     "text": "# OF DEPENDENTS",
-    "answer": "0"
+    "answer": "000"
   },
   {
     "order": 30,
@@ -152,7 +152,7 @@
   {
     "order": 31,
     "text": "RATE",
-    "answer": "1250"
+    "answer": "1,250.00"
   },
   {
     "order": 32,
@@ -182,17 +182,17 @@
   {
     "order": 37,
     "text": "TIME EMPLOYEE BEGAN WORK",
-    "answer": "08:30:00"
+    "answer": "08:30:00 AM"
   },
   {
     "order": 38,
     "text": "DATE OF INJURY/ILLNESS",
-    "answer": "2024-11-18"
+    "answer": "Nov 18, 2024"
   },
   {
     "order": 39,
     "text": "TIME OF OCCURRENCE",
-    "answer": "10:45:00"
+    "answer": "10:45:00 AM"
   },
   {
     "order": 40,
@@ -202,17 +202,17 @@
   {
     "order": 41,
     "text": "LAST WORK DATE",
-    "answer": "2024-11-18"
+    "answer": "Nov 18, 2024"
   },
   {
     "order": 42,
     "text": "DATE EMPLOYER NOTIFIED",
-    "answer": "2024-11-18"
+    "answer": "Nov 18, 2024"
   },
   {
     "order": 43,
     "text": "DATE DISABILITY BEGAN",
-    "answer": "2024-11-19"
+    "answer": "Nov 19, 2024"
   },
   {
     "order": 44,
@@ -222,7 +222,7 @@
   {
     "order": 45,
     "text": "CONTACT PHONE NUMBER",
-    "answer": "(213) 555-0134"
+    "answer": "2135550134"
   },
   {
     "order": 46,
@@ -252,7 +252,7 @@
   {
     "order": 51,
     "text": "DEPARTMENT OR LOCATION WHERE ACCIDENT OR ILLNESS EXPOSURE OCCURRED",
-    "answer": "Break room/kitchen - 6th Floor, BrightWave Marketing, 700 S Flower St, Los Angeles, CA 90017"
+    "answer": "Break room/kitchen - 6th Floor, BrightWave Marketing"
   },
   {
     "order": 52,
@@ -272,7 +272,7 @@
   {
     "order": 55,
     "text": "HOW INJURY OR ILLNESS/ABNORMAL HEALTH CONDITION OCCURRED. DESCRIBE THE SEQUENCE OF EVENTS AND INCLUDE ANY OBJECTS OR SUBSTANCES THAT DIRECTLY INJURED THE EMPLOYEE OR MADE THE EMPLOYEE ILL",
-    "answer": "Employee was carrying a small box of brochures from the supply closet to the conference room. Near the break room sink, she stepped on a wet spot from a leaking water dispenser, her right foot slipped, and she twisted to regain balance. She did not fall but felt a sharp pain in her right knee immediately. No wet floor sign was posted at the time."
+    "answer": "Employee was carrying a small box of brochures from the supply closet to the conference room. Near the break room sink, she stepped on a wet spot from a leaking water dispenser, her right foot slipped."
   },
   {
     "order": 56,
@@ -282,7 +282,7 @@
   {
     "order": 57,
     "text": "DATE RETURN(ED) TO WORK",
-    "answer": "2024-11-21"
+    "answer": "Nov 21, 2024"
   },
   {
     "order": 58,
@@ -317,7 +317,7 @@
   {
     "order": 64,
     "text": "WITNESSES (NAME & PHONE #)",
-    "answer": "Michael Ortega (213) 555-0172; Priya Desai (213) 555-0164"
+    "answer": "Michael Ortega 2135550172"
   },
   {
     "order": 65,
