@@ -7,7 +7,7 @@
   {
     "order": 2,
     "text": "NHDOL#",
-    "answer": "NHDOL-2023-114567"
+    "answer": null
   },
   {
     "order": 3,
@@ -242,7 +242,7 @@
   {
     "order": 49,
     "text": "Client Company",
-    "answer": "N/A"
+    "answer": null
   },
   {
     "order": 50,
@@ -252,7 +252,7 @@
   {
     "order": 51,
     "text": "Name of policy holder",
-    "answer": "N/A"
+    "answer": null
   },
   {
     "order": 52,

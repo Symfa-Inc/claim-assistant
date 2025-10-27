@@ -247,7 +247,7 @@
   {
     "order": 50,
     "text": "Certified Managed Care Organization (if any)",
-    "answer": "N/A"
+    "answer": null
   },
   {
     "order": 51,
@@ -312,7 +312,7 @@
   {
     "order": 63,
     "text": "Employer FEIN",
-    "answer": "83-7654321"
+    "answer": "837654321"
   },
   {
     "order": 64,
@@ -356,8 +356,8 @@
   },
   {
     "order": 72,
-    "text": "Witness (and phone)",
-    "answer": "Michael Turner, (614) 555-0199"
+    "text": "Witness (phone)",
+    "answer": "(614) 555-0199"
   },
   {
     "order": 73,
@@ -382,12 +382,12 @@
   {
     "order": 77,
     "text": "Policy # (including effective dates) or self-insured certificate #",
-    "answer": "SIC123456789 (Effective 2023-05-15 to 2024-05-15)"
+    "answer": "SIC123456789"
   },
   {
     "order": 78,
     "text": "Insurer FEIN",
-    "answer": "94-1234560"
+    "answer": "941234560"
   },
   {
     "order": 79,
@@ -427,7 +427,7 @@
   {
     "order": 86,
     "text": "CA FEIN",
-    "answer": "94-1234560"
+    "answer": "941234560"
   },
   {
     "order": 87,

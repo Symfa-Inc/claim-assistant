@@ -282,7 +282,7 @@
   {
     "order": 57,
     "text": "Name(s) and address(es) of dependents (death cases only)",
-    "answer": "N/A"
+    "answer": null
   },
   {
     "order": 58,

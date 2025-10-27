@@ -622,7 +622,7 @@
   },
   {
     "order": 72,
-    "text": "Witness (and phone)",
+    "text": "Witness (phone)",
     "description": "Witness contact information (if more than one attach separate sheet)",
     "alias": null,
     "data_type": "string",
