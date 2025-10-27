@@ -7,7 +7,7 @@
   {
     "order": 2,
     "text": "NAME (First, Middle, Last) - Middle",
-    "answer": "Grace"
+    "answer": null
   },
   {
     "order": 3,
@@ -52,7 +52,7 @@
   {
     "order": 11,
     "text": "EMPLOYEE'S DESCRIPTION OF ACCIDENT (Include Cause of Injury)",
-    "answer": "While lifting a 35-lb carton from a lower pallet at the loading dock, I stepped on a wet spot near Bay 3 and slipped. I twisted my right knee and fell forward, bracing my fall with my left hand, causing a wrist sprain. Spill appeared to be water tracked in from the dock area. Incident was reported to my supervisor immediately and first aid was provided before I was sent to occupational health."
+    "answer": "While lifting a 35-lb carton from a lower pallet at the loading dock, I stepped on a wet spot near Bay 3 and slipped. I twisted my right knee and fell forward, bracing my fall with my left hand, causing a wrist sprain. Spill appeared to be water tracked in from the dock area. Incident was reported to my supervisor immediately and first aid was provided."
   },
   {
     "order": 12,
@@ -262,7 +262,7 @@
   {
     "order": 53,
     "text": "NAME, ADDRESS AND TELEPHONE OF PHYSICIAN OR HOSPITAL",
-    "answer": "Providence Occupational Health - North Portland, 4925 N Basin Ave, Portland, OR 97217, (503) 555-0144"
+    "answer": "Providence Occupational Health, North Portland, 4925 N Basin Ave, Portland, OR 97217"
   },
   {
     "order": 54,
