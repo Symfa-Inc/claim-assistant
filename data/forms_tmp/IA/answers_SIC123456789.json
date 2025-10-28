@@ -42,7 +42,7 @@
   {
     "order": 9,
     "text": "Claim Type Code",
-    "answer": "I"
+    "answer": "MO"
   },
   {
     "order": 10,
@@ -222,7 +222,7 @@
   {
     "order": 45,
     "text": "ID #",
-    "answer": "XXX-XX-4821"
+    "answer": "387-15-4821"
   },
   {
     "order": 46,
@@ -347,7 +347,7 @@
   {
     "order": 70,
     "text": "Accident Location Narrative (if no street address)",
-    "answer": "Warehouse loading dock area near Bay 3."
+    "answer": "Warehouse loading dock area near Bay 3"
   },
   {
     "order": 71,
@@ -362,7 +362,7 @@
   {
     "order": 73,
     "text": "Describe the nature of the injury",
-    "answer": "Acute sprain/strain to the right wrist with superficial contusion to the forearm; swelling and limited range of motion noted."
+    "answer": "Acute sprain/strain to the right wrist with superficial contusion to the forearm; swelling and limited range of motion noted"
   },
   {
     "order": 74,
@@ -377,7 +377,7 @@
   {
     "order": 76,
     "text": "Describe the events that caused the injury",
-    "answer": "While lifting a 45-pound box from a pallet, employee’s grip slipped and the box fell. He instinctively reached to catch it, twisting his right wrist and bumping his forearm against the pallet edge."
+    "answer": "While lifting a 45-pound box from a pallet, employee’s grip slipped and the box fell. He instinctively reached to catch it, twisting his right wrist and bumping his forearm against the pallet edge"
   },
   {
     "order": 77,
@@ -387,7 +387,7 @@
   {
     "order": 78,
     "text": "Specify activity the employee was engaged in when the event occurred",
-    "answer": "Lifting and stacking boxes onto shelving as part of normal job duties in shipping/receiving."
+    "answer": "Lifting and stacking boxes onto shelving as part of normal job duties in shipping/receiving"
   },
   {
     "order": 79,
