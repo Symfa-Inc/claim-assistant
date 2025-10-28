@@ -347,7 +347,7 @@
   {
     "order": 70,
     "text": "Accident Location Narrative (if no street address)",
-    "answer": "Not applicable—incident occurred on the main warehouse floor near Dock 3."
+    "answer": "Not applicable—incident occurred on the main warehouse floor near Dock 3"
   },
   {
     "order": 71,
@@ -362,7 +362,7 @@
   {
     "order": 73,
     "text": "Describe the nature of the injury",
-    "answer": "Acute lumbar strain with muscle spasm; reported sharp pain in lower back after lifting and twisting."
+    "answer": "Acute lumbar strain with muscle spasm; reported sharp pain in lower back after lifting and twisting"
   },
   {
     "order": 74,
