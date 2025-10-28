@@ -112,12 +112,12 @@
   {
     "order": 23,
     "text": "Regular work hours - From",
-    "answer": "08:00:00"
+    "answer": "8 a.m."
   },
   {
     "order": 24,
     "text": "Regular work hours - To",
-    "answer": "16:30:00"
+    "answer": "4:30 p.m."
   },
   {
     "order": 25,
@@ -172,12 +172,12 @@
   {
     "order": 35,
     "text": "Injured worker start time",
-    "answer": "08:00:00"
+    "answer": "8 a.m."
   },
   {
     "order": 36,
     "text": "Time of injury",
-    "answer": "10:35:00"
+    "answer": "10:35 a.m."
   },
   {
     "order": 37,
@@ -196,182 +196,182 @@
   },
   {
     "order": 40,
+    "text": "If the injured worker has returned to work, provide the date.",
+    "answer": null
+  },
+  {
+    "order": 41,
     "text": "Was the place of the accident or exposure on employer's premises?",
     "answer": false
   },
   {
-    "order": 41,
+    "order": 42,
     "text": "If no, give accident location, street address",
     "answer": "5297 Willow Crest Dr"
   },
   {
-    "order": 42,
+    "order": 43,
     "text": "If no, give accident location, city",
     "answer": "Dublin"
   },
   {
-    "order": 43,
+    "order": 44,
     "text": "If no, give accident location, state",
     "answer": "OH"
   },
   {
-    "order": 44,
+    "order": 45,
     "text": "If no, give accident location, ZIP code",
     "answer": "43017"
   },
   {
-    "order": 45,
+    "order": 46,
     "text": "Was injured worker hospitalized overnight?",
     "answer": false
   },
   {
-    "order": 46,
+    "order": 47,
     "text": "Initial treatment date",
     "answer": "2023-11-14"
   },
   {
-    "order": 47,
+    "order": 48,
     "text": "Health-care office/Facility name",
     "answer": "Riverside Occupational Health Clinic"
   },
   {
-    "order": 48,
+    "order": 49,
     "text": "Treating physician/Provider name",
     "answer": "Emily Hart, DO"
   },
   {
-    "order": 49,
+    "order": 50,
     "text": "Telephone number",
     "answer": "614-555-0194"
   },
   {
-    "order": 50,
+    "order": 51,
     "text": "Fax number",
     "answer": "614-555-0195"
   },
   {
-    "order": 51,
+    "order": 52,
     "text": "Health-care office/Facility street address",
     "answer": "111 N High St, Suite 250"
   },
   {
-    "order": 52,
+    "order": 53,
     "text": "City",
     "answer": "Columbus"
   },
   {
-    "order": 53,
+    "order": 54,
     "text": "State",
     "answer": "OH"
   },
   {
-    "order": 54,
+    "order": 55,
     "text": "ZIP code",
     "answer": "43215"
   },
   {
-    "order": 55,
+    "order": 56,
     "text": "Date of death",
     "answer": null
   },
   {
-    "order": 56,
+    "order": 57,
     "text": "Decedent\u0019s marital status",
     "answer": null
   },
   {
-    "order": 57,
+    "order": 58,
     "text": "Decedent\u0019s number of dependents",
     "answer": null
   },
   {
-    "order": 58,
+    "order": 59,
     "text": "Diagnosis(es)-narrative description including as appropriate, the location and body part, and ICD code(s).",
     "answer": "Acute lumbar strain (S39.012A) and right wrist sprain (S63.501A). No radicular symptoms, strength intact. Plan: rest, NSAIDs, wrist brace, and referral to physical therapy."
   },
   {
-    "order": 59,
+    "order": 60,
     "text": "Initial treatment date",
     "answer": "2023-11-14"
   },
   {
-    "order": 60,
+    "order": 61,
     "text": "Are the medical conditions you have listed above causally related to the reported work-related accident or occupational disease?",
     "answer": true
   },
   {
-    "order": 61,
+    "order": 62,
     "text": "Are you the physician of record?",
     "answer": true
   },
   {
-    "order": 62,
+    "order": 63,
     "text": "Treating physician/Provider\u0019s name (Print)",
     "answer": "Emily Hart, DO"
   },
   {
-    "order": 63,
+    "order": 64,
     "text": "BWC provider number",
     "answer": "BWC-458721"
   },
   {
-    "order": 64,
+    "order": 65,
     "text": "Date",
     "answer": "2023-11-15"
   },
   {
-    "order": 65,
+    "order": 66,
     "text": "Employer name",
     "answer": "John Doe dba Doe HVAC Services"
   },
   {
-    "order": 66,
+    "order": 67,
     "text": "Employer county",
     "answer": "Franklin"
   },
   {
-    "order": 67,
+    "order": 68,
     "text": "Phone number",
     "answer": "614-555-0140"
   },
   {
-    "order": 68,
+    "order": 69,
     "text": "Fax number",
     "answer": "614-555-0141"
   },
   {
-    "order": 69,
+    "order": 70,
     "text": "Email address",
     "answer": "admin@doehvacservices.com"
   },
   {
-    "order": 70,
+    "order": 71,
     "text": "Employer policy number",
     "answer": "POL123456789"
   },
   {
-    "order": 71,
+    "order": 72,
     "text": "Federal ID number",
     "answer": "82-7654321"
   },
   {
-    "order": 72,
+    "order": 73,
     "text": "Injured worker is (Check box, if applicable.)",
     "answer": "Owner/Sole proprietor"
   },
   {
-    "order": 73,
-    "text": "Employer certifies the facts in the application.",
+    "order": 74,
+    "text": "For all employers:",
     "answer": "Certification – I certify the facts in this application are correct and valid."
   },
   {
-    "order": 74,
-    "text": "Rejection reasons",
-    "answer": null
-  },
-  {
     "order": 75,
-    "text": "For self-insuring employers only: Medical only / Lost time",
-    "answer": null
+    "text": "For self-insuring employers only",
+    "answer": "Medical only"
   }
 ]
