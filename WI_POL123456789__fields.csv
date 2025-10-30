@@ -1,0 +1,4 @@
+field,answer_gt,answer_extracted,levenshtein,moverscore,levenstein_moverscore
+What is the policy number?,POL123456789,POL123456789,1.0,,1.0
+What is the insured's name?,John Doe,John Doe,,1.0,1.0
+What is the coverage amount?,"$150,000","$100,000",0.875,,0.875

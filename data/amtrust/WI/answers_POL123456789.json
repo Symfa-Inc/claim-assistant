@@ -167,7 +167,7 @@
   {
     "order": 34,
     "text": "Is Worker Paid for Overtime?",
-    "answer": true
+    "answer": "Yes"
   },
   {
     "order": 35,
@@ -272,7 +272,7 @@
   {
     "order": 55,
     "text": "Did Injury Cause Death?",
-    "answer": false
+    "answer": "No"
   },
   {
     "order": 56,
@@ -282,70 +282,60 @@
   {
     "order": 57,
     "text": "Was This a Lost Time or Other Compensable Injury?",
-    "answer": true
+    "answer": "Yes"
   },
   {
     "order": 58,
-    "text": "Did Injury Occur Because of: Substance Abuse",
-    "answer": false
+    "text": "Did Injury Occur Because of:",
+    "answer": null
   },
   {
     "order": 59,
-    "text": "Did Injury Occur Because of: Failure to Use Safety Devices",
-    "answer": false
+    "text": "Was Employee Treated in an Emergency Room?",
+    "answer": "No"
   },
   {
     "order": 60,
-    "text": "Did Injury Occur Because of: Failure to Obey Rules",
-    "answer": false
+    "text": "Was Employee Hospitalized Overnight as an In-Patient?",
+    "answer": "No"
   },
   {
     "order": 61,
-    "text": "Was Employee Treated in an Emergency Room?",
-    "answer": false
-  },
-  {
-    "order": 62,
-    "text": "Was Employee Hospitalized Overnight as an In-Patient?",
-    "answer": false
-  },
-  {
-    "order": 63,
     "text": "Name and Address of Treating Practitioner and Hospital",
     "answer": "Dr. Adam Smith, AS Clinic, 256 N Waterfall St, Milwaukee, WI 53305. Phone: (414) 555-0153."
   },
   {
-    "order": 64,
+    "order": 62,
     "text": "Case Number from the OSHA Log",
     "answer": "2024-117"
   },
   {
-    "order": 65,
+    "order": 63,
     "text": "Injury Description - Describe Activities of Employee When Injury or Illness Occurred and What Tools, Machinery, Objects, Chemicals, Etc. Were Involved.",
     "answer": "Employee was injured while lifting boxes using a hand truck when it tipped over."
   },
   {
-    "order": 66,
+    "order": 64,
     "text": "What Happened to Cause This Injury or Illness? (Describe How The Injury Occurred)",
     "answer": "The hand truck became unbalanced while moving heavy boxes, causing it to tip and strike the employee."
   },
   {
-    "order": 67,
+    "order": 65,
     "text": "What Was The Injury or Illness? (State the Part of Body Affected and How It Was Affected)",
     "answer": "The employee sustained a bruise and strain to the lower back and shoulder from the impact of the falling hand truck."
   },
   {
-    "order": 68,
+    "order": 66,
     "text": "Report Prepared By",
     "answer": "Michael Gonzales"
   },
   {
-    "order": 69,
+    "order": 67,
     "text": "Work Phone Number",
     "answer": "(414) 555-0118"
   },
   {
-    "order": 70,
+    "order": 68,
     "text": "Position",
     "answer": "HR Manager"
   }

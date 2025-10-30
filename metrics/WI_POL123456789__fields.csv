@@ -1,0 +1,71 @@
+field,answer_gt,answer_extracted,levenshtein,moverscore,levenstein_moverscore
+Employee Name (First),John,John,1.0,,1.0
+Employee Name (Middle),Andrew,Andrew,1.0,,1.0
+Employee Name (Last),Doe,Doe,1.0,,1.0
+Social Security Number*,582-41-9360,582-41-9360,1.0,,1.0
+Sex,M,M,,0.9999993249066502,0.9999993249066502
+Employee Home Telephone No.,(414) 555-0198,(414) 555-0198,1.0,,1.0
+Employee Street Address,"1842 S 9th St, Apt 3B","1842 S 9th St, Apt 3B",1.0,,1.0
+City,Milwaukee,Milwaukee,1.0,,1.0
+State,WI,WI,1.0,,1.0
+Zip Code,53204,53204,1.0,,1.0
+Occupation,Warehouse Associate,Warehouse Associate,1.0,,1.0
+Birthdate,1988-07-15,1988-07-15,1.0,,1.0
+Date of Hire,2020-05-11,2020-05-11,1.0,,1.0
+County and State Where Accident or Exposure Occurred?,"Milwaukee County, Wisconsin","Milwaukee County, Wisconsin",1.0,,1.0
+Employer Name,"Badger Logistics, LLC","Badger Logistics, LLC",1.0,,1.0
+WI Unemployment Ins. Acct No.,POL123456789,POL123456789,1.0,,1.0
+Self-Insured?,False,No,0.0,,0.0
+Nature of Business (Specific Product),Third-party logistics and warehouse distribution services,Third-party logistics and warehouse distribution services,,1.0,1.0
+Employer Mailing Address,2555 W Canal St,"2555 W Canal St, Milwaukee, WI 53204",0.5882352941176471,,0.5882352941176471
+City,Milwaukee,Milwaukee,1.0,,1.0
+State,WI,WI,1.0,,1.0
+Zip Code,53204,53204,1.0,,1.0
+Employer FEIN,39-8765432,39-8765432,1.0,,1.0
+Name of Worker's Compensation Insurance Co. or Self-Insured Employer,NorthStar Casualty Insurance Company,NorthStar Casualty Insurance Company,1.0,,1.0
+Insurer FEIN,38-7654321,38-7654321,1.0,,1.0
+Name and Address of Third Party Administrator (TPA) Used by the Insurance Company or Self-Insured Employer,"Lakeshore Claims Services, 1200 E Wisconsin Ave, Suite 400, Milwaukee, WI 53202","Lakeshore Claims Services, 1200 E Wisconsin Ave, Suite 400, Milwaukee, WI 53202",1.0,,1.0
+TPA FEIN,39-1122334,39-1122334,1.0,,1.0
+Wage at Time of Injury $,23.50,23.50,1.0,,1.0
+"Specify per hr., wk., mo., yr., etc.",hr,hr,1.0,,1.0
+"In Addition to Wages, Check Box(es) if Employee Received",,"None. No meals, room, or tips indicated.",0.18181818181818177,,0.18181818181818177
+No. of Meals/wk.,,0,0.0,,0.0
+No. of Days/wk,,5,0.0,,0.0
+Avg. Weekly Amt. $,,0,0.0,,0.0
+Is Worker Paid for Overtime?,True,Yes,0.2857142857142857,,0.2857142857142857
+"If Yes, After How Many Hours of Work Per Week?",40,40,1.0,,1.0
+No. of Weeks:,50,50,1.0,,1.0
+Gross Amount Excluding Tips: $,51000,51000,1.0,,1.0
+"If Piece-Work, No. of Hrs. Excluding Overtime:",,N/A (field left blank/not applicable),0.14634146341463417,,0.14634146341463417
+Employee's Usual Work Schedule When Injured Start Time,8:00 a.m.,8:00 AM,0.625,,0.625
+Employee's Usual Work Schedule When Injured Hours Per Day,8,8,1.0,,1.0
+Employee's Usual Work Schedule When Injured Hours Per Week,40,40,1.0,,1.0
+Employee's Usual Work Schedule When Injured Days Per Week,5,5,1.0,,1.0
+Employer’s Usual Full-Time Schedule for This Type of Work at Time of Employee’s Injury Hours Per Day,8,8,1.0,,1.0
+Employer’s Usual Full-Time Schedule for This Type of Work at Time of Employee’s Injury Hours Per Week,40,40,1.0,,1.0
+Employer’s Usual Full-Time Schedule for This Type of Work at Time of Employee’s Injury Days Per Week,5,5,1.0,,1.0
+Part-Time Employment Information,,Other part-time workers with the same schedule: No. Number of full-time employees doing the same type of work: 4.,0.06837606837606836,,0.06837606837606836
+Are there Other Part-Time Workers Doing the Same Work With the Same Schedule?,False,No,0.0,,0.0
+"If Yes, how many?",,4,0.0,,0.0
+Number of Full-Time Employees Doing The Same Type Of Work:,4,None,0.0,,0.0
+Injury Date,2024-06-12,2024-06-12,1.0,,1.0
+Time of Injury,11:25 a.m.,11:25 AM,0.6666666666666667,,0.6666666666666667
+Last Day Worked,2024-06-12,2024-06-12,1.0,,1.0
+Date Employer Notified,2024-06-12,2024-06-12,1.0,,1.0
+Date Returned to Work,2024-06-22,2024-06-22,1.0,,1.0
+Did Injury Cause Death?,False,No,0.0,,0.0
+Date of Death,,N/A,0.2857142857142857,,0.2857142857142857
+Was This a Lost Time or Other Compensable Injury?,True,Yes.,0.25,,0.25
+Did Injury Occur Because of: Substance Abuse,False,No,0.0,,0.0
+Did Injury Occur Because of: Failure to Use Safety Devices,False,No,0.0,,0.0
+Did Injury Occur Because of: Failure to Obey Rules,False,No,0.0,,0.0
+Was Employee Treated in an Emergency Room?,False,No,0.0,,0.0
+Was Employee Hospitalized Overnight as an In-Patient?,False,No,0.0,,0.0
+Name and Address of Treating Practitioner and Hospital,"Dr. Adam Smith, AS Clinic, 256 N Waterfall St, Milwaukee, WI 53305. Phone: (414) 555-0153.","Dr. Adam Smith, AS Clinic, 256 N Waterfall St, Milwaukee, WI 53305. Phone: (414) 555-0153.",1.0,,1.0
+Case Number from the OSHA Log,2024-117,2024-117,1.0,,1.0
+"Injury Description - Describe Activities of Employee When Injury or Illness Occurred and What Tools, Machinery, Objects, Chemicals, Etc. Were Involved.",Employee was injured while lifting boxes using a hand truck when it tipped over.,Employee was injured while lifting boxes using a hand truck when it tipped over.,,0.9905253269263433,0.9905253269263433
+What Happened to Cause This Injury or Illness? (Describe How The Injury Occurred),"The hand truck became unbalanced while moving heavy boxes, causing it to tip and strike the employee.","The hand truck became unbalanced while moving heavy boxes, causing it to tip and strike the employee.",,0.9914334489817718,0.9914334489817718
+What Was The Injury or Illness? (State the Part of Body Affected and How It Was Affected),The employee sustained a bruise and strain to the lower back and shoulder from the impact of the falling hand truck.,Bruise and strain to the lower back and shoulder from the impact of the falling hand truck.,,0.7232969050379234,0.7232969050379234
+Report Prepared By,Michael Gonzales,Michael Gonzales,1.0,,1.0
+Work Phone Number,(414) 555-0118,(414) 555-0118,1.0,,1.0
+Position,HR Manager,HR Manager,1.0,,1.0
