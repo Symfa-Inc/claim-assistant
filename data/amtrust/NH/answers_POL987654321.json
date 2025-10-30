@@ -122,7 +122,7 @@
   {
     "order": 25,
     "text": "Accident Description",
-    "answer": "While unloading a pallet from a delivery truck at the receiving dock, employee stepped on a wet spot, slipped, and twisted her right ankle, falling to one knee and bracing with her right hand. Immediate swelling of the right ankle and soreness in the right wrist were noted. Wet area appeared to be from rain tracked in near the bay door."
+    "answer": "While unloading a pallet from a delivery truck at the receiving dock, employee stepped on a wet spot, slipped, and twisted her right ankle, falling to one knee and bracing with her right hand."
   },
   {
     "order": 26,
@@ -187,7 +187,7 @@
   {
     "order": 38,
     "text": "Name of Treating Hospital",
-    "answer": "Elliot Urgent Care – River's Edge, Manchester, NH"
+    "answer": "Elliot Urgent Care – River's Edge"
   },
   {
     "order": 39,

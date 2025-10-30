@@ -187,7 +187,7 @@
   {
     "order": 38,
     "text": "What was the injury or illness (include the part(s) of body)?",
-    "answer": "Acute lumbar strain/sprain affecting the lower back with associated muscle spasm; no radiating pain to legs reported at time of exam."
+    "answer": "Acute lumbar strain/sprain affecting the lower back with associated muscle spasm; no radiating pain to legs reported"
   },
   {
     "order": 39,
@@ -217,7 +217,7 @@
   {
     "order": 44,
     "text": "Date employer notified of injury",
-    "answer": "2023-12-05"
+    "answer": "2023-12-06"
   },
   {
     "order": 45,

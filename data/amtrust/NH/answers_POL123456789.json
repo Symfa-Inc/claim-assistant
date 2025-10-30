@@ -122,7 +122,7 @@
   {
     "order": 25,
     "text": "Accident Description",
-    "answer": "While lifting a 70-pound box from a lower pallet to a conveyor, employee felt a sharp pull in his lower back and strained his right shoulder when the load shifted and he twisted to avoid dropping it. Incident occurred on the warehouse floor near the receiving bay. No equipment malfunction noted; improper body mechanics during lift identified as primary factor."
+    "answer": "While lifting a 70-pound box from a lower pallet to a conveyor, employee felt a sharp pull in his lower back and strained his right shoulder when the load shifted and he twisted to avoid dropping it. Incident occurred on the warehouse floor near the receiving bay. "
   },
   {
     "order": 26,
@@ -187,7 +187,7 @@
   {
     "order": 38,
     "text": "Name of Treating Hospital",
-    "answer": "Concord Urgent Care, 295 Loudon Rd, Concord, NH 03301"
+    "answer": "Concord Urgent Care"
   },
   {
     "order": 39,

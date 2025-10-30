@@ -187,12 +187,12 @@
   {
     "order": 38,
     "text": "What was the injury or illness (include the part(s) of body)?",
-    "answer": "Left ankle sprain and contusion to the left shin; swelling and tenderness in the ankle with bruising on the shin. X-rays negative for fracture."
+    "answer": "Left ankle sprain and contusion to the left shin."
   },
   {
     "order": 39,
     "text": "What tools, equipment, machines, objects, or substances were involved?",
-    "answer": "Aluminum step ladder, shrink-wrapped pallet, handheld barcode scanner, cardboard boxes of ceramic mugs, concrete floor."
+    "answer": "Aluminum step ladder, shrink-wrapped pallet, concrete floor."
   },
   {
     "order": 40,
