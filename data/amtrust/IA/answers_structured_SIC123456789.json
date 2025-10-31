@@ -1,0 +1,447 @@
+[
+  {
+    "order": 1,
+    "text": "Jurisdiction Code",
+    "answer": "CO"
+  },
+  {
+    "order": 2,
+    "text": "Claim Administrator Name",
+    "answer": "Summit Insurance Claims"
+  },
+  {
+    "order": 3,
+    "text": "Claim Representative Business Phone Number",
+    "answer": "720-555-0120"
+  },
+  {
+    "order": 4,
+    "text": "Insurer Name (if different than claim administrator)",
+    "answer": "Summit Insurance Company"
+  },
+  {
+    "order": 5,
+    "text": "Mailing Address, City, State, & Postal Code",
+    "answer": "1010 17th St, Suite 500, Denver, CO 80202"
+  },
+  {
+    "order": 6,
+    "text": "Claim Administrator Claim Number",
+    "answer": "SIC-2024-0312-001"
+  },
+  {
+    "order": 7,
+    "text": "Insurer FEIN",
+    "answer": "98-7654321"
+  },
+  {
+    "order": 8,
+    "text": "Claim Administrator FEIN",
+    "answer": "91-2345678"
+  },
+  {
+    "order": 9,
+    "text": "Claim Type Code",
+    "answer": "MO"
+  },
+  {
+    "order": 10,
+    "text": "Employer Name",
+    "answer": "Front Range Logistics, LLC"
+  },
+  {
+    "order": 11,
+    "text": "Employer FEIN",
+    "answer": "84-2233445"
+  },
+  {
+    "order": 12,
+    "text": "Insured Report Number",
+    "answer": "FRL-INC-2024-0312"
+  },
+  {
+    "order": 13,
+    "text": "Employer Type Code",
+    "answer": "Employer (E)"
+  },
+  {
+    "order": 14,
+    "text": "Physical Address, City, State, & Postal Code",
+    "answer": "2450 E 40th Ave, Denver, CO 80205"
+  },
+  {
+    "order": 15,
+    "text": "Mailing Address, City, State, & Postal Code",
+    "answer": "PO Box 1120, Denver, CO 80201"
+  },
+  {
+    "order": 16,
+    "text": "Industry Code",
+    "answer": "NAICS 493110"
+  },
+  {
+    "order": 17,
+    "text": "Insured Location Number",
+    "answer": "LOC-DEN-01"
+  },
+  {
+    "order": 18,
+    "text": "Employer UI Number",
+    "answer": "CO-1234567"
+  },
+  {
+    "order": 19,
+    "text": "Nature of Business",
+    "answer": "General warehousing and distribution"
+  },
+  {
+    "order": 20,
+    "text": "Employer Contact Name and Business Phone Number",
+    "answer": "Laura Benson, HR Manager, 303-555-0147"
+  },
+  {
+    "order": 21,
+    "text": "Insured Name (parent company if different than employer)",
+    "answer": "Front Range Logistics Holdings, Inc."
+  },
+  {
+    "order": 22,
+    "text": "Insured FEIN",
+    "answer": "84-5566789"
+  },
+  {
+    "order": 23,
+    "text": "Insured Postal Code",
+    "answer": "80205"
+  },
+  {
+    "order": 24,
+    "text": "Policy/Contract Number",
+    "answer": "SIC123456789"
+  },
+  {
+    "order": 25,
+    "text": "Coverage Effective Date",
+    "answer": "2023-05-15"
+  },
+  {
+    "order": 26,
+    "text": "Coverage Expiration Date",
+    "answer": "2024-05-15"
+  },
+  {
+    "order": 27,
+    "text": "Self Insurance License/ Certificate Number",
+    "answer": "N/A"
+  },
+  {
+    "order": 28,
+    "text": "Employee Name - First",
+    "answer": "John"
+  },
+  {
+    "order": 29,
+    "text": "Employee Name - Middle",
+    "answer": "Michael"
+  },
+  {
+    "order": 30,
+    "text": "Employee Name - Last",
+    "answer": "Smith"
+  },
+  {
+    "order": 31,
+    "text": "Date of Birth",
+    "answer": "1986-09-22"
+  },
+  {
+    "order": 32,
+    "text": "Gender",
+    "answer": "Male (M)"
+  },
+  {
+    "order": 33,
+    "text": "Tax Filing Status",
+    "answer": "Married/Filing Joint (C)"
+  },
+  {
+    "order": 34,
+    "text": "Mailing Address, City, State, & Postal Code",
+    "answer": "1257 N Downing St, Apt 3, Denver, CO 80218"
+  },
+  {
+    "order": 35,
+    "text": "Date of Hire",
+    "answer": "2021-08-23"
+  },
+  {
+    "order": 36,
+    "text": "State of Hire",
+    "answer": "CO"
+  },
+  {
+    "order": 37,
+    "text": "Educational Level (grade completed)",
+    "answer": "14"
+  },
+  {
+    "order": 38,
+    "text": "Phone Number (include area code)",
+    "answer": "720-555-0198"
+  },
+  {
+    "order": 39,
+    "text": "Email",
+    "answer": "john.smith@example.com"
+  },
+  {
+    "order": 40,
+    "text": "Occupation Description",
+    "answer": "Warehouse associate"
+  },
+  {
+    "order": 41,
+    "text": "NCCI Classification Code",
+    "answer": "8291"
+  },
+  {
+    "order": 42,
+    "text": "Department Where Regularly Worked",
+    "answer": "Shipping & Receiving"
+  },
+  {
+    "order": 43,
+    "text": "Employment Status",
+    "answer": "Regular Employee/Full-Time"
+  },
+  {
+    "order": 44,
+    "text": "Employee ID Number (ID Type)",
+    "answer": "Social Security Number"
+  },
+  {
+    "order": 45,
+    "text": "ID #",
+    "answer": "387-15-4821"
+  },
+  {
+    "order": 46,
+    "text": "Marital Status",
+    "answer": "Married (M)"
+  },
+  {
+    "order": 47,
+    "text": "Employee\u2019s Authorization to Release Medical Records",
+    "answer": true
+  },
+  {
+    "order": 48,
+    "text": "Employee\u2019s Authorization to Release Social Security Number",
+    "answer": true
+  },
+  {
+    "order": 49,
+    "text": "Average Wage $",
+    "answer": 22.5
+  },
+  {
+    "order": 50,
+    "text": "Average Wage Frequency",
+    "answer": "hourly"
+  },
+  {
+    "order": 51,
+    "text": "Number of Days Regularly Worked Per Week",
+    "answer": 5.0
+  },
+  {
+    "order": 52,
+    "text": "Salary Continued In Lieu of Compensation",
+    "answer": false
+  },
+  {
+    "order": 53,
+    "text": "Full Wages Paid for Date of Injury",
+    "answer": true
+  },
+  {
+    "order": 54,
+    "text": "Discontinued Fringe Benefits $",
+    "answer": 0.0
+  },
+  {
+    "order": 55,
+    "text": "Employee Number of Dependents",
+    "answer": 1.0
+  },
+  {
+    "order": 56,
+    "text": "Employee Number of Exemptions",
+    "answer": 1.0
+  },
+  {
+    "order": 57,
+    "text": "Exemptions Type",
+    "answer": "Withholding"
+  },
+  {
+    "order": 58,
+    "text": "Date of Injury",
+    "answer": "2024-03-12"
+  },
+  {
+    "order": 59,
+    "text": "Date Employer Had Knowledge of the Injury",
+    "answer": "2024-03-12"
+  },
+  {
+    "order": 60,
+    "text": "Date Claim Administrator Had Knowledge of the Injury",
+    "answer": "2024-03-13"
+  },
+  {
+    "order": 61,
+    "text": "Initial Date Last Day Worked",
+    "answer": "2024-03-12"
+  },
+  {
+    "order": 62,
+    "text": "Initial Return to Work Date (if applicable)",
+    "answer": "2024-03-15"
+  },
+  {
+    "order": 63,
+    "text": "Employee Date of Death (if applicable)",
+    "answer": ""
+  },
+  {
+    "order": 64,
+    "text": "Time of Injury",
+    "answer": "10:35:00"
+  },
+  {
+    "order": 65,
+    "text": "Time Employee Began Work",
+    "answer": "07:00:00"
+  },
+  {
+    "order": 66,
+    "text": "Pre-Existing Disability Code",
+    "answer": "No"
+  },
+  {
+    "order": 67,
+    "text": "Accident Premises Code",
+    "answer": "Employer (E)"
+  },
+  {
+    "order": 68,
+    "text": "Accident Site Organization Name",
+    "answer": "Front Range Logistics, LLC - Denver Warehouse"
+  },
+  {
+    "order": 69,
+    "text": "Accident Site Street, City, State, & Postal Code",
+    "answer": "2450 E 40th Ave, Denver, CO 80205"
+  },
+  {
+    "order": 70,
+    "text": "Accident Location Narrative (if no street address)",
+    "answer": "Warehouse loading dock area near Bay 3"
+  },
+  {
+    "order": 71,
+    "text": "Accident Site County/Parish",
+    "answer": "Denver County"
+  },
+  {
+    "order": 72,
+    "text": "Type of Injury / Illness Code",
+    "answer": "072"
+  },
+  {
+    "order": 73,
+    "text": "Describe the nature of the injury",
+    "answer": "Acute sprain/strain to the right wrist with superficial contusion to the forearm; swelling and limited range of motion noted"
+  },
+  {
+    "order": 74,
+    "text": "Part of Body Affected Code",
+    "answer": "Right wrist (320)"
+  },
+  {
+    "order": 75,
+    "text": "Part(s) of body directly affected by the injury or illness",
+    "answer": "Right wrist and right forearm"
+  },
+  {
+    "order": 76,
+    "text": "Describe the events that caused the injury",
+    "answer": "While lifting a 45-pound box from a pallet, employee\u2019s grip slipped and the box fell. He instinctively reached to catch it, twisting his right wrist and bumping his forearm against the pallet edge"
+  },
+  {
+    "order": 77,
+    "text": "Name the object or substance that directly injured the employee",
+    "answer": "Falling cardboard box and wooden pallet"
+  },
+  {
+    "order": 78,
+    "text": "Specify activity the employee was engaged in when the event occurred",
+    "answer": "Lifting and stacking boxes onto shelving as part of normal job duties in shipping/receiving"
+  },
+  {
+    "order": 79,
+    "text": "Witness Name",
+    "answer": "Emily Nguyen"
+  },
+  {
+    "order": 80,
+    "text": "Witness Business Phone Number",
+    "answer": "303-555-0175"
+  },
+  {
+    "order": 81,
+    "text": "Initial Treatment Code",
+    "answer": "clinic/hospital visit (2)"
+  },
+  {
+    "order": 82,
+    "text": "Initial Medical Provider Name",
+    "answer": "UCHealth Urgent Care - Central Park"
+  },
+  {
+    "order": 83,
+    "text": "Initial Medical Provider Physical Address, City, State, & Postal Code",
+    "answer": "3401 N Quebec St, Denver, CO 80207"
+  },
+  {
+    "order": 84,
+    "text": "Managed Care Organization Name or ID Number",
+    "answer": "Colorado Care Network - MCO ID CCN-4472"
+  },
+  {
+    "order": 85,
+    "text": "ICD Primary Diagnostic Code (if known)",
+    "answer": "S63.501A"
+  },
+  {
+    "order": 86,
+    "text": "Preparer\u2019s Name & Title",
+    "answer": "Laura Benson, HR Manager"
+  },
+  {
+    "order": 87,
+    "text": "Preparer's Company Name",
+    "answer": "Front Range Logistics, LLC"
+  },
+  {
+    "order": 88,
+    "text": "Preparer Phone Number",
+    "answer": "303-555-0147"
+  },
+  {
+    "order": 89,
+    "text": "Preparer Date",
+    "answer": "2024-03-14"
+  }
+]

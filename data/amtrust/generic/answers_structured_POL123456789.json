@@ -1,0 +1,342 @@
+[
+  {
+    "order": 1,
+    "text": "EMPLOYER (NAME & ADDRESS INCL ZIP)",
+    "answer": "Pacific Home Improvement, Inc., 9140 Carroll Way, Suite 105, San Diego, CA 92121"
+  },
+  {
+    "order": 2,
+    "text": "REPORT PURPOSE CODE",
+    "answer": "01-Initial"
+  },
+  {
+    "order": 3,
+    "text": "JURISDICTION",
+    "answer": "CA"
+  },
+  {
+    "order": 4,
+    "text": "EMPLOYER\u2019S LOCATION ADDRESS (IF DIFFERENT)",
+    "answer": "Same as above"
+  },
+  {
+    "order": 5,
+    "text": "LOCATION #",
+    "answer": "001"
+  },
+  {
+    "order": 6,
+    "text": "PHONE #",
+    "answer": "8585550100"
+  },
+  {
+    "order": 7,
+    "text": "INDUSTRY CODE",
+    "answer": "236118"
+  },
+  {
+    "order": 8,
+    "text": "EMPLOYER FEIN",
+    "answer": "84-2179036"
+  },
+  {
+    "order": 9,
+    "text": "CARRIER (NAME, ADDRESS, & PHONE #)",
+    "answer": "Acme Mutual Insurance Company, 2000 Commerce Plaza, Suite 600, Sacramento, CA 95814; (916) 555-0120"
+  },
+  {
+    "order": 10,
+    "text": "POLICY PERIOD (start)",
+    "answer": "2022-03-20"
+  },
+  {
+    "order": 11,
+    "text": "POLICY PERIOD (end)",
+    "answer": "2024-03-20"
+  },
+  {
+    "order": 12,
+    "text": "SELF INSURANCE",
+    "answer": false
+  },
+  {
+    "order": 13,
+    "text": "CLAIMS ADMINISTRATOR (NAME, ADDRESS & PHONE NO)",
+    "answer": "Acme Mutual Claims Department, PO Box 12345, Sacramento, CA 95812; (800) 555-0145"
+  },
+  {
+    "order": 14,
+    "text": "CARRIER FEIN",
+    "answer": "45-9081726"
+  },
+  {
+    "order": 15,
+    "text": "POLICY/SELF-INSURED NUMBER",
+    "answer": "POL123456789"
+  },
+  {
+    "order": 16,
+    "text": "ADMINISTRATOR FEIN",
+    "answer": "27-6319204"
+  },
+  {
+    "order": 17,
+    "text": "First Name",
+    "answer": "John"
+  },
+  {
+    "order": 18,
+    "text": "Last Name",
+    "answer": "Doe"
+  },
+  {
+    "order": 19,
+    "text": "DATE OF BIRTH",
+    "answer": "Jul 14, 1987"
+  },
+  {
+    "order": 20,
+    "text": "SOCIAL SECURITY NUMBER",
+    "answer": "541229031"
+  },
+  {
+    "order": 21,
+    "text": "DATE HIRED",
+    "answer": "May 11, 2020"
+  },
+  {
+    "order": 22,
+    "text": "STATE OF HIRE",
+    "answer": "CA"
+  },
+  {
+    "order": 23,
+    "text": "ADDRESS (INCL ZIP)",
+    "answer": "1428 Market St, Apt 3B, San Diego, CA 92101"
+  },
+  {
+    "order": 24,
+    "text": "SEX",
+    "answer": "Male"
+  },
+  {
+    "order": 25,
+    "text": "MARITAL STATUS",
+    "answer": "Married"
+  },
+  {
+    "order": 26,
+    "text": "OCCUPATION/JOB TITLE",
+    "answer": "Carpenter"
+  },
+  {
+    "order": 27,
+    "text": "EMPLOYMENT STATUS",
+    "answer": "1-Full-Time"
+  },
+  {
+    "order": 28,
+    "text": "PHONE",
+    "answer": "6195550134"
+  },
+  {
+    "order": 29,
+    "text": "# OF DEPENDENTS",
+    "answer": 2.0
+  },
+  {
+    "order": 30,
+    "text": "NCCI CLASS CODE",
+    "answer": "5403"
+  },
+  {
+    "order": 31,
+    "text": "RATE",
+    "answer": 1140.0
+  },
+  {
+    "order": 32,
+    "text": "PER",
+    "answer": "Week"
+  },
+  {
+    "order": 33,
+    "text": "OTHER",
+    "answer": "N/A"
+  },
+  {
+    "order": 34,
+    "text": "DAYS WORKED/WEEK",
+    "answer": 5.0
+  },
+  {
+    "order": 35,
+    "text": "FULL PAY FOR DAY OF INJURY?",
+    "answer": true
+  },
+  {
+    "order": 36,
+    "text": "DID SALARY CONTINUE?",
+    "answer": false
+  },
+  {
+    "order": 37,
+    "text": "TIME EMPLOYEE BEGAN WORK",
+    "answer": "07:00:00 AM"
+  },
+  {
+    "order": 38,
+    "text": "DATE OF INJURY/ILLNESS",
+    "answer": "Nov 16, 2023"
+  },
+  {
+    "order": 39,
+    "text": "TIME OF OCCURRENCE",
+    "answer": "10:15:00 AM"
+  },
+  {
+    "order": 40,
+    "text": "CANNOT BE DETERMINED",
+    "answer": false
+  },
+  {
+    "order": 41,
+    "text": "LAST WORK DATE",
+    "answer": "Nov 16, 2023"
+  },
+  {
+    "order": 42,
+    "text": "DATE EMPLOYER NOTIFIED",
+    "answer": "Nov 16, 2023"
+  },
+  {
+    "order": 43,
+    "text": "DATE DISABILITY BEGAN",
+    "answer": "Nov 17, 2023"
+  },
+  {
+    "order": 44,
+    "text": "CONTACT NAME",
+    "answer": "Maria Lopez"
+  },
+  {
+    "order": 45,
+    "text": "CONTACT PHONE NUMBER",
+    "answer": "8585550101"
+  },
+  {
+    "order": 46,
+    "text": "TYPE OF INJURY/ILLNESS",
+    "answer": "52-Strain or Tear"
+  },
+  {
+    "order": 47,
+    "text": "PART OF BODY AFFECTED",
+    "answer": "42-Lower Back Area"
+  },
+  {
+    "order": 48,
+    "text": "DID INJURY/ILLNESS/EXPOSURE OCCUR ON EMPLOYER\u2019S PREMISES?",
+    "answer": false
+  },
+  {
+    "order": 49,
+    "text": "TYPE OF INJURY/ILLNESS CODE",
+    "answer": "52"
+  },
+  {
+    "order": 50,
+    "text": "PART OF BODY AFFECTED CODE",
+    "answer": "42"
+  },
+  {
+    "order": 51,
+    "text": "DEPARTMENT OR LOCATION WHERE ACCIDENT OR ILLNESS EXPOSURE OCCURRED",
+    "answer": "Client job site: 8450 Lemon Ave, La Mesa, CA 91941"
+  },
+  {
+    "order": 52,
+    "text": "ALL EQUIPMENT, MATERIALS, OR CHEMICALS EMPLOYEE WAS USING WHEN ACCIDENT OR ILLNESS EXPOSURE OCCURRED",
+    "answer": "Cordless drill, 2x4 lumber bundle, tool belt, work gloves"
+  },
+  {
+    "order": 53,
+    "text": "SPECIFIC ACTIVITY THE EMPLOYEE WAS ENGAGED IN WHEN THE ACCIDENT OR ILLNESS EXPOSURE OCCURRED",
+    "answer": "56-Strain or Injury by - Lifting"
+  },
+  {
+    "order": 54,
+    "text": "WORK PROCESS THE EMPLOYEE WAS ENGAGED IN WHEN ACCIDENT OR ILLNESS EXPOSURE OCCURRED",
+    "answer": "Unloading lumber from company pickup truck and staging materials for interior framing"
+  },
+  {
+    "order": 55,
+    "text": "HOW INJURY OR ILLNESS/ABNORMAL HEALTH CONDITION OCCURRED. DESCRIBE THE SEQUENCE OF EVENTS AND INCLUDE ANY OBJECTS OR SUBSTANCES THAT DIRECTLY INJURED THE EMPLOYEE OR MADE THE EMPLOYEE ILL",
+    "answer": "While lifting a bundled stack of 2x4 lumber from the truck bed to the garage at the client\u2019s residence, John twisted to set the bundle down and felt a sharp pull in his lower back. He immediately stopped work."
+  },
+  {
+    "order": 56,
+    "text": "CAUSE OF INJURY CODE",
+    "answer": "66"
+  },
+  {
+    "order": 57,
+    "text": "DATE RETURN(ED) TO WORK",
+    "answer": "Nov 20, 2023"
+  },
+  {
+    "order": 58,
+    "text": "IF FATAL, GIVE DATE OF DEATH",
+    "answer": ""
+  },
+  {
+    "order": 59,
+    "text": "WERE SAFEGUARDS OR SAFETY EQUIPMENT PROVIDED?",
+    "answer": true
+  },
+  {
+    "order": 60,
+    "text": "WERE THEY USED?",
+    "answer": false
+  },
+  {
+    "order": 61,
+    "text": "PHYSICIAN/HEALTH CARE PROVIDER (NAME & ADDRESS)",
+    "answer": "Dr. Lauren Chen, Sharp Rees-Stealy Urgent Care, 5525 Grossmont Center Dr, La Mesa, CA 91942"
+  },
+  {
+    "order": 62,
+    "text": "HOSPITAL OR OFF SITE TREATMENT (NAME & ADDRESS)",
+    "answer": "Sharp Rees-Stealy Urgent Care \u2013 La Mesa, 5525 Grossmont Center Dr, La Mesa, CA 91942"
+  },
+  {
+    "order": 63,
+    "text": "INITIAL TREATMENT",
+    "answer": "MINOR CLINIC/HOSP"
+  },
+  {
+    "order": 64,
+    "text": "WITNESSES (NAME & PHONE #)",
+    "answer": "Ethan Park \u2013 6195550198"
+  },
+  {
+    "order": 65,
+    "text": "DATE ADMINISTRATOR NOTIFIED",
+    "answer": "Nov 17, 2023"
+  },
+  {
+    "order": 66,
+    "text": "DATE PREPARED",
+    "answer": "Nov 18, 2023"
+  },
+  {
+    "order": 67,
+    "text": "PREPARER\u2019S NAME & TITLE",
+    "answer": "Maria Lopez, HR Manager"
+  },
+  {
+    "order": 68,
+    "text": "PHONE NUMBER",
+    "answer": "8585550101"
+  }
+]

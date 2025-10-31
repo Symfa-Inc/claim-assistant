@@ -181,7 +181,7 @@
     "text": "Mark the days of the week you usually work",
     "description": "Select all days typically worked by the injured worker.",
     "alias": null,
-    "data_type": "String",
+    "data_type": "string",
     "meta": {}
   },
   {
