@@ -37,12 +37,12 @@
   {
     "order": 8,
     "text": "Date of death",
-    "answer": null
+    "answer": ""
   },
   {
     "order": 9,
     "text": "# of dependents (if death is related to injury)",
-    "answer": null
+    "answer": 0.0
   },
   {
     "order": 10,
@@ -122,7 +122,7 @@
   {
     "order": 25,
     "text": "Average weekly wage",
-    "answer": 1138
+    "answer": 1138.0
   },
   {
     "order": 26,
@@ -132,12 +132,12 @@
   {
     "order": 27,
     "text": "Hours per day",
-    "answer": 8
+    "answer": 8.0
   },
   {
     "order": 28,
     "text": "Days per week",
-    "answer": 5
+    "answer": 5.0
   },
   {
     "order": 29,
@@ -196,7 +196,7 @@
   },
   {
     "order": 40,
-    "text": "Did injury occur on employer\u0019s premises?",
+    "text": "Did injury occur on employer’s premises?",
     "answer": true
   },
   {
@@ -256,7 +256,7 @@
   },
   {
     "order": 52,
-    "text": "Extent of medical treatment - Minor on-site by employer\u0019s medical staff",
+    "text": "Extent of medical treatment - Minor on-site by employer’s medical staff",
     "answer": false
   },
   {
@@ -321,12 +321,12 @@
   },
   {
     "order": 65,
-    "text": "Employer\u0019s contact name",
+    "text": "Employer’s contact name",
     "answer": "Mark Stevens"
   },
   {
     "order": 66,
-    "text": "Employer\u0019s contact phone #",
+    "text": "Employer’s contact phone #",
     "answer": "(614) 555-0127"
   },
   {
