@@ -92,7 +92,7 @@
   {
     "order": 19,
     "text": "Age",
-    "answer": "34"
+    "answer": 34.0
   },
   {
     "order": 20,
@@ -167,7 +167,7 @@
   {
     "order": 34,
     "text": "Gross average weekly wage $",
-    "answer": "1225.50"
+    "answer": 1225.5
   },
   {
     "order": 35,
@@ -217,7 +217,7 @@
   {
     "order": 44,
     "text": "Date",
-    "answer": null
+    "answer": ""
   },
   {
     "order": 45,
@@ -262,7 +262,7 @@
   {
     "order": 53,
     "text": "Weekly compensation rate $",
-    "answer": "817.00"
+    "answer": 817.0
   },
   {
     "order": 54,
@@ -277,7 +277,7 @@
   {
     "order": 56,
     "text": "If YES, give date of death",
-    "answer": null
+    "answer": ""
   },
   {
     "order": 57,

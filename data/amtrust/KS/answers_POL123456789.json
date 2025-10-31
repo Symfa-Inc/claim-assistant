@@ -92,7 +92,7 @@
   {
     "order": 19,
     "text": "Age",
-    "answer": "33"
+    "answer": 33.0
   },
   {
     "order": 20,
@@ -167,7 +167,7 @@
   {
     "order": 34,
     "text": "Gross average weekly wage $",
-    "answer": "980.00"
+    "answer": 980.0
   },
   {
     "order": 35,
@@ -217,7 +217,7 @@
   {
     "order": 44,
     "text": "Date",
-    "answer": null
+    "answer": ""
   },
   {
     "order": 45,
@@ -257,12 +257,12 @@
   {
     "order": 52,
     "text": "Date first/initial payment",
-    "answer": null
+    "answer": ""
   },
   {
     "order": 53,
     "text": "Weekly compensation rate $",
-    "answer": "0.00"
+    "answer": 0.0
   },
   {
     "order": 54,
@@ -277,12 +277,12 @@
   {
     "order": 56,
     "text": "If YES, give date of death",
-    "answer": null
+    "answer": ""
   },
   {
     "order": 57,
     "text": "Name(s) and address(es) of dependents (death cases only)",
-    "answer": null
+    "answer": ""
   },
   {
     "order": 58,
