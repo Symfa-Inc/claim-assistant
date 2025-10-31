@@ -242,7 +242,7 @@
   {
     "order": 49,
     "text": "Average Wage $",
-    "answer": "22.50"
+    "answer": 22.5
   },
   {
     "order": 50,
@@ -252,7 +252,7 @@
   {
     "order": 51,
     "text": "Number of Days Regularly Worked Per Week",
-    "answer": "5"
+    "answer": 5.0
   },
   {
     "order": 52,
@@ -267,17 +267,17 @@
   {
     "order": 54,
     "text": "Discontinued Fringe Benefits $",
-    "answer": "0"
+    "answer": 0.0
   },
   {
     "order": 55,
     "text": "Employee Number of Dependents",
-    "answer": "1"
+    "answer": 1.0
   },
   {
     "order": 56,
     "text": "Employee Number of Exemptions",
-    "answer": "1"
+    "answer": 1.0
   },
   {
     "order": 57,
@@ -312,7 +312,7 @@
   {
     "order": 63,
     "text": "Employee Date of Death (if applicable)",
-    "answer": null
+    "answer": ""
   },
   {
     "order": 64,
