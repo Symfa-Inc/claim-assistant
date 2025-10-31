@@ -102,7 +102,7 @@
   {
     "order": 21,
     "text": "If yes, name of temp agency",
-    "answer": null
+    "answer": ""
   },
   {
     "order": 22,
@@ -142,12 +142,12 @@
   {
     "order": 29,
     "text": "Wage rate; $ per hour",
-    "answer": "21.50"
+    "answer": 21.5
   },
   {
     "order": 30,
     "text": "Number of hours scheduled to work the week of this injury",
-    "answer": "40"
+    "answer": 40.0
   },
   {
     "order": 31,
@@ -196,182 +196,172 @@
   },
   {
     "order": 40,
-    "text": "If the injured worker has returned to work, provide the date.",
-    "answer": null
-  },
-  {
-    "order": 41,
     "text": "Was the place of the accident or exposure on employer's premises?",
     "answer": false
   },
   {
-    "order": 42,
+    "order": 41,
     "text": "If no, give accident location, street address",
     "answer": "1250 Maple Ave"
   },
   {
-    "order": 43,
+    "order": 42,
     "text": "If no, give accident location, city",
     "answer": "Dublin"
   },
   {
-    "order": 44,
+    "order": 43,
     "text": "If no, give accident location, state",
     "answer": "OH"
   },
   {
-    "order": 45,
+    "order": 44,
     "text": "If no, give accident location, ZIP code",
     "answer": "43017"
   },
   {
-    "order": 46,
+    "order": 45,
     "text": "Was injured worker hospitalized overnight?",
     "answer": false
   },
   {
-    "order": 47,
+    "order": 46,
     "text": "Initial treatment date",
     "answer": "2024-11-05"
   },
   {
-    "order": 48,
+    "order": 47,
     "text": "Health-care office/Facility name",
     "answer": "OhioHealth Urgent Care - Dublin"
   },
   {
-    "order": 49,
+    "order": 48,
     "text": "Treating physician/Provider name",
     "answer": "Michael R. Patel, MD"
   },
   {
-    "order": 50,
+    "order": 49,
     "text": "Telephone number",
     "answer": "614-555-0198"
   },
   {
-    "order": 51,
+    "order": 50,
     "text": "Fax number",
     "answer": "614-555-0298"
   },
   {
-    "order": 52,
+    "order": 51,
     "text": "Health-care office/Facility street address",
     "answer": "4333 W Dublin Granville Rd"
   },
   {
-    "order": 53,
+    "order": 52,
     "text": "City",
     "answer": "Dublin"
   },
   {
-    "order": 54,
+    "order": 53,
     "text": "State",
     "answer": "OH"
   },
   {
-    "order": 55,
+    "order": 54,
     "text": "ZIP code",
     "answer": "43017"
   },
   {
-    "order": 56,
+    "order": 55,
     "text": "Date of death",
-    "answer": null
+    "answer": ""
+  },
+  {
+    "order": 56,
+    "text": "Decedent’s marital status",
+    "answer": ""
   },
   {
     "order": 57,
-    "text": "Decedent’s marital status",
-    "answer": null
+    "text": "Decedent’s number of dependents",
+    "answer": 0.0
   },
   {
     "order": 58,
-    "text": "Decedent’s number of dependents",
-    "answer": null
-  },
-  {
-    "order": 59,
     "text": "Diagnosis(es)-narrative description including as appropriate, the location and body part, and ICD code(s).",
     "answer": "Left wrist sprain (ICD-10 S63.502A) and contusion of left knee (ICD-10 S80.02XA). X-rays negative for fracture. Swelling and tenderness over distal radius; wrist brace applied. RICE protocol and modified duty recommended."
   },
   {
-    "order": 60,
+    "order": 59,
     "text": "Initial treatment date",
     "answer": "2024-11-05"
   },
   {
-    "order": 61,
+    "order": 60,
     "text": "Are the medical conditions you have listed above causally related to the reported work-related accident or occupational disease?",
     "answer": true
   },
   {
-    "order": 62,
+    "order": 61,
     "text": "Are you the physician of record?",
     "answer": true
   },
   {
-    "order": 63,
+    "order": 62,
     "text": "Treating physician/Provider’s name (Print)",
     "answer": "Michael R. Patel, MD"
   },
   {
-    "order": 64,
+    "order": 63,
     "text": "BWC provider number",
     "answer": "BWC-4578921"
   },
   {
-    "order": 65,
+    "order": 64,
     "text": "Date",
     "answer": "2024-11-05"
   },
   {
-    "order": 66,
+    "order": 65,
     "text": "Employer name",
     "answer": "Buckeye Office Supply LLC"
   },
   {
-    "order": 67,
+    "order": 66,
     "text": "Employer county",
     "answer": "Franklin"
   },
   {
-    "order": 68,
+    "order": 67,
     "text": "Phone number",
     "answer": "614-555-0100"
   },
   {
-    "order": 69,
+    "order": 68,
     "text": "Fax number",
     "answer": "614-555-0101"
   },
   {
-    "order": 70,
+    "order": 69,
     "text": "Email address",
     "answer": "hr@buckeyeofficesupply.com"
   },
   {
-    "order": 71,
+    "order": 70,
     "text": "Employer policy number",
     "answer": "POL987654321"
   },
   {
-    "order": 72,
+    "order": 71,
     "text": "Federal ID number",
     "answer": "82-4567891"
   },
   {
-    "order": 73,
+    "order": 72,
     "text": "Injured worker is (Check box, if applicable.)",
-    "answer": null
+    "answer": ""
   },
   {
-    "order": 74,
-    "text": "For all employers:",
-    "answer": "Certification – I certify the facts in this application are correct and valid."
-  },
-  {
-    "order": 75,
-    "text": "For self-insuring employers only:",
+    "order": 73,
+    "text": "For self-insuring employers only: Medical only / Lost time",
     "answer": "Lost time"
   }
 ]
