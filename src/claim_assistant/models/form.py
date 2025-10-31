@@ -115,6 +115,81 @@ class Form(BaseModel):
 
         return cls(data)
 
+    @classmethod
+    def from_filled_json(
+        cls,
+        form_path: str | Path,
+        answers_path: str | Path,
+    ) -> "Form":
+        """
+        Factory method to load a filled form from two JSON files:
+        - form_path: JSON defining the form fields (structure)
+        - answers_path: JSON with the filled answers
+
+        Raises:
+            FileNotFoundError: if either file does not exist.
+            TypeError: if JSON structure is invalid.
+            ValueError: if answers do not correspond to form model.
+
+        Returns:
+            Form: a Form instance with field.answer values populated.
+        """
+        import json
+
+        form_path = Path(form_path)
+        answers_path = Path(answers_path)
+
+        # --- Load form model ---
+        if not form_path.exists():
+            raise FileNotFoundError(f"Form JSON not found: {form_path}")
+        with form_path.open("r", encoding="utf-8") as f:
+            form_data = json.load(f)
+        if not isinstance(form_data, list):
+            raise TypeError("Form JSON must be a list of field definitions.")
+
+        # --- Load answers ---
+        if not answers_path.exists():
+            raise FileNotFoundError(f"Answers JSON not found: {answers_path}")
+        with answers_path.open("r", encoding="utf-8") as f:
+            answers_data = json.load(f)
+        if not isinstance(answers_data, list):
+            raise TypeError("Answers JSON must be a list of answer objects.")
+
+        # --- Basic shape validation ---
+        # Ensure answer objects contain at least 'order' and 'answer' keys
+        if not all(
+            isinstance(a, dict) and "order" in a and "answer" in a for a in answers_data
+        ):
+            raise ValueError(
+                f"Invalid answers file: {answers_path}\n"
+                "Each entry must include 'order', 'text', and 'answer' fields.",
+            )
+
+        # --- Initialize form from model ---
+        form = cls(form_data)
+
+        # --- Build lookup tables ---
+        answers_by_order = {a["order"]: a["answer"] for a in answers_data}
+        answers_by_text = {a["text"]: a["answer"] for a in answers_data}
+
+        # --- Fill answers and track mismatches ---
+        unmatched = []
+        for field in form.fields:
+            value = answers_by_order.get(field.order)
+            if value is None:
+                value = answers_by_text.get(field.text)
+            if value is None:
+                unmatched.append(f"{field.order}: {field.text}")
+            field.answer = value
+
+        if unmatched:
+            raise ValueError(
+                f"Answers file does not match form model.\n"
+                f"Missing {len(unmatched)} fields:\n" + "\n".join(unmatched),
+            )
+
+        return form
+
 
 if __name__ == "__main__":
     form_data = [

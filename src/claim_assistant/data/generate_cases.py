@@ -92,14 +92,14 @@ def generate_sample(form_path: Path, policy: dict) -> list[dict]:
     )
 
     response = client.responses.parse(
-        model="gpt-5-nano-2025-08-07",
+        model="gpt-5-2025-08-07",
         input=[{"role": "user", "content": [{"type": "input_text", "text": prompt}]}],
         text_format=GeneratedFormAnswers,
     )
 
     parsed = response.output_parsed
     if isinstance(parsed, GeneratedFormAnswers):
-        return [item.dict() for item in parsed.answers]
+        return [item.model_dump() for item in parsed.answers]
     else:
         logger.error("Unexpected model output structure.")
         return []
@@ -145,7 +145,6 @@ if __name__ == "__main__":
     # Iterate through all form_model.json files and generate samples
     for form_model in FORMS_DIR.rglob("form_model.json"):
         for policy in policies:
-            answers = generate_sample(form_model, policy)
             out_dir = SAMPLES_DIR / form_model.parent.name
             out_dir.mkdir(parents=True, exist_ok=True)
             out_file = out_dir / f"answers_{policy['policy_number']}.json"
@@ -153,6 +152,8 @@ if __name__ == "__main__":
             if out_file.exists():
                 logger.info(f"Skipping {out_file} (already exists).")
                 continue
+
+            answers = generate_sample(form_model, policy)
             with out_file.open("w", encoding="utf-8") as f:
                 json.dump(answers, f, ensure_ascii=False, indent=2)
             logger.info(f"Saved generated sample to {out_file}")

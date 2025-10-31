@@ -1,0 +1,347 @@
+[
+  {
+    "order": 1,
+    "text": "Employee Name (First)",
+    "answer": "John"
+  },
+  {
+    "order": 2,
+    "text": "Employee Name (Middle)",
+    "answer": "Andrew"
+  },
+  {
+    "order": 3,
+    "text": "Employee Name (Last)",
+    "answer": "Smith"
+  },
+  {
+    "order": 4,
+    "text": "Social Security Number*",
+    "answer": "123-45-6789"
+  },
+  {
+    "order": 5,
+    "text": "Sex",
+    "answer": "M"
+  },
+  {
+    "order": 6,
+    "text": "Employee Home Telephone No.",
+    "answer": "608-555-0134"
+  },
+  {
+    "order": 7,
+    "text": "Employee Street Address",
+    "answer": "742 Parkside Dr"
+  },
+  {
+    "order": 8,
+    "text": "City",
+    "answer": "Madison"
+  },
+  {
+    "order": 9,
+    "text": "State",
+    "answer": "WI"
+  },
+  {
+    "order": 10,
+    "text": "Zip Code",
+    "answer": "53704"
+  },
+  {
+    "order": 11,
+    "text": "Occupation",
+    "answer": "Warehouse Associate"
+  },
+  {
+    "order": 12,
+    "text": "Birthdate",
+    "answer": "1987-06-22"
+  },
+  {
+    "order": 13,
+    "text": "Date of Hire",
+    "answer": "2021-09-13"
+  },
+  {
+    "order": 14,
+    "text": "County and State Where Accident or Exposure Occurred?",
+    "answer": "Dane County, WI"
+  },
+  {
+    "order": 15,
+    "text": "Employer Name",
+    "answer": "Badger Distribution, Inc."
+  },
+  {
+    "order": 16,
+    "text": "WI Unemployment Ins. Acct No.",
+    "answer": "SIC123456789"
+  },
+  {
+    "order": 17,
+    "text": "Self-Insured?",
+    "answer": false
+  },
+  {
+    "order": 18,
+    "text": "Nature of Business (Specific Product)",
+    "answer": "Warehousing and distribution of consumer goods"
+  },
+  {
+    "order": 19,
+    "text": "Employer Mailing Address",
+    "answer": "1500 Commerce Dr"
+  },
+  {
+    "order": 20,
+    "text": "City",
+    "answer": "Sun Prairie"
+  },
+  {
+    "order": 21,
+    "text": "State",
+    "answer": "WI"
+  },
+  {
+    "order": 22,
+    "text": "Zip Code",
+    "answer": "53590"
+  },
+  {
+    "order": 23,
+    "text": "Employer FEIN",
+    "answer": "39-8765432"
+  },
+  {
+    "order": 24,
+    "text": "Name of Worker's Compensation Insurance Co. or Self-Insured Employer",
+    "answer": "Secure Insurance Company"
+  },
+  {
+    "order": 25,
+    "text": "Insurer FEIN",
+    "answer": "26-7412589"
+  },
+  {
+    "order": 26,
+    "text": "Name and Address of Third Party Administrator (TPA) Used by the Insurance Company or Self-Insured Employer",
+    "answer": "Midwest Claims Administrators, LLC, 100 E Wisconsin Ave, Suite 2100, Milwaukee, WI 53202"
+  },
+  {
+    "order": 27,
+    "text": "TPA FEIN",
+    "answer": "39-1122334"
+  },
+  {
+    "order": 28,
+    "text": "Wage at Time of Injury $",
+    "answer": 27.0
+  },
+  {
+    "order": 29,
+    "text": "Specify per hr., wk., mo., yr., etc.",
+    "answer": "hr"
+  },
+  {
+    "order": 30,
+    "text": "Per:",
+    "answer": 0.0
+  },
+  {
+    "order": 31,
+    "text": "Meals (In Addition to Wages, Employee Received)",
+    "answer": false
+  },
+  {
+    "order": 32,
+    "text": "Room (In Addition to Wages, Employee Received)",
+    "answer": false
+  },
+  {
+    "order": 33,
+    "text": "Tips (In Addition to Wages, Employee Received)",
+    "answer": false
+  },
+  {
+    "order": 34,
+    "text": "No. of Meals/wk.",
+    "answer": 0.0
+  },
+  {
+    "order": 35,
+    "text": "No. of Days/wk",
+    "answer": 0.0
+  },
+  {
+    "order": 36,
+    "text": "Avg. Weekly Amt. $",
+    "answer": 0.0
+  },
+  {
+    "order": 37,
+    "text": "Is Worker Paid for Overtime?",
+    "answer": true
+  },
+  {
+    "order": 38,
+    "text": "If Yes, After How Many Hours of Work Per Week?",
+    "answer": 40.0
+  },
+  {
+    "order": 39,
+    "text": "No. of Weeks:",
+    "answer": 50.0
+  },
+  {
+    "order": 40,
+    "text": "Gross Amount Excluding Tips: $",
+    "answer": 49000.0
+  },
+  {
+    "order": 41,
+    "text": "If Piece-Work, No. of Hrs. Excluding Overtime:",
+    "answer": 0.0
+  },
+  {
+    "order": 42,
+    "text": "Start Time",
+    "answer": "8:30 a.m."
+  },
+  {
+    "order": 43,
+    "text": "Hours Per Day",
+    "answer": 8.0
+  },
+  {
+    "order": 44,
+    "text": "Hours Per Week",
+    "answer": 40.0
+  },
+  {
+    "order": 45,
+    "text": "Days Per Week",
+    "answer": 5.0
+  },
+  {
+    "order": 46,
+    "text": "Employer\u2019s Usual Full-Time Schedule for This Type of Work at Time of Employee\u2019s Injury",
+    "answer": "8"
+  },
+  {
+    "order": 47,
+    "text": "Are there Other Part-Time Workers Doing the Same Work With the Same Schedule?",
+    "answer": false
+  },
+  {
+    "order": 48,
+    "text": "If Yes, how many?",
+    "answer": 0.0
+  },
+  {
+    "order": 49,
+    "text": "Number of Full-Time Employees Doing The Same Type Of Work:",
+    "answer": 10.0
+  },
+  {
+    "order": 50,
+    "text": "Injury Date",
+    "answer": "2024-03-12"
+  },
+  {
+    "order": 51,
+    "text": "Time of Injury",
+    "answer": "10:20 a.m."
+  },
+  {
+    "order": 52,
+    "text": "Last Day Worked",
+    "answer": "2024-03-12"
+  },
+  {
+    "order": 53,
+    "text": "Date Employer Notified",
+    "answer": "2024-03-12"
+  },
+  {
+    "order": 54,
+    "text": "Date Returned to Work",
+    "answer": "2024-03-18"
+  },
+  {
+    "order": 55,
+    "text": "Estimated Date of Return",
+    "answer": ""
+  },
+  {
+    "order": 56,
+    "text": "Did Injury Cause Death?",
+    "answer": false
+  },
+  {
+    "order": 57,
+    "text": "Date of Death",
+    "answer": ""
+  },
+  {
+    "order": 58,
+    "text": "Was This a Lost Time or Other Compensable Injury?",
+    "answer": true
+  },
+  {
+    "order": 59,
+    "text": "Did Injury Occur Because of: ",
+    "answer": ""
+  },
+  {
+    "order": 60,
+    "text": "Was Employee Treated in an Emergency Room?",
+    "answer": true
+  },
+  {
+    "order": 61,
+    "text": "Was Employee Hospitalized Overnight as an In-Patient?",
+    "answer": false
+  },
+  {
+    "order": 62,
+    "text": "Name and Address of Treating Practitioner and Hospital",
+    "answer": "Dr. Emily Chen, MD, UW Health East Madison Hospital, 4602 Eastpark Blvd, Madison, WI 53718. Phone: 608-555-0172"
+  },
+  {
+    "order": 63,
+    "text": "Case Number from the OSHA Log",
+    "answer": "2024-0312-01"
+  },
+  {
+    "order": 64,
+    "text": "Injury Description - Describe Activities of Employee When Injury or Illness Occurred and What Tools, Machinery, Objects, Chemicals, Etc. Were Involved.",
+    "answer": "Employee was transferring boxed inventory from a pallet to shelving in aisle 12 using a manual pallet jack and a step stool. While lifting a 35-lb box, he stepped onto a wet spot on the concrete floor and slipped, contacting the metal edge of the rack with his right forearm and twisting his lower back. Items involved: manual pallet jack, corrugated boxes, metal storage racking, step stool, safety gloves."
+  },
+  {
+    "order": 65,
+    "text": "What Happened to Cause This Injury or Illness? (Describe How The Injury Occurred)",
+    "answer": "A condensation leak near the cooler created a wet area on the floor. While turning with a box in hand, the worker slipped, lost balance, and fell against the shelving, resulting in a cut to the right forearm and a strained lower back."
+  },
+  {
+    "order": 66,
+    "text": "What Was The Injury or Illness? (State the Part of Body Affected and How It Was Affected)",
+    "answer": "Acute lumbar strain with muscle spasm and reduced range of motion; 3-cm laceration to the right forearm requiring six sutures. No fractures per X-ray."
+  },
+  {
+    "order": 67,
+    "text": "Report Prepared By",
+    "answer": "Laura Martinez"
+  },
+  {
+    "order": 68,
+    "text": "Work Phone Number",
+    "answer": "608-555-0100"
+  },
+  {
+    "order": 69,
+    "text": "Position",
+    "answer": "HR Manager"
+  }
+]

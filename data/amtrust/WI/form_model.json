@@ -498,30 +498,20 @@
   },
   {
     "order": 59,
-    "text": "Did Injury Occur Because of: Substance Abuse",
+    "text": "Did Injury Occur Because of: ",
     "description": "Check if substance abuse contributed to the injury.",
     "alias": null,
-    "data_type": "boolean",
-    "meta": {}
+    "data_type": "enum",
+    "meta": {
+      "labels": [
+        "Substance Abuse",
+        "Failure to Use Safety Devices",
+        "Failure to Obey Rules"
+      ]
+    }
   },
   {
     "order": 60,
-    "text": "Did Injury Occur Because of: Failure to Use Safety Devices",
-    "description": "Check if failure to use safety devices contributed to the injury.",
-    "alias": null,
-    "data_type": "boolean",
-    "meta": {}
-  },
-  {
-    "order": 61,
-    "text": "Did Injury Occur Because of: Failure to Obey Rules",
-    "description": "Check if failure to obey rules contributed to the injury.",
-    "alias": null,
-    "data_type": "boolean",
-    "meta": {}
-  },
-  {
-    "order": 62,
     "text": "Was Employee Treated in an Emergency Room?",
     "description": "Indicate whether treatment was provided in an ER.",
     "alias": null,
@@ -529,7 +519,7 @@
     "meta": {}
   },
   {
-    "order": 63,
+    "order": 61,
     "text": "Was Employee Hospitalized Overnight as an In-Patient?",
     "description": "Indicate whether the employee was admitted as an in-patient overnight.",
     "alias": null,
@@ -537,7 +527,7 @@
     "meta": {}
   },
   {
-    "order": 64,
+    "order": 62,
     "text": "Name and Address of Treating Practitioner and Hospital",
     "description": "Provide practitioner and hospital name and address where treated.",
     "alias": null,
@@ -545,7 +535,7 @@
     "meta": {}
   },
   {
-    "order": 65,
+    "order": 63,
     "text": "Case Number from the OSHA Log",
     "description": "OSHA log case number, if applicable.",
     "alias": null,
@@ -553,7 +543,7 @@
     "meta": {}
   },
   {
-    "order": 66,
+    "order": 64,
     "text": "Injury Description - Describe Activities of Employee When Injury or Illness Occurred and What Tools, Machinery, Objects, Chemicals, Etc. Were Involved.",
     "description": "Detailed description of activities and equipment involved.",
     "alias": null,
@@ -561,7 +551,7 @@
     "meta": {}
   },
   {
-    "order": 67,
+    "order": 65,
     "text": "What Happened to Cause This Injury or Illness? (Describe How The Injury Occurred)",
     "description": "Narrative describing how the injury occurred.",
     "alias": null,
@@ -569,7 +559,7 @@
     "meta": {}
   },
   {
-    "order": 68,
+    "order": 66,
     "text": "What Was The Injury or Illness? (State the Part of Body Affected and How It Was Affected)",
     "description": "Describe the injury/illness and body part(s) affected.",
     "alias": null,
@@ -577,7 +567,7 @@
     "meta": {}
   },
   {
-    "order": 69,
+    "order": 67,
     "text": "Report Prepared By",
     "description": "Name of the person preparing this report.",
     "alias": null,
@@ -585,7 +575,7 @@
     "meta": {}
   },
   {
-    "order": 70,
+    "order": 68,
     "text": "Work Phone Number",
     "description": "Phone number for the person preparing the report.",
     "alias": null,
@@ -593,7 +583,7 @@
     "meta": {}
   },
   {
-    "order": 71,
+    "order": 69,
     "text": "Position",
     "description": "Position/title of the person preparing the report.",
     "alias": null,
