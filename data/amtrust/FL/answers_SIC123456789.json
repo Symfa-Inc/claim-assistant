@@ -7,7 +7,7 @@
   {
     "order": 2,
     "text": "NAME (First, Middle, Last) - Middle",
-    "answer": null
+    "answer": ""
   },
   {
     "order": 3,
@@ -197,7 +197,7 @@
   {
     "order": 40,
     "text": "LAST DAY WAGES WILL BE PAID INSTEAD OF WORKERS' COMP",
-    "answer": null
+    "answer": ""
   },
   {
     "order": 41,
@@ -227,7 +227,7 @@
   {
     "order": 46,
     "text": "DATE OF DEATH (If applicable)",
-    "answer": null
+    "answer": ""
   },
   {
     "order": 47,
@@ -237,7 +237,7 @@
   {
     "order": 48,
     "text": "RATE OF PAY $",
-    "answer": null
+    "answer": 0.0
   },
   {
     "order": 49,
@@ -247,17 +247,17 @@
   {
     "order": 50,
     "text": "Number of hours per day",
-    "answer": null
+    "answer": 0.0
   },
   {
     "order": 51,
     "text": "Number of hours per week",
-    "answer": null
+    "answer": 0.0
   },
   {
     "order": 52,
     "text": "Number of days per week",
-    "answer": null
+    "answer": 0.0
   },
   {
     "order": 53,

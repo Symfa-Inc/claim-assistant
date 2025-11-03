@@ -622,27 +622,6 @@
   },
   {
     "order": 73,
-    "text": "Employer certifies the facts in the application.",
-    "description": "Employer certifies the facts in the application.",
-    "alias": null,
-    "data_type": "enum",
-    "meta": {
-      "labels": [
-        "Certification – I certify the facts in this application are correct and valid.",
-        "Rejection – I reject the validity of this claim for the reason(s) listed below."
-      ]
-    }
-  },
-  {
-    "order": 74,
-    "text": "Rejection reasons",
-    "description": "If rejecting the claim, list the reason(s) for rejection.",
-    "alias": null,
-    "data_type": "text",
-    "meta": {}
-  },
-  {
-    "order": 75,
     "text": "For self-insuring employers only: Medical only / Lost time",
     "description": "For self-insuring employers, indicate if claim is medical only or lost time.",
     "alias": null,

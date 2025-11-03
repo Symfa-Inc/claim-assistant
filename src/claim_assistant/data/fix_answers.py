@@ -1,8 +1,6 @@
 import json
 import logging
-import os.path
 from pathlib import Path
-from typing import Dict, Any, List
 
 from openai import OpenAI
 
@@ -11,7 +9,13 @@ from claim_assistant.data.settings import OpenAISettings
 from claim_assistant.models.form import Form
 
 
-def process_form_from_json(client, model_name: str, form: "Form", answers_raw: str, logger=None) -> "Form":
+def process_form_from_json(
+    client,
+    model_name: str,
+    form: "Form",
+    answers_raw: str,
+    logger=None,
+) -> "Form":
     """
     Feed prepared JSON answers to the LLM and return the Form with updated answers.
 
@@ -68,7 +72,7 @@ def process_form_from_json(client, model_name: str, form: "Form", answers_raw: s
     return form
 
 
-if __name__=="__main__":
+if __name__ == "__main__":
     base_dir = Path(PROJECT_DIR) / "data" / "amtrust"
     model_name = "gpt-5-mini-2025-08-07"
     logger = logging.getLogger("answers_fixer")
@@ -77,7 +81,6 @@ if __name__=="__main__":
         format="%(asctime)s - %(levelname)s - %(message)s",
     )
     openai_client = OpenAI(api_key=OpenAISettings().openai_api_key)
-
 
     for form_dir in base_dir.iterdir():
         if not form_dir.is_dir():
@@ -94,22 +97,23 @@ if __name__=="__main__":
         form = Form.from_json(model_path)
 
         answer_files = [
-            form_dir / f"answers_POL123456789.json",
-            form_dir / f"answers_POL987654321.json",
-            form_dir / f"answers_SIC123456789.json",
-            ]
+            form_dir / "answers_POL123456789.json",
+            form_dir / "answers_POL987654321.json",
+            form_dir / "answers_SIC123456789.json",
+        ]
 
         # Iterate through answer files
         for answers_file in answer_files:
             # Skip already structured answers
             output_path = answers_file.with_name(
-                answers_file.stem.replace("answers_", "answers_structured_") + ".json"
+                answers_file.stem.replace("answers_", "answers_structured_") + ".json",
             )
             # Skip if the structured version already exists
             if output_path.exists():
-                logger.info(f"Skipping {answers_file.name}: structured file already exists.")
+                logger.info(
+                    f"Skipping {answers_file.name}: structured file already exists.",
+                )
                 continue
-
 
             with open(answers_file, "r", encoding="utf-8") as f:
                 answers_raw = f.read()
@@ -133,7 +137,7 @@ if __name__=="__main__":
 
             # Save normalized JSON
             output_path = answers_file.with_name(
-                answers_file.stem.replace("answers_", "answers_structured_") + ".json"
+                answers_file.stem.replace("answers_", "answers_structured_") + ".json",
             )
             with open(output_path, "w") as out:
                 json.dump(structured_output, out, indent=2)

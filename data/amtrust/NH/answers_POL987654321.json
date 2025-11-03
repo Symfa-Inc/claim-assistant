@@ -7,7 +7,7 @@
   {
     "order": 2,
     "text": "NHDOL#",
-    "answer": null
+    "answer": ""
   },
   {
     "order": 3,
@@ -52,7 +52,7 @@
   {
     "order": 11,
     "text": "Age",
-    "answer": "34"
+    "answer": 34.0
   },
   {
     "order": 12,
@@ -72,22 +72,22 @@
   {
     "order": 15,
     "text": "Wages per Hour",
-    "answer": "22.50"
+    "answer": 22.5
   },
   {
     "order": 16,
     "text": "Hrs per Day",
-    "answer": "8"
+    "answer": 8.0
   },
   {
     "order": 17,
     "text": "Days per Week",
-    "answer": "5"
+    "answer": 5.0
   },
   {
     "order": 18,
     "text": "Average Weekly Earnings",
-    "answer": "900.00"
+    "answer": 900.0
   },
   {
     "order": 19,
@@ -197,7 +197,7 @@
   {
     "order": 40,
     "text": "If so, what date",
-    "answer": null
+    "answer": ""
   },
   {
     "order": 41,
@@ -242,7 +242,7 @@
   {
     "order": 49,
     "text": "Client Company",
-    "answer": null
+    "answer": ""
   },
   {
     "order": 50,
@@ -252,7 +252,7 @@
   {
     "order": 51,
     "text": "Name of policy holder",
-    "answer": null
+    "answer": ""
   },
   {
     "order": 52,

@@ -37,12 +37,12 @@
   {
     "order": 8,
     "text": "Date of death",
-    "answer": null
+    "answer": ""
   },
   {
     "order": 9,
     "text": "# of dependents (if death is related to injury)",
-    "answer": null
+    "answer": 0.0
   },
   {
     "order": 10,
@@ -122,22 +122,22 @@
   {
     "order": 25,
     "text": "Average weekly wage",
-    "answer": "1150.00"
+    "answer": 1150.0
   },
   {
     "order": 26,
     "text": "Rate per hour",
-    "answer": "28.75"
+    "answer": 28.75
   },
   {
     "order": 27,
     "text": "Hours per day",
-    "answer": "8"
+    "answer": 8.0
   },
   {
     "order": 28,
     "text": "Days per week",
-    "answer": "5"
+    "answer": 5.0
   },
   {
     "order": 29,

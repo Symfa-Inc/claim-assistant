@@ -137,7 +137,7 @@
   {
     "order": 28,
     "text": "Wage at Time of Injury $",
-    "answer": "23.50"
+    "answer": 23.5
   },
   {
     "order": 29,
@@ -146,88 +146,88 @@
   },
   {
     "order": 30,
-    "text": "In Addition to Wages, Check Box(es) if Employee Received",
-    "answer": null
+    "text": "Per:",
+    "answer": 0.0
   },
   {
     "order": 31,
-    "text": "No. of Meals/wk.",
-    "answer": null
+    "text": "Meals (In Addition to Wages, Employee Received)",
+    "answer": false
   },
   {
     "order": 32,
-    "text": "No. of Days/wk",
-    "answer": null
+    "text": "Room (In Addition to Wages, Employee Received)",
+    "answer": false
   },
   {
     "order": 33,
-    "text": "Avg. Weekly Amt. $",
-    "answer": null
+    "text": "Tips (In Addition to Wages, Employee Received)",
+    "answer": false
   },
   {
     "order": 34,
-    "text": "Is Worker Paid for Overtime?",
-    "answer": "Yes"
+    "text": "No. of Meals/wk.",
+    "answer": 0.0
   },
   {
     "order": 35,
-    "text": "If Yes, After How Many Hours of Work Per Week?",
-    "answer": "40"
+    "text": "No. of Days/wk",
+    "answer": 0.0
   },
   {
     "order": 36,
-    "text": "No. of Weeks:",
-    "answer": "50"
+    "text": "Avg. Weekly Amt. $",
+    "answer": 0.0
   },
   {
     "order": 37,
-    "text": "Gross Amount Excluding Tips: $",
-    "answer": "51000"
+    "text": "Is Worker Paid for Overtime?",
+    "answer": true
   },
   {
     "order": 38,
-    "text": "If Piece-Work, No. of Hrs. Excluding Overtime:",
-    "answer": null
+    "text": "If Yes, After How Many Hours of Work Per Week?",
+    "answer": 40.0
   },
   {
     "order": 39,
-    "text": "Employee's Usual Work Schedule When Injured Start Time",
-    "answer": "8:00 a.m."
+    "text": "No. of Weeks:",
+    "answer": 50.0
   },
   {
     "order": 40,
-    "text": "Employee's Usual Work Schedule When Injured Hours Per Day",
-    "answer": "8"
+    "text": "Gross Amount Excluding Tips: $",
+    "answer": 51000.0
   },
   {
     "order": 41,
-    "text": "Employee's Usual Work Schedule When Injured Hours Per Week",
-    "answer": "40"
+    "text": "If Piece-Work, No. of Hrs. Excluding Overtime:",
+    "answer": 0.0
   },
   {
     "order": 42,
-    "text": "Employee's Usual Work Schedule When Injured Days Per Week",
-    "answer": "5"
+    "text": "Start Time",
+    "answer": "8:00 a.m."
   },
   {
     "order": 43,
-    "text": "Employer’s Usual Full-Time Schedule for This Type of Work at Time of Employee’s Injury Hours Per Day",
-    "answer": "8"
+    "text": "Hours Per Day",
+    "answer": 8.0
   },
   {
     "order": 44,
-    "text": "Employer’s Usual Full-Time Schedule for This Type of Work at Time of Employee’s Injury Hours Per Week",
-    "answer": "40"
+    "text": "Hours Per Week",
+    "answer": 40.0
   },
   {
     "order": 45,
-    "text": "Employer’s Usual Full-Time Schedule for This Type of Work at Time of Employee’s Injury Days Per Week",
-    "answer": "5"
+    "text": "Days Per Week",
+    "answer": 5.0
   },
   {
     "order": 46,
-    "text": "Part-Time Employment Information",
-    "answer": null
+    "text": "Employer's Usual Full-Time Schedule for This Type of Work at Time of Employee's Injury",
+    "answer": "8"
   },
   {
     "order": 47,
@@ -237,12 +237,12 @@
   {
     "order": 48,
     "text": "If Yes, how many?",
-    "answer": null
+    "answer": 0.0
   },
   {
     "order": 49,
     "text": "Number of Full-Time Employees Doing The Same Type Of Work:",
-    "answer": "4"
+    "answer": 4.0
   },
   {
     "order": 50,
@@ -271,71 +271,76 @@
   },
   {
     "order": 55,
-    "text": "Did Injury Cause Death?",
-    "answer": "No"
+    "text": "Estimated Date of Return",
+    "answer": ""
   },
   {
     "order": 56,
-    "text": "Date of Death",
-    "answer": null
+    "text": "Did Injury Cause Death?",
+    "answer": false
   },
   {
     "order": 57,
+    "text": "Date of Death",
+    "answer": ""
+  },
+  {
+    "order": 58,
     "text": "Was This a Lost Time or Other Compensable Injury?",
     "answer": "Yes"
   },
   {
-    "order": 58,
-    "text": "Did Injury Occur Because of:",
-    "answer": null
-  },
-  {
     "order": 59,
-    "text": "Was Employee Treated in an Emergency Room?",
-    "answer": "No"
+    "text": "Did Injury Occur Because of: ",
+    "answer": ""
   },
   {
     "order": 60,
-    "text": "Was Employee Hospitalized Overnight as an In-Patient?",
-    "answer": "No"
+    "text": "Was Employee Treated in an Emergency Room?",
+    "answer": false
   },
   {
     "order": 61,
+    "text": "Was Employee Hospitalized Overnight as an In-Patient?",
+    "answer": false
+  },
+  {
+    "order": 62,
     "text": "Name and Address of Treating Practitioner and Hospital",
     "answer": "Dr. Adam Smith, AS Clinic, 256 N Waterfall St, Milwaukee, WI 53305. Phone: (414) 555-0153."
   },
   {
-    "order": 62,
+    "order": 63,
     "text": "Case Number from the OSHA Log",
     "answer": "2024-117"
   },
   {
-    "order": 63,
+    "order": 64,
     "text": "Injury Description - Describe Activities of Employee When Injury or Illness Occurred and What Tools, Machinery, Objects, Chemicals, Etc. Were Involved.",
     "answer": "Employee was injured while lifting boxes using a hand truck when it tipped over."
   },
   {
-    "order": 64,
+    "order": 65,
     "text": "What Happened to Cause This Injury or Illness? (Describe How The Injury Occurred)",
     "answer": "The hand truck became unbalanced while moving heavy boxes, causing it to tip and strike the employee."
   },
   {
-    "order": 65,
+    "order": 66,
     "text": "What Was The Injury or Illness? (State the Part of Body Affected and How It Was Affected)",
     "answer": "The employee sustained a bruise and strain to the lower back and shoulder from the impact of the falling hand truck."
   },
   {
-    "order": 66,
+    "order": 67,
     "text": "Report Prepared By",
     "answer": "Michael Gonzales"
   },
   {
-    "order": 67,
+    "order": 68,
     "text": "Work Phone Number",
     "answer": "(414) 555-0118"
   },
   {
-    "order": 68,
+    "order": 69,
     "text": "Position",
     "answer": "HR Manager"
   }
