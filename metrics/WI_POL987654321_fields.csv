@@ -1,9 +1,0 @@
-field,answer_gt,answer_extracted,levenshtein,moverscore,levenshtein_moverscore
-What is the policy number?,,,1.0,,1.0
-What is the insured's name?,Andrew Doe,Joe Doe,,0.5097187573837212,0.5097187573837212
-What is the coverage amount?,"$150,000","$100,000",0.875,,0.875
-Employee Name (First),Andrew,Joe,0.2222222222222222,,0.2222222222222222
-Employee Name (Middle),A.,A.,1.0,,1.0
-Employee Name (Last),Doe,Doe,1.0,,1.0
-Injury Date,2023-01-15,2023-01-15,1.0,,1.0
-WI Unemployment Ins. Acct No.,POL123456789,POL123456789,1.0,,1.0

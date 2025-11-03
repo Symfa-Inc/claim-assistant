@@ -82,7 +82,7 @@
   {
     "order": 17,
     "text": "Self-Insured?",
-    "answer": false
+    "answer": "No"
   },
   {
     "order": 18,
@@ -232,7 +232,7 @@
   {
     "order": 47,
     "text": "Are there Other Part-Time Workers Doing the Same Work With the Same Schedule?",
-    "answer": false
+    "answer": "No"
   },
   {
     "order": 48,
@@ -287,7 +287,7 @@
   {
     "order": 58,
     "text": "Was This a Lost Time or Other Compensable Injury?",
-    "answer": "Yes"
+    "answer": true
   },
   {
     "order": 59,

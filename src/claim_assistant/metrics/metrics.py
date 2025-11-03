@@ -13,6 +13,8 @@ from openai import OpenAI
 from pydantic import BaseModel
 
 from claim_assistant.metrics.moverscore.moverscore import get_idf_dict, word_mover_score
+from claim_assistant.models.form import Form
+from claim_assistant.processors.form_filling_processor import FormFillingProcessor
 
 
 def extract_text_from_json(json_file: Union[str, Path]) -> List[str]:
@@ -79,7 +81,9 @@ def process_pdf_with_openai(
         load_dotenv()
         api_key = os.getenv("OPENAI_API_KEY")
         if not api_key:
-            raise ValueError("OPENAI_API_KEY not found in environment variables or .env file")
+            raise ValueError(
+                "OPENAI_API_KEY not found in environment variables or .env file",
+            )
 
     # Initialize OpenAI client
     client = OpenAI(api_key=api_key)
@@ -105,7 +109,7 @@ def process_pdf_with_openai(
                         },
                         {"type": "input_file", "file_id": uploaded_file.id},
                     ],
-                }
+                },
             ],
             text_format=AnswerResponse,
             max_output_tokens=2000,
@@ -119,7 +123,14 @@ def process_pdf_with_openai(
             answer = parsed_output.get("answer", "")
         else:
             answer = str(parsed_output)
-        if answer.strip().lower() in ["none", "n/a", "not found", "not available", "", " "]:
+        if answer.strip().lower() in [
+            "none",
+            "n/a",
+            "not found",
+            "not available",
+            "",
+            " ",
+        ]:
             answer = None
         print(f"Query: {text}\nAnswer: {answer}\n{'-' * 40}")
 
@@ -134,7 +145,7 @@ def calculate_distances(
     gt_fields: list[dict[str, str]] | str | Path,
     moverscore_features: list[str] = None,
     save_path: str | Path = "metrics",
-    save_prefix: str = "WI_POL123456789_",
+    save_prefix: str = "WI_POL123456789_dg",
 ) -> pd.DataFrame:
     """
     Create a pandas DataFrame from results with 'text' fields as the index.
@@ -154,21 +165,30 @@ def calculate_distances(
             gt_data = json.load(f)
 
     df_result = pd.DataFrame(extracted_fields)
-    df_result.set_index("text", inplace=True)
+    # df_result.set_index("text", inplace=True)
+    df_result.set_index("order", inplace=True)
 
-    df_fields = pd.DataFrame(gt_data, columns=["text", "answer"])
-    df_fields.set_index("text", inplace=True)
+    df_fields = pd.DataFrame(gt_data, columns=["order", "text", "answer"])
+    # df_fields.set_index("text", inplace=True)
+    df_fields.set_index("order", inplace=True)
     df_fields = df_fields.rename(columns={"answer": "answer_gt"})
     df_fields["answer_extracted"] = df_result["answer"]
-    df_fields.index.name = "field"
+    # df_fields.index.name = "field"
+    df_fields.rename(columns={"text": "field"}, inplace=True)
 
     # Calculate Levenshtein similarity ratio (0 to 1, where 1 is identical)
     df_fields["levenshtein"] = df_fields.apply(
-        lambda row: Levenshtein.ratio(str(row["answer_gt"]), str(row["answer_extracted"])), axis=1
+        lambda row: Levenshtein.ratio(
+            str(row["answer_gt"]),
+            str(row["answer_extracted"]),
+        ),
+        axis=1,
     )
     # Set levenshtein to None for features in moverscore_features
     if moverscore_features:
-        df_fields.loc[df_fields.index.isin(moverscore_features), "levenshtein"] = None
+        df_fields.loc[df_fields["field"].isin(moverscore_features), "levenshtein"] = (
+            None
+        )
 
     # Calculate MoverScore
     references = [str(row["answer_gt"]) for _, row in df_fields.iterrows()]
@@ -187,9 +207,13 @@ def calculate_distances(
     df_fields["moverscore"] = moverscore_scores
     # Set moverscore to None for features NOT in moverscore_features
     if moverscore_features:
-        df_fields.loc[~df_fields.index.isin(moverscore_features), "moverscore"] = None
+        df_fields.loc[~df_fields["field"].isin(moverscore_features), "moverscore"] = (
+            None
+        )
 
-    df_fields["levenshtein_moverscore"] = df_fields["levenshtein"].fillna(df_fields["moverscore"])
+    df_fields["levenshtein_moverscore"] = df_fields["levenshtein"].fillna(
+        df_fields["moverscore"],
+    )
 
     save_dir = Path(save_path)
     save_dir.mkdir(parents=True, exist_ok=True)
@@ -200,9 +224,10 @@ def calculate_distances(
 
 def calculate_policy_metrics(
     data: pd.DataFrame | str | Path,
-    index_prefix: str = "POL123456789",
     save_path: str | Path = "metrics",
-    save_prefix: str = "WI",
+    state: str = "WI",
+    policy: str = "POL123456789",
+    form_type: str = "hd",
     main_params: dict[str, str] | None = None,
 ) -> pd.DataFrame:
     """
@@ -224,24 +249,31 @@ def calculate_policy_metrics(
         csv_path = Path(data)
         if not csv_path.exists():
             raise FileNotFoundError(f"CSV file not found: {csv_path}")
-        data = pd.read_csv(csv_path, index_col=0)
+        data = pd.read_csv(csv_path)
     else:
-        raise ValueError(f"Invalid input type: {type(data)}. Expected DataFrame, str, or Path")
+        raise ValueError(
+            f"Invalid input type: {type(data)}. Expected DataFrame, str, or Path",  # type: ignore
+        )
 
     # Check if policy metrics CSV exists, load it or create new
     save_dir = Path(save_path)
     save_dir.mkdir(parents=True, exist_ok=True)
-    policy_metrics_path = save_dir / f"{save_prefix}_policies.csv"
+    policy_metrics_path = save_dir / "policies.csv"
     if policy_metrics_path.exists():
-        df_policy_metrics = pd.read_csv(policy_metrics_path, index_col=0)
+        df_policy_metrics = pd.read_csv(policy_metrics_path)
+        next_index = len(df_policy_metrics)
     else:
-        df_policy_metrics = pd.DataFrame(columns=["policy"])
-        df_policy_metrics.set_index("policy", inplace=True)
+        df_policy_metrics = pd.DataFrame()
+        next_index = 0
+
+    df_policy_metrics.loc[next_index, "state"] = state
+    df_policy_metrics.loc[next_index, "policy"] = policy
+    df_policy_metrics.loc[next_index, "type"] = form_type
 
     # Levenshtein, MoverScore, and Levenstein_MoverScore averages
-    df_policy_metrics.loc[index_prefix, "levenshtein_avg"] = data["levenshtein"].mean()
-    df_policy_metrics.loc[index_prefix, "moverscore_avg"] = data["moverscore"].mean()
-    df_policy_metrics.loc[index_prefix, "levenshtein_moverscore_avg"] = data[
+    df_policy_metrics.loc[next_index, "levenshtein_avg"] = data["levenshtein"].mean()
+    df_policy_metrics.loc[next_index, "moverscore_avg"] = data["moverscore"].mean()
+    df_policy_metrics.loc[next_index, "levenshtein_moverscore_avg"] = data[
         "levenshtein_moverscore"
     ].mean()
 
@@ -260,22 +292,29 @@ def calculate_policy_metrics(
     # Recall: TP / (TP + FN)
     recall = tp / (tp + fn) if (tp + fn) > 0 else 0.0
     # F1 Score: 2 * (Precision * Recall) / (Precision + Recall)
-    f1_score = 2 * (precision * recall) / (precision + recall) if (precision + recall) > 0 else 0.0
+    f1_score = (
+        2 * (precision * recall) / (precision + recall)
+        if (precision + recall) > 0
+        else 0.0
+    )
     # Store metrics
-    df_policy_metrics.loc[index_prefix, "accuracy"] = accuracy
-    df_policy_metrics.loc[index_prefix, "precision"] = precision
-    df_policy_metrics.loc[index_prefix, "recall"] = recall
-    df_policy_metrics.loc[index_prefix, "f1_score"] = f1_score
+    df_policy_metrics.loc[next_index, "accuracy"] = accuracy
+    df_policy_metrics.loc[next_index, "precision"] = precision
+    df_policy_metrics.loc[next_index, "recall"] = recall
+    df_policy_metrics.loc[next_index, "f1_score"] = f1_score
 
     # Add levenshtein of main params if provided
     if main_params:
         for key, value in main_params.items():
-            df_policy_metrics.loc[index_prefix, key] = data.loc[value, "levenshtein"]
+            matching_rows = data.loc[data["field"] == value, "levenshtein"]
+            df_policy_metrics.loc[next_index, key] = (
+                matching_rows.iloc[0] if len(matching_rows) > 0 else None
+            )
 
     # Save updated policy metrics
     save_dir = Path(save_path)
     save_dir.mkdir(parents=True, exist_ok=True)
-    df_policy_metrics.to_csv(Path(save_dir) / f"{save_prefix}_policies.csv")
+    df_policy_metrics.to_csv(Path(save_dir) / "policies.csv", index=False)
 
     return df_policy_metrics
 
@@ -289,77 +328,115 @@ if __name__ == "__main__":
     )
     logger = logging.getLogger("")
 
+    # Settings
     save_path = "metrics"
-    state = "WI"
+    state = "NY"
     policy = "POL987654321"
+    type = "hw"  # hw or dg
 
     main_params = {
-        "levenshtein_first_name": "Employee Name (First)",
-        "levenshtein_middle_name": "Employee Name (Middle)",
-        "levenshtein_last_name": "Employee Name (Last)",
-        "levenshtein_data_of_injury": "Injury Date",
-        "levenshtein_policy_number": "WI Unemployment Ins. Acct No.",
+        "levenshtein_first_name": "Employee Name",
+        "levenshtein_middle_name": "Employee Name",
+        "levenshtein_last_name": "Employee Name",
+        "levenshtein_data_of_injury": "Date of Injury",
+        "levenshtein_policy_number": "Policy Number ID",
     }
 
-    # sample_json_path = Path(
-    #     "/home/maken/symfa/claim-assistant/data/amtrust/WI/answers_POL123456789.json"
-    # )
-    # texts = extract_text_from_json(sample_json_path)
-    # results = process_pdf_with_openai(
-    #     pdf_file="/home/maken/symfa/claim-assistant/data/amtrust/WI/form_dg_POL123456789.pdf",
-    #     texts=texts,
-    #     # model="gpt-5-mini-2025-08-07",
-    #     model="gpt-5-2025-08-07",
-    # )
-    results = [
-        {"text": "What is the policy number?", "answer": None},
-        {"text": "What is the insured's name?", "answer": "Joe Doe"},
-        {"text": "What is the coverage amount?", "answer": "$100,000"},
-        {"text": "Employee Name (First)", "answer": "Joe"},
-        {"text": "Employee Name (Middle)", "answer": "A."},
-        {"text": "Employee Name (Last)", "answer": "Doe"},
-        {"text": "Injury Date", "answer": "2023-01-15"},
-        {"text": "WI Unemployment Ins. Acct No.", "answer": "POL123456789"},
-    ]
-    gt = [
-        {"text": "What is the policy number?", "answer": None},
-        {"text": "What is the insured's name?", "answer": "Andrew Doe"},
-        {"text": "What is the coverage amount?", "answer": "$150,000"},
-        {"text": "Employee Name (First)", "answer": "Andrew"},
-        {"text": "Employee Name (Middle)", "answer": "A."},
-        {"text": "Employee Name (Last)", "answer": "Doe"},
-        {"text": "Injury Date", "answer": "2023-01-15"},
-        {"text": "WI Unemployment Ins. Acct No.", "answer": "POL123456789"},
-    ]
+    # WI
     # moverscore_features = [
     #     "Sex",
     #     "Employer Mailing Address",
     #     "Employee's Usual Work Schedule When Injured Start Time",
-    #     "Time of Injury",
     #     "Nature of Business (Specific Product)",
     #     "Injury Description - Describe Activities of Employee When Injury or Illness Occurred and What Tools, Machinery, Objects, Chemicals, Etc. Were Involved.",
     #     "What Happened to Cause This Injury or Illness? (Describe How The Injury Occurred)",
-    #     "What Was The Injury or Illness? (State the Part of Body Affected and How It Was Affected)"
+    #     "What Was The Injury or Illness? (State the Part of Body Affected and How It Was Affected)",
     # ]
+    # OH
+    # moverscore_features = [
+    #     "Diagnosis(es)-narrative description including as appropriate, the location and body part, and ICD code(s)."
+    #     "Accident description (Describe the sequence of events that directly caused the injury or death.)",
+    #     "Part(s) of body affected (For example: Left knee, right index finger)",
+    #     "Sex",
+    # ]
+    # NY
     moverscore_features = [
-        "What is the insured's name?",
+        "Part of BodyCause of Injury",
+        "Accident/Injury Description",
     ]
 
+    form_model_json_path = (
+        f"/home/maken/symfa/claim-assistant/data/amtrust/{state}/form_model.json"
+    )
+    gt_answers_json_path = (
+        f"/home/maken/symfa/claim-assistant/data/amtrust/{state}/answers_{policy}.json"
+    )
+    input_pdf_path = f"/home/maken/symfa/claim-assistant/data/amtrust/{state}/form_{type}_{policy}.pdf"
+
+    # Process PDF
+    load_dotenv()
+    api_key = os.getenv("OPENAI_API_KEY")
+    if not api_key:
+        raise ValueError(
+            "OPENAI_API_KEY not found in environment variables or .env file",
+        )
+    client = OpenAI(api_key=api_key)
+    form_processor = FormFillingProcessor(client, logger, model_name="gpt-5-2025-08-07")
+
+    logger.info(f"Starting PDF processing with OpenAI for policy {policy}...")
+    form: Form = form_processor.process(input_pdf_path, form_model_json_path)
+    # Extract only 'text' and 'answer' from each field
+    exctracted_fields = [
+        field.model_dump(include={"order", "text", "answer"}) for field in form.fields
+    ]
+
+    # results = process_pdf_with_openai(
+    #     pdf_file="/home/maken/symfa/claim-assistant/data/amtrust/WI/form_hw_POL123456789.pdf",
+    #     texts=texts,
+    #     # model="gpt-5-mini-2025-08-07",
+    #     model="gpt-5-2025-08-07",
+    # )
+    # logger.info(f"PDF processing completed for policy {policy}.")
+    # print(form)
+    # results = [
+    #     {"text": "What is the policy number?", "answer": None},
+    #     {"text": "What is the insured's name?", "answer": "Joe Doe"},
+    #     {"text": "What is the coverage amount?", "answer": "$100,000"},
+    #     {"text": "Employee Name (First)", "answer": "Joe"},
+    #     {"text": "Employee Name (Middle)", "answer": "A."},
+    #     {"text": "Employee Name (Last)", "answer": "Doe"},
+    #     {"text": "Injury Date", "answer": "2023-01-15"},
+    #     {"text": "WI Unemployment Ins. Acct No.", "answer": "POL123456789"},
+    # ]
+    # gt = [
+    #     {"text": "What is the policy number?", "answer": None},
+    #     {"text": "What is the insured's name?", "answer": "Andrew Doe"},
+    #     {"text": "What is the coverage amount?", "answer": "$150,000"},
+    #     {"text": "Employee Name (First)", "answer": "Andrew"},
+    #     {"text": "Employee Name (Middle)", "answer": "A."},
+    #     {"text": "Employee Name (Last)", "answer": "Doe"},
+    #     {"text": "Injury Date", "answer": "2023-01-15"},
+    #     {"text": "WI Unemployment Ins. Acct No.", "answer": "POL123456789"},
+    # ]
+
+    print(exctracted_fields)
     logger.info("Starting distance calculations...")
     df = calculate_distances(
-        extracted_fields=results,
-        gt_fields=gt,
+        extracted_fields=exctracted_fields,
+        gt_fields=gt_answers_json_path,
         moverscore_features=moverscore_features,
         save_path=save_path,
-        save_prefix=f"{state}_{policy}",
+        save_prefix=f"{state}_{policy}_{type}",
     )
     logger.info("Distance calculations completed.")
-    print(df)
+    # print(df)
 
     df = calculate_policy_metrics(
         data=df,
-        index_prefix=policy,
-        save_prefix=state,
+        save_path=save_path,
+        state=state,
+        policy=policy,
+        form_type=type,
         main_params=main_params,
     )
 

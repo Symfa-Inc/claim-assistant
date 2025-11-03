@@ -1,0 +1,74 @@
+order,field,answer_gt,answer_extracted,levenshtein,moverscore,levenshtein_moverscore
+1,First name,John,John,1.0,,1.0
+2,Middle initial,A,A,1.0,,1.0
+3,Last name,Smith,Smith,1.0,,1.0
+4,Date of injury/disease,2024-03-12,2024-03-12,1.0,,1.0
+5,Social Security number,987-65-4321,987-65-4321,1.0,,1.0
+6,Date of birth,1987-02-14,1987-02-14,1.0,,1.0
+7,"Mailing address; add apartment number or P.O. Box, if applicable","742 Pinecrest Ave, Apt 3B","742 Pinecrest Ave, Apt 3B",1.0,,1.0
+8,City,Columbus,Columbus,1.0,,1.0
+9,State,OH,OH,1.0,,1.0
+10,ZIP code,43211,43211,1.0,,1.0
+11,Sex,Male,Male,,1.0,1.0
+12,Email address,john.smith87@example.com,john.smith87@example.com,1.0,,1.0
+13,Home phone number,614-555-0123,614-555-0123,1.0,,1.0
+14,Cell phone number,614-555-0175,614-555-0175,1.0,,1.0
+15,Employer name,"Riverview Manufacturing, LLC","Riverview Manufacturing, LLC",1.0,,1.0
+16,Employer address,1250 Foundry Rd,1250 Foundry Rd,1.0,,1.0
+17,City,Columbus,Columbus,1.0,,1.0
+18,State,OH,OH,1.0,,1.0
+19,ZIP code,43215,43215,1.0,,1.0
+20,Was the injured worker hired through a temp agency?,False,False,1.0,,1.0
+21,"If yes, name of temp agency",,,1.0,,1.0
+22,Mark the days of the week you usually work,"Monday, Tuesday, Wednesday, Thursday, Friday","Mon, Tues, Wed, Thurs, Fri",0.7428571428571429,,0.7428571428571429
+23,Regular work hours - From,8 a.m.,08:00:00,0.1428571428571429,,0.1428571428571429
+24,Regular work hours - To,4:30 p.m.,16:30:00,0.3529411764705882,,0.3529411764705882
+25,Date hired,2021-09-20,2021-09-20,1.0,,1.0
+26,Job title,Maintenance Technician,Maintenance Technician,1.0,,1.0
+27,State where hired,OH,OH,1.0,,1.0
+28,State where supervised,OH,OH,1.0,,1.0
+29,Wage rate; $ per hour,24.5,24.5,1.0,,1.0
+30,Number of hours scheduled to work the week of this injury,40.0,40.0,1.0,,1.0
+31,Work number for call-offs (Number injured worker calls to reach supervisor),614-555-0110,614-555-0110,1.0,,1.0
+32,"Part(s) of body affected (For example: Left knee, right index finger)",Right wrist and lower back,Right wrist and lower back,,1.0,1.0
+33,Accident description (Describe the sequence of events that directly caused the injury or death.),"At approximately 10:15 a.m. on 03/12/2024, while replacing a drive belt on a packaging line conveyor in the maintenance area at Riverview Manufacturing (1250 Foundry Rd, Columbus, OH), I slipped on a small patch of coolant overspray. I braced my fall with my right hand, experiencing immediate pain in my right wrist and a twisting motion to my lower back. The area was marked off and I reported the incident to my supervisor immediately.","At approximately 10:15 a.m. on 03/12/2024, while replacing a drive belt on a packaging line conveyor in the maintenance area at Riverview Manufacturing (1250 Foundry Rd, Columbus, OH), I slipped on a small patch of coolant overspray. I braced my fall with my right hand, experiencing immediate pain in my right wrist and a twisting motion to my lower back. The area was marked off and I reported the incident to my supervisor immediately.",1.0,,1.0
+34,Will the incident cause the injured worker to miss 8 or more days from work?,False,False,1.0,,1.0
+35,Injured worker start time,8 a.m.,08:00:00,0.1428571428571429,,0.1428571428571429
+36,Time of injury,10:15 a.m.,10:15:00,0.5555555555555556,,0.5555555555555556
+37,Date employer notified,2024-03-12,2024-03-12,1.0,,1.0
+38,Was any part of a workday missed due to the injury?,True,True,1.0,,1.0
+39,Date last worked,2024-03-12,2024-03-12,1.0,,1.0
+40,Was the place of the accident or exposure on employer's premises?,True,True,1.0,,1.0
+41,"If no, give accident location, street address",,,1.0,,1.0
+42,"If no, give accident location, city",,,1.0,,1.0
+43,"If no, give accident location, state",,,1.0,,1.0
+44,"If no, give accident location, ZIP code",,,1.0,,1.0
+45,Was injured worker hospitalized overnight?,False,False,1.0,,1.0
+46,Initial treatment date,2024-03-12,2024-03-12,1.0,,1.0
+47,Health-care office/Facility name,Riverside Urgent Care - Downtown,Riverside Urgent Care - Downtown,1.0,,1.0
+48,Treating physician/Provider name,"Emily Carter, PA-C","Emily Carter, PA-C",1.0,,1.0
+49,Telephone number,614-555-0142,614-555-0142,1.0,,1.0
+50,Fax number,614-555-0199,614-555-0199,1.0,,1.0
+51,Health-care office/Facility street address,"450 N High St, Suite 120","450 N High St, Suite 120",1.0,,1.0
+52,City,Columbus,Columbus,1.0,,1.0
+53,State,OH,OH,1.0,,1.0
+54,ZIP code,43215,43215,1.0,,1.0
+55,Date of death,,,1.0,,1.0
+56,Decedent’s marital status,,,1.0,,1.0
+57,Decedent’s number of dependents,0.0,0.0,1.0,,1.0
+58,"Diagnosis(es)-narrative description including as appropriate, the location and body part, and ICD code(s).","Lumbar strain, initial encounter (S39.012A); Right wrist sprain, initial encounter (S63.501A). Mechanism consistent with slip-and-fall while performing maintenance on conveyor equipment at work.","Lumbar strain, initial encounter (S39.012A); Right wrist sprain, initial encounter (S63.501A). Mechanism consistent with slip-and-fall while performing maintenance on conveyor equipment at work.",1.0,,1.0
+59,Initial treatment date,2024-03-12,2024-03-12,1.0,,1.0
+60,Are the medical conditions you have listed above causally related to the reported work-related accident or occupational disease?,True,True,1.0,,1.0
+61,Are you the physician of record?,True,True,1.0,,1.0
+62,Treating physician/Provider’s name (Print),"Emily Carter, PA-C","Emily Carter, PA-C",1.0,,1.0
+63,BWC provider number,P012345678,P012345678,1.0,,1.0
+64,Date,2024-03-15,2024-03-15,1.0,,1.0
+65,Employer name,"Riverview Manufacturing, LLC","Riverview Manufacturing, LLC",1.0,,1.0
+66,Employer county,Franklin,Franklin,1.0,,1.0
+67,Phone number,614-555-0100,614-555-0100,1.0,,1.0
+68,Fax number,614-555-0101,614-555-0101,1.0,,1.0
+69,Email address,hr@riverviewmfg.com,hr@riverviewmfg.com,1.0,,1.0
+70,Employer policy number,SIC123456789,SIC123456789,1.0,,1.0
+71,Federal ID number,31-1234567,31-1234567,1.0,,1.0
+72,"Injured worker is (Check box, if applicable.)",,,1.0,,1.0
+73,For self-insuring employers only: Medical only / Lost time,Medical only,,0.0,,0.0

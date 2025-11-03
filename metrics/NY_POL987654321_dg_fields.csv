@@ -1,0 +1,83 @@
+order,field,answer_gt,answer_extracted,levenshtein,moverscore,levenshtein_moverscore
+1,Employee Name,Sarah L. Martinez,Sarah L. Martinez,1.0,,1.0
+2,WCB Case Number (JCN),AA123456,AA123456,1.0,,1.0
+3,Date of Injury,2024-08-19,2024-08-19,1.0,,1.0
+4,Claim Administrator Claim Number,NCS-2024-0819-473,NCS-2024-0819-473,1.0,,1.0
+5,Insurer Name,Evergreen Mutual Insurance Company,Evergreen Mutual Insurance Company,1.0,,1.0
+6,Insurer ID,W010010,W010010,1.0,,1.0
+7,Claim Administrator Name,Lisa Harper,Lisa Harper,1.0,,1.0
+8,Claim Administrator Address,"600 University St, Suite 1200","600 University St, Suite 1200",1.0,,1.0
+9,Claim Administrator City,Seattle,Seattle,1.0,,1.0
+10,Claim Administrator State,WA,WA,1.0,,1.0
+11,Claim Administrator Postal Code,98101,98101,1.0,,1.0
+12,Claim Administrator Country,USA,USA,1.0,,1.0
+13,Employee First Name,Sarah,Sarah,1.0,,1.0
+14,Employee Middle Name/Initial,L,L,1.0,,1.0
+15,Employee Last Name,Martinez,Martinez,1.0,,1.0
+16,Employee Suffix,,,1.0,,1.0
+17,Employee Mailing Address,"1120 E Pine St, Apt 5","1120 E Pine St, Apt 5",1.0,,1.0
+18,Employee City,Seattle,Seattle,1.0,,1.0
+19,Employee State,WA,WA,1.0,,1.0
+20,Employee Postal Code,98122,98122,1.0,,1.0
+21,Employee Country,USA,USA,1.0,,1.0
+22,Employee Phone Number,206-555-0147,206-555-0147,1.0,,1.0
+23,Date of Birth,1991-03-14,1991-03-14,1.0,,1.0
+24,Gender,Female,Female,1.0,,1.0
+25,Date of Hire,2022-06-01,2022-06-01,1.0,,1.0
+26,Employee SSN,987-65-4321,987-65-4321,1.0,,1.0
+27,Occupation Description,Warehouse Associate,Warehouse Associate,1.0,,1.0
+28,Employee Email Address,sarah.martinez@examplemail.com,sarah.martinez@examplemail.com,1.0,,1.0
+29,Time of Injury,10:15:00,10:15:00,1.0,,1.0
+30,Date Employer Had Knowledge of the Injury,2024-08-19,2024-08-19,1.0,,1.0
+31,Employment Status,Full-time,Full-time,1.0,,1.0
+32,Date Employer Had Knowledge of Date of Disability,2024-08-20,2024-08-20,1.0,,1.0
+33,Estimated Weekly Wage,980.0,980.0,1.0,,1.0
+34,Number of Days Worked Per Week,5.0,5.0,1.0,,1.0
+35,Work Week Type,Standard Work Week,Standard Work Week,1.0,,1.0
+36,Work Days Scheduled,Monday through Friday,Mon Tues Wed Thurs Fri,0.5116279069767442,,0.5116279069767442
+37,Full Wages Paid for Date of Injury,True,True,1.0,,1.0
+38,Employer Paid Salary in Lieu of Compensation,False,False,1.0,,1.0
+39,Initial Treatment,Minor Clinic/Hospital Treatment,Minor Clinic/Hospital Treatment,1.0,,1.0
+40,Death Result of Injury,No,No,1.0,,1.0
+41,Date of Death,,,1.0,,1.0
+42,Number of Dependents,1.0,1.0,1.0,,1.0
+43,Nature of Injury,Lumbar strain/sprain,Lumbar strain/sprain,1.0,,1.0
+44,Part of Body,Lower back,Lower back,1.0,,1.0
+45,Cause of Injury,Lifting a heavy box from pallet,Lifting a heavy box from pallet,1.0,,1.0
+46,Accident/Injury Description,"While moving inventory in the warehouse, the employee lifted a 50–60 lb box from a lower pallet to a waist-high shelf. As she turned to place the box, she felt a sharp pain in her lower back and had to stop work. Supervisor was notified immediately and the employee was sent to an urgent care clinic for evaluation.","While moving inventory in the warehouse, the employee lifted a 50–60 lb box from a lower pallet to a waist-high shelf. As she turned to place the box, she felt a sharp pain in her lower back and had to stop work. Supervisor was notified immediately and the employee was sent to an urgent care clinic for evaluation.",,1.0,1.0
+47,Initial Date Last Day Worked,2024-08-19,2024-08-19,1.0,,1.0
+48,Initial Date Disability Began,2024-08-20,2024-08-20,1.0,,1.0
+49,Initial Return to Work Date,2024-08-26,2024-08-26,1.0,,1.0
+50,Return To Work Type,Actual,Actual,1.0,,1.0
+51,Physical Restrictions,True,False,0.2222222222222222,,0.2222222222222222
+52,Return To Work Same Employer,True,True,1.0,,1.0
+53,Accident Location - Organization Name,Emily Johnson Design Studio - Warehouse,Emily Johnson Design Studio - Warehouse,1.0,,1.0
+54,Accident Location - Street,"2457 1st Ave S, Loading Dock B","2457 1st Ave S, Loading Dock B",1.0,,1.0
+55,Accident Location - City,Seattle,Seattle,1.0,,1.0
+56,Accident Location - State,WA,WA,1.0,,1.0
+57,Accident Location - Postal Code,98134,98134,1.0,,1.0
+58,Accident Location - Country,USA,USA,1.0,,1.0
+59,Location Narrative,Rear loading area near inventory racks A3–A5.,Rear loading area near inventory racks A3–A5.,1.0,,1.0
+60,Premises,Employer,Employer,1.0,,1.0
+61,Witness Names,Michael Chen,Michael Chen,1.0,,1.0
+62,Witness Business Phone Number,206-555-0166,206-555-0166,1.0,,1.0
+63,Employer Name,Emily Johnson Design Studio,Emily Johnson Design Studio,1.0,,1.0
+64,Employer FEIN,84-7654322,84-7654322,1.0,,1.0
+65,UI Number,WA-UI-5567321,WA-UI-5567321,1.0,,1.0
+66,Manual Classification Code,8017,8017,1.0,,1.0
+67,Industry Code,541430,541430,1.0,,1.0
+68,Employer Mailing Address,"2457 1st Ave S, Suite 300","2457 1st Ave S, Suite 300",1.0,,1.0
+69,Employer City,Seattle,Seattle,1.0,,1.0
+70,Employer State,WA,WA,1.0,,1.0
+71,Employer Postal Code,98134,98134,1.0,,1.0
+72,Employer Country,USA,USA,1.0,,1.0
+73,Employer Physical Address,"2457 1st Ave S, Suite 300, Seattle, WA 98134","2457 1st Ave S, Suite 300, Seattle, WA 98134",1.0,,1.0
+74,Employer Contact Name,Emily Johnson,Emily Johnson,1.0,,1.0
+75,Employer Contact Business Phone Number,206-555-0198,206-555-0198,1.0,,1.0
+76,Insured Name,Sarah L. Martinez,Sarah L. Martinez,1.0,,1.0
+77,Insured FEIN,84-7654321,84-7654321,1.0,,1.0
+78,Insured Location ID,SEA-01,SEA-01,1.0,,1.0
+79,Policy Number ID,POL987654321,POL987654321,1.0,,1.0
+80,Policy Effective Date,2023-01-12,2023-01-12,1.0,,1.0
+81,Policy Expiration Date,2025-01-12,2025-01-12,1.0,,1.0
+82,Insured Type,Insured,Insured,1.0,,1.0
