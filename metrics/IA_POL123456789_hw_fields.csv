@@ -1,0 +1,90 @@
+order,field,answer_gt,answer_extracted,levenshtein,moverscore,levenshtein_moverscore
+1,Jurisdiction Code,WA,WA,1.0,,1.0
+2,Claim Administrator Name,"Northwest Claims Management, Inc.","Northwest Claim Management, Inc.",0.9846153846153847,,0.9846153846153847
+3,Claim Representative Business Phone Number,(206) 555-0123,(206) 555-0123,1.0,,1.0
+4,Insurer Name (if different than claim administrator),Cascade Mutual Insurance Company,Cascade Mutual Insurance Company,1.0,,1.0
+5,"Mailing Address, City, State, & Postal Code","1201 3rd Ave, Suite 2400, Seattle, WA 98101","201 3rd Ave, Suite 2400, Seattle, WA 98101",0.9882352941176471,,0.9882352941176471
+6,Claim Administrator Claim Number,NCM-2023-0912-4587,CA-2023-0915-4581,0.8,,0.8
+7,Insurer FEIN,91-1122334,91-1122334,1.0,,1.0
+8,Claim Administrator FEIN,87-9988776,87-9988776,1.0,,1.0
+9,Claim Type Code,Medical Only,Medical Only,1.0,,1.0
+10,Employer Name,Rainier Logistics LLC,Rainier Logistics LLC,1.0,,1.0
+11,Employer FEIN,91-7654321,91-7654321,1.0,,1.0
+12,Insured Report Number,RL-IR-2023-0912,RL-IR-2023-0912,1.0,,1.0
+13,Employer Type Code,Employer (E),E,0.15384615384615385,,0.15384615384615385
+14,"Physical Address, City, State, & Postal Code","4100 4th Ave S, Seattle, WA 98134","4100 4th Ave S, Seattle, WA 98134",1.0,,1.0
+15,"Mailing Address, City, State, & Postal Code","P.O. Box 34567, Seattle, WA 98124","P.O. Box 34567, Seattle, WA 98124",1.0,,1.0
+16,Industry Code,493110,493120,0.8333333333333334,,0.8333333333333334
+17,Insured Location Number,LOC-SEA-01,LOC-SEA-01,1.0,,1.0
+18,Employer UI Number,WA-0123456-7,WA-0123456-7,1.0,,1.0
+19,Nature of Business,"Third-party logistics, warehousing and distribution","Third party logistics, warehousing and distribution",0.9803921568627451,,0.9803921568627451
+20,Employer Contact Name and Business Phone Number,"Sarah Kim, Operations Manager, (206) 555-0144","Nina Kim, Operations Manager (206) 555-0144",0.9090909090909091,,0.9090909090909091
+21,Insured Name (parent company if different than employer),"Rainier Logistics Holdings, Inc.",Rainier Logistics Holdings Inc.,0.9841269841269842,,0.9841269841269842
+22,Insured FEIN,91-3344556,91-3344556,1.0,,1.0
+23,Insured Postal Code,98134,98134,1.0,,1.0
+24,Policy/Contract Number,POL123456789,POL123456789,1.0,,1.0
+25,Coverage Effective Date,2022-03-20,2023-03-20,0.9,,0.9
+26,Coverage Expiration Date,2024-03-20,2024-03-20,1.0,,1.0
+27,Self Insurance License/ Certificate Number,N/A,N/A,1.0,,1.0
+28,Employee Name - First,John,John,1.0,,1.0
+29,Employee Name - Middle,Andrew,Andrew,1.0,,1.0
+30,Employee Name - Last,Doe,Doe,1.0,,1.0
+31,Date of Birth,1987-06-15,1988-06-15,0.9,,0.9
+32,Gender,Male (M),M,,0.058053547525818705,0.058053547525818705
+33,Tax Filing Status,Married/Filing Joint (C),C,,-0.23110346257817138,-0.23110346257817138
+34,"Mailing Address, City, State, & Postal Code","7423 8th Ave S, Apt 3B, Seattle, WA 98108","4100 4th Ave S, Apt 9B, Seattle, WA 98108",0.8780487804878049,,0.8780487804878049
+35,Date of Hire,2021-07-12,2021-07-12,1.0,,1.0
+36,State of Hire,WA,WA,1.0,,1.0
+37,Educational Level (grade completed),14,16,0.5,,0.5
+38,Phone Number (include area code),(206) 555-0196,(206) 555-0198,0.9285714285714286,,0.9285714285714286
+39,Email,john.doe@outlook.com,john.doe@oakbox.com,0.7692307692307692,,0.7692307692307692
+40,Occupation Description,Warehouse associate / material handler,Warehouse associate/material handler,,0.989392919364983,0.989392919364983
+41,NCCI Classification Code,8292,8292,1.0,,1.0
+42,Department Where Regularly Worked,Shipping & Receiving,Shipping & Receiving,1.0,,1.0
+43,Employment Status,Regular Employee/Full-Time,Regular Employee/Full-Time,1.0,,1.0
+44,Employee ID Number (ID Type),Social Security Number,Social Security Number,1.0,,1.0
+45,ID #,539-28-6147,533-28-6144,0.8181818181818181,,0.8181818181818181
+46,Marital Status,Married (M),M,0.16666666666666663,,0.16666666666666663
+47,Employee’s Authorization to Release Medical Records,True,True,1.0,,1.0
+48,Employee’s Authorization to Release Social Security Number,True,False,0.2222222222222222,,0.2222222222222222
+49,Average Wage $,22.5,23.5,0.75,,0.75
+50,Average Wage Frequency,hourly,hourly,1.0,,1.0
+51,Number of Days Regularly Worked Per Week,5.0,5.0,1.0,,1.0
+52,Salary Continued In Lieu of Compensation,False,False,1.0,,1.0
+53,Full Wages Paid for Date of Injury,True,True,1.0,,1.0
+54,Discontinued Fringe Benefits $,0.0,0.0,1.0,,1.0
+55,Employee Number of Dependents,1.0,2.0,0.6666666666666667,,0.6666666666666667
+56,Employee Number of Exemptions,2.0,1.0,0.6666666666666667,,0.6666666666666667
+57,Exemptions Type,Withholding,Withholding,1.0,,1.0
+58,Date of Injury,2023-09-12,2023-09-12,1.0,,1.0
+59,Date Employer Had Knowledge of the Injury,2023-09-12,2023-09-12,1.0,,1.0
+60,Date Claim Administrator Had Knowledge of the Injury,2023-09-13,2023-09-13,1.0,,1.0
+61,Initial Date Last Day Worked,2023-09-12,2023-09-15,0.9,,0.9
+62,Initial Return to Work Date (if applicable),2023-09-15,2023-09-15,1.0,,1.0
+63,Employee Date of Death (if applicable),,,1.0,,1.0
+64,Time of Injury,10:35:00,10:35:00,1.0,,1.0
+65,Time Employee Began Work,08:00:00,08:00:00,1.0,,1.0
+66,Pre-Existing Disability Code,No,No,1.0,,1.0
+67,Accident Premises Code,Employer (E),E,0.15384615384615385,,0.15384615384615385
+68,Accident Site Organization Name,Rainier Logistics LLC - Seattle Warehouse,Rainier Logistics LLC – Seattle Warehouse,0.975609756097561,,0.975609756097561
+69,"Accident Site Street, City, State, & Postal Code","4100 4th Ave S, Seattle, WA 98134","4100 4th Ave S, Seattle, WA 98134",1.0,,1.0
+70,Accident Location Narrative (if no street address),Not applicable—incident occurred on the main warehouse floor near Dock 3,Not applicable,0.32558139534883723,,0.32558139534883723
+71,Accident Site County/Parish,King County,King County,1.0,,1.0
+72,Type of Injury / Illness Code,072,072,1.0,,1.0
+73,Describe the nature of the injury,Acute lumbar strain with muscle spasm; reported sharp pain in lower back after lifting and twisting,Acute lumbar strain with muscle spasm; reported sharp pain in lower back after lifting and twisting.,,0.9794771190839107,0.9794771190839107
+74,Part of Body Affected Code,090,090,,1.0,1.0
+75,Part(s) of body directly affected by the injury or illness,Lower back (lumbar region),Lower back (lumbar region),,1.0,1.0
+76,Describe the events that caused the injury,"While lifting a 45-pound carton from a pallet, the employee pivoted to place it on a cart and felt a sudden pull in the lower back, losing balance briefly.","While lifting a 45 lb carton manually from a pallet, the employee pivoted to place the box on a staging cart and felt a sharp pain in the lower back, briefly losing balance.",,0.7310062718637003,0.7310062718637003
+77,Name the object or substance that directly injured the employee,Manual pallet jack and cardboard carton,Manual pallet jack and cardboard carton,,1.0,1.0
+78,Specify activity the employee was engaged in when the event occurred,Lifting and staging inventory as part of normal warehouse duties.,Lifting and staging inventory as part of normal warehouse duties.,,0.9885921638179703,0.9885921638179703
+79,Witness Name,Maria Lopez,Maria Lopez,1.0,,1.0
+80,Witness Business Phone Number,(206) 555-0179,(206) 555-0749,0.9285714285714286,,0.9285714285714286
+81,Initial Treatment Code,clinic/hospital visit (2),2,0.07692307692307687,,0.07692307692307687
+82,Initial Medical Provider Name,CityMed Urgent Care - South Seattle,City Med Urgent Care – South Seattle,0.9577464788732395,,0.9577464788732395
+83,"Initial Medical Provider Physical Address, City, State, & Postal Code","3820 Rainier Ave S, Seattle, WA 98118","3820 Rainier Ave S, Seattle, WA 98118",1.0,,1.0
+84,Managed Care Organization Name or ID Number,Northwest Health MCO - ID NW12345,Northwest Health MCO,0.7547169811320755,,0.7547169811320755
+85,ICD Primary Diagnostic Code (if known),S39.012A,S39.012A,1.0,,1.0
+86,Preparer’s Name & Title,"Paul Nguyen, HR Generalist","Dana McGuire, HR Generalist",0.7169811320754718,,0.7169811320754718
+87,Preparer's Company Name,Rainier Logistics LLC,Rainier Logistics LLC,1.0,,1.0
+88,Preparer Phone Number,(206) 555-0132,(206) 555-0132,1.0,,1.0
+89,Preparer Date,2023-09-15,2023-09-15,1.0,,1.0

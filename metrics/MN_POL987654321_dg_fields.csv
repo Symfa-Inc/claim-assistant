@@ -1,0 +1,88 @@
+order,field,answer_gt,answer_extracted,levenshtein,moverscore,levenshtein_moverscore
+1,EMPLOYEE SOCIAL SECURITY #,529-87-1432,529-87-1432,1.0,,1.0
+2,OSHA case #,2024081417,2024081417,1.0,,1.0
+3,Time employee began work on date of injury,08:00:00,08:00:00,1.0,,1.0
+4,Time employee began work on date of injury (am/pm),AM,AM,1.0,,1.0
+5,DATE OF CLAIMED INJURY,2024-08-14,2024-08-14,1.0,,1.0
+6,Time of injury,10:35:00,10:35:00,1.0,,1.0
+7,Time of injury(am/pm),AM,AM,1.0,,1.0
+8,Date of death,,,1.0,,1.0
+9,# of dependents (if death is related to injury),0.0,0.0,1.0,,1.0
+10,EMPLOYEE Last name,Johnson,Johnson,1.0,,1.0
+11,EMPLOYEE First name,Emily,Emily,1.0,,1.0
+12,EMPLOYEE Middle name,A.,A.,1.0,,1.0
+13,Gender,F,F,,1.0,1.0
+14,Marital status,Unmarried,Unmarried,1.0,,1.0
+15,Home address,742 Cedar Lane,742 Cedar Lane,1.0,,1.0
+16,Home phone #,(614) 555-0198,(614) 555-0198,1.0,,1.0
+17,Date of birth,1990-05-23,1990-05-23,1.0,,1.0
+18,Date hired,2021-03-15,2021-03-15,1.0,,1.0
+19,City,Columbus,Columbus,1.0,,1.0
+20,State,OH,OH,1.0,,1.0
+21,Zip Code,43215,43215,1.0,,1.0
+22,Occupation,Warehouse Associate,Warehouse Associate,1.0,,1.0
+23,Regular department,Shipping & Receiving,Shipping & Receiving,1.0,,1.0
+24,Apprentice,False,False,1.0,,1.0
+25,Average weekly wage,1138.0,1138.0,1.0,,1.0
+26,Rate per hour,28.45,28.45,1.0,,1.0
+27,Hours per day,8.0,8.0,1.0,,1.0
+28,Days per week,5.0,5.0,1.0,,1.0
+29,Normal work schedule Sun,False,False,1.0,,1.0
+30,Normal work schedule Mon,True,True,1.0,,1.0
+31,Normal work schedule Tue,True,True,1.0,,1.0
+32,Normal work schedule Wed,True,True,1.0,,1.0
+33,Normal work schedule Thu,True,True,1.0,,1.0
+34,Normal work schedule Fri,True,True,1.0,,1.0
+35,Normal work schedule Sat,False,False,1.0,,1.0
+36,Employment status,Full time,Full time,1.0,,1.0
+37,"Tell us how the injury/illness occurred, what the employee was doing before the incident (give details), and what the injury/illness was.","While lifting a 35-lb corrugated box from a pallet onto a conveyor in the Shipping & Receiving area, the employee felt a sharp pain in her right wrist as the box shifted. She immediately set the box down and reported the incident to her supervisor. She was evaluated at an occupational health clinic the same day. The incident resulted in a right wrist sprain.","While lifting a 35-lb corrugated box from a pallet onto a conveyor in the Shipping & Receiving area, the employee felt a sharp pain in her right wrist as the box shifted. She immediately set the box down and reported the incident to her supervisor. She was evaluated at an occupational health clinic the same day. The incident resulted in a right wrist sprain.",,1.0,1.0
+38,What was the injury or illness (include the part(s) of body)?,Acute right wrist sprain with swelling and tenderness.,Acute right wrist sprain with swelling and tenderness.,,1.0,1.0
+39,"What tools, equipment, machines, objects, or substances were involved?","Manual pallet jack, stretch-wrap dispenser, conveyor workstation.","Manual pallet jack, stretch-wrap dispenser, conveyor workstation.",,1.0,1.0
+40,Did injury occur on employer’s premises?,True,True,1.0,,1.0
+41,Name and address of the place of the occurrence,"Buckeye Logistics LLC, Warehouse A, 1500 Distribution Dr, Columbus, OH 43228","Buckeye Logistics LLC, Warehouse A, 1500 Distribution Dr, Columbus, OH 43228",1.0,,1.0
+42,Date of first day of any lost time,2024-08-14,2024-08-14,1.0,,1.0
+43,Employer paid for lost time on day of injury (DOI),Yes,Yes,1.0,,1.0
+44,Date employer notified of injury,2024-08-14,2024-08-14,1.0,,1.0
+45,Date employer notified of lost time,2024-08-14,2024-08-14,1.0,,1.0
+46,Return to work date,2024-08-19,2024-08-19,1.0,,1.0
+47,RTW same employer,True,True,1.0,,1.0
+48,RTW with restrictions,True,True,1.0,,1.0
+49,Treating physician (name),"Dr. Laura Chen, Riverside Occupational Health Clinic","Dr. Laura Chen, Riverside Occupational Health Clinic",1.0,,1.0
+50,Certified Managed Care Organization (if any),N/A,N/A,1.0,,1.0
+51,Extent of medical treatment - None,False,False,1.0,,1.0
+52,Extent of medical treatment - Minor on-site by employer’s medical staff,False,False,1.0,,1.0
+53,Extent of medical treatment - Minor clinic/hospital,True,True,1.0,,1.0
+54,Extent of medical treatment - Emergency room,False,False,1.0,,1.0
+55,Extent of medical treatment - Hospitalization more than 24 hours,False,False,1.0,,1.0
+56,Extent of medical treatment - Future major medical anticipated,False,False,1.0,,1.0
+57,EMPLOYER Legal name,Buckeye Logistics LLC,Buckeye Logistics LLC,1.0,,1.0
+58,EMPLOYER DBA name (if different),Buckeye Logistics,Buckeye Logistics,1.0,,1.0
+59,Mailing address,1500 Distribution Dr,1500 Distribution Dr,1.0,,1.0
+60,City (mailing),Columbus,Columbus,1.0,,1.0
+61,State (mailing),OH,OH,1.0,,1.0
+62,Zip Code (mailing),43228,43228,1.0,,1.0
+63,Employer FEIN,310987654,31098765,0.9411764705882353,,0.9411764705882353
+64,Unemployment ID #,OH-1234567,OH-1234567,1.0,,1.0
+65,Employer’s contact name,Mark Stevens,Mark Stevens,1.0,,1.0
+66,Employer’s contact phone #,(614) 555-0127,(614) 555-0127,1.0,,1.0
+67,Physical address (if different),1500 Distribution Dr,1500 Distribution Dr,1.0,,1.0
+68,City (physical),Columbus,Columbus,1.0,,1.0
+69,State (physical),OH,OH,1.0,,1.0
+70,Zip Code (physical),43228,43228,1.0,,1.0
+71,Witness (name),Carlos Ramirez,Carlos Ramirez,1.0,,1.0
+72,Witness (phone),(614) 555-0172,(614) 555-0172,1.0,,1.0
+73,NAICS code,493110,493110,1.0,,1.0
+74,Date form completed,2024-08-16,2024-08-16,1.0,,1.0
+75,INSURER name,Guardian Mutual Insurance Company,Guardian Mutual Insurance Company,1.0,,1.0
+76,Insured legal name,Emily Johnson,Emily Johnson,1.0,,1.0
+77,Policy # (including effective dates) or self-insured certificate #,POL987654321,POL987654321,1.0,,1.0
+78,Insurer FEIN,523456789,52345678,0.9411764705882353,,0.9411764705882353
+79,Date insurer received notice,2024-08-16,2024-08-16,1.0,,1.0
+80,CLAIMS ADMIN COMPANY (CA) name,"Midwest Claims Administrators, Inc.","Midwest Claims Administrators, Inc.",1.0,,1.0
+81,CA type (check one),TPA,TPA,1.0,,1.0
+82,CA address,"500 Market St, Suite 900","500 Market St, Suite 900",1.0,,1.0
+83,City (CA),Columbus,Columbus,1.0,,1.0
+84,State (CA),OH,OH,1.0,,1.0
+85,Zip Code (CA),43215,43215,1.0,,1.0
+86,CA FEIN,361122334,36112233,0.9411764705882353,,0.9411764705882353
+87,CA claim #,MCA-2024-10452,MCA-2024-10452,1.0,,1.0

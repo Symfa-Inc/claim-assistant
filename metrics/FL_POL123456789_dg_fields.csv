@@ -1,0 +1,57 @@
+order,field,answer_gt,answer_extracted,levenshtein,moverscore,levenshtein_moverscore
+1,"NAME (First, Middle, Last) - First",John,John,1.0,,1.0
+2,"NAME (First, Middle, Last) - Middle",,,1.0,,1.0
+3,"NAME (First, Middle, Last) - Last",Doe,Doe,1.0,,1.0
+4,Social Security Number,987-65-4321,987654321,0.9,,0.9
+5,Date of Accident (Month-Day-Year),2023-11-14,2023-11-14,1.0,,1.0
+6,Time of Accident,09:35:00,09:35:00,1.0,,1.0
+7,HOME ADDRESS Street/Apt #,1458 Maple Street Apt 3B,1458 Maple Street Apt 3B,1.0,,1.0
+8,HOME ADDRESS City,Oakland,Oakland,1.0,,1.0
+9,HOME ADDRESS State,CA,CA,1.0,,1.0
+10,HOME ADDRESS Zip,94612,94612,1.0,,1.0
+11,EMPLOYEE'S DESCRIPTION OF ACCIDENT (Include Cause of Injury),"While lifting a 60 lb box from a lower pallet to a conveyor, I felt a sharp pain in my lower back and momentarily lost balance due to a small oil spot on the floor. I reported the incident to my supervisor immediately and sought medical attention the same day.","While lifting a 60 lb box from a lower pallet to a conveyor, I felt a sharp pain in my lower back and momentarily lost balance due to a small oil spot on the floor. I reported the incident to my supervisor immediately and sought medical attention the same day.",,1.0,1.0
+12,TELEPHONE,(510) 555-0176,(510) 555-0176,1.0,,1.0
+13,OCCUPATION,Warehouse Associate,Warehouse Associate,1.0,,1.0
+14,INJURY/ILLNESS THAT OCCURRED,52-Strain or Tear,52-Strain or Tear,1.0,,1.0
+15,PART OF BODY AFFECTED,42-Lower Back Area,42-Lower Back Area,1.0,,1.0
+16,DATE OF BIRTH,1986-02-14,1986-02-14,1.0,,1.0
+17,SEX,M,M,,1.0,1.0
+18,COMPANY NAME,"Bay City Logistics, Inc.","Bay City Logistics, Inc.",1.0,,1.0
+19,D. B. A.,Bay City Warehousing,Bay City Warehousing,1.0,,1.0
+20,FEDERAL I.D. NUMBER (FEIN),94-1234567,94-1234567,1.0,,1.0
+21,DATE FIRST REPORTED (Month/Day/Year),2023-11-15,2023-11-15,1.0,,1.0
+22,Street (Employer),2120 Industrial Ave,2120 Industrial Ave,1.0,,1.0
+23,City (Employer),Oakland,Oakland,1.0,,1.0
+24,State (Employer),CA,CA,1.0,,1.0
+25,Zip (Employer),94607,94607,1.0,,1.0
+26,NATURE OF BUSINESS,Third-party logistics and warehousing services,Third-party logistics and warehousing services,,1.0,1.0
+27,POLICY/MEMBER NUMBER,POL123456789,POL123456789,1.0,,1.0
+28,TELEPHONE,(510) 555-0120,(510) 555-0120,1.0,,1.0
+29,DATE EMPLOYED,2019-06-10,2019-06-10,1.0,,1.0
+30,PAID FOR DATE OF INJURY,True,False,0.2222222222222222,,0.2222222222222222
+31,EMPLOYER'S LOCATION ADDRESS Street (If different),"Warehouse B, 2140 Industrial Ave, Dock 3","Warehouse B, 2140 Industrial Ave, Dock 3",1.0,,1.0
+32,EMPLOYER'S LOCATION ADDRESS City,Oakland,Oakland,1.0,,1.0
+33,EMPLOYER'S LOCATION ADDRESS State,CA,CA,1.0,,1.0
+34,EMPLOYER'S LOCATION ADDRESS Zip,94607,94607,1.0,,1.0
+35,LOCATION # (If applicable),WH-B,WH-B,1.0,,1.0
+36,LAST DATE EMPLOYEE WORKED,2023-11-14,2023-11-19,0.9,,0.9
+37,RETURNED TO WORK YES NO,True,True,1.0,,1.0
+38,"IF YES, GIVE DATE (Returned to work)",2023-11-20,2023-11-20,1.0,,1.0
+39,WILL YOU CONTINUE TO PAY WAGES INSTEAD OF WORKERS' COMP?,False,False,1.0,,1.0
+40,LAST DAY WAGES WILL BE PAID INSTEAD OF WORKERS' COMP,,,1.0,,1.0
+41,PLACE OF ACCIDENT Street,"2140 Industrial Ave, Dock 3","2140 Industrial Ave, Dock 3",1.0,,1.0
+42,PLACE OF ACCIDENT City,Oakland,Oakland,1.0,,1.0
+43,PLACE OF ACCIDENT State,CA,CA,1.0,,1.0
+44,PLACE OF ACCIDENT Zip,94607,94607,1.0,,1.0
+45,COUNTY OF ACCIDENT,Alameda,Alameda,1.0,,1.0
+46,DATE OF DEATH (If applicable),,,1.0,,1.0
+47,AGREE WITH DESCRIPTION OF ACCIDENT?,True,True,1.0,,1.0
+48,RATE OF PAY $,24.5,24.5,1.0,,1.0
+49,RATE OF PAY PER,HR,HR,1.0,,1.0
+50,Number of hours per day,8.0,8.0,1.0,,1.0
+51,Number of hours per week,40.0,40.0,1.0,,1.0
+52,Number of days per week,5.0,5.0,1.0,,1.0
+53,"NAME, ADDRESS AND TELEPHONE OF PHYSICIAN OR HOSPITAL","Highland Hospital Occupational Health Clinic, 1411 E 31st St, Oakland, CA 94602, (510) 437-4800","Highland Hospital Occupational Health Clinic
+1411 E 31st St, Oakland, CA 94602,
+(510) 437-4800",0.9735449735449735,,0.9735449735449735
+54,AUTHORIZED BY EMPLOYER YES NO,True,True,1.0,,1.0

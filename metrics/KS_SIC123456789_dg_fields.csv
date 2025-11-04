@@ -1,0 +1,71 @@
+order,field,answer_gt,answer_extracted,levenshtein,moverscore,levenshtein_moverscore
+1,Federal Employer's Identification Number,91-1045678,91-1045678,1.0,,1.0
+2,Date of hire,2021-08-16,2021-08-16,1.0,,1.0
+3,Name of employer,"Pacific Builders, Inc.","Pacific Builders, Inc.",1.0,,1.0
+4,Phone,(206) 555-0142,206 555-0142,0.9230769230769231,,0.9230769230769231
+5,Mailing address (Street),"2201 4th Ave, Suite 500","2201 4th Ave, Suite 500",1.0,,1.0
+6,Mailing address (City),Seattle,Seattle,1.0,,1.0
+7,Mailing address (State),WA,WA,1.0,,1.0
+8,Mailing address (ZIP),98121,98121,1.0,,1.0
+9,"Location, if different from mailing address (Street)",7421 Greenwood Ave N,7421 Greenwood Ave N,1.0,,1.0
+10,Location (City),Seattle,Seattle,1.0,,1.0
+11,Location (State),WA,WA,1.0,,1.0
+12,Location (ZIP),98103,98103,1.0,,1.0
+13,Nature of business,Light commercial construction,Light commercial construction,,1.0,1.0
+14,NAICS or S.I.C. Code,236118,236118,1.0,,1.0
+15,Dept. or division,Field Operations,Field Operations,1.0,,1.0
+16,First,John,John,1.0,,1.0
+17,Middle,A.,A.,1.0,,1.0
+18,Last,Smith,Smith,1.0,,1.0
+19,Age,38.0,38.0,1.0,,1.0
+20,Sex,Male,Male,1.0,,1.0
+21,Home address (Street),812 NE 80th St,812 NE 80th St,1.0,,1.0
+22,Home address (City),Seattle,Seattle,1.0,,1.0
+23,Home address (State),WA,WA,1.0,,1.0
+24,Home address (ZIP),98115,98115,1.0,,1.0
+25,SSN,555-23-0198,555-23-0198,1.0,,1.0
+26,Birth date,1986-02-15,1986-02-15,1.0,,1.0
+27,occupation,Lead Carpenter,Lead Carpenter,,1.0,1.0
+28,phone,(206) 555-0174,206 555-0174,0.9230769230769231,,0.9230769230769231
+29,Date of injury or occupational disease,2024-02-20,2024-02-20,1.0,,1.0
+30,Time of injury,09:15:00,09:15:00,1.0,,1.0
+31,a.m. / p.m.,a.m.,a.m.,1.0,,1.0
+32,Date reported to employer,2024-02-21,2024-02-21,1.0,,1.0
+33,Date disability began,2024-02-21,2024-02-21,1.0,,1.0
+34,Gross average weekly wage $,1230.75,1230.75,1.0,,1.0
+35,Place of accident or last exposure (City),Seattle,Seattle,1.0,,1.0
+36,Place of accident or last exposure (County),King,King,1.0,,1.0
+37,Place of accident or last exposure (State),WA,WA,1.0,,1.0
+38,Was accident or last exposure on employer's premises?,False,False,1.0,,1.0
+39,How did accident occur?,"While carrying an aluminum extension ladder across a client’s driveway at a residential job site, the employee stepped on black ice, slipped, and twisted his left ankle as he fell to the ground.","While carrying an aluminum extension ladder across a client’s driveway at a residential job site, the employee stepped on black ice, slipped, and twisted his left ankle as he fell to the ground.",,1.0,1.0
+40,What was employee doing when injured?,Transporting an 8-foot extension ladder from the truck to the work area to begin exterior trim repairs.,Transporting an 8-foot extension ladder from the truck to the work area to begin exterior trim repairs.,,1.0,1.0
+41,Name substance or object that directly caused injury*,Aluminum extension ladder and icy pavement,Aluminum extension ladder and icy pavement,,1.0,1.0
+42,"Describe in detail nature and extent of injury, indicate part of body involved*",Acute left ankle sprain with suspected hairline fracture; significant swelling and tenderness over the lateral malleolus. Bruising to left hip from impact with ground.,Acute left ankle sprain with suspected hairline fracture; significant swelling and tenderness over the lateral malleolus. Bruising to left hip from impact with ground.,,1.0,1.0
+43,Was worker admitted to hospital?,False,True,0.2222222222222222,,0.2222222222222222
+44,Date,,,1.0,,1.0
+45,Treated by emergency room only?,True,True,1.0,,1.0
+46,Hospital name and address,"UW Medicine Northwest Hospital – Emergency Department, 1550 N 115th St, Seattle, WA 98133","UW Medicine Northwest Hospital – Emergency Department, 1550 N 115th St, Seattle, WA 98133",1.0,,1.0
+47,Name and address of attending physician or clinic,"Dr. Emily Chen, Orthopedic Associates of Seattle, 2409 N 45th St, Seattle, WA 98103","Dr. Emily Chen, Orthopedic Associates of Seattle, 2409 N 45th St, Seattle, WA 98103",1.0,,1.0
+48,Has employee returned to regular duty?,False,True,0.2222222222222222,,0.2222222222222222
+49,Light duty?,True,True,1.0,,1.0
+50,Date,2024-03-04,2024-03-04,1.0,,1.0
+51,Is compensation now being paid?,True,True,1.0,,1.0
+52,Date first/initial payment,2024-02-28,2024-02-28,1.0,,1.0
+53,Weekly compensation rate $,820.5,820.5,1.0,,1.0
+54,Is further medical aid needed?,YES,YES,1.0,,1.0
+55,Did employee die?,False,False,1.0,,1.0
+56,"If YES, give date of death",,,1.0,,1.0
+57,Name(s) and address(es) of dependents (death cases only),,,1.0,,1.0
+58,Insurance carrier and third party administrator,Summit Insurance Company (TPA: Northwest Claims Services),Summit Insurance Company (TPA: Northwest Claims Services),1.0,,1.0
+59,Insurance address (Street),"500 Pine St, Suite 1200","500 Pine St, Suite 1200",1.0,,1.0
+60,Insurance address (City),Seattle,Seattle,1.0,,1.0
+61,Insurance address (State),WA,WA,1.0,,1.0
+62,Insurance address (ZIP),98101,98101,1.0,,1.0
+63,Phone,(206) 555-0190,206 555-0190,0.9230769230769231,,0.9230769230769231
+64,Policy number,SIC123456789,SIC123456789,1.0,,1.0
+65,Name of agent,Laura Nguyen,Laura Nguyen,1.0,,1.0
+66,Claim number,SIC-CLM-240220-001,SIC-CLM-240220-001,1.0,,1.0
+67,Name of claim representative,Michael Ortiz,Michael Ortiz,1.0,,1.0
+68,Date of report,2024-02-22,2024-02-22,1.0,,1.0
+69,Completed by,Sarah Davis,Sarah Davis,1.0,,1.0
+70,Title,HR Manager,HR Manager,1.0,,1.0

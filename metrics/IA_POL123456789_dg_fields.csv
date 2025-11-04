@@ -1,0 +1,90 @@
+order,field,answer_gt,answer_extracted,levenshtein,moverscore,levenshtein_moverscore
+1,Jurisdiction Code,WA,WA,1.0,,1.0
+2,Claim Administrator Name,"Northwest Claims Management, Inc.","Northwest Claims Management, Inc.",1.0,,1.0
+3,Claim Representative Business Phone Number,(206) 555-0123,(206) 555-0123,1.0,,1.0
+4,Insurer Name (if different than claim administrator),Cascade Mutual Insurance Company,Cascade Mutual Insurance Company,1.0,,1.0
+5,"Mailing Address, City, State, & Postal Code","1201 3rd Ave, Suite 2400, Seattle, WA 98101","1201 3rd Ave, Suite 2400, Seattle, WA 98101",1.0,,1.0
+6,Claim Administrator Claim Number,NCM-2023-0912-4587,NCM-2023-0912-4587,1.0,,1.0
+7,Insurer FEIN,91-1122334,91-1122334,1.0,,1.0
+8,Claim Administrator FEIN,87-9988776,87-9988776,1.0,,1.0
+9,Claim Type Code,Medical Only,Medical Only,1.0,,1.0
+10,Employer Name,Rainier Logistics LLC,Rainier Logistics LLC,1.0,,1.0
+11,Employer FEIN,91-7654321,91-7654321,1.0,,1.0
+12,Insured Report Number,RL-IR-2023-0912,RL-IR-2023-0912,1.0,,1.0
+13,Employer Type Code,Employer (E),Employer (E),1.0,,1.0
+14,"Physical Address, City, State, & Postal Code","4100 4th Ave S, Seattle, WA 98134","4100 4th Ave S, Seattle, WA 98134",1.0,,1.0
+15,"Mailing Address, City, State, & Postal Code","P.O. Box 34567, Seattle, WA 98124","P.O. Box 34567, Seattle, WA 98124",1.0,,1.0
+16,Industry Code,493110,493110,1.0,,1.0
+17,Insured Location Number,LOC-SEA-01,LOC-SEA-01,1.0,,1.0
+18,Employer UI Number,WA-0123456-7,WA-0123456-7,1.0,,1.0
+19,Nature of Business,"Third-party logistics, warehousing and distribution","Third-party logistics, warehousing and distribution",1.0,,1.0
+20,Employer Contact Name and Business Phone Number,"Sarah Kim, Operations Manager, (206) 555-0144","Sarah Kim, Operations Manager, (206) 555-0144",1.0,,1.0
+21,Insured Name (parent company if different than employer),"Rainier Logistics Holdings, Inc.","Rainier Logistics Holdings, Inc.",1.0,,1.0
+22,Insured FEIN,91-3344556,91-3344556,1.0,,1.0
+23,Insured Postal Code,98134,98134,1.0,,1.0
+24,Policy/Contract Number,POL123456789,POL123456789,1.0,,1.0
+25,Coverage Effective Date,2022-03-20,2022-03-20,1.0,,1.0
+26,Coverage Expiration Date,2024-03-20,2024-03-20,1.0,,1.0
+27,Self Insurance License/ Certificate Number,N/A,N/A,1.0,,1.0
+28,Employee Name - First,John,John,1.0,,1.0
+29,Employee Name - Middle,Andrew,Andrew,1.0,,1.0
+30,Employee Name - Last,Doe,Doe,1.0,,1.0
+31,Date of Birth,1987-06-15,1987-06-15,1.0,,1.0
+32,Gender,Male (M),Male (M),,1.0,1.0
+33,Tax Filing Status,Married/Filing Joint (C),Married/Filing Joint (C),,1.0,1.0
+34,"Mailing Address, City, State, & Postal Code","7423 8th Ave S, Apt 3B, Seattle, WA 98108","7423 8th Ave S, Apt 3B, Seattle, WA 98108",1.0,,1.0
+35,Date of Hire,2021-07-12,2021-07-12,1.0,,1.0
+36,State of Hire,WA,WA,1.0,,1.0
+37,Educational Level (grade completed),14,14,1.0,,1.0
+38,Phone Number (include area code),(206) 555-0196,(206) 555-0196,1.0,,1.0
+39,Email,john.doe@outlook.com,john.doe@outlook.com,1.0,,1.0
+40,Occupation Description,Warehouse associate / material handler,Warehouse associate / material handler,,1.0,1.0
+41,NCCI Classification Code,8292,8292,1.0,,1.0
+42,Department Where Regularly Worked,Shipping & Receiving,Shipping & Receiving,1.0,,1.0
+43,Employment Status,Regular Employee/Full-Time,Regular Employee/Full-Time,1.0,,1.0
+44,Employee ID Number (ID Type),Social Security Number,Social Security Number,1.0,,1.0
+45,ID #,539-28-6147,539-28-6147,1.0,,1.0
+46,Marital Status,Married (M),Married (M),1.0,,1.0
+47,Employee’s Authorization to Release Medical Records,True,True,1.0,,1.0
+48,Employee’s Authorization to Release Social Security Number,True,True,1.0,,1.0
+49,Average Wage $,22.5,22.5,1.0,,1.0
+50,Average Wage Frequency,hourly,hourly,1.0,,1.0
+51,Number of Days Regularly Worked Per Week,5.0,5.0,1.0,,1.0
+52,Salary Continued In Lieu of Compensation,False,False,1.0,,1.0
+53,Full Wages Paid for Date of Injury,True,True,1.0,,1.0
+54,Discontinued Fringe Benefits $,0.0,0.0,1.0,,1.0
+55,Employee Number of Dependents,1.0,1.0,1.0,,1.0
+56,Employee Number of Exemptions,2.0,2.0,1.0,,1.0
+57,Exemptions Type,Withholding,Withholding,1.0,,1.0
+58,Date of Injury,2023-09-12,2023-09-12,1.0,,1.0
+59,Date Employer Had Knowledge of the Injury,2023-09-12,2023-09-12,1.0,,1.0
+60,Date Claim Administrator Had Knowledge of the Injury,2023-09-13,2023-09-13,1.0,,1.0
+61,Initial Date Last Day Worked,2023-09-12,2023-09-12,1.0,,1.0
+62,Initial Return to Work Date (if applicable),2023-09-15,2023-09-15,1.0,,1.0
+63,Employee Date of Death (if applicable),,,1.0,,1.0
+64,Time of Injury,10:35:00,10:35:00,1.0,,1.0
+65,Time Employee Began Work,08:00:00,08:00:00,1.0,,1.0
+66,Pre-Existing Disability Code,No,No,1.0,,1.0
+67,Accident Premises Code,Employer (E),Employer (E),1.0,,1.0
+68,Accident Site Organization Name,Rainier Logistics LLC - Seattle Warehouse,Rainier Logistics LLC - Seattle Warehouse,1.0,,1.0
+69,"Accident Site Street, City, State, & Postal Code","4100 4th Ave S, Seattle, WA 98134","4100 4th Ave S, Seattle, WA 98134",1.0,,1.0
+70,Accident Location Narrative (if no street address),Not applicable—incident occurred on the main warehouse floor near Dock 3,Not applicable—incident occurred on the main warehouse floor near Dock 3,1.0,,1.0
+71,Accident Site County/Parish,King County,King County,1.0,,1.0
+72,Type of Injury / Illness Code,072,072,1.0,,1.0
+73,Describe the nature of the injury,Acute lumbar strain with muscle spasm; reported sharp pain in lower back after lifting and twisting,Acute lumbar strain with muscle spasm; reported sharp pain in lower back after lifting and twisting,,1.0,1.0
+74,Part of Body Affected Code,090,090,,1.0,1.0
+75,Part(s) of body directly affected by the injury or illness,Lower back (lumbar region),Lower back (lumbar region),,1.0,1.0
+76,Describe the events that caused the injury,"While lifting a 45-pound carton from a pallet, the employee pivoted to place it on a cart and felt a sudden pull in the lower back, losing balance briefly.","While lifting a 45-pound carton from a pallet, the employee pivoted to place it on a cart and felt a sudden pull in the lower back, losing balance briefly.",,1.0,1.0
+77,Name the object or substance that directly injured the employee,Manual pallet jack and cardboard carton,Manual pallet jack and cardboard carton,,1.0,1.0
+78,Specify activity the employee was engaged in when the event occurred,Lifting and staging inventory as part of normal warehouse duties.,Lifting and staging inventory as part of normal warehouse duties.,,1.0,1.0
+79,Witness Name,Maria Lopez,Maria Lopez,1.0,,1.0
+80,Witness Business Phone Number,(206) 555-0179,(206) 555-0179,1.0,,1.0
+81,Initial Treatment Code,clinic/hospital visit (2),clinic/hospital visit (2),1.0,,1.0
+82,Initial Medical Provider Name,CityMed Urgent Care - South Seattle,CityMed Urgent Care - South Seattle,1.0,,1.0
+83,"Initial Medical Provider Physical Address, City, State, & Postal Code","3820 Rainier Ave S, Seattle, WA 98118","3820 Rainier Ave S, Seattle, WA 98118",1.0,,1.0
+84,Managed Care Organization Name or ID Number,Northwest Health MCO - ID NW12345,Northwest Health MCO - ID NW12345,1.0,,1.0
+85,ICD Primary Diagnostic Code (if known),S39.012A,S39.012A,1.0,,1.0
+86,Preparer’s Name & Title,"Paul Nguyen, HR Generalist","Paul Nguyen, HR Generalist",1.0,,1.0
+87,Preparer's Company Name,Rainier Logistics LLC,Rainier Logistics LLC,1.0,,1.0
+88,Preparer Phone Number,(206) 555-0132,(206) 555-0132,1.0,,1.0
+89,Preparer Date,2023-09-15,2023-09-15,1.0,,1.0

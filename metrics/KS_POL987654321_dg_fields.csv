@@ -1,0 +1,71 @@
+order,field,answer_gt,answer_extracted,levenshtein,moverscore,levenshtein_moverscore
+1,Federal Employer's Identification Number,93-1456789,93-1456789,1.0,,1.0
+2,Date of hire,2019-03-18,2019-03-18,1.0,,1.0
+3,Name of employer,"Pacific Home Goods, Inc.","Pacific Home Goods, Inc.",1.0,,1.0
+4,Phone,(503) 555-0142,503 555-0142,0.9230769230769231,,0.9230769230769231
+5,Mailing address (Street),1245 NE Riverside Way,1245 NE Riverside Way,1.0,,1.0
+6,Mailing address (City),Portland,Portland,1.0,,1.0
+7,Mailing address (State),OR,OR,1.0,,1.0
+8,Mailing address (ZIP),97211,97211,1.0,,1.0
+9,"Location, if different from mailing address (Street)",1245 NE Riverside Way,1245 NE Riverside Way,1.0,,1.0
+10,Location (City),Portland,Portland,1.0,,1.0
+11,Location (State),OR,OR,1.0,,1.0
+12,Location (ZIP),97211,97211,1.0,,1.0
+13,Nature of business,Home goods retail,Home goods retail,,1.0,1.0
+14,NAICS or S.I.C. Code,442299,442299,1.0,,1.0
+15,Dept. or division,Warehouse - Receiving,Warehouse - Receiving,1.0,,1.0
+16,First,Emily,Emily,1.0,,1.0
+17,Middle,Anne,Anne,1.0,,1.0
+18,Last,Johnson,Johnson,1.0,,1.0
+19,Age,34.0,34.0,1.0,,1.0
+20,Sex,Female,Female,1.0,,1.0
+21,Home address (Street),418 E 29th St,418 E 29th St,1.0,,1.0
+22,Home address (City),Vancouver,Vancouver,1.0,,1.0
+23,Home address (State),WA,WA,1.0,,1.0
+24,Home address (ZIP),98661,98661,1.0,,1.0
+25,SSN,987-65-4321,987-65-4321,1.0,,1.0
+26,Birth date,1990-06-14,1990-06-14,1.0,,1.0
+27,occupation,Warehouse associate,Warehouse associate,,1.0,1.0
+28,phone,(360) 555-0198,360 555-0198,0.9230769230769231,,0.9230769230769231
+29,Date of injury or occupational disease,2024-09-10,2024-09-10,1.0,,1.0
+30,Time of injury,10:15:00,10:15:00,1.0,,1.0
+31,a.m. / p.m.,a.m.,a.m.,1.0,,1.0
+32,Date reported to employer,2024-09-10,2024-09-10,1.0,,1.0
+33,Date disability began,2024-09-11,2024-09-11,1.0,,1.0
+34,Gross average weekly wage $,1225.5,1225.5,1.0,,1.0
+35,Place of accident or last exposure (City),Portland,Portland,1.0,,1.0
+36,Place of accident or last exposure (County),Multnomah,Multnomah,1.0,,1.0
+37,Place of accident or last exposure (State),OR,OR,1.0,,1.0
+38,Was accident or last exposure on employer's premises?,True,True,1.0,,1.0
+39,How did accident occur?,"While unloading a pallet from a delivery truck at the warehouse loading dock, a top carton shifted and fell. Emily stepped back to avoid it, tripped over a parked pallet jack, twisting her right ankle and landing on her left wrist.","While unloading a pallet from a delivery truck at the warehouse loading dock, a top carton shifted and fell. Emily stepped back to avoid it, tripped over a parked pallet jack, twisting her right ankle and landing on her left wrist.",,1.0,1.0
+40,What was employee doing when injured?,Unloading inbound shipment and moving cartons from pallet to staging area.,Unloading inbound shipment and moving cartons from pallet to staging area.,,1.0,1.0
+41,Name substance or object that directly caused injury*,Falling carton and pallet jack,Falling carton and pallet jack,,1.0,1.0
+42,"Describe in detail nature and extent of injury, indicate part of body involved*","Right ankle inversion sprain (Grade II) with swelling; left wrist contusion/sprain. X-rays negative for fracture. Treated with aircast, wrist brace, NSAIDs, and referred to physical therapy.","Right ankle inversion sprain (Grade II) with swelling; left wrist contusion/sprain. X-rays negative for fracture. Treated with aircast, wrist brace, NSAIDs, and referred to physical therapy.",,1.0,1.0
+43,Was worker admitted to hospital?,False,False,1.0,,1.0
+44,Date,,,1.0,,1.0
+45,Treated by emergency room only?,True,True,1.0,,1.0
+46,Hospital name and address,"Legacy Emanuel Medical Center, 2801 N Gantenbein Ave, Portland, OR 97227","Legacy Emanuel Medical Center, 2801 N Gantenbein Ave, Portland, OR 97227",1.0,,1.0
+47,Name and address of attending physician or clinic,"Dr. Samuel Ortiz, Northwest Occupational Medicine Clinic, 1331 N Killingsworth St, Portland, OR 97217","Dr. Samuel Ortiz, Northwest Occupational Medicine Clinic, 1331 N Killingsworth St, Portland, OR 97217",1.0,,1.0
+48,Has employee returned to regular duty?,False,False,1.0,,1.0
+49,Light duty?,True,True,1.0,,1.0
+50,Date,2024-09-16,2024-09-16,1.0,,1.0
+51,Is compensation now being paid?,True,True,1.0,,1.0
+52,Date first/initial payment,2024-09-20,2024-09-20,1.0,,1.0
+53,Weekly compensation rate $,817.0,817.0,1.0,,1.0
+54,Is further medical aid needed?,YES,YES,1.0,,1.0
+55,Did employee die?,False,False,1.0,,1.0
+56,"If YES, give date of death",,,1.0,,1.0
+57,Name(s) and address(es) of dependents (death cases only),,,1.0,,1.0
+58,Insurance carrier and third party administrator,Acme Mutual Insurance Co. / Apex TPA Services,Acme Mutual Insurance Co. / Apex TPA Services,1.0,,1.0
+59,Insurance address (Street),"500 Market St, Suite 900","500 Market St, Suite 900",1.0,,1.0
+60,Insurance address (City),San Francisco,San Francisco,1.0,,1.0
+61,Insurance address (State),CA,CA,1.0,,1.0
+62,Insurance address (ZIP),94105,94105,1.0,,1.0
+63,Phone,(800) 555-3478,80 555-3478,0.88,,0.88
+64,Policy number,POL987654321,POL987654321,1.0,,1.0
+65,Name of agent,Michael Santos,Michael Santos,1.0,,1.0
+66,Claim number,CLM-2024-0910-001,CLM-2024-0910-001,1.0,,1.0
+67,Name of claim representative,Laura Chen,Laura Chen,1.0,,1.0
+68,Date of report,2024-09-12,2024-09-12,1.0,,1.0
+69,Completed by,Karen Patel,Karen Patel,1.0,,1.0
+70,Title,HR Manager,HR Manager,1.0,,1.0

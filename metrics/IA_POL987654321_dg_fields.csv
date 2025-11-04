@@ -1,0 +1,90 @@
+order,field,answer_gt,answer_extracted,levenshtein,moverscore,levenshtein_moverscore
+1,Jurisdiction Code,WA,WA,1.0,,1.0
+2,Claim Administrator Name,Evergreen Casualty Claims Services,Evergreen Casualty Claims Services,1.0,,1.0
+3,Claim Representative Business Phone Number,(206) 555-0103,,0.0,,0.0
+4,Insurer Name (if different than claim administrator),Evergreen Casualty Insurance Company,Evergreen Casualty Insurance Company,1.0,,1.0
+5,"Mailing Address, City, State, & Postal Code","2000 4th Ave, Suite 1200, Seattle, WA 98121","2000 4th Ave, Suite 1200, Seattle, WA 98121",1.0,,1.0
+6,Claim Administrator Claim Number,ECC-2024-WA-006784,ECC-2024-WA-006784,1.0,,1.0
+7,Insurer FEIN,91-6543210,91-6543210,1.0,,1.0
+8,Claim Administrator FEIN,91-1234567,91-1234567,1.0,,1.0
+9,Claim Type Code,LT - Lost Time,LT - Lost Time,1.0,,1.0
+10,Employer Name,Harborview Market LLC,Harborview Market LLC,1.0,,1.0
+11,Employer FEIN,84-3021679,84-3021679,1.0,,1.0
+12,Insured Report Number,IR-2024-0618-01,IR-2024-0618-01,1.0,,1.0
+13,Employer Type Code,Employer (E),E,0.15384615384615385,,0.15384615384615385
+14,"Physical Address, City, State, & Postal Code","500 Pine St, Seattle, WA 98101","500 Pine St, Seattle, WA 98101",1.0,,1.0
+15,"Mailing Address, City, State, & Postal Code","500 Pine St, Seattle, WA 98101","500 Pine St, Seattle, WA 98101",1.0,,1.0
+16,Industry Code,NAICS 445110,NAICS 445110,1.0,,1.0
+17,Insured Location Number,001-DTSEA,001-DTSEA,1.0,,1.0
+18,Employer UI Number,WA-765432-1,WA-765432-1,1.0,,1.0
+19,Nature of Business,Retail grocery store,Retail grocery store,1.0,,1.0
+20,Employer Contact Name and Business Phone Number,"Laura Chen, (206) 555-0144","Laura Chen, (206) 555-0103",0.9230769230769231,,0.9230769230769231
+21,Insured Name (parent company if different than employer),Harborview Holdings Inc.,Harborview Holdings Inc.,1.0,,1.0
+22,Insured FEIN,88-7654321,88-7654321,1.0,,1.0
+23,Insured Postal Code,98101,98101,1.0,,1.0
+24,Policy/Contract Number,POL987654321,POL987654321,1.0,,1.0
+25,Coverage Effective Date,2023-01-12,2023-01-12,1.0,,1.0
+26,Coverage Expiration Date,2025-01-12,2025-01-12,1.0,,1.0
+27,Self Insurance License/ Certificate Number,N/A,N/A,1.0,,1.0
+28,Employee Name - First,Emily,Emily,1.0,,1.0
+29,Employee Name - Middle,Marie,Marie,1.0,,1.0
+30,Employee Name - Last,Johnson,Johnson,1.0,,1.0
+31,Date of Birth,1991-03-14,1991-03-14,1.0,,1.0
+32,Gender,Female (F),Non-Binary (X),,-0.10167582936978481,-0.10167582936978481
+33,Tax Filing Status,Single (A),Married/Filing Joint (C),,-0.02813471980562121,-0.02813471980562121
+34,"Mailing Address, City, State, & Postal Code","742 Pinehurst Ave, Apt 3B, Seattle, WA 98109","742 Pinehurst Ave, Apt 3B, Seattle, WA 98109",1.0,,1.0
+35,Date of Hire,2023-04-10,2023-04-10,1.0,,1.0
+36,State of Hire,WA,WA,1.0,,1.0
+37,Educational Level (grade completed),14,14,1.0,,1.0
+38,Phone Number (include area code),(206) 555-0176,(206) 555-0176,1.0,,1.0
+39,Email,emily.johnson@example.com,emily.johnson@example.com,1.0,,1.0
+40,Occupation Description,Grocery stock clerk,Grocery stock clerk,,1.0,1.0
+41,NCCI Classification Code,8033,8033,1.0,,1.0
+42,Department Where Regularly Worked,Stocking and Receiving,Stocking and Receiving,1.0,,1.0
+43,Employment Status,Regular Employee/Full-Time,Regular Employee/Full-Time,1.0,,1.0
+44,Employee ID Number (ID Type),Social Security Number,Social Security Number,1.0,,1.0
+45,ID #,987-65-4321,987-65-4321,1.0,,1.0
+46,Marital Status,Unmarried/Single/Divorced (U),Married (M),0.44999999999999996,,0.44999999999999996
+47,Employee’s Authorization to Release Medical Records,True,True,1.0,,1.0
+48,Employee’s Authorization to Release Social Security Number,False,True,0.2222222222222222,,0.2222222222222222
+49,Average Wage $,21.5,21.5,1.0,,1.0
+50,Average Wage Frequency,hourly,hourly,1.0,,1.0
+51,Number of Days Regularly Worked Per Week,5.0,5.0,1.0,,1.0
+52,Salary Continued In Lieu of Compensation,False,True,0.2222222222222222,,0.2222222222222222
+53,Full Wages Paid for Date of Injury,True,True,1.0,,1.0
+54,Discontinued Fringe Benefits $,0.0,0.0,1.0,,1.0
+55,Employee Number of Dependents,0.0,0.0,1.0,,1.0
+56,Employee Number of Exemptions,1.0,1.0,1.0,,1.0
+57,Exemptions Type,Withholding,Withholding,1.0,,1.0
+58,Date of Injury,2024-06-18,2024-06-18,1.0,,1.0
+59,Date Employer Had Knowledge of the Injury,2024-06-18,2024-06-18,1.0,,1.0
+60,Date Claim Administrator Had Knowledge of the Injury,2024-06-20,2024-06-20,1.0,,1.0
+61,Initial Date Last Day Worked,2024-06-18,2024-06-18,1.0,,1.0
+62,Initial Return to Work Date (if applicable),2024-06-20,2024-06-20,1.0,,1.0
+63,Employee Date of Death (if applicable),,,1.0,,1.0
+64,Time of Injury,10:20:00,10:20:00,1.0,,1.0
+65,Time Employee Began Work,08:00:00,08:00:00,1.0,,1.0
+66,Pre-Existing Disability Code,No,No,1.0,,1.0
+67,Accident Premises Code,Employer (E),E,0.15384615384615385,,0.15384615384615385
+68,Accident Site Organization Name,Harborview Market - Downtown,Harborview Market - Downtown,1.0,,1.0
+69,"Accident Site Street, City, State, & Postal Code","500 Pine St, Seattle, WA 98101","500 Pine St, Seattle, WA 98101",1.0,,1.0
+70,Accident Location Narrative (if no street address),N/A - street address provided,N/A - street address provided,1.0,,1.0
+71,Accident Site County/Parish,King,King,1.0,,1.0
+72,Type of Injury / Illness Code,130 - Strain/Sprain,130 - Strain/Sprain,1.0,,1.0
+73,Describe the nature of the injury,Acute lumbar strain with muscle spasm after lifting inventory; radiating pain but no neurological deficits,Acute lumbar strain with muscle spasm after lifting inventory; radiating pain but no neurological deficits,,1.0,1.0
+74,Part of Body Affected Code,311 - Lower Back Area,311 - Lower Back Area,,1.0,1.0
+75,Part(s) of body directly affected by the injury or illness,Lower back (lumbar region),Lower back (lumbar region),,1.0,1.0
+76,Describe the events that caused the injury,"While lifting a ~40 lb box from a pallet and pivoting to place it on a shelf, employee felt a sudden sharp pain in the lower back followed by stiffness","While lifting a ~40 lb box from a pallet and pivoting to place it on a shelf, employee felt a sudden sharp pain in the lower back followed by stiffness",,0.9936720173680542,0.9936720173680542
+77,Name the object or substance that directly injured the employee,Cardboard box being lifted; wooden pallet,Cardboard box being lifted; wooden pallet,,1.0,1.0
+78,Specify activity the employee was engaged in when the event occurred,Unloading and shelving grocery inventory; part of normal job duties.,Unloading and shelving grocery inventory; part of normal job duties,,0.9768167484114707,0.9768167484114707
+79,Witness Name,Jordan Patel,Jordan Patel,1.0,,1.0
+80,Witness Business Phone Number,(206) 555-0162,(206) 555-0162,1.0,,1.0
+81,Initial Treatment Code,clinic/hospital visit (2),clinic/hospital visit (2),1.0,,1.0
+82,Initial Medical Provider Name,Swedish First Hill Occupational Health Clinic,Swedish First Hill Occupational Health Clinic,1.0,,1.0
+83,"Initial Medical Provider Physical Address, City, State, & Postal Code","1101 Madison St, Seattle, WA 98104","1101 Madison St, Seattle, WA 98104",1.0,,1.0
+84,Managed Care Organization Name or ID Number,Evergreen Occupational Health Network - MCO# EOHN5421,Evergreen Occupational Health Network - MCO# EOHN5421,1.0,,1.0
+85,ICD Primary Diagnostic Code (if known),"M54.50 - Low back pain, unspecified","M54.50 - Low back pain, unspecified",1.0,,1.0
+86,Preparer’s Name & Title,"Laura Chen, HR Manager","Laura Chen, HR Manager",1.0,,1.0
+87,Preparer's Company Name,Harborview Market LLC,Harborview Market LLC,1.0,,1.0
+88,Preparer Phone Number,(206) 555-0144,(206) 555-0144,1.0,,1.0
+89,Preparer Date,2024-06-20,2024-06-20,1.0,,1.0

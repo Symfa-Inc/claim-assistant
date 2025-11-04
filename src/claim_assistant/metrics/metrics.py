@@ -330,16 +330,65 @@ if __name__ == "__main__":
 
     # Settings
     save_path = "metrics"
-    state = "NY"
+    state = "FL"
     policy = "POL987654321"
     type = "hw"  # hw or dg
 
+    # # WI
+    # main_params = {
+    #     "levenshtein_first_name": "Employee Name (First)",
+    #     "levenshtein_middle_name": "Employee Name (Middle)",
+    #     "levenshtein_last_name": "Employee Name (Last)",
+    #     "levenshtein_data_of_injury": "Injury Date",
+    #     "levenshtein_policy_number": "WI Unemployment Ins. Acct No.",
+    # }
+    # NH
+    # main_params = {
+    #     "levenshtein_first_name": "Employee Name (First & Last) - First Name",
+    #     "levenshtein_middle_name": "Employee Name (First & Last) - First Name",
+    #     "levenshtein_last_name": "Employee Name (First & Last) - Last Name",
+    #     "levenshtein_data_of_injury": "Injury Date / Time",
+    #     "levenshtein_policy_number": "Policy Number",
+    # }
+    # MN
+    # main_params = {
+    #     "levenshtein_first_name": "EMPLOYEE First name",
+    #     "levenshtein_middle_name": "EMPLOYEE Middle name",
+    #     "levenshtein_last_name": "EMPLOYEE Last name",
+    #     "levenshtein_data_of_injury": "DATE OF CLAIMED INJURY",
+    #     "levenshtein_policy_number": "Policy # (including effective dates) or self-insured certificate #",
+    # }
+    # KS
+    # main_params = {
+    #     "levenshtein_first_name": "First",
+    #     "levenshtein_middle_name": "Middle",
+    #     "levenshtein_last_name": "Last",
+    #     "levenshtein_data_of_injury": "Date of injury or occupational disease",
+    #     "levenshtein_policy_number": "Policy number",
+    # }
+    # IA
+    # main_params = {
+    #     "levenshtein_first_name": "Employee Name - First",
+    #     "levenshtein_middle_name": "Employee Name - Middle",
+    #     "levenshtein_last_name": "Employee Name - Last",
+    #     "levenshtein_data_of_injury": "Date of Injury",
+    #     "levenshtein_policy_number": "Policy/Contract Number",
+    # }
+    # generic
+    # main_params = {
+    #     "levenshtein_first_name": "First Name",
+    #     "levenshtein_middle_name": "First Name",
+    #     "levenshtein_last_name": "Last Name",
+    #     "levenshtein_data_of_injury": "DATE OF INJURY/ILLNESS",
+    #     "levenshtein_policy_number": "POLICY/SELF-INSURED NUMBER",
+    # }
+    # FL
     main_params = {
-        "levenshtein_first_name": "Employee Name",
-        "levenshtein_middle_name": "Employee Name",
-        "levenshtein_last_name": "Employee Name",
-        "levenshtein_data_of_injury": "Date of Injury",
-        "levenshtein_policy_number": "Policy Number ID",
+        "levenshtein_first_name": "NAME (First, Middle, Last) - First",
+        "levenshtein_middle_name": "NAME (First, Middle, Last) - Middle",
+        "levenshtein_last_name": "NAME (First, Middle, Last) - Last",
+        "levenshtein_data_of_injury": "Date of Accident (Month-Day-Year)",
+        "levenshtein_policy_number": "POLICY/MEMBER NUMBER",
     }
 
     # WI
@@ -360,9 +409,54 @@ if __name__ == "__main__":
     #     "Sex",
     # ]
     # NY
+    # moverscore_features = [
+    #     "Part of BodyCause of Injury",
+    #     "Accident/Injury Description",
+    # ]
+    # NH
+    # moverscore_features = [
+    #     "Gender",
+    #     "Occupation when Injured",
+    #     "Accident Description",
+    #     "Body part Injured",
+    #     "Cause of Injury",
+    #     "Nature of Injury",
+    #     "If so, at what duty status?",
+    #     "Initial Treatment",
+    # ]
+    # MN
+    # moverscore_features = [
+    #     "Gender",
+    #     "Tell us how the injury/illness occurred, what the employee was doing before the incident (give details), and what the injury/illness was.",
+    #     "What was the injury or illness (include the part(s) of body)?",
+    #     "What tools, equipment, machines, objects, or substances were involved?",
+    # ]
+    # KS
+    # moverscore_features = [
+    #     "Nature of business",
+    #     "occupation",
+    #     "How did accident occur?",
+    #     "What was employee doing when injured?",
+    #     "Name substance or object that directly caused injury*",
+    #     "Describe in detail nature and extent of injury, indicate part of body involved*",
+    # ]
+    # IA
+    # moverscore_features = [
+    #     "Gender",
+    #     "Tax Filing Status",
+    #     "Occupation Description",
+    #     "Describe the nature of the injury",
+    #     "Part of Body Affected Code",
+    #     "Part(s) of body directly affected by the injury or illness",
+    #     "Describe the events that caused the injury",
+    #     "Name the object or substance that directly injured the employee",
+    #     "Specify activity the employee was engaged in when the event occurred"
+    # ]
+    # FL
     moverscore_features = [
-        "Part of BodyCause of Injury",
-        "Accident/Injury Description",
+        "EMPLOYEE'S DESCRIPTION OF ACCIDENT (Include Cause of Injury)",
+        "SEX",
+        "NATURE OF BUSINESS",
     ]
 
     form_model_json_path = (

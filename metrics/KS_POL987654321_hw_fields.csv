@@ -1,0 +1,71 @@
+order,field,answer_gt,answer_extracted,levenshtein,moverscore,levenshtein_moverscore
+1,Federal Employer's Identification Number,93-1456789,,0.0,,0.0
+2,Date of hire,2019-03-18,,0.0,,0.0
+3,Name of employer,"Pacific Home Goods, Inc.",,0.0,,0.0
+4,Phone,(503) 555-0142,,0.0,,0.0
+5,Mailing address (Street),1245 NE Riverside Way,,0.0,,0.0
+6,Mailing address (City),Portland,,0.0,,0.0
+7,Mailing address (State),OR,,0.0,,0.0
+8,Mailing address (ZIP),97211,,0.0,,0.0
+9,"Location, if different from mailing address (Street)",1245 NE Riverside Way,,0.0,,0.0
+10,Location (City),Portland,,0.0,,0.0
+11,Location (State),OR,,0.0,,0.0
+12,Location (ZIP),97211,,0.0,,0.0
+13,Nature of business,Home goods retail,,,-0.050253522246632265,-0.050253522246632265
+14,NAICS or S.I.C. Code,442299,,0.0,,0.0
+15,Dept. or division,Warehouse - Receiving,,0.0,,0.0
+16,First,Emily,,0.0,,0.0
+17,Middle,Anne,,0.0,,0.0
+18,Last,Johnson,,0.0,,0.0
+19,Age,34.0,0.0,0.5714285714285714,,0.5714285714285714
+20,Sex,Female,,0.0,,0.0
+21,Home address (Street),418 E 29th St,,0.0,,0.0
+22,Home address (City),Vancouver,,0.0,,0.0
+23,Home address (State),WA,,0.0,,0.0
+24,Home address (ZIP),98661,,0.0,,0.0
+25,SSN,987-65-4321,,0.0,,0.0
+26,Birth date,1990-06-14,,0.0,,0.0
+27,occupation,Warehouse associate,,,2.505039819356014e-06,2.505039819356014e-06
+28,phone,(360) 555-0198,,0.0,,0.0
+29,Date of injury or occupational disease,2024-09-10,,0.0,,0.0
+30,Time of injury,10:15:00,,0.0,,0.0
+31,a.m. / p.m.,a.m.,,0.0,,0.0
+32,Date reported to employer,2024-09-10,,0.0,,0.0
+33,Date disability began,2024-09-11,,0.0,,0.0
+34,Gross average weekly wage $,1225.5,0.0,0.2222222222222222,,0.2222222222222222
+35,Place of accident or last exposure (City),Portland,,0.0,,0.0
+36,Place of accident or last exposure (County),Multnomah,,0.0,,0.0
+37,Place of accident or last exposure (State),OR,,0.0,,0.0
+38,Was accident or last exposure on employer's premises?,True,False,0.2222222222222222,,0.2222222222222222
+39,How did accident occur?,"While unloading a pallet from a delivery truck at the warehouse loading dock, a top carton shifted and fell. Emily stepped back to avoid it, tripped over a parked pallet jack, twisting her right ankle and landing on her left wrist.",,,-0.5477892215990443,-0.5477892215990443
+40,What was employee doing when injured?,Unloading inbound shipment and moving cartons from pallet to staging area.,,,-0.29756533268137453,-0.29756533268137453
+41,Name substance or object that directly caused injury*,Falling carton and pallet jack,,,-0.1842232273120683,-0.1842232273120683
+42,"Describe in detail nature and extent of injury, indicate part of body involved*","Right ankle inversion sprain (Grade II) with swelling; left wrist contusion/sprain. X-rays negative for fracture. Treated with aircast, wrist brace, NSAIDs, and referred to physical therapy.",,,-0.6360122650902693,-0.6360122650902693
+43,Was worker admitted to hospital?,False,False,1.0,,1.0
+44,Date,,,1.0,,1.0
+45,Treated by emergency room only?,True,False,0.2222222222222222,,0.2222222222222222
+46,Hospital name and address,"Legacy Emanuel Medical Center, 2801 N Gantenbein Ave, Portland, OR 97227",,0.0,,0.0
+47,Name and address of attending physician or clinic,"Dr. Samuel Ortiz, Northwest Occupational Medicine Clinic, 1331 N Killingsworth St, Portland, OR 97217",,0.0,,0.0
+48,Has employee returned to regular duty?,False,False,1.0,,1.0
+49,Light duty?,True,False,0.2222222222222222,,0.2222222222222222
+50,Date,2024-09-16,,0.0,,0.0
+51,Is compensation now being paid?,True,False,0.2222222222222222,,0.2222222222222222
+52,Date first/initial payment,2024-09-20,,0.0,,0.0
+53,Weekly compensation rate $,817.0,0.0,0.5,,0.5
+54,Is further medical aid needed?,YES,,0.0,,0.0
+55,Did employee die?,False,False,1.0,,1.0
+56,"If YES, give date of death",,,1.0,,1.0
+57,Name(s) and address(es) of dependents (death cases only),,,1.0,,1.0
+58,Insurance carrier and third party administrator,Acme Mutual Insurance Co. / Apex TPA Services,,0.0,,0.0
+59,Insurance address (Street),"500 Market St, Suite 900",,0.0,,0.0
+60,Insurance address (City),San Francisco,,0.0,,0.0
+61,Insurance address (State),CA,,0.0,,0.0
+62,Insurance address (ZIP),94105,,0.0,,0.0
+63,Phone,(800) 555-3478,,0.0,,0.0
+64,Policy number,POL987654321,,0.0,,0.0
+65,Name of agent,Michael Santos,,0.0,,0.0
+66,Claim number,CLM-2024-0910-001,,0.0,,0.0
+67,Name of claim representative,Laura Chen,,0.0,,0.0
+68,Date of report,2024-09-12,,0.0,,0.0
+69,Completed by,Karen Patel,,0.0,,0.0
+70,Title,HR Manager,,0.0,,0.0

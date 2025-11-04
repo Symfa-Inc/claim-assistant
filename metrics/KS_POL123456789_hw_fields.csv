@@ -1,0 +1,71 @@
+order,field,answer_gt,answer_extracted,levenshtein,moverscore,levenshtein_moverscore
+1,Federal Employer's Identification Number,91-6041234,91-6041234,1.0,,1.0
+2,Date of hire,2021-06-07,2021-06-07,1.0,,1.0
+3,Name of employer,Pacific Logistics LLC,Pacific Logistics LLC,1.0,,1.0
+4,Phone,(206) 555-0126,(206) 555-0128,0.9285714285714286,,0.9285714285714286
+5,Mailing address (Street),"1301 4th Ave, Suite 2100","1301 4th Ave, Suite 2100",1.0,,1.0
+6,Mailing address (City),Seattle,Seattle,1.0,,1.0
+7,Mailing address (State),WA,WA,1.0,,1.0
+8,Mailing address (ZIP),98101,98101,1.0,,1.0
+9,"Location, if different from mailing address (Street)",2600 W Commodore Way,2600 W Commodore Way,1.0,,1.0
+10,Location (City),Seattle,Seattle,1.0,,1.0
+11,Location (State),WA,WA,1.0,,1.0
+12,Location (ZIP),98199,98199,1.0,,1.0
+13,Nature of business,Warehousing and distribution,Warehousing and Distribution,,1.0,1.0
+14,NAICS or S.I.C. Code,493110,493110,1.0,,1.0
+15,Dept. or division,Warehouse Operations,Warehouse Operations,1.0,,1.0
+16,First,John,John,1.0,,1.0
+17,Middle,A.,A.,1.0,,1.0
+18,Last,Doe,Doe,1.0,,1.0
+19,Age,33.0,35.0,0.75,,0.75
+20,Sex,Male,Male,1.0,,1.0
+21,Home address (Street),"7422 Greenwood Ave N, Apt 3B","2422 Greenwood Ave N, Apt 3B",0.9642857142857143,,0.9642857142857143
+22,Home address (City),Seattle,Seattle,1.0,,1.0
+23,Home address (State),WA,WA,1.0,,1.0
+24,Home address (ZIP),98103,98103,1.0,,1.0
+25,SSN,987-65-4320,587-65-4320,0.9090909090909091,,0.9090909090909091
+26,Birth date,1990-05-02,1990-05-02,1.0,,1.0
+27,occupation,Warehouse Associate,Warehouse Associate,,1.0,1.0
+28,phone,(206) 555-0183,(206) 555-0183,1.0,,1.0
+29,Date of injury or occupational disease,2023-11-14,2023-11-14,1.0,,1.0
+30,Time of injury,09:20:00,09:20:00,1.0,,1.0
+31,a.m. / p.m.,a.m.,a.m.,1.0,,1.0
+32,Date reported to employer,2023-11-14,2023-11-14,1.0,,1.0
+33,Date disability began,2023-11-15,2023-11-16,0.9,,0.9
+34,Gross average weekly wage $,980.0,900.0,0.8,,0.8
+35,Place of accident or last exposure (City),Seattle,Seattle,1.0,,1.0
+36,Place of accident or last exposure (County),King,King,1.0,,1.0
+37,Place of accident or last exposure (State),WA,WA,1.0,,1.0
+38,Was accident or last exposure on employer's premises?,True,True,1.0,,1.0
+39,How did accident occur?,"While moving a loaded pallet jack across the loading dock, the employee stepped on a wet spot, slipped, and fell, striking his left forearm on the jack handle and twisting his lower back.","While moving a loaded pallet jack across the loading dock the employee stepped on a wet spot and fell, striking his left forearm on the handrail and twisting his lower back.",,0.8681392244963223,0.8681392244963223
+40,What was employee doing when injured?,Transporting shrink-wrapped pallets from the warehouse to the loading dock using a manual pallet jack.,Transporting shrink-wrapped pallets from the warehouse to the loading dock using a manual pallet jack.,,1.0,1.0
+41,Name substance or object that directly caused injury*,Wet concrete floor and manual pallet jack,Wet concrete floor and manual pallet jack,,1.0,1.0
+42,"Describe in detail nature and extent of injury, indicate part of body involved*",Acute lumbar strain with muscle spasm and contusion to the left forearm; pain rated 6/10 with decreased range of motion; no fracture on X-ray.,Acute lumbar strain with muscle spasm and contusion to the left forearm; pain rated 6/10 with decreased range of motion; no fracture on X-ray.,,1.0,1.0
+43,Was worker admitted to hospital?,False,False,1.0,,1.0
+44,Date,,2023-11-14,0.0,,0.0
+45,Treated by emergency room only?,True,True,1.0,,1.0
+46,Hospital name and address,"Harborview Medical Center Emergency Department, 325 9th Ave, Seattle, WA 98104","Harborview Medical Center Emergency Department, 325 9th Ave, Seattle, WA 98104",1.0,,1.0
+47,Name and address of attending physician or clinic,"Dr. Karen Smith, Harborview Occupational Health Clinic, 401 Broadway, Suite 202, Seattle, WA 98122","Dr. Karen Smith, Harborview Occupational Clinic, 401 Broadway, Suite 202, Seattle, WA 98122",0.962962962962963,,0.962962962962963
+48,Has employee returned to regular duty?,True,False,0.2222222222222222,,0.2222222222222222
+49,Light duty?,True,True,1.0,,1.0
+50,Date,2023-11-16,2023-11-16,1.0,,1.0
+51,Is compensation now being paid?,False,False,1.0,,1.0
+52,Date first/initial payment,,,1.0,,1.0
+53,Weekly compensation rate $,0.0,0.0,1.0,,1.0
+54,Is further medical aid needed?,YES,YES,1.0,,1.0
+55,Did employee die?,False,False,1.0,,1.0
+56,"If YES, give date of death",,,1.0,,1.0
+57,Name(s) and address(es) of dependents (death cases only),,,1.0,,1.0
+58,Insurance carrier and third party administrator,Acme Insurance Company,Acme Insurance Company,1.0,,1.0
+59,Insurance address (Street),500 Pine St,500 Pine St,1.0,,1.0
+60,Insurance address (City),Seattle,Seattle,1.0,,1.0
+61,Insurance address (State),WA,WA,1.0,,1.0
+62,Insurance address (ZIP),98101,98101,1.0,,1.0
+63,Phone,(206) 555-0199,(206) 555-0198,0.9285714285714286,,0.9285714285714286
+64,Policy number,POL123456789,POL123456789,1.0,,1.0
+65,Name of agent,Michael Turner,Michael Turner,1.0,,1.0
+66,Claim number,CLM-2023-11-00127,CLM-2023-11-00127,1.0,,1.0
+67,Name of claim representative,Sara Patel,Sara Patel,1.0,,1.0
+68,Date of report,2023-11-15,2023-11-15,1.0,,1.0
+69,Completed by,Laura Chen,Laura Chen,1.0,,1.0
+70,Title,HR Manager,HR Manager,1.0,,1.0
