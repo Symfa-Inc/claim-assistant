@@ -1,0 +1,760 @@
+[
+  {
+    "order": 1,
+    "text": "EMPLOYEE SOCIAL SECURITY #",
+    "description": "Employee Social Security Number",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 2,
+    "text": "OSHA case #",
+    "description": "OSHA 300 log case number",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 3,
+    "text": "Time employee began work on date of injury",
+    "description": "Time employee began work on date of injury",
+    "alias": null,
+    "data_type": "time",
+    "meta": {
+      "format": "HH:mm:ss"
+    }
+  },
+  {
+    "order": 4,
+    "text": "Time employee began work on date of injury (am/pm)",
+    "description": "AM/PM checkbox for time employee began work",
+    "alias": null,
+    "data_type": "enum",
+    "meta": {
+      "labels": [
+        "AM",
+        "PM"
+      ]
+    }
+  },
+  {
+    "order": 5,
+    "text": "DATE OF CLAIMED INJURY",
+    "description": "Date when the injury/illness occurred",
+    "alias": "date_of_incident",
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 6,
+    "text": "Time of injury",
+    "description": "Time of the injury",
+    "alias": null,
+    "data_type": "time",
+    "meta": {
+      "format": "HH:mm:ss"
+    }
+  },
+  {
+    "order": 7,
+    "text": "Time of injury(am/pm)",
+    "description": "AM/PM checkbox for time of injury",
+    "alias": null,
+    "data_type": "enum",
+    "meta": {
+      "labels": [
+        "AM",
+        "PM"
+      ]
+    }
+  },
+  {
+    "order": 8,
+    "text": "Date of death",
+    "description": "If death is related to the injury",
+    "alias": null,
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 9,
+    "text": "# of dependents (if death is related to injury)",
+    "description": "Number of dependents if injury resulted in death",
+    "alias": null,
+    "data_type": "number",
+    "meta": {}
+  },
+  {
+    "order": 10,
+    "text": "EMPLOYEE Last name",
+    "description": "Employee family name (from 'EMPLOYEE Name (last, suffix, first, middle)')",
+    "alias": "last_name",
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 11,
+    "text": "EMPLOYEE First name",
+    "description": "Employee given name (from 'EMPLOYEE Name')",
+    "alias": "first_name",
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 12,
+    "text": "EMPLOYEE Middle name",
+    "description": "Employee middle name or initial",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 13,
+    "text": "Gender",
+    "description": "Select gender",
+    "alias": null,
+    "data_type": "enum",
+    "meta": {
+      "labels": [
+        "M",
+        "F"
+      ]
+    }
+  },
+  {
+    "order": 14,
+    "text": "Marital status",
+    "description": "Marital status of employee",
+    "alias": null,
+    "data_type": "enum",
+    "meta": {
+      "labels": [
+        "Married",
+        "Unmarried"
+      ]
+    }
+  },
+  {
+    "order": 15,
+    "text": "Home address",
+    "description": "Street address of employee",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 16,
+    "text": "Home phone #",
+    "description": "Employee home telephone number",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 17,
+    "text": "Date of birth",
+    "description": "Employee date of birth",
+    "alias": null,
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 18,
+    "text": "Date hired",
+    "description": "Date employee was hired",
+    "alias": null,
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 19,
+    "text": "City",
+    "description": "City for home address",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 20,
+    "text": "State",
+    "description": "State for home address",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 21,
+    "text": "Zip Code",
+    "description": "ZIP code for home address",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 22,
+    "text": "Occupation",
+    "description": "Employee occupation",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 23,
+    "text": "Regular department",
+    "description": "Employee regular department",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 24,
+    "text": "Apprentice",
+    "description": "Apprentice status (Yes/No)",
+    "alias": null,
+    "data_type": "boolean",
+    "meta": {}
+  },
+  {
+    "order": 25,
+    "text": "Average weekly wage",
+    "description": "Average weekly wage amount",
+    "alias": null,
+    "data_type": "number",
+    "meta": {}
+  },
+  {
+    "order": 26,
+    "text": "Rate per hour",
+    "description": "Hourly rate",
+    "alias": null,
+    "data_type": "number",
+    "meta": {}
+  },
+  {
+    "order": 27,
+    "text": "Hours per day",
+    "description": "Average hours worked per day",
+    "alias": null,
+    "data_type": "number",
+    "meta": {}
+  },
+  {
+    "order": 28,
+    "text": "Days per week",
+    "description": "Average days worked per week",
+    "alias": null,
+    "data_type": "number",
+    "meta": {}
+  },
+  {
+    "order": 29,
+    "text": "Normal work schedule Sun",
+    "description": "Work schedule - Sunday",
+    "alias": null,
+    "data_type": "boolean",
+    "meta": {}
+  },
+  {
+    "order": 30,
+    "text": "Normal work schedule Mon",
+    "description": "Work schedule - Monday",
+    "alias": null,
+    "data_type": "boolean",
+    "meta": {}
+  },
+  {
+    "order": 31,
+    "text": "Normal work schedule Tue",
+    "description": "Work schedule - Tuesday",
+    "alias": null,
+    "data_type": "boolean",
+    "meta": {}
+  },
+  {
+    "order": 32,
+    "text": "Normal work schedule Wed",
+    "description": "Work schedule - Wednesday",
+    "alias": null,
+    "data_type": "boolean",
+    "meta": {}
+  },
+  {
+    "order": 33,
+    "text": "Normal work schedule Thu",
+    "description": "Work schedule - Thursday",
+    "alias": null,
+    "data_type": "boolean",
+    "meta": {}
+  },
+  {
+    "order": 34,
+    "text": "Normal work schedule Fri",
+    "description": "Work schedule - Friday",
+    "alias": null,
+    "data_type": "boolean",
+    "meta": {}
+  },
+  {
+    "order": 35,
+    "text": "Normal work schedule Sat",
+    "description": "Work schedule - Saturday",
+    "alias": null,
+    "data_type": "boolean",
+    "meta": {}
+  },
+  {
+    "order": 36,
+    "text": "Employment status",
+    "description": "Employment status (check all that apply)",
+    "alias": null,
+    "data_type": "enum",
+    "meta": {
+      "labels": [
+        "Full time",
+        "Part time",
+        "Seasonal",
+        "Volunteer"
+      ]
+    }
+  },
+  {
+    "order": 37,
+    "text": "Tell us how the injury/illness occurred, what the employee was doing before the incident (give details), and what the injury/illness was.",
+    "description": "Describe events leading to injury/illness and actions at time of incident",
+    "alias": null,
+    "data_type": "text",
+    "meta": {}
+  },
+  {
+    "order": 38,
+    "text": "What was the injury or illness (include the part(s) of body)?",
+    "description": "Describe the injury/illness and body parts involved",
+    "alias": null,
+    "data_type": "text",
+    "meta": {}
+  },
+  {
+    "order": 39,
+    "text": "What tools, equipment, machines, objects, or substances were involved?",
+    "description": "List items involved in the incident",
+    "alias": null,
+    "data_type": "text",
+    "meta": {}
+  },
+  {
+    "order": 40,
+    "text": "Did injury occur on employer’s premises?",
+    "description": "Indicate whether injury occurred on employer property",
+    "alias": null,
+    "data_type": "boolean",
+    "meta": {}
+  },
+  {
+    "order": 41,
+    "text": "Name and address of the place of the occurrence",
+    "description": "Name and address where occurrence took place (if not employer premises)",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 42,
+    "text": "Date of first day of any lost time",
+    "description": "First day employee lost any time due to injury (includes medical time)",
+    "alias": null,
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 43,
+    "text": "Employer paid for lost time on day of injury (DOI)",
+    "description": "Indicate if employer paid for lost time on date of injury",
+    "alias": null,
+    "data_type": "enum",
+    "meta": {
+      "labels": [
+        "Yes",
+        "No",
+        "No lost time on DOI"
+      ]
+    }
+  },
+  {
+    "order": 44,
+    "text": "Date employer notified of injury",
+    "description": "Date employer was first notified of the injury",
+    "alias": null,
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 45,
+    "text": "Date employer notified of lost time",
+    "description": "Date employer was notified that lost time occurred related to the injury",
+    "alias": null,
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 46,
+    "text": "Return to work date",
+    "description": "Date employee returned to work (leave blank if not returned)",
+    "alias": null,
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 47,
+    "text": "RTW same employer",
+    "description": "Returned to work with the same employer (Yes/No)",
+    "alias": null,
+    "data_type": "boolean",
+    "meta": {}
+  },
+  {
+    "order": 48,
+    "text": "RTW with restrictions",
+    "description": "Returned to work with restrictions (Yes/No)",
+    "alias": null,
+    "data_type": "boolean",
+    "meta": {}
+  },
+  {
+    "order": 49,
+    "text": "Treating physician (name)",
+    "description": "Name of treating physician",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 50,
+    "text": "Certified Managed Care Organization (if any)",
+    "description": "Name of CMO if applicable",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 51,
+    "text": "Extent of medical treatment - None",
+    "description": "Check if no medical treatment was provided",
+    "alias": null,
+    "data_type": "boolean",
+    "meta": {}
+  },
+  {
+    "order": 52,
+    "text": "Extent of medical treatment - Minor on-site by employer’s medical staff",
+    "description": "Minor on-site treatment option",
+    "alias": null,
+    "data_type": "boolean",
+    "meta": {}
+  },
+  {
+    "order": 53,
+    "text": "Extent of medical treatment - Minor clinic/hospital",
+    "description": "Minor clinic or hospital treatment option",
+    "alias": null,
+    "data_type": "boolean",
+    "meta": {}
+  },
+  {
+    "order": 54,
+    "text": "Extent of medical treatment - Emergency room",
+    "description": "Emergency room treatment option",
+    "alias": null,
+    "data_type": "boolean",
+    "meta": {}
+  },
+  {
+    "order": 55,
+    "text": "Extent of medical treatment - Hospitalization more than 24 hours",
+    "description": "Hospitalization >24 hours option",
+    "alias": null,
+    "data_type": "boolean",
+    "meta": {}
+  },
+  {
+    "order": 56,
+    "text": "Extent of medical treatment - Future major medical anticipated",
+    "description": "Anticipation of future major medical care",
+    "alias": null,
+    "data_type": "boolean",
+    "meta": {}
+  },
+  {
+    "order": 57,
+    "text": "EMPLOYER Legal name",
+    "description": "Legal name of the employer",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 58,
+    "text": "EMPLOYER DBA name (if different)",
+    "description": "Doing-business-as name if different",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 59,
+    "text": "Mailing address",
+    "description": "Employer mailing street address",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 60,
+    "text": "City (mailing)",
+    "description": "City for employer mailing address",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 61,
+    "text": "State (mailing)",
+    "description": "State for employer mailing address",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 62,
+    "text": "Zip Code (mailing)",
+    "description": "ZIP for employer mailing address",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 63,
+    "text": "Employer FEIN",
+    "description": "Federal Employer Identification Number",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 64,
+    "text": "Unemployment ID #",
+    "description": "Employer Unemployment ID number",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 65,
+    "text": "Employer’s contact name",
+    "description": "Contact person at employer",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 66,
+    "text": "Employer’s contact phone #",
+    "description": "Contact phone number",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 67,
+    "text": "Physical address (if different)",
+    "description": "Employer physical address if different from mailing",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 68,
+    "text": "City (physical)",
+    "description": "City for employer physical address",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 69,
+    "text": "State (physical)",
+    "description": "State for employer physical address",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 70,
+    "text": "Zip Code (physical)",
+    "description": "ZIP code for employer physical address",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 71,
+    "text": "Witness (name)",
+    "description": "Witness contact information (if more than one attach separate sheet)",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 72,
+    "text": "Witness (phone)",
+    "description": "Witness contact information (if more than one attach separate sheet)",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 73,
+    "text": "NAICS code",
+    "description": "North American Industry Classification System code",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 74,
+    "text": "Date form completed",
+    "description": "Date this form was completed",
+    "alias": null,
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 75,
+    "text": "INSURER name",
+    "description": "Name of insurer",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 76,
+    "text": "Insured legal name",
+    "description": "Legal name of the insured (from item 47)",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 77,
+    "text": "Policy # (including effective dates) or self-insured certificate #",
+    "description": "Policy number or self-insured certificate number",
+    "alias": "policy_id",
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 78,
+    "text": "Insurer FEIN",
+    "description": "FEIN for the insurer (item 49)",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 79,
+    "text": "Date insurer received notice",
+    "description": "Date insurer received notification of claim",
+    "alias": null,
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 80,
+    "text": "CLAIMS ADMIN COMPANY (CA) name",
+    "description": "Name of claims administrator/company",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 81,
+    "text": "CA type (check one)",
+    "description": "Indicate whether CA is Insurer or TPA",
+    "alias": null,
+    "data_type": "enum",
+    "meta": {
+      "labels": [
+        "Insurer",
+        "TPA"
+      ]
+    }
+  },
+  {
+    "order": 82,
+    "text": "CA address",
+    "description": "Claims administrator street address",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 83,
+    "text": "City (CA)",
+    "description": "City for CA address",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 84,
+    "text": "State (CA)",
+    "description": "State for CA address",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 85,
+    "text": "Zip Code (CA)",
+    "description": "ZIP for CA address",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 86,
+    "text": "CA FEIN",
+    "description": "FEIN for claims administrator",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 87,
+    "text": "CA claim #",
+    "description": "Claims administrator claim number",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  }
+]

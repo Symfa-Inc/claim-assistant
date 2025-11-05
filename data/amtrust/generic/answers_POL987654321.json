@@ -1,0 +1,342 @@
+[
+  {
+    "order": 1,
+    "text": "EMPLOYER (NAME & ADDRESS INCL ZIP)",
+    "answer": "BrightWave Marketing, Inc., 700 S Flower St, Suite 1200, Los Angeles, CA 90017"
+  },
+  {
+    "order": 2,
+    "text": "REPORT PURPOSE CODE",
+    "answer": "FROI"
+  },
+  {
+    "order": 3,
+    "text": "JURISDICTION",
+    "answer": "CA"
+  },
+  {
+    "order": 4,
+    "text": "EMPLOYER’S LOCATION ADDRESS (IF DIFFERENT)",
+    "answer": "700 S Flower St, Suite 1200, Los Angeles, CA 90017"
+  },
+  {
+    "order": 5,
+    "text": "LOCATION #",
+    "answer": "LA-01"
+  },
+  {
+    "order": 6,
+    "text": "PHONE #",
+    "answer": "2135550100"
+  },
+  {
+    "order": 7,
+    "text": "INDUSTRY CODE",
+    "answer": "541613"
+  },
+  {
+    "order": 8,
+    "text": "EMPLOYER FEIN",
+    "answer": "94-3765120"
+  },
+  {
+    "order": 9,
+    "text": "CARRIER (NAME, ADDRESS, & PHONE #)",
+    "answer": "Acme Insurance Company, 2100 Main St, Suite 400, Irvine, CA 92614; (800) 555-2244"
+  },
+  {
+    "order": 10,
+    "text": "POLICY PERIOD (start)",
+    "answer": "2023-01-12"
+  },
+  {
+    "order": 11,
+    "text": "POLICY PERIOD (end)",
+    "answer": "2025-01-12"
+  },
+  {
+    "order": 12,
+    "text": "SELF INSURANCE",
+    "answer": false
+  },
+  {
+    "order": 13,
+    "text": "CLAIMS ADMINISTRATOR (NAME, ADDRESS & PHONE NO)",
+    "answer": "Acme Claims Services, 2100 Main St, Suite 450, Irvine, CA 92614; (800) 555-2299"
+  },
+  {
+    "order": 14,
+    "text": "CARRIER FEIN",
+    "answer": "11-9876543"
+  },
+  {
+    "order": 15,
+    "text": "POLICY/SELF-INSURED NUMBER",
+    "answer": "POL987654321"
+  },
+  {
+    "order": 16,
+    "text": "ADMINISTRATOR FEIN",
+    "answer": "95-1122334"
+  },
+  {
+    "order": 17,
+    "text": "First Name",
+    "answer": "Emily"
+  },
+  {
+    "order": 18,
+    "text": "Last Name",
+    "answer": "Johnson"
+  },
+  {
+    "order": 19,
+    "text": "DATE OF BIRTH",
+    "answer": "05/14/1990"
+  },
+  {
+    "order": 20,
+    "text": "SOCIAL SECURITY NUMBER",
+    "answer": "555439214"
+  },
+  {
+    "order": 21,
+    "text": "DATE HIRED",
+    "answer": "06/07/2021"
+  },
+  {
+    "order": 22,
+    "text": "STATE OF HIRE",
+    "answer": "CA"
+  },
+  {
+    "order": 23,
+    "text": "ADDRESS (INCL ZIP)",
+    "answer": "1284 W 3rd St, Apt 5B, Los Angeles, CA 90017"
+  },
+  {
+    "order": 24,
+    "text": "SEX",
+    "answer": "Female"
+  },
+  {
+    "order": 25,
+    "text": "MARITAL STATUS",
+    "answer": "Single/Divorced"
+  },
+  {
+    "order": 26,
+    "text": "OCCUPATION/JOB TITLE",
+    "answer": "Marketing Coordinator"
+  },
+  {
+    "order": 27,
+    "text": "EMPLOYMENT STATUS",
+    "answer": "1-Full-Time"
+  },
+  {
+    "order": 28,
+    "text": "PHONE",
+    "answer": "2135550198"
+  },
+  {
+    "order": 29,
+    "text": "# OF DEPENDENTS",
+    "answer": 0.0
+  },
+  {
+    "order": 30,
+    "text": "NCCI CLASS CODE",
+    "answer": "8810"
+  },
+  {
+    "order": 31,
+    "text": "RATE",
+    "answer": 1250.0
+  },
+  {
+    "order": 32,
+    "text": "PER",
+    "answer": "Week"
+  },
+  {
+    "order": 33,
+    "text": "OTHER",
+    "answer": ""
+  },
+  {
+    "order": 34,
+    "text": "DAYS WORKED/WEEK",
+    "answer": 5.0
+  },
+  {
+    "order": 35,
+    "text": "FULL PAY FOR DAY OF INJURY?",
+    "answer": true
+  },
+  {
+    "order": 36,
+    "text": "DID SALARY CONTINUE?",
+    "answer": false
+  },
+  {
+    "order": 37,
+    "text": "TIME EMPLOYEE BEGAN WORK",
+    "answer": "08:30:00 AM"
+  },
+  {
+    "order": 38,
+    "text": "DATE OF INJURY/ILLNESS",
+    "answer": "Nov 18, 2024"
+  },
+  {
+    "order": 39,
+    "text": "TIME OF OCCURRENCE",
+    "answer": "10:45:00 AM"
+  },
+  {
+    "order": 40,
+    "text": "CANNOT BE DETERMINED",
+    "answer": false
+  },
+  {
+    "order": 41,
+    "text": "LAST WORK DATE",
+    "answer": "Nov 18, 2024"
+  },
+  {
+    "order": 42,
+    "text": "DATE EMPLOYER NOTIFIED",
+    "answer": "Nov 18, 2024"
+  },
+  {
+    "order": 43,
+    "text": "DATE DISABILITY BEGAN",
+    "answer": "Nov 19, 2024"
+  },
+  {
+    "order": 44,
+    "text": "CONTACT NAME",
+    "answer": "Samantha Lee"
+  },
+  {
+    "order": 45,
+    "text": "CONTACT PHONE NUMBER",
+    "answer": "2135550134"
+  },
+  {
+    "order": 46,
+    "text": "TYPE OF INJURY/ILLNESS",
+    "answer": "52-Strain or Tear"
+  },
+  {
+    "order": 47,
+    "text": "PART OF BODY AFFECTED",
+    "answer": "53-Knee"
+  },
+  {
+    "order": 48,
+    "text": "DID INJURY/ILLNESS/EXPOSURE OCCUR ON EMPLOYER’S PREMISES?",
+    "answer": true
+  },
+  {
+    "order": 49,
+    "text": "TYPE OF INJURY/ILLNESS CODE",
+    "answer": "52"
+  },
+  {
+    "order": 50,
+    "text": "PART OF BODY AFFECTED CODE",
+    "answer": "53"
+  },
+  {
+    "order": 51,
+    "text": "DEPARTMENT OR LOCATION WHERE ACCIDENT OR ILLNESS EXPOSURE OCCURRED",
+    "answer": "Break room/kitchen - 6th Floor, BrightWave Marketing"
+  },
+  {
+    "order": 52,
+    "text": "ALL EQUIPMENT, MATERIALS, OR CHEMICALS EMPLOYEE WAS USING WHEN ACCIDENT OR ILLNESS EXPOSURE OCCURRED",
+    "answer": "Box of brochures; wet tile floor; water dispenser; paper towels"
+  },
+  {
+    "order": 53,
+    "text": "SPECIFIC ACTIVITY THE EMPLOYEE WAS ENGAGED IN WHEN THE ACCIDENT OR ILLNESS EXPOSURE OCCURRED",
+    "answer": "30-Slipped, Did Not Fall"
+  },
+  {
+    "order": 54,
+    "text": "WORK PROCESS THE EMPLOYEE WAS ENGAGED IN WHEN ACCIDENT OR ILLNESS EXPOSURE OCCURRED",
+    "answer": "Transporting marketing materials from storage to conference room to set up a client presentation"
+  },
+  {
+    "order": 55,
+    "text": "HOW INJURY OR ILLNESS/ABNORMAL HEALTH CONDITION OCCURRED. DESCRIBE THE SEQUENCE OF EVENTS AND INCLUDE ANY OBJECTS OR SUBSTANCES THAT DIRECTLY INJURED THE EMPLOYEE OR MADE THE EMPLOYEE ILL",
+    "answer": "Employee was carrying a small box of brochures from the supply closet to the conference room. Near the break room sink, she stepped on a wet spot from a leaking water dispenser, her right foot slipped."
+  },
+  {
+    "order": 56,
+    "text": "CAUSE OF INJURY CODE",
+    "answer": "30"
+  },
+  {
+    "order": 57,
+    "text": "DATE RETURN(ED) TO WORK",
+    "answer": "Nov 21, 2024"
+  },
+  {
+    "order": 58,
+    "text": "IF FATAL, GIVE DATE OF DEATH",
+    "answer": ""
+  },
+  {
+    "order": 59,
+    "text": "WERE SAFEGUARDS OR SAFETY EQUIPMENT PROVIDED?",
+    "answer": true
+  },
+  {
+    "order": 60,
+    "text": "WERE THEY USED?",
+    "answer": false
+  },
+  {
+    "order": 61,
+    "text": "PHYSICIAN/HEALTH CARE PROVIDER (NAME & ADDRESS)",
+    "answer": "Dr. Laura Chen, MD, Downtown Urgent Care, 645 W 7th St Suite 110, Los Angeles, CA 90017"
+  },
+  {
+    "order": 62,
+    "text": "HOSPITAL OR OFF SITE TREATMENT (NAME & ADDRESS)",
+    "answer": "Downtown Urgent Care, 645 W 7th St Suite 110, Los Angeles, CA 90017"
+  },
+  {
+    "order": 63,
+    "text": "INITIAL TREATMENT",
+    "answer": "MINOR CLINIC/HOSP"
+  },
+  {
+    "order": 64,
+    "text": "WITNESSES (NAME & PHONE #)",
+    "answer": "Michael Ortega 2135550172"
+  },
+  {
+    "order": 65,
+    "text": "DATE ADMINISTRATOR NOTIFIED",
+    "answer": "2024-11-19"
+  },
+  {
+    "order": 66,
+    "text": "DATE PREPARED",
+    "answer": "2024-11-20"
+  },
+  {
+    "order": 67,
+    "text": "PREPARER’S NAME & TITLE",
+    "answer": "Samantha Lee, HR Manager"
+  },
+  {
+    "order": 68,
+    "text": "PHONE NUMBER",
+    "answer": "(213) 555-0134"
+  }
+]
