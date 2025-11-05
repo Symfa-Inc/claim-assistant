@@ -1,0 +1,83 @@
+order,field,answer_gt,answer_extracted,levenshtein,moverscore,levenshtein_moverscore
+1,Employee Name,John Andrew Smith,John Andrew Smith,1.0,,1.0
+2,WCB Case Number (JCN),A1234567,AA123456,0.875,,0.875
+3,Date of Injury,2023-11-03,2023-11-03,1.0,,1.0
+4,Claim Administrator Claim Number,SIC-2023-1103-001,SIC-2023-1103-001,1.0,,1.0
+5,Insurer Name,Summit Indemnity Company,Summit Indemnity Company,1.0,,1.0
+6,Insurer ID,W010021,W010021,1.0,,1.0
+7,Claim Administrator Name,Martin Eden,Martin Eden,1.0,,1.0
+8,Claim Administrator Address,100 Main St,100 Main St,1.0,,1.0
+9,Claim Administrator City,Hartford,Hartford,1.0,,1.0
+10,Claim Administrator State,CT,CT,1.0,,1.0
+11,Claim Administrator Postal Code,06103,06103,1.0,,1.0
+12,Claim Administrator Country,USA,USA,1.0,,1.0
+13,Employee First Name,John,John,1.0,,1.0
+14,Employee Middle Name/Initial,Andrew,Andrew,1.0,,1.0
+15,Employee Last Name,Smith,Smith,1.0,,1.0
+16,Employee Suffix,,,1.0,,1.0
+17,Employee Mailing Address,78 Maple St,78 Maple St,1.0,,1.0
+18,Employee City,Albany,Albany,1.0,,1.0
+19,Employee State,NY,NY,1.0,,1.0
+20,Employee Postal Code,12208,12208,1.0,,1.0
+21,Employee Country,USA,USA,1.0,,1.0
+22,Employee Phone Number,518-555-0196,518-555-0196,1.0,,1.0
+23,Date of Birth,1985-02-14,1985-02-14,1.0,,1.0
+24,Gender,Male,Male,1.0,,1.0
+25,Date of Hire,2015-06-01,2015-06-01,1.0,,1.0
+26,Employee SSN,123-45-6789,123-45-6789,1.0,,1.0
+27,Occupation Description,Carpenter/Installer,Carpenter/Installer,1.0,,1.0
+28,Employee Email Address,john.smith@example.com,john.smith@example.com,1.0,,1.0
+29,Time of Injury,10:35:00,10:35:00,1.0,,1.0
+30,Date Employer Had Knowledge of the Injury,2023-11-03,2023-11-03,1.0,,1.0
+31,Employment Status,Full-time,Full-time,1.0,,1.0
+32,Date Employer Had Knowledge of Date of Disability,2023-11-04,2023-11-04,1.0,,1.0
+33,Estimated Weekly Wage,1050.0,1050.0,1.0,,1.0
+34,Number of Days Worked Per Week,5.0,5.0,1.0,,1.0
+35,Work Week Type,Standard Work Week,Standard Work Week,1.0,,1.0
+36,Work Days Scheduled,Monday–Friday,"Mon, Tues, Wed, Thurs, Fri",0.3589743589743589,,0.3589743589743589
+37,Full Wages Paid for Date of Injury,True,True,1.0,,1.0
+38,Employer Paid Salary in Lieu of Compensation,False,False,1.0,,1.0
+39,Initial Treatment,Minor Clinic/Hospital Treatment,Minor Clinic/Hospital Treatment,1.0,,1.0
+40,Death Result of Injury,No,No,1.0,,1.0
+41,Date of Death,,,1.0,,1.0
+42,Number of Dependents,0.0,0.0,1.0,,1.0
+43,Nature of Injury,Lumbar strain,Lumbar strain,1.0,,1.0
+44,Part of Body,Lower back,Lower back,1.0,,1.0
+45,Cause of Injury,Lifting heavy materials,Lifting heavy materials,1.0,,1.0
+46,Accident/Injury Description,"While lifting and positioning a bundle of laminate flooring onto a pallet at a client warehouse loading dock, the employee felt a sharp pull in his lower back.","While lifting and positioning a bundle of laminate flooring onto a pallet at a client warehouse loading dock, the employee felt a sharp pull in his lower back.",,1.0,1.0
+47,Initial Date Last Day Worked,2023-11-03,2023-11-03,1.0,,1.0
+48,Initial Date Disability Began,2023-11-04,2023-11-04,1.0,,1.0
+49,Initial Return to Work Date,2023-11-10,2023-11-10,1.0,,1.0
+50,Return To Work Type,Actual,Actual,1.0,,1.0
+51,Physical Restrictions,True,True,1.0,,1.0
+52,Return To Work Same Employer,True,True,1.0,,1.0
+53,Accident Location - Organization Name,Hudson Logistics - Client Site,Hudson Logistics - Client Site,1.0,,1.0
+54,Accident Location - Street,250 River St,250 River St,1.0,,1.0
+55,Accident Location - City,Troy,Troy,1.0,,1.0
+56,Accident Location - State,NY,NY,1.0,,1.0
+57,Accident Location - Postal Code,12180,12180,1.0,,1.0
+58,Accident Location - Country,USA,USA,1.0,,1.0
+59,Location Narrative,Incident occurred at the loading dock area.,Incident occurred at the loading dock area.,1.0,,1.0
+60,Premises,Other,Other,1.0,,1.0
+61,Witness Names,Maria Lopez,Maria Lopez,1.0,,1.0
+62,Witness Business Phone Number,518-555-0134,518-555-0134,1.0,,1.0
+63,Employer Name,John Smith dba Smith Home Services,John Smith dba Smith Home Services,1.0,,1.0
+64,Employer FEIN,12-3456789,12-3456789,1.0,,1.0
+65,UI Number,NY-1234567,NY-1234567,1.0,,1.0
+66,Manual Classification Code,5645,5645,1.0,,1.0
+67,Industry Code,236118,236118,1.0,,1.0
+68,Employer Mailing Address,"1150 Central Ave, Suite 204","1150 Central Ave, Suite 204",1.0,,1.0
+69,Employer City,Albany,Albany,1.0,,1.0
+70,Employer State,NY,NY,1.0,,1.0
+71,Employer Postal Code,12205,12205,1.0,,1.0
+72,Employer Country,USA,USA,1.0,,1.0
+73,Employer Physical Address,"1150 Central Ave, Suite 204, Albany, NY 12205","1150 Central Ave, Suite 204, Albany, NY",0.9285714285714286,,0.9285714285714286
+74,Employer Contact Name,John Smith,John Smith,1.0,,1.0
+75,Employer Contact Business Phone Number,518-555-0148,518-555-0148,1.0,,1.0
+76,Insured Name,John Smith,John Smith,1.0,,1.0
+77,Insured FEIN,12-3456789,12-3456789,1.0,,1.0
+78,Insured Location ID,ALB-001,ALB-001,1.0,,1.0
+79,Policy Number ID,SIC123456789,SIC123456789,1.0,,1.0
+80,Policy Effective Date,2023-05-15,2023-05-15,1.0,,1.0
+81,Policy Expiration Date,2024-05-15,2024-05-15,1.0,,1.0
+82,Insured Type,Insured,Insured,1.0,,1.0

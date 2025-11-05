@@ -1,0 +1,74 @@
+order,field,answer_gt,answer_extracted,levenshtein,moverscore,levenshtein_moverscore
+1,First name,John,John,1.0,,1.0
+2,Middle initial,A,A,1.0,,1.0
+3,Last name,Doe,Doe,1.0,,1.0
+4,Date of injury/disease,2023-11-14,2023-11-14,1.0,,1.0
+5,Social Security number,987-65-4320,987-65-4320,1.0,,1.0
+6,Date of birth,1986-07-02,1986-02-02,0.9,,0.9
+7,"Mailing address; add apartment number or P.O. Box, if applicable","742 Maple Ave, Apt 3B","742 Maple Ave, Apt 3B",1.0,,1.0
+8,City,Columbus,Columbus,1.0,,1.0
+9,State,OH,OH,1.0,,1.0
+10,ZIP code,43205,43205,1.0,,1.0
+11,Sex,Male,Male,,1.0,1.0
+12,Email address,john.doe@gmail.com,john.doe@email.com,0.9444444444444444,,0.9444444444444444
+13,Home phone number,614-555-0172,614-555-0120,0.9166666666666666,,0.9166666666666666
+14,Cell phone number,614-555-0173,614-555-0176,0.9166666666666666,,0.9166666666666666
+15,Employer name,John Doe dba Doe HVAC Services,John Doe dba DoeHVAC services,0.9491525423728814,,0.9491525423728814
+16,Employer address,"1180 Industrial Park Dr, Suite 200","1808 Industrial Park Dr., Suite 200",0.9565217391304348,,0.9565217391304348
+17,City,Columbus,Columbus,1.0,,1.0
+18,State,OH,OH,1.0,,1.0
+19,ZIP code,43228,43228,1.0,,1.0
+20,Was the injured worker hired through a temp agency?,False,False,1.0,,1.0
+21,"If yes, name of temp agency",,,1.0,,1.0
+22,Mark the days of the week you usually work,"Monday, Tuesday, Wednesday, Thursday, Friday","Mon, Tues, Wed, Thurs, Fri",0.7428571428571429,,0.7428571428571429
+23,Regular work hours - From,8 a.m.,08:00:00,0.1428571428571429,,0.1428571428571429
+24,Regular work hours - To,4:30 p.m.,16:30:00,0.3529411764705882,,0.3529411764705882
+25,Date hired,2022-05-10,2021-05-10,0.9,,0.9
+26,Job title,HVAC Technician,HVAC Technician,1.0,,1.0
+27,State where hired,OH,OH,1.0,,1.0
+28,State where supervised,OH,OH,1.0,,1.0
+29,Wage rate; $ per hour,24.5,28.5,0.75,,0.75
+30,Number of hours scheduled to work the week of this injury,40.0,40.0,1.0,,1.0
+31,Work number for call-offs (Number injured worker calls to reach supervisor),614-555-0140,614-555-0140,1.0,,1.0
+32,"Part(s) of body affected (For example: Left knee, right index finger)",Lower back (lumbar); right wrist,Lower back; right wrist,,0.6748790602443187,0.6748790602443187
+33,Accident description (Describe the sequence of events that directly caused the injury or death.),"While lifting a 120-lb condenser unit with a coworker at a customer’s residence, I lost footing on the basement stairs. I twisted to keep the unit from falling, felt a sharp pull in my lower back, and braced myself with my right hand on the rail, spraining my wrist. No fall to the ground occurred, but pain increased immediately and I reported the incident to my supervisor on site.","While carrying a 60-lb blower motor up a ladder at a customer site, slipped on a wet rung, twisted lower back, and landed on outstretched right hand/wrist. Immediate pain in lower back and right wrist; reported to supervisor the same day.",0.5056360708534622,,0.5056360708534622
+34,Will the incident cause the injured worker to miss 8 or more days from work?,True,True,1.0,,1.0
+35,Injured worker start time,8 a.m.,08:00:00,0.1428571428571429,,0.1428571428571429
+36,Time of injury,10:35 a.m.,14:15:00,0.33333333333333337,,0.33333333333333337
+37,Date employer notified,2023-11-14,2023-11-14,1.0,,1.0
+38,Was any part of a workday missed due to the injury?,True,True,1.0,,1.0
+39,Date last worked,2023-11-14,2023-11-14,1.0,,1.0
+40,Was the place of the accident or exposure on employer's premises?,False,False,1.0,,1.0
+41,"If no, give accident location, street address",5297 Willow Crest Dr,,0.0,,0.0
+42,"If no, give accident location, city",Dublin,,0.0,,0.0
+43,"If no, give accident location, state",OH,,0.0,,0.0
+44,"If no, give accident location, ZIP code",43017,,0.0,,0.0
+45,Was injured worker hospitalized overnight?,False,False,1.0,,1.0
+46,Initial treatment date,2023-11-14,2023-11-14,1.0,,1.0
+47,Health-care office/Facility name,Riverside Occupational Health Clinic,Downtown Walk-In Clinic,0.44067796610169496,,0.44067796610169496
+48,Treating physician/Provider name,"Emily Hart, DO","Emily Hart, DO",1.0,,1.0
+49,Telephone number,614-555-0194,614-555-0194,1.0,,1.0
+50,Fax number,614-555-0195,614-555-0195,1.0,,1.0
+51,Health-care office/Facility street address,"111 N High St, Suite 250","123 S. High St., Suite 250",0.84,,0.84
+52,City,Columbus,Columbus,1.0,,1.0
+53,State,OH,OH,1.0,,1.0
+54,ZIP code,43215,43215,1.0,,1.0
+55,Date of death,,,1.0,,1.0
+56,Decedent’s marital status,,,1.0,,1.0
+57,Decedent’s number of dependents,0.0,0.0,1.0,,1.0
+58,"Diagnosis(es)-narrative description including as appropriate, the location and body part, and ICD code(s).","Acute lumbar strain (S39.012A) and right wrist sprain (S63.501A). No radicular symptoms, strength intact. Plan: rest, NSAIDs, wrist brace, and referral to physical therapy.","Acute lumbar strain (S39.012A) and right wrist sprain (S63.501A). No radicular symptoms. Plan: rest, NSAIDs, wrist brace, and referral to physical therapy.",0.9480122324159022,,0.9480122324159022
+59,Initial treatment date,2023-11-14,2023-11-14,1.0,,1.0
+60,Are the medical conditions you have listed above causally related to the reported work-related accident or occupational disease?,True,True,1.0,,1.0
+61,Are you the physician of record?,True,True,1.0,,1.0
+62,Treating physician/Provider’s name (Print),"Emily Hart, DO","Emily Hart, DO",1.0,,1.0
+63,BWC provider number,BWC-458721,BWC-458221,0.9,,0.9
+64,Date,2023-11-15,2023-11-15,1.0,,1.0
+65,Employer name,John Doe dba Doe HVAC Services,John Doe dba DoeHVAC services,0.9491525423728814,,0.9491525423728814
+66,Employer county,Franklin,Franklin,1.0,,1.0
+67,Phone number,614-555-0140,614-555-0140,1.0,,1.0
+68,Fax number,614-555-0141,614-555-0141,1.0,,1.0
+69,Email address,admin@doehvacservices.com,admin@doehvacservices.com,1.0,,1.0
+70,Employer policy number,POL123456789,0123456789,0.8181818181818181,,0.8181818181818181
+71,Federal ID number,82-7654321,98-7654321,0.9,,0.9
+72,"Injured worker is (Check box, if applicable.)",Owner/Sole proprietor,Owner/Sole proprietor,1.0,,1.0
+73,For self-insuring employers only: Medical only / Lost time,Medical only,Lost time,0.09523809523809523,,0.09523809523809523

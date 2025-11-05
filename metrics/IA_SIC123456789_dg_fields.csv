@@ -1,0 +1,90 @@
+order,field,answer_gt,answer_extracted,levenshtein,moverscore,levenshtein_moverscore
+1,Jurisdiction Code,CO,co,0.0,,0.0
+2,Claim Administrator Name,Summit Insurance Claims,Summit Insurance Claims,1.0,,1.0
+3,Claim Representative Business Phone Number,720-555-0120,720-555-0120,1.0,,1.0
+4,Insurer Name (if different than claim administrator),Summit Insurance Company,Summit Insurance Company,1.0,,1.0
+5,"Mailing Address, City, State, & Postal Code","1010 17th St, Suite 500, Denver, CO 80202","1010 17th St, Suite 500, Denver, CO 80202",1.0,,1.0
+6,Claim Administrator Claim Number,SIC-2024-0312-001,SIC-2024-0312-001,1.0,,1.0
+7,Insurer FEIN,98-7654321,98-7654321,1.0,,1.0
+8,Claim Administrator FEIN,91-2345678,91-2345678,1.0,,1.0
+9,Claim Type Code,MO,MO,1.0,,1.0
+10,Employer Name,"Front Range Logistics, LLC","Front Range Logistics, LLC",1.0,,1.0
+11,Employer FEIN,84-2233445,84-2233445,1.0,,1.0
+12,Insured Report Number,FRL-INC-2024-0312,FRL-RNC-2024-0312,0.9411764705882353,,0.9411764705882353
+13,Employer Type Code,Employer (E),Employer (E),1.0,,1.0
+14,"Physical Address, City, State, & Postal Code","2450 E 40th Ave, Denver, CO 80205","2450 E 40th Ave, Denver, CO 80205",1.0,,1.0
+15,"Mailing Address, City, State, & Postal Code","PO Box 1120, Denver, CO 80201","PO Box 1120, Denver, CO 80201",1.0,,1.0
+16,Industry Code,NAICS 493110,NAICS 493110,1.0,,1.0
+17,Insured Location Number,LOC-DEN-01,LOC-DEN-01,1.0,,1.0
+18,Employer UI Number,CO-1234567,CO-1234567,1.0,,1.0
+19,Nature of Business,General warehousing and distribution,General warehousing and distribution,1.0,,1.0
+20,Employer Contact Name and Business Phone Number,"Laura Benson, HR Manager, 303-555-0147","Laura Benson, HR Manager, 303-555-0147",1.0,,1.0
+21,Insured Name (parent company if different than employer),"Front Range Logistics Holdings, Inc.","Front Range Logistics Holdings, Inc.",1.0,,1.0
+22,Insured FEIN,84-5566789,84-5566789,1.0,,1.0
+23,Insured Postal Code,80205,80205,1.0,,1.0
+24,Policy/Contract Number,SIC123456789,FRLINC20240312,0.3076923076923077,,0.3076923076923077
+25,Coverage Effective Date,2023-05-15,2023-05-15,1.0,,1.0
+26,Coverage Expiration Date,2024-05-15,2024-05-15,1.0,,1.0
+27,Self Insurance License/ Certificate Number,N/A,N/A,1.0,,1.0
+28,Employee Name - First,John,John,1.0,,1.0
+29,Employee Name - Middle,Michael,Michael,1.0,,1.0
+30,Employee Name - Last,Smith,Smith,1.0,,1.0
+31,Date of Birth,1986-09-22,1986-09-22,1.0,,1.0
+32,Gender,Male (M),Male (M),,1.0,1.0
+33,Tax Filing Status,Married/Filing Joint (C),Married/Filing Joint (C),,1.0,1.0
+34,"Mailing Address, City, State, & Postal Code","1257 N Downing St, Apt 3, Denver, CO 80218","1257 N Downing St, Apt 3, Denver, CO 80218",1.0,,1.0
+35,Date of Hire,2021-08-23,2021-08-23,1.0,,1.0
+36,State of Hire,CO,CO,1.0,,1.0
+37,Educational Level (grade completed),14,14,1.0,,1.0
+38,Phone Number (include area code),720-555-0198,303-555-0158,0.75,,0.75
+39,Email,john.smith@example.com,john.smith@example.com,1.0,,1.0
+40,Occupation Description,Warehouse associate,Warehouse associate,,1.0,1.0
+41,NCCI Classification Code,8291,8291,1.0,,1.0
+42,Department Where Regularly Worked,Shipping & Receiving,Shipping & Receiving,1.0,,1.0
+43,Employment Status,Regular Employee/Full-Time,Regular Employee/Full-Time,1.0,,1.0
+44,Employee ID Number (ID Type),Social Security Number,Social Security Number,1.0,,1.0
+45,ID #,387-15-4821,387-15-4821,1.0,,1.0
+46,Marital Status,Married (M),Married (M),1.0,,1.0
+47,Employee’s Authorization to Release Medical Records,True,True,1.0,,1.0
+48,Employee’s Authorization to Release Social Security Number,True,True,1.0,,1.0
+49,Average Wage $,22.5,22.5,1.0,,1.0
+50,Average Wage Frequency,hourly,hourly,1.0,,1.0
+51,Number of Days Regularly Worked Per Week,5.0,5.0,1.0,,1.0
+52,Salary Continued In Lieu of Compensation,False,False,1.0,,1.0
+53,Full Wages Paid for Date of Injury,True,True,1.0,,1.0
+54,Discontinued Fringe Benefits $,0.0,0.0,1.0,,1.0
+55,Employee Number of Dependents,1.0,1.0,1.0,,1.0
+56,Employee Number of Exemptions,1.0,1.0,1.0,,1.0
+57,Exemptions Type,Withholding,Withholding,1.0,,1.0
+58,Date of Injury,2024-03-12,2024-03-12,1.0,,1.0
+59,Date Employer Had Knowledge of the Injury,2024-03-12,2024-03-12,1.0,,1.0
+60,Date Claim Administrator Had Knowledge of the Injury,2024-03-13,2024-03-13,1.0,,1.0
+61,Initial Date Last Day Worked,2024-03-12,2024-03-12,1.0,,1.0
+62,Initial Return to Work Date (if applicable),2024-03-15,2024-03-15,1.0,,1.0
+63,Employee Date of Death (if applicable),,,1.0,,1.0
+64,Time of Injury,10:35:00,10:35:00,1.0,,1.0
+65,Time Employee Began Work,07:00:00,07:00:00,1.0,,1.0
+66,Pre-Existing Disability Code,No,Unknown,0.2222222222222222,,0.2222222222222222
+67,Accident Premises Code,Employer (E),Employer (E),1.0,,1.0
+68,Accident Site Organization Name,"Front Range Logistics, LLC - Denver Warehouse","Front Range Logistics, LLC - Denver Warehouse",1.0,,1.0
+69,"Accident Site Street, City, State, & Postal Code","2450 E 40th Ave, Denver, CO 80205","2450 E 40th Ave, Denver, CO 80205",1.0,,1.0
+70,Accident Location Narrative (if no street address),Warehouse loading dock area near Bay 3,Warehouse loading dock area near Bay 3,1.0,,1.0
+71,Accident Site County/Parish,Denver County,Denver County,1.0,,1.0
+72,Type of Injury / Illness Code,072,072,1.0,,1.0
+73,Describe the nature of the injury,Acute sprain/strain to the right wrist with superficial contusion to the forearm; swelling and limited range of motion noted,Acute sprain/strain to the right wrist with superficial contusion to the forearm; swelling and limited range of motion noted,,0.9937905463729418,0.9937905463729418
+74,Part of Body Affected Code,Right wrist (320),320,,-0.03626572435385089,-0.03626572435385089
+75,Part(s) of body directly affected by the injury or illness,Right wrist and right forearm,Right wrist and right forearm,,0.9891806067919403,0.9891806067919403
+76,Describe the events that caused the injury,"While lifting a 45-pound box from a pallet, employee’s grip slipped and the box fell. He instinctively reached to catch it, twisting his right wrist and bumping his forearm against the pallet edge","While lifting a 45-pound box from a pallet, employee’s grip slipped and the box fell. He instinctively reached to catch it, twisting his right wrist and bumping his forearm against the pallet edge",,0.9960335950524711,0.9960335950524711
+77,Name the object or substance that directly injured the employee,Falling cardboard box and wooden pallet,Falling cardboard box and wooden pallet,,1.0,1.0
+78,Specify activity the employee was engaged in when the event occurred,Lifting and stacking boxes onto shelving as part of normal job duties in shipping/receiving,Lifting and stacking boxes onto shelving as part of normal job duties in shipping/receiving,,1.0,1.0
+79,Witness Name,Emily Nguyen,Emily Nguyen,1.0,,1.0
+80,Witness Business Phone Number,303-555-0175,303-555-0175,1.0,,1.0
+81,Initial Treatment Code,clinic/hospital visit (2),clinic/hospital visit (2),1.0,,1.0
+82,Initial Medical Provider Name,UCHealth Urgent Care - Central Park,UCHealth Urgent Care - Central Park,1.0,,1.0
+83,"Initial Medical Provider Physical Address, City, State, & Postal Code","3401 N Quebec St, Denver, CO 80207","3401 N Quebec St, Denver, CO 80207",1.0,,1.0
+84,Managed Care Organization Name or ID Number,Colorado Care Network - MCO ID CCN-4472,Colorado Care Network - MCO ID CCN-4472,1.0,,1.0
+85,ICD Primary Diagnostic Code (if known),S63.501A,S63.501A,1.0,,1.0
+86,Preparer’s Name & Title,"Laura Benson, HR Manager","Laura Benson, HR Manager",1.0,,1.0
+87,Preparer's Company Name,"Front Range Logistics, LLC","Front Range Logistics, LLC",1.0,,1.0
+88,Preparer Phone Number,303-555-0147,303-555-0147,1.0,,1.0
+89,Preparer Date,2024-03-14,2024-03-14,1.0,,1.0

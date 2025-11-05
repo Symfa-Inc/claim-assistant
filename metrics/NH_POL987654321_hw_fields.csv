@@ -1,0 +1,60 @@
+order,field,answer_gt,answer_extracted,levenshtein,moverscore,levenshtein_moverscore
+1,Submission Date,2024-09-23,2024-09-23,1.0,,1.0
+2,NHDOL#,,,1.0,,1.0
+3,Employee Name (First & Last) - First Name,Emily,Emily,1.0,,1.0
+4,Employee Name (First & Last) - Last Name,Johnson,Johnson,1.0,,1.0
+5,Gender,Female,Female,,1.0,1.0
+6,Hired Date,2021-05-10,2021-05-10,1.0,,1.0
+7,Hired in NH,True,True,1.0,,1.0
+8,ID Type,Employee ID,Employee ID,1.0,,1.0
+9,Employee ID,EJ10258,EJ10258,1.0,,1.0
+10,Date of Birth,1990-04-22,1990-04-22,1.0,,1.0
+11,Age,34.0,34.0,1.0,,1.0
+12,Occupation when Injured,Warehouse Associate,Warehouse Associate,,1.0,1.0
+13,Employee Address,"442 Willow St, Apt 3B, Manchester, NH 03103","442 Willow St, Apt 3B, Manchester, NH 03103",1.0,,1.0
+14,Telephone,603-555-0184,603-555-0184,1.0,,1.0
+15,Wages per Hour,22.5,22.5,1.0,,1.0
+16,Hrs per Day,8.0,8.0,1.0,,1.0
+17,Days per Week,5.0,5.0,1.0,,1.0
+18,Average Weekly Earnings,900.0,900.0,1.0,,1.0
+19,Injury Date / Time,2024-09-18,2024-09-18,1.0,,1.0
+20,Date Employer Notified of Injury,2024-09-19,2024-09-19,1.0,,1.0
+21,Location/Jobsite & Business Name where accident occurred,"Granite Home Goods, LLC – Receiving Dock, 215 Amoskeag St, Manchester, NH 03102","Granite Home Goods, LLC – Receiving Dock, 215 Amoskeag St, Manchester, NH 03102",1.0,,1.0
+22,Disability Began Date,2024-09-19,2024-09-19,1.0,,1.0
+23,Claim Type,Medical Only,Medical Only,1.0,,1.0
+24,Full Wages Paid on Injury Date,True,True,1.0,,1.0
+25,Accident Description,"While unloading a pallet from a delivery truck at the receiving dock, employee stepped on a wet spot, slipped, and twisted her right ankle, falling to one knee and bracing with her right hand.","While unloading a pallet from a delivery truck at the receiving dock, employee stepped on a wet spot, slipped, and twisted her right ankle, falling to one knee and bracing with her right hand.",,1.0,1.0
+26,Body part Injured,Right ankle; Right wrist,Right ankle; Right wrist,,1.0,1.0
+27,Cause of Injury,Slip on wet surface while unloading pallet,Slipping on wet surface while unloading pallet,,0.945020886513794,0.945020886513794
+28,Nature of Injury,Right ankle sprain and right wrist contusion,Right ankle sprain and right wrist contusion,,1.0,1.0
+29,Witness Name,Michael Torres,Michael Torres,1.0,,1.0
+30,Witness Phone,603-555-0197,603-555-0197,1.0,,1.0
+31,Returned to work?,True,True,1.0,,1.0
+32,"If so, what date?",2024-09-19,2024-09-19,1.0,,1.0
+33,"If so, at what occupation?",Sales floor associate (light duty),Sales floor associate,0.7636363636363637,,0.7636363636363637
+34,"If so, at what duty status?",Restricted/light duty,Restricted / light duty,,0.9819883036308253,0.9819883036308253
+35,Initial Treatment,Urgent care clinic visit,Urgent care clinic,,0.5918508152078858,0.5918508152078858
+36,Initial Treatment Date,2024-09-18,2024-09-18,1.0,,1.0
+37,Name of Treating Physician,"Laura Bennett, MD","Laura Bennett, MD",1.0,,1.0
+38,Name of Treating Hospital,Elliot Urgent Care – River's Edge,Elliot Urgent Care – River's Edge,1.0,,1.0
+39,Has injured died?,False,False,1.0,,1.0
+40,"If so, what date",,,1.0,,1.0
+41,Employer Name,"Granite Home Goods, LLC","Granite Home Goods, LLC",1.0,,1.0
+42,Employer FEIN,02-9876543,22-9876543,0.9,,0.9
+43,Industry Code,444130,444130,1.0,,1.0
+44,Employer Contact Name,Sarah McKenna,Sarah McKenna,1.0,,1.0
+45,Contact Phone Number,603-555-0128,603-555-0128,1.0,,1.0
+46,Employer Business Address,"215 Amoskeag St, Manchester, NH 03102","215 Amoskeag St, Manchester, NH 03102",1.0,,1.0
+47,Managed Care Organization,None,None,1.0,,1.0
+48,Leased Employee?,False,False,1.0,,1.0
+49,Client Company,,,1.0,,1.0
+50,OCIP/Wrap-Up Policy?,False,False,1.0,,1.0
+51,Name of policy holder,,,1.0,,1.0
+52,Insurance Carrier,Pioneer Mutual Insurance,Pioneer Mutual Insurance,1.0,,1.0
+53,Insurer Type,Private,Private,1.0,,1.0
+54,Policy Number,POL987654321,POL987654321,1.0,,1.0
+55,Telephone Number,800-555-2471,800-555-4787,0.8333333333333334,,0.8333333333333334
+56,Submitter Name,Sarah McKenna,Sarah McKenna,1.0,,1.0
+57,Title of Submitter,HR Manager,HR Manager,1.0,,1.0
+58,Represents,Employer,Employer,1.0,,1.0
+59,Telephone Number,603-555-0128,603-555-0128,1.0,,1.0

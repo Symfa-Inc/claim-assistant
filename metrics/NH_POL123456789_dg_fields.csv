@@ -1,0 +1,60 @@
+order,field,answer_gt,answer_extracted,levenshtein,moverscore,levenshtein_moverscore
+1,Submission Date,2023-11-22,2023-11-22,1.0,,1.0
+2,NHDOL#,,,1.0,,1.0
+3,Employee Name (First & Last) - First Name,John,John,1.0,,1.0
+4,Employee Name (First & Last) - Last Name,Doe,Doe,1.0,,1.0
+5,Gender,Male,Male,,1.0,1.0
+6,Hired Date,2018-06-12,2018-06-12,1.0,,1.0
+7,Hired in NH,True,True,1.0,,1.0
+8,ID Type,Employee ID,Employee ID,1.0,,1.0
+9,Employee ID,JD45821,JD45821,1.0,,1.0
+10,Date of Birth,1986-07-08,1986-07-08,1.0,,1.0
+11,Age,37.0,37.0,1.0,,1.0
+12,Occupation when Injured,Warehouse Associate / Forklift Operator,Warehouse Associate / Forklift Operator,,1.0,1.0
+13,Employee Address,"27 Maple St, Unit 2, Manchester, NH 03101","27 Maple St, Unit 2, Manchester, NH 03101",1.0,,1.0
+14,Telephone,(603) 555-0143,(603) 555-0143,1.0,,1.0
+15,Wages per Hour,24.5,24.5,1.0,,1.0
+16,Hrs per Day,8.0,8.0,1.0,,1.0
+17,Days per Week,5.0,5.0,1.0,,1.0
+18,Average Weekly Earnings,980.0,980.0,1.0,,1.0
+19,Injury Date / Time,2023-11-14,2023-11-14,1.0,,1.0
+20,Date Employer Notified of Injury,2023-11-15,2023-11-15,1.0,,1.0
+21,Location/Jobsite & Business Name where accident occurred,"Concord Distribution Center - Granite Logistics LLC, 125 Industrial Park Dr, Concord, NH 03301","Concord Distribution Center - Granite Logistics LLC, 125 Industrial Park Dr, Concord, NH 03301",1.0,,1.0
+22,Disability Began Date,2023-11-15,2023-11-15,1.0,,1.0
+23,Claim Type,Lost Time,Lost Time,1.0,,1.0
+24,Full Wages Paid on Injury Date,True,True,1.0,,1.0
+25,Accident Description,"While lifting a 70-pound box from a lower pallet to a conveyor, employee felt a sharp pull in his lower back and strained his right shoulder when the load shifted and he twisted to avoid dropping it. Incident occurred on the warehouse floor near the receiving bay. ","While lifting a 70-pound box from a lower pallet to a conveyor, employee felt a sharp pull in his lower back and strained his right shoulder when the load shifted and he twisted to avoid dropping it. Incident occurred on the warehouse floor near the receiving bay.",,1.0,1.0
+26,Body part Injured,Lower back and right shoulder,Lower back and right shoulder,,1.0,1.0
+27,Cause of Injury,Overexertion while lifting and twisting,Overexertion while lifting and twisting,,1.0,1.0
+28,Nature of Injury,Lumbar strain and right shoulder sprain,Lumbar strain and right shoulder sprain,,1.0,1.0
+29,Witness Name,Maria Sanchez,Maria Sanchez,1.0,,1.0
+30,Witness Phone,(603) 555-0198,(603) 555-0198,1.0,,1.0
+31,Returned to work?,True,True,1.0,,1.0
+32,"If so, what date?",2023-11-20,2023-11-20,1.0,,1.0
+33,"If so, at what occupation?",Light-duty inventory clerk,Light-duty inventory clerk,1.0,,1.0
+34,"If so, at what duty status?",Restricted duty (no lifting >10 lbs; no overhead reaching),Restricted duty (no lifting >10 lbs; no overhead reaching),,1.0,1.0
+35,Initial Treatment,Urgent care clinic visit,Urgent care clinic visit,,1.0,1.0
+36,Initial Treatment Date,2023-11-14,2023-11-14,1.0,,1.0
+37,Name of Treating Physician,"Dr. Alan Pritchard, DO","Dr. Alan Pritchard, DO",1.0,,1.0
+38,Name of Treating Hospital,Concord Urgent Care,Concord Urgent Care,1.0,,1.0
+39,Has injured died?,False,False,1.0,,1.0
+40,"If so, what date",,,1.0,,1.0
+41,Employer Name,Granite Logistics LLC,Granite Logistics LLC,1.0,,1.0
+42,Employer FEIN,12-3456789,12-3456789,1.0,,1.0
+43,Industry Code,493110,493110,1.0,,1.0
+44,Employer Contact Name,Lisa Chen,Lisa Chen,1.0,,1.0
+45,Contact Phone Number,(603) 555-0127,(603) 555-0127,1.0,,1.0
+46,Employer Business Address,"Granite Logistics LLC, 125 Industrial Park Dr, Concord, NH 03301","Granite Logistics LLC, 125 Industrial Park Dr, Concord, NH 03301",1.0,,1.0
+47,Managed Care Organization,Granite Health MCO,Granite Health MCO,1.0,,1.0
+48,Leased Employee?,False,False,1.0,,1.0
+49,Client Company,,,1.0,,1.0
+50,OCIP/Wrap-Up Policy?,False,False,1.0,,1.0
+51,Name of policy holder,,,1.0,,1.0
+52,Insurance Carrier,Granite Mutual Insurance Company,Granite Mutual Insurance Company,1.0,,1.0
+53,Insurer Type,Private carrier,Private carrier,1.0,,1.0
+54,Policy Number,POL123456789,POL123456789,1.0,,1.0
+55,Telephone Number,(603) 555-0100,(603) 555-0100,1.0,,1.0
+56,Submitter Name,Lisa Chen,Lisa Chen,1.0,,1.0
+57,Title of Submitter,HR Manager,HR Manager,1.0,,1.0
+58,Represents,Employer,Employer,1.0,,1.0
+59,Telephone Number,(603) 555-0127,(603) 555-0127,1.0,,1.0

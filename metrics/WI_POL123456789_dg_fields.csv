@@ -1,0 +1,70 @@
+order,field,answer_gt,answer_extracted,levenshtein,moverscore,levenshtein_moverscore
+1,Employee Name (First),John,John,1.0,,1.0
+2,Employee Name (Middle),Andrew,Andrew,1.0,,1.0
+3,Employee Name (Last),Doe,Doe,1.0,,1.0
+4,Social Security Number*,582-41-9360,582-41-9360,1.0,,1.0
+5,Sex,M,M,,0.9999993188542952,0.9999993188542952
+6,Employee Home Telephone No.,(414) 555-0198,(414) 555-0198,1.0,,1.0
+7,Employee Street Address,"1842 S 9th St, Apt 3B","1842 S 9th St, Apt 3B",1.0,,1.0
+8,City,Milwaukee,Milwaukee,1.0,,1.0
+9,State,WI,WI,1.0,,1.0
+10,Zip Code,53204,53204,1.0,,1.0
+11,Occupation,Warehouse Associate,Warehouse Associate,1.0,,1.0
+12,Birthdate,1988-07-15,1988-07-15,1.0,,1.0
+13,Date of Hire,2020-05-11,2020-05-11,1.0,,1.0
+14,County and State Where Accident or Exposure Occurred?,"Milwaukee County, Wisconsin","Milwaukee County, Wisconsin",1.0,,1.0
+15,Employer Name,"Badger Logistics, LLC","Badger Logistics, LLC",1.0,,1.0
+16,WI Unemployment Ins. Acct No.,POL123456789,POL123456789,1.0,,1.0
+17,Self-Insured?,No,False,0.0,,0.0
+18,Nature of Business (Specific Product),Third-party logistics and warehouse distribution services,Third-party logistics and warehouse distribution services,,1.0,1.0
+19,Employer Mailing Address,2555 W Canal St,2555 W Canal St,,1.0,1.0
+20,City,Milwaukee,Milwaukee,1.0,,1.0
+21,State,WI,WI,1.0,,1.0
+22,Zip Code,53204,53204,1.0,,1.0
+23,Employer FEIN,39-8765432,39-8765432,1.0,,1.0
+24,Name of Worker's Compensation Insurance Co. or Self-Insured Employer,NorthStar Casualty Insurance Company,NorthStar Casualty Insurance Company,1.0,,1.0
+25,Insurer FEIN,38-7654321,38-7654321,1.0,,1.0
+26,Name and Address of Third Party Administrator (TPA) Used by the Insurance Company or Self-Insured Employer,"Lakeshore Claims Services, 1200 E Wisconsin Ave, Suite 400, Milwaukee, WI 53202","Lakeshore Claims Services, 1200 E Wisconsin Ave, Suite 400, Milwaukee, WI 53202",1.0,,1.0
+27,TPA FEIN,39-1122334,39-1122334,1.0,,1.0
+28,Wage at Time of Injury $,23.5,23.5,1.0,,1.0
+29,"Specify per hr., wk., mo., yr., etc.",hr,hr,1.0,,1.0
+30,Per:,0.0,40.0,0.8571428571428572,,0.8571428571428572
+31,"Meals (In Addition to Wages, Employee Received)",False,False,1.0,,1.0
+32,"Room (In Addition to Wages, Employee Received)",False,False,1.0,,1.0
+33,"Tips (In Addition to Wages, Employee Received)",False,False,1.0,,1.0
+34,No. of Meals/wk.,0.0,0.0,1.0,,1.0
+35,No. of Days/wk,0.0,0.0,1.0,,1.0
+36,Avg. Weekly Amt. $,0.0,0.0,1.0,,1.0
+37,Is Worker Paid for Overtime?,True,True,1.0,,1.0
+38,"If Yes, After How Many Hours of Work Per Week?",40.0,40.0,1.0,,1.0
+39,No. of Weeks:,50.0,50.0,1.0,,1.0
+40,Gross Amount Excluding Tips: $,51000.0,51000.0,1.0,,1.0
+41,"If Piece-Work, No. of Hrs. Excluding Overtime:",0.0,0.0,1.0,,1.0
+42,Start Time,8:00 a.m.,08:00:00,0.47058823529411764,,0.47058823529411764
+43,Hours Per Day,8.0,8.0,1.0,,1.0
+44,Hours Per Week,40.0,40.0,1.0,,1.0
+45,Days Per Week,5.0,5.0,1.0,,1.0
+46,Employer's Usual Full-Time Schedule for This Type of Work at Time of Employee's Injury,8,"8 hours/day, 40 hours/week, 5 days/week",0.050000000000000044,,0.050000000000000044
+47,Are there Other Part-Time Workers Doing the Same Work With the Same Schedule?,No,False,0.0,,0.0
+48,"If Yes, how many?",0.0,0.0,1.0,,1.0
+49,Number of Full-Time Employees Doing The Same Type Of Work:,4.0,4.0,1.0,,1.0
+50,Injury Date,2024-06-12,2024-06-12,1.0,,1.0
+51,Time of Injury,11:25 a.m.,11:25:00,0.5555555555555556,,0.5555555555555556
+52,Last Day Worked,2024-06-12,2024-06-12,1.0,,1.0
+53,Date Employer Notified,2024-06-12,2024-06-12,1.0,,1.0
+54,Date Returned to Work,2024-06-22,2024-06-22,1.0,,1.0
+55,Estimated Date of Return,,,1.0,,1.0
+56,Did Injury Cause Death?,False,False,1.0,,1.0
+57,Date of Death,,,1.0,,1.0
+58,Was This a Lost Time or Other Compensable Injury?,True,True,1.0,,1.0
+59,Did Injury Occur Because of: ,,,1.0,,1.0
+60,Was Employee Treated in an Emergency Room?,False,False,1.0,,1.0
+61,Was Employee Hospitalized Overnight as an In-Patient?,False,False,1.0,,1.0
+62,Name and Address of Treating Practitioner and Hospital,"Dr. Adam Smith, AS Clinic, 256 N Waterfall St, Milwaukee, WI 53305. Phone: (414) 555-0153.","Dr. Adam Smith, AS Clinic, 256 N Waterfall St, Milwaukee, WI 53305. Phone: (414) 555-0153.",1.0,,1.0
+63,Case Number from the OSHA Log,2024-117,2024-117,1.0,,1.0
+64,"Injury Description - Describe Activities of Employee When Injury or Illness Occurred and What Tools, Machinery, Objects, Chemicals, Etc. Were Involved.",Employee was injured while lifting boxes using a hand truck when it tipped over.,Employee was injured while lifting boxes using a hand truck when it tipped over.,,0.9904441783548358,0.9904441783548358
+65,What Happened to Cause This Injury or Illness? (Describe How The Injury Occurred),"The hand truck became unbalanced while moving heavy boxes, causing it to tip and strike the employee.","The hand truck became unbalanced while moving heavy boxes, causing it to tip and strike the employee.",,1.0,1.0
+66,What Was The Injury or Illness? (State the Part of Body Affected and How It Was Affected),The employee sustained a bruise and strain to the lower back and shoulder from the impact of the falling hand truck.,The employee sustained a bruise and strain to the lower back and shoulder from the impact of the falling hand truck.,,0.992952125808055,0.992952125808055
+67,Report Prepared By,Michael Gonzales,Michael Gonzales,1.0,,1.0
+68,Work Phone Number,(414) 555-0118,(414) 555-0118,1.0,,1.0
+69,Position,HR Manager,HR Manager,1.0,,1.0

@@ -1,0 +1,88 @@
+order,field,answer_gt,answer_extracted,levenshtein,moverscore,levenshtein_moverscore
+1,EMPLOYEE SOCIAL SECURITY #,123-45-6789,123-45-6789,1.0,,1.0
+2,OSHA case #,2023-0114,2023-0114,1.0,,1.0
+3,Time employee began work on date of injury,07:30:00,07:30:00,1.0,,1.0
+4,Time employee began work on date of injury (am/pm),AM,AM,1.0,,1.0
+5,DATE OF CLAIMED INJURY,2023-11-14,2023-11-14,1.0,,1.0
+6,Time of injury,10:15:00,10:15:00,1.0,,1.0
+7,Time of injury(am/pm),AM,AM,1.0,,1.0
+8,Date of death,,,1.0,,1.0
+9,# of dependents (if death is related to injury),0.0,0.0,1.0,,1.0
+10,EMPLOYEE Last name,Smith,Smith,1.0,,1.0
+11,EMPLOYEE First name,John,John,1.0,,1.0
+12,EMPLOYEE Middle name,A.,A.,1.0,,1.0
+13,Gender,M,M,,1.0,1.0
+14,Marital status,Married,Married,1.0,,1.0
+15,Home address,1287 Maple Ridge Dr,1287 Maple Ridge Dr,1.0,,1.0
+16,Home phone #,(614) 555-0176,(614) 555-0176,1.0,,1.0
+17,Date of birth,1987-08-22,1987-08-22,1.0,,1.0
+18,Date hired,2021-06-07,2021-06-07,1.0,,1.0
+19,City,Columbus,Columbus,1.0,,1.0
+20,State,OH,OH,1.0,,1.0
+21,Zip Code,43215,43215,1.0,,1.0
+22,Occupation,Warehouse Associate,Warehouse Associate,1.0,,1.0
+23,Regular department,Shipping and Receiving,Shipping and Receiving,1.0,,1.0
+24,Apprentice,False,False,1.0,,1.0
+25,Average weekly wage,880.0,880.0,1.0,,1.0
+26,Rate per hour,22.0,22.0,1.0,,1.0
+27,Hours per day,8.0,8.0,1.0,,1.0
+28,Days per week,5.0,5.0,1.0,,1.0
+29,Normal work schedule Sun,False,False,1.0,,1.0
+30,Normal work schedule Mon,True,True,1.0,,1.0
+31,Normal work schedule Tue,True,True,1.0,,1.0
+32,Normal work schedule Wed,True,True,1.0,,1.0
+33,Normal work schedule Thu,True,True,1.0,,1.0
+34,Normal work schedule Fri,True,True,1.0,,1.0
+35,Normal work schedule Sat,False,False,1.0,,1.0
+36,Employment status,Full time,Full time,1.0,,1.0
+37,"Tell us how the injury/illness occurred, what the employee was doing before the incident (give details), and what the injury/illness was.","While stocking incoming merchandise in the receiving area, the employee used a 6-foot step ladder to place boxed ceramic mugs onto a shelf. As he stepped down, his right foot slipped on plastic wrap overhanging a pallet, causing him to lose balance and fall from the second step, twisting his left ankle and striking his left shin on the pallet edge.","While stocking incoming merchandise in the receiving area, the employee used a 6-foot step ladder to place boxed ceramic mugs onto a shelf. As he stepped down, his right foot slipped on plastic wrap overhanging a pallet, causing him to lose balance and fall from the second step, twisting his left ankle and striking his left shin on the pallet edge.",,1.0,1.0
+38,What was the injury or illness (include the part(s) of body)?,Left ankle sprain and contusion to the left shin.,Left ankle sprain and contusion to the left shin.,,1.0,1.0
+39,"What tools, equipment, machines, objects, or substances were involved?","Aluminum step ladder, shrink-wrapped pallet, concrete floor.","Aluminum step ladder, shrink-wrapped pallet, concrete floor.",,1.0,1.0
+40,Did injury occur on employer’s premises?,True,True,1.0,,1.0
+41,Name and address of the place of the occurrence,"Midwest Home Goods Distribution Center, 4550 Commerce Pkwy, Columbus, OH 43228","Midwest Home Goods Distribution Center, 4550 Commerce Pkwy, Columbus, OH",0.96,,0.96
+42,Date of first day of any lost time,2023-11-15,2023-11-15,1.0,,1.0
+43,Employer paid for lost time on day of injury (DOI),Yes,Yes,1.0,,1.0
+44,Date employer notified of injury,2023-11-14,2023-11-14,1.0,,1.0
+45,Date employer notified of lost time,2023-11-15,2023-11-15,1.0,,1.0
+46,Return to work date,2023-11-20,2023-11-20,1.0,,1.0
+47,RTW same employer,True,True,1.0,,1.0
+48,RTW with restrictions,True,True,1.0,,1.0
+49,Treating physician (name),"Dr. Emily Rodriguez, Riverside Methodist Hospital Occupational Health","Dr. Emily Rodriguez, Riverside Methodist Hospital Occupational Health",1.0,,1.0
+50,Certified Managed Care Organization (if any),,,1.0,,1.0
+51,Extent of medical treatment - None,False,False,1.0,,1.0
+52,Extent of medical treatment - Minor on-site by employer’s medical staff,False,False,1.0,,1.0
+53,Extent of medical treatment - Minor clinic/hospital,False,True,0.2222222222222222,,0.2222222222222222
+54,Extent of medical treatment - Emergency room,True,False,0.2222222222222222,,0.2222222222222222
+55,Extent of medical treatment - Hospitalization more than 24 hours,False,False,1.0,,1.0
+56,Extent of medical treatment - Future major medical anticipated,False,False,1.0,,1.0
+57,EMPLOYER Legal name,Midwest Home Goods LLC,Midwest Home Goods LLC,1.0,,1.0
+58,EMPLOYER DBA name (if different),Midwest Home Goods,Midwest Home Goods,1.0,,1.0
+59,Mailing address,4550 Commerce Pkwy,4550 Commerce Pkwy,1.0,,1.0
+60,City (mailing),Columbus,Columbus,1.0,,1.0
+61,State (mailing),OH,OH,1.0,,1.0
+62,Zip Code (mailing),43228,43228,1.0,,1.0
+63,Employer FEIN,837654321,83765432,0.9411764705882353,,0.9411764705882353
+64,Unemployment ID #,OH-1234567,OH-1234567,1.0,,1.0
+65,Employer’s contact name,Sarah Jenkins,Sarah Jenkins,1.0,,1.0
+66,Employer’s contact phone #,(614) 555-0134,(614) 555-0134,1.0,,1.0
+67,Physical address (if different),4550 Commerce Pkwy,4550 Commerce,0.8387096774193549,,0.8387096774193549
+68,City (physical),Columbus,Columbus,1.0,,1.0
+69,State (physical),OH,OH,1.0,,1.0
+70,Zip Code (physical),43228,43228,1.0,,1.0
+71,Witness (name),Michael Turner,Michael Turner,1.0,,1.0
+72,Witness (phone),(614) 555-0199,(614) 555-0199,1.0,,1.0
+73,NAICS code,493110,493110,1.0,,1.0
+74,Date form completed,2023-11-22,2023-11-22,1.0,,1.0
+75,INSURER name,Secure Insurance Company,Secure Insurance Company,1.0,,1.0
+76,Insured legal name,John Smith,John Smith,1.0,,1.0
+77,Policy # (including effective dates) or self-insured certificate #,SIC123456789,SIC123456789,1.0,,1.0
+78,Insurer FEIN,941234560,94123456,0.9411764705882353,,0.9411764705882353
+79,Date insurer received notice,2023-11-16,2023-11-16,1.0,,1.0
+80,CLAIMS ADMIN COMPANY (CA) name,Secure Insurance Claims Services,Secure Insurance Claims Services,1.0,,1.0
+81,CA type (check one),Insurer,TPA,0.0,,0.0
+82,CA address,"200 Harbor Point Blvd, Suite 400","200 Harbor Point Blvd, Suite 400",1.0,,1.0
+83,City (CA),Cleveland,Cleveland,1.0,,1.0
+84,State (CA),OH,OH,1.0,,1.0
+85,Zip Code (CA),44114,44114,1.0,,1.0
+86,CA FEIN,941234560,941234560,1.0,,1.0
+87,CA claim #,SIC-OH-2023-011456,SIC-OH-2023-011456,1.0,,1.0
