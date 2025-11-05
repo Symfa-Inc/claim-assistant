@@ -82,7 +82,7 @@
   {
     "order": 17,
     "text": "Self-Insured?",
-    "answer": "No"
+    "answer": false
   },
   {
     "order": 18,
@@ -232,7 +232,7 @@
   {
     "order": 47,
     "text": "Are there Other Part-Time Workers Doing the Same Work With the Same Schedule?",
-    "answer": "No"
+    "answer": false
   },
   {
     "order": 48,
