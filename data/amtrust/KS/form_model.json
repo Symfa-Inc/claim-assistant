@@ -244,7 +244,7 @@
     "alias": null,
     "data_type": "time",
     "meta": {
-      "format": "HH:mm:ss"
+      "format": "h:mm A"
     }
   },
   {
