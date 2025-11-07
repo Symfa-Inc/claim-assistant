@@ -1,4 +1,3 @@
-import os
 from datetime import datetime
 from pathlib import Path
 
@@ -12,22 +11,19 @@ from claim_assistant.views.base_view import BaseView, View
 class ProcessFormView(BaseView):
     def render(self):
         st.title("📄 Process Claim Form")
-        st.markdown("Select a form type and upload a filled PDF to process.")
+        st.markdown("Select a form type and upload or choose a filled PDF to process.")
 
         forms = self.app.available_forms
         if not forms:
             st.warning("⚠️ No processable forms found in `data/forms/`.")
             return
 
-        # --- Simple radio-like button row ---
-        # Ensure session state key exists
+        # --- Select form type ---
         if "selected_form_type" not in st.session_state:
             st.session_state.selected_form_type = None
 
         st.write("### Available Forms")
         cols = st.columns(len(forms))
-        selected_form = st.session_state.get("selected_form_type")
-
         for i, form_name in enumerate(forms):
             with cols[i]:
                 is_selected = st.session_state.selected_form_type == form_name
@@ -39,42 +35,61 @@ class ProcessFormView(BaseView):
                 ):
                     st.session_state.selected_form_type = form_name
 
-        # --- File upload ---
+        selected_form = st.session_state.get("selected_form_type")
+        if not selected_form:
+            st.info("Please select a form type to continue.")
+            return
+
         st.divider()
-        st.subheader(f"📄 Upload filled {selected_form} form")
-        uploaded_file = st.file_uploader(
-            "Choose PDF file",
-            type="pdf",
-            key="upload_pdf",
+        st.subheader(f"📄 Choose or Upload {selected_form} form")
+
+        form_dir = Path(PROJECT_DIR) / "data" / "forms" / selected_form
+        existing_pdfs = [f for f in form_dir.glob("*.pdf") if "form_raw" not in f.name]
+        existing_names = [f.name for f in existing_pdfs]
+
+        # --- File selector or upload ---
+        pdf_choice = st.radio(
+            "Select existing PDF or upload a new one:",
+            ["Upload new"] + existing_names,
+            horizontal=True,
         )
 
-        if uploaded_file and st.button("✨ Process Form", type="primary"):
+        uploaded_file = None
+        input_pdf_path = None
+
+        if pdf_choice == "Upload new":
+            uploaded_file = st.file_uploader(
+                "Upload PDF file",
+                type="pdf",
+                key="upload_pdf",
+            )
+        else:
+            input_pdf_path = form_dir / pdf_choice
+
+        if (uploaded_file or input_pdf_path) and st.button(
+            "✨ Process Form",
+            type="primary",
+        ):
             with st.spinner("Processing form..."):
                 try:
-                    # --- Create run directory ---
                     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-                    run_dir = os.path.join(PROJECT_DIR, "data", "runs", timestamp)
-                    os.makedirs(run_dir, exist_ok=True)
+                    run_dir = Path(PROJECT_DIR) / "data" / "runs" / timestamp
+                    run_dir.mkdir(parents=True, exist_ok=True)
 
-                    # --- Save uploaded file ---
-                    input_pdf_path = Path(run_dir) / f"{selected_form}_input.pdf"
-                    with open(input_pdf_path, "wb") as f:
-                        f.write(uploaded_file.read())
+                    if uploaded_file:
+                        input_pdf_path = run_dir / f"{selected_form}_input.pdf"
+                        with open(input_pdf_path, "wb") as f:
+                            f.write(uploaded_file.read())
+                    else:
+                        # copy existing PDF into run_dir for traceability
+                        target_path = Path(run_dir) / f"{selected_form}_input.pdf"
+                        target_path.write_bytes(Path(input_pdf_path).read_bytes())
+                        input_pdf_path = target_path
 
-                    # --- Resolve form and policy paths ---
-                    form_json_path = (
-                        Path(PROJECT_DIR)
-                        / "data"
-                        / "forms"
-                        / selected_form
-                        / "form_model.json"
-                    )
+                    form_json_path = form_dir / "form_model.json"
                     policy_db_path = (
                         Path(PROJECT_DIR) / "data" / "policies" / "policies.json"
                     )
-                    # policy_db_path = (
-                    #     Path(PROJECT_DIR) / "data" / "policies" / "policies_old.json"
-                    # )
 
                     process_claim(
                         run_dir=run_dir,
@@ -83,7 +98,7 @@ class ProcessFormView(BaseView):
                         policy_db_path=policy_db_path,
                     )
 
-                    st.session_state.run_dir = run_dir
+                    st.session_state.run_dir = str(run_dir)
                     st.session_state.selected_form_type = selected_form
                     self.app.set_view(View.RESULTS)
 
@@ -92,5 +107,7 @@ class ProcessFormView(BaseView):
                     import traceback
 
                     st.text(traceback.format_exc())
-        if st.button("🏠 Back to Home", use_container_width=True):
-            self.app.set_view(View.HOME)
+
+        # Commented out Back to Home
+        # if st.button("🏠 Back to Home", use_container_width=True):
+        #     self.app.set_view(View.HOME)

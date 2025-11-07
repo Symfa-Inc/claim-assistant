@@ -1,0 +1,437 @@
+[
+  {
+    "order": 1,
+    "text": "EMPLOYEE SOCIAL SECURITY #",
+    "answer": "623-54-9182"
+  },
+  {
+    "order": 2,
+    "text": "OSHA case #",
+    "answer": "2023-000127"
+  },
+  {
+    "order": 3,
+    "text": "Time employee began work on date of injury",
+    "answer": "07:30:00"
+  },
+  {
+    "order": 4,
+    "text": "Time employee began work on date of injury (am/pm)",
+    "answer": "AM"
+  },
+  {
+    "order": 5,
+    "text": "DATE OF CLAIMED INJURY",
+    "answer": "2023-12-05"
+  },
+  {
+    "order": 6,
+    "text": "Time of injury",
+    "answer": "09:45:00"
+  },
+  {
+    "order": 7,
+    "text": "Time of injury(am/pm)",
+    "answer": "AM"
+  },
+  {
+    "order": 8,
+    "text": "Date of death",
+    "answer": ""
+  },
+  {
+    "order": 9,
+    "text": "# of dependents (if death is related to injury)",
+    "answer": 0.0
+  },
+  {
+    "order": 10,
+    "text": "EMPLOYEE Last name",
+    "answer": "Doe"
+  },
+  {
+    "order": 11,
+    "text": "EMPLOYEE First name",
+    "answer": "John"
+  },
+  {
+    "order": 12,
+    "text": "EMPLOYEE Middle name",
+    "answer": "Michael"
+  },
+  {
+    "order": 13,
+    "text": "Gender",
+    "answer": "M"
+  },
+  {
+    "order": 14,
+    "text": "Marital status",
+    "answer": "Married"
+  },
+  {
+    "order": 15,
+    "text": "Home address",
+    "answer": "2457 Brookview Lane"
+  },
+  {
+    "order": 16,
+    "text": "Home phone #",
+    "answer": "614-555-0123"
+  },
+  {
+    "order": 17,
+    "text": "Date of birth",
+    "answer": "1985-06-14"
+  },
+  {
+    "order": 18,
+    "text": "Date hired",
+    "answer": "2021-09-01"
+  },
+  {
+    "order": 19,
+    "text": "City",
+    "answer": "Columbus"
+  },
+  {
+    "order": 20,
+    "text": "State",
+    "answer": "OH"
+  },
+  {
+    "order": 21,
+    "text": "Zip Code",
+    "answer": "43215"
+  },
+  {
+    "order": 22,
+    "text": "Occupation",
+    "answer": "Warehouse Associate"
+  },
+  {
+    "order": 23,
+    "text": "Regular department",
+    "answer": "Shipping & Receiving"
+  },
+  {
+    "order": 24,
+    "text": "Apprentice",
+    "answer": false
+  },
+  {
+    "order": 25,
+    "text": "Average weekly wage",
+    "answer": 1150.0
+  },
+  {
+    "order": 26,
+    "text": "Rate per hour",
+    "answer": 28.75
+  },
+  {
+    "order": 27,
+    "text": "Hours per day",
+    "answer": 8.0
+  },
+  {
+    "order": 28,
+    "text": "Days per week",
+    "answer": 5.0
+  },
+  {
+    "order": 29,
+    "text": "Normal work schedule Sun",
+    "answer": false
+  },
+  {
+    "order": 30,
+    "text": "Normal work schedule Mon",
+    "answer": true
+  },
+  {
+    "order": 31,
+    "text": "Normal work schedule Tue",
+    "answer": true
+  },
+  {
+    "order": 32,
+    "text": "Normal work schedule Wed",
+    "answer": true
+  },
+  {
+    "order": 33,
+    "text": "Normal work schedule Thu",
+    "answer": true
+  },
+  {
+    "order": 34,
+    "text": "Normal work schedule Fri",
+    "answer": true
+  },
+  {
+    "order": 35,
+    "text": "Normal work schedule Sat",
+    "answer": false
+  },
+  {
+    "order": 36,
+    "text": "Employment status",
+    "answer": "Full time"
+  },
+  {
+    "order": 37,
+    "text": "Tell us how the injury/illness occurred, what the employee was doing before the incident (give details), and what the injury/illness was.",
+    "answer": "While lifting a 60-lb box from a pallet in the warehouse, the employee stepped onto a wet spot near the loading bay, slipped, and twisted to avoid falling. He immediately felt sharp pain in his lower back and had difficulty standing upright."
+  },
+  {
+    "order": 38,
+    "text": "What was the injury or illness (include the part(s) of body)?",
+    "answer": "Acute lumbar strain/sprain affecting the lower back with associated muscle spasm; no radiating pain to legs reported"
+  },
+  {
+    "order": 39,
+    "text": "What tools, equipment, machines, objects, or substances were involved?",
+    "answer": "Pallet jack, shrink-wrapped cardboard boxes, concrete warehouse floor, residual cleaning solution/water on floor near loading bay."
+  },
+  {
+    "order": 40,
+    "text": "Did injury occur on employer’s premises?",
+    "answer": true
+  },
+  {
+    "order": 41,
+    "text": "Name and address of the place of the occurrence",
+    "answer": "Lakeview Packaging, LLC - Warehouse A, 1200 Industrial Park Dr., Columbus, OH 43228"
+  },
+  {
+    "order": 42,
+    "text": "Date of first day of any lost time",
+    "answer": "2023-12-06"
+  },
+  {
+    "order": 43,
+    "text": "Employer paid for lost time on day of injury (DOI)",
+    "answer": "Yes"
+  },
+  {
+    "order": 44,
+    "text": "Date employer notified of injury",
+    "answer": "2023-12-06"
+  },
+  {
+    "order": 45,
+    "text": "Date employer notified of lost time",
+    "answer": "2023-12-06"
+  },
+  {
+    "order": 46,
+    "text": "Return to work date",
+    "answer": "2023-12-12"
+  },
+  {
+    "order": 47,
+    "text": "RTW same employer",
+    "answer": true
+  },
+  {
+    "order": 48,
+    "text": "RTW with restrictions",
+    "answer": true
+  },
+  {
+    "order": 49,
+    "text": "Treating physician (name)",
+    "answer": "Dr. Melissa Nguyen, MD"
+  },
+  {
+    "order": 50,
+    "text": "Certified Managed Care Organization (if any)",
+    "answer": "N/A"
+  },
+  {
+    "order": 51,
+    "text": "Extent of medical treatment - None",
+    "answer": false
+  },
+  {
+    "order": 52,
+    "text": "Extent of medical treatment - Minor on-site by employer’s medical staff",
+    "answer": false
+  },
+  {
+    "order": 53,
+    "text": "Extent of medical treatment - Minor clinic/hospital",
+    "answer": true
+  },
+  {
+    "order": 54,
+    "text": "Extent of medical treatment - Emergency room",
+    "answer": false
+  },
+  {
+    "order": 55,
+    "text": "Extent of medical treatment - Hospitalization more than 24 hours",
+    "answer": false
+  },
+  {
+    "order": 56,
+    "text": "Extent of medical treatment - Future major medical anticipated",
+    "answer": false
+  },
+  {
+    "order": 57,
+    "text": "EMPLOYER Legal name",
+    "answer": "Lakeview Packaging, LLC"
+  },
+  {
+    "order": 58,
+    "text": "EMPLOYER DBA name (if different)",
+    "answer": "Lakeview Pack & Ship"
+  },
+  {
+    "order": 59,
+    "text": "Mailing address",
+    "answer": "1200 Industrial Park Dr."
+  },
+  {
+    "order": 60,
+    "text": "City (mailing)",
+    "answer": "Columbus"
+  },
+  {
+    "order": 61,
+    "text": "State (mailing)",
+    "answer": "OH"
+  },
+  {
+    "order": 62,
+    "text": "Zip Code (mailing)",
+    "answer": "43228"
+  },
+  {
+    "order": 63,
+    "text": "Employer FEIN",
+    "answer": "814567890"
+  },
+  {
+    "order": 64,
+    "text": "Unemployment ID #",
+    "answer": "OH-9876543"
+  },
+  {
+    "order": 65,
+    "text": "Employer’s contact name",
+    "answer": "Sarah Thompson, HR Manager"
+  },
+  {
+    "order": 66,
+    "text": "Employer’s contact phone #",
+    "answer": "614-555-0162"
+  },
+  {
+    "order": 67,
+    "text": "Physical address (if different)",
+    "answer": "1200 Industrial Park Dr."
+  },
+  {
+    "order": 68,
+    "text": "City (physical)",
+    "answer": "Columbus"
+  },
+  {
+    "order": 69,
+    "text": "State (physical)",
+    "answer": "OH"
+  },
+  {
+    "order": 70,
+    "text": "Zip Code (physical)",
+    "answer": "43228"
+  },
+  {
+    "order": 71,
+    "text": "Witness (name)",
+    "answer": "Carlos Mendez"
+  },
+  {
+    "order": 72,
+    "text": "Witness (phone)",
+    "answer": "614-555-0147"
+  },
+  {
+    "order": 73,
+    "text": "NAICS code",
+    "answer": "493110"
+  },
+  {
+    "order": 74,
+    "text": "Date form completed",
+    "answer": "2023-12-15"
+  },
+  {
+    "order": 75,
+    "text": "INSURER name",
+    "answer": "Globe Mutual Insurance Co."
+  },
+  {
+    "order": 76,
+    "text": "Insured legal name",
+    "answer": "John Doe"
+  },
+  {
+    "order": 77,
+    "text": "Policy # (including effective dates) or self-insured certificate #",
+    "answer": "POL123456789"
+  },
+  {
+    "order": 78,
+    "text": "Insurer FEIN",
+    "answer": "956012345"
+  },
+  {
+    "order": 79,
+    "text": "Date insurer received notice",
+    "answer": "2023-12-07"
+  },
+  {
+    "order": 80,
+    "text": "CLAIMS ADMIN COMPANY (CA) name",
+    "answer": "Globe Mutual Insurance Co."
+  },
+  {
+    "order": 81,
+    "text": "CA type (check one)",
+    "answer": "Insurer"
+  },
+  {
+    "order": 82,
+    "text": "CA address",
+    "answer": "500 Lakeside Ave E, Suite 900"
+  },
+  {
+    "order": 83,
+    "text": "City (CA)",
+    "answer": "Cleveland"
+  },
+  {
+    "order": 84,
+    "text": "State (CA)",
+    "answer": "OH"
+  },
+  {
+    "order": 85,
+    "text": "Zip Code (CA)",
+    "answer": "44114"
+  },
+  {
+    "order": 86,
+    "text": "CA FEIN",
+    "answer": "956012345"
+  },
+  {
+    "order": 87,
+    "text": "CA claim #",
+    "answer": "GMIC-OH-2023-118472"
+  }
+]

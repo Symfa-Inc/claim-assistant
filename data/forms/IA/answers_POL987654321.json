@@ -1,0 +1,447 @@
+[
+  {
+    "order": 1,
+    "text": "Jurisdiction Code",
+    "answer": "WA"
+  },
+  {
+    "order": 2,
+    "text": "Claim Administrator Name",
+    "answer": "Evergreen Casualty Claims Services"
+  },
+  {
+    "order": 3,
+    "text": "Claim Representative Business Phone Number",
+    "answer": "(206) 555-0103"
+  },
+  {
+    "order": 4,
+    "text": "Insurer Name (if different than claim administrator)",
+    "answer": "Evergreen Casualty Insurance Company"
+  },
+  {
+    "order": 5,
+    "text": "Mailing Address, City, State, & Postal Code",
+    "answer": "2000 4th Ave, Suite 1200, Seattle, WA 98121"
+  },
+  {
+    "order": 6,
+    "text": "Claim Administrator Claim Number",
+    "answer": "ECC-2024-WA-006784"
+  },
+  {
+    "order": 7,
+    "text": "Insurer FEIN",
+    "answer": "91-6543210"
+  },
+  {
+    "order": 8,
+    "text": "Claim Administrator FEIN",
+    "answer": "91-1234567"
+  },
+  {
+    "order": 9,
+    "text": "Claim Type Code",
+    "answer": "LT - Lost Time"
+  },
+  {
+    "order": 10,
+    "text": "Employer Name",
+    "answer": "Harborview Market LLC"
+  },
+  {
+    "order": 11,
+    "text": "Employer FEIN",
+    "answer": "84-3021679"
+  },
+  {
+    "order": 12,
+    "text": "Insured Report Number",
+    "answer": "IR-2024-0618-01"
+  },
+  {
+    "order": 13,
+    "text": "Employer Type Code",
+    "answer": "Employer (E)"
+  },
+  {
+    "order": 14,
+    "text": "Physical Address, City, State, & Postal Code",
+    "answer": "500 Pine St, Seattle, WA 98101"
+  },
+  {
+    "order": 15,
+    "text": "Mailing Address, City, State, & Postal Code",
+    "answer": "500 Pine St, Seattle, WA 98101"
+  },
+  {
+    "order": 16,
+    "text": "Industry Code",
+    "answer": "NAICS 445110"
+  },
+  {
+    "order": 17,
+    "text": "Insured Location Number",
+    "answer": "001-DTSEA"
+  },
+  {
+    "order": 18,
+    "text": "Employer UI Number",
+    "answer": "WA-765432-1"
+  },
+  {
+    "order": 19,
+    "text": "Nature of Business",
+    "answer": "Retail grocery store"
+  },
+  {
+    "order": 20,
+    "text": "Employer Contact Name and Business Phone Number",
+    "answer": "Laura Chen, (206) 555-0144"
+  },
+  {
+    "order": 21,
+    "text": "Insured Name (parent company if different than employer)",
+    "answer": "Harborview Holdings Inc."
+  },
+  {
+    "order": 22,
+    "text": "Insured FEIN",
+    "answer": "88-7654321"
+  },
+  {
+    "order": 23,
+    "text": "Insured Postal Code",
+    "answer": "98101"
+  },
+  {
+    "order": 24,
+    "text": "Policy/Contract Number",
+    "answer": "POL987654321"
+  },
+  {
+    "order": 25,
+    "text": "Coverage Effective Date",
+    "answer": "2023-01-12"
+  },
+  {
+    "order": 26,
+    "text": "Coverage Expiration Date",
+    "answer": "2025-01-12"
+  },
+  {
+    "order": 27,
+    "text": "Self Insurance License/ Certificate Number",
+    "answer": "N/A"
+  },
+  {
+    "order": 28,
+    "text": "Employee Name - First",
+    "answer": "Emily"
+  },
+  {
+    "order": 29,
+    "text": "Employee Name - Middle",
+    "answer": "Marie"
+  },
+  {
+    "order": 30,
+    "text": "Employee Name - Last",
+    "answer": "Johnson"
+  },
+  {
+    "order": 31,
+    "text": "Date of Birth",
+    "answer": "1991-03-14"
+  },
+  {
+    "order": 32,
+    "text": "Gender",
+    "answer": "Female (F)"
+  },
+  {
+    "order": 33,
+    "text": "Tax Filing Status",
+    "answer": "Single (A)"
+  },
+  {
+    "order": 34,
+    "text": "Mailing Address, City, State, & Postal Code",
+    "answer": "742 Pinehurst Ave, Apt 3B, Seattle, WA 98109"
+  },
+  {
+    "order": 35,
+    "text": "Date of Hire",
+    "answer": "2023-04-10"
+  },
+  {
+    "order": 36,
+    "text": "State of Hire",
+    "answer": "WA"
+  },
+  {
+    "order": 37,
+    "text": "Educational Level (grade completed)",
+    "answer": "14"
+  },
+  {
+    "order": 38,
+    "text": "Phone Number (include area code)",
+    "answer": "(206) 555-0176"
+  },
+  {
+    "order": 39,
+    "text": "Email",
+    "answer": "emily.johnson@example.com"
+  },
+  {
+    "order": 40,
+    "text": "Occupation Description",
+    "answer": "Grocery stock clerk"
+  },
+  {
+    "order": 41,
+    "text": "NCCI Classification Code",
+    "answer": "8033"
+  },
+  {
+    "order": 42,
+    "text": "Department Where Regularly Worked",
+    "answer": "Stocking and Receiving"
+  },
+  {
+    "order": 43,
+    "text": "Employment Status",
+    "answer": "Regular Employee/Full-Time"
+  },
+  {
+    "order": 44,
+    "text": "Employee ID Number (ID Type)",
+    "answer": "Social Security Number"
+  },
+  {
+    "order": 45,
+    "text": "ID #",
+    "answer": "987-65-4321"
+  },
+  {
+    "order": 46,
+    "text": "Marital Status",
+    "answer": "Unmarried/Single/Divorced (U)"
+  },
+  {
+    "order": 47,
+    "text": "Employee’s Authorization to Release Medical Records",
+    "answer": true
+  },
+  {
+    "order": 48,
+    "text": "Employee’s Authorization to Release Social Security Number",
+    "answer": false
+  },
+  {
+    "order": 49,
+    "text": "Average Wage $",
+    "answer": 21.5
+  },
+  {
+    "order": 50,
+    "text": "Average Wage Frequency",
+    "answer": "hourly"
+  },
+  {
+    "order": 51,
+    "text": "Number of Days Regularly Worked Per Week",
+    "answer": 5.0
+  },
+  {
+    "order": 52,
+    "text": "Salary Continued In Lieu of Compensation",
+    "answer": false
+  },
+  {
+    "order": 53,
+    "text": "Full Wages Paid for Date of Injury",
+    "answer": true
+  },
+  {
+    "order": 54,
+    "text": "Discontinued Fringe Benefits $",
+    "answer": 0.0
+  },
+  {
+    "order": 55,
+    "text": "Employee Number of Dependents",
+    "answer": 0.0
+  },
+  {
+    "order": 56,
+    "text": "Employee Number of Exemptions",
+    "answer": 1.0
+  },
+  {
+    "order": 57,
+    "text": "Exemptions Type",
+    "answer": "Withholding"
+  },
+  {
+    "order": 58,
+    "text": "Date of Injury",
+    "answer": "2024-06-18"
+  },
+  {
+    "order": 59,
+    "text": "Date Employer Had Knowledge of the Injury",
+    "answer": "2024-06-18"
+  },
+  {
+    "order": 60,
+    "text": "Date Claim Administrator Had Knowledge of the Injury",
+    "answer": "2024-06-20"
+  },
+  {
+    "order": 61,
+    "text": "Initial Date Last Day Worked",
+    "answer": "2024-06-18"
+  },
+  {
+    "order": 62,
+    "text": "Initial Return to Work Date (if applicable)",
+    "answer": "2024-06-20"
+  },
+  {
+    "order": 63,
+    "text": "Employee Date of Death (if applicable)",
+    "answer": ""
+  },
+  {
+    "order": 64,
+    "text": "Time of Injury",
+    "answer": "10:20:00"
+  },
+  {
+    "order": 65,
+    "text": "Time Employee Began Work",
+    "answer": "08:00:00"
+  },
+  {
+    "order": 66,
+    "text": "Pre-Existing Disability Code",
+    "answer": "No"
+  },
+  {
+    "order": 67,
+    "text": "Accident Premises Code",
+    "answer": "Employer (E)"
+  },
+  {
+    "order": 68,
+    "text": "Accident Site Organization Name",
+    "answer": "Harborview Market - Downtown"
+  },
+  {
+    "order": 69,
+    "text": "Accident Site Street, City, State, & Postal Code",
+    "answer": "500 Pine St, Seattle, WA 98101"
+  },
+  {
+    "order": 70,
+    "text": "Accident Location Narrative (if no street address)",
+    "answer": "N/A - street address provided"
+  },
+  {
+    "order": 71,
+    "text": "Accident Site County/Parish",
+    "answer": "King"
+  },
+  {
+    "order": 72,
+    "text": "Type of Injury / Illness Code",
+    "answer": "130 - Strain/Sprain"
+  },
+  {
+    "order": 73,
+    "text": "Describe the nature of the injury",
+    "answer": "Acute lumbar strain with muscle spasm after lifting inventory; radiating pain but no neurological deficits"
+  },
+  {
+    "order": 74,
+    "text": "Part of Body Affected Code",
+    "answer": "311 - Lower Back Area"
+  },
+  {
+    "order": 75,
+    "text": "Part(s) of body directly affected by the injury or illness",
+    "answer": "Lower back (lumbar region)"
+  },
+  {
+    "order": 76,
+    "text": "Describe the events that caused the injury",
+    "answer": "While lifting a ~40 lb box from a pallet and pivoting to place it on a shelf, employee felt a sudden sharp pain in the lower back followed by stiffness"
+  },
+  {
+    "order": 77,
+    "text": "Name the object or substance that directly injured the employee",
+    "answer": "Cardboard box being lifted; wooden pallet"
+  },
+  {
+    "order": 78,
+    "text": "Specify activity the employee was engaged in when the event occurred",
+    "answer": "Unloading and shelving grocery inventory; part of normal job duties."
+  },
+  {
+    "order": 79,
+    "text": "Witness Name",
+    "answer": "Jordan Patel"
+  },
+  {
+    "order": 80,
+    "text": "Witness Business Phone Number",
+    "answer": "(206) 555-0162"
+  },
+  {
+    "order": 81,
+    "text": "Initial Treatment Code",
+    "answer": "clinic/hospital visit (2)"
+  },
+  {
+    "order": 82,
+    "text": "Initial Medical Provider Name",
+    "answer": "Swedish First Hill Occupational Health Clinic"
+  },
+  {
+    "order": 83,
+    "text": "Initial Medical Provider Physical Address, City, State, & Postal Code",
+    "answer": "1101 Madison St, Seattle, WA 98104"
+  },
+  {
+    "order": 84,
+    "text": "Managed Care Organization Name or ID Number",
+    "answer": "Evergreen Occupational Health Network - MCO# EOHN5421"
+  },
+  {
+    "order": 85,
+    "text": "ICD Primary Diagnostic Code (if known)",
+    "answer": "M54.50 - Low back pain, unspecified"
+  },
+  {
+    "order": 86,
+    "text": "Preparer’s Name & Title",
+    "answer": "Laura Chen, HR Manager"
+  },
+  {
+    "order": 87,
+    "text": "Preparer's Company Name",
+    "answer": "Harborview Market LLC"
+  },
+  {
+    "order": 88,
+    "text": "Preparer Phone Number",
+    "answer": "(206) 555-0144"
+  },
+  {
+    "order": 89,
+    "text": "Preparer Date",
+    "answer": "2024-06-20"
+  }
+]

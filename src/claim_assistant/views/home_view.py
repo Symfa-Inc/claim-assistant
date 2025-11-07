@@ -7,6 +7,10 @@ class HomeView(BaseView):
     """Landing view — lets the user choose between modes."""
 
     def render(self):
+        # Default behavior: redirect to Process Form
+        self.app.set_view(View.PROCESS_FORM)
+
+    def _render_old_home(self):
         st.title("🤖 Claim Assistant")
         st.markdown(
             """
