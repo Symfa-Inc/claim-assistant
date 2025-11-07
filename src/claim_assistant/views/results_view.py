@@ -22,15 +22,11 @@ class ResultsView(BaseView):
         input_pdf = next(run_path.glob("*_input.pdf"), None)
         summary_pdf = run_path / "claim_summary.pdf"
 
-        # --- Read PDFs safely ---
-        input_pdf_bytes = None
-        summary_pdf_bytes = None
-        if input_pdf and input_pdf.exists():
-            input_pdf_bytes = input_pdf.read_bytes()
-        if summary_pdf.exists():
-            summary_pdf_bytes = summary_pdf.read_bytes()
+        input_pdf_bytes = (
+            input_pdf.read_bytes() if input_pdf and input_pdf.exists() else None
+        )
+        summary_pdf_bytes = summary_pdf.read_bytes() if summary_pdf.exists() else None
 
-        # --- Display PDFs ---
         col1, col2 = st.columns(2)
 
         with col1:
@@ -59,22 +55,12 @@ class ResultsView(BaseView):
             else:
                 st.warning("No summary PDF found.")
 
-        # --- Footer Buttons (separate container) ---
         st.divider()
         footer = st.container()
         with footer:
-            col1, col2 = st.columns(2)
-            with col1:
-                if st.button(
-                    "📄 Process Another Form",
-                    use_container_width=True,
-                    key="btn_process_another",
-                ):
-                    self.app.set_view(View.PROCESS_FORM)
-            with col2:
-                if st.button(
-                    "🏠 Back to Main Menu",
-                    use_container_width=True,
-                    key="btn_back_home",
-                ):
-                    self.app.set_view(View.HOME)
+            if st.button(
+                "📄 Process Another Form",
+                use_container_width=True,
+                key="btn_process_another",
+            ):
+                self.app.set_view(View.PROCESS_FORM)
