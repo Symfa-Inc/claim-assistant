@@ -111,15 +111,15 @@ if __name__ == "__main__":
     input_pdf_path = os.path.join(
         PROJECT_DIR,
         "data",
-        "demo",
-        "dwc",
-        "filled_digital.pdf",
+        "forms",
+        "IA",
+        "form_hw_POL123456789.pdf",
     )
     form_json_path = os.path.join(
         PROJECT_DIR,
         "data",
         "forms",
-        "demo_DWC",
+        "IA",
         "form_model.json",
     )
 
