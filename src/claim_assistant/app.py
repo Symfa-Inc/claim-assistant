@@ -16,7 +16,12 @@ from claim_assistant.views import (
 
 class ClaimAssistantApp:
     def __init__(self):
-        st.set_page_config(page_title="Claim Assistant", page_icon="🤖", layout="wide")
+        st.set_page_config(
+            page_title="Claim Assistant - AI-Powered Form Processing",
+            page_icon="🤖",
+            layout="wide",
+            initial_sidebar_state="collapsed",
+        )
         self.forms_dir = Path(os.path.join(PROJECT_DIR, "data", "forms"))
         self.available_forms = self._discover_forms()
         self.current_view: View = st.session_state.get("current_view", View.HOME)
