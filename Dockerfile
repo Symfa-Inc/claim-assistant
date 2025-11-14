@@ -21,15 +21,15 @@ WORKDIR /app
 
 # Install Python dependencies
 COPY pyproject.toml uv.lock README.md ./
+COPY src ./src
 RUN pip install --upgrade pip setuptools wheel \
     && pip install "uv>=0.4.20" \
     && uv pip install --system .
-
-# Copy application code
-COPY src ./src
 COPY data ./data
 COPY metrics ./metrics
 
 # Default Streamlit command
+ENV PYTHONPATH=/app/src
+
 EXPOSE 8501
 CMD ["streamlit", "run", "src/claim_assistant/app.py"]
