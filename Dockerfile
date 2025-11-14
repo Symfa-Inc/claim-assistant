@@ -33,4 +33,3 @@ ENV PYTHONPATH=/app/src
 
 EXPOSE 8501
 CMD ["streamlit", "run", "src/claim_assistant/app.py"]
-
