@@ -1,0 +1,822 @@
+[
+  {
+    "order": 1,
+    "text": "Jurisdiction Code",
+    "description": null,
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 2,
+    "text": "Claim Administrator Name",
+    "description": null,
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 3,
+    "text": "Claim Representative Business Phone Number",
+    "description": "Include area code",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 4,
+    "text": "Insurer Name (if different than claim administrator)",
+    "description": null,
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 5,
+    "text": "Mailing Address, City, State, & Postal Code",
+    "description": "Claim administrator mailing address",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 6,
+    "text": "Claim Administrator Claim Number",
+    "description": null,
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 7,
+    "text": "Insurer FEIN",
+    "description": "Federal Employer Identification Number for insurer",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 8,
+    "text": "Claim Administrator FEIN",
+    "description": "Federal Employer Identification Number for claim administrator",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 9,
+    "text": "Claim Type Code",
+    "description": null,
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 10,
+    "text": "Employer Name",
+    "description": null,
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 11,
+    "text": "Employer FEIN",
+    "description": null,
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 12,
+    "text": "Insured Report Number",
+    "description": null,
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 13,
+    "text": "Employer Type Code",
+    "description": "Check applicable: Employer (E) or Lessor (L)",
+    "alias": null,
+    "data_type": "enum",
+    "meta": {
+      "labels": [
+        "Employer (E)",
+        "Lessor (L)"
+      ]
+    }
+  },
+  {
+    "order": 14,
+    "text": "Physical Address, City, State, & Postal Code",
+    "description": "Employer physical address",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 15,
+    "text": "Mailing Address, City, State, & Postal Code",
+    "description": "Employer mailing address",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 16,
+    "text": "Industry Code",
+    "description": null,
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 17,
+    "text": "Insured Location Number",
+    "description": null,
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 18,
+    "text": "Employer UI Number",
+    "description": "Unemployment Insurance account number",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 19,
+    "text": "Nature of Business",
+    "description": null,
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 20,
+    "text": "Employer Contact Name and Business Phone Number",
+    "description": null,
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 21,
+    "text": "Insured Name (parent company if different than employer)",
+    "description": null,
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 22,
+    "text": "Insured FEIN",
+    "description": null,
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 23,
+    "text": "Insured Postal Code",
+    "description": null,
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 24,
+    "text": "Policy/Contract Number",
+    "description": "Identifier for the insurance policy or contract",
+    "alias": "policy_id",
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 25,
+    "text": "Coverage Effective Date",
+    "description": null,
+    "alias": null,
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 26,
+    "text": "Coverage Expiration Date",
+    "description": null,
+    "alias": null,
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 27,
+    "text": "Self Insurance License/ Certificate Number",
+    "description": null,
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 28,
+    "text": "Employee Name - First",
+    "description": "Employee given name (from 'Employee Name (First, Middle, Last, & Suffix)')",
+    "alias": "first_name",
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 29,
+    "text": "Employee Name - Middle",
+    "description": "Employee middle name",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 30,
+    "text": "Employee Name - Last",
+    "description": "Employee family name",
+    "alias": "last_name",
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 31,
+    "text": "Date of Birth",
+    "description": null,
+    "alias": null,
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 32,
+    "text": "Gender",
+    "description": "Select employee gender",
+    "alias": null,
+    "data_type": "enum",
+    "meta": {
+      "labels": [
+        "Male (M)",
+        "Female (F)",
+        "Transgender (T)",
+        "Non-Binary (X)",
+        "Unknown (U)"
+      ]
+    }
+  },
+  {
+    "order": 33,
+    "text": "Tax Filing Status",
+    "description": "Check one",
+    "alias": null,
+    "data_type": "enum",
+    "meta": {
+      "labels": [
+        "Single (A)",
+        "Single/Head of Household (B)",
+        "Married/Filing Joint (C)",
+        "Married/Filing Separate (D)"
+      ]
+    }
+  },
+  {
+    "order": 34,
+    "text": "Mailing Address, City, State, & Postal Code",
+    "description": "Employee mailing address",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 35,
+    "text": "Date of Hire",
+    "description": null,
+    "alias": null,
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 36,
+    "text": "State of Hire",
+    "description": null,
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 37,
+    "text": "Educational Level (grade completed)",
+    "description": "Enter grade completed (GED = 12)",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 38,
+    "text": "Phone Number (include area code)",
+    "description": null,
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 39,
+    "text": "Email",
+    "description": "Employee email address",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 40,
+    "text": "Occupation Description",
+    "description": null,
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 41,
+    "text": "NCCI Classification Code",
+    "description": null,
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 42,
+    "text": "Department Where Regularly Worked",
+    "description": null,
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 43,
+    "text": "Employment Status",
+    "description": "Check one",
+    "alias": null,
+    "data_type": "enum",
+    "meta": {
+      "labels": [
+        "Piece Worker",
+        "Volunteer",
+        "Seasonal",
+        "Apprenticeship/Full-Time",
+        "Apprenticeship/Part-Time",
+        "Regular Employee/Full-Time",
+        "Part-Time",
+        "Other"
+      ]
+    }
+  },
+  {
+    "order": 44,
+    "text": "Employee ID Number (ID Type)",
+    "description": "Check the type of ID provided",
+    "alias": null,
+    "data_type": "enum",
+    "meta": {
+      "labels": [
+        "Social Security Number",
+        "Employment VISA Number",
+        "Passport Number",
+        "Green Card",
+        "Employee ID Assigned by Jurisdiction"
+      ]
+    }
+  },
+  {
+    "order": 45,
+    "text": "ID #",
+    "description": "Employee identification number",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 46,
+    "text": "Marital Status",
+    "description": "Check one",
+    "alias": null,
+    "data_type": "enum",
+    "meta": {
+      "labels": [
+        "Unmarried/Single/Divorced (U)",
+        "Married (M)",
+        "Separated (S)"
+      ]
+    }
+  },
+  {
+    "order": 47,
+    "text": "Employee’s Authorization to Release Medical Records",
+    "description": "Employee authorization: yes/no",
+    "alias": null,
+    "data_type": "boolean",
+    "meta": {}
+  },
+  {
+    "order": 48,
+    "text": "Employee’s Authorization to Release Social Security Number",
+    "description": "Employee authorization to release SSN: yes/no",
+    "alias": null,
+    "data_type": "boolean",
+    "meta": {}
+  },
+  {
+    "order": 49,
+    "text": "Average Wage $",
+    "description": "Numeric dollar amount",
+    "alias": null,
+    "data_type": "number",
+    "meta": {}
+  },
+  {
+    "order": 50,
+    "text": "Average Wage Frequency",
+    "description": "Check one (how average wage is paid)",
+    "alias": null,
+    "data_type": "enum",
+    "meta": {
+      "labels": [
+        "hourly",
+        "daily",
+        "semi-monthly",
+        "monthly",
+        "bi-weekly",
+        "annual",
+        "weekly"
+      ]
+    }
+  },
+  {
+    "order": 51,
+    "text": "Number of Days Regularly Worked Per Week",
+    "description": null,
+    "alias": null,
+    "data_type": "number",
+    "meta": {}
+  },
+  {
+    "order": 52,
+    "text": "Salary Continued In Lieu of Compensation",
+    "description": "yes/no",
+    "alias": null,
+    "data_type": "boolean",
+    "meta": {}
+  },
+  {
+    "order": 53,
+    "text": "Full Wages Paid for Date of Injury",
+    "description": "yes/no",
+    "alias": null,
+    "data_type": "boolean",
+    "meta": {}
+  },
+  {
+    "order": 54,
+    "text": "Discontinued Fringe Benefits $",
+    "description": "Dollar amount",
+    "alias": null,
+    "data_type": "number",
+    "meta": {}
+  },
+  {
+    "order": 55,
+    "text": "Employee Number of Dependents",
+    "description": null,
+    "alias": null,
+    "data_type": "number",
+    "meta": {}
+  },
+  {
+    "order": 56,
+    "text": "Employee Number of Exemptions",
+    "description": null,
+    "alias": null,
+    "data_type": "number",
+    "meta": {}
+  },
+  {
+    "order": 57,
+    "text": "Exemptions Type",
+    "description": "Check one",
+    "alias": null,
+    "data_type": "enum",
+    "meta": {
+      "labels": [
+        "Entitled",
+        "Withholding"
+      ]
+    }
+  },
+  {
+    "order": 58,
+    "text": "Date of Injury",
+    "description": "Date when the injury occurred",
+    "alias": "date_of_incident",
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 59,
+    "text": "Date Employer Had Knowledge of the Injury",
+    "description": null,
+    "alias": null,
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 60,
+    "text": "Date Claim Administrator Had Knowledge of the Injury",
+    "description": null,
+    "alias": null,
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 61,
+    "text": "Initial Date Last Day Worked",
+    "description": null,
+    "alias": null,
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 62,
+    "text": "Initial Return to Work Date (if applicable)",
+    "description": null,
+    "alias": null,
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 63,
+    "text": "Employee Date of Death (if applicable)",
+    "description": null,
+    "alias": null,
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 64,
+    "text": "Time of Injury",
+    "description": null,
+    "alias": null,
+    "data_type": "time",
+    "meta": {
+      "format": "h:mm A"
+    }
+  },
+  {
+    "order": 65,
+    "text": "Time Employee Began Work",
+    "description": null,
+    "alias": null,
+    "data_type": "time",
+    "meta": {
+      "format": "h:mm A"
+    }
+  },
+  {
+    "order": 66,
+    "text": "Pre-Existing Disability Code",
+    "description": "Check one",
+    "alias": null,
+    "data_type": "enum",
+    "meta": {
+      "labels": [
+        "Yes",
+        "No",
+        "Unknown"
+      ]
+    }
+  },
+  {
+    "order": 67,
+    "text": "Accident Premises Code",
+    "description": "Check one",
+    "alias": null,
+    "data_type": "enum",
+    "meta": {
+      "labels": [
+        "Employer (E)",
+        "Lessee (L)",
+        "Other (X)",
+        "Employee Residence (R)"
+      ]
+    }
+  },
+  {
+    "order": 68,
+    "text": "Accident Site Organization Name",
+    "description": null,
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 69,
+    "text": "Accident Site Street, City, State, & Postal Code",
+    "description": null,
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 70,
+    "text": "Accident Location Narrative (if no street address)",
+    "description": null,
+    "alias": null,
+    "data_type": "text",
+    "meta": {}
+  },
+  {
+    "order": 71,
+    "text": "Accident Site County/Parish",
+    "description": null,
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 72,
+    "text": "Type of Injury / Illness Code",
+    "description": null,
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 73,
+    "text": "Describe the nature of the injury",
+    "description": "e.g., amputation, burn, cut, fracture",
+    "alias": null,
+    "data_type": "text",
+    "meta": {}
+  },
+  {
+    "order": 74,
+    "text": "Part of Body Affected Code",
+    "description": "Code for the body part affected",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 75,
+    "text": "Part(s) of body directly affected by the injury or illness",
+    "description": "e.g., hand, arm, circulatory system",
+    "alias": null,
+    "data_type": "text",
+    "meta": {}
+  },
+  {
+    "order": 76,
+    "text": "Describe the events that caused the injury",
+    "description": "e.g., fell, operating machinery, chemical exposure",
+    "alias": null,
+    "data_type": "text",
+    "meta": {}
+  },
+  {
+    "order": 77,
+    "text": "Name the object or substance that directly injured the employee",
+    "description": "e.g., knife, floor, acid, oil",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 78,
+    "text": "Specify activity the employee was engaged in when the event occurred",
+    "description": "Indicate if activity was part of normal duties",
+    "alias": null,
+    "data_type": "text",
+    "meta": {}
+  },
+  {
+    "order": 79,
+    "text": "Witness Name",
+    "description": null,
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 80,
+    "text": "Witness Business Phone Number",
+    "description": null,
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 81,
+    "text": "Initial Treatment Code",
+    "description": "Check one for initial treatment",
+    "alias": null,
+    "data_type": "enum",
+    "meta": {
+      "labels": [
+        "no medical treatment (0)",
+        "minor/on-site treatment (1)",
+        "clinic/hospital visit (2)",
+        "emergency care (3)",
+        "hospitalization > 24 hours (4)",
+        "future medical treatment/lost time anticipated (5)"
+      ]
+    }
+  },
+  {
+    "order": 82,
+    "text": "Initial Medical Provider Name",
+    "description": null,
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 83,
+    "text": "Initial Medical Provider Physical Address, City, State, & Postal Code",
+    "description": null,
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 84,
+    "text": "Managed Care Organization Name or ID Number",
+    "description": null,
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 85,
+    "text": "ICD Primary Diagnostic Code (if known)",
+    "description": null,
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 86,
+    "text": "Preparer’s Name & Title",
+    "description": null,
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 87,
+    "text": "Preparer's Company Name",
+    "description": null,
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 88,
+    "text": "Preparer Phone Number",
+    "description": null,
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 89,
+    "text": "Preparer Date",
+    "description": null,
+    "alias": null,
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  }
+]

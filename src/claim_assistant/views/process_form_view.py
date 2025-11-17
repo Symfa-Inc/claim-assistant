@@ -8,11 +8,13 @@ from claim_assistant.main import main as process_claim
 from claim_assistant.views.base_view import BaseView, View
 
 STATE_MAP = {
+    "FL": "Florida",
     "IA": "Iowa",
     "KS": "Kansas",
     "MN": "Minnesota",
-    "FL": "Florida",
     "NH": "New Hampshire",
+    "NY": "New York",
+    "OH": "Ohio",
     "WI": "Wisconsin",
 }
 
@@ -379,7 +381,17 @@ class ProcessFormView(BaseView):
         if selected == upload_key and uploaded_file:
             st.info(f"File ready: {uploaded_file.name}")
 
-            selected_form = st.selectbox("Select form type", forms)
+            # Map 2-letter codes → full names for display
+            full_state_labels = [STATE_MAP.get(f, f) for f in forms]
+
+            # Reverse lookup dictionary (label → code)
+            state_reverse_map = {STATE_MAP.get(f, f): f for f in forms}
+
+            # Selector shows full names
+            selected_full_state = st.selectbox("Select form type", full_state_labels)
+
+            # Convert back to actual 2-letter code for processing
+            selected_form = state_reverse_map[selected_full_state]
 
             col1, col2, col3 = st.columns([1, 2, 1])
             with col2:

@@ -1,0 +1,814 @@
+[
+  {
+    "order": 1,
+    "text": "EMPLOYER (NAME & ADDRESS INCL ZIP)",
+    "description": "Employer name and full mailing address, including ZIP.",
+    "alias": null,
+    "data_type": "text",
+    "meta": {}
+  },
+  {
+    "order": 2,
+    "text": "REPORT PURPOSE CODE",
+    "description": "Code indicating purpose of this report.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 3,
+    "text": "JURISDICTION",
+    "description": "State or jurisdiction for this claim.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 4,
+    "text": "EMPLOYER’S LOCATION ADDRESS (IF DIFFERENT)",
+    "description": "Employer's physical location if different from mailing address.",
+    "alias": null,
+    "data_type": "text",
+    "meta": {}
+  },
+  {
+    "order": 5,
+    "text": "LOCATION #",
+    "description": "Employer location identifier or number.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 6,
+    "text": "PHONE #",
+    "description": "Employer phone number.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 7,
+    "text": "INDUSTRY CODE",
+    "description": "Industry code (SIC/NAICS) representing employer's business.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 8,
+    "text": "EMPLOYER FEIN",
+    "description": "Employer Federal Employer Identification Number.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 9,
+    "text": "CARRIER (NAME, ADDRESS, & PHONE #)",
+    "description": "Insurance carrier name, address and phone number.",
+    "alias": null,
+    "data_type": "text",
+    "meta": {}
+  },
+  {
+    "order": 10,
+    "text": "POLICY PERIOD (start)",
+    "description": "Coverage policy period (start).",
+    "alias": null,
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 11,
+    "text": "POLICY PERIOD (end)",
+    "description": "Coverage policy period (end).",
+    "alias": null,
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 12,
+    "text": "SELF INSURANCE",
+    "description": "Check if the employer is self-insured.",
+    "alias": null,
+    "data_type": "boolean",
+    "meta": {}
+  },
+  {
+    "order": 13,
+    "text": "CLAIMS ADMINISTRATOR (NAME, ADDRESS & PHONE NO)",
+    "description": "Claims administrator name, address and phone.",
+    "alias": null,
+    "data_type": "text",
+    "meta": {}
+  },
+  {
+    "order": 14,
+    "text": "CARRIER FEIN",
+    "description": "Carrier Federal Employer Identification Number.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 15,
+    "text": "POLICY/SELF-INSURED NUMBER",
+    "description": "Policy number or self-insured number.",
+    "alias": "policy_id",
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 16,
+    "text": "ADMINISTRATOR FEIN",
+    "description": "Claims administrator Federal Employer Identification Number.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 17,
+    "text": "First Name",
+    "description": "Given name of the employee (parsed from Name field).",
+    "alias": "first_name",
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 18,
+    "text": "Last Name",
+    "description": "Family name of the employee (parsed from Name field).",
+    "alias": "last_name",
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 19,
+    "text": "DATE OF BIRTH",
+    "description": "Employee date of birth.",
+    "alias": null,
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 20,
+    "text": "SOCIAL SECURITY NUMBER",
+    "description": "Employee Social Security number.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 21,
+    "text": "DATE HIRED",
+    "description": "Date employee was hired.",
+    "alias": null,
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 22,
+    "text": "STATE OF HIRE",
+    "description": "State where the employee was hired.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 23,
+    "text": "ADDRESS (INCL ZIP)",
+    "description": "Employee mailing address including ZIP.",
+    "alias": null,
+    "data_type": "text",
+    "meta": {}
+  },
+  {
+    "order": 24,
+    "text": "SEX",
+    "description": "Employee sex.",
+    "alias": null,
+    "data_type": "enum",
+    "meta": {
+      "labels": [
+        "Male",
+        "Female",
+        "Unknown"
+      ]
+    }
+  },
+  {
+    "order": 25,
+    "text": "MARITAL STATUS",
+    "description": "Employee marital status.",
+    "alias": null,
+    "data_type": "enum",
+    "meta": {
+      "labels": [
+        "Unmarried",
+        "Single/Divorced",
+        "Married",
+        "Separated",
+        "Unknown"
+      ]
+    }
+  },
+  {
+    "order": 26,
+    "text": "OCCUPATION/JOB TITLE",
+    "description": "Employee's occupation or job title at time of injury.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 27,
+    "text": "EMPLOYMENT STATUS",
+    "description": "Employee work status (select one).",
+    "alias": null,
+    "data_type": "enum",
+    "meta": {
+      "labels": [
+        "1-Full-Time",
+        "2-Part-Time",
+        "3-Unemployed",
+        "4-Laid Off",
+        "5-Disabled",
+        "6-Retired",
+        "7-Other",
+        "8-On Strike",
+        "9-Volunteer",
+        "10-Piece Worker",
+        "11-Volunteer"
+      ]
+    }
+  },
+  {
+    "order": 28,
+    "text": "PHONE",
+    "description": "Employee phone number.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 29,
+    "text": "# OF DEPENDENTS",
+    "description": "Number of dependents the employee has.",
+    "alias": null,
+    "data_type": "number",
+    "meta": {}
+  },
+  {
+    "order": 30,
+    "text": "NCCI CLASS CODE",
+    "description": "Classification code for insurance rating.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 31,
+    "text": "RATE",
+    "description": "Pay rate amount.",
+    "alias": null,
+    "data_type": "number",
+    "meta": {}
+  },
+  {
+    "order": 32,
+    "text": "PER",
+    "description": "Rate period.",
+    "alias": null,
+    "data_type": "enum",
+    "meta": {
+      "labels": [
+        "Day",
+        "Week",
+        "Month",
+        "Other"
+      ]
+    }
+  },
+  {
+    "order": 33,
+    "text": "OTHER",
+    "description": "Specify other rate period if 'Other' chosen.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 34,
+    "text": "DAYS WORKED/WEEK",
+    "description": "Number of days the employee worked per week.",
+    "alias": null,
+    "data_type": "number",
+    "meta": {}
+  },
+  {
+    "order": 35,
+    "text": "FULL PAY FOR DAY OF INJURY?",
+    "description": "Was the employee paid full pay for the day of injury?",
+    "alias": null,
+    "data_type": "boolean",
+    "meta": {}
+  },
+  {
+    "order": 36,
+    "text": "DID SALARY CONTINUE?",
+    "description": "Did the employee's salary continue after injury?",
+    "alias": null,
+    "data_type": "boolean",
+    "meta": {}
+  },
+  {
+    "order": 37,
+    "text": "TIME EMPLOYEE BEGAN WORK",
+    "description": "Time employee began work on date of injury/exposure.",
+    "alias": null,
+    "data_type": "time",
+    "meta": {
+      "format": "h:mm A"
+    }
+  },
+  {
+    "order": 38,
+    "text": "DATE OF INJURY/ILLNESS",
+    "description": "Date when the injury or illness occurred.",
+    "alias": "date_of_incident",
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 39,
+    "text": "TIME OF OCCURRENCE",
+    "description": "Time of day when the injury or illness occurred.",
+    "alias": null,
+    "data_type": "time",
+    "meta": {
+      "format": "h:mm A"
+    }
+  },
+  {
+    "order": 40,
+    "text": "CANNOT BE DETERMINED",
+    "description": "Check if time or date cannot be determined.",
+    "alias": null,
+    "data_type": "boolean",
+    "meta": {}
+  },
+  {
+    "order": 41,
+    "text": "LAST WORK DATE",
+    "description": "Employee's last date worked before disability.",
+    "alias": null,
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 42,
+    "text": "DATE EMPLOYER NOTIFIED",
+    "description": "Date employer was notified of the injury/illness.",
+    "alias": null,
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 43,
+    "text": "DATE DISABILITY BEGAN",
+    "description": "First date of lost time due to injury/illness.",
+    "alias": null,
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 44,
+    "text": "CONTACT NAME",
+    "description": "Contact person at employer for more info.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 45,
+    "text": "CONTACT PHONE NUMBER",
+    "description": "Contact person's phone number at employer for more info.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 46,
+    "text": "TYPE OF INJURY/ILLNESS",
+    "description": "Brief description of nature of injury or illness.",
+    "alias": null,
+    "data_type": "enum",
+    "meta": {
+      "labels": [
+        "01-No Physical Injury",
+        "02-Amputation",
+        "03-Angina Pectoris",
+        "04-Burn (Heat)",
+        "07-Concussion",
+        "10-Contusion",
+        "13-Crushing",
+        "16-Dislocation",
+        "19-Electric Shock",
+        "22-Enucleation",
+        "25-Foreign Body",
+        "28-Fracture",
+        "30-Freezing",
+        "31-Hearing Loss or Impairment",
+        "32-Heat Prostration",
+        "34-Hernia",
+        "36-Infection",
+        "37-Inflammation",
+        "40-Laceration",
+        "41-Myocardial Infarction",
+        "42-Poisoning - General",
+        "43-Puncture",
+        "46-Rupture",
+        "47-Severance",
+        "49-Sprain or Tear",
+        "52-Strain or Tear",
+        "53-Syncope",
+        "54-Asphyxiation",
+        "55-Vascular",
+        "58-Vision Loss",
+        "59-All Other Specific Injuries, NOC",
+        "60-Dust Disease, NOC",
+        "61-Asbestosis",
+        "62-Black Lung",
+        "63-Byssinosis",
+        "64-Silicosis",
+        "65-Respiratory Disorders",
+        "66-Poisoning - Chemical",
+        "67-Poisoning - Metal",
+        "68-Dermatitis",
+        "69-Mental Disorder",
+        "70-Radiation",
+        "71-All Other Occupational Disease, NOC",
+        "72-Loss of Hearing",
+        "73-Contagious Disease",
+        "74-Cancer",
+        "75-AIDS",
+        "76-VDT - Related Diseases",
+        "77-Mental Stress",
+        "78-Carpal Tunnel Syndrome",
+        "79-Hepatitis C",
+        "80-All Other Cumulative Injury, NOC",
+        "90-Multiple (Physical w/ Psychological)",
+        "99-Unknown",
+        "5-Abrasion",
+        "6-Allergic Reaction",
+        "8-Bite",
+        "9-Blood/Body Fluid"
+      ]
+    }
+  },
+  {
+    "order": 47,
+    "text": "PART OF BODY AFFECTED",
+    "description": "Describe body part(s) affected by the injury/illness.",
+    "alias": null,
+    "data_type": "enum",
+    "meta": {
+      "labels": [
+        "10-Multiple Head Injury",
+        "11-Skull",
+        "12-Brain",
+        "13-Ear(s)",
+        "14-Eye(s)",
+        "15-Nose",
+        "16-Teeth",
+        "17-Mouth",
+        "18-Face Soft Tissue",
+        "19-Facial Bones",
+        "20-Multiple Neck Injury",
+        "21-Vertebrae",
+        "22-Disc (Neck)",
+        "23-Spinal Cord (Cervical)",
+        "24-Larynx",
+        "25-Trachea",
+        "30-Multiple Upper Extremities",
+        "31-Upper Arm",
+        "32-Elbow",
+        "33-Lower Arm",
+        "34-Wrist",
+        "35-Hand",
+        "36-Finger(s)",
+        "38-Shoulder(s)",
+        "39-Wrist(s) & Hand(s)",
+        "40-Multiple Trunk",
+        "41-Upper Back Area",
+        "42-Lower Back Area",
+        "43-Disc (Back)",
+        "44-Chest",
+        "45-Sacrum and Coccyx",
+        "46-Pelvis",
+        "47-Spinal Cord (Thoracic/Lumbar)",
+        "48-Internal Organs",
+        "49-Heart",
+        "50-Multiple Lower Extremities",
+        "51-Hip",
+        "52-Upper Leg",
+        "53-Knee",
+        "54-Lower Leg",
+        "55-Ankle",
+        "56-Foot",
+        "57-Toes",
+        "58-Big Toe",
+        "60-Lungs",
+        "61-Abdomen (Including Groin)",
+        "62-Buttocks",
+        "63-Lumbar and/or Sacral Vertebrae",
+        "64-Artificial Appliance",
+        "65-Insufficient Information to Identify",
+        "66-No Physical Injury (Used for psychological only)",
+        "90-Multiple Body Parts",
+        "91-Body Systems and Multiple Body Systems",
+        "99-Whole Body"
+      ]
+    }
+  },
+  {
+    "order": 48,
+    "text": "DID INJURY/ILLNESS/EXPOSURE OCCUR ON EMPLOYER’S PREMISES?",
+    "description": "Indicate whether the event occurred on employer premises.",
+    "alias": null,
+    "data_type": "boolean",
+    "meta": {}
+  },
+  {
+    "order": 49,
+    "text": "TYPE OF INJURY/ILLNESS CODE",
+    "description": "Numeric or coded value for type of injury/illness.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 50,
+    "text": "PART OF BODY AFFECTED CODE",
+    "description": "Numeric or coded value for part of body affected.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 51,
+    "text": "DEPARTMENT OR LOCATION WHERE ACCIDENT OR ILLNESS EXPOSURE OCCURRED",
+    "description": "Department name or specific location where event occurred. If off premises, include address.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 52,
+    "text": "ALL EQUIPMENT, MATERIALS, OR CHEMICALS EMPLOYEE WAS USING WHEN ACCIDENT OR ILLNESS EXPOSURE OCCURRED",
+    "description": "List all equipment, materials or chemicals in use at time of incident (enter 'NA' if none).",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 53,
+    "text": "SPECIFIC ACTIVITY THE EMPLOYEE WAS ENGAGED IN WHEN THE ACCIDENT OR ILLNESS EXPOSURE OCCURRED",
+    "description": "Describe the specific activity performed at time of incident.",
+    "alias": null,
+    "data_type": "enum",
+    "meta": {
+      "labels": [
+        "01-Chemicals",
+        "02-Hot Objects or Substances",
+        "03-Temperature Extremes",
+        "04-Fire or Flame",
+        "05-Steam or Hot Fluids",
+        "06-Dust, Gases, Fumes or Vapors",
+        "07-Welding Operation",
+        "08-Radiation",
+        "09-Contact With, NOC",
+        "10-Machine or Machinery",
+        "11-Cold Objects or Substances",
+        "12-Object Handled",
+        "13-Caught In, Under or Between, NOC",
+        "14-Abnormal Air Pressure",
+        "15-Broken Glass",
+        "16-Hand Tool or Utensil, Not Powered",
+        "17-Object Being Lifted or Handled",
+        "18-Powered Hand Tool or Appliance",
+        "19-Caught, Puncture, Scrape, NOC",
+        "20-Collapsing Materials (Slide of Earth, etc.)",
+        "25-From Different Level (Elevation) — Wall, Catwalk, Bridge, etc.",
+        "26-From Ladder or Scaffolding",
+        "27-From Liquid or Grease Spills",
+        "28-Into Openings, Shafts, Excavations, Floor Openings, etc.",
+        "29-On Same Level",
+        "30-Slipped, Did Not Fall",
+        "31-Fall, Slip or Trip, NOC",
+        "32-On Ice or Snow",
+        "33-On Stairs",
+        "40-Crash of Water Vehicle",
+        "41-Crash of Rail Vehicle",
+        "45-Collision or Sideswipe With Another Vehicle",
+        "46-Collision With Fixed Object or Standing Vehicle",
+        "47-Crash of Airplane",
+        "48-Vehicle Upset, Overturned or Jackknifed",
+        "50-Motor Vehicle, NOC",
+        "52-Continual Noise",
+        "53-Twisting",
+        "54-Jumping",
+        "55-Holding or Carrying",
+        "56-Lifting",
+        "57-Pushing or Pulling",
+        "58-Reaching",
+        "59-Using Tool or Machinery",
+        "60-Strain or Injury By, NOC",
+        "61-Wielding or Throwing",
+        "65-Moving Part of Machine",
+        "66-Object Being Lifted or Handled",
+        "67-Sanding, Scraping, Cleaning Operation",
+        "68-Stationary Object",
+        "69-Stepping on Sharp Object",
+        "70-Striking Against or Stepping On, NOC",
+        "74-Fellow Worker or Patient",
+        "75-Falling or Flying Object",
+        "76-Hand Tool or Machine in Use",
+        "77-Motor Vehicle",
+        "78-Moving Parts of Machine",
+        "79-Object Being Lifted or Handled",
+        "80-Object Handled by Others",
+        "81-Struck or Injured, NOC",
+        "82-Absorption, Ingestion or Inhalation, NOC",
+        "84-Electrical Current",
+        "85-Animal or Insect",
+        "86-Explosion or Flare Back",
+        "87-Foreign Matter (Body) in Eye(s)",
+        "88-Natural Disasters",
+        "89-Person in Act of a Crime",
+        "90-Other Than Physical Cause of Injury",
+        "91-Mold",
+        "94-Repetitive Motion (Callous, Blister, etc.)",
+        "95-Rubbed or Abraded, NOC",
+        "96-Terrorism",
+        "97-Repetitive Motion (Carpal Tunnel Syndrome)",
+        "98-Cumulative, NOC",
+        "99-Other – Miscellaneous, NOC"
+      ]
+    }
+  },
+  {
+    "order": 54,
+    "text": "WORK PROCESS THE EMPLOYEE WAS ENGAGED IN WHEN ACCIDENT OR ILLNESS EXPOSURE OCCURRED",
+    "description": "Describe the work process associated with the activity (or 'NA' if not applicable).",
+    "alias": null,
+    "data_type": "text",
+    "meta": {}
+  },
+  {
+    "order": 55,
+    "text": "HOW INJURY OR ILLNESS/ABNORMAL HEALTH CONDITION OCCURRED. DESCRIBE THE SEQUENCE OF EVENTS AND INCLUDE ANY OBJECTS OR SUBSTANCES THAT DIRECTLY INJURED THE EMPLOYEE OR MADE THE EMPLOYEE ILL",
+    "description": "Detailed narrative of sequence of events and objects/substances involved.",
+    "alias": null,
+    "data_type": "text",
+    "meta": {}
+  },
+  {
+    "order": 56,
+    "text": "CAUSE OF INJURY CODE",
+    "description": "Code indicating cause of the injury.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 57,
+    "text": "DATE RETURN(ED) TO WORK",
+    "description": "Date employee returned to work after most recent disability period.",
+    "alias": null,
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 58,
+    "text": "IF FATAL, GIVE DATE OF DEATH",
+    "description": "Date of death if the incident was fatal.",
+    "alias": null,
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 59,
+    "text": "WERE SAFEGUARDS OR SAFETY EQUIPMENT PROVIDED?",
+    "description": "Indicate if safeguards or safety equipment were provided.",
+    "alias": null,
+    "data_type": "boolean",
+    "meta": {}
+  },
+  {
+    "order": 60,
+    "text": "WERE THEY USED?",
+    "description": "Indicate if provided safeguards or safety equipment were actually used.",
+    "alias": null,
+    "data_type": "boolean",
+    "meta": {}
+  },
+  {
+    "order": 61,
+    "text": "PHYSICIAN/HEALTH CARE PROVIDER (NAME & ADDRESS)",
+    "description": "Name and address of physician or health care provider.",
+    "alias": null,
+    "data_type": "text",
+    "meta": {}
+  },
+  {
+    "order": 62,
+    "text": "HOSPITAL OR OFF SITE TREATMENT (NAME & ADDRESS)",
+    "description": "Name and address of hospital or off-site treatment facility.",
+    "alias": null,
+    "data_type": "text",
+    "meta": {}
+  },
+  {
+    "order": 63,
+    "text": "INITIAL TREATMENT",
+    "description": "Initial medical treatment classification.",
+    "alias": null,
+    "data_type": "enum",
+    "meta": {
+      "labels": [
+        "NO MEDICAL TREATMENT",
+        "MINOR: BY EMPLOYER",
+        "MINOR CLINIC/HOSP",
+        "EMERGENCY CARE",
+        "HOSPITALIZED > 24 HOURS",
+        "FUTURE MAJOR MEDICAL/LOST TIME ANTICIPATED"
+      ]
+    }
+  },
+  {
+    "order": 64,
+    "text": "WITNESSES (NAME & PHONE #)",
+    "description": "Names and phone numbers of any witnesses.",
+    "alias": null,
+    "data_type": "text",
+    "meta": {}
+  },
+  {
+    "order": 65,
+    "text": "DATE ADMINISTRATOR NOTIFIED",
+    "description": "Date the claims administrator was notified of the claim.",
+    "alias": null,
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 66,
+    "text": "DATE PREPARED",
+    "description": "Date this form was prepared.",
+    "alias": null,
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 67,
+    "text": "PREPARER’S NAME & TITLE",
+    "description": "Name and job title of the person preparing the form.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 68,
+    "text": "PHONE NUMBER",
+    "description": "Phone number of the preparer.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  }
+]

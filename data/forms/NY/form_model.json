@@ -1,0 +1,727 @@
+[
+  {
+    "order": 1,
+    "text": "Employee Name",
+    "description": "Full legal name of the employee.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 2,
+    "text": "WCB Case Number (JCN)",
+    "description": "Workers' Compensation Board case number, if known.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 3,
+    "text": "Date of Injury",
+    "description": "Date when the injury or illness occurred.",
+    "alias": "date_of_incident",
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 4,
+    "text": "Claim Administrator Claim Number",
+    "description": "Unique claim reference assigned by the administrator.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 5,
+    "text": "Insurer Name",
+    "description": null,
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 6,
+    "text": "Insurer ID",
+    "description": null,
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 7,
+    "text": "Claim Administrator Name",
+    "description": "Name of claim administrator contact person.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 8,
+    "text": "Claim Administrator Address",
+    "description": null,
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 9,
+    "text": "Claim Administrator City",
+    "description": null,
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 10,
+    "text": "Claim Administrator State",
+    "description": null,
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 11,
+    "text": "Claim Administrator Postal Code",
+    "description": null,
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 12,
+    "text": "Claim Administrator Country",
+    "description": null,
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 13,
+    "text": "Employee First Name",
+    "description": null,
+    "alias": "first_name",
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 14,
+    "text": "Employee Middle Name/Initial",
+    "description": null,
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 15,
+    "text": "Employee Last Name",
+    "description": null,
+    "alias": "last_name",
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 16,
+    "text": "Employee Suffix",
+    "description": "e.g., Jr, Sr, II",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 17,
+    "text": "Employee Mailing Address",
+    "description": "Street address or PO Box.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 18,
+    "text": "Employee City",
+    "description": null,
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 19,
+    "text": "Employee State",
+    "description": null,
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 20,
+    "text": "Employee Postal Code",
+    "description": null,
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 21,
+    "text": "Employee Country",
+    "description": null,
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 22,
+    "text": "Employee Phone Number",
+    "description": null,
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 23,
+    "text": "Date of Birth",
+    "description": "Employee's date of birth.",
+    "alias": null,
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 24,
+    "text": "Gender",
+    "description": "Employee gender selection.",
+    "alias": null,
+    "data_type": "enum",
+    "meta": {
+      "labels": [
+        "Male",
+        "Female",
+        "X",
+        "Unknown"
+      ]
+    }
+  },
+  {
+    "order": 25,
+    "text": "Date of Hire",
+    "description": "Date employee was hired.",
+    "alias": null,
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 26,
+    "text": "Employee SSN",
+    "description": "Social Security Number.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 27,
+    "text": "Occupation Description",
+    "description": "Job title or description of duties.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 28,
+    "text": "Employee Email Address",
+    "description": null,
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 29,
+    "text": "Time of Injury",
+    "description": null,
+    "alias": null,
+    "data_type": "time",
+    "meta": {
+      "format": "h:mm A"
+    }
+  },
+  {
+    "order": 30,
+    "text": "Date Employer Had Knowledge of the Injury",
+    "description": null,
+    "alias": null,
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 31,
+    "text": "Employment Status",
+    "description": "e.g., full-time, part-time, seasonal",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 32,
+    "text": "Date Employer Had Knowledge of Date of Disability",
+    "description": null,
+    "alias": null,
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 33,
+    "text": "Estimated Weekly Wage",
+    "description": "Estimated average weekly wage.",
+    "alias": null,
+    "data_type": "number",
+    "meta": {}
+  },
+  {
+    "order": 34,
+    "text": "Number of Days Worked Per Week",
+    "description": null,
+    "alias": null,
+    "data_type": "number",
+    "meta": {}
+  },
+  {
+    "order": 35,
+    "text": "Work Week Type",
+    "description": "Type of work schedule.",
+    "alias": null,
+    "data_type": "enum",
+    "meta": {
+      "labels": [
+        "Standard Work Week",
+        "Fixed Work Week",
+        "Varied Work Week"
+      ]
+    }
+  },
+  {
+    "order": 36,
+    "text": "Work Days Scheduled",
+    "description": "Days employee is scheduled to work.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 37,
+    "text": "Full Wages Paid for Date of Injury",
+    "description": null,
+    "alias": null,
+    "data_type": "boolean",
+    "meta": {}
+  },
+  {
+    "order": 38,
+    "text": "Employer Paid Salary in Lieu of Compensation",
+    "description": null,
+    "alias": null,
+    "data_type": "boolean",
+    "meta": {}
+  },
+  {
+    "order": 39,
+    "text": "Initial Treatment",
+    "description": "Select one option describing the initial medical treatment.",
+    "alias": null,
+    "data_type": "enum",
+    "meta": {
+      "labels": [
+        "No Medical Treatment",
+        "Minor On-Site Treatment By Employer",
+        "Minor Clinic/Hospital Treatment",
+        "Emergency Evaluation",
+        "Hospitalization Greater Than 24 Hours",
+        "Future Major Medical/Lost Time Anticipated"
+      ]
+    }
+  },
+  {
+    "order": 40,
+    "text": "Death Result of Injury",
+    "description": "Indicates if injury resulted in death.",
+    "alias": null,
+    "data_type": "enum",
+    "meta": {
+      "labels": [
+        "Yes",
+        "No",
+        "Unknown"
+      ]
+    }
+  },
+  {
+    "order": 41,
+    "text": "Date of Death",
+    "description": null,
+    "alias": null,
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 42,
+    "text": "Number of Dependents",
+    "description": null,
+    "alias": null,
+    "data_type": "number",
+    "meta": {}
+  },
+  {
+    "order": 43,
+    "text": "Nature of Injury",
+    "description": "e.g., Laceration, Burn, Fracture, Strain.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 44,
+    "text": "Part of Body",
+    "description": "Specify injured body part(s).",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 45,
+    "text": "Cause of Injury",
+    "description": "e.g., Motor Vehicle, Machine, Strain, Lifting.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 46,
+    "text": "Accident/Injury Description",
+    "description": "Detailed description of the incident.",
+    "alias": null,
+    "data_type": "text",
+    "meta": {}
+  },
+  {
+    "order": 47,
+    "text": "Initial Date Last Day Worked",
+    "description": null,
+    "alias": null,
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 48,
+    "text": "Initial Date Disability Began",
+    "description": null,
+    "alias": null,
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 49,
+    "text": "Initial Return to Work Date",
+    "description": null,
+    "alias": null,
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 50,
+    "text": "Return To Work Type",
+    "description": null,
+    "alias": null,
+    "data_type": "enum",
+    "meta": {
+      "labels": [
+        "Actual",
+        "Released"
+      ]
+    }
+  },
+  {
+    "order": 51,
+    "text": "Physical Restrictions",
+    "description": "Indicate if employee has work restrictions.",
+    "alias": null,
+    "data_type": "boolean",
+    "meta": {}
+  },
+  {
+    "order": 52,
+    "text": "Return To Work Same Employer",
+    "description": "Indicate if employee returned to same employer.",
+    "alias": null,
+    "data_type": "boolean",
+    "meta": {}
+  },
+  {
+    "order": 53,
+    "text": "Accident Location - Organization Name",
+    "description": "Organization name where incident occurred.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 54,
+    "text": "Accident Location - Street",
+    "description": null,
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 55,
+    "text": "Accident Location - City",
+    "description": null,
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 56,
+    "text": "Accident Location - State",
+    "description": null,
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 57,
+    "text": "Accident Location - Postal Code",
+    "description": null,
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 58,
+    "text": "Accident Location - Country",
+    "description": null,
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 59,
+    "text": "Location Narrative",
+    "description": "Brief description of the location or environment of the incident.",
+    "alias": null,
+    "data_type": "text",
+    "meta": {}
+  },
+  {
+    "order": 60,
+    "text": "Premises",
+    "description": "Identify premises ownership.",
+    "alias": null,
+    "data_type": "enum",
+    "meta": {
+      "labels": [
+        "Employer",
+        "Lessee",
+        "Other"
+      ]
+    }
+  },
+  {
+    "order": 61,
+    "text": "Witness Names",
+    "description": "Names of witnesses.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 62,
+    "text": "Witness Business Phone Number",
+    "description": null,
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 63,
+    "text": "Employer Name",
+    "description": null,
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 64,
+    "text": "Employer FEIN",
+    "description": "Federal Employer Identification Number.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 65,
+    "text": "UI Number",
+    "description": "Unemployment Insurance number.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 66,
+    "text": "Manual Classification Code",
+    "description": null,
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 67,
+    "text": "Industry Code",
+    "description": null,
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 68,
+    "text": "Employer Mailing Address",
+    "description": "Mailing address of employer.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 69,
+    "text": "Employer City",
+    "description": null,
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 70,
+    "text": "Employer State",
+    "description": null,
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 71,
+    "text": "Employer Postal Code",
+    "description": null,
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 72,
+    "text": "Employer Country",
+    "description": null,
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 73,
+    "text": "Employer Physical Address",
+    "description": null,
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 74,
+    "text": "Employer Contact Name",
+    "description": null,
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 75,
+    "text": "Employer Contact Business Phone Number",
+    "description": null,
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 76,
+    "text": "Insured Name",
+    "description": null,
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 77,
+    "text": "Insured FEIN",
+    "description": "Federal Employer Identification Number of insured.",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 78,
+    "text": "Insured Location ID",
+    "description": null,
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 79,
+    "text": "Policy Number ID",
+    "description": "Unique identifier of the policy.",
+    "alias": "policy_id",
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 80,
+    "text": "Policy Effective Date",
+    "description": "Start date of the insurance policy.",
+    "alias": null,
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 81,
+    "text": "Policy Expiration Date",
+    "description": "End date of the insurance policy.",
+    "alias": null,
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 82,
+    "text": "Insured Type",
+    "description": null,
+    "alias": null,
+    "data_type": "enum",
+    "meta": {
+      "labels": [
+        "Insured",
+        "Self-Insured",
+        "Uninsured"
+      ]
+    }
+  }
+]

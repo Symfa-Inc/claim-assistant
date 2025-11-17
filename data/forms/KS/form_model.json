@@ -1,0 +1,595 @@
+[
+  {
+    "order": 1,
+    "text": "Federal Employer's Identification Number",
+    "description": "",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 2,
+    "text": "Date of hire",
+    "description": "",
+    "alias": null,
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 3,
+    "text": "Name of employer",
+    "description": "",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 4,
+    "text": "Phone",
+    "description": "Employer phone number",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 5,
+    "text": "Mailing address (Street)",
+    "description": "",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 6,
+    "text": "Mailing address (City)",
+    "description": "",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 7,
+    "text": "Mailing address (State)",
+    "description": "",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 8,
+    "text": "Mailing address (ZIP)",
+    "description": "",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 9,
+    "text": "Location, if different from mailing address (Street)",
+    "description": "",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 10,
+    "text": "Location (City)",
+    "description": "",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 11,
+    "text": "Location (State)",
+    "description": "",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 12,
+    "text": "Location (ZIP)",
+    "description": "",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 13,
+    "text": "Nature of business",
+    "description": "",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 14,
+    "text": "NAICS or S.I.C. Code",
+    "description": "",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 15,
+    "text": "Dept. or division",
+    "description": "",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 16,
+    "text": "First",
+    "description": "Employee given (first) name",
+    "alias": "first_name",
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 17,
+    "text": "Middle",
+    "description": "Employee middle name or initial",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 18,
+    "text": "Last",
+    "description": "Employee family (last) name",
+    "alias": "last_name",
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 19,
+    "text": "Age",
+    "description": "",
+    "alias": null,
+    "data_type": "number",
+    "meta": {}
+  },
+  {
+    "order": 20,
+    "text": "Sex",
+    "description": "",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 21,
+    "text": "Home address (Street)",
+    "description": "",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 22,
+    "text": "Home address (City)",
+    "description": "",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 23,
+    "text": "Home address (State)",
+    "description": "",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 24,
+    "text": "Home address (ZIP)",
+    "description": "",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 25,
+    "text": "SSN",
+    "description": "Social Security Number",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 26,
+    "text": "Birth date",
+    "description": "Employee birth date",
+    "alias": null,
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 27,
+    "text": "occupation",
+    "description": "Employee occupation",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 28,
+    "text": "phone",
+    "description": "Employee home phone",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 29,
+    "text": "Date of injury or occupational disease",
+    "description": "",
+    "alias": "date_of_incident",
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 30,
+    "text": "Time of injury",
+    "description": "",
+    "alias": null,
+    "data_type": "time",
+    "meta": {
+      "format": "h:mm A"
+    }
+  },
+  {
+    "order": 31,
+    "text": "a.m. / p.m.",
+    "description": "Select AM or PM for time of injury",
+    "alias": null,
+    "data_type": "enum",
+    "meta": {
+      "labels": [
+        "a.m.",
+        "p.m."
+      ]
+    }
+  },
+  {
+    "order": 32,
+    "text": "Date reported to employer",
+    "description": "",
+    "alias": null,
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 33,
+    "text": "Date disability began",
+    "description": "",
+    "alias": null,
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 34,
+    "text": "Gross average weekly wage $",
+    "description": "",
+    "alias": null,
+    "data_type": "number",
+    "meta": {}
+  },
+  {
+    "order": 35,
+    "text": "Place of accident or last exposure (City)",
+    "description": "City of accident or exposure",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 36,
+    "text": "Place of accident or last exposure (County)",
+    "description": "County of accident or exposure",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 37,
+    "text": "Place of accident or last exposure (State)",
+    "description": "State of accident or exposure",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 38,
+    "text": "Was accident or last exposure on employer's premises?",
+    "description": "",
+    "alias": null,
+    "data_type": "boolean",
+    "meta": {}
+  },
+  {
+    "order": 39,
+    "text": "How did accident occur?",
+    "description": "",
+    "alias": null,
+    "data_type": "text",
+    "meta": {}
+  },
+  {
+    "order": 40,
+    "text": "What was employee doing when injured?",
+    "description": "",
+    "alias": null,
+    "data_type": "text",
+    "meta": {}
+  },
+  {
+    "order": 41,
+    "text": "Name substance or object that directly caused injury*",
+    "description": "Identify object or substance directly causing the injury",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 42,
+    "text": "Describe in detail nature and extent of injury, indicate part of body involved*",
+    "description": "Be as specific as possible; name part(s) of body injured",
+    "alias": null,
+    "data_type": "text",
+    "meta": {}
+  },
+  {
+    "order": 43,
+    "text": "Was worker admitted to hospital?",
+    "description": "",
+    "alias": null,
+    "data_type": "boolean",
+    "meta": {}
+  },
+  {
+    "order": 44,
+    "text": "Date",
+    "description": "Date of hospital admission",
+    "alias": null,
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 45,
+    "text": "Treated by emergency room only?",
+    "description": "",
+    "alias": null,
+    "data_type": "boolean",
+    "meta": {}
+  },
+  {
+    "order": 46,
+    "text": "Hospital name and address",
+    "description": "",
+    "alias": null,
+    "data_type": "text",
+    "meta": {}
+  },
+  {
+    "order": 47,
+    "text": "Name and address of attending physician or clinic",
+    "description": "",
+    "alias": null,
+    "data_type": "text",
+    "meta": {}
+  },
+  {
+    "order": 48,
+    "text": "Has employee returned to regular duty?",
+    "description": "",
+    "alias": null,
+    "data_type": "boolean",
+    "meta": {}
+  },
+  {
+    "order": 49,
+    "text": "Light duty?",
+    "description": "Is employee on light duty",
+    "alias": null,
+    "data_type": "boolean",
+    "meta": {}
+  },
+  {
+    "order": 50,
+    "text": "Date",
+    "description": "Date employee returned or began light duty",
+    "alias": null,
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 51,
+    "text": "Is compensation now being paid?",
+    "description": "",
+    "alias": null,
+    "data_type": "boolean",
+    "meta": {}
+  },
+  {
+    "order": 52,
+    "text": "Date first/initial payment",
+    "description": "",
+    "alias": null,
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 53,
+    "text": "Weekly compensation rate $",
+    "description": "",
+    "alias": null,
+    "data_type": "number",
+    "meta": {}
+  },
+  {
+    "order": 54,
+    "text": "Is further medical aid needed?",
+    "description": "",
+    "alias": null,
+    "data_type": "enum",
+    "meta": {
+      "labels": [
+        "YES",
+        "NO",
+        "UNKNOWN"
+      ]
+    }
+  },
+  {
+    "order": 55,
+    "text": "Did employee die?",
+    "description": "",
+    "alias": null,
+    "data_type": "boolean",
+    "meta": {}
+  },
+  {
+    "order": 56,
+    "text": "If YES, give date of death",
+    "description": "",
+    "alias": null,
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 57,
+    "text": "Name(s) and address(es) of dependents (death cases only)",
+    "description": "",
+    "alias": null,
+    "data_type": "text",
+    "meta": {}
+  },
+  {
+    "order": 58,
+    "text": "Insurance carrier and third party administrator",
+    "description": "",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 59,
+    "text": "Insurance address (Street)",
+    "description": "",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 60,
+    "text": "Insurance address (City)",
+    "description": "",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 61,
+    "text": "Insurance address (State)",
+    "description": "",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 62,
+    "text": "Insurance address (ZIP)",
+    "description": "",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 63,
+    "text": "Phone",
+    "description": "Insurance carrier phone number",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 64,
+    "text": "Policy number",
+    "description": "",
+    "alias": "policy_id",
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 65,
+    "text": "Name of agent",
+    "description": "",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 66,
+    "text": "Claim number",
+    "description": "",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 67,
+    "text": "Name of claim representative",
+    "description": "",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 68,
+    "text": "Date of report",
+    "description": "",
+    "alias": null,
+    "data_type": "date",
+    "meta": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  {
+    "order": 69,
+    "text": "Completed by",
+    "description": "Name of person completing report",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  },
+  {
+    "order": 70,
+    "text": "Title",
+    "description": "Title of person completing report",
+    "alias": null,
+    "data_type": "string",
+    "meta": {}
+  }
+]
