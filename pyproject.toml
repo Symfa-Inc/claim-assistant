@@ -14,7 +14,6 @@ dependencies = [
     "pydantic-settings>=2.10.1",
     "python-Levenshtein",
     "pyemd>=1.0.0",
-    "pypdf>=6.1.1",
     "reportlab>=4.4.4",
     "requests>=2.32.5",
     "streamlit>=1.50.0",
@@ -33,6 +32,7 @@ data = [
     "pandas>=2.3.2",
 ]
 dev = [
+    "agentic-doc>=0.3.3",
     "joblib>=1.5.2",
     "mypy>=1.18.1",
     "python-dotenv>=1.1.1",
