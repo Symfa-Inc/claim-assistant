@@ -4,20 +4,37 @@ from pydantic import BaseModel, Field
 from agentic_doc.parse import parse
 
 
-class SampleExtractionSchema(BaseModel):
-    accountHolder: str = Field(
+class FLExtractionSchema(BaseModel):
+    first_name: str = Field(
         ...,
-        description='The full name of the person who holds the bank account.',
-        title='Account Holder Name',
+        description='The first name of the person who submits the insurance claim.',
+        title='Claim Submitter First Name',
     )
-    accountNumber: str = Field(
+    middle_name: str = Field(
         ...,
-        description='The bank account number associated with the account holder.',
-        title='Bank Account Number',
+        description='The middle name of the person who submits the insurance claim.',
+        title='Claim Submitter Middle Name',
+    )
+    last_name: str = Field(
+        ...,
+        description='The last name of the person who submits the insurance claim.',
+        title='Claim Submitter Last Name',
+    )
+    social_security_number: str = Field(
+        ...,
+        description='The social security number of the person who submits the insurance claim.',
+        title='Social Security Number',
+    )
+    date_of_birth: str = Field(
+        ...,
+        description='The date of birth of the person who submits the insurance claim.',
+        title='Date of Birth',
     )
 
 # Parse a file and extract the fields
-results = parse("estatement.pdf", extraction_model=SampleExtractionSchema)
+results = parse("/home/maken/symfa/claim-assistant/data/forms/FL/form_hw_POL987654321.pdf", extraction_model=FLExtractionSchema)
+print("Full Results:")
+print(results)
 fields = results[0].extraction
 
 # Return the value of the extracted fields
