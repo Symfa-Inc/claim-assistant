@@ -3,7 +3,8 @@
 # Claim Assistant
 
 [![Python 3.13](https://img.shields.io/badge/Python-3.13-blue.svg)](https://www.python.org/downloads/)
-[![License](https://img.shields.io/badge/License-Apache%202.0-green.svg)](LICENSE)
+[![OpenAI](https://img.shields.io/badge/OpenAI-GPT--5-412991.svg)](https://openai.com/)
+[![Docker](https://img.shields.io/badge/Docker-Ready-2496ED.svg)](https://www.docker.com/)
 [![Streamlit](https://img.shields.io/badge/Streamlit-1.50+-red.svg)](https://streamlit.io/)
 
 **AI-powered automation tool that streamlines insurance claim handling by replacing repetitive adjuster tasks with intelligent LLM-based assistants.**
@@ -79,26 +80,6 @@ claim-assistant/
 └── pyproject.toml          # Project dependencies and metadata
 ```
 
-## Demo
-
-### 1. Select a Prepared Sample
-
-The application displays available example claim forms grouped by state. Each example represents a pre-filled claim tied to a mock policy. Forms can be either **Digital** (typed fonts) or **Handwritten**.
-
-![Select prepared sample](.assets/01_select_sample.png)
-
-### 2. Upload a Custom Claim Form
-
-Alternatively, upload your own filled PDF claim form and select the corresponding form type.
-
-![Upload new sample](.assets/02_upload_sample.png)
-
-### 3. Review Processing Results
-
-Once processing is complete, view the original claim form alongside the generated claim summary report.
-
-![Result view](.assets/03_results_view.png)
-
 ## Getting Started
 
 ### Prerequisites
@@ -142,8 +123,6 @@ streamlit run src/claim_assistant/app.py
 
 The application will be available at `http://localhost:8501`.
 
----
-
 ## Processing Demo Files
 
 The repository includes sample claim forms for testing in the `data/` directory:
@@ -157,6 +136,26 @@ All processing artifacts are saved to `data/runs/` with timestamped folders cont
 - Input PDF
 - Generated claim summary PDF
 - Intermediate logs for debugging
+
+## Demo
+
+### 1. Select a Prepared Sample
+
+The application displays available example claim forms grouped by state. Each example represents a pre-filled claim tied to a mock policy. Forms can be either **Digital** (typed fonts) or **Handwritten**.
+
+![Select prepared sample](.assets/01_select_sample.png)
+
+### 2. Upload a Custom Claim Form
+
+Alternatively, upload your own filled PDF claim form and select the corresponding form type.
+
+![Upload new sample](.assets/02_upload_sample.png)
+
+### 3. Review Processing Results
+
+Once processing is complete, view the original claim form alongside the generated claim summary report.
+
+![Result view](.assets/03_results_view.png)
 
 ## License
 
