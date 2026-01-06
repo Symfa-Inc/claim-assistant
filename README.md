@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src=".assets/logo.png" width="200" alt="Claim Assistant Logo">
+<img src=".assets/logo.png" width="100" alt="Claim Assistant Logo">
 
 # Claim Assistant
 
