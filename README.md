@@ -25,7 +25,7 @@ Claim Assistant automates claim processing for insurance companies through a mod
 - **Automated PDF Processing** – Extract key fields from filled claim forms using LLM-based pipelines
 - **Policy Matching** – Map extracted claim data against policy records for validation
 - **Confidence Scoring** – Account for OCR/LLM uncertainty with built-in confidence classification
-- **Coverage Analysis** – Generate structured summaries with coverage status (covered / not covered / manual review)
+- **Coverage Analysis** – Generate structured summaries with coverage status (covered / not covered)
 - **Report Generation** – Produce adjuster-facing PDF reports with analysis results
 
 ### Target Audience
