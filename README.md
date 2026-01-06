@@ -1,3 +1,5 @@
+<div align="center">
+
 # Claim Assistant
 
 [![Python 3.13](https://img.shields.io/badge/Python-3.13-blue.svg)](https://www.python.org/downloads/)
@@ -8,7 +10,8 @@
 
 🔗 **Live Demo**: [claim-assistant-demo.d11.symfa.com](https://claim-assistant-demo.d11.symfa.com/)
 
----
+</div>
+
 
 ## Overview
 
@@ -25,8 +28,6 @@ Claim Assistant automates claim processing for insurance companies through a mod
 ### Target Audience
 
 Claims managers, operations teams, and analysts who need to process insurance claims efficiently without technical expertise.
-
----
 
 ## Demo
 
@@ -48,8 +49,6 @@ Once processing is complete, view the original claim form alongside the generate
 
 ![Result view](.assets/03_results_view.png)
 
----
-
 ## Tech Stack
 
 | Category | Technologies |
@@ -61,8 +60,6 @@ Once processing is complete, view the original claim form alongside the generate
 | **Data Validation** | Pydantic |
 | **Package Management** | uv |
 | **Deployment** | Docker |
-
----
 
 ## Getting Started
 
@@ -164,20 +161,6 @@ claim-assistant/
 └── pyproject.toml          # Project dependencies and metadata
 ```
 
----
-
-## Project Status
-
-- ✅ Claim processing pipeline implemented
-- ✅ LLM-based key extraction from PDF forms
-- ✅ Policy matching and validation logic
-- ✅ Confidence-aware decision logic
-- ✅ Coverage analysis report generation
-- ✅ Streamlit UI for non-technical users
-- 🔄 Multi-client configuration support (in progress)
-
----
-
 ## License
 
-This project is licensed under the Apache License 2.0 — see the [LICENSE](LICENSE) file for details.
+This project is licensed under the Apache License 2.0 – see the [LICENSE](LICENSE) file for details.
