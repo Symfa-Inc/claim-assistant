@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src=".assets/logo.png" width="200" alt="Claim Assistant Logo">
+
 # Claim Assistant
 
 [![Python 3.13](https://img.shields.io/badge/Python-3.13-blue.svg)](https://www.python.org/downloads/)
