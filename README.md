@@ -29,6 +29,56 @@ Claim Assistant automates claim processing for insurance companies through a mod
 
 Claims managers, operations teams, and analysts who need to process insurance claims efficiently without technical expertise.
 
+## Tech Stack
+
+| Category | Technologies |
+|----------|-------------|
+| **Language** | Python 3.13 |
+| **UI Framework** | Streamlit |
+| **AI/ML** | OpenAI API (GPT-4) |
+| **PDF Processing** | PyPDF, FillPDF, ReportLab |
+| **Data Validation** | Pydantic |
+| **Package Management** | uv |
+| **Deployment** | Docker |
+
+## Pipeline Architecture
+
+The claim processing pipeline consists of five modular stages:
+
+```
+┌─────────────────┐     ┌─────────────────┐     ┌─────────────────┐
+│  1. Data Prep   │ ──▶ │  2. Key         │ ──▶ │  3. Policy      │
+│  (PDF → Text)   │     │  Extraction     │     │  Mapping        │
+└─────────────────┘     └─────────────────┘     └─────────────────┘
+                                                        │
+                                                        │
+                                                        ▼
+                        ┌─────────────────┐     ┌─────────────────┐
+                        │  5. Report      │ ◀── │  4. Analysis    │
+                        │  Generation     │     │  Generation     │
+                        └─────────────────┘     └─────────────────┘
+```
+
+| Stage | Purpose |
+|-------|---------|
+| **Data Preparation** | Handle scanned/image-based PDFs and prepare textual input |
+| **Key Extraction** | Extract form fields using LLM-based structured extraction |
+| **Policy Mapping** | Retrieve relevant policy data based on extracted identifiers |
+| **Analysis Generation** | Evaluate coverage status with deterministic checks + LLM reasoning |
+| **Report Generation** | Create adjuster-facing PDF reports with analysis results |
+
+## Project Structure
+
+```
+claim-assistant/
+├── src/claim_assistant/    # Main application source code
+├── data/                   # Sample forms, policies, and processing runs
+├── notebooks/              # Jupyter notebooks for experimentation
+├── metrics/                # Evaluation metrics and benchmarks
+├── Dockerfile              # Container configuration
+└── pyproject.toml          # Project dependencies and metadata
+```
+
 ## Demo
 
 ### 1. Select a Prepared Sample
@@ -48,18 +98,6 @@ Alternatively, upload your own filled PDF claim form and select the correspondin
 Once processing is complete, view the original claim form alongside the generated claim summary report.
 
 ![Result view](.assets/03_results_view.png)
-
-## Tech Stack
-
-| Category | Technologies |
-|----------|-------------|
-| **Language** | Python 3.13 |
-| **UI Framework** | Streamlit |
-| **AI/ML** | OpenAI API (GPT-4) |
-| **PDF Processing** | PyPDF, FillPDF, ReportLab |
-| **Data Validation** | Pydantic |
-| **Package Management** | uv |
-| **Deployment** | Docker |
 
 ## Getting Started
 
@@ -119,47 +157,6 @@ All processing artifacts are saved to `data/runs/` with timestamped folders cont
 - Input PDF
 - Generated claim summary PDF
 - Intermediate logs for debugging
-
----
-
-## Pipeline Architecture
-
-The claim processing pipeline consists of five modular stages:
-
-```
-┌─────────────────┐     ┌─────────────────┐     ┌─────────────────┐
-│  1. Data Prep   │ ──▶ │  2. Key         │ ──▶ │  3. Policy      │
-│  (PDF → Text)   │     │  Extraction     │     │  Mapping        │
-└─────────────────┘     └─────────────────┘     └─────────────────┘
-                                                        │
-                        ┌─────────────────┐     ┌───────▼─────────┐
-                        │  5. Report      │ ◀── │  4. Analysis    │
-                        │  Generation     │     │  Generation     │
-                        └─────────────────┘     └─────────────────┘
-```
-
-| Stage | Purpose |
-|-------|---------|
-| **Data Preparation** | Handle scanned/image-based PDFs and prepare textual input |
-| **Key Extraction** | Extract form fields using LLM-based structured extraction |
-| **Policy Mapping** | Retrieve relevant policy data based on extracted identifiers |
-| **Analysis Generation** | Evaluate coverage status with deterministic checks + LLM reasoning |
-| **Report Generation** | Create adjuster-facing PDF reports with analysis results |
-
----
-
-## Project Structure
-
-```
-claim-assistant/
-├── src/claim_assistant/    # Main application source code
-├── data/                   # Sample forms, policies, and processing runs
-├── docs/                   # Documentation and screenshots
-├── notebooks/              # Jupyter notebooks for experimentation
-├── metrics/                # Evaluation metrics and benchmarks
-├── Dockerfile              # Container configuration
-└── pyproject.toml          # Project dependencies and metadata
-```
 
 ## License
 
