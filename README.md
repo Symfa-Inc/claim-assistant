@@ -1,138 +1,170 @@
+<div align="center">
+
+<img src=".assets/logo.png" width="100" alt="Claim Assistant Logo">
+
 # Claim Assistant
 
-**Claim Assistant** is a Streamlit-based internal tool for **AI-assisted insurance claim processing**.
-It allows non-technical users (claims managers, operations, analysts) to process filled claim forms (PDFs) and receive an automated coverage analysis based on policy data.
+[![Python 3.13](https://img.shields.io/badge/Python-3.13-blue.svg)](https://www.python.org/downloads/)
+[![OpenAI](https://img.shields.io/badge/OpenAI-GPT--5-10a37f.svg)](https://openai.com/)
+[![Docker](https://img.shields.io/badge/Docker-Ready-2496ED.svg)](https://www.docker.com/)
+[![Streamlit](https://img.shields.io/badge/Streamlit-1.50+-red.svg)](https://streamlit.io/)
 
-The project is currently focused **exclusively on claim processing**.
-Form model creation/editing is intentionally out of scope at this stage.
+**AI-powered automation tool that streamlines insurance claim handling by replacing repetitive adjuster tasks with intelligent LLM-based assistants.**
 
----
+🔗 **Live Demo**: [claim-assistant-demo.d11.symfa.com](https://claim-assistant-demo.d11.symfa.com/)
 
-## What the application does
+</div>
 
-At a high level, Claim Assistant:
 
-1. Accepts a filled insurance claim form (PDF)
-2. Extracts key fields using an LLM-based pipeline
-3. Matches the claim against policy records
-4. Computes confidence scores to account for OCR/LLM uncertainty
-5. Produces a structured **coverage analysis summary** (PDF + on-screen view)
+## Overview
 
----
+Claim Assistant automates claim processing for insurance companies through a modular pipeline architecture. The service converts filled insurance claim forms (PDFs) into structured data, matches claims against policy records, and produces analytical outputs that support insurance adjusters in evaluating claims.
 
-## How the application works (user flow)
+### Key Features
 
-### 1. Select a prepared sample
+- **Automated PDF Processing** – Extract key fields from filled claim forms using LLM-based pipelines
+- **Policy Matching** – Map extracted claim data against policy records for validation
+- **Confidence Scoring** – Account for OCR/LLM uncertainty with built-in confidence classification
+- **Coverage Analysis** – Generate structured summaries with coverage status (covered / not covered)
+- **Report Generation** – Produce adjuster-facing PDF reports with analysis results
 
-The application scans available example claim forms from the repository and displays them in a table.
-Each example represents a realistic pre-filled claim tied to a mock policy.
+### Target Audience
 
-1. You may select one of the prepared examples grouped by state.
-   - **Digital** means the form was filled using typed fonts.
-   - **Handwritten** means the form was filled using a handwritten script.
+Claims managers, operations teams, and analysts who need to process insurance claims efficiently without technical expertise.
 
-2. Click **Process Form** to start claim processing.
+### Quick Demo
 
-![Select prepared sample](docs/screenshots/01_select_sample.png)
+<p align="center">
+  <video src="https://github.com/user-attachments/assets/6138161b-4e7c-4b7a-909f-4b05a2103051" width="80%"></video>
+</p>
 
----
+## Tech Stack
 
-### 2. Upload a new claim form
+| Category | Technologies |
+|----------|-------------|
+| **Language** | Python 3.13 |
+| **UI Framework** | Streamlit |
+| **AI/ML** | OpenAI API (GPT-4) |
+| **PDF Processing** | PyPDF, FillPDF, ReportLab |
+| **Data Validation** | Pydantic |
+| **Package Management** | uv |
+| **Deployment** | Docker |
 
-Alternatively, users can upload their own filled PDF claim form.
-After selecting “Upload custom PDF”, the interface allows:
-1. Uploading a PDF
-2. Selecting the corresponding form type (state)
+## Pipeline Architecture
 
-![Upload new sample](docs/screenshots/02_upload_sample.png)
+The claim processing pipeline consists of five modular stages:
 
----
+```
+┌─────────────────┐     ┌─────────────────┐     ┌─────────────────┐
+│  1. Data Prep   │ ──▶ │  2. Key         │ ──▶ │  3. Policy      │
+│  (PDF → Text)   │     │  Extraction     │     │  Mapping        │
+└─────────────────┘     └─────────────────┘     └─────────────────┘
+                                                        │
+                                                        │
+                                                        ▼
+                        ┌─────────────────┐     ┌─────────────────┐
+                        │  5. Report      │ ◀── │  4. Analysis    │
+                        │  Generation     │     │  Generation     │
+                        └─────────────────┘     └─────────────────┘
+```
 
-### 3. Review processing results
+| Stage | Purpose |
+|-------|---------|
+| **Data Preparation** | Handle scanned/image-based PDFs and prepare textual input |
+| **Key Extraction** | Extract form fields using LLM-based structured extraction |
+| **Policy Mapping** | Retrieve relevant policy data based on extracted identifiers |
+| **Analysis Generation** | Evaluate coverage status with deterministic checks + LLM reasoning |
+| **Report Generation** | Create adjuster-facing PDF reports with analysis results |
 
-Once processing is complete, the Results view displays:
-- The original uploaded claim form
-- A generated claim summary report (PDF)
-- Clear navigation to process another form
+## Project Structure
 
-![Result view](docs/screenshots/03_results_view.png)
+```
+claim-assistant/
+├── src/claim_assistant/    # Main application source code
+├── data/                   # Sample forms, policies, and processing runs
+├── notebooks/              # Jupyter notebooks for experimentation
+├── metrics/                # Evaluation metrics and benchmarks
+├── Dockerfile              # Container configuration
+└── pyproject.toml          # Project dependencies and metadata
+```
 
----
+## Getting Started
 
-## Confidence and uncertainty handling
+### Prerequisites
 
-Because the system relies on OCR and LLM-based extraction, **confidence scoring is built in**:
+- Python 3.13+
+- [uv](https://github.com/astral-sh/uv) package manager
+- OpenAI API key
 
-- Name, policy number, and dates are compared against policy records
-- Outcomes are classified as:
-  - **Positive** — likely covered
-  - **Negative** — likely not covered
-  - **Uncertain** — there were errors in OCR
-
----
-
-### Output artifacts
-
-All artifacts generated during processing are saved to the `data/runs/` directory.
-
-Each run is stored in a separate timestamped folder and typically includes:
-- The input PDF used for processing
-- The generated claim summary PDF
-- Intermediate logs and outputs used for analysis and debugging
-
----
-
-## Running the application locally
-
-### Requirements
-
-- Python 3.13
-- An OpenAI API key
-
-### Install dependencies
+### Installation
 
 ```bash
+# Clone the repository
+git clone https://github.com/Symfa-Inc/claim-assistant.git
+cd claim-assistant
+
+# Install dependencies
 uv sync
 ```
 
-### Configure OpenAI API key
+### Configuration
 
-You can provide the API key in either of the following ways:
+Provide your OpenAI API key using one of the following methods:
 
-#### Option 1: Environment variable
+**Option 1: Environment Variable**
 ```bash
 export OPENAI_API_KEY="your_api_key_here"
 ```
 
-#### Option 2: .env file (recommended for local use)
-Create the file:
+**Option 2: .env File** (recommended for local development)
 
-```
-src/claim_assistant/.env
-```
-
-With contents:
-
+Create `src/claim_assistant/.env` with:
 ```
 OPENAI_API_KEY=your_api_key_here
 ```
-The application automatically loads this file at startup.
----
 
-### Launch the application
-
-From the project root:
+### Running Locally
 
 ```bash
 streamlit run src/claim_assistant/app.py
 ```
 
-Streamlit will print a local URL (usually http://localhost:8501) where the UI is available.
+The application will be available at `http://localhost:8501`.
 
----
+## Processing Demo Files
 
-## Project status
+The repository includes sample claim forms for testing in the `data/` directory:
 
-- ✅ Claim processing pipeline implemented
-- ✅ Confidence-aware decision logic
-- ✅ Streamlit UI for non-technical users
+1. Launch the application
+2. Select a prepared sample from the dropdown (grouped by state)
+3. Click **Process Form** to start claim processing
+4. Review the generated coverage analysis report
+
+All processing artifacts are saved to `data/runs/` with timestamped folders containing:
+- Input PDF
+- Generated claim summary PDF
+- Intermediate logs for debugging
+
+## Demo
+
+### 1. Select a Prepared Sample
+
+The application displays available example claim forms grouped by state. Each example represents a pre-filled claim tied to a mock policy. Forms can be either **Digital** (typed fonts) or **Handwritten**.
+
+![Select prepared sample](.assets/01_select_sample.png)
+
+### 2. Upload a Custom Claim Form
+
+Alternatively, upload your own filled PDF claim form and select the corresponding form type.
+
+![Upload new sample](.assets/02_upload_sample.png)
+
+### 3. Review Processing Results
+
+Once processing is complete, view the original claim form alongside the generated claim summary report.
+
+![Result view](.assets/03_results_view.png)
+
+## License
+
+This project is licensed under the Apache License 2.0 – see the [LICENSE](LICENSE) file for details.

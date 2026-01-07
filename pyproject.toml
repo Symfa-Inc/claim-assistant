@@ -24,10 +24,10 @@ dependencies = [
     "matplotlib>=3.10.7",
 ]
 
+[tool.uv]
+default-groups = ["data", "dev"]
+
 [dependency-groups]
-ci = [
-    "pre-commit>=4.3.0",
-]
 data = [
     "openpyxl>=3.1.5",
     "pandas>=2.3.2",
@@ -35,6 +35,7 @@ data = [
 dev = [
     "joblib>=1.5.2",
     "mypy>=1.18.1",
+    "pre-commit>=4.5.1",
     "python-dotenv>=1.1.1",
 ]
 
