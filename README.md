@@ -32,6 +32,12 @@ Claim Assistant automates claim processing for insurance companies through a mod
 
 Claims managers, operations teams, and analysts who need to process insurance claims efficiently without technical expertise.
 
+### Quick Demo
+
+<div align="center">
+<video src=".assets/demo.mp4" controls width="80%"></video>
+</div>
+
 ## Tech Stack
 
 | Category | Technologies |
