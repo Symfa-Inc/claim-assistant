@@ -34,9 +34,9 @@ Claims managers, operations teams, and analysts who need to process insurance cl
 
 ### Quick Demo
 
-<div align="center">
-<video src=".assets/demo.mp4" controls width="80%"></video>
-</div>
+<p align="center">
+  <video src="https://github.com/user-attachments/assets/b27b4f1b-51d6-4bfb-b93d-484c60514195" width="80%"></video>
+</p>
 
 ## Tech Stack
 
