@@ -12,7 +12,7 @@ repos:
 
 # trailing comma fixer
 - repo: https://github.com/asottile/add-trailing-comma
-  rev: v3.2.0
+  rev: v4.0.0
   hooks:
   - id: add-trailing-comma
 
@@ -32,7 +32,7 @@ repos:
 
 # import sorter
 - repo: https://github.com/timothycrosley/isort
-  rev: 6.0.1
+  rev: 7.0.0
   hooks:
   - id: isort
     files: \.(py)$
@@ -40,7 +40,7 @@ repos:
 
 # ruff
 - repo: https://github.com/astral-sh/ruff-pre-commit
-  rev: 'v0.13.0'
+  rev: 'v0.14.10'
   hooks:
   - id: ruff
     args: [--fix]
@@ -48,7 +48,7 @@ repos:
 
 # static type checker
 - repo: https://github.com/pre-commit/mirrors-mypy
-  rev: v1.18.1
+  rev: v1.19.1
   hooks:
   - id: mypy
     args: [--config-file, pyproject.toml, --non-interactive]
