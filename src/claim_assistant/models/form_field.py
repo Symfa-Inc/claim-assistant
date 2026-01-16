@@ -4,6 +4,25 @@ from pydantic import BaseModel, Field, create_model, field_validator
 from pydantic_core.core_schema import ValidationInfo
 
 
+class BoundingRegion(BaseModel):
+    page: int = Field(..., ge=1)
+    polygon: list[float] = Field(
+        ...,
+        description="Flat list [x1,y1,x2,y2,...] in DI coordinates.",
+    )
+
+
+class FieldEvidence(BaseModel):
+    source: Literal["di_kv", "di_ocr", "manual", "llm"] = "di_kv"
+    confidence: float | None = Field(default=None, ge=0.0, le=1.0)
+    bounding_regions: list[BoundingRegion] = Field(default_factory=list)
+
+
+class FormFieldAnswer(BaseModel):
+    value: Any = Field(None)
+    evidence: list[FieldEvidence] = Field(default_factory=list)
+
+
 class FormField(BaseModel):
     """Represents a single field in a claim form.
 
@@ -64,8 +83,8 @@ class FormField(BaseModel):
             "• For time: {'format': 'HH:mm:ss' or 'h:mm A'}"
         ),
     )
-    answer: Any = Field(
-        None,
+    answer: FormFieldAnswer = Field(
+        default_factory=FormFieldAnswer,
         description="Value extracted or entered by user.",
     )
 
@@ -119,41 +138,35 @@ class FormField(BaseModel):
 
     def build_response_schema(self) -> type[BaseModel]:
         """
-        Dynamically construct and return a Pydantic model class
-        representing the expected answer schema for this field.
-        The class can be passed directly to `text_format` in
-        `client.responses.parse()`.
+        Build a per-field structured-output schema that can carry:
+          - the extracted value (typed by data_type)
+          - optional evidence[] (confidence + bounding regions)
         """
         dtype = self.data_type
         meta = self.meta or {}
 
-        # Determine Pydantic field type
         type_map = {
             "string": str,
             "text": str,
             "number": float,
             "boolean": bool,
-            "date": str,
-            "time": str,
+            "date": str,  # keep as str; validate/parse later if needed
+            "time": str,  # keep as str; validate/parse later if needed
             "enum": str,
         }
-        field_type = type_map.get(dtype, str)
+        value_type = type_map.get(dtype, Any)
 
-        # Add constraints or metadata
-        field_args: dict[str, Any] = {}
-        description = f"Field: {self.text}"
-        if dtype == "enum" and "labels" in meta:
-            field_args["description"] = f"One of: {', '.join(meta['labels'])}"
-        elif dtype in {"date", "time"} and "format" in meta:
-            description += f" (Expected format: {meta['format']})"
-            field_args["description"] = description
-        else:
-            field_args["description"] = description
+        desc = f"Field: {self.text}"
+        if dtype == "enum" and meta.get("labels"):
+            desc += f" (One of: {', '.join(meta['labels'])})"
+        elif dtype in {"date", "time"} and meta.get("format"):
+            desc += f" (Expected format: {meta['format']})"
 
-        # Dynamically create a simple Pydantic model for the answer
+        # Schema: {"value": ..., "evidence": [...]}
         DynamicAnswerModel = create_model(
-            f"{self.alias or 'FormField'}AnswerModel",
-            answer=(field_type, Field(..., **field_args)),
+            f"{(self.alias or 'FormField').title().replace(' ', '')}Response",
+            value=(value_type, Field(default=None, description=desc)),
+            evidence=(list[FieldEvidence], Field(default_factory=list)),
             __base__=BaseModel,
         )
         return DynamicAnswerModel

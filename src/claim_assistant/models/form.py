@@ -1,3 +1,4 @@
+import json
 from pathlib import Path
 from typing import Any, get_type_hints
 
@@ -83,6 +84,45 @@ class Form(BaseModel):
             __base__=BaseModel,
         )
         return DynamicFormResponseModel
+
+    def build_fields_text(
+        self,
+        *,
+        include_alias: bool = True,
+        include_meta: bool = True,
+        include_description: bool = False,
+        meta_as_json: bool = True,
+    ) -> str:
+        """
+        Canonical, stable textual representation of the form fields
+        for prompting (LLM extraction / DI KV mapping).
+
+        Keep this in Form to avoid duplicating prompt formatting logic
+        across processors.
+        """
+        lines: list[str] = []
+        for f in self.fields:
+            parts: list[str] = [f"{f.order}. text={f.text!r}"]
+
+            if include_alias and f.alias:
+                parts.append(f"alias={f.alias!r}")
+
+            if include_description and f.description:
+                parts.append(f"description={f.description!r}")
+
+            parts.append(f"dtype={f.data_type}")
+
+            if include_meta and f.meta:
+                meta = (
+                    json.dumps(f.meta, ensure_ascii=False, sort_keys=True)
+                    if meta_as_json
+                    else str(f.meta)
+                )
+                parts.append(f"meta={meta}")
+
+            lines.append(" ".join(parts))
+
+        return "\n".join(lines)
 
     @classmethod
     def from_json(cls, path: str | Path) -> "Form":
