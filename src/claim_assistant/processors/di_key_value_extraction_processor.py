@@ -140,7 +140,6 @@ if __name__ == "__main__":
     payload = processor.process(input_pdf_path)
 
     kv_pairs = payload.get("kv_pairs", [])
-    logger.info(f"DI extracted {len(kv_pairs)} key/value pairs")
 
     for i, kv in enumerate(kv_pairs[:200], start=1):  # limit spam
         k = (kv.get("key") or {}).get("content")

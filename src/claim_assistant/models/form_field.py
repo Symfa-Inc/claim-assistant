@@ -15,12 +15,12 @@ class BoundingRegion(BaseModel):
 class FieldEvidence(BaseModel):
     source: Literal["di_kv", "di_ocr", "manual", "llm"] = "di_kv"
     confidence: float | None = Field(default=None, ge=0.0, le=1.0)
-    bounding_regions: list[BoundingRegion] = Field(default_factory=list)
+    bounding_region: BoundingRegion | None = Field(default=None)
 
 
 class FormFieldAnswer(BaseModel):
     value: Any = Field(None)
-    evidence: list[FieldEvidence] = Field(default_factory=list)
+    evidences: list[FieldEvidence] = Field(default_factory=list)
 
 
 class FormField(BaseModel):
@@ -140,7 +140,7 @@ class FormField(BaseModel):
         """
         Build a per-field structured-output schema that can carry:
           - the extracted value (typed by data_type)
-          - optional evidence[] (confidence + bounding regions)
+          - optional evidences[] (confidence + bounding regions)
         """
         dtype = self.data_type
         meta = self.meta or {}
@@ -166,7 +166,7 @@ class FormField(BaseModel):
         DynamicAnswerModel = create_model(
             f"{(self.alias or 'FormField').title().replace(' ', '')}Response",
             value=(value_type, Field(default=None, description=desc)),
-            evidence=(list[FieldEvidence], Field(default_factory=list)),
+            evidences=(list[FieldEvidence], Field(default_factory=list)),
             __base__=BaseModel,
         )
         return DynamicAnswerModel

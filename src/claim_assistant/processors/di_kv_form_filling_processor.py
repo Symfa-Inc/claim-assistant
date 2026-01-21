@@ -88,12 +88,12 @@ class DIKVFormFillingProcessor:
 
             if ans is None:
                 field.answer.value = None
-                field.answer.evidence = []
+                field.answer.evidences = []
                 continue
 
             # ans is FormFieldAnswer (not dict) if you used the schema above
             field.answer.value = ans.value
-            field.answer.evidence = ans.evidence
+            field.answer.evidences = ans.evidences
 
     def process(
         self,
@@ -170,7 +170,7 @@ class DIKVFormFillingProcessor:
             self.logger.error(f"Failed to fill form from DI KV pairs: {e}")
             for f in form.fields:
                 f.answer.value = None
-                f.answer.evidence = []
+                f.answer.evidences = []
             return form
 
 
@@ -240,8 +240,6 @@ if __name__ == "__main__":
     payload = kv_processor.process(input_pdf_path)
 
     kv_pairs = payload.get("kv_pairs", []) or []
-    logger.info(f"DI extracted {len(kv_pairs)} key/value pairs")
-
     # for i, kv in enumerate(kv_pairs[:200], start=1):  # limit spam
     #     k = (kv.get("key") or {}).get("content")
     #     v = (kv.get("value") or {}).get("content")
@@ -265,11 +263,11 @@ if __name__ == "__main__":
     # quick debug print
     for f in form.fields:
         value = f.answer.value if f.answer else None
-        evid = f.answer.evidence if (f.answer and f.answer.evidence) else []
+        evid = f.answer.evidences if (f.answer and f.answer.evidences) else []
 
         # choose a scalar for logging (max confidence is usually the most useful)
         conf = max((e.confidence or 0.0) for e in evid) if evid else None
-        regions = sum(len(e.bounding_regions) for e in evid) if evid else 0
+        regions = sum(1 for e in evid if e.bounding_region is not None)
 
         logger.info(
             f"[{f.order}] {f.text} -> {value!r} (conf={conf}, regions={regions}, evidences={len(evid)})",
