@@ -19,7 +19,10 @@ class Form(BaseModel):
     first_name: FormField | None = Field(default=None)
     last_name: FormField | None = Field(default=None)
     date_of_incident: FormField | None = Field(default=None)
-
+    report_date: FormField | None = Field(default=None)
+    loss_type: FormField | None = Field(default=None)
+    loss_description: FormField | None = Field(default=None)
+    loss_location: FormField | None = Field(default=None)
     # --- Used for report generation logic ---
     # (You can add more declared fields here later.)
 

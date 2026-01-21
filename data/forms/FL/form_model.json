@@ -87,7 +87,7 @@
     "order": 11,
     "text": "EMPLOYEE'S DESCRIPTION OF ACCIDENT (Include Cause of Injury)",
     "description": "Detailed description of how the accident occurred.",
-    "alias": null,
+    "alias": "loss_description",
     "data_type": "text",
     "meta": {}
   },
@@ -111,7 +111,7 @@
     "order": 14,
     "text": "INJURY/ILLNESS THAT OCCURRED",
     "description": "Type of injury/illness.",
-    "alias": null,
+    "alias": "loss_type",
     "data_type": "enum",
     "meta": {
       "labels": [
@@ -292,7 +292,7 @@
     "order": 21,
     "text": "DATE FIRST REPORTED (Month/Day/Year)",
     "description": "Date employer first reported the claim.",
-    "alias": null,
+    "alias": "report_date",
     "data_type": "date",
     "meta": {
       "format": "YYYY-MM-DD"
@@ -462,7 +462,7 @@
     "order": 41,
     "text": "PLACE OF ACCIDENT Street",
     "description": "Street address where the accident occurred.",
-    "alias": null,
+    "alias": "loss_location",
     "data_type": "string",
     "meta": {}
   },

@@ -292,7 +292,7 @@
     "order": 35,
     "text": "Place of accident or last exposure (City)",
     "description": "City of accident or exposure",
-    "alias": null,
+    "alias": "loss_location",
     "data_type": "string",
     "meta": {}
   },
@@ -324,7 +324,7 @@
     "order": 39,
     "text": "How did accident occur?",
     "description": "",
-    "alias": null,
+    "alias": "loss_type",
     "data_type": "text",
     "meta": {}
   },
@@ -348,7 +348,7 @@
     "order": 42,
     "text": "Describe in detail nature and extent of injury, indicate part of body involved*",
     "description": "Be as specific as possible; name part(s) of body injured",
-    "alias": null,
+    "alias": "loss_description",
     "data_type": "text",
     "meta": {}
   },
@@ -570,7 +570,7 @@
     "order": 68,
     "text": "Date of report",
     "description": "",
-    "alias": null,
+    "alias": "report_date",
     "data_type": "date",
     "meta": {
       "format": "YYYY-MM-DD"
