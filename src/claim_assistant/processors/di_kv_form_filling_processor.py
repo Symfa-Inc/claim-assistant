@@ -5,8 +5,7 @@ from typing import Any, Literal
 from openai import OpenAI
 from pydantic import BaseModel
 
-from claim_assistant.models.form import Form
-from claim_assistant.models.form_field import FormFieldAnswer
+from claim_assistant.schemas import Form, FormFieldAnswer
 
 
 class DIKVFormFillingProcessor:

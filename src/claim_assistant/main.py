@@ -7,14 +7,14 @@ from pathlib import Path
 from openai import OpenAI
 
 from claim_assistant import PROJECT_DIR
-from claim_assistant.models.form import Form
 from claim_assistant.processors import (
     ClaimValidationProcessor,
     FormFillingProcessor,
     PDFMappingProcessor,
     PolicyDatabaseProcessor,
 )
-from claim_assistant.schemas.coverage_analysis import CoverageAnalysis
+from claim_assistant.schemas.coverage_analysis_llm import CoverageAnalysisLLM
+from claim_assistant.schemas.form import Form
 from claim_assistant.schemas.mock_policy_record import MockPolicyRecord
 from claim_assistant.settings import OpenAISettings
 
@@ -93,7 +93,7 @@ def main(
         return
 
     logger.info("Step 3: Validating claim against policy record...")
-    analysis: CoverageAnalysis = validation_processor.process(form, policy)
+    analysis: CoverageAnalysisLLM = validation_processor.process(form, policy)
 
     logger.info("Step 4: Generating structured summary report...")
     report_processor.process(form, policy, analysis, output_pdf_path)

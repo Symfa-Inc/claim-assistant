@@ -6,15 +6,13 @@ import streamlit as st
 from streamlit_sortables import sort_items
 
 from claim_assistant import PROJECT_DIR
-from claim_assistant.models.form import Form
-from claim_assistant.models.form_field import FormField
+from claim_assistant.schemas.form import Form
+from claim_assistant.schemas.form_field import FormField
 from claim_assistant.views.base_view import BaseView, View
 
 
 class FormModelEditorView(BaseView):
     """Interactive editor for viewing and modifying form definitions."""
-
-    from collections import Counter
 
     ALLOWED_ALIASES = {"policy_id", "first_name", "last_name", "date_of_incident"}
 

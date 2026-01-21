@@ -16,9 +16,7 @@ from reportlab.platypus import (
     TableStyle,
 )
 
-from claim_assistant.models.form import Form
-from claim_assistant.schemas.coverage_analysis import CoverageAnalysis
-from claim_assistant.schemas.mock_policy_record import MockPolicyRecord
+from claim_assistant.schemas import CoverageAnalysisLLM, Form, MockPolicyRecord
 
 
 class PDFMappingProcessor:
@@ -133,7 +131,7 @@ class PDFMappingProcessor:
         self,
         form: Form,
         policy: MockPolicyRecord,
-        analysis: CoverageAnalysis,
+        analysis: CoverageAnalysisLLM,
         output_path: str | Path,
     ) -> Path:
         """

@@ -1,7 +1,7 @@
 from pydantic import BaseModel, Field
 
 
-class CoverageAnalysis(BaseModel):
+class CoverageAnalysisLLM(BaseModel):
     """Structured output for policy coverage analysis."""
 
     executive_summary: str = Field(
@@ -25,14 +25,3 @@ class CoverageAnalysis(BaseModel):
         le=1.0,
         description="Confidence score (0–1) reflecting certainty of claimant-policy match.",
     )
-
-    @classmethod
-    def openai_schema(cls) -> dict:
-        """Return the OpenAI-compatible JSON schema definition."""
-        return {
-            "type": "json_schema",
-            "json_schema": {
-                "name": "coverage_analysis",
-                "schema": cls.model_json_schema(),
-            },
-        }

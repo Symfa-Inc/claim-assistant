@@ -4,8 +4,7 @@ from pathlib import Path
 
 from Levenshtein import ratio
 
-from claim_assistant.models.form import Form
-from claim_assistant.schemas.mock_policy_record import MockPolicyRecord
+from claim_assistant.schemas import Form, MockPolicyRecord
 
 
 class PolicyDatabaseProcessor:
