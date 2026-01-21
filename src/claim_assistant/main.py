@@ -9,14 +9,15 @@ from openai import OpenAI
 from claim_assistant import PROJECT_DIR
 from claim_assistant.processors import (
     ClaimValidationProcessor,
-    FormFillingProcessor,
+    DIKeyValueExtractionProcessor,
+    DIKVFormFillingProcessor,
     PDFMappingProcessor,
     PolicyDatabaseProcessor,
 )
-from claim_assistant.schemas.coverage_analysis_llm import CoverageAnalysisLLM
+from claim_assistant.schemas import CoverageAnalysisResponse
 from claim_assistant.schemas.form import Form
 from claim_assistant.schemas.mock_policy_record import MockPolicyRecord
-from claim_assistant.settings import OpenAISettings
+from claim_assistant.settings import AzureDocumentIntelligenceSettings, OpenAISettings
 
 logger = logging.getLogger(__name__)
 
@@ -31,72 +32,76 @@ def main(
     Main entry point for the claim processing workflow.
 
     Steps:
-        1. Fill the form using LLM extraction from the input PDF.
-        2. Load the mock policy database and find the matching record.
-        3. Validate the claim against policy coverage.
-        4. Generate a structured PDF summary report.
+        1. Extract DI key/value pairs from the input PDF (with evidence).
+        2. Fill the form using one-shot LLM mapping from DI KV pairs.
+        3. Load the mock policy database and find the matching record.
+        4. Validate the claim against policy coverage (LLM) and attach context.
+        5. Generate a structured PDF summary report.
     """
     start_time = time.time()
 
     # --- output directory ---
     output_pdf_path = os.path.join(run_dir, "claim_summary.pdf")
     log_path = os.path.join(run_dir, "run.log")
-    file_handler = logging.FileHandler(log_path, mode="w", encoding="utf-8")
-    file_handler.setLevel(logging.INFO)
 
     # --- Setup logging and output directory ---
     logger = logging.getLogger("claim_pipeline")
     logger.setLevel(logging.INFO)
-    # Clear any pre-existing handlers to avoid duplicates
     if logger.hasHandlers():
         logger.handlers.clear()
 
-    # Console handler
     console_handler = logging.StreamHandler()
     console_handler.setLevel(logging.INFO)
     console_handler.setFormatter(
         logging.Formatter("%(asctime)s - %(levelname)s - %(message)s"),
     )
 
-    # File handler
     file_handler = logging.FileHandler(log_path, mode="w", encoding="utf-8")
     file_handler.setLevel(logging.INFO)
     file_handler.setFormatter(
         logging.Formatter("%(asctime)s - %(levelname)s - %(message)s"),
     )
 
-    # Attach both handlers once
     logger.addHandler(console_handler)
     logger.addHandler(file_handler)
 
     logging.getLogger("httpx").setLevel(logging.WARNING)
 
+    # --- Initialize settings / clients ---
+    openai_settings = OpenAISettings()
+    client = OpenAI(api_key=openai_settings.openai_api_key)
+
+    di_settings = AzureDocumentIntelligenceSettings()
+
     # --- Initialize processors ---
-    settings = OpenAISettings()
-    client = OpenAI(api_key=settings.openai_api_key)
-    form_processor = FormFillingProcessor(client, logger)
+    di_kv_processor = DIKeyValueExtractionProcessor(
+        api_key=di_settings.documentintelligence_api_key,
+        endpoint=di_settings.documentintelligence_endpoint,
+        logger=logger,
+    )
+    form_processor = DIKVFormFillingProcessor(model_client=client, logger=logger)
     db_processor = PolicyDatabaseProcessor(policy_db_path, logger)
     validation_processor = ClaimValidationProcessor(client, logger)
     report_processor = PDFMappingProcessor(logger)
 
     # --- Workflow ---
-    logger.info("Step 1: Extracting and filling form fields from PDF...")
-    form: Form = form_processor.process(input_pdf_path, form_json_path)
+    logger.info("Step 1: Extracting DI key/value pairs from PDF...")
+    di_payload = di_kv_processor.process(input_pdf_path)
 
-    logger.info("Step 2: Fetching policy from database...")
+    logger.info("Step 2: Filling form fields from DI KV pairs via LLM...")
+    form: Form = form_processor.process(
+        form_json_path=form_json_path,
+        di_payload=di_payload,
+    )
+
+    logger.info("Step 3: Fetching policy from database...")
     policy: MockPolicyRecord | None = db_processor.process(form)
-    if not policy:
-        logger.error(
-            "No matching policy found for Policy ID: %s",
-            form.policy_id.answer,
-        )
-        return
 
-    logger.info("Step 3: Validating claim against policy record...")
-    analysis: CoverageAnalysisLLM = validation_processor.process(form, policy)
+    logger.info("Step 4: Validating claim against policy record...")
+    analysis: CoverageAnalysisResponse = validation_processor.process(form, policy)
 
-    logger.info("Step 4: Generating structured summary report...")
-    report_processor.process(form, policy, analysis, output_pdf_path)
+    logger.info("Step 5: Generating structured summary report...")
+    report_processor.process(analysis=analysis, output_path=output_pdf_path)
 
     elapsed = time.time() - start_time
     logger.info(f"Claim processing completed in {elapsed:.1f} seconds")

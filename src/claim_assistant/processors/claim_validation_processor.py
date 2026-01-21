@@ -279,9 +279,9 @@ class ClaimValidationProcessor:
             )
 
         # --- Step 2: Compute weighted Levenshtein similarity ---
-        form_first = getattr(form.first_name, "answer", "").strip().lower()
-        form_last = getattr(form.last_name, "answer", "").strip().lower()
-        form_policy_id = getattr(form.policy_id, "answer", "").strip().lower()
+        form_first = getattr(form.first_name.answer, "value", "").strip().lower()
+        form_last = getattr(form.last_name.answer, "value", "").strip().lower()
+        form_policy_id = getattr(form.policy_id.answer, "value", "").strip().lower()
 
         policy_first = policy.policy_holder_first_name.strip().lower()
         policy_last = policy.policy_holder_last_name.strip().lower()
@@ -326,7 +326,7 @@ class ClaimValidationProcessor:
             )
 
         # --- Step 4: Date coverage check ---
-        date_field = getattr(form.date_of_incident, "answer", None)
+        date_field = getattr(form.date_of_incident.answer, "value", None)
         try:
             date_of_injury = self._parse_date(date_field)
         except Exception:

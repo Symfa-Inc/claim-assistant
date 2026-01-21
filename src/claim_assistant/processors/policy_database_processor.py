@@ -4,7 +4,7 @@ from pathlib import Path
 
 from Levenshtein import ratio
 
-from claim_assistant.schemas import Form, MockPolicyRecord
+from claim_assistant.schemas import Form, FormFieldAnswer, MockPolicyRecord
 
 
 class PolicyDatabaseProcessor:
@@ -85,7 +85,12 @@ class PolicyDatabaseProcessor:
               - MockPolicyRecord | None — the best match (or None if none found)
               - float — confidence score (1.0 for exact match, otherwise Levenshtein similarity)
         """
-        policy_id = getattr(form.policy_id, "answer", None)
+        policy_ans = getattr(form.policy_id, "answer", None)
+        if isinstance(policy_ans, FormFieldAnswer):
+            policy_id = policy_ans.value
+        else:
+            policy_id = policy_ans
+
         if not policy_id:
             self.logger.warning("Form does not contain a valid policy ID answer.")
             return None
