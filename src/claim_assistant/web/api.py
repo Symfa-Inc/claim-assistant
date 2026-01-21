@@ -5,10 +5,12 @@ from pathlib import Path
 from typing import Any
 
 from fastapi import Depends, FastAPI, File
+from fastapi import Form
 from fastapi import Form as FormField
 from fastapi import HTTPException, UploadFile
 from fastapi.responses import JSONResponse
 from fastapi.staticfiles import StaticFiles
+from starlette.responses import FileResponse
 
 from claim_assistant.schemas.coverage_analysis_response import CoverageAnalysisResponse
 from claim_assistant.web.deps import (
@@ -18,6 +20,7 @@ from claim_assistant.web.deps import (
     get_registry,
 )
 from claim_assistant.web.services.processing import ProcessRequest
+from claim_assistant.web.services.registry import SampleRef
 
 
 def create_app() -> FastAPI:
@@ -25,14 +28,6 @@ def create_app() -> FastAPI:
 
     project_dir = get_project_dir()
     static_dir = project_dir / "src" / "claim_assistant" / "web" / "static"
-
-    # Serve built SPA (React dist copied here)
-    if static_dir.exists():
-        app.mount(
-            "/",
-            StaticFiles(directory=str(static_dir), html=True),
-            name="spa",
-        )
 
     # ----------------------------
     # API routes
@@ -99,20 +94,83 @@ def create_app() -> FastAPI:
             except Exception:
                 pass
 
-    # Fallback: when static is missing, expose a minimal homepage.
-    @app.get("/")
-    def root_fallback(logger=Depends(get_logger)) -> JSONResponse:
-        if static_dir.exists():
-            # StaticFiles(html=True) already handles "/"
-            return JSONResponse({"ok": True})
-        logger.warning("SPA static directory not found: %s", static_dir)
-        return JSONResponse(
-            {
-                "message": "SPA not built/copied yet.",
-                "hint": "Copy React build output into src/claim_assistant/web/static/",
-                "registry": "/api/registry",
-                "process": "/api/process",
-            },
+    @app.get("/api/samples/{sample_id}/pdf")
+    def get_sample_pdf(
+        sample_id: str,
+        registry=Depends(get_registry),
+    ) -> FileResponse:
+        sample: SampleRef | None = registry.get_sample(sample_id)
+        if sample is None:
+            raise HTTPException(status_code=404, detail="Sample not found")
+
+        path = Path(sample.path)
+        if not path.exists():
+            raise HTTPException(status_code=404, detail="Sample file missing on server")
+
+        return FileResponse(
+            path=str(path),
+            media_type="application/pdf",
+            filename=path.name,
         )
+
+    @app.post("/api/process-sample", response_model=CoverageAnalysisResponse)
+    def process_sample(
+        sample_id: str = Form(...),
+        svc=Depends(get_processing_service),
+        logger=Depends(get_logger),
+        registry=Depends(get_registry),
+    ) -> CoverageAnalysisResponse:
+        sample = registry.get_sample(sample_id)
+        if sample is None:
+            raise HTTPException(status_code=404, detail="Sample not found")
+
+        req = ProcessRequest(
+            form_type=sample.form_code,
+            upload_pdf_path=Path(sample.path),
+            # is_sample=True,
+            # sample_id=sample.id,
+        )
+        logger.info(
+            "Process sample request: %s",
+            json.dumps(svc.to_debug_dict(req), ensure_ascii=False),
+        )
+        try:
+            return svc.process(req)
+        except ValueError as ve:
+            raise HTTPException(status_code=400, detail=str(ve)) from ve
+        except Exception as e:
+            logger.exception("Processing failed")
+            raise HTTPException(
+                status_code=500,
+                detail="Internal processing error",
+            ) from e
+
+    # Serve built SPA (React dist copied here)
+    if static_dir.exists():
+        app.mount(
+            "/assets",
+            StaticFiles(directory=str(static_dir / "assets")),
+            name="assets",
+        )
+
+        @app.get("/")
+        def spa_index():
+            return FileResponse(static_dir / "index.html")
+    else:
+
+        @app.get("/")
+        def root_fallback(logger=Depends(get_logger)) -> JSONResponse:
+            if static_dir.exists():
+                # StaticFiles(html=True) already handles "/"
+                return JSONResponse({"ok": True})
+            logger.warning("SPA static directory not found: %s", static_dir)
+            return JSONResponse(
+                {
+                    "message": "SPA not built/copied yet.",
+                    "hint": "Copy React build output into src/claim_assistant/web/static/",
+                    "registry": "/api/registry",
+                    "process": "/api/process",
+                },
+            )
 
     return app

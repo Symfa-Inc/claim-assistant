@@ -2,9 +2,37 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Any, Literal
+from typing import Literal
 
 SampleKind = Literal["digital", "handwritten", "unknown"]
+
+
+@dataclass(frozen=True)
+class SampleRef:
+    id: str
+    form_code: str
+    kind: str
+    filename: str
+    path: str
+
+
+@dataclass(frozen=True)
+class FormRef:
+    code: str
+    label: str
+    form_model_path: str
+
+
+@dataclass(frozen=True)
+class RegistrySnapshot:
+    forms: list[FormRef]
+    samples: list[SampleRef]
+
+    def to_dict(self) -> dict:
+        return {
+            "forms": [f.__dict__ for f in self.forms],
+            "samples": [s.__dict__ for s in self.samples],
+        }
 
 
 @dataclass(frozen=True)
@@ -36,94 +64,88 @@ class SampleDescriptor:
     path: Path
 
 
-@dataclass(frozen=True)
-class RegistrySnapshot:
-    """
-    Lightweight data transfer object for the homepage selector.
-    """
-
-    forms: list[FormDescriptor]
-    samples: list[SampleDescriptor]
-
-    def to_dict(self) -> dict[str, Any]:
-        return {
-            "forms": [
-                {
-                    "code": f.code,
-                    "label": f.label,
-                    "form_model_path": str(f.form_model_path),
-                }
-                for f in self.forms
-            ],
-            "samples": [
-                {
-                    "id": s.id,
-                    "form_code": s.form_code,
-                    "kind": s.kind,
-                    "filename": s.filename,
-                    "path": str(s.path),
-                }
-                for s in self.samples
-            ],
-        }
-
-
 class ClaimFormsRegistry:
     """
-    Discovers available claim form models and prepared sample PDFs.
-
-    Assumptions (based on your repo structure):
-      - Form models live under: <project_dir>/data/forms/<FORM_CODE>/form_model.json
-      - Samples are PDFs under: <project_dir>/data/forms/<FORM_CODE>/*.pdf
-
-    Notes:
-      - The "digital/handwritten" label is inferred from filename heuristics:
-            contains "hw" or "hand" -> handwritten
-            contains "digital" or "typed" -> digital
-        If no match -> "unknown"
-      - This registry is used only for UX / selectors. It does not do any processing.
+    Discovers available form types (form_model.json) and sample PDFs under:
+      PROJECT_DIR/data/forms/<FORM_CODE>/
     """
 
-    def __init__(
-        self,
-        *,
-        project_dir: Path,
-        forms_root_rel: Path = Path("data/forms"),
-        form_model_filename: str = "form_model.json",
-        include_samples: bool = True,
-    ) -> None:
+    def __init__(self, project_dir: Path) -> None:
         self._project_dir = Path(project_dir)
-        self._forms_root = self._project_dir / forms_root_rel
-        self._form_model_filename = form_model_filename
-        self._include_samples = include_samples
+        self._forms_root = self._project_dir / "data" / "forms"
 
-    def snapshot(self) -> RegistrySnapshot:
-        forms = self._discover_forms()
-        samples = self._discover_samples(forms) if self._include_samples else []
+        self._snapshot: RegistrySnapshot | None = None
+        self._sample_index: dict[str, SampleRef] = {}
+
+    def snapshot(self, *, refresh: bool = False) -> RegistrySnapshot:
+        if self._snapshot is None or refresh:
+            snap = self._scan()
+            self._snapshot = snap
+            self._sample_index = {s.id: s for s in snap.samples}
+        return self._snapshot
+
+    def get_sample(self, sample_id: str) -> SampleRef | None:
+        """
+        Returns a sample by its stable id (e.g. 'FL:FL__form_hw_POL987654321.pdf').
+        """
+        # Ensure index is ready
+        if self._snapshot is None:
+            self.snapshot()
+        return self._sample_index.get(sample_id)
+
+    # -------------------------
+    # internals
+    # -------------------------
+    def _scan(self) -> RegistrySnapshot:
+        forms: list[FormRef] = []
+        samples: list[SampleRef] = []
+
+        if not self._forms_root.exists():
+            return RegistrySnapshot(forms=forms, samples=samples)
+
+        for form_dir in sorted([p for p in self._forms_root.iterdir() if p.is_dir()]):
+            form_code = form_dir.name
+            form_model = form_dir / "form_model.json"
+            if form_model.exists():
+                forms.append(
+                    FormRef(
+                        code=form_code,
+                        label=form_code.upper(),
+                        form_model_path=str(form_model),
+                    ),
+                )
+
+            # samples: any "form_*.pdf" except containing "raw"
+            for pdf in sorted(form_dir.glob("form_*.pdf")):
+                if "raw" in pdf.name:
+                    continue
+
+                kind = self._infer_kind(pdf.name)
+                sample_id = f"{form_code}:{form_code}__{pdf.name}"
+                samples.append(
+                    SampleRef(
+                        id=sample_id,
+                        form_code=form_code,
+                        kind=kind,
+                        filename=pdf.name,
+                        path=str(pdf),
+                    ),
+                )
+
         return RegistrySnapshot(forms=forms, samples=samples)
 
-    # -----------------------------
-    # Discovery internals
-    # -----------------------------
-    def _discover_forms(self) -> list[FormDescriptor]:
-        if not self._forms_root.exists():
-            return []
-
-        forms: list[FormDescriptor] = []
-        for d in sorted(p for p in self._forms_root.iterdir() if p.is_dir()):
-            form_code = d.name
-            model_path = d / self._form_model_filename
-            if not model_path.exists():
-                continue
-
-            forms.append(
-                FormDescriptor(
-                    code=form_code,
-                    label=self._make_label(form_code),
-                    form_model_path=model_path,
-                ),
-            )
-        return forms
+    @staticmethod
+    def _infer_kind(filename: str) -> str:
+        # expects "form_{hw|dg}_*.pdf"
+        stem = filename[:-4] if filename.lower().endswith(".pdf") else filename
+        parts = stem.split("_")
+        if len(parts) >= 3:
+            t = parts[1].lower()
+            if t == "hw":
+                return "handwritten"
+            if t == "dg":
+                return "digital"
+        return "unknown"
 
     def _discover_samples(self, forms: list[FormDescriptor]) -> list[SampleDescriptor]:
         samples: list[SampleDescriptor] = []
