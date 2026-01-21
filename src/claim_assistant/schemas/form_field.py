@@ -1,6 +1,6 @@
-from typing import Any, Literal, Annotated
+from typing import Annotated, Any, Literal
 
-from pydantic import BaseModel, Field, create_model, field_validator, conlist
+from pydantic import BaseModel, Field, create_model, field_validator
 from pydantic_core.core_schema import ValidationInfo
 
 
