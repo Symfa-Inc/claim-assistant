@@ -5,7 +5,12 @@ from typing import Literal
 from Levenshtein import ratio as levenshtein_ratio
 from openai import OpenAI
 
-from claim_assistant.schemas import CoverageAnalysisLLM, Form, MockPolicyRecord
+from claim_assistant.schemas import (
+    CoverageAnalysisLLM,
+    CoverageAnalysisResponse,
+    Form,
+    MockPolicyRecord,
+)
 
 
 class ClaimValidationProcessor:
@@ -214,8 +219,8 @@ class ClaimValidationProcessor:
     def process(
         self,
         form: Form,
-        policy: MockPolicyRecord,
-    ) -> CoverageAnalysisLLM:
+        policy: MockPolicyRecord | None,
+    ) -> CoverageAnalysisResponse:
         """
         Validate a filled insurance claim form against stored policy data
         and produce a structured LLM-based reasoning summary.
@@ -232,9 +237,12 @@ class ClaimValidationProcessor:
             policy: Instance of MockPolicyRecord providing information extracted from database.
 
         Returns:
-            - CoverageAnalysis: Structured summary including:
+            - CoverageAnalysisResponse: Structured summary including:
                 • executive_summary – textual explanation of the decision.
                 • conclusion – "positive" if coverage likely applies, otherwise "negative".
+                • attached form.
+                • conclusion – "attached policy (may be None).
+
         """
         self.logger.info("Starting claim validation...")
 
@@ -243,26 +251,31 @@ class ClaimValidationProcessor:
         first_name = getattr(form.first_name, "answer", None)
         last_name = getattr(form.last_name, "answer", None)
         incident_date = getattr(form.date_of_incident, "answer", None)
+        form_fields = getattr(form, "fields", [])
 
         # Step 0: Ensure form is not empty
         if not any([policy_id, first_name, last_name, incident_date]):
             self.logger.error("OCR extraction failed — all critical fields are empty.")
-            return CoverageAnalysisLLM(
+            return CoverageAnalysisResponse(
                 executive_summary=(
                     "OCR extraction failed. No valid data was extracted from the claim form. "
                     "The form contains empty policy number, name, and incident date fields."
                 ),
                 conclusion="negative",
                 confidence=0.0,
+                form=form_fields,
+                policy=policy,
             )
 
         # Step 1: Match by policy number
         if not policy:
             self.logger.warning("No policy found for the given policy ID.")
-            return CoverageAnalysisLLM(
+            return CoverageAnalysisResponse(
                 executive_summary="Policy not found in database.",
                 conclusion="negative",
-                confidence=1,
+                confidence=1.0,
+                form=form_fields,
+                policy=None,
             )
 
         # --- Step 2: Compute weighted Levenshtein similarity ---
@@ -301,13 +314,15 @@ class ClaimValidationProcessor:
                 f"→ Reference (policy): policy_id='{policy_id}', "
                 f"first_name='{policy_first}', last_name='{policy_last}'",
             )
-            return CoverageAnalysisLLM(
+            return CoverageAnalysisResponse(
                 executive_summary=(
                     f"No sufficiently similar policy record found. "
                     f"Integrated confidence score ({confidence:.2f}) indicates no reliable match."
                 ),
                 conclusion="negative",
                 confidence=confidence,
+                form=form_fields,
+                policy=policy,
             )
 
         # --- Step 4: Date coverage check ---
@@ -316,18 +331,22 @@ class ClaimValidationProcessor:
             date_of_injury = self._parse_date(date_field)
         except Exception:
             self.logger.error("Invalid or missing incident date in form.")
-            return CoverageAnalysisLLM(
+            return CoverageAnalysisResponse(
                 executive_summary="Invalid date format in claim form.",
                 conclusion="negative",
                 confidence=confidence,
+                form=form_fields,
+                policy=policy,
             )
 
         if not (policy.start_date <= date_of_injury.date() <= policy.end_date):
             self.logger.info("Incident date lies outside policy coverage period.")
-            return CoverageAnalysisLLM(
+            return CoverageAnalysisResponse(
                 executive_summary="Incident date not covered by policy validity period.",
                 conclusion="negative",
                 confidence=confidence,
+                form=form_fields,
+                policy=policy,
             )
 
         # --- Step 5: LLM-based coverage analysis ---
@@ -336,10 +355,12 @@ class ClaimValidationProcessor:
         policy_path = policy.get_policy_path()
         if not policy_path:
             self.logger.error("Policy document file is missing.")
-            return CoverageAnalysisLLM(
+            return CoverageAnalysisResponse(
                 executive_summary="Policy document not available for analysis.",
                 conclusion="negative",
                 confidence=confidence,
+                form=form_fields,
+                policy=policy,
             )
 
         # pdf_path = validate_pdf(policy_path)
@@ -347,18 +368,24 @@ class ClaimValidationProcessor:
         # with openai_file(self.client, pdf_path, self.logger) as file_id:
         #     analysis = self._llm_coverage_analysis_pdf(form, file_id)
 
-        analysis = self._llm_coverage_analysis_text(form, policy)
+        analysis_llm = self._llm_coverage_analysis_text(form, policy)
 
         # if low name confidence, mark as uncertain
         if ocr_uncertain:
-            analysis.conclusion = "uncertain"
-            analysis.executive_summary += (
+            analysis_llm.conclusion = "uncertain"
+            analysis_llm.executive_summary += (
                 f"\n\nLow overall OCR match confidence ({confidence:.2f}). "
                 f"Form fields (policy ID, first name, last name) show partial similarity "
                 f"to the policy record. Claim likely corresponds to the correct policyholder "
                 f"but cannot be verified with high certainty due to extraction inconsistencies."
             )
-        analysis.confidence = confidence
+        analysis_llm.confidence = confidence
 
         self.logger.info("Claim validation completed successfully.")
-        return analysis
+        return CoverageAnalysisResponse(
+            executive_summary=analysis_llm.executive_summary,
+            conclusion=analysis_llm.conclusion,
+            confidence=analysis_llm.confidence,
+            form=form_fields,
+            policy=policy,
+        )
