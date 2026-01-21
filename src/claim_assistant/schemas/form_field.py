@@ -1,14 +1,14 @@
-from typing import Any, Literal
+from typing import Any, Literal, Annotated
 
-from pydantic import BaseModel, Field, create_model, field_validator
+from pydantic import BaseModel, Field, create_model, field_validator, conlist
 from pydantic_core.core_schema import ValidationInfo
 
 
 class BoundingRegion(BaseModel):
     page: int = Field(..., ge=1)
-    polygon: list[float] = Field(
+    polygon: Annotated[list[float], Field(min_length=8, max_length=8)] = Field(
         ...,
-        description="Flat list [x1,y1,x2,y2,...] in DI coordinates.",
+        description="8-number quadrilateral: x1,y1,x2,y2,x3,y3,x4,y4 in DI coordinates.",
     )
 
 

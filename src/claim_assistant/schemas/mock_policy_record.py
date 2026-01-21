@@ -29,7 +29,7 @@ class MockPolicyRecord(BaseModel):
     )
     end_date: date = Field(
         ...,
-        alias="end_data",
+        alias="end_date",
         description="Date when the policy coverage ends (ISO format: YYYY-MM-DD).",
     )
     policy_coverage: str = Field(
