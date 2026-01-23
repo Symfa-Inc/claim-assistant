@@ -3,6 +3,7 @@
 import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import type { ChangeEvent, DragEvent } from 'react'
 import { Document, Page, pdfjs } from 'react-pdf'
+import api from '@/app/utils/api'
 
 if (typeof window !== 'undefined') {
     pdfjs.GlobalWorkerOptions.workerSrc = new URL(
@@ -41,7 +42,7 @@ export default function AppPdfViewer({
     const [error, setError] = useState<string | null>(null)
     const [file, setFile] = useState<File | string | null>(src ?? null)
     const [fileName, setFileName] = useState<string | null>(null)
-    const [urlInput, setUrlInput] = useState(src ?? '')
+    const [selectedForm, setSelectedForm] = useState('WI')
     const [isLoading, setIsLoading] = useState(false)
     const [containerWidth, setContainerWidth] = useState(0)
     const [numPages, setNumPages] = useState<number | null>(null)
@@ -70,7 +71,6 @@ export default function AppPdfViewer({
     useEffect(() => {
         if (!src) return
         setFile(src)
-        setUrlInput(src)
     }, [src])
 
     const handleFile = (nextFile: File) => {
@@ -105,23 +105,31 @@ export default function AppPdfViewer({
         }
     }
 
-    const handleUrlLoad = () => {
-        const nextUrl = urlInput.trim()
-        if (!nextUrl) {
-            setError('Please enter a PDF URL.')
-            return
-        }
+    const handleProcessPdf = async (formId: string) => {
+        if (!(file instanceof File) || !formId) return
 
-        wheelAccumulatorRef.current = 0
-        if (wheelResetRef.current) {
-            clearTimeout(wheelResetRef.current)
-        }
-        setZoom(1)
-        setFile(nextUrl)
-        setFileName(null)
-        setError(null)
-        setIsLoading(true)
+        const formData = new FormData()
+        formData.append('file', file)
+        formData.append('form', selectedForm) // optional
+
+        const response = await api.get('/', {
+            params: {
+                form_id: file,
+            },
+        })
     }
+
+    const selectForm = async (form_id: string) => {
+
+        const response = await api.get('/forms', {
+            params: {
+                form_id
+            },
+        })
+        console.log(response)
+    }
+
+
     useEffect(() => {
         const container = scrollRef.current
         if (!container) return
@@ -190,69 +198,89 @@ export default function AppPdfViewer({
                         </span>
                     )}
                 </div>
-                <div className="flex items-center gap-2 text-xs text-gray-500">
-                    <button
-                        type="button"
-                        onClick={() =>
-                            setZoom((value) => Math.max(0.5, value - 0.1))
-                        }
-                        className="rounded-md border border-gray-300 bg-white px-2 py-1 text-sm text-gray-700 hover:bg-gray-50"
-                        aria-label="Zoom out"
-                    >
-                        -
-                    </button>
-                    <span className="min-w-[48px] text-center">
-                        {Math.round(zoom * 100)}%
-                    </span>
-                    <button
-                        type="button"
-                        onClick={() =>
-                            setZoom((value) => Math.min(2.5, value + 0.1))
-                        }
-                        className="rounded-md border border-gray-300 bg-white px-2 py-1 text-sm text-gray-700 hover:bg-gray-50"
-                        aria-label="Zoom in"
-                    >
-                        +
-                    </button>
-                </div>
-                <div className="flex flex-1 flex-wrap items-center justify-end gap-2 text-sm">
-                    <label className="cursor-pointer rounded-md border border-gray-300 bg-white px-3 py-1 text-gray-700 shadow-sm hover:bg-gray-50">
-                        Upload PDF
-                        <input
-                            type="file"
-                            accept="application/pdf"
-                            className="hidden"
-                            onChange={handleFileChange}
-                        />
-                    </label>
-                    <input
-                        value={urlInput}
-                        onChange={(event) => setUrlInput(event.target.value)}
-                        placeholder="Paste PDF URL"
-                        className="min-w-[180px] flex-1 rounded-md border border-gray-300 px-3 py-1 text-sm"
-                    />
-                    <button
-                        type="button"
-                        onClick={handleUrlLoad}
-                        className="rounded-md bg-blue-600 px-3 py-1 text-white hover:bg-blue-500"
-                    >
-                        Open URL
-                    </button>
-                    <button
-                        type="button"
-                        onClick={() => {
-                            if (canProcess) {
-                                onProcess?.()
+                <div className="flex flex-1 flex-wrap items-center gap-3">
+                    <div className="flex flex-1 items-center gap-2 text-xs text-gray-500">
+                        <button
+                            type="button"
+                            onClick={() =>
+                                setZoom((value) => Math.max(0.5, value - 0.1))
                             }
-                        }}
-                        className={`rounded-md px-3 py-1 text-white ${canProcess
-                            ? 'bg-green-600 hover:bg-green-600'
-                            : 'cursor-not-allowed bg-green-300'
-                            }`}
-                        aria-disabled={!canProcess}
-                    >
-                        {isProcessing ? 'Processing...' : 'Process PDF'}
-                    </button>
+                            className="rounded-md text-sm border border-gray-300 bg-white px-2 py-1 text-gray-700 hover:bg-gray-50"
+                            aria-label="Zoom out"
+                        >
+                            -
+                        </button>
+                        <span className="min-w-[48px] text-center">
+                            {Math.round(zoom * 100)}%
+                        </span>
+                        <button
+                            type="button"
+                            onClick={() =>
+                                setZoom((value) => Math.min(2.5, value + 0.1))
+                            }
+                            className="rounded-md text-sm border border-gray-300 bg-white px-2 py-1 text-gray-700 hover:bg-gray-50"
+                            aria-label="Zoom in"
+                        >
+                            +
+                        </button>
+                        <label className="cursor-pointer rounded-md text-sm border border-gray-300 bg-white px-3 py-1 text-gray-700 shadow-sm hover:bg-gray-50">
+                            Upload PDF
+                            <input
+                                type="file"
+                                accept="application/pdf"
+                                className="hidden"
+                                onChange={handleFileChange}
+                            />
+                        </label>
+                    </div>
+                    <div className="flex items-center gap-2 text-sm">
+                        <span className="text-sm font-medium text-gray-700">
+                            Claim Form
+                        </span>
+                        <select
+                            value={selectedForm}
+                            onChange={(event) =>
+                                selectForm(event.target.value)
+                            }
+                            className="rounded-md text-sm text-left border border-gray-300 bg-white py-1 pr-9 pl-3 text-gray-700 hover:bg-gray-50"
+                            aria-label="Form"
+                        >
+                            <option value="FL:FL__form_dg_POL123456789.pdf">Florida digital</option>
+                            <option value="FL:FL__form_hw_POL987654321.pdf">Florida handwritten</option>
+                            <option value="IA:IA__form_dg_POL123456789.pdf">Iowa digital</option>
+                            <option value="IA:IA__form_hw_POL987654321.pdf">Iowa handwritten</option>
+                            <option value="KS:KS__form_dg_POL123456789.pdf">Kansas digital</option>
+                            <option value="KS:KS__form_hw_POL987654321.pdf">Kansas handwritten</option>
+                            <option value="MN:MN__form_dg_POL123456789.pdf">Minnesota digital</option>
+                            <option value="MN:MN__form_hw_POL987654321.pdf">Minnesota handwritten</option>
+                            <option value="NH:NH__form_dg_POL123456789.pdf">New Hampshire digital</option>
+                            <option value="NH:NH__form_hw_POL987654321.pdf">New Hampshire handwritten</option>
+                            <option value="NY:NY__form_dg_POL123456789.pdf">New York digital</option>
+                            <option value="NY:NY__form_hw_POL987654321.pdf">New York handwritten</option>
+                            <option value="OH:OH__form_dg_POL123456789.pdf">Ohio digital</option>
+                            <option value="OH:OH__form_hw_POL987654321.pdf">Ohio handwritten</option>
+                            <option value="WI:WI__form_dg_POL123456789.pdf">Wisconsin digital</option>
+                            <option value="WI:WI__form_hw_POL987654321.pdf">Wisconsin handwritten</option>
+                            <option value="custom">Custom</option>
+                        </select>
+                    </div>
+                    <div className="flex flex-1 items-center justify-end gap-2 text-sm">
+                        <button
+                            type="button"
+                            onClick={() => {
+                                if (canProcess) {
+                                    onProcess?.()
+                                }
+                            }}
+                            className={`rounded-md text-sm px-3 py-1 text-white ${canProcess
+                                ? 'bg-green-600 hover:bg-green-600'
+                                : 'cursor-not-allowed bg-green-300'
+                                }`}
+                            aria-disabled={!canProcess}
+                        >
+                            {isProcessing ? 'Processing...' : 'Process PDF'}
+                        </button>
+                    </div>
                 </div>
             </div>
             <div
