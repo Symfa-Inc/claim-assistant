@@ -330,7 +330,7 @@
     "order": 37,
     "text": "Tell us how the injury/illness occurred, what the employee was doing before the incident (give details), and what the injury/illness was.",
     "description": "Describe events leading to injury/illness and actions at time of incident",
-    "alias": null,
+    "alias": "loss_description",
     "data_type": "text",
     "meta": {}
   },
@@ -338,7 +338,7 @@
     "order": 38,
     "text": "What was the injury or illness (include the part(s) of body)?",
     "description": "Describe the injury/illness and body parts involved",
-    "alias": null,
+    "alias": "loss_type",
     "data_type": "text",
     "meta": {}
   },
@@ -362,7 +362,7 @@
     "order": 41,
     "text": "Name and address of the place of the occurrence",
     "description": "Name and address where occurrence took place (if not employer premises)",
-    "alias": null,
+    "alias": "loss_location",
     "data_type": "string",
     "meta": {}
   },
@@ -682,7 +682,7 @@
     "order": 79,
     "text": "Date insurer received notice",
     "description": "Date insurer received notification of claim",
-    "alias": null,
+    "alias": "report_date",
     "data_type": "date",
     "meta": {
       "format": "YYYY-MM-DD"

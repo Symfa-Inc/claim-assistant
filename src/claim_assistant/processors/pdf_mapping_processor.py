@@ -2,6 +2,7 @@ import io
 import logging
 from datetime import datetime
 from pathlib import Path
+from typing import Any
 
 from PyPDF2 import PdfReader, PdfWriter
 from reportlab.lib import colors
@@ -16,9 +17,7 @@ from reportlab.platypus import (
     TableStyle,
 )
 
-from claim_assistant.models.form import Form
-from claim_assistant.schemas.coverage_analysis import CoverageAnalysis
-from claim_assistant.schemas.mock_policy_record import MockPolicyRecord
+from claim_assistant.schemas import CoverageAnalysisResponse
 
 
 class PDFMappingProcessor:
@@ -65,61 +64,102 @@ class PDFMappingProcessor:
 
     def _kv_table(self, rows: list[tuple[str, str]]) -> Table:
         """Create a simple key-value table."""
-        if rows[1][0] == "Confidence Score":
-            confidence_score = float(rows[1][1])
-        data = []
-        conclusion_color = None
-        for key, val in rows:
-            if val == "Positive" and confidence_score == 1.0:
-                conclusion_color = colors.lightgreen
-            elif val == "Uncertain":
-                conclusion_color = colors.yellow
-            elif val == "Negative" and confidence_score == 1.0:
-                conclusion_color = colors.salmon
-            elif val == "Negative":
-                conclusion_color = colors.salmon
+        confidence_score: float | None = None
+        if len(rows) > 1 and rows[1][0] == "Confidence Score":
+            try:
+                confidence_score = float(rows[1][1])
+            except Exception:
+                confidence_score = None
 
+        data: list[list[Paragraph]] = []
+        conclusion_color = None
+
+        for key, val in rows:
             if key == "Confidence Score" and confidence_score is not None:
                 val = f"{int(confidence_score * 100)}%"
+
+            if key == "Conclusion":
+                if (val or "").lower() == "positive" and confidence_score == 1.0:
+                    conclusion_color = colors.lightgreen
+                elif (val or "").lower() == "uncertain":
+                    conclusion_color = colors.yellow
+                elif (val or "").lower() == "negative":
+                    conclusion_color = colors.salmon
 
             key_p = self._para(f"<b>{key}:</b>")
             val_p = self._para(val or "")
             data.append([key_p, val_p])
 
         tbl = Table(data, colWidths=[2.0 * inch, 4.5 * inch], hAlign="LEFT")
+        base_style = [
+            ("BACKGROUND", (0, 0), (0, -1), colors.whitesmoke),
+            ("VALIGN", (0, 0), (-1, -1), "TOP"),
+            ("BOX", (0, 0), (-1, -1), 0.25, colors.lightgrey),
+            ("INNERGRID", (0, 0), (-1, -1), 0.25, colors.lightgrey),
+            ("LEFTPADDING", (0, 0), (-1, -1), 6),
+            ("RIGHTPADDING", (0, 0), (-1, -1), 6),
+        ]
         if conclusion_color:
-            tbl.setStyle(
-                TableStyle(
-                    [
-                        ("BACKGROUND", (0, 0), (0, -1), colors.whitesmoke),
-                        (
-                            "BACKGROUND",
-                            (-1, 0),
-                            (-1, 0),
-                            conclusion_color,
-                        ),  # highlight conclusion (certain position)
-                        ("VALIGN", (0, 0), (-1, -1), "TOP"),
-                        ("BOX", (0, 0), (-1, -1), 0.25, colors.lightgrey),
-                        ("INNERGRID", (0, 0), (-1, -1), 0.25, colors.lightgrey),
-                        ("LEFTPADDING", (0, 0), (-1, -1), 6),
-                        ("RIGHTPADDING", (0, 0), (-1, -1), 6),
-                    ],
-                ),
+            # highlight the "Conclusion" row value cell; it's row 0 in this table
+            base_style.insert(
+                1,
+                ("BACKGROUND", (-1, 0), (-1, 0), conclusion_color),
             )
-        else:
-            tbl.setStyle(
-                TableStyle(
-                    [
-                        ("BACKGROUND", (0, 0), (0, -1), colors.whitesmoke),
-                        ("VALIGN", (0, 0), (-1, -1), "TOP"),
-                        ("BOX", (0, 0), (-1, -1), 0.25, colors.lightgrey),
-                        ("INNERGRID", (0, 0), (-1, -1), 0.25, colors.lightgrey),
-                        ("LEFTPADDING", (0, 0), (-1, -1), 6),
-                        ("RIGHTPADDING", (0, 0), (-1, -1), 6),
-                    ],
-                ),
-            )
+        tbl.setStyle(TableStyle(base_style))
         return tbl
+
+    @classmethod
+    def _format_field_value_and_confidence(cls, field) -> str:
+        """
+        Render a single field as:
+          <value> (conf=XX%)
+        without any bounding regions.
+
+        If value is empty/None -> "N/A".
+        """
+        ans = getattr(field, "answer", None)
+        if not ans:
+            return "N/A"
+
+        value = getattr(ans, "value", None)
+        if value is None or (isinstance(value, str) and not value.strip()):
+            value_str = "N/A"
+        else:
+            value_str = str(value)
+
+        evidences = getattr(ans, "evidences", None) or []
+        conf = cls._avg_confidence(evidences)
+        if conf is None:
+            return value_str
+
+        return f"{value_str} (conf={int(conf * 100)}%)"
+
+    @staticmethod
+    def _avg_confidence(evidences: list[Any]) -> float | None:
+        """
+        Average confidence across evidences.
+        Evidences may arrive as Pydantic models or raw dicts.
+        """
+        if not evidences:
+            return None
+
+        vals: list[float] = []
+        for e in evidences:
+            conf = None
+            if isinstance(e, dict):
+                conf = e.get("confidence")
+            else:
+                conf = getattr(e, "confidence", None)
+            if conf is None:
+                continue
+            try:
+                vals.append(float(conf))
+            except Exception:
+                continue
+
+        if not vals:
+            return None
+        return sum(vals) / len(vals)
 
     def _page_number(self, canvas, doc):
         canvas.setFont("Helvetica", 9)
@@ -131,9 +171,7 @@ class PDFMappingProcessor:
     # ------------------------------------------------------------
     def process(
         self,
-        form: Form,
-        policy: MockPolicyRecord,
-        analysis: CoverageAnalysis,
+        analysis: CoverageAnalysisResponse,
         output_path: str | Path,
     ) -> Path:
         """
@@ -143,8 +181,6 @@ class PDFMappingProcessor:
           3. Policy metadata and full policy coverage as appendix
 
         Args:
-            form: Filled Form object.
-            policy: Matching MockPolicyRecord.
             analysis: CoverageAnalysis result.
             output_path: Path to save generated PDF.
 
@@ -182,9 +218,9 @@ class PDFMappingProcessor:
         story.append(
             self._kv_table(
                 [
-                    ("Conclusion", analysis.conclusion.capitalize()),
+                    ("Conclusion", (analysis.conclusion or "unknown").capitalize()),
                     ("Confidence Score", f"{analysis.confidence:.2f}"),
-                    ("Summary", analysis.executive_summary),
+                    ("Summary", analysis.executive_summary or ""),
                 ],
             ),
         )
@@ -193,24 +229,48 @@ class PDFMappingProcessor:
 
         # --- Section 2: Extracted Form Fields ---
         story.append(self._section_header("Extracted Form Fields"))
-        form_rows = [(f.text, str(f.answer or "N/A")) for f in form.fields]
+        form_fields = analysis.form or []
+        form_rows = [
+            (f.text, self._format_field_value_and_confidence(f)) for f in form_fields
+        ]
         story.append(self._kv_table(form_rows))
+        story.append(Spacer(1, 18))
 
         # story.append(PageBreak())
 
         # --- Section 3: Policy Information ---
-        story.append(self._section_header("Policy Information"))
-        policy_rows = [
-            ("Policy Number", policy.policy_number),
-            (
-                "Policy Holder",
-                f"{policy.policy_holder_first_name} {policy.policy_holder_last_name}",
-            ),
-            ("Coverage Start Date", policy.start_date.isoformat()),
-            ("Coverage End Date", policy.end_date.isoformat()),
-            # ("Policy Document Path", str(policy.get_policy_path())),
-        ]
-        story.append(self._kv_table(policy_rows))
+        policy = analysis.policy
+        if policy is not None:
+            story.append(self._section_header("Policy Information"))
+            policy_rows = [
+                ("Policy Number", getattr(policy, "policy_number", "") or "N/A"),
+                (
+                    "Policy Holder",
+                    (
+                        f"{getattr(policy, 'policy_holder_first_name', '')} "
+                        f"{getattr(policy, 'policy_holder_last_name', '')}"
+                    ).strip()
+                    or "N/A",
+                ),
+                (
+                    "Coverage Start Date",
+                    getattr(
+                        getattr(policy, "start_date", None),
+                        "isoformat",
+                        lambda: "N/A",
+                    )(),
+                ),
+                (
+                    "Coverage End Date",
+                    getattr(
+                        getattr(policy, "end_date", None),
+                        "isoformat",
+                        lambda: "N/A",
+                    )(),
+                ),
+            ]
+            story.append(self._kv_table(policy_rows))
+
         story.append(Spacer(1, 24))
         story.append(
             self._para(

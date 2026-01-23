@@ -212,3 +212,6 @@ __marimo__/
 # Runs directory
 data/runs/*
 !data/runs/.gitkeep
+
+frontend
+src/claim_assistant/web/frontend
