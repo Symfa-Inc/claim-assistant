@@ -94,25 +94,6 @@ def create_app() -> FastAPI:
             except Exception:
                 pass
 
-    @app.get("/api/samples/{sample_id}/pdf")
-    def get_sample_pdf(
-        sample_id: str,
-        registry=Depends(get_registry),
-    ) -> FileResponse:
-        sample: SampleRef | None = registry.get_sample(sample_id)
-        if sample is None:
-            raise HTTPException(status_code=404, detail="Sample not found")
-
-        path = Path(sample.path)
-        if not path.exists():
-            raise HTTPException(status_code=404, detail="Sample file missing on server")
-
-        return FileResponse(
-            path=str(path),
-            media_type="application/pdf",
-            filename=path.name,
-        )
-
     @app.post("/api/process-sample", response_model=CoverageAnalysisResponse)
     def process_sample(
         sample_id: str = Form(...),
