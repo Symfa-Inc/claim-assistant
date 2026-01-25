@@ -42,7 +42,7 @@ export default function AppPdfViewer({
     const [error, setError] = useState<string | null>(null)
     const [file, setFile] = useState<File | string | null>(src ?? null)
     const [fileName, setFileName] = useState<string | null>(null)
-    const [selectedForm, setSelectedForm] = useState('WI')
+    const [selectedForm, setSelectedForm] = useState('FL:FL__form_dg_POL123456789.pdf')
     const [isLoading, setIsLoading] = useState(false)
     const [containerWidth, setContainerWidth] = useState(0)
     const [numPages, setNumPages] = useState<number | null>(null)
@@ -72,6 +72,13 @@ export default function AppPdfViewer({
         if (!src) return
         setFile(src)
     }, [src])
+
+    useEffect(() => {
+        const [state, raw] = 'FL:FL__form_dg_POL123456789.pdf'.split(':')
+        const fileName = raw.split('__')[1] // or raw if you prefer
+        setFile(`/forms/${state}/${fileName}`)
+        setIsLoading(true)
+    }, [])
 
     const handleFile = (nextFile: File) => {
         if (nextFile.type !== 'application/pdf') {
@@ -105,28 +112,43 @@ export default function AppPdfViewer({
         }
     }
 
-    const handleProcessPdf = async (formId: string) => {
-        if (!(file instanceof File) || !formId) return
+    const handleProcessPdf = async () => {
+        if (!file) return
+
+        let pdfFile: File
+
+        if (file instanceof File) {
+            pdfFile = file
+        } else {
+            // file is a URL string (e.g. "/forms/FL/...")
+            const res = await fetch(file)
+            const blob = await res.blob()
+            pdfFile = new File([blob], file.split('/').pop() ?? 'form.pdf', {
+                type: 'application/pdf',
+            })
+        }
 
         const formData = new FormData()
-        formData.append('file', file)
-        formData.append('form', selectedForm) // optional
+        formData.append('file', pdfFile)           // pdfFile is File or Blob
+        formData.append('form', selectedForm)      // optional extra field
 
-        const response = await api.get('/', {
-            params: {
-                form_id: file,
-            },
-        })
+        const response = await api.post('/process', formData)
+
+        console.log(response.data)
     }
 
-    const selectForm = async (form_id: string) => {
+    const selectForm = (formId: string) => {
+        if (formId === 'custom') return
 
-        const response = await api.get('/forms', {
-            params: {
-                form_id
-            },
-        })
-        console.log(response)
+        console.log(file)
+
+        const [state, raw] = formId.split(':')
+        const fileName = raw.split('__')[1]
+
+        setFile(`/forms/${state}/${fileName}`)
+        // setFileName(fileName) // optional
+        setSelectedForm(formId)
+        setIsLoading(true)
     }
 
 
@@ -247,20 +269,10 @@ export default function AppPdfViewer({
                         >
                             <option value="FL:FL__form_dg_POL123456789.pdf">Florida digital</option>
                             <option value="FL:FL__form_hw_POL987654321.pdf">Florida handwritten</option>
-                            <option value="IA:IA__form_dg_POL123456789.pdf">Iowa digital</option>
-                            <option value="IA:IA__form_hw_POL987654321.pdf">Iowa handwritten</option>
-                            <option value="KS:KS__form_dg_POL123456789.pdf">Kansas digital</option>
-                            <option value="KS:KS__form_hw_POL987654321.pdf">Kansas handwritten</option>
-                            <option value="MN:MN__form_dg_POL123456789.pdf">Minnesota digital</option>
-                            <option value="MN:MN__form_hw_POL987654321.pdf">Minnesota handwritten</option>
-                            <option value="NH:NH__form_dg_POL123456789.pdf">New Hampshire digital</option>
-                            <option value="NH:NH__form_hw_POL987654321.pdf">New Hampshire handwritten</option>
-                            <option value="NY:NY__form_dg_POL123456789.pdf">New York digital</option>
-                            <option value="NY:NY__form_hw_POL987654321.pdf">New York handwritten</option>
-                            <option value="OH:OH__form_dg_POL123456789.pdf">Ohio digital</option>
-                            <option value="OH:OH__form_hw_POL987654321.pdf">Ohio handwritten</option>
-                            <option value="WI:WI__form_dg_POL123456789.pdf">Wisconsin digital</option>
-                            <option value="WI:WI__form_hw_POL987654321.pdf">Wisconsin handwritten</option>
+                            <option value="NH:NH__form_dg_SIC123456789.pdf">New Hampshire digital</option>
+                            <option value="NH:NH__form_hw_POL123456789.pdf">New Hampshire handwritten</option>
+                            <option value="WI:WI__form_dg_POL987654321.pdf">Wisconsin digital</option>
+                            <option value="WI:WI__form_hw_POL123456789.pdf">Wisconsin handwritten</option>
                             <option value="custom">Custom</option>
                         </select>
                     </div>
@@ -269,7 +281,7 @@ export default function AppPdfViewer({
                             type="button"
                             onClick={() => {
                                 if (canProcess) {
-                                    onProcess?.()
+                                    handleProcessPdf()
                                 }
                             }}
                             className={`rounded-md text-sm px-3 py-1 text-white ${canProcess
