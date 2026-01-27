@@ -3,6 +3,7 @@
 import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import type { ChangeEvent, DragEvent } from 'react'
 import { Document, Page, pdfjs } from 'react-pdf'
+import type { ClaimField } from '@/app/ui/components/claim-table'
 import api from '@/app/utils/api'
 
 if (typeof window !== 'undefined') {
@@ -23,14 +24,55 @@ interface OwnProps {
     src?: string
     isProcessing?: boolean
     onProcess?: () => void
+    onProcessed?: (
+        fields: ClaimField[],
+        keyFields: ClaimField[],
+        boxes: HighlightBox[],
+        summary: BackendSummary | null
+    ) => void
     highlightFieldId?: string | null
     highlightBoxes?: HighlightBox[]
+}
+
+interface BackendBoundingRegion {
+    page: number
+    polygon: number[]
+}
+
+interface BackendFormEvidence {
+    confidence?: number | null
+    bounding_region?: BackendBoundingRegion | null
+}
+
+interface BackendFormAnswer {
+    value?: unknown
+    evidences?: BackendFormEvidence[]
+}
+
+interface BackendFormField {
+    text: string
+    alias?: string | null
+    answer?: BackendFormAnswer
+}
+
+interface BackendResponse {
+    form?: BackendFormField[]
+    executive_summary?: string
+    confidence?: number
+    conclusion?: string
+}
+
+interface BackendSummary {
+    executiveSummary: string
+    confidence: number | null
+    conclusion: string | null
 }
 
 export default function AppPdfViewer({
     src,
     isProcessing = false,
     onProcess,
+    onProcessed,
     highlightFieldId,
     highlightBoxes = [],
 }: OwnProps) {
@@ -50,6 +92,7 @@ export default function AppPdfViewer({
     const [pageSizes, setPageSizes] = useState<Record<number, {
         width: number
         height: number
+        viewBox?: [number, number, number, number]
     }>>({})
 
     useEffect(() => {
@@ -81,7 +124,11 @@ export default function AppPdfViewer({
     }, [])
 
     const handleFile = (nextFile: File) => {
-        if (nextFile.type !== 'application/pdf') {
+        const isPdf =
+            nextFile.type === 'application/pdf' ||
+            !nextFile.type ||
+            nextFile.name.toLowerCase().endsWith('.pdf')
+        if (!isPdf) {
             setError('Please choose a valid PDF file.')
             return
         }
@@ -93,15 +140,18 @@ export default function AppPdfViewer({
         setZoom(1)
         setFile(nextFile)
         setFileName(nextFile.name)
+        setSelectedForm('generic')
         setError(null)
         setIsLoading(true)
     }
 
     const handleFileChange = (event: ChangeEvent<HTMLInputElement>) => {
-        const nextFile = event.target.files?.[0]
+        const input = event.target
+        const nextFile = input.files?.[0]
         if (nextFile) {
             handleFile(nextFile)
         }
+        input.value = ''
     }
 
     const handleDrop = (event: DragEvent<HTMLDivElement>) => {
@@ -114,6 +164,7 @@ export default function AppPdfViewer({
 
     const handleProcessPdf = async () => {
         if (!file) return
+        onProcess?.()
 
         let pdfFile: File
 
@@ -129,18 +180,109 @@ export default function AppPdfViewer({
         }
 
         const formData = new FormData()
-        formData.append('file', pdfFile)           // pdfFile is File or Blob
-        formData.append('form', selectedForm)      // optional extra field
+        formData.append('file', pdfFile)
+        formData.append('form_id', selectedForm)
 
-        const response = await api.post('/process', formData)
+        try {
+            const response = await api.post<BackendResponse>('/process', formData)
+            console.log(response)
+            const fields: ClaimField[] = []
+            const keyFields: ClaimField[] = []
+            const boxes: HighlightBox[] = []
+                ; (response.data?.form ?? []).forEach((field, index) => {
+                    const fieldId = field.alias ?? `field_${index}`
+                    const rawValue = field.answer?.value
+                    const value =
+                        rawValue === null || rawValue === undefined
+                            ? ''
+                            : typeof rawValue === 'string'
+                                ? rawValue
+                                : JSON.stringify(rawValue)
+                    const confidence = field.answer?.evidences?.[0]?.confidence
+                    const mappedField: ClaimField = {
+                        id: fieldId,
+                        label: field.text,
+                        value,
+                        confidence:
+                            typeof confidence === 'number'
+                                ? `${Math.round(confidence * 100)}%`
+                                : '',
+                    }
+                    if (field.alias) {
+                        keyFields.push(mappedField)
+                    } else {
+                        fields.push(mappedField)
+                    }
 
-        console.log(response.data)
+                    ; (field.answer?.evidences ?? []).forEach(
+                        (evidence, evidenceIndex) => {
+                            const region = evidence.bounding_region
+                            if (!region || !Array.isArray(region.polygon)) return
+                            if (region.polygon.length < 8) return
+
+                            const points: Array<{ x: number; y: number }> = []
+                            for (
+                                let i = 0;
+                                i + 1 < region.polygon.length;
+                                i += 2
+                            ) {
+                                const x = Number(region.polygon[i])
+                                const y = Number(region.polygon[i + 1])
+                                if (Number.isNaN(x) || Number.isNaN(y)) continue
+                                points.push({ x, y })
+                            }
+                            if (points.length < 4) return
+
+                            const xs = points.map((point) => point.x)
+                            const ys = points.map((point) => point.y)
+                            const minX = Math.min(...xs)
+                            const maxX = Math.max(...xs)
+                            const minY = Math.min(...ys)
+                            const maxY = Math.max(...ys)
+
+                            boxes.push({
+                                id: `${fieldId}_${evidenceIndex}`,
+                                fieldId,
+                                page: region.page,
+                                vertices: [
+                                    { x: minX, y: minY },
+                                    { x: maxX, y: minY },
+                                    { x: maxX, y: maxY },
+                                    { x: minX, y: maxY },
+                                ],
+                            })
+                        }
+                    )
+                })
+            const summary: BackendSummary | null =
+                response.data?.executive_summary
+                    ? {
+                        executiveSummary: response.data.executive_summary,
+                        confidence:
+                            typeof response.data.confidence === 'number'
+                                ? response.data.confidence
+                                : null,
+                        conclusion: response.data.conclusion ?? null,
+                    }
+                    : null
+            onProcessed?.(fields, keyFields, boxes, summary)
+        } catch (error) {
+            setError('Failed to process PDF.')
+            onProcessed?.([], [], [], null)
+        }
     }
 
     const selectForm = (formId: string) => {
-        if (formId === 'custom') return
+        if (!formId) return
+        if (formId === 'generic') {
+            setFile(null)
+            setFileName(null)
+            setError(null)
+            setIsLoading(false)
+            setSelectedForm(formId)
+            return
+        }
 
-        console.log(file)
 
         const [state, raw] = formId.split(':')
         const fileName = raw.split('__')[1]
@@ -220,7 +362,7 @@ export default function AppPdfViewer({
                         </span>
                     )}
                 </div>
-                <div className="flex flex-1 flex-wrap items-center gap-3">
+                <div className="flex flex-1 items-center gap-10">
                     <div className="flex flex-1 items-center gap-2 text-xs text-gray-500">
                         <button
                             type="button"
@@ -245,7 +387,7 @@ export default function AppPdfViewer({
                         >
                             +
                         </button>
-                        <label className="cursor-pointer rounded-md text-sm border border-gray-300 bg-white px-3 py-1 text-gray-700 shadow-sm hover:bg-gray-50">
+                        <label className="cursor-pointer shrink-0 whitespace-nowrap rounded-md text-sm border border-gray-300 bg-white px-3 py-1 text-gray-700 shadow-sm hover:bg-gray-50">
                             Upload PDF
                             <input
                                 type="file"
@@ -255,8 +397,8 @@ export default function AppPdfViewer({
                             />
                         </label>
                     </div>
-                    <div className="flex items-center gap-2 text-sm">
-                        <span className="text-sm font-medium text-gray-700">
+                    <div className="flex items-center gap-2 pl-4 text-sm">
+                        <span className="shrink-0 whitespace-nowrap text-sm font-medium text-gray-700">
                             Claim Form
                         </span>
                         <select
@@ -273,10 +415,10 @@ export default function AppPdfViewer({
                             <option value="NH:NH__form_hw_POL123456789.pdf">New Hampshire handwritten</option>
                             <option value="WI:WI__form_dg_POL987654321.pdf">Wisconsin digital</option>
                             <option value="WI:WI__form_hw_POL123456789.pdf">Wisconsin handwritten</option>
-                            <option value="custom">Custom</option>
+                            <option value="generic">Custom</option>
                         </select>
                     </div>
-                    <div className="flex flex-1 items-center justify-end gap-2 text-sm">
+                    <div className="flex flex-1 items-center justify-end text-sm">
                         <button
                             type="button"
                             onClick={() => {
@@ -284,7 +426,7 @@ export default function AppPdfViewer({
                                     handleProcessPdf()
                                 }
                             }}
-                            className={`rounded-md text-sm px-3 py-1 text-white ${canProcess
+                            className={`rounded-md shrink-0 whitespace-nowrap text-sm px-3 py-1 text-white ${canProcess
                                 ? 'bg-green-600 hover:bg-green-600'
                                 : 'cursor-not-allowed bg-green-300'
                                 }`}
@@ -326,6 +468,7 @@ export default function AppPdfViewer({
                                 file={file}
                                 onLoadSuccess={({ numPages }) => {
                                     setNumPages(numPages)
+                                    setZoom(1)
                                     setIsLoading(false)
                                 }}
                                 onLoadError={() => {
@@ -402,6 +545,13 @@ export default function AppPdfViewer({
                                                                                 viewport.width,
                                                                             height:
                                                                                 viewport.height,
+                                                                            viewBox:
+                                                                                viewport.viewBox as [
+                                                                                    number,
+                                                                                    number,
+                                                                                    number,
+                                                                                    number
+                                                                                ],
                                                                         },
                                                                     })
                                                                 )
@@ -414,17 +564,73 @@ export default function AppPdfViewer({
                                                                     pageNumber
                                                             )
                                                             .map((box) => {
-                                                                const points =
+                                                                const maxX = Math.max(
+                                                                    ...box.vertices.map(
+                                                                        (point) =>
+                                                                            point.x
+                                                                    )
+                                                                )
+                                                                const maxY = Math.max(
+                                                                    ...box.vertices.map(
+                                                                        (point) =>
+                                                                            point.y
+                                                                    )
+                                                                )
+                                                                const isNormalized =
+                                                                    maxX <= 1.5 &&
+                                                                    maxY <= 1.5
+                                                                const isInches =
+                                                                    maxX <= 30 &&
+                                                                    maxY <= 30
+                                                                const isOversized =
+                                                                    size &&
+                                                                    (maxX >
+                                                                        size.width *
+                                                                        1.2 ||
+                                                                        maxY >
+                                                                        size.height *
+                                                                        1.2)
+                                                                const scaleX =
+                                                                    size && isNormalized
+                                                                        ? size.width
+                                                                        : isInches
+                                                                            ? 72
+                                                                            : isOversized
+                                                                                ? size.width /
+                                                                                maxX
+                                                                                : 1
+                                                                const scaleY =
+                                                                    size && isNormalized
+                                                                        ? size.height
+                                                                        : isInches
+                                                                            ? 72
+                                                                            : isOversized
+                                                                                ? size.height /
+                                                                                maxY
+                                                                                : 1
+                                                                const viewBox =
+                                                                    size?.viewBox
+                                                                const offsetX = viewBox
+                                                                    ? -viewBox[0]
+                                                                    : 0
+                                                                const offsetY = viewBox
+                                                                    ? -viewBox[1]
+                                                                    : 0
+                                                                const adjustedPoints =
                                                                     buildPolygonPoints(
                                                                         box.vertices.map(
                                                                             (
                                                                                 point
                                                                             ) => ({
                                                                                 x:
-                                                                                    point.x *
+                                                                                    (point.x *
+                                                                                        scaleX +
+                                                                                        offsetX) *
                                                                                     displayScale,
                                                                                 y:
-                                                                                    point.y *
+                                                                                    (point.y *
+                                                                                        scaleY +
+                                                                                        offsetY) *
                                                                                     displayScale,
                                                                             })
                                                                         )
@@ -436,7 +642,7 @@ export default function AppPdfViewer({
                                                                     >
                                                                         <polygon
                                                                             points={
-                                                                                points
+                                                                                adjustedPoints
                                                                             }
                                                                             className="fill-blue-200/30 stroke-blue-500"
                                                                             strokeWidth={

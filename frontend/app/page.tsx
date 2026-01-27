@@ -1,7 +1,7 @@
 'use client'
 
 
-import { useEffect, useRef, useState } from 'react';
+import { useState } from 'react';
 import dynamic from 'next/dynamic';
 import ClaimTable, { type ClaimField } from '@/app/ui/components/claim-table';
 import type { HighlightBox } from '@/app/ui/components/pdf-viewer';
@@ -14,153 +14,66 @@ export default function Page() {
   const [isProcessing, setIsProcessing] = useState(false);
   const [showTable, setShowTable] = useState(false);
   const [hoveredFieldId, setHoveredFieldId] = useState<string | null>(null);
-  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-
-  const claimFields: ClaimField[] = [
-    { id: 'policy_id', label: 'Policy ID', value: 'POL123456789', confidence: '95%' },
-    { id: 'insured_name', label: 'Insured name', value: 'Emy Hunt', confidence: '97%' },
-    { id: 'incident_date', label: 'Incident date', value: '2025-11-03', confidence: '93%' },
-    { id: 'report_date', label: 'Report date', value: '2025-11-04', confidence: '92%' },
-    { id: 'loss_type', label: 'Loss type', value: 'Water damage', confidence: '90%' },
-    {
-      id: 'loss_description',
-      label: 'Loss description',
-      value: 'Burst pipe in kitchen caused ceiling leak.',
-      confidence: '88%',
-    },
-    {
-      id: 'location_address',
-      label: 'Location/address',
-      value: '312 Cedar Ave, Springdale, CA',
-      confidence: '91%',
-    },
-  ];
-
-  const highlightBoxes: HighlightBox[] = [
-    {
-      id: 'box_policy',
-      fieldId: 'policy_id',
-      page: 1,
-      vertices: [
-        { x: 72, y: 120 },
-        { x: 252, y: 120 },
-        { x: 252, y: 144 },
-        { x: 72, y: 144 },
-      ],
-    },
-    {
-      id: 'box_name',
-      fieldId: 'insured_name',
-      page: 1,
-      vertices: [
-        { x: 72, y: 165 },
-        { x: 282, y: 165 },
-        { x: 282, y: 189 },
-        { x: 72, y: 189 },
-      ],
-    },
-    {
-      id: 'box_incident',
-      fieldId: 'incident_date',
-      page: 1,
-      vertices: [
-        { x: 72, y: 210 },
-        { x: 212, y: 210 },
-        { x: 212, y: 234 },
-        { x: 72, y: 234 },
-      ],
-    },
-    {
-      id: 'box_report',
-      fieldId: 'report_date',
-      page: 1,
-      vertices: [
-        { x: 72, y: 255 },
-        { x: 212, y: 255 },
-        { x: 212, y: 279 },
-        { x: 72, y: 279 },
-      ],
-    },
-    {
-      id: 'box_loss_type',
-      fieldId: 'loss_type',
-      page: 1,
-      vertices: [
-        { x: 72, y: 300 },
-        { x: 232, y: 300 },
-        { x: 232, y: 324 },
-        { x: 72, y: 324 },
-      ],
-    },
-    {
-      id: 'box_loss_desc',
-      fieldId: 'loss_description',
-      page: 1,
-      vertices: [
-        { x: 72, y: 350 },
-        { x: 412, y: 350 },
-        { x: 412, y: 410 },
-        { x: 72, y: 410 },
-      ],
-    },
-    {
-      id: 'box_location',
-      fieldId: 'location_address',
-      page: 1,
-      vertices: [
-        { x: 72, y: 430 },
-        { x: 352, y: 430 },
-        { x: 352, y: 458 },
-        { x: 72, y: 458 },
-      ],
-    },
-  ];
-
-  useEffect(() => {
-    return () => {
-      if (timerRef.current) {
-        clearTimeout(timerRef.current);
-      }
-    };
-  }, []);
+  const [claimFields, setClaimFields] = useState<ClaimField[]>([]);
+  const [keyClaimFields, setKeyClaimFields] = useState<ClaimField[]>([]);
+  const [highlightBoxes, setHighlightBoxes] = useState<HighlightBox[]>([]);
+  const [executiveSummary, setExecutiveSummary] = useState<string | null>(null);
+  const [summaryConfidence, setSummaryConfidence] = useState<number | null>(null);
+  const [summaryConclusion, setSummaryConclusion] = useState<string | null>(null);
 
   const handleProcess = () => {
     if (isProcessing) return;
     setShowTable(false);
     setIsProcessing(true);
+    setHighlightBoxes([]);
+    setExecutiveSummary(null);
+    setSummaryConfidence(null);
+    setSummaryConclusion(null);
+  };
 
-    if (timerRef.current) {
-      clearTimeout(timerRef.current);
-    }
-
-    timerRef.current = setTimeout(() => {
-      setIsProcessing(false);
-      setShowTable(true);
-    }, 1500);
+  const handleProcessed = (
+    fields: ClaimField[],
+    keyFields: ClaimField[],
+    boxes: HighlightBox[],
+    summary: {
+      executiveSummary: string;
+      confidence: number | null;
+      conclusion: string | null;
+    } | null,
+  ) => {
+    setClaimFields(fields);
+    setKeyClaimFields(keyFields);
+    setHighlightBoxes(boxes);
+    setExecutiveSummary(summary?.executiveSummary ?? null);
+    setSummaryConfidence(summary?.confidence ?? null);
+    setSummaryConclusion(summary?.conclusion ?? null);
+    setIsProcessing(false);
+    setShowTable(true);
   };
 
   return (
-    <main className="flex h-screen flex-col">
+    <main className="flex min-h-screen flex-col">
       <header className="bg-blue-600 text-white">
         <div className="mx-auto px-4 py-4 text-2xl font-semibold">
           Claim Assistant
         </div>
       </header>
-      <div className="ml-4 mr-4 flex flex-1 min-h-0 flex-col gap-4 py-4 md:flex-row">
-        <div className="flex min-h-0 flex-1 items-stretch md:w-2/4 md:px-0">
-          <div className="flex min-h-0 w-full flex-1 flex-col rounded-lg bg-gray-50 p-4">
+      <div className="ml-4 mr-4 flex flex-1 flex-col gap-4 py-4 md:flex-row">
+        <div className="flex flex-1 items-stretch md:w-2/4 md:px-0">
+          <div className="flex w-full flex-1 flex-col rounded-lg bg-gray-50 p-4">
             <AppPdfViewer
               isProcessing={isProcessing}
               onProcess={handleProcess}
+              onProcessed={handleProcessed}
               highlightFieldId={showTable ? hoveredFieldId : null}
               highlightBoxes={highlightBoxes}
             />
           </div>
         </div>
         {isProcessing ? (
-          <div className="flex min-h-0 flex-1 flex-col rounded-lg bg-gray-50 p-4 md:w-2/4 md:px-10">
+          <div className="flex flex-1 flex-col rounded-lg bg-gray-50 p-4 md:w-2/4 md:px-10">
             <h2 className="text-lg font-semibold text-gray-800">
-              Extracted Claim Fields
+              Processing...
             </h2>
             <div className="mt-6 flex flex-1 flex-col items-center justify-center gap-3 text-gray-600">
               <div className="h-8 w-8 animate-spin rounded-full border-2 border-gray-300 border-t-blue-600" />
@@ -168,16 +81,81 @@ export default function Page() {
             </div>
           </div>
         ) : showTable ? (
-          <ClaimTable
-            fields={claimFields}
-            activeFieldId={hoveredFieldId}
-            onHover={setHoveredFieldId}
-          />
+          <div className="rounded-lg bg-gray-50 p-4 md:w-2/4 md:px-10">
+            {executiveSummary && (
+              <div>
+                <details open>
+                  <summary className="cursor-pointer text-lg font-semibold text-gray-800">
+                    Executive Summary
+                  </summary>
+                  <div className="mt-2 overflow-auto max-w-full">
+                    <table className="w-full table-fixed text-left text-sm text-gray-700">
+                      <tbody className="divide-y divide-gray-200">
+                        <tr>
+                          <td className="py-3 pr-4 font-medium text-gray-800">
+                            Summary
+                          </td>
+                          <td className="py-3 break-words">{executiveSummary}</td>
+                        </tr>
+                        {typeof summaryConfidence === 'number' && (
+                          <tr>
+                            <td className="py-3 pr-4 font-medium text-gray-800">
+                              Confidence
+                            </td>
+                            <td className="py-3">
+                              {Math.round(summaryConfidence * 100)}%
+                            </td>
+                          </tr>
+                        )}
+                        {summaryConclusion && (
+                          <tr>
+                            <td className="py-3 pr-4 font-medium text-gray-800">
+                              Conclusion
+                            </td>
+                            <td className="py-3 break-words">
+                              {summaryConclusion}
+                            </td>
+                          </tr>
+                        )}
+                      </tbody>
+                    </table>
+                  </div>
+                </details>
+              </div>
+            )}
+            <div className="mt-4">
+              <details open>
+                <summary className="cursor-pointer text-lg font-semibold text-gray-800">
+                  Key Claim Fields
+                </summary>
+                <div className="mt-2 max-h-96 overflow-auto">
+                  <ClaimTable
+                    fields={keyClaimFields}
+                    activeFieldId={hoveredFieldId}
+                    onHover={setHoveredFieldId}
+                    className="flex min-h-0 flex-1 flex-col bg-transparent p-0 md:w-full"
+                  />
+                </div>
+              </details>
+            </div>
+            <div className="mt-4">
+              <details>
+                <summary className="cursor-pointer text-lg font-semibold text-gray-800">
+                  All Fields
+                </summary>
+                <div className="mt-2 max-h-96 overflow-auto">
+                  <ClaimTable
+                    fields={claimFields}
+                    activeFieldId={hoveredFieldId}
+                    onHover={setHoveredFieldId}
+                    className="flex min-h-0 flex-1 flex-col bg-transparent p-0 md:w-full"
+                  />
+                </div>
+              </details>
+            </div>
+          </div>
         ) : (
-          <div className="flex min-h-0 flex-1 flex-col rounded-lg bg-gray-50 p-4 md:w-2/4 md:px-10">
-            <h2 className="text-lg font-semibold text-gray-800">
-              Extracted Claim Fields
-            </h2>
+          <div className="flex flex-1 flex-col rounded-lg bg-gray-50 p-4 md:w-2/4 md:px-10">
             <div className="mt-6 flex flex-1 flex-col items-center justify-center text-sm text-gray-500">
               Upload a PDF and click “Process PDF” to view extracted fields.
             </div>

@@ -9,19 +9,22 @@ interface ClaimTableProps {
   fields: ClaimField[];
   activeFieldId?: string | null;
   onHover?: (fieldId: string | null) => void;
+  className?: string;
 }
 
 export default function ClaimTable({
   fields,
   activeFieldId,
   onHover,
+  className,
 }: ClaimTableProps) {
+  const containerClassName =
+    className ??
+    'flex min-h-0 flex-1 flex-col rounded-lg bg-gray-50 p-4 md:w-2/4 md:px-10';
   return (
-    <div className="flex min-h-0 flex-1 flex-col rounded-lg bg-gray-50 p-4 md:w-2/4 md:px-10">
-      <h2 className="text-lg font-semibold text-gray-800">
-        Extracted Claim Fields
-      </h2>
-      <div className="mt-4 overflow-auto">
+    <div className={containerClassName}>
+
+      <div className="mt-2 overflow-auto">
         <table className="w-full text-left text-sm text-gray-700">
           <thead className="text-xs uppercase text-gray-500">
             <tr>

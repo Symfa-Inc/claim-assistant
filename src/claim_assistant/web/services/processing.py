@@ -98,7 +98,6 @@ class ClaimProcessingService:
         # --- Workflow ---
         logger.info("Step 1: Extracting DI key/value pairs from PDF...")
         di_payload = di_kv_processor.process(input_pdf_path)
-
         logger.info("Step 2: Filling form fields from DI KV pairs via LLM...")
         form: Form = form_processor.process(
             form_json_path=form_json_path,

@@ -1,5 +1,8 @@
+import json
+from typing import Annotated
+
 from fastapi import File, Form, UploadFile, HTTPException
-from fastapi import FastAPI, Query
+from fastapi import FastAPI, Depends
 from fastapi.middleware.cors import CORSMiddleware
 from pathlib import Path
 
@@ -10,6 +13,7 @@ from claim_assistant.web.deps import (
     get_registry,
 )
 from claim_assistant.web.services.processing import ProcessRequest
+
 
 app = FastAPI(debug=True)
 
@@ -32,13 +36,11 @@ PROJECT_DIR = get_project_dir()
 
 @app.post("/process")
 async def process_form(
-    file: UploadFile = File(...),
-    form_id: str = Form(...)
+    file: Annotated[UploadFile, File()],
+    form_id: Annotated[str, Form()],
+    svc=Depends(get_processing_service),
+    logger=Depends(get_logger),
 ):
-    contents = await file.read()
-    print(file.filename, len(contents), form)
-
-
     """
     Accepts a PDF upload + form_type.
     Returns CoverageAnalysisResponse (JSON).
@@ -63,7 +65,7 @@ async def process_form(
         content = await file.read()
         tmp_path.write_bytes(content)
 
-        req = ProcessRequest(form_type=form_type, upload_pdf_path=tmp_path)
+        req = ProcessRequest(form_type=sample.form_code, upload_pdf_path=tmp_path)
         logger.info(
             "Process request: %s",
             json.dumps(svc.to_debug_dict(req), ensure_ascii=False),
