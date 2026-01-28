@@ -85,7 +85,6 @@ export default function AppPdfViewer({
     const [file, setFile] = useState<File | string | null>(src ?? null)
     const [fileName, setFileName] = useState<string | null>(null)
     const [selectedForm, setSelectedForm] = useState('FL:FL__form_dg_POL123456789.pdf')
-    const [isLoading, setIsLoading] = useState(false)
     const [containerWidth, setContainerWidth] = useState(0)
     const [numPages, setNumPages] = useState<number | null>(null)
     const [zoom, setZoom] = useState(1)
@@ -120,7 +119,6 @@ export default function AppPdfViewer({
         const [state, raw] = 'FL:FL__form_dg_POL123456789.pdf'.split(':')
         const fileName = raw.split('__')[1] // or raw if you prefer
         setFile(`/forms/${state}/${fileName}`)
-        setIsLoading(true)
     }, [])
 
     const handleFile = (nextFile: File) => {
@@ -142,7 +140,6 @@ export default function AppPdfViewer({
         setFileName(nextFile.name)
         setSelectedForm('generic')
         setError(null)
-        setIsLoading(true)
     }
 
     const handleFileChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -278,7 +275,6 @@ export default function AppPdfViewer({
             setFile(null)
             setFileName(null)
             setError(null)
-            setIsLoading(false)
             setSelectedForm(formId)
             return
         }
@@ -290,7 +286,6 @@ export default function AppPdfViewer({
         setFile(`/forms/${state}/${fileName}`)
         // setFileName(fileName) // optional
         setSelectedForm(formId)
-        setIsLoading(true)
     }
 
 
@@ -350,31 +345,26 @@ export default function AppPdfViewer({
         vertices.map((point) => `${point.x},${point.y}`).join(' ')
 
     return (
-        <div className="flex h-full min-h-0 w-full flex-1 flex-col">
-            <div className="flex flex-wrap items-center gap-3 pb-3">
+        <div className="flex h-full min-h-0 w-full flex-1 flex-col gap-3">
+            <div className="flex flex-wrap items-center gap-4 rounded-lg border border-slate-200 bg-slate-50 px-3 py-2">
                 <div className="flex items-center gap-3">
-                    <span className="text-sm font-medium text-gray-700">
+                    <span className="text-sm font-semibold text-slate-700">
                         PDF Preview
                     </span>
-                    {isLoading && (
-                        <span className="text-xs text-gray-500">
-                            Loading...
-                        </span>
-                    )}
                 </div>
-                <div className="flex flex-1 items-center gap-10">
-                    <div className="flex flex-1 items-center gap-2 text-xs text-gray-500">
+                <div className="flex flex-1 items-center gap-6">
+                    <div className="flex flex-1 items-center gap-2 text-xs text-slate-500">
                         <button
                             type="button"
                             onClick={() =>
                                 setZoom((value) => Math.max(0.5, value - 0.1))
                             }
-                            className="rounded-md text-sm border border-gray-300 bg-white px-2 py-1 text-gray-700 hover:bg-gray-50"
+                            className="rounded-md border border-slate-300 bg-white px-2 py-1 text-sm text-slate-700 shadow-sm hover:bg-slate-50"
                             aria-label="Zoom out"
                         >
                             -
                         </button>
-                        <span className="min-w-[48px] text-center">
+                        <span className="min-w-[48px] text-center text-xs font-medium text-slate-600">
                             {Math.round(zoom * 100)}%
                         </span>
                         <button
@@ -382,12 +372,12 @@ export default function AppPdfViewer({
                             onClick={() =>
                                 setZoom((value) => Math.min(2.5, value + 0.1))
                             }
-                            className="rounded-md text-sm border border-gray-300 bg-white px-2 py-1 text-gray-700 hover:bg-gray-50"
+                            className="rounded-md border border-slate-300 bg-white px-2 py-1 text-sm text-slate-700 shadow-sm hover:bg-slate-50"
                             aria-label="Zoom in"
                         >
                             +
                         </button>
-                        <label className="cursor-pointer shrink-0 whitespace-nowrap rounded-md text-sm border border-gray-300 bg-white px-3 py-1 text-gray-700 shadow-sm hover:bg-gray-50">
+                        <label className="cursor-pointer shrink-0 whitespace-nowrap rounded-md border border-slate-300 bg-white px-3 py-1 text-sm text-slate-700 shadow-sm hover:bg-slate-50">
                             Upload PDF
                             <input
                                 type="file"
@@ -397,8 +387,8 @@ export default function AppPdfViewer({
                             />
                         </label>
                     </div>
-                    <div className="flex items-center gap-2 pl-4 text-sm">
-                        <span className="shrink-0 whitespace-nowrap text-sm font-medium text-gray-700">
+                    <div className="flex items-center gap-2 pl-2 text-sm">
+                        <span className="shrink-0 whitespace-nowrap text-sm font-medium text-slate-700">
                             Claim Form
                         </span>
                         <select
@@ -406,7 +396,7 @@ export default function AppPdfViewer({
                             onChange={(event) =>
                                 selectForm(event.target.value)
                             }
-                            className="rounded-md text-sm text-left border border-gray-300 bg-white py-1 pr-9 pl-3 text-gray-700 hover:bg-gray-50"
+                            className="rounded-md border border-slate-300 bg-white px-3 py-1 text-sm text-slate-700 shadow-sm hover:bg-slate-50"
                             aria-label="Form"
                         >
                             <option value="FL:FL__form_dg_POL123456789.pdf">Florida digital</option>
@@ -426,9 +416,9 @@ export default function AppPdfViewer({
                                     handleProcessPdf()
                                 }
                             }}
-                            className={`rounded-md shrink-0 whitespace-nowrap text-sm px-3 py-1 text-white ${canProcess
-                                ? 'bg-green-600 hover:bg-green-600'
-                                : 'cursor-not-allowed bg-green-300'
+                            className={`rounded-md shrink-0 whitespace-nowrap px-3 py-1 text-sm font-medium text-white shadow-sm ${canProcess
+                                ? 'bg-emerald-600 hover:bg-emerald-600'
+                                : 'cursor-not-allowed bg-emerald-300'
                                 }`}
                             aria-disabled={!canProcess}
                         >
@@ -439,41 +429,50 @@ export default function AppPdfViewer({
             </div>
             <div
                 ref={scrollRef}
-                className="flex-1 min-h-0 overflow-auto rounded-lg bg-white p-1 shadow-sm"
+                className="flex-1 min-h-0 overflow-auto rounded-lg border border-slate-200 bg-white p-2 shadow-sm"
             >
                 <div
                     ref={containerRef}
                     onDrop={handleDrop}
                     onDragOver={(event) => event.preventDefault()}
-                    className="flex min-h-full min-w-max flex-col items-center gap-2 rounded-md border border-transparent p-2 text-sm text-gray-500"
+                    className="flex min-h-full min-w-max flex-col items-center gap-2 rounded-md border border-transparent p-2 text-sm text-slate-500"
                 >
                     {error && (
                         <p className="text-sm text-red-600">{error}</p>
                     )}
                     {!file ? (
                         <div className="flex w-full flex-1 flex-col items-center justify-center text-center">
-                            <p>Drop a PDF here or upload one to preview.</p>
-                            <p className="text-xs text-gray-400">
+                            <p className="text-sm text-slate-600">
+                                Drop a PDF here or upload one to preview.
+                            </p>
+                            <p className="text-xs text-slate-400">
                                 Supported: PDF files only
                             </p>
                         </div>
                     ) : (
                         <div className="flex w-max flex-col items-center">
-                            {fileName && (
-                                <p className="text-xs text-gray-500">
-                                    {fileName}
-                                </p>
-                            )}
+                            {(() => {
+                                const displayName =
+                                    fileName ??
+                                    (typeof file === 'string'
+                                        ? file.split('/').pop()
+                                        : null)
+                                return (
+                                    <p
+                                        className={`text-xs text-slate-500 ${displayName ? '' : 'invisible'}`}
+                                    >
+                                        {displayName ?? 'placeholder'}
+                                    </p>
+                                )
+                            })()}
                             <Document
                                 file={file}
                                 onLoadSuccess={({ numPages }) => {
                                     setNumPages(numPages)
                                     setZoom(1)
-                                    setIsLoading(false)
                                 }}
                                 onLoadError={() => {
                                     setError('Failed to load PDF preview.')
-                                    setIsLoading(false)
                                 }}
                                 loading=""
                                 error=""

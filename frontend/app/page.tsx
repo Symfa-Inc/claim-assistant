@@ -52,15 +52,15 @@ export default function Page() {
   };
 
   return (
-    <main className="flex min-h-screen flex-col">
-      <header className="bg-blue-600 text-white">
+    <main className="flex min-h-screen flex-col bg-slate-50">
+      <header className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-sm">
         <div className="mx-auto px-4 py-4 text-2xl font-semibold">
           Claim Assistant
         </div>
       </header>
-      <div className="ml-4 mr-4 flex flex-1 flex-col gap-4 py-4 md:flex-row">
+      <div className="mx-4 flex flex-1 flex-col gap-4 py-4 md:flex-row">
         <div className="flex flex-1 items-stretch md:w-2/4 md:px-0">
-          <div className="flex w-full flex-1 flex-col rounded-lg bg-gray-50 p-4">
+          <div className="flex w-full flex-1 flex-col rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
             <AppPdfViewer
               isProcessing={isProcessing}
               onProcess={handleProcess}
@@ -71,79 +71,78 @@ export default function Page() {
           </div>
         </div>
         {isProcessing ? (
-          <div className="flex flex-1 flex-col rounded-lg bg-gray-50 p-4 md:w-2/4 md:px-10">
-            <div className="mt-6 flex flex-1 flex-col items-center justify-center gap-3 text-gray-600">
-              <div className="h-8 w-8 animate-spin rounded-full border-2 border-gray-300 border-t-blue-600" />
+          <div className="flex flex-1 flex-col rounded-xl border border-slate-200 bg-white p-6 shadow-sm md:w-2/4">
+            <div className="mt-6 flex flex-1 flex-col items-center justify-center gap-3 text-slate-600">
+              <div className="h-10 w-10 animate-spin rounded-full border-2 border-slate-200 border-t-blue-600" />
               <span className="text-sm font-medium">Processing...</span>
             </div>
           </div>
         ) : showTable ? (
-          <div className="rounded-lg bg-gray-50 px-6 py-4 md:w-2/4">
-            {executiveSummary && (
-              <div>
-                <details open>
-                  <summary className="flex list-item items-center justify-between gap-3 cursor-pointer text-lg font-semibold text-gray-800">
-                    <span>Executive Summary</span>
-                    {/* <button
-                      type="button"
-                      className="rounded-md bg-green-600 px-3 py-1 text-sm text-white hover:bg-green-600"
-                    >
-                      Export to AEC
-                    </button> */}
-                  </summary>
-                  <div className="mt-2 overflow-auto max-w-full">
-                    <table className="w-full table-fixed text-left text-sm text-gray-700">
-                      <tbody className="divide-y divide-gray-200">
-                        <tr>
-                          <td className="py-3 pr-12 font-medium text-gray-800 w-96">
-                            Summary
-                          </td>
-                          <td className="py-3 break-words">{executiveSummary}</td>
-                        </tr>
-                        {typeof summaryConfidence === 'number' && (
-                          <tr>
-                            <td className="py-3 pr-12 font-medium text-gray-800 w-96">
-                              Confidence
-                            </td>
-                            <td className="py-3">
-                              {Math.round(summaryConfidence * 100)}%
-                            </td>
-                          </tr>
-                        )}
-                        {summaryConclusion && (
-                          <tr>
-                            <td className="py-3 pr-12 font-medium text-gray-800 w-96">
-                              Conclusion
-                            </td>
-                            <td className="py-3 break-words">
-                              {summaryConclusion}
-                            </td>
-                          </tr>
-                        )}
-                      </tbody>
-                    </table>
-                  </div>
-                </details>
+          <div className="flex flex-1 flex-col gap-4 md:w-2/4">
+            <div className="rounded-xl border border-slate-200 bg-white px-6 py-4 shadow-sm">
+              <div className="flex items-center justify-between gap-3">
+                <h3 className="text-lg font-semibold text-slate-800">
+                  Executive Summary
+                </h3>
+                <button
+                  type="button"
+                  className="rounded-md shrink-0 whitespace-nowrap px-3 py-1 text-sm font-medium text-white shadow-sm bg-emerald-600 hover:bg-emerald-600"
+                >
+                  Export to AEC
+                </button>
               </div>
-            )}
-            <div className="mt-4">
-              <details open>
-                <summary className="cursor-pointer text-lg font-semibold text-gray-800">
-                  Key Claim Fields
-                </summary>
-                <div className="mt-2 max-h-96 overflow-auto">
-                  <ClaimTable
-                    fields={keyClaimFields}
-                    activeFieldId={hoveredFieldId}
-                    onHover={setHoveredFieldId}
-                    className="flex min-h-0 flex-1 flex-col bg-transparent p-0 md:w-full"
-                  />
+              {executiveSummary ? (
+                <div className="mt-2 max-w-full">
+                  <table className="w-full table-fixed text-left text-sm text-slate-700">
+                    <tbody className="divide-y divide-slate-100">
+                      <tr>
+                        <td className="py-3 pr-12 font-medium text-slate-800 w-56">
+                          Summary
+                        </td>
+                        <td className="py-3 break-words">{executiveSummary}</td>
+                      </tr>
+                      {summaryConclusion && (
+                        <tr>
+                          <td className="py-3 pr-12 font-medium text-slate-800 w-96">
+                            Conclusion
+                          </td>
+                          <td
+                            className={`py-3 break-words ${summaryConclusion.toLowerCase() === 'positive'
+                              ? 'text-green-600'
+                              : summaryConclusion.toLowerCase() === 'negative'
+                                ? 'text-red-600'
+                                : 'text-slate-700'
+                              } font-semibold uppercase tracking-wide`}
+                          >
+                            {summaryConclusion}
+                          </td>
+                        </tr>
+                      )}
+                    </tbody>
+                  </table>
                 </div>
-              </details>
+              ) : (
+                <div className="mt-2 text-sm text-slate-500">
+                  No executive summary available.
+                </div>
+              )}
             </div>
-            <div className="mt-4">
+            <div className="rounded-xl border border-slate-200 bg-white px-6 py-4 shadow-sm">
+              <h3 className="text-lg font-semibold text-slate-800">
+                Key Claim Fields
+              </h3>
+              <div className="mt-2">
+                <ClaimTable
+                  fields={keyClaimFields}
+                  activeFieldId={hoveredFieldId}
+                  onHover={setHoveredFieldId}
+                  className="flex min-h-0 flex-1 flex-col bg-transparent p-0 md:w-full"
+                />
+              </div>
+            </div>
+            <div className="rounded-xl border border-slate-200 bg-white px-6 py-4 shadow-sm">
               <details>
-                <summary className="cursor-pointer text-lg font-semibold text-gray-800">
+                <summary className="cursor-pointer text-lg font-semibold text-slate-800">
                   All Fields
                 </summary>
                 <div className="mt-2 max-h-96 overflow-auto">
@@ -158,8 +157,8 @@ export default function Page() {
             </div>
           </div>
         ) : (
-          <div className="flex flex-1 flex-col rounded-lg bg-gray-50 p-4 md:w-2/4 md:px-10">
-            <div className="mt-6 flex flex-1 flex-col items-center justify-center text-sm text-gray-500">
+          <div className="flex flex-1 flex-col rounded-xl border border-slate-200 bg-white p-6 shadow-sm md:w-2/4">
+            <div className="mt-6 flex flex-1 flex-col items-center justify-center text-sm text-slate-500">
               Upload a PDF and click “Process PDF” to view extracted fields.
             </div>
           </div>
