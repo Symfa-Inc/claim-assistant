@@ -1,11 +1,14 @@
 import logging
 from pathlib import Path
-from typing import Any, Literal
+from typing import Literal
 
 from openai import OpenAI
 from pydantic import BaseModel
 
 from claim_assistant.schemas import Form, FormFieldAnswer
+from claim_assistant.schemas.document_intelligence_response import (
+    DocumentIntelligenceResponse,
+)
 
 
 class DIKVFormFillingProcessor:
@@ -37,7 +40,7 @@ class DIKVFormFillingProcessor:
         """
         return Form.from_json(form_json_path)
 
-    def _build_prompt(self, form: Form, kv_payload: list[dict[str, Any]]) -> str:
+    def _build_prompt(self, form: Form, di: DocumentIntelligenceResponse) -> str:
         # Keep the prompt explicit about evidence behavior: 0/1/many; many-to-many mapping allowed.
         questions = "\n".join(
             f"- [{f.order}] {f.text} ({f.data_type})"
@@ -54,7 +57,7 @@ class DIKVFormFillingProcessor:
             )
             for f in form.fields
         )
-
+        kv_json = di.model_dump(mode="json")  # {"kv_pairs":[...]}
         return (
             "You are filling a claim form using Azure Document Intelligence (DI) key/value pairs.\n"
             "Your job is to produce the best possible answer VALUE for each field, using the DI pairs as evidence.\n\n"
@@ -72,7 +75,7 @@ class DIKVFormFillingProcessor:
             "Form fields:\n"
             f"{questions}\n\n"
             "DI key/value pairs (JSON):\n"
-            f"{kv_payload}\n\n"
+            f"{kv_json}\n\n"
             "Return ONLY JSON that matches the provided response schema."
         )
 
@@ -98,7 +101,7 @@ class DIKVFormFillingProcessor:
         self,
         *,
         form_json_path: str | Path,
-        di_payload: dict[str, Any],
+        di_payload: DocumentIntelligenceResponse,
     ) -> Form:
         """
         Fill a Form using DI KV extraction payload + one-shot structured-output parsing.
@@ -106,43 +109,32 @@ class DIKVFormFillingProcessor:
         Args:
             form_json_path: Path to form_model.json.
             di_payload: Output of DIKeyValueExtractionProcessor.process(input_pdf_path),
-                        expected to include a "key_value_pairs" list.
+                        expected to be a DocumentIntelligenceResponse.
 
         Returns:
             Filled Form (values + evidence lists).
         """
         form = self._load_form(form_json_path)
 
-        di_payload = di_payload or {}
-
-        kv_pairs = None
-        for k in ("kv_pairs", "key_value_pairs", "keyValuePairs", "kvs"):
-            v = di_payload.get(k)
-            if isinstance(v, list):
-                kv_pairs = v
-                break
-
-        if not kv_pairs:
-            self.logger.warning(
-                "DI returned 0 key/value pairs; form will remain empty. payload_keys=%s",
-                sorted(di_payload.keys()),
+        if not isinstance(di_payload, DocumentIntelligenceResponse):
+            raise TypeError(
+                f"di_payload must be DocumentIntelligenceResponse, got {type(di_payload)}",
             )
-            for f in form.fields:
-                f.answer.value = None
-                f.answer.evidence = []
-            return form
 
-        if not isinstance(kv_pairs, list) or not kv_pairs:
+        if not di_payload.kv_pairs:
             self.logger.warning(
                 "DI returned 0 key/value pairs; form will remain empty.",
             )
             for f in form.fields:
                 f.answer.value = None
-                f.answer.evidence = []
+                f.answer.evidences = []
             return form
 
         response_schema = form.build_response_schema()
-        prompt = self._build_prompt(form, kv_pairs)  # _build_prompt expects the KV list
+        prompt = self._build_prompt(
+            form,
+            di_payload,
+        )  # _build_prompt expects the KV list
 
         try:
             parsed_response = self.client.responses.parse(
@@ -238,7 +230,7 @@ if __name__ == "__main__":
 
     payload = kv_processor.process(input_pdf_path)
 
-    kv_pairs = payload.get("kv_pairs", []) or []
+    kv_pairs = payload.kv_pairs or []
     # for i, kv in enumerate(kv_pairs[:200], start=1):  # limit spam
     #     k = (kv.get("key") or {}).get("content")
     #     v = (kv.get("value") or {}).get("content")

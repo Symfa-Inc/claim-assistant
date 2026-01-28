@@ -1,15 +1,9 @@
-from typing import Annotated, Any, Literal
+from typing import Any, Literal
 
 from pydantic import BaseModel, Field, create_model, field_validator
 from pydantic_core.core_schema import ValidationInfo
 
-
-class BoundingRegion(BaseModel):
-    page: int = Field(..., ge=1)
-    polygon: Annotated[list[float], Field(min_length=8, max_length=8)] = Field(
-        ...,
-        description="8-number quadrilateral: x1,y1,x2,y2,x3,y3,x4,y4 in DI coordinates.",
-    )
+from claim_assistant.schemas.bounding_region import BoundingRegion
 
 
 class FieldEvidence(BaseModel):

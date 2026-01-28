@@ -1,9 +1,11 @@
 import logging
 from pathlib import Path
-from typing import Any, Literal
+from typing import Literal
 
 from azure.ai.formrecognizer import DocumentAnalysisClient
 from azure.core.credentials import AzureKeyCredential
+
+from claim_assistant.schemas import DocumentIntelligenceResponse
 
 
 class DIKeyValueExtractionProcessor:
@@ -31,7 +33,7 @@ class DIKeyValueExtractionProcessor:
             credential=AzureKeyCredential(api_key),
         )
 
-    def process(self, input_pdf_path: str | Path) -> dict[str, Any]:
+    def process(self, input_pdf_path: str | Path) -> DocumentIntelligenceResponse:
         pdf_path = Path(input_pdf_path)
         if not pdf_path.exists() or not pdf_path.is_file():
             raise FileNotFoundError(f"PDF not found: {pdf_path}")
@@ -42,63 +44,10 @@ class DIKeyValueExtractionProcessor:
             poller = self.client.begin_analyze_document(self.model_id, document=f)
         result = poller.result()
 
-        kv_pairs_out: list[dict[str, Any]] = []
-        kv_pairs = getattr(result, "key_value_pairs", None) or []
-        self.logger.info(f"DI returned {len(kv_pairs)} key/value pairs")
+        resp = DocumentIntelligenceResponse.from_analyze_result(result)
 
-        for kv in kv_pairs:
-            key = getattr(kv, "key", None)
-            value = getattr(kv, "value", None)
-
-            key_text = getattr(key, "content", None) if key else None
-            value_text = getattr(value, "content", None) if value else None
-
-            # confidence is sometimes on kv, sometimes on key/value depending on SDK output
-            confidence = getattr(kv, "confidence", None)
-            if confidence is None and value is not None:
-                confidence = getattr(value, "confidence", None)
-
-            # bounding regions live on the element (key/value) typically
-            def _regions(el) -> list[dict[str, Any]]:
-                out: list[dict[str, Any]] = []
-                if not el:
-                    return out
-                for br in getattr(el, "bounding_regions", None) or []:
-                    out.append(
-                        {
-                            "page": int(getattr(br, "page_number", 0) or 0),
-                            "polygon": [
-                                float(p.x) if hasattr(p, "x") else float(p[0])
-                                for p in (getattr(br, "polygon", None) or [])
-                                for p in ([p] if hasattr(p, "x") else [p])
-                            ],
-                        },
-                    )
-                return out
-
-            kv_pairs_out.append(
-                {
-                    "key": {
-                        "content": key_text,
-                        "bounding_regions": _regions(key),
-                    },
-                    "value": {
-                        "content": value_text,
-                        "bounding_regions": _regions(value),
-                    },
-                    "confidence": float(confidence) if confidence is not None else None,
-                },
-            )
-
-        payload = {
-            "source": "di_kv",
-            "model_id": self.model_id,
-            "input_file": str(pdf_path),
-            "kv_pairs": kv_pairs_out,
-        }
-
-        self.logger.info(f"DI extracted {len(kv_pairs_out)} key/value pairs")
-        return payload
+        self.logger.info("DI extracted %d key/value pairs", len(resp.kv_pairs))
+        return resp
 
 
 if __name__ == "__main__":
@@ -139,10 +88,21 @@ if __name__ == "__main__":
 
     payload = processor.process(input_pdf_path)
 
-    kv_pairs = payload.get("kv_pairs", [])
+    pairs = payload.kv_pairs or []
 
-    for i, kv in enumerate(kv_pairs[:200], start=1):  # limit spam
-        k = (kv.get("key") or {}).get("content")
-        v = (kv.get("value") or {}).get("content")
-        c = kv.get("confidence") or (kv.get("value") or {}).get("confidence")
-        logger.info(f"[KV {i:02d}] {k!r} -> {v!r} (conf={c})")
+    for i, kv in enumerate(pairs[:5], start=1):  # limit spam
+        key = kv.key
+        val = kv.value
+        conf = kv.confidence
+        regions = kv.bounding_regions or []
+        n_regions = len(regions)
+
+        first_region = regions[0] if regions else None
+        page = first_region.page if first_region else None
+        poly = first_region.polygon if first_region else None
+        poly_len = len(poly) if isinstance(poly, list) else None
+
+        logger.info(
+            f"[KV {i:02d}] {key!r} -> {val!r} (conf={conf}, regions={n_regions}, "
+            f"page={page}, poly_len={poly_len})",
+        )
