@@ -78,25 +78,31 @@ export default function Page() {
             </div>
           </div>
         ) : showTable ? (
-          <div className="rounded-lg bg-gray-50 p-4 md:w-2/4 md:px-10">
+          <div className="rounded-lg bg-gray-50 px-6 py-4 md:w-2/4">
             {executiveSummary && (
               <div>
                 <details open>
-                  <summary className="cursor-pointer text-lg font-semibold text-gray-800">
-                    Executive Summary
+                  <summary className="flex list-item items-center justify-between gap-3 cursor-pointer text-lg font-semibold text-gray-800">
+                    <span>Executive Summary</span>
+                    {/* <button
+                      type="button"
+                      className="rounded-md bg-green-600 px-3 py-1 text-sm text-white hover:bg-green-600"
+                    >
+                      Export to AEC
+                    </button> */}
                   </summary>
                   <div className="mt-2 overflow-auto max-w-full">
                     <table className="w-full table-fixed text-left text-sm text-gray-700">
                       <tbody className="divide-y divide-gray-200">
                         <tr>
-                          <td className="py-3 pr-4 font-medium text-gray-800">
+                          <td className="py-3 pr-12 font-medium text-gray-800 w-96">
                             Summary
                           </td>
                           <td className="py-3 break-words">{executiveSummary}</td>
                         </tr>
                         {typeof summaryConfidence === 'number' && (
                           <tr>
-                            <td className="py-3 pr-4 font-medium text-gray-800">
+                            <td className="py-3 pr-12 font-medium text-gray-800 w-96">
                               Confidence
                             </td>
                             <td className="py-3">
@@ -106,7 +112,7 @@ export default function Page() {
                         )}
                         {summaryConclusion && (
                           <tr>
-                            <td className="py-3 pr-4 font-medium text-gray-800">
+                            <td className="py-3 pr-12 font-medium text-gray-800 w-96">
                               Conclusion
                             </td>
                             <td className="py-3 break-words">
