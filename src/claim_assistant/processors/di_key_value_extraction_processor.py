@@ -5,9 +5,7 @@ from typing import Literal
 from azure.ai.formrecognizer import DocumentAnalysisClient
 from azure.core.credentials import AzureKeyCredential
 
-from claim_assistant.schemas.document_intelligence_response import (
-    DocumentIntelligenceResponse,
-)
+from claim_assistant.schemas import DocumentIntelligenceResponse
 
 
 class DIKeyValueExtractionProcessor:

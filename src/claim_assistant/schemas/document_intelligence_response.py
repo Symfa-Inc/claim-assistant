@@ -2,7 +2,13 @@ from azure.ai.formrecognizer import AnalyzeResult
 from pydantic import BaseModel, Field
 
 from claim_assistant.schemas.bounding_region import BoundingRegion
-from claim_assistant.schemas.keu_value_pair import KeyValuePair
+
+
+class KeyValuePair(BaseModel):
+    key: str | None = Field(...)
+    value: str | None = Field(...)
+    confidence: float | None = Field(..., ge=0.0, le=1.0)
+    bounding_regions: list[BoundingRegion] = Field(default_factory=list)
 
 
 class DocumentIntelligenceResponse(BaseModel):
