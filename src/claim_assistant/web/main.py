@@ -45,9 +45,13 @@ async def process_form(
     Accepts a PDF upload + form_type.
     Returns CoverageAnalysisResponse (JSON).
     """
-    sample = get_registry().get_sample(form_id)
-    if sample is None:
-        raise HTTPException(status_code=404, detail="Sample not found")
+    if form_id == "generic":
+        form_type = "generic"
+    else:
+        sample = get_registry().get_sample(form_id)
+        if sample is None:
+            raise HTTPException(status_code=404, detail="Sample not found")
+        form_type = sample.form_code
 
 
     if file.content_type not in (None, "", "application/pdf"):
@@ -65,7 +69,7 @@ async def process_form(
         content = await file.read()
         tmp_path.write_bytes(content)
 
-        req = ProcessRequest(form_type=sample.form_code, upload_pdf_path=tmp_path)
+        req = ProcessRequest(form_type=form_type, upload_pdf_path=tmp_path)
         logger.info(
             "Process request: %s",
             json.dumps(svc.to_debug_dict(req), ensure_ascii=False),

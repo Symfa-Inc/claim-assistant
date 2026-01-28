@@ -72,9 +72,6 @@ export default function Page() {
         </div>
         {isProcessing ? (
           <div className="flex flex-1 flex-col rounded-lg bg-gray-50 p-4 md:w-2/4 md:px-10">
-            <h2 className="text-lg font-semibold text-gray-800">
-              Processing...
-            </h2>
             <div className="mt-6 flex flex-1 flex-col items-center justify-center gap-3 text-gray-600">
               <div className="h-8 w-8 animate-spin rounded-full border-2 border-gray-300 border-t-blue-600" />
               <span className="text-sm font-medium">Processing...</span>
