@@ -65,7 +65,7 @@ export default function Page() {
       <div className="mx-4 flex flex-1 flex-col items-start gap-5 py-5 md:mx-6 md:flex-row">
         {/* Left panel - PDF Viewer */}
         <div className="flex flex-1 items-stretch md:w-2/4">
-          <div className="glass-card card-shadow flex w-full flex-1 flex-col rounded-2xl border border-slate-200/60 p-5">
+          <div className="glass-card card-shadow card-shadow-hover flex w-full flex-1 flex-col rounded-2xl border border-slate-200/60 p-5 transition-all">
             <AppPdfViewer
               isProcessing={isProcessing}
               onProcess={handleProcess}
