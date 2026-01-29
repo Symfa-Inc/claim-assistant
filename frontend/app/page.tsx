@@ -80,70 +80,77 @@ export default function Page() {
         ) : showTable ? (
           <div className="flex flex-1 flex-col gap-4 md:w-2/4">
             <div className="rounded-xl border border-slate-200 bg-white px-6 py-4 shadow-sm">
-              <div className="flex items-center justify-between gap-3">
-                <h3 className="text-lg font-semibold text-slate-800">
-                  Executive Summary
-                </h3>
-                <button
-                  type="button"
-                  className="rounded-md shrink-0 whitespace-nowrap px-3 py-1 text-sm font-medium text-white shadow-sm bg-emerald-600 hover:bg-emerald-600"
-                >
-                  Export to AEC
-                </button>
-              </div>
-              {executiveSummary ? (
-                <div className="mt-2 max-w-full">
-                  <table className="w-full table-fixed text-left text-sm text-slate-700">
-                    <tbody className="divide-y divide-slate-100">
-                      <tr>
-                        <td className="py-3 pr-12 font-medium text-slate-800 w-56">
-                          Summary
-                        </td>
-                        <td className="py-3 break-words">{executiveSummary}</td>
-                      </tr>
-                      {summaryConclusion && (
+              <details open>
+                <summary className="cursor-pointer">
+                  <div className="ml-2 inline-flex w-[calc(100%-1.5rem)] items-center justify-between gap-3">
+                    <span className="text-lg font-semibold text-slate-800">
+                      Executive Summary
+                    </span>
+                    <button
+                      type="button"
+                      onClick={(e) => e.stopPropagation()}
+                      className="rounded-md shrink-0 whitespace-nowrap px-3 py-1 text-sm font-medium text-white shadow-sm bg-emerald-600 hover:bg-emerald-600"
+                    >
+                      Export to AEC
+                    </button>
+                  </div>
+                </summary>
+                {executiveSummary ? (
+                  <div className="mt-2 max-w-full">
+                    <table className="w-full table-fixed text-left text-sm text-slate-700">
+                      <tbody className="divide-y divide-slate-100">
                         <tr>
-                          <td className="py-3 pr-12 font-medium text-slate-800 w-96">
-                            Conclusion
+                          <td className="py-3 pr-12 font-medium text-slate-800 w-56">
+                            Summary
                           </td>
-                          <td
-                            className={`py-3 break-words ${summaryConclusion.toLowerCase() === 'positive'
-                              ? 'text-green-600'
-                              : summaryConclusion.toLowerCase() === 'negative'
-                                ? 'text-red-600'
-                                : 'text-slate-700'
-                              } font-semibold uppercase tracking-wide`}
-                          >
-                            {summaryConclusion}
-                          </td>
+                          <td className="py-3 break-words">{executiveSummary}</td>
                         </tr>
-                      )}
-                    </tbody>
-                  </table>
-                </div>
-              ) : (
-                <div className="mt-2 text-sm text-slate-500">
-                  No executive summary available.
-                </div>
-              )}
+                        {summaryConclusion && (
+                          <tr>
+                            <td className="py-3 pr-12 font-medium text-slate-800 w-96">
+                              Conclusion
+                            </td>
+                            <td
+                              className={`py-3 break-words ${summaryConclusion.toLowerCase() === 'positive'
+                                ? 'text-green-600'
+                                : summaryConclusion.toLowerCase() === 'negative'
+                                  ? 'text-red-600'
+                                  : 'text-slate-700'
+                                } font-semibold uppercase tracking-wide`}
+                            >
+                              {summaryConclusion}
+                            </td>
+                          </tr>
+                        )}
+                      </tbody>
+                    </table>
+                  </div>
+                ) : (
+                  <div className="mt-2 text-sm text-slate-500">
+                    No executive summary available.
+                  </div>
+                )}
+              </details>
             </div>
             <div className="rounded-xl border border-slate-200 bg-white px-6 py-4 shadow-sm">
-              <h3 className="text-lg font-semibold text-slate-800">
-                Key Claim Fields
-              </h3>
-              <div className="mt-2">
-                <ClaimTable
-                  fields={keyClaimFields}
-                  activeFieldId={hoveredFieldId}
-                  onHover={setHoveredFieldId}
-                  className="flex min-h-0 flex-1 flex-col bg-transparent p-0 md:w-full"
-                />
-              </div>
+              <details open>
+                <summary className="cursor-pointer text-lg font-semibold text-slate-800">
+                  <span className="ml-2">Key Fields</span>
+                </summary>
+                <div className="mt-2">
+                  <ClaimTable
+                    fields={keyClaimFields}
+                    activeFieldId={hoveredFieldId}
+                    onHover={setHoveredFieldId}
+                    className="flex min-h-0 flex-1 flex-col bg-transparent p-0 md:w-full"
+                  />
+                </div>
+              </details>
             </div>
             <div className="rounded-xl border border-slate-200 bg-white px-6 py-4 shadow-sm">
               <details>
                 <summary className="cursor-pointer text-lg font-semibold text-slate-800">
-                  All Fields
+                  <span className="ml-2">All Fields</span>
                 </summary>
                 <div className="mt-2 max-h-96 overflow-auto">
                   <ClaimTable
