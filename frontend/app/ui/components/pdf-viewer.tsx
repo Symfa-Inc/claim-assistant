@@ -87,7 +87,7 @@ export default function AppPdfViewer({
     const [selectedForm, setSelectedForm] = useState('FL:FL__form_dg_POL123456789.pdf')
     const [containerWidth, setContainerWidth] = useState(0)
     const [numPages, setNumPages] = useState<number | null>(null)
-    const [zoom, setZoom] = useState(1)
+    const [zoom, setZoom] = useState(1.5)
     const [pageSizes, setPageSizes] = useState<Record<number, {
         width: number
         height: number
@@ -135,7 +135,7 @@ export default function AppPdfViewer({
         if (wheelResetRef.current) {
             clearTimeout(wheelResetRef.current)
         }
-        setZoom(1)
+        setZoom(1.5)
         setFile(nextFile)
         setFileName(nextFile.name)
         setSelectedForm('generic')
@@ -500,7 +500,7 @@ export default function AppPdfViewer({
                                 file={file}
                                 onLoadSuccess={({ numPages }) => {
                                     setNumPages(numPages)
-                                    setZoom(1)
+                                    setZoom(1.5)
                                 }}
                                 onLoadError={() => {
                                     setError('Failed to load PDF preview.')
