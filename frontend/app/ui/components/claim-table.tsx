@@ -55,11 +55,11 @@ export default function ClaimTable({
                   <td className="py-3 pr-4 text-slate-600">{field.value}</td>
                   <td className="py-3 text-right w-24">
                     <span className={`inline-flex items-center rounded-full px-2 py-0.5 text-xs font-medium ${
-                      parseFloat(field.confidence) >= 90
+                      parseFloat(field.confidence) >= 80
                         ? 'bg-emerald-50 text-emerald-700'
-                        : parseFloat(field.confidence) >= 70
+                        : parseFloat(field.confidence) >= 60
                           ? 'bg-amber-50 text-amber-700'
-                          : 'bg-slate-100 text-slate-600'
+                          : 'bg-rose-50 text-rose-700'
                     }`}>
                       {field.confidence}
                     </span>
