@@ -28,7 +28,7 @@ export default function ClaimTable({
         <table className="w-full table-fixed text-left text-sm text-slate-600">
           <thead className="text-xs font-medium uppercase tracking-wider text-slate-500">
             <tr>
-              <th className="py-2.5 pr-4 w-48 bg-slate-50/80 first:rounded-l-lg">Field</th>
+              <th className="py-2.5 pr-4 w-64 bg-slate-50/80 first:rounded-l-lg">Field</th>
               <th className="py-2.5 pr-4 bg-slate-50/80">Value</th>
               <th className="py-2.5 text-right w-24 bg-slate-50/80 last:rounded-r-lg">
                 Confidence
@@ -49,7 +49,7 @@ export default function ClaimTable({
                   onMouseEnter={() => onHover?.(field.id)}
                   onMouseLeave={() => onHover?.(null)}
                 >
-                  <td className="py-3 pr-4 font-medium text-slate-700 w-48">
+                  <td className="py-3 pr-4 font-medium text-slate-700 w-56">
                     {field.label}
                   </td>
                   <td className="py-3 pr-4 text-slate-600">{field.value}</td>
