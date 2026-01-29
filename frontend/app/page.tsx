@@ -100,14 +100,14 @@ export default function Page() {
                     <table className="w-full table-fixed text-left text-sm text-slate-700">
                       <tbody className="divide-y divide-slate-100">
                         <tr>
-                          <td className="py-3 pr-12 font-medium text-slate-800 w-56">
+                          <td className="py-3 pr-4 font-medium text-slate-800 w-32 align-top">
                             Summary
                           </td>
-                          <td className="py-3 break-words">{executiveSummary}</td>
+                          <td className="py-3 break-words text-justify">{executiveSummary}</td>
                         </tr>
                         {summaryConclusion && (
                           <tr>
-                            <td className="py-3 pr-12 font-medium text-slate-800 w-96">
+                            <td className="py-3 pr-4 font-medium text-slate-800 w-28">
                               Conclusion
                             </td>
                             <td
