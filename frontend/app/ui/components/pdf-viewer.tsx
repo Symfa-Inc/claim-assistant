@@ -345,26 +345,30 @@ export default function AppPdfViewer({
         vertices.map((point) => `${point.x},${point.y}`).join(' ')
 
     return (
-        <div className="flex h-full min-h-0 w-full flex-1 flex-col gap-3">
-            <div className="flex flex-wrap items-center gap-4 rounded-lg border border-slate-200 bg-slate-50 px-3 py-2">
-                <div className="flex items-center gap-3">
+        <div className="flex h-full min-h-0 w-full flex-1 flex-col gap-4">
+            {/* Modern toolbar */}
+            <div className="flex flex-wrap items-center gap-4 rounded-xl border border-slate-200/60 bg-slate-50/80 backdrop-blur-sm px-4 py-3">
+                <div className="flex items-center">
                     <span className="text-sm font-semibold text-slate-700">
-                        PDF Preview
+                        Preview
                     </span>
                 </div>
                 <div className="flex flex-1 items-center gap-6">
-                    <div className="flex flex-1 items-center gap-2 text-xs text-slate-500">
+                    {/* Zoom controls */}
+                    <div className="flex items-center gap-2">
                         <button
                             type="button"
                             onClick={() =>
                                 setZoom((value) => Math.max(0.5, value - 0.1))
                             }
-                            className="rounded-md border border-slate-300 bg-white px-2 py-1 text-sm text-slate-700 shadow-sm hover:bg-slate-50"
+                            className="flex h-8 w-8 items-center justify-center rounded-lg border border-slate-200 bg-white text-slate-600 shadow-sm transition-all hover:bg-slate-50 hover:border-slate-300"
                             aria-label="Zoom out"
                         >
-                            -
+                            <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M20 12H4" />
+                            </svg>
                         </button>
-                        <span className="min-w-[48px] text-center text-xs font-medium text-slate-600">
+                        <span className="min-w-[52px] text-center text-sm font-medium text-slate-600">
                             {Math.round(zoom * 100)}%
                         </span>
                         <button
@@ -372,31 +376,40 @@ export default function AppPdfViewer({
                             onClick={() =>
                                 setZoom((value) => Math.min(2.5, value + 0.1))
                             }
-                            className="rounded-md border border-slate-300 bg-white px-2 py-1 text-sm text-slate-700 shadow-sm hover:bg-slate-50"
+                            className="flex h-8 w-8 items-center justify-center rounded-lg border border-slate-200 bg-white text-slate-600 shadow-sm transition-all hover:bg-slate-50 hover:border-slate-300"
                             aria-label="Zoom in"
                         >
-                            +
+                            <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
+                            </svg>
                         </button>
-                        <label className="cursor-pointer shrink-0 whitespace-nowrap rounded-md border border-slate-300 bg-white px-3 py-1 text-sm text-slate-700 shadow-sm hover:bg-slate-50">
-                            Upload PDF
-                            <input
-                                type="file"
-                                accept="application/pdf"
-                                className="hidden"
-                                onChange={handleFileChange}
-                            />
-                        </label>
                     </div>
-                    <div className="flex items-center gap-2 pl-2 text-sm">
-                        <span className="shrink-0 whitespace-nowrap text-sm font-medium text-slate-700">
-                            Claim Form
+
+                    {/* Upload button */}
+                    <label className="cursor-pointer inline-flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-sm font-medium text-slate-700 shadow-sm transition-all hover:bg-slate-50 hover:border-slate-300">
+                        <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
+                        </svg>
+                        Upload
+                        <input
+                            type="file"
+                            accept="application/pdf"
+                            className="hidden"
+                            onChange={handleFileChange}
+                        />
+                    </label>
+
+                    {/* Form selector */}
+                    <div className="flex items-center gap-2">
+                        <span className="shrink-0 text-sm font-medium text-slate-600">
+                            Form
                         </span>
                         <select
                             value={selectedForm}
                             onChange={(event) =>
                                 selectForm(event.target.value)
                             }
-                            className="rounded-md border border-slate-300 bg-white px-3 py-1 text-sm text-slate-700 shadow-sm hover:bg-slate-50"
+                            className="rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-sm text-slate-700 shadow-sm transition-all hover:border-slate-300 focus:border-indigo-300 focus:ring-2 focus:ring-indigo-100"
                             aria-label="Form"
                         >
                             <option value="FL:FL__form_dg_POL123456789.pdf">Florida digital</option>
@@ -408,7 +421,9 @@ export default function AppPdfViewer({
                             <option value="generic">Custom</option>
                         </select>
                     </div>
-                    <div className="flex flex-1 items-center justify-end text-sm">
+
+                    {/* Process button */}
+                    <div className="flex flex-1 items-center justify-end">
                         <button
                             type="button"
                             onClick={() => {
@@ -416,20 +431,36 @@ export default function AppPdfViewer({
                                     handleProcessPdf()
                                 }
                             }}
-                            className={`rounded-md shrink-0 whitespace-nowrap px-3 py-1 text-sm font-medium text-white shadow-sm ${canProcess
-                                ? 'bg-emerald-600 hover:bg-emerald-600'
-                                : 'cursor-not-allowed bg-emerald-300'
+                            className={`inline-flex items-center gap-2 whitespace-nowrap rounded-lg px-4 py-2 text-sm font-medium text-white shadow-sm transition-all ${canProcess
+                                ? 'btn-primary'
+                                : 'cursor-not-allowed bg-slate-300'
                                 }`}
                             aria-disabled={!canProcess}
                         >
-                            {isProcessing ? 'Processing...' : 'Process PDF'}
+                            {isProcessing ? (
+                                <>
+                                    <svg className="h-4 w-4 animate-spin" fill="none" viewBox="0 0 24 24">
+                                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+                                    </svg>
+                                    Processing...
+                                </>
+                            ) : (
+                                <>
+                                    <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                                    </svg>
+                                    Process Form
+                                </>
+                            )}
                         </button>
                     </div>
                 </div>
             </div>
+            {/* PDF content area */}
             <div
                 ref={scrollRef}
-                className="flex-1 min-h-0 overflow-auto rounded-lg border border-slate-200 bg-white p-2 shadow-sm"
+                className="flex-1 min-h-0 overflow-auto rounded-xl border border-slate-200/60 bg-white/80 backdrop-blur-sm p-3 shadow-sm"
             >
                 <div
                     ref={containerRef}
@@ -639,11 +670,11 @@ export default function AppPdfViewer({
                                                                         key={box.id}
                                                                         className="pointer-events-none absolute inset-0 h-full w-full"
                                                                     >
-                                                                        <polygon
+                                                                    <polygon
                                                                             points={
                                                                                 adjustedPoints
                                                                             }
-                                                                            className="fill-blue-200/30 stroke-blue-500"
+                                                                            className="fill-indigo-200/40 stroke-indigo-500"
                                                                             strokeWidth={
                                                                                 2
                                                                             }
