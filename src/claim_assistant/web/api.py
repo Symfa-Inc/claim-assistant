@@ -20,7 +20,6 @@ from claim_assistant.web.deps import (
     get_registry,
 )
 from claim_assistant.web.services.processing import ProcessRequest
-from claim_assistant.web.services.registry import SampleRef
 
 
 def create_app() -> FastAPI:

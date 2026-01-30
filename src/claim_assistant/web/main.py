@@ -1,10 +1,12 @@
 import json
+import traceback
+from multiprocessing import get_context
+from pathlib import Path
 from typing import Annotated
 
-from fastapi import File, Form, UploadFile, HTTPException
-from fastapi import FastAPI, Depends
+import anyio
+from fastapi import Depends, FastAPI, File, Form, HTTPException, Request, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
-from pathlib import Path
 
 from claim_assistant.web.deps import (
     get_logger,
@@ -13,6 +15,31 @@ from claim_assistant.web.deps import (
     get_registry,
 )
 from claim_assistant.web.services.processing import ProcessRequest
+
+
+def _run_processing(
+    form_type: str,
+    upload_pdf_path: str,
+    send_conn,
+) -> None:
+    try:
+        svc = get_processing_service()
+        req = ProcessRequest(form_type=form_type, upload_pdf_path=Path(upload_pdf_path))
+        result = svc.process(req)
+        send_conn.send({"ok": True, "result": result.model_dump()})
+    except Exception as exc:
+        send_conn.send(
+            {
+                "ok": False,
+                "error": str(exc),
+                "traceback": traceback.format_exc(),
+            },
+        )
+    finally:
+        try:
+            send_conn.close()
+        except Exception:
+            pass
 
 
 app = FastAPI(debug=True)
@@ -36,6 +63,7 @@ PROJECT_DIR = get_project_dir()
 
 @app.post("/process")
 async def process_form(
+    request: Request,
     file: Annotated[UploadFile, File()],
     form_id: Annotated[str, Form()],
     svc=Depends(get_processing_service),
@@ -52,7 +80,6 @@ async def process_form(
         if sample is None:
             raise HTTPException(status_code=404, detail="Sample not found")
         form_type = sample.form_code
-
 
     if file.content_type not in (None, "", "application/pdf"):
         raise HTTPException(
@@ -75,10 +102,39 @@ async def process_form(
             json.dumps(svc.to_debug_dict(req), ensure_ascii=False),
         )
 
-        return svc.process(req)
+        ctx = get_context("spawn")
+        recv_conn, send_conn = ctx.Pipe(duplex=False)
+        process = ctx.Process(
+            target=_run_processing,
+            args=(form_type, str(tmp_path), send_conn),
+        )
+        process.start()
+        send_conn.close()
+
+        while True:
+            if await request.is_disconnected():
+                if process.is_alive():
+                    process.terminate()
+                process.join(timeout=1)
+                raise HTTPException(status_code=499, detail="Client closed request")
+
+            if recv_conn.poll(0):
+                message = recv_conn.recv()
+                if message.get("ok"):
+                    return message.get("result")
+                logger.error("Processing failed: %s", message.get("error"))
+                logger.debug("Processing traceback: %s", message.get("traceback"))
+                raise HTTPException(
+                    status_code=500,
+                    detail="Internal processing error",
+                )
+
+            await anyio.sleep(0.1)
 
     except ValueError as ve:
         raise HTTPException(status_code=400, detail=str(ve)) from ve
+    except HTTPException:
+        raise
     except Exception as e:
         logger.exception("Processing failed")
         raise HTTPException(
@@ -86,7 +142,12 @@ async def process_form(
             detail="Internal processing error",
         ) from e
     finally:
-        # keep file for debugging if you want; otherwise delete
+        try:
+            if "process" in locals() and process.is_alive():
+                process.terminate()
+                process.join(timeout=1)
+        except Exception:
+            pass
         try:
             if tmp_path.exists():
                 tmp_path.unlink()

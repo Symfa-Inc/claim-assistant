@@ -51,6 +51,18 @@ export default function Page() {
     setShowTable(true);
   };
 
+  const handleReset = () => {
+    setClaimFields([]);
+    setKeyClaimFields([]);
+    setHighlightBoxes([]);
+    setExecutiveSummary(null);
+    setSummaryConfidence(null);
+    setSummaryConclusion(null);
+    setHoveredFieldId(null);
+    setIsProcessing(false);
+    setShowTable(false);
+  };
+
   return (
     <main className="flex min-h-screen flex-col bg-gradient-to-br from-slate-50 via-white to-slate-100 gradient-mesh">
       {/* Modern header with glass effect */}
@@ -70,6 +82,7 @@ export default function Page() {
               isProcessing={isProcessing}
               onProcess={handleProcess}
               onProcessed={handleProcessed}
+              onReset={handleReset}
               highlightFieldId={showTable ? hoveredFieldId : null}
               highlightBoxes={highlightBoxes}
             />

@@ -3,6 +3,7 @@
 import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import type { ChangeEvent, DragEvent } from 'react'
 import { Document, Page, pdfjs } from 'react-pdf'
+import axios from 'axios'
 import type { ClaimField } from '@/app/ui/components/claim-table'
 import api from '@/app/utils/api'
 
@@ -24,6 +25,7 @@ interface OwnProps {
     src?: string
     isProcessing?: boolean
     onProcess?: () => void
+    onReset?: () => void
     onProcessed?: (
         fields: ClaimField[],
         keyFields: ClaimField[],
@@ -72,6 +74,7 @@ export default function AppPdfViewer({
     src,
     isProcessing = false,
     onProcess,
+    onReset,
     onProcessed,
     highlightFieldId,
     highlightBoxes = [],
@@ -81,6 +84,7 @@ export default function AppPdfViewer({
     const scrollRef = useRef<HTMLDivElement | null>(null)
     const wheelAccumulatorRef = useRef(0)
     const wheelResetRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+    const processAbortRef = useRef<AbortController | null>(null)
     const [error, setError] = useState<string | null>(null)
     const [file, setFile] = useState<File | string | null>(src ?? null)
     const [fileName, setFileName] = useState<string | null>(null)
@@ -159,9 +163,35 @@ export default function AppPdfViewer({
         }
     }
 
+    const handleReset = () => {
+        const defaultFormId = 'FL:FL__form_dg_POL123456789.pdf'
+        const defaultFilePath = '/forms/FL/form_dg_POL123456789.pdf'
+        const isDefaultFile = file === defaultFilePath
+        processAbortRef.current?.abort()
+        wheelAccumulatorRef.current = 0
+        if (wheelResetRef.current) {
+            clearTimeout(wheelResetRef.current)
+        }
+        setZoom(1.5)
+        setFileName(null)
+        if (!isDefaultFile) {
+            setNumPages(null)
+            setPageSizes({})
+        }
+        setError(null)
+        setSelectedForm(defaultFormId)
+        if (!isDefaultFile) {
+            setFile(defaultFilePath)
+        }
+        onReset?.()
+    }
+
     const handleProcessPdf = async () => {
         if (!file) return
         onProcess?.()
+        processAbortRef.current?.abort()
+        const abortController = new AbortController()
+        processAbortRef.current = abortController
 
         let pdfFile: File
 
@@ -181,10 +211,36 @@ export default function AppPdfViewer({
         formData.append('form_id', selectedForm)
 
         try {
-            const response = await api.post<BackendResponse>('/process', formData)
+            const response = await api.post<BackendResponse>('/process', formData, {
+                signal: abortController.signal,
+            })
+            const aliasLabels: Record<string, string> = {
+                policy_id: 'Policy Number',
+                first_name: 'First Name',
+                last_name: 'Last Name',
+                date_of_incident: 'Incident Date',
+                report_date: 'Report Date',
+                loss_type: 'Type of Loss',
+                loss_description: 'Loss Description',
+                loss_location: 'Loss Location',
+            }
+            const keyFieldOrder = [
+                'policy_id',
+                'first_name',
+                'last_name',
+                'date_of_incident',
+                'report_date',
+                'loss_type',
+                'loss_description',
+                'loss_location',
+            ]
+            const keyFieldOrderIndex = new Map(
+                keyFieldOrder.map((alias, index) => [alias, index])
+            )
             console.log(response)
             const fields: ClaimField[] = []
             const keyFields: ClaimField[] = []
+            const keyFieldFallbackIndex = new Map<string, number>()
             const boxes: HighlightBox[] = []
                 ; (response.data?.form ?? []).forEach((field, index) => {
                     const fieldId = field.alias ?? `field_${index}`
@@ -196,19 +252,29 @@ export default function AppPdfViewer({
                                 ? rawValue
                                 : JSON.stringify(rawValue)
                     const confidence = field.answer?.evidences?.[0]?.confidence
+                    const allFieldsLabel = field.text
+                    const keyFieldLabel = field.alias
+                        ? aliasLabels[field.alias] ?? field.text
+                        : field.text
                     const mappedField: ClaimField = {
                         id: fieldId,
-                        label: field.text,
+                        label: allFieldsLabel,
                         value,
                         confidence:
                             typeof confidence === 'number'
                                 ? `${Math.round(confidence * 100)}%`
                                 : '',
                     }
+                    fields.push(mappedField)
                     if (field.alias) {
-                        keyFields.push(mappedField)
-                    } else {
-                        fields.push(mappedField)
+                        const keyField: ClaimField = {
+                            id: fieldId,
+                            label: keyFieldLabel,
+                            value,
+                            confidence: mappedField.confidence,
+                        }
+                        keyFieldFallbackIndex.set(fieldId, keyFields.length)
+                        keyFields.push(keyField)
                     }
 
                     ; (field.answer?.evidences ?? []).forEach(
@@ -251,6 +317,18 @@ export default function AppPdfViewer({
                         }
                     )
                 })
+            const orderedKeyFields = [...keyFields].sort((a, b) => {
+                const aOrder = keyFieldOrderIndex.get(a.id)
+                const bOrder = keyFieldOrderIndex.get(b.id)
+                if (aOrder !== undefined && bOrder !== undefined) {
+                    return aOrder - bOrder
+                }
+                if (aOrder !== undefined) return -1
+                if (bOrder !== undefined) return 1
+                const aFallback = keyFieldFallbackIndex.get(a.id) ?? 0
+                const bFallback = keyFieldFallbackIndex.get(b.id) ?? 0
+                return aFallback - bFallback
+            })
             const summary: BackendSummary | null =
                 response.data?.executive_summary
                     ? {
@@ -262,8 +340,14 @@ export default function AppPdfViewer({
                         conclusion: response.data.conclusion ?? null,
                     }
                     : null
-            onProcessed?.(fields, keyFields, boxes, summary)
+            onProcessed?.(fields, orderedKeyFields, boxes, summary)
         } catch (error) {
+            if (
+                axios.isCancel(error) ||
+                (error as { code?: string })?.code === 'ERR_CANCELED'
+            ) {
+                return
+            }
             setError('Failed to process PDF.')
             onProcessed?.([], [], [], null)
         }
@@ -347,7 +431,7 @@ export default function AppPdfViewer({
     return (
         <div className="flex h-full min-h-0 w-full flex-1 flex-col gap-4">
             {/* Modern toolbar */}
-            <div className="flex flex-wrap items-center gap-4 rounded-xl border border-slate-200/60 bg-slate-50/80 backdrop-blur-sm px-4 py-3">
+            <div className="flex flex-row items-center gap-2 rounded-xl border border-slate-200/60 bg-slate-50/80 backdrop-blur-sm px-2 py-2 w-full max-w-full overflow-x-auto flex-nowrap min-w-0">
                 <div className="flex items-center">
                     <span className="text-sm font-semibold text-slate-700">
                         Preview
@@ -400,7 +484,7 @@ export default function AppPdfViewer({
                     </label>
 
                     {/* Form selector */}
-                    <div className="flex items-center gap-2">
+                    <div className="flex min-w-0 items-center gap-2">
                         <span className="shrink-0 text-sm font-medium text-slate-600">
                             Form
                         </span>
@@ -409,7 +493,7 @@ export default function AppPdfViewer({
                             onChange={(event) =>
                                 selectForm(event.target.value)
                             }
-                            className="rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-sm text-slate-700 shadow-sm transition-all hover:border-slate-300 focus:border-indigo-300 focus:ring-2 focus:ring-indigo-100"
+                            className="w-full min-w-0 max-w-[12rem] truncate rounded-lg border border-slate-200 bg-white px-3 pr-9 py-1.5 text-sm text-slate-700 shadow-sm transition-all hover:border-slate-300 focus:border-indigo-300 focus:ring-2 focus:ring-indigo-100"
                             aria-label="Form"
                         >
                             <option value="FL:FL__form_dg_POL123456789.pdf">Florida digital</option>
@@ -423,7 +507,23 @@ export default function AppPdfViewer({
                     </div>
 
                     {/* Process button */}
-                    <div className="flex flex-1 items-center justify-end">
+                    <div className="flex flex-1 items-center justify-end gap-3">
+                        <button
+                            type="button"
+                            onClick={handleReset}
+                            disabled={!isProcessing}
+                            aria-disabled={!isProcessing}
+                            className={`inline-flex items-center gap-2 whitespace-nowrap rounded-lg border px-4 py-2 text-sm font-medium shadow-sm transition-all ${
+                                isProcessing
+                                    ? 'btn-danger border-transparent text-white'
+                                    : 'cursor-not-allowed border-slate-200 bg-slate-100 text-slate-400'
+                            }`}
+                        >
+                            <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12a7.5 7.5 0 0112.728-5.303l1.772 1.773M19.5 12a7.5 7.5 0 01-12.728 5.303L5 15.53M5 8.25V5.25h3" />
+                            </svg>
+                            Reset
+                        </button>
                         <button
                             type="button"
                             onClick={() => {

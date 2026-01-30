@@ -6,6 +6,7 @@ import time
 from dataclasses import dataclass
 from datetime import datetime
 from pathlib import Path
+from typing import Callable
 
 from openai import OpenAI
 
@@ -42,6 +43,10 @@ class ProcessRequest:
     upload_pdf_path: Path
 
 
+class ProcessingCancelled(Exception):
+    pass
+
+
 class ClaimProcessingService:
     """
     Orchestrates the pipeline (DI -> LLM form fill -> DB match -> validation).
@@ -64,7 +69,11 @@ class ClaimProcessingService:
     # ---------------------------
     # Public API
     # ---------------------------
-    def process(self, req: ProcessRequest) -> CoverageAnalysisResponse:
+    def process(
+        self,
+        req: ProcessRequest,
+        is_cancelled: Callable[[], bool] | None = None,
+    ) -> CoverageAnalysisResponse:
         start_time = time.time()
 
         run_dir = self._make_run_dir()
@@ -95,18 +104,27 @@ class ClaimProcessingService:
         db_processor = PolicyDatabaseProcessor(self.policy_db_path, logger)
         validation_processor = ClaimValidationProcessor(client, logger)
 
+        def check_cancel() -> None:
+            if is_cancelled and is_cancelled():
+                logger.info("Processing cancelled by client")
+                raise ProcessingCancelled()
+
         # --- Workflow ---
+        check_cancel()
         logger.info("Step 1: Extracting DI key/value pairs from PDF...")
         di_payload = di_kv_processor.process(input_pdf_path)
+        check_cancel()
         logger.info("Step 2: Filling form fields from DI KV pairs via LLM...")
         form: Form = form_processor.process(
             form_json_path=form_json_path,
             di_payload=di_payload,
         )
 
+        check_cancel()
         logger.info("Step 3: Fetching policy from database...")
         policy: MockPolicyRecord | None = db_processor.process(form)
 
+        check_cancel()
         logger.info("Step 4: Validating claim against policy record...")
         analysis: CoverageAnalysisResponse = validation_processor.process(form, policy)
 
