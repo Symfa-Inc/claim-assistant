@@ -139,7 +139,7 @@ export default function AppPdfViewer({
         if (wheelResetRef.current) {
             clearTimeout(wheelResetRef.current)
         }
-        setZoom(1.5)
+        setZoom(1.25)
         setFile(nextFile)
         setFileName(nextFile.name)
         setSelectedForm('generic')
@@ -172,7 +172,7 @@ export default function AppPdfViewer({
         if (wheelResetRef.current) {
             clearTimeout(wheelResetRef.current)
         }
-        setZoom(1.5)
+        setZoom(1.25)
         setFileName(null)
         if (!isDefaultFile) {
             setNumPages(null)
@@ -600,7 +600,7 @@ export default function AppPdfViewer({
                                 file={file}
                                 onLoadSuccess={({ numPages }) => {
                                     setNumPages(numPages)
-                                    setZoom(1.5)
+                                    setZoom(1.25)
                                 }}
                                 onLoadError={() => {
                                     setError('Failed to load PDF preview.')
