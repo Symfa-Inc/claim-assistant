@@ -6,8 +6,7 @@ from typing import Literal
 from openai import OpenAI
 
 from claim_assistant import PROJECT_DIR
-from claim_assistant.models.form import Form
-from claim_assistant.models.form_field import FormField
+from claim_assistant.schemas import Form, FormField
 from claim_assistant.utils import openai_file, validate_pdf
 
 

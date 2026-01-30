@@ -116,7 +116,7 @@
     "order": 14,
     "text": "County and State Where Accident or Exposure Occurred?",
     "description": "Location (county and state) of the accident or exposure.",
-    "alias": null,
+    "alias": "loss_location",
     "data_type": "string",
     "meta": {}
   },
@@ -444,7 +444,7 @@
     "order": 53,
     "text": "Date Employer Notified",
     "description": "Date employer was notified of the injury.",
-    "alias": null,
+    "alias": "report_date",
     "data_type": "date",
     "meta": {
       "format": "YYYY-MM-DD"
@@ -546,7 +546,7 @@
     "order": 64,
     "text": "Injury Description - Describe Activities of Employee When Injury or Illness Occurred and What Tools, Machinery, Objects, Chemicals, Etc. Were Involved.",
     "description": "Detailed description of activities and equipment involved.",
-    "alias": null,
+    "alias": "loss_description",
     "data_type": "text",
     "meta": {}
   },
@@ -562,7 +562,7 @@
     "order": 66,
     "text": "What Was The Injury or Illness? (State the Part of Body Affected and How It Was Affected)",
     "description": "Describe the injury/illness and body part(s) affected.",
-    "alias": null,
+    "alias": "loss_type",
     "data_type": "text",
     "meta": {}
   },

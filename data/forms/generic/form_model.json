@@ -418,7 +418,7 @@
     "order": 46,
     "text": "TYPE OF INJURY/ILLNESS",
     "description": "Brief description of nature of injury or illness.",
-    "alias": null,
+    "alias": "loss_type",
     "data_type": "enum",
     "meta": {
       "labels": [
@@ -576,7 +576,7 @@
     "order": 51,
     "text": "DEPARTMENT OR LOCATION WHERE ACCIDENT OR ILLNESS EXPOSURE OCCURRED",
     "description": "Department name or specific location where event occurred. If off premises, include address.",
-    "alias": null,
+    "alias": "loss_location",
     "data_type": "string",
     "meta": {}
   },
@@ -686,7 +686,7 @@
     "order": 55,
     "text": "HOW INJURY OR ILLNESS/ABNORMAL HEALTH CONDITION OCCURRED. DESCRIBE THE SEQUENCE OF EVENTS AND INCLUDE ANY OBJECTS OR SUBSTANCES THAT DIRECTLY INJURED THE EMPLOYEE OR MADE THE EMPLOYEE ILL",
     "description": "Detailed narrative of sequence of events and objects/substances involved.",
-    "alias": null,
+    "alias": "loss_description",
     "data_type": "text",
     "meta": {}
   },
@@ -789,7 +789,7 @@
     "order": 66,
     "text": "DATE PREPARED",
     "description": "Date this form was prepared.",
-    "alias": null,
+    "alias": "report_date",
     "data_type": "date",
     "meta": {
       "format": "YYYY-MM-DD"

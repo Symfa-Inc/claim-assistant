@@ -547,7 +547,7 @@
     "order": 60,
     "text": "Date Claim Administrator Had Knowledge of the Injury",
     "description": null,
-    "alias": null,
+    "alias": "report_date",
     "data_type": "date",
     "meta": {
       "format": "YYYY-MM-DD"
@@ -644,7 +644,7 @@
     "order": 69,
     "text": "Accident Site Street, City, State, & Postal Code",
     "description": null,
-    "alias": null,
+    "alias": "loss_location",
     "data_type": "string",
     "meta": {}
   },
@@ -668,7 +668,7 @@
     "order": 72,
     "text": "Type of Injury / Illness Code",
     "description": null,
-    "alias": null,
+    "alias": "loss_type",
     "data_type": "string",
     "meta": {}
   },
@@ -700,7 +700,7 @@
     "order": 76,
     "text": "Describe the events that caused the injury",
     "description": "e.g., fell, operating machinery, chemical exposure",
-    "alias": null,
+    "alias": "loss_description",
     "data_type": "text",
     "meta": {}
   },

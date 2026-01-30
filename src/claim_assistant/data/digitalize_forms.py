@@ -7,7 +7,7 @@ from openai import OpenAI, OpenAIError
 
 from claim_assistant import PROJECT_DIR
 from claim_assistant.data.settings import OpenAISettings
-from claim_assistant.models.form import Form  # your validation class
+from claim_assistant.schemas.form import Form  # your validation class
 
 # -------------------------------
 # Configuration

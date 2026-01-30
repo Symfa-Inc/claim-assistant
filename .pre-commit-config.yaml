@@ -6,6 +6,7 @@ repos:
   - id: check-yaml
   - id: check-toml
   - id: check-json
+    exclude: ^src/claim_assistant/web/frontend/node_modules/
   - id: check-ast
   - id: trailing-whitespace
   - id: end-of-file-fixer

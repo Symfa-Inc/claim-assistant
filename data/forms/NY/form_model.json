@@ -250,7 +250,7 @@
     "order": 30,
     "text": "Date Employer Had Knowledge of the Injury",
     "description": null,
-    "alias": null,
+    "alias": "report_date",
     "data_type": "date",
     "meta": {
       "format": "YYYY-MM-DD"
@@ -381,7 +381,7 @@
     "order": 43,
     "text": "Nature of Injury",
     "description": "e.g., Laceration, Burn, Fracture, Strain.",
-    "alias": null,
+    "alias": "loss_type",
     "data_type": "string",
     "meta": {}
   },
@@ -405,7 +405,7 @@
     "order": 46,
     "text": "Accident/Injury Description",
     "description": "Detailed description of the incident.",
-    "alias": null,
+    "alias": "loss_description",
     "data_type": "text",
     "meta": {}
   },
@@ -520,7 +520,7 @@
     "order": 59,
     "text": "Location Narrative",
     "description": "Brief description of the location or environment of the incident.",
-    "alias": null,
+    "alias": "loss_location",
     "data_type": "text",
     "meta": {}
   },

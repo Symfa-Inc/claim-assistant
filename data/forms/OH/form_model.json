@@ -266,7 +266,7 @@
     "order": 32,
     "text": "Part(s) of body affected (For example: Left knee, right index finger)",
     "description": "Describe body part(s) injured.",
-    "alias": null,
+    "alias": "loss_location",
     "data_type": "string",
     "meta": {}
   },
@@ -274,7 +274,7 @@
     "order": 33,
     "text": "Accident description (Describe the sequence of events that directly caused the injury or death.)",
     "description": "Detailed description of sequence of events causing the injury or death.",
-    "alias": null,
+    "alias": "loss_description",
     "data_type": "text",
     "meta": {}
   },
@@ -544,7 +544,7 @@
     "order": 64,
     "text": "Date",
     "description": "Date the treating provider signed/completed their section.",
-    "alias": null,
+    "alias": "report_date",
     "data_type": "date",
     "meta": {
       "format": "YYYY-MM-DD"
@@ -624,7 +624,7 @@
     "order": 73,
     "text": "For self-insuring employers only: Medical only / Lost time",
     "description": "For self-insuring employers, indicate if claim is medical only or lost time.",
-    "alias": null,
+    "alias": "loss_type",
     "data_type": "enum",
     "meta": {
       "labels": [

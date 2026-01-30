@@ -3,7 +3,7 @@
     "order": 1,
     "text": "Submission Date",
     "description": "Date this form was submitted.",
-    "alias": null,
+    "alias": "report_date",
     "data_type": "date",
     "meta": {
       "format": "YYYY-MM-DD"
@@ -173,7 +173,7 @@
     "order": 21,
     "text": "Location/Jobsite & Business Name where accident occurred",
     "description": "Specific location or jobsite and business name of the accident.",
-    "alias": null,
+    "alias": "loss_location",
     "data_type": "text",
     "meta": {}
   },
@@ -191,7 +191,7 @@
     "order": 23,
     "text": "Claim Type",
     "description": "Type of claim being filed.",
-    "alias": null,
+    "alias": "loss_type",
     "data_type": "string",
     "meta": {}
   },
@@ -207,7 +207,7 @@
     "order": 25,
     "text": "Accident Description",
     "description": "Detailed description of how the accident occurred.",
-    "alias": null,
+    "alias": "loss_description",
     "data_type": "text",
     "meta": {}
   },

@@ -13,8 +13,8 @@ from openai import OpenAI
 from pydantic import BaseModel
 
 from claim_assistant.metrics.moverscore.moverscore import get_idf_dict, word_mover_score
-from claim_assistant.models.form import Form
 from claim_assistant.processors.form_filling_processor import FormFillingProcessor
+from claim_assistant.schemas.form import Form
 
 
 def extract_text_from_json(json_file: Union[str, Path]) -> List[str]:
