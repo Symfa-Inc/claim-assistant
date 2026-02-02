@@ -3,10 +3,7 @@ FROM python:3.13-slim
 # Prevent Python from writing pyc files and enable unbuffered logging
 ENV PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1 \
-    PIP_NO_CACHE_DIR=1 \
-    STREAMLIT_SERVER_HEADLESS=true \
-    STREAMLIT_SERVER_ENABLE_CORS=false \
-    STREAMLIT_SERVER_PORT=8501
+    PIP_NO_CACHE_DIR=1
 
 # Install build dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends \
@@ -28,8 +25,7 @@ RUN pip install --upgrade pip setuptools wheel \
 COPY data ./data
 COPY metrics ./metrics
 
-# Default Streamlit command
 ENV PYTHONPATH=/app/src
 
-EXPOSE 8501
-CMD ["streamlit", "run", "src/claim_assistant/app.py"]
+EXPOSE 8000
+CMD ["uvicorn", "claim_assistant.web.main:app", "--host", "0.0.0.0", "--port", "8000"]
