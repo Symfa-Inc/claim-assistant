@@ -1,4 +1,5 @@
 import json
+import os
 import traceback
 from multiprocessing import get_context
 from pathlib import Path
@@ -45,8 +46,8 @@ def _run_processing(
 app = FastAPI(debug=True)
 
 origins = [
-    "http://localhost:3000",
-    # "https://tech-analytics.d10.aisnovations.com",
+    # "http://localhost:3000",
+    os.getenv("FRONTEND_URL", "http://localhost:3000"),
     # Add more origins here
 ]
 
