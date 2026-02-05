@@ -8,13 +8,16 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.7-3178c6.svg)](https://www.typescriptlang.org/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.128-009688.svg)](https://fastapi.tiangolo.com/)
 [![Next.js](https://img.shields.io/badge/Next.js-16-black.svg)](https://nextjs.org/)
+[![React](https://img.shields.io/badge/React-19-61dafb.svg)](https://react.dev/)
 [![OpenAI](https://img.shields.io/badge/OpenAI-GPT--5-10a37f.svg)](https://openai.com/)
 [![Azure Doc Intelligence](https://img.shields.io/badge/Azure-Doc%20Intelligence-0078D4.svg)](https://azure.microsoft.com/en-us/products/ai-services/ai-document-intelligence)
 [![Docker](https://img.shields.io/badge/Docker-Ready-2496ED.svg)](https://www.docker.com/)
 
 **AI-powered automation tool that streamlines insurance claim handling by replacing repetitive adjuster tasks with intelligent LLM-based assistants.**
 
-🔗 **Live Demo**: [claim-assistant-demo.d11.symfa.com](https://claim-assistant-demo.d11.symfa.com/)
+🔗 **Live Demo**: [https://claim-assistant-demo.d11.symfa.com](https://claim-assistant-demo.d11.symfa.com/)
+
+📘 **Confluence**: [https://symfa.atlassian.net/wiki/x/AQDaGgE](https://symfa.atlassian.net/wiki/x/AQDaGgE)
 
 </div>
 
@@ -35,10 +38,10 @@ Claim Assistant automates claim processing for insurance companies through a mod
 
 Claims managers, operations teams, and analysts who need to process insurance claims efficiently without technical expertise.
 
-### Quick Demo
+### Demo Video
 
 <p align="center">
-  <video src="https://github.com/user-attachments/assets/6138161b-4e7c-4b7a-909f-4b05a2103051" width="80%"></video>
+  <video src="https://github.com/user-attachments/assets/32db995f-4d59-41a0-b7a5-6c40743a8968" width="80%"></video>
 </p>
 
 ## Tech Stack
@@ -47,7 +50,7 @@ Claims managers, operations teams, and analysts who need to process insurance cl
 |----------|-------------|
 | **Backend** | Python 3.13, FastAPI |
 | **Frontend** | TypeScript, Next.js, Node.js |
-| **AI/ML** | OpenAI API (GPT-4), Azure Document Intelligence |
+| **AI/ML** | OpenAI API (GPT models), Azure Document Intelligence |
 | **PDF Processing** | PyPDF, FillPDF, ReportLab |
 | **Data Validation** | Pydantic |
 | **Package Management** | uv (backend), pnpm (frontend) |
@@ -78,6 +81,16 @@ The claim processing pipeline consists of five modular stages:
 | **Policy Mapping** | Retrieve relevant policy data based on extracted identifiers |
 | **Analysis Generation** | Evaluate coverage status with deterministic checks + LLM reasoning |
 | **Report Generation** | Create adjuster-facing PDF reports with analysis results |
+
+## UI Field Guide
+
+Some UI fields are intentionally concise. Here is a quick guide to how to interpret them:
+
+- **Conclusion** – The overall coverage outcome for the claim (covered / not covered / uncertain) based on policy checks and model reasoning.
+- **Confidence** – A per-field certainty score (0–100%) that reflects extraction reliability; lower scores should be reviewed first.
+- **Key Fields** – The subset of extracted fields mapped to ASC-required inputs.
+- **All Fields** – The full extraction output, including optional or unmapped values.
+- **Summary** – A short, adjuster-friendly explanation of the decision and any missing or conflicting data.
 
 ## Project Structure
 
@@ -148,40 +161,6 @@ pnpm run dev
 ```
 
 The backend API will be available at `http://localhost:8000` and the frontend at `http://localhost:3000`.
-
-## Processing Demo Files
-
-The repository includes sample claim forms for testing in the `data/` directory:
-
-1. Launch the application
-2. Select a prepared sample from the dropdown (grouped by state)
-3. Click **Process Form** to start claim processing
-4. Review the generated coverage analysis report
-
-All processing artifacts are saved to `data/runs/` with timestamped folders containing:
-- Input PDF
-- Generated claim summary PDF
-- Intermediate logs for debugging
-
-## Demo
-
-### 1. Select a Prepared Sample
-
-The application displays available example claim forms grouped by state. Each example represents a pre-filled claim tied to a mock policy. Forms can be either **Digital** (typed fonts) or **Handwritten**.
-
-![Select prepared sample](.assets/01_select_sample.png)
-
-### 2. Upload a Custom Claim Form
-
-Alternatively, upload your own filled PDF claim form and select the corresponding form type.
-
-![Upload new sample](.assets/02_upload_sample.png)
-
-### 3. Review Processing Results
-
-Once processing is complete, view the original claim form alongside the generated claim summary report.
-
-![Result view](.assets/03_results_view.png)
 
 ## License
 
