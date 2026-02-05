@@ -82,6 +82,16 @@ The claim processing pipeline consists of five modular stages:
 | **Analysis Generation** | Evaluate coverage status with deterministic checks + LLM reasoning |
 | **Report Generation** | Create adjuster-facing PDF reports with analysis results |
 
+## UI Field Guide
+
+Some UI fields are intentionally concise. Here is a quick guide to how to interpret them:
+
+- **Conclusion** – The overall coverage outcome for the claim (covered / not covered / uncertain) based on policy checks and model reasoning.
+- **Confidence** – A per-field certainty score (0–100%) that reflects extraction reliability; lower scores should be reviewed first.
+- **Key Fields** – The subset of extracted fields mapped to ASC-required inputs.
+- **All Fields** – The full extraction output, including optional or unmapped values.
+- **Summary** – A short, adjuster-friendly explanation of the decision and any missing or conflicting data.
+
 ## Project Structure
 
 ```
