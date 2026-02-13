@@ -20,6 +20,9 @@ export default function Page() {
   const [executiveSummary, setExecutiveSummary] = useState<string | null>(null);
   const [summaryConfidence, setSummaryConfidence] = useState<number | null>(null);
   const [summaryConclusion, setSummaryConclusion] = useState<string | null>(null);
+  const [initialFieldState, setInitialFieldState] = useState<
+    Record<string, { value: string; confidence: string }>
+  >({});
 
   const parseConfidence = (confidence: string): number => {
     const value = parseFloat(confidence);
@@ -48,13 +51,29 @@ export default function Page() {
   };
 
   const handleFieldApprove = (fieldId: string) => {
-    const toApproved = (field: ClaimField): ClaimField => ({
-      ...field,
-      validated: true,
-      confidence: '100%',
-    });
-    setClaimFields((current) => mapAndUpdateFields(current, fieldId, toApproved));
-    setKeyClaimFields((current) => mapAndUpdateFields(current, fieldId, toApproved));
+    const currentField = claimFields.find((field) => field.id === fieldId);
+    if (!currentField) return;
+
+    const shouldValidate = !currentField.validated;
+    const initial = initialFieldState[fieldId];
+    const updatedField = (field: ClaimField): ClaimField => {
+      if (shouldValidate) {
+        return {
+          ...field,
+          validated: true,
+          confidence: '100%',
+        };
+      }
+      return {
+        ...field,
+        value: initial?.value ?? field.value,
+        confidence: initial?.confidence ?? field.confidence,
+        validated: false,
+      };
+    };
+
+    setClaimFields((current) => mapAndUpdateFields(current, fieldId, updatedField));
+    setKeyClaimFields((current) => mapAndUpdateFields(current, fieldId, updatedField));
   };
 
   const handleProcess = () => {
@@ -79,6 +98,18 @@ export default function Page() {
   ) => {
     setClaimFields(fields.map((field) => ({ ...field, validated: false })));
     setKeyClaimFields(keyFields.map((field) => ({ ...field, validated: false })));
+    setInitialFieldState(
+      fields.reduce<Record<string, { value: string; confidence: string }>>(
+        (acc, field) => {
+          acc[field.id] = {
+            value: field.value,
+            confidence: field.confidence,
+          };
+          return acc;
+        },
+        {},
+      ),
+    );
     setHighlightBoxes(boxes);
     setExecutiveSummary(summary?.executiveSummary ?? null);
     setSummaryConfidence(summary?.confidence ?? null);
@@ -94,6 +125,7 @@ export default function Page() {
     setExecutiveSummary(null);
     setSummaryConfidence(null);
     setSummaryConclusion(null);
+    setInitialFieldState({});
     setHoveredFieldId(null);
     setIsProcessing(false);
     setShowTable(false);
@@ -227,26 +259,6 @@ export default function Page() {
               </details>
             </div>
 
-            {/* Low Confidence Fields Card */}
-            <div className="glass-card card-shadow card-shadow-hover rounded-2xl border border-slate-200/60 px-6 py-5 transition-all">
-              <details open>
-                <summary className="cursor-pointer select-none pl-5 text-base font-semibold text-slate-800">
-                  <span className="ml-2">Low Confidence Fields</span>
-                </summary>
-                <div className="mt-4 pl-5">
-                  <ClaimTable
-                    fields={lowConfidenceFields}
-                    activeFieldId={hoveredFieldId}
-                    onHover={setHoveredFieldId}
-                    onFieldValueChange={handleFieldValueChange}
-                    onFieldApprove={handleFieldApprove}
-                    emptyMessage="No low confidence fields below 80%."
-                    className="flex min-h-0 flex-1 flex-col bg-transparent p-0 md:w-full"
-                  />
-                </div>
-              </details>
-            </div>
-
             {/* Key Fields Card */}
             <div className="glass-card card-shadow card-shadow-hover rounded-2xl border border-slate-200/60 px-6 py-5 transition-all">
               <details open>
@@ -260,6 +272,26 @@ export default function Page() {
                     onHover={setHoveredFieldId}
                     onFieldValueChange={handleFieldValueChange}
                     onFieldApprove={handleFieldApprove}
+                    className="flex min-h-0 flex-1 flex-col bg-transparent p-0 md:w-full"
+                  />
+                </div>
+              </details>
+            </div>
+
+            {/* Low Confidence Fields Card */}
+            <div className="glass-card card-shadow card-shadow-hover rounded-2xl border border-slate-200/60 px-6 py-5 transition-all">
+              <details>
+                <summary className="cursor-pointer select-none pl-5 text-base font-semibold text-slate-800">
+                  <span className="ml-2">Low Confidence Fields</span>
+                </summary>
+                <div className="mt-4 pl-5">
+                  <ClaimTable
+                    fields={lowConfidenceFields}
+                    activeFieldId={hoveredFieldId}
+                    onHover={setHoveredFieldId}
+                    onFieldValueChange={handleFieldValueChange}
+                    onFieldApprove={handleFieldApprove}
+                    emptyMessage="No low confidence fields below 80%."
                     className="flex min-h-0 flex-1 flex-col bg-transparent p-0 md:w-full"
                   />
                 </div>
