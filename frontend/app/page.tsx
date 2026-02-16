@@ -20,6 +20,61 @@ export default function Page() {
   const [executiveSummary, setExecutiveSummary] = useState<string | null>(null);
   const [summaryConfidence, setSummaryConfidence] = useState<number | null>(null);
   const [summaryConclusion, setSummaryConclusion] = useState<string | null>(null);
+  const [initialFieldState, setInitialFieldState] = useState<
+    Record<string, { value: string; confidence: string }>
+  >({});
+
+  const parseConfidence = (confidence: string): number => {
+    const value = parseFloat(confidence);
+    return Number.isNaN(value) ? 0 : value;
+  };
+
+  const mapAndUpdateFields = (
+    fields: ClaimField[],
+    fieldId: string,
+    updater: (field: ClaimField) => ClaimField,
+  ) => fields.map((field) => (field.id === fieldId ? updater(field) : field));
+
+  const handleFieldValueChange = (fieldId: string, value: string) => {
+    setClaimFields((current) =>
+      mapAndUpdateFields(current, fieldId, (field) => ({
+        ...field,
+        value,
+      })),
+    );
+    setKeyClaimFields((current) =>
+      mapAndUpdateFields(current, fieldId, (field) => ({
+        ...field,
+        value,
+      })),
+    );
+  };
+
+  const handleFieldApprove = (fieldId: string) => {
+    const currentField = claimFields.find((field) => field.id === fieldId);
+    if (!currentField) return;
+
+    const shouldValidate = !currentField.validated;
+    const initial = initialFieldState[fieldId];
+    const updatedField = (field: ClaimField): ClaimField => {
+      if (shouldValidate) {
+        return {
+          ...field,
+          validated: true,
+          confidence: '100%',
+        };
+      }
+      return {
+        ...field,
+        value: initial?.value ?? field.value,
+        confidence: initial?.confidence ?? field.confidence,
+        validated: false,
+      };
+    };
+
+    setClaimFields((current) => mapAndUpdateFields(current, fieldId, updatedField));
+    setKeyClaimFields((current) => mapAndUpdateFields(current, fieldId, updatedField));
+  };
 
   const handleProcess = () => {
     if (isProcessing) return;
@@ -41,8 +96,20 @@ export default function Page() {
       conclusion: string | null;
     } | null,
   ) => {
-    setClaimFields(fields);
-    setKeyClaimFields(keyFields);
+    setClaimFields(fields.map((field) => ({ ...field, validated: false })));
+    setKeyClaimFields(keyFields.map((field) => ({ ...field, validated: false })));
+    setInitialFieldState(
+      fields.reduce<Record<string, { value: string; confidence: string }>>(
+        (acc, field) => {
+          acc[field.id] = {
+            value: field.value,
+            confidence: field.confidence,
+          };
+          return acc;
+        },
+        {},
+      ),
+    );
     setHighlightBoxes(boxes);
     setExecutiveSummary(summary?.executiveSummary ?? null);
     setSummaryConfidence(summary?.confidence ?? null);
@@ -58,10 +125,18 @@ export default function Page() {
     setExecutiveSummary(null);
     setSummaryConfidence(null);
     setSummaryConclusion(null);
+    setInitialFieldState({});
     setHoveredFieldId(null);
     setIsProcessing(false);
     setShowTable(false);
   };
+
+  const lowConfidenceFields = claimFields.filter(
+    (field) => parseConfidence(field.confidence) < 80,
+  );
+  const reviewedFieldsCount = claimFields.filter((field) => field.validated).length;
+  const totalFieldsCount = claimFields.length;
+  const hasUnreviewedFields = totalFieldsCount > 0 && reviewedFieldsCount < totalFieldsCount;
 
   return (
     <main className="flex min-h-screen flex-col bg-gradient-to-br from-slate-50 via-white to-slate-100 gradient-mesh">
@@ -113,7 +188,13 @@ export default function Page() {
                     <button
                       type="button"
                       onClick={(e) => e.stopPropagation()}
-                      className="btn-primary inline-flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium text-white transition-all"
+                      disabled={hasUnreviewedFields}
+                      aria-disabled={hasUnreviewedFields}
+                      className={`inline-flex items-center gap-2 rounded-lg border px-4 py-2 text-sm font-medium shadow-sm transition-all ${
+                        hasUnreviewedFields
+                          ? 'cursor-not-allowed border-slate-200 bg-slate-100 text-slate-400'
+                          : 'btn-primary border-transparent text-white'
+                      }`}
                     >
                       <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                         <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
@@ -166,6 +247,9 @@ export default function Page() {
                         )}
                       </tbody>
                     </table>
+                    <p className="mt-3 text-xs text-slate-500">
+                      Reviewed fields: {reviewedFieldsCount}/{totalFieldsCount}
+                    </p>
                   </div>
                 ) : (
                   <div className="mt-4 pl-5 text-sm text-slate-400">
@@ -186,6 +270,28 @@ export default function Page() {
                     fields={keyClaimFields}
                     activeFieldId={hoveredFieldId}
                     onHover={setHoveredFieldId}
+                    onFieldValueChange={handleFieldValueChange}
+                    onFieldApprove={handleFieldApprove}
+                    className="flex min-h-0 flex-1 flex-col bg-transparent p-0 md:w-full"
+                  />
+                </div>
+              </details>
+            </div>
+
+            {/* Low Confidence Fields Card */}
+            <div className="glass-card card-shadow card-shadow-hover rounded-2xl border border-slate-200/60 px-6 py-5 transition-all">
+              <details>
+                <summary className="cursor-pointer select-none pl-5 text-base font-semibold text-slate-800">
+                  <span className="ml-2">Low Confidence Fields</span>
+                </summary>
+                <div className="mt-4 pl-5">
+                  <ClaimTable
+                    fields={lowConfidenceFields}
+                    activeFieldId={hoveredFieldId}
+                    onHover={setHoveredFieldId}
+                    onFieldValueChange={handleFieldValueChange}
+                    onFieldApprove={handleFieldApprove}
+                    emptyMessage="No low confidence fields below 80%."
                     className="flex min-h-0 flex-1 flex-col bg-transparent p-0 md:w-full"
                   />
                 </div>
@@ -203,6 +309,8 @@ export default function Page() {
                     fields={claimFields}
                     activeFieldId={hoveredFieldId}
                     onHover={setHoveredFieldId}
+                    onFieldValueChange={handleFieldValueChange}
+                    onFieldApprove={handleFieldApprove}
                     className="flex min-h-0 flex-1 flex-col bg-transparent p-0 md:w-full"
                   />
                 </div>
