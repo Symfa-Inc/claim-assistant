@@ -17,6 +17,8 @@
 
 🔗 **Live Demo**: [https://claim-assistant-demo.d11.symfa.com](https://claim-assistant-demo.d11.symfa.com/)
 
+💻 **GitHub**: [https://github.com/Symfa-Inc/claim-assistant](https://github.com/Symfa-Inc/claim-assistant)
+
 📘 **Confluence**: [https://symfa.atlassian.net/wiki/x/AQDaGgE](https://symfa.atlassian.net/wiki/x/AQDaGgE)
 
 </div>
@@ -33,6 +35,9 @@ Claim Assistant automates claim processing for insurance companies through a mod
 - **Confidence Scoring** – Account for OCR/LLM uncertainty with built-in confidence classification
 - **Coverage Analysis** – Generate structured summaries with coverage status (covered / not covered)
 - **Report Generation** – Produce adjuster-facing PDF reports with analysis results
+- **Inline Field Review** – Edit extracted values inline and approve/revoke field validation during human review
+- **Low-Confidence Queue** – Auto-group fields with confidence below 80% for faster reviewer prioritization
+- **Review-Gated Export** – Keep ASC export disabled until every field is reviewed/approved
 
 ### Target Audience
 
@@ -41,7 +46,7 @@ Claims managers, operations teams, and analysts who need to process insurance cl
 ### Demo Video
 
 <p align="center">
-  <video src="https://github.com/user-attachments/assets/32db995f-4d59-41a0-b7a5-6c40743a8968" width="80%"></video>
+  <video src="https://github.com/user-attachments/assets/cbadc624-5680-4391-b9cf-7dcc73a9a7ac" width="80%"></video>
 </p>
 
 ## Tech Stack
@@ -89,8 +94,11 @@ Some UI fields are intentionally concise. Here is a quick guide to how to interp
 - **Conclusion** – The overall coverage outcome for the claim (covered / not covered / uncertain) based on policy checks and model reasoning.
 - **Confidence** – A per-field certainty score (0–100%) that reflects extraction reliability; lower scores should be reviewed first.
 - **Key Fields** – The subset of extracted fields mapped to ASC-required inputs.
+- **Low Confidence Fields** – A reviewer shortcut list of fields currently below 80% confidence.
 - **All Fields** – The full extraction output, including optional or unmapped values.
 - **Summary** – A short, adjuster-friendly explanation of the decision and any missing or conflicting data.
+- **Review Actions** – Use the pencil icon to edit a field and the check icon to approve; clicking an approved check reverts to the original extracted value/confidence and marks the field for review again.
+- **Export to ASC** – Enabled only when all fields are approved in the UI review flow.
 
 ## Project Structure
 
