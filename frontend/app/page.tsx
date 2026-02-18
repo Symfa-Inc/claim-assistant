@@ -308,7 +308,7 @@ export default function Page() {
                 <summary className="cursor-pointer select-none pl-5 text-base font-semibold text-slate-800">
                   <span className="ml-2">All Fields</span>
                 </summary>
-                <div className="mt-4 max-h-96 overflow-auto pl-5">
+                <div className="mt-4 pl-5">
                   <ClaimTable
                     fields={claimFields}
                     activeFieldId={hoveredFieldId}
