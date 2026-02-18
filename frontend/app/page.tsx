@@ -282,6 +282,7 @@ export default function Page() {
               <details open>
                 <summary className="cursor-pointer select-none pl-5 text-base font-semibold text-slate-800">
                   <span className="ml-2">Key Fields</span>
+                  <span className="ml-2 inline-flex items-center rounded-full bg-indigo-50 px-2 py-0.5 text-xs font-medium text-indigo-600">{keyClaimFields.length}</span>
                 </summary>
                 <div className="mt-4 pl-5">
                   <ClaimTable
@@ -301,6 +302,7 @@ export default function Page() {
               <details>
                 <summary className="cursor-pointer select-none pl-5 text-base font-semibold text-slate-800">
                   <span className="ml-2">Low Confidence Fields</span>
+                  <span className="ml-2 inline-flex items-center rounded-full bg-amber-50 px-2 py-0.5 text-xs font-medium text-amber-700">{lowConfidenceFields.length}</span>
                 </summary>
                 <div className="mt-4 pl-5">
                   <ClaimTable
@@ -321,6 +323,7 @@ export default function Page() {
               <details>
                 <summary className="cursor-pointer select-none pl-5 text-base font-semibold text-slate-800">
                   <span className="ml-2">All Fields</span>
+                  <span className="ml-2 inline-flex items-center rounded-full bg-slate-100 px-2 py-0.5 text-xs font-medium text-slate-600">{claimFields.length}</span>
                 </summary>
                 <div className="mt-4 pl-5">
                   <ClaimTable
@@ -337,16 +340,31 @@ export default function Page() {
           </div>
         ) : (
           <div className={rightPanelClassName}>
-            <div className="glass-card card-shadow flex flex-1 flex-col rounded-2xl border border-slate-200/60 p-6">
-              <div className="flex flex-1 flex-col items-center justify-center gap-3">
-                <div className="rounded-full bg-slate-100 p-4">
-                  <svg className="h-8 w-8 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+            <div className="glass-card card-shadow flex flex-1 flex-col rounded-2xl border-2 border-dashed border-slate-200 p-8">
+              <div className="flex flex-1 flex-col items-center justify-center gap-5">
+                <div className="rounded-2xl bg-gradient-to-br from-indigo-50 to-emerald-50 p-5">
+                  <svg className="h-10 w-10 text-indigo-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
                   </svg>
                 </div>
-                <p className="text-sm text-slate-500">
-                  Upload a PDF and click <span className="font-medium text-slate-700">"Process Form"</span> to view extracted fields.
-                </p>
+                <div className="text-center">
+                  <p className="text-sm font-medium text-slate-700">No form processed yet</p>
+                  <p className="mt-1 text-sm text-slate-400">Upload a PDF and click <span className="font-medium text-slate-600">&quot;Process Form&quot;</span> to extract fields.</p>
+                </div>
+                <div className="flex items-center gap-6 mt-1 text-xs text-slate-400">
+                  <span className="inline-flex items-center gap-1.5">
+                    <span className="flex h-5 w-5 items-center justify-center rounded-full bg-slate-100 text-[10px] font-semibold text-slate-500">1</span>
+                    Select PDF
+                  </span>
+                  <span className="inline-flex items-center gap-1.5">
+                    <span className="flex h-5 w-5 items-center justify-center rounded-full bg-slate-100 text-[10px] font-semibold text-slate-500">2</span>
+                    Choose form
+                  </span>
+                  <span className="inline-flex items-center gap-1.5">
+                    <span className="flex h-5 w-5 items-center justify-center rounded-full bg-slate-100 text-[10px] font-semibold text-slate-500">3</span>
+                    Process
+                  </span>
+                </div>
               </div>
             </div>
           </div>

@@ -63,12 +63,12 @@ export default function ClaimTable({
         <table className="w-full table-fixed text-left text-sm text-slate-600">
           <thead className="text-xs font-medium uppercase tracking-wider text-slate-500">
             <tr>
-              <th className="py-2.5 pr-4 w-64 bg-slate-50/80 first:rounded-l-lg">Field</th>
-              <th className="py-2.5 pr-4 bg-slate-50/80">Value</th>
-              <th className="py-2.5 text-right w-24 bg-slate-50/80 last:rounded-r-lg">
+              <th className="py-2.5 pr-4 w-64 bg-slate-50 first:rounded-l-lg">Field</th>
+              <th className="py-2.5 pr-4 bg-slate-50">Value</th>
+              <th className="py-2.5 text-right w-24 bg-slate-50 last:rounded-r-lg">
                 Confidence
               </th>
-              <th className="py-2.5 pl-3 text-right w-24 bg-slate-50/80">
+              <th className="py-2.5 pl-3 text-right w-24 bg-slate-50">
                 Actions
               </th>
             </tr>
@@ -120,7 +120,9 @@ export default function ClaimTable({
                         aria-label={`Edit ${field.label}`}
                       />
                     ) : (
-                      field.value
+                      !field.value || field.value.toLowerCase() === 'null'
+                        ? <span className="text-slate-300">—</span>
+                        : field.value
                     )}
                   </td>
                   <td className="py-3 text-right w-24">
