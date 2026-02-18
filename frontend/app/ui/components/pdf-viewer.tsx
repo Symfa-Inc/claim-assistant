@@ -796,7 +796,10 @@ export default function AppPdfViewer({
                                                                             points={
                                                                                 adjustedPoints
                                                                             }
-                                                                            className="fill-indigo-200/40 stroke-indigo-500"
+                                                                            // className="fill-sky-300/20 stroke-sky-600"
+                                                                            // className="fill-emerald-300/20 stroke-emerald-600"
+                                                                            // className="fill-cyan-300/20 stroke-cyan-600"
+                                                                            className="fill-rose-300/20 stroke-rose-600"
                                                                             strokeWidth={
                                                                                 2
                                                                             }
