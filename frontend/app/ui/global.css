@@ -73,9 +73,7 @@ input,
 
 /* Glass card effect */
 .glass-card {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: #ffffff;
 }
 
 /* Subtle hover lift effect */

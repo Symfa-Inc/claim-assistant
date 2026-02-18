@@ -160,7 +160,7 @@ export default function Page() {
       <div className="mx-4 flex flex-1 flex-col items-start gap-5 py-5 md:mx-6 md:flex-row">
         {/* Left panel - PDF Viewer */}
         <div className="flex flex-1 items-stretch md:w-2/4">
-          <div className="bg-white card-shadow card-shadow-hover flex w-full flex-1 flex-col rounded-2xl border border-slate-200/60 p-5 transition-all">
+          <div className="glass-card card-shadow card-shadow-hover flex w-full flex-1 flex-col rounded-2xl border border-slate-200/60 p-5 transition-all">
             <AppPdfViewer
               isProcessing={isProcessing}
               onProcess={handleProcess}
@@ -186,9 +186,9 @@ export default function Page() {
             </div>
           </div>
         ) : showTable ? (
-          <div className={`${rightPanelClassName} gap-4 overflow-y-auto pr-1`}>
+          <div className={`${rightPanelClassName} gap-4 overflow-y-auto pb-2 pr-1`}>
             {/* Executive Summary Card */}
-            <div className="bg-white card-shadow card-shadow-hover rounded-2xl border border-slate-200/60 px-6 py-5 transition-all">
+            <div className="glass-card card-shadow card-shadow-hover rounded-2xl border border-slate-200/60 px-6 py-5 transition-all">
               <details open>
                 <summary className="cursor-pointer select-none pl-5">
                   <div className="ml-2 inline-flex w-[calc(100%-1.5rem)] items-center justify-between gap-3">
@@ -278,7 +278,7 @@ export default function Page() {
             </div>
 
             {/* Key Fields Card */}
-            <div className="bg-white card-shadow card-shadow-hover rounded-2xl border border-slate-200/60 px-6 py-5 transition-all">
+            <div className="glass-card card-shadow card-shadow-hover rounded-2xl border border-slate-200/60 px-6 py-5 transition-all">
               <details open>
                 <summary className="cursor-pointer select-none pl-5 text-base font-semibold text-slate-800">
                   <span className="ml-2">Key Fields</span>
@@ -297,7 +297,7 @@ export default function Page() {
             </div>
 
             {/* Low Confidence Fields Card */}
-            <div className="bg-white card-shadow card-shadow-hover rounded-2xl border border-slate-200/60 px-6 py-5 transition-all">
+            <div className="glass-card card-shadow card-shadow-hover rounded-2xl border border-slate-200/60 px-6 py-5 transition-all">
               <details>
                 <summary className="cursor-pointer select-none pl-5 text-base font-semibold text-slate-800">
                   <span className="ml-2">Low Confidence Fields</span>
@@ -317,7 +317,7 @@ export default function Page() {
             </div>
 
             {/* All Fields Card */}
-            <div className="bg-white card-shadow card-shadow-hover rounded-2xl border border-slate-200/60 px-6 py-5 transition-all">
+            <div className="glass-card card-shadow card-shadow-hover rounded-2xl border border-slate-200/60 px-6 py-5 transition-all">
               <details>
                 <summary className="cursor-pointer select-none pl-5 text-base font-semibold text-slate-800">
                   <span className="ml-2">All Fields</span>
