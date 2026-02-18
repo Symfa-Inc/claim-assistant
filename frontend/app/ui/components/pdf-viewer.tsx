@@ -425,6 +425,27 @@ export default function AppPdfViewer({
         ? highlightBoxes.filter((box) => box.fieldId === highlightFieldId)
         : []
 
+    useEffect(() => {
+        if (!highlightFieldId) return
+        const firstMatch = highlightBoxes.find(
+            (box) => box.fieldId === highlightFieldId
+        )
+        if (!firstMatch) return
+        const container = scrollRef.current
+        if (!container) return
+
+        const pageElement = container.querySelector<HTMLElement>(
+            `[data-page-number="${firstMatch.page}"]`
+        )
+        if (!pageElement) return
+
+        pageElement.scrollIntoView({
+            behavior: 'smooth',
+            block: 'center',
+            inline: 'nearest',
+        })
+    }, [highlightFieldId, highlightBoxes])
+
     const buildPolygonPoints = (vertices: Array<{ x: number; y: number }>) =>
         vertices.map((point) => `${point.x},${point.y}`).join(' ')
 
@@ -628,6 +649,7 @@ export default function AppPdfViewer({
                                                 <div
                                                     key={`page_${pageNumber}`}
                                                     className="relative mx-auto"
+                                                    data-page-number={pageNumber}
                                                     style={
                                                         scaledHeight || scaledWidth
                                                             ? {
@@ -774,7 +796,10 @@ export default function AppPdfViewer({
                                                                             points={
                                                                                 adjustedPoints
                                                                             }
-                                                                            className="fill-indigo-200/40 stroke-indigo-500"
+                                                                            // className="fill-sky-300/20 stroke-sky-600"
+                                                                            // className="fill-emerald-300/20 stroke-emerald-600"
+                                                                            // className="fill-cyan-300/20 stroke-cyan-600"
+                                                                            className="fill-rose-300/20 stroke-rose-600"
                                                                             strokeWidth={
                                                                                 2
                                                                             }
