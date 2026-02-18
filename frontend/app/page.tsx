@@ -147,7 +147,7 @@ export default function Page() {
     'flex flex-1 self-start flex-col md:w-2/4 md:sticky md:top-[5.25rem] md:max-h-[calc(100vh-6.25rem)]';
 
   return (
-    <main className="flex min-h-screen flex-col bg-gradient-to-br from-slate-50 via-white to-slate-100 gradient-mesh">
+    <main className="flex min-h-screen flex-col bg-slate-50">
       {/* Modern header with glass effect */}
       <header className="sticky top-0 z-50 border-b border-white/20 bg-gradient-to-r from-indigo-600 via-blue-600 to-indigo-700 text-white shadow-lg shadow-indigo-500/20">
         <div className="mx-auto px-6 py-4">
