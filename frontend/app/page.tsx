@@ -137,6 +137,8 @@ export default function Page() {
   const reviewedFieldsCount = claimFields.filter((field) => field.validated).length;
   const totalFieldsCount = claimFields.length;
   const hasUnreviewedFields = totalFieldsCount > 0 && reviewedFieldsCount < totalFieldsCount;
+  const rightPanelClassName =
+    'flex flex-1 self-start flex-col md:w-2/4 md:sticky md:top-[5.25rem] md:max-h-[calc(100vh-6.25rem)]';
 
   return (
     <main className="flex min-h-screen flex-col bg-gradient-to-br from-slate-50 via-white to-slate-100 gradient-mesh">
@@ -166,17 +168,19 @@ export default function Page() {
 
         {/* Right panel - Results */}
         {isProcessing ? (
-          <div className="glass-card card-shadow flex flex-1 flex-col rounded-2xl border border-slate-200/60 p-6 md:w-2/4">
-            <div className="flex flex-1 flex-col items-center justify-center gap-4 text-slate-600">
-              <div className="relative">
-                <div className="h-12 w-12 animate-spin rounded-full border-[3px] border-slate-200 border-t-indigo-600" />
-                <div className="absolute inset-0 h-12 w-12 animate-ping rounded-full border-2 border-indigo-400 opacity-20" />
+          <div className={rightPanelClassName}>
+            <div className="glass-card card-shadow flex flex-1 flex-col rounded-2xl border border-slate-200/60 p-6">
+              <div className="flex flex-1 flex-col items-center justify-center gap-4 text-slate-600">
+                <div className="relative">
+                  <div className="h-12 w-12 animate-spin rounded-full border-[3px] border-slate-200 border-t-indigo-600" />
+                  <div className="absolute inset-0 h-12 w-12 animate-ping rounded-full border-2 border-indigo-400 opacity-20" />
+                </div>
+                <span className="text-sm font-medium text-slate-500">Analyzing document...</span>
               </div>
-              <span className="text-sm font-medium text-slate-500">Analyzing document...</span>
             </div>
           </div>
         ) : showTable ? (
-          <div className="flex flex-1 flex-col gap-4 md:w-2/4">
+          <div className={`${rightPanelClassName} gap-4 overflow-y-auto pr-1`}>
             {/* Executive Summary Card */}
             <div className="glass-card card-shadow card-shadow-hover rounded-2xl border border-slate-200/60 px-6 py-5 transition-all">
               <details open>
@@ -318,16 +322,18 @@ export default function Page() {
             </div>
           </div>
         ) : (
-          <div className="glass-card card-shadow flex flex-1 flex-col rounded-2xl border border-slate-200/60 p-6 md:w-2/4">
-            <div className="flex flex-1 flex-col items-center justify-center gap-3">
-              <div className="rounded-full bg-slate-100 p-4">
-                <svg className="h-8 w-8 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
-                </svg>
+          <div className={rightPanelClassName}>
+            <div className="glass-card card-shadow flex flex-1 flex-col rounded-2xl border border-slate-200/60 p-6">
+              <div className="flex flex-1 flex-col items-center justify-center gap-3">
+                <div className="rounded-full bg-slate-100 p-4">
+                  <svg className="h-8 w-8 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
+                  </svg>
+                </div>
+                <p className="text-sm text-slate-500">
+                  Upload a PDF and click <span className="font-medium text-slate-700">"Process Form"</span> to view extracted fields.
+                </p>
               </div>
-              <p className="text-sm text-slate-500">
-                Upload a PDF and click <span className="font-medium text-slate-700">"Process Form"</span> to view extracted fields.
-              </p>
             </div>
           </div>
         )}
