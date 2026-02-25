@@ -1476,8 +1476,8 @@ snapshots:
       semver: 7.7.3
       tar: 6.2.1
     transitivePeerDependencies:
-    - encoding
-    - supports-color
+      - encoding
+      - supports-color
 
   '@napi-rs/canvas-android-arm64@0.1.88':
     optional: true
@@ -1603,7 +1603,7 @@ snapshots:
     dependencies:
       debug: 4.4.3
     transitivePeerDependencies:
-    - supports-color
+      - supports-color
 
   ansi-regex@5.0.1: {}
 
@@ -1649,7 +1649,7 @@ snapshots:
       form-data: 4.0.5
       proxy-from-env: 1.1.0
     transitivePeerDependencies:
-    - debug
+      - debug
 
   balanced-match@1.0.2: {}
 
@@ -1660,8 +1660,8 @@ snapshots:
       '@mapbox/node-pre-gyp': 1.0.11
       node-addon-api: 5.1.0
     transitivePeerDependencies:
-    - encoding
-    - supports-color
+      - encoding
+      - supports-color
 
   binary-extensions@2.3.0: {}
 
@@ -1909,7 +1909,7 @@ snapshots:
       agent-base: 6.0.2
       debug: 4.4.3
     transitivePeerDependencies:
-    - supports-color
+      - supports-color
 
   inflight@1.0.6:
     dependencies:
@@ -2049,8 +2049,8 @@ snapshots:
       '@next/swc-win32-x64-msvc': 16.1.6
       sharp: 0.34.5
     transitivePeerDependencies:
-    - '@babel/core'
-    - babel-plugin-macros
+      - '@babel/core'
+      - babel-plugin-macros
 
   node-addon-api@5.1.0: {}
 
@@ -2340,7 +2340,7 @@ snapshots:
       resolve: 1.22.11
       sucrase: 3.35.0
     transitivePeerDependencies:
-    - ts-node
+      - ts-node
 
   tar@6.2.1:
     dependencies:
