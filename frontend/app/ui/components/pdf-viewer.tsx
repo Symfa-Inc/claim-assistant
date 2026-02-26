@@ -448,7 +448,7 @@ export default function AppPdfViewer({
         vertices.map((point) => `${point.x},${point.y}`).join(' ')
 
     return (
-        <div className="flex h-full min-h-0 w-full flex-1 flex-col gap-4">
+        <div className="flex h-full min-h-0 w-full flex-1 flex-col gap-2">
             {/* ── Toolbar ────────────────────────────── */}
             <div className="flex flex-row items-center gap-2.5 rounded-xl border border-slate-200 bg-slate-50/60 px-3 py-2 w-full max-w-full overflow-x-auto flex-nowrap min-w-0">
                 <span className="text-[13px] font-semibold text-slate-700 shrink-0">
@@ -585,13 +585,13 @@ export default function AppPdfViewer({
             {/* ── PDF content area ───────────────────── */}
             <div
                 ref={scrollRef}
-                className="flex-1 min-h-0 overflow-auto rounded-xl border border-slate-200 bg-white p-3"
+                className="flex-1 min-h-0 overflow-auto rounded-lg border border-slate-200 bg-white"
             >
                 <div
                     ref={containerRef}
                     onDrop={handleDrop}
                     onDragOver={(event) => event.preventDefault()}
-                    className="flex min-h-full min-w-max flex-col items-center gap-2 rounded-md border border-transparent p-2 text-[13px] text-slate-500"
+                    className="flex min-h-full min-w-max flex-col items-center gap-2 text-[13px] text-slate-500"
                 >
                     {error && (
                         <p className="text-[13px] text-red-500">{error}</p>
