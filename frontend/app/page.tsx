@@ -162,13 +162,18 @@ export default function Page() {
 
   return (
     <main className="flex min-h-screen flex-col bg-[#f8fafb]">
-      {/* ── Minimal header ───────────────────────── */}
+      {/* ── Header ──────────────────────────────── */}
       <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/80 backdrop-blur-md">
-        <div className="mx-auto flex items-center gap-3 px-6 py-3">
-          <div className="h-7 w-1 rounded-full bg-accent" />
-          <h1 className="font-display text-[1.4rem] text-slate-900">
-            Claim Assistant
-          </h1>
+        <div className="mx-auto flex items-center gap-3.5 px-6 py-2.5">
+          <div className="h-8 w-1 rounded-full bg-accent" />
+          <div>
+            <h1 className="text-[17px] font-bold tracking-tight text-slate-900">
+              Claim Assistant
+            </h1>
+            <p className="text-[11px] leading-tight text-slate-400">
+              Automate insurance claim intake with intelligent field extraction and mapping
+            </p>
+          </div>
         </div>
       </header>
 
@@ -206,8 +211,9 @@ export default function Page() {
               <details open>
                 <summary className="cursor-pointer select-none pl-5">
                   <div className="ml-2 inline-flex w-[calc(100%-1.5rem)] items-center justify-between gap-3">
-                    <span className="text-[15px] font-semibold text-slate-800">
+                    <span className="text-[15px] font-semibold text-slate-800 inline-flex items-center gap-2">
                       Executive Summary
+                      <span className="info-tip" data-tip="AI-generated overview of the claim with key findings and overall conclusion">i</span>
                     </span>
                     <button
                       type="button"
@@ -271,6 +277,7 @@ export default function Page() {
               <details open>
                 <summary className="cursor-pointer select-none pl-5 text-[15px] font-semibold text-slate-800">
                   <span className="ml-2">Key Fields</span>
+                  <span className="ml-1.5 info-tip" data-tip="Important fields identified for quick review, such as policy number and incident details">i</span>
                   <span className="ml-2 inline-flex items-center rounded-full bg-accent-subtle px-2 py-0.5 text-xs font-medium text-accent">{keyClaimFields.length}</span>
                 </summary>
                 <div className="mt-4 pl-5">
@@ -294,6 +301,7 @@ export default function Page() {
               <details>
                 <summary className="cursor-pointer select-none pl-5 text-[15px] font-semibold text-slate-800">
                   <span className="ml-2">Low Confidence Fields</span>
+                  <span className="ml-1.5 info-tip" data-tip="Fields with extraction confidence below 80% — review and correct these before exporting">i</span>
                   <span className="ml-2 inline-flex items-center rounded-full bg-amber-50 px-2 py-0.5 text-xs font-medium text-amber-700">{lowConfidenceFields.length}</span>
                 </summary>
                 <div className="mt-4 pl-5">

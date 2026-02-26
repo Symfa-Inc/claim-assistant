@@ -1,5 +1,5 @@
 import '@/app/ui/global.css'
-import { plusJakarta, instrumentSerif } from '@/app/ui/fonts';
+import { plusJakarta } from '@/app/ui/fonts';
 
 
 export default function RootLayout({
@@ -9,7 +9,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${plusJakarta.variable} ${instrumentSerif.variable} ${plusJakarta.className} antialiased`}>
+      <body className={`${plusJakarta.variable} ${plusJakarta.className} antialiased`}>
         {children}
       </body>
     </html>

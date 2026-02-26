@@ -66,7 +66,10 @@ export default function ClaimTable({
               <th className="pb-2.5 pr-4 text-[10px] font-semibold uppercase tracking-wider text-slate-400 w-64">Field</th>
               <th className="pb-2.5 pr-4 text-[10px] font-semibold uppercase tracking-wider text-slate-400">Value</th>
               <th className="pb-2.5 text-right text-[10px] font-semibold uppercase tracking-wider text-slate-400 w-28">
-                Confidence
+                <span className="inline-flex items-center justify-end gap-1.5">
+                  Confidence
+                  <span className="info-tip" data-tip="How confident the model is in the extracted value. Green ≥ 80%, amber 60–79%, red &lt; 60%">i</span>
+                </span>
               </th>
               <th className="pb-2.5 pl-3 text-right text-[10px] font-semibold uppercase tracking-wider text-slate-400 w-20">
                 Actions
