@@ -276,9 +276,11 @@ export default function Page() {
             >
               <details open>
                 <summary className="cursor-pointer select-none pl-5 text-[15px] font-semibold text-slate-800">
-                  <span className="ml-2">Key Fields</span>
-                  <span className="ml-1.5 info-tip info-tip-down" data-tip="Important fields identified for quick review, such as policy number and incident details">i</span>
-                  <span className="ml-2 inline-flex items-center rounded-full bg-accent-subtle px-2 py-0.5 text-xs font-medium text-accent">{keyClaimFields.length}</span>
+                  <span className="ml-2 inline-flex items-center gap-1.5">
+                    Key Fields
+                    <span className="info-tip info-tip-down" data-tip="Important fields identified for quick review, such as policy number and incident details">i</span>
+                    <span className="inline-flex items-center rounded-full bg-accent-subtle px-2 py-0.5 text-xs font-medium text-accent">{keyClaimFields.length}</span>
+                  </span>
                 </summary>
                 <div className="mt-4 pl-5">
                   <ClaimTable
@@ -300,9 +302,11 @@ export default function Page() {
             >
               <details>
                 <summary className="cursor-pointer select-none pl-5 text-[15px] font-semibold text-slate-800">
-                  <span className="ml-2">Low Confidence Fields</span>
-                  <span className="ml-1.5 info-tip info-tip-down" data-tip="Fields with extraction confidence below 80%. Review and correct these fields before exporting">i</span>
-                  <span className="ml-2 inline-flex items-center rounded-full bg-amber-50 px-2 py-0.5 text-xs font-medium text-amber-700">{lowConfidenceFields.length}</span>
+                  <span className="ml-2 inline-flex items-center gap-1.5">
+                    Low Confidence Fields
+                    <span className="info-tip info-tip-down" data-tip="Fields with extraction confidence below 80%. Review and correct these fields before exporting">i</span>
+                    <span className="inline-flex items-center rounded-full bg-amber-50 px-2 py-0.5 text-xs font-medium text-amber-700">{lowConfidenceFields.length}</span>
+                  </span>
                 </summary>
                 <div className="mt-4 pl-5">
                   <ClaimTable
@@ -325,9 +329,11 @@ export default function Page() {
             >
               <details>
                 <summary className="cursor-pointer select-none pl-5 text-[15px] font-semibold text-slate-800">
-                  <span className="ml-2">All Fields</span>
-                  <span className="ml-1.5 info-tip info-tip-down" data-tip="Complete list of every field extracted from the document">i</span>
-                  <span className="ml-2 inline-flex items-center rounded-full bg-slate-100 px-2 py-0.5 text-xs font-medium text-slate-600">{claimFields.length}</span>
+                  <span className="ml-2 inline-flex items-center gap-1.5">
+                    All Fields
+                    <span className="info-tip info-tip-down" data-tip="Complete list of every field extracted from the document">i</span>
+                    <span className="inline-flex items-center rounded-full bg-slate-100 px-2 py-0.5 text-xs font-medium text-slate-600">{claimFields.length}</span>
+                  </span>
                 </summary>
                 <div className="mt-4 pl-5">
                   <ClaimTable
