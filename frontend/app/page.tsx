@@ -23,6 +23,7 @@ export default function Page() {
   const [initialFieldState, setInitialFieldState] = useState<
     Record<string, { value: string; confidence: string }>
   >({});
+  const [showExportDialog, setShowExportDialog] = useState(false);
 
   const parseConfidence = (confidence: string): number => {
     const value = parseFloat(confidence);
@@ -144,23 +145,43 @@ export default function Page() {
   const hasUnreviewedLowConfidenceFields =
     lowConfidenceFieldsCount > 0 && reviewedLowConfidenceFieldsCount < lowConfidenceFieldsCount;
   const rightPanelClassName =
-    'flex flex-1 self-start flex-col md:w-2/4 md:sticky md:top-[5.25rem] md:max-h-[calc(100vh-6.25rem)]';
+    'flex self-start flex-col md:w-1/2 md:shrink-0 md:grow-0 md:sticky md:top-[4rem] md:max-h-[calc(100vh-5rem)]';
+
+  const conclusionLower = summaryConclusion?.toLowerCase();
+  const conclusionBadge =
+    conclusionLower === 'positive'
+      ? 'bg-emerald-50 text-emerald-700'
+      : conclusionLower === 'negative'
+        ? 'bg-rose-50 text-rose-700'
+        : 'bg-amber-50 text-amber-700';
+  const conclusionDot =
+    conclusionLower === 'positive'
+      ? 'bg-emerald-500'
+      : conclusionLower === 'negative'
+        ? 'bg-rose-500'
+        : 'bg-amber-500';
 
   return (
-    <main className="flex min-h-screen flex-col bg-slate-50">
-      {/* Modern header with glass effect */}
-      <header className="sticky top-0 z-50 border-b border-white/20 bg-gradient-to-r from-indigo-600 via-blue-600 to-indigo-700 text-white shadow-lg shadow-indigo-500/20">
-        <div className="mx-auto px-6 py-4">
-          <h1 className="text-2xl font-bold tracking-tight">
-            Claim Assistant
-          </h1>
+    <main className="flex min-h-screen flex-col bg-[#f8fafb]">
+      {/* ── Header ──────────────────────────────── */}
+      <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/80 backdrop-blur-md">
+        <div className="mx-auto flex items-center gap-3.5 px-6 py-2.5">
+          <div className="h-8 w-1 rounded-full bg-accent" />
+          <div>
+            <h1 className="text-[17px] font-bold tracking-tight text-slate-900">
+              Claim Assistant
+            </h1>
+            <p className="text-[11px] leading-tight text-slate-400">
+              Automate insurance claim intake with intelligent field extraction and mapping
+            </p>
+          </div>
         </div>
       </header>
 
       <div className="mx-4 flex flex-1 flex-col items-start gap-5 py-5 md:mx-6 md:flex-row">
-        {/* Left panel - PDF Viewer */}
-        <div className="flex flex-1 items-stretch md:w-2/4">
-          <div className="glass-card card-shadow card-shadow-hover flex w-full flex-1 flex-col rounded-2xl border border-slate-200/60 p-5 transition-all">
+        {/* ── Left panel – PDF Viewer ────────────── */}
+        <div className="flex min-w-0 items-stretch md:w-1/2 md:shrink-0 md:grow-0">
+          <div className="card flex w-full min-w-0 flex-1 flex-col overflow-hidden p-2.5">
             <AppPdfViewer
               isProcessing={isProcessing}
               onProcess={handleProcess}
@@ -172,117 +193,98 @@ export default function Page() {
           </div>
         </div>
 
-        {/* Right panel - Results */}
+        {/* ── Right panel – Results ──────────────── */}
         {isProcessing ? (
           <div className={rightPanelClassName}>
-            <div className="glass-card card-shadow flex flex-1 flex-col rounded-2xl border border-slate-200/60 p-6">
-              <div className="flex flex-1 flex-col items-center justify-center gap-4 text-slate-600">
-                <div className="relative">
-                  <div className="h-12 w-12 animate-spin rounded-full border-[3px] border-slate-200 border-t-indigo-600" />
-                  <div className="absolute inset-0 h-12 w-12 animate-ping rounded-full border-2 border-indigo-400 opacity-20" />
-                </div>
-                <span className="text-sm font-medium text-slate-500">Analyzing document...</span>
-              </div>
+            <div className="card flex flex-1 flex-col items-center justify-center p-6">
+              <div className="h-10 w-10 animate-spin rounded-full border-[2.5px] border-slate-200 border-t-accent" />
+              <span className="mt-4 text-[13px] text-slate-400">Analyzing document...</span>
             </div>
           </div>
         ) : showTable ? (
-          <div className={`${rightPanelClassName} gap-4 overflow-y-auto pb-2 pr-1`}>
-            {/* Executive Summary Card */}
-            <div className="glass-card card-shadow card-shadow-hover rounded-2xl border border-slate-200/60 px-6 py-5 transition-all">
+          <div className={`${rightPanelClassName} gap-4 overflow-y-auto pb-14 pr-1`}>
+
+            {/* Executive Summary */}
+            <div
+              className="card relative z-30 border-l-[3px] border-l-accent px-6 py-5 animate-fade-in"
+              style={{ opacity: 0 }}
+            >
               <details open>
                 <summary className="cursor-pointer select-none pl-5">
                   <div className="ml-2 inline-flex w-[calc(100%-1.5rem)] items-center justify-between gap-3">
-                    <span className="text-base font-semibold text-slate-800">
+                    <span className="text-[15px] font-semibold text-slate-800 inline-flex items-center gap-2">
                       Executive Summary
+                      <span className="info-tip info-tip-down" data-tip="Automated analysis highlighting key findings, confidence levels, and an overall claim conclusion">i</span>
                     </span>
                     <button
                       type="button"
-                      onClick={(e) => e.stopPropagation()}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        if (!hasUnreviewedLowConfidenceFields) setShowExportDialog(true);
+                      }}
                       disabled={hasUnreviewedLowConfidenceFields}
                       aria-disabled={hasUnreviewedLowConfidenceFields}
-                      className={`inline-flex items-center gap-2 rounded-lg border px-4 py-2 text-sm font-medium shadow-sm transition-all ${
+                      className={`inline-flex items-center gap-1.5 rounded-lg px-3.5 py-1.5 text-[13px] font-medium transition-all ${
                         hasUnreviewedLowConfidenceFields
-                          ? 'cursor-not-allowed border-slate-200 bg-slate-100 text-slate-400'
-                          : 'btn-primary border-transparent text-white'
+                          ? 'cursor-not-allowed bg-slate-100 text-slate-400'
+                          : 'btn-primary text-white shadow-sm'
                       }`}
                     >
-                      <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                         <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
                       </svg>
-                      Export to ASC
+                      Export
                     </button>
                   </div>
                 </summary>
                 {executiveSummary ? (
-                  <div className="mt-4 max-w-full pl-5">
-                    <table className="w-full table-fixed text-left text-sm text-slate-600">
-                      <tbody className="divide-y divide-slate-100">
-                        <tr>
-                          <td className="py-3 pr-4 font-medium text-slate-700 w-32 align-top">
-                            Summary
-                          </td>
-                          <td className="py-3 break-words text-justify leading-relaxed">{executiveSummary}</td>
-                        </tr>
-                        {summaryConclusion && (
-                          <tr>
-                            <td className="py-3 pr-4 font-medium text-slate-700 w-32">
-                              Conclusion
-                            </td>
-                            <td
-                              className={`py-3 break-words ${summaryConclusion.toLowerCase() === 'positive'
-                                ? 'text-emerald-600'
-                                : summaryConclusion.toLowerCase() === 'negative'
-                                  ? 'text-rose-600'
-                                  : 'text-amber-600'
-                                } font-semibold uppercase tracking-wide`}
-                            >
-                              <span className={`inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs ${
-                                summaryConclusion.toLowerCase() === 'positive'
-                                  ? 'bg-emerald-50 text-emerald-700'
-                                  : summaryConclusion.toLowerCase() === 'negative'
-                                    ? 'bg-rose-50 text-rose-700'
-                                    : 'bg-amber-50 text-amber-700'
-                              }`}>
-                                <span className={`h-1.5 w-1.5 rounded-full ${
-                                  summaryConclusion.toLowerCase() === 'positive'
-                                    ? 'bg-emerald-500'
-                                    : summaryConclusion.toLowerCase() === 'negative'
-                                      ? 'bg-rose-500'
-                                      : 'bg-amber-500'
-                                }`} />
-                                {summaryConclusion}
-                              </span>
-                            </td>
-                          </tr>
-                        )}
-                      </tbody>
-                    </table>
-                    <div className="mt-3 flex flex-wrap items-center gap-2 text-xs">
-                      <span className="inline-flex items-center rounded-full bg-slate-100 px-2 py-1 font-medium text-slate-600">
+                  <div className="mt-4 pl-5">
+                    {/* Conclusion – promoted to top */}
+                    {summaryConclusion && (
+                      <div className="mb-3">
+                        <span className={`inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-medium ${conclusionBadge}`}>
+                          <span className={`h-1.5 w-1.5 rounded-full ${conclusionDot}`} />
+                          {summaryConclusion}
+                        </span>
+                      </div>
+                    )}
+                    {/* Summary text */}
+                    <p className="text-[13px] leading-relaxed text-slate-600 text-justify">
+                      {executiveSummary}
+                    </p>
+                    {/* Stat bar */}
+                    <div className="mt-4 flex flex-wrap items-center gap-2 text-xs">
+                      <span className="inline-flex items-center rounded-full bg-slate-100 px-2.5 py-1 font-medium text-slate-600">
                         All: {totalFieldsCount}
                       </span>
-                      <span className="inline-flex items-center rounded-full bg-amber-50 px-2 py-1 font-medium text-amber-700">
+                      <span className="inline-flex items-center rounded-full bg-amber-50 px-2.5 py-1 font-medium text-amber-700">
                         Low confidence: {lowConfidenceFieldsCount}
                       </span>
-                      <span className="inline-flex items-center rounded-full bg-emerald-50 px-2 py-1 font-medium text-emerald-700">
+                      <span className="inline-flex items-center rounded-full bg-emerald-50 px-2.5 py-1 font-medium text-emerald-700">
                         Reviewed: {reviewedFieldsCount}
                       </span>
                     </div>
                   </div>
                 ) : (
-                  <div className="mt-4 pl-5 text-sm text-slate-400">
+                  <div className="mt-4 pl-5 text-[13px] text-slate-400">
                     No executive summary available.
                   </div>
                 )}
               </details>
             </div>
 
-            {/* Key Fields Card */}
-            <div className="glass-card card-shadow card-shadow-hover rounded-2xl border border-slate-200/60 px-6 py-5 transition-all">
+            {/* Key Fields */}
+            <div
+              className="card relative z-20 px-6 py-5 animate-fade-in"
+              style={{ opacity: 0, animationDelay: '60ms' }}
+            >
               <details open>
-                <summary className="cursor-pointer select-none pl-5 text-base font-semibold text-slate-800">
-                  <span className="ml-2">Key Fields</span>
-                  <span className="ml-2 inline-flex items-center rounded-full bg-indigo-50 px-2 py-0.5 text-xs font-medium text-indigo-600">{keyClaimFields.length}</span>
+                <summary className="cursor-pointer select-none pl-5 text-[15px] font-semibold text-slate-800">
+                  <span className="ml-2 inline-flex items-center gap-1.5">
+                    Key Fields
+                    <span className="info-tip info-tip-down" data-tip="Important fields identified for quick review, such as policy number and incident details">i</span>
+                    <span className="inline-flex items-center rounded-full bg-accent-subtle px-2 py-0.5 text-xs font-medium text-accent">{keyClaimFields.length}</span>
+                  </span>
                 </summary>
                 <div className="mt-4 pl-5">
                   <ClaimTable
@@ -297,12 +299,18 @@ export default function Page() {
               </details>
             </div>
 
-            {/* Low Confidence Fields Card */}
-            <div className="glass-card card-shadow card-shadow-hover rounded-2xl border border-slate-200/60 px-6 py-5 transition-all">
+            {/* Low Confidence Fields */}
+            <div
+              className="card relative z-10 px-6 py-5 animate-fade-in"
+              style={{ opacity: 0, animationDelay: '120ms' }}
+            >
               <details>
-                <summary className="cursor-pointer select-none pl-5 text-base font-semibold text-slate-800">
-                  <span className="ml-2">Low Confidence Fields</span>
-                  <span className="ml-2 inline-flex items-center rounded-full bg-amber-50 px-2 py-0.5 text-xs font-medium text-amber-700">{lowConfidenceFields.length}</span>
+                <summary className="cursor-pointer select-none pl-5 text-[15px] font-semibold text-slate-800">
+                  <span className="ml-2 inline-flex items-center gap-1.5">
+                    Low Confidence Fields
+                    <span className="info-tip info-tip-down" data-tip="Fields with extraction confidence below 80%. Review and correct these fields before exporting">i</span>
+                    <span className="inline-flex items-center rounded-full bg-amber-50 px-2 py-0.5 text-xs font-medium text-amber-700">{lowConfidenceFields.length}</span>
+                  </span>
                 </summary>
                 <div className="mt-4 pl-5">
                   <ClaimTable
@@ -318,12 +326,18 @@ export default function Page() {
               </details>
             </div>
 
-            {/* All Fields Card */}
-            <div className="glass-card card-shadow card-shadow-hover rounded-2xl border border-slate-200/60 px-6 py-5 transition-all">
+            {/* All Fields */}
+            <div
+              className="card relative px-6 py-5 animate-fade-in"
+              style={{ opacity: 0, animationDelay: '180ms' }}
+            >
               <details>
-                <summary className="cursor-pointer select-none pl-5 text-base font-semibold text-slate-800">
-                  <span className="ml-2">All Fields</span>
-                  <span className="ml-2 inline-flex items-center rounded-full bg-slate-100 px-2 py-0.5 text-xs font-medium text-slate-600">{claimFields.length}</span>
+                <summary className="cursor-pointer select-none pl-5 text-[15px] font-semibold text-slate-800">
+                  <span className="ml-2 inline-flex items-center gap-1.5">
+                    All Fields
+                    <span className="info-tip info-tip-down" data-tip="Complete list of every field extracted from the document">i</span>
+                    <span className="inline-flex items-center rounded-full bg-slate-100 px-2 py-0.5 text-xs font-medium text-slate-600">{claimFields.length}</span>
+                  </span>
                 </summary>
                 <div className="mt-4 pl-5">
                   <ClaimTable
@@ -339,37 +353,73 @@ export default function Page() {
             </div>
           </div>
         ) : (
+          /* ── Empty state ────────────────────────── */
           <div className={rightPanelClassName}>
-            <div className="glass-card card-shadow flex flex-1 flex-col rounded-2xl border-2 border-dashed border-slate-200 p-8">
+            <div className="flex flex-1 flex-col items-center justify-center rounded-xl border-2 border-dashed border-slate-200 bg-white p-8">
               <div className="flex flex-1 flex-col items-center justify-center gap-5">
-                <div className="rounded-2xl bg-gradient-to-br from-indigo-50 to-emerald-50 p-5">
-                  <svg className="h-10 w-10 text-indigo-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                <div className="rounded-2xl bg-accent-subtle p-5">
+                  <svg className="h-10 w-10 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
                   </svg>
                 </div>
                 <div className="text-center">
                   <p className="text-sm font-medium text-slate-700">No form processed yet</p>
-                  <p className="mt-1 text-sm text-slate-400">Upload a PDF and click <span className="font-medium text-slate-600">&quot;Process Form&quot;</span> to extract fields.</p>
+                  <p className="mt-1 text-[13px] text-slate-400">Choose a demo form or upload your own PDF, then click <span className="font-medium text-slate-600">&quot;Process Form&quot;</span>.</p>
                 </div>
-                <div className="flex items-center gap-6 mt-1 text-xs text-slate-400">
-                  <span className="inline-flex items-center gap-1.5">
-                    <span className="flex h-5 w-5 items-center justify-center rounded-full bg-slate-100 text-[10px] font-semibold text-slate-500">1</span>
-                    Select PDF
-                  </span>
-                  <span className="inline-flex items-center gap-1.5">
-                    <span className="flex h-5 w-5 items-center justify-center rounded-full bg-slate-100 text-[10px] font-semibold text-slate-500">2</span>
-                    Choose form
-                  </span>
-                  <span className="inline-flex items-center gap-1.5">
-                    <span className="flex h-5 w-5 items-center justify-center rounded-full bg-slate-100 text-[10px] font-semibold text-slate-500">3</span>
-                    Process
-                  </span>
+                {/* Connected step indicator */}
+                <div className="mt-1 flex items-center text-[13px] text-slate-400">
+                  <div className="flex items-center gap-1.5">
+                    <span className="flex h-6 w-6 items-center justify-center rounded-full bg-accent-subtle text-[11px] font-semibold text-accent">1</span>
+                    <span>Choose a demo form or upload your own</span>
+                  </div>
+                  <div className="mx-3 h-px w-6 bg-slate-200" />
+                  <div className="flex items-center gap-1.5">
+                    <span className="flex h-6 w-6 items-center justify-center rounded-full bg-accent-subtle text-[11px] font-semibold text-accent">2</span>
+                    <span>Process</span>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         )}
       </div>
+
+      {/* ── Export dialog ────────────────────────── */}
+      {showExportDialog && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/20 backdrop-blur-sm" onClick={() => setShowExportDialog(false)}>
+          <div className="card mx-4 w-full max-w-md animate-fade-in p-6" onClick={(e) => e.stopPropagation()}>
+            <div className="flex items-start gap-3">
+              <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-accent-subtle">
+                <svg className="h-5 w-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <div>
+                <h2 className="text-[15px] font-semibold text-slate-800">Export Ready</h2>
+                <p className="mt-1 text-[13px] leading-relaxed text-slate-500">
+                  {reviewedFieldsCount} of {totalFieldsCount} fields reviewed. The claim data will be exported to the ASC system for further processing.
+                </p>
+              </div>
+            </div>
+            <div className="mt-5 flex items-center justify-end gap-2">
+              <button
+                type="button"
+                onClick={() => setShowExportDialog(false)}
+                className="inline-flex items-center rounded-lg border border-slate-200 bg-white px-3.5 py-1.5 text-[13px] font-medium text-slate-600 transition-all hover:bg-slate-50"
+              >
+                Cancel
+              </button>
+              <button
+                type="button"
+                onClick={() => setShowExportDialog(false)}
+                className="btn-primary inline-flex items-center rounded-lg px-3.5 py-1.5 text-[13px] font-medium text-white shadow-sm transition-all"
+              >
+                Confirm Export
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </main>
   );
 }

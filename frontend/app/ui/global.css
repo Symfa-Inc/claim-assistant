@@ -2,7 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Hide number input spinners */
+/* ── Design Tokens ──────────────────────────── */
+:root {
+  --accent: #0d9488;
+  --accent-hover: #0f766e;
+  --accent-subtle: #f0fdfa;
+}
+
+/* ── Base Reset ─────────────────────────────── */
 input[type='number'] {
   -moz-appearance: textfield;
   appearance: textfield;
@@ -14,10 +21,10 @@ input[type='number']::-webkit-outer-spin-button {
   margin: 0;
 }
 
-/* Custom scrollbar styling */
+/* ── Scrollbar ──────────────────────────────── */
 ::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: 5px;
+  height: 5px;
 }
 
 ::-webkit-scrollbar-track {
@@ -25,15 +32,15 @@ input[type='number']::-webkit-outer-spin-button {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(148, 163, 184, 0.4);
-  border-radius: 3px;
+  background: rgba(148, 163, 184, 0.3);
+  border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(148, 163, 184, 0.6);
+  background: rgba(13, 148, 136, 0.35);
 }
 
-/* Modern details/summary styling */
+/* ── Details / Summary ──────────────────────── */
 details summary {
   list-style: none;
   position: relative;
@@ -55,70 +62,123 @@ details summary::before {
   border-top: 4px solid transparent;
   border-bottom: 4px solid transparent;
   transition: transform 0.2s ease;
-  opacity: 0.6;
+  opacity: 0.35;
 }
 
 details[open] summary::before {
   transform: translateY(-50%) rotate(90deg);
 }
 
-/* Smooth transitions for interactive elements */
+/* ── Transitions ────────────────────────────── */
 button,
 a,
 select,
-input,
-.transition-all {
-  transition: all 0.2s ease;
+input {
+  transition: all 0.16s ease;
 }
 
-/* Glass card effect */
-.glass-card {
-  background: #ffffff;
-}
-
-
-/* Primary button gradient */
+/* ── Buttons ────────────────────────────────── */
 .btn-primary {
-  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.25);
+  background-color: var(--accent);
 }
 
 .btn-primary:hover {
-  background: linear-gradient(135deg, #059669 0%, #047857 100%);
-  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.35);
+  background-color: var(--accent-hover);
 }
 
-/* Danger button gradient */
 .btn-danger {
-  background: linear-gradient(135deg, #f43f5e 0%, #e11d48 100%);
-  box-shadow: 0 2px 8px rgba(244, 63, 94, 0.35);
+  background-color: #ef4444;
 }
 
 .btn-danger:hover {
-  background: linear-gradient(135deg, #e11d48 0%, #be123c 100%);
-  box-shadow: 0 4px 12px rgba(244, 63, 94, 0.45);
+  background-color: #dc2626;
 }
 
-/* Table row hover animation */
-tr {
-  transition: background-color 0.15s ease;
-}
-
-/* Focus ring styling */
+/* ── Focus ──────────────────────────────────── */
 *:focus-visible {
-  outline: 2px solid rgba(99, 102, 241, 0.5);
+  outline: 2px solid rgba(13, 148, 136, 0.35);
   outline-offset: 2px;
 }
 
-/* Card shadow */
-.card-shadow {
+/* ── Card ───────────────────────────────────── */
+.card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
   box-shadow:
-    0 1px 3px rgba(0, 0, 0, 0.04),
-    0 4px 12px rgba(0, 0, 0, 0.03);
+    0 1px 2px rgba(0, 0, 0, 0.03),
+    0 2px 8px rgba(0, 0, 0, 0.02);
+  transition: box-shadow 0.2s ease;
+  overflow: visible;
 }
 
-.card-shadow-hover:hover {
-  box-shadow:
-    0 2px 4px rgba(0, 0, 0, 0.05),
-    0 4px 8px rgba(0, 0, 0, 0.04);
+/* ── Table rows ─────────────────────────────── */
+tr {
+  transition: background-color 0.12s ease, box-shadow 0.12s ease;
+}
+
+/* ── Tooltip ─────────────────────────────────── */
+.info-tip {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 15px;
+  height: 15px;
+  border-radius: 9999px;
+  background: #f1f5f9;
+  color: #94a3b8;
+  font-size: 9px;
+  font-weight: 700;
+  font-style: normal;
+  cursor: help;
+  flex-shrink: 0;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.info-tip:hover {
+  background: #e2e8f0;
+  color: #64748b;
+}
+
+.info-tip::after {
+  content: attr(data-tip);
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 8px 12px;
+  background: #ffffff;
+  color: #475569;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0;
+  text-transform: none;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  white-space: normal;
+  max-width: 320px;
+  min-width: 200px;
+  text-align: left;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+  z-index: 50;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.info-tip:hover::after {
+  opacity: 1;
+}
+
+.info-tip-down::after {
+  bottom: auto;
+  top: calc(100% + 8px);
+}
+
+/* ── Smooth scroll & stable layout ───────────── */
+html {
+  scroll-behavior: smooth;
+  overflow-y: scroll;
 }
