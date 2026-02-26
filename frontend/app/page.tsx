@@ -201,11 +201,11 @@ export default function Page() {
             </div>
           </div>
         ) : showTable ? (
-          <div className={`${rightPanelClassName} gap-4 overflow-y-auto pb-2 pr-1`}>
+          <div className={`${rightPanelClassName} gap-4 overflow-y-auto pb-14 pr-1`}>
 
             {/* Executive Summary */}
             <div
-              className="card border-l-[3px] border-l-accent px-6 py-5 animate-fade-in"
+              className="card relative z-30 border-l-[3px] border-l-accent px-6 py-5 animate-fade-in"
               style={{ opacity: 0 }}
             >
               <details open>
@@ -213,7 +213,7 @@ export default function Page() {
                   <div className="ml-2 inline-flex w-[calc(100%-1.5rem)] items-center justify-between gap-3">
                     <span className="text-[15px] font-semibold text-slate-800 inline-flex items-center gap-2">
                       Executive Summary
-                      <span className="info-tip" data-tip="AI-generated overview of the claim with key findings and overall conclusion">i</span>
+                      <span className="info-tip info-tip-down" data-tip="Automated analysis highlighting key findings, confidence levels, and an overall claim conclusion">i</span>
                     </span>
                     <button
                       type="button"
@@ -271,13 +271,13 @@ export default function Page() {
 
             {/* Key Fields */}
             <div
-              className="card px-6 py-5 animate-fade-in"
+              className="card relative z-20 px-6 py-5 animate-fade-in"
               style={{ opacity: 0, animationDelay: '60ms' }}
             >
               <details open>
                 <summary className="cursor-pointer select-none pl-5 text-[15px] font-semibold text-slate-800">
                   <span className="ml-2">Key Fields</span>
-                  <span className="ml-1.5 info-tip" data-tip="Important fields identified for quick review, such as policy number and incident details">i</span>
+                  <span className="ml-1.5 info-tip info-tip-down" data-tip="Important fields identified for quick review, such as policy number and incident details">i</span>
                   <span className="ml-2 inline-flex items-center rounded-full bg-accent-subtle px-2 py-0.5 text-xs font-medium text-accent">{keyClaimFields.length}</span>
                 </summary>
                 <div className="mt-4 pl-5">
@@ -295,13 +295,13 @@ export default function Page() {
 
             {/* Low Confidence Fields */}
             <div
-              className="card px-6 py-5 animate-fade-in"
+              className="card relative z-10 px-6 py-5 animate-fade-in"
               style={{ opacity: 0, animationDelay: '120ms' }}
             >
               <details>
                 <summary className="cursor-pointer select-none pl-5 text-[15px] font-semibold text-slate-800">
                   <span className="ml-2">Low Confidence Fields</span>
-                  <span className="ml-1.5 info-tip" data-tip="Fields with extraction confidence below 80%. Review and correct these fields before exporting">i</span>
+                  <span className="ml-1.5 info-tip info-tip-down" data-tip="Fields with extraction confidence below 80%. Review and correct these fields before exporting">i</span>
                   <span className="ml-2 inline-flex items-center rounded-full bg-amber-50 px-2 py-0.5 text-xs font-medium text-amber-700">{lowConfidenceFields.length}</span>
                 </summary>
                 <div className="mt-4 pl-5">
@@ -320,12 +320,13 @@ export default function Page() {
 
             {/* All Fields */}
             <div
-              className="card px-6 py-5 animate-fade-in"
+              className="card relative px-6 py-5 animate-fade-in"
               style={{ opacity: 0, animationDelay: '180ms' }}
             >
               <details>
                 <summary className="cursor-pointer select-none pl-5 text-[15px] font-semibold text-slate-800">
                   <span className="ml-2">All Fields</span>
+                  <span className="ml-1.5 info-tip info-tip-down" data-tip="Complete list of every field extracted from the document">i</span>
                   <span className="ml-2 inline-flex items-center rounded-full bg-slate-100 px-2 py-0.5 text-xs font-medium text-slate-600">{claimFields.length}</span>
                 </summary>
                 <div className="mt-4 pl-5">
