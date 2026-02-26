@@ -345,22 +345,17 @@ export default function Page() {
                 </div>
                 <div className="text-center">
                   <p className="text-sm font-medium text-slate-700">No form processed yet</p>
-                  <p className="mt-1 text-[13px] text-slate-400">Upload a PDF and click <span className="font-medium text-slate-600">&quot;Process Form&quot;</span> to extract fields.</p>
+                  <p className="mt-1 text-[13px] text-slate-400">Choose a demo form or upload your own PDF, then click <span className="font-medium text-slate-600">&quot;Process Form&quot;</span>.</p>
                 </div>
                 {/* Connected step indicator */}
                 <div className="mt-1 flex items-center text-[13px] text-slate-400">
                   <div className="flex items-center gap-1.5">
                     <span className="flex h-6 w-6 items-center justify-center rounded-full bg-accent-subtle text-[11px] font-semibold text-accent">1</span>
-                    <span>Select PDF</span>
+                    <span>Choose a demo form or upload your own</span>
                   </div>
                   <div className="mx-3 h-px w-6 bg-slate-200" />
                   <div className="flex items-center gap-1.5">
                     <span className="flex h-6 w-6 items-center justify-center rounded-full bg-accent-subtle text-[11px] font-semibold text-accent">2</span>
-                    <span>Choose form</span>
-                  </div>
-                  <div className="mx-3 h-px w-6 bg-slate-200" />
-                  <div className="flex items-center gap-1.5">
-                    <span className="flex h-6 w-6 items-center justify-center rounded-full bg-accent-subtle text-[11px] font-semibold text-accent">3</span>
                     <span>Process</span>
                   </div>
                 </div>
