@@ -301,7 +301,7 @@ export default function Page() {
               <details>
                 <summary className="cursor-pointer select-none pl-5 text-[15px] font-semibold text-slate-800">
                   <span className="ml-2">Low Confidence Fields</span>
-                  <span className="ml-1.5 info-tip" data-tip="Fields with extraction confidence below 80% — review and correct these before exporting">i</span>
+                  <span className="ml-1.5 info-tip" data-tip="Fields with extraction confidence below 80%. Review and correct these fields before exporting">i</span>
                   <span className="ml-2 inline-flex items-center rounded-full bg-amber-50 px-2 py-0.5 text-xs font-medium text-amber-700">{lowConfidenceFields.length}</span>
                 </summary>
                 <div className="mt-4 pl-5">
