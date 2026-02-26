@@ -585,7 +585,7 @@ export default function AppPdfViewer({
             {/* ── PDF content area ───────────────────── */}
             <div
                 ref={scrollRef}
-                className="flex-1 min-h-0 overflow-auto rounded-lg border border-slate-200 bg-white"
+                className="flex-1 min-h-[60vh] overflow-auto rounded-lg border border-slate-200 bg-white"
             >
                 <div
                     ref={containerRef}

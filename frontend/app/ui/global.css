@@ -177,7 +177,8 @@ tr {
   top: calc(100% + 8px);
 }
 
-/* ── Smooth scroll ──────────────────────────── */
+/* ── Smooth scroll & stable layout ───────────── */
 html {
   scroll-behavior: smooth;
+  overflow-y: scroll;
 }

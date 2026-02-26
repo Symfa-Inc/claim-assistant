@@ -145,7 +145,7 @@ export default function Page() {
   const hasUnreviewedLowConfidenceFields =
     lowConfidenceFieldsCount > 0 && reviewedLowConfidenceFieldsCount < lowConfidenceFieldsCount;
   const rightPanelClassName =
-    'flex flex-1 self-start flex-col md:w-2/4 md:sticky md:top-[4rem] md:max-h-[calc(100vh-5rem)]';
+    'flex self-start flex-col md:w-1/2 md:shrink-0 md:grow-0 md:sticky md:top-[4rem] md:max-h-[calc(100vh-5rem)]';
 
   const conclusionLower = summaryConclusion?.toLowerCase();
   const conclusionBadge =
@@ -180,7 +180,7 @@ export default function Page() {
 
       <div className="mx-4 flex flex-1 flex-col items-start gap-5 py-5 md:mx-6 md:flex-row">
         {/* ── Left panel – PDF Viewer ────────────── */}
-        <div className="flex min-w-0 flex-1 items-stretch md:w-2/4">
+        <div className="flex min-w-0 items-stretch md:w-1/2 md:shrink-0 md:grow-0">
           <div className="card flex w-full min-w-0 flex-1 flex-col overflow-hidden p-2.5">
             <AppPdfViewer
               isProcessing={isProcessing}
