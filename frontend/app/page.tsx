@@ -23,6 +23,7 @@ export default function Page() {
   const [initialFieldState, setInitialFieldState] = useState<
     Record<string, { value: string; confidence: string }>
   >({});
+  const [showExportDialog, setShowExportDialog] = useState(false);
 
   const parseConfidence = (confidence: string): number => {
     const value = parseFloat(confidence);
@@ -217,19 +218,22 @@ export default function Page() {
                     </span>
                     <button
                       type="button"
-                      onClick={(e) => e.stopPropagation()}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        if (!hasUnreviewedLowConfidenceFields) setShowExportDialog(true);
+                      }}
                       disabled={hasUnreviewedLowConfidenceFields}
                       aria-disabled={hasUnreviewedLowConfidenceFields}
-                      className={`inline-flex items-center gap-2 rounded-lg px-4 py-2 text-[13px] font-medium transition-all ${
+                      className={`inline-flex items-center gap-1.5 rounded-lg px-3.5 py-1.5 text-[13px] font-medium transition-all ${
                         hasUnreviewedLowConfidenceFields
                           ? 'cursor-not-allowed bg-slate-100 text-slate-400'
                           : 'btn-primary text-white shadow-sm'
                       }`}
                     >
-                      <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                         <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
                       </svg>
-                      Export to ASC
+                      Export
                     </button>
                   </div>
                 </summary>
@@ -379,6 +383,43 @@ export default function Page() {
           </div>
         )}
       </div>
+
+      {/* ── Export dialog ────────────────────────── */}
+      {showExportDialog && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/20 backdrop-blur-sm" onClick={() => setShowExportDialog(false)}>
+          <div className="card mx-4 w-full max-w-md animate-fade-in p-6" onClick={(e) => e.stopPropagation()}>
+            <div className="flex items-start gap-3">
+              <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-accent-subtle">
+                <svg className="h-5 w-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <div>
+                <h2 className="text-[15px] font-semibold text-slate-800">Export Ready</h2>
+                <p className="mt-1 text-[13px] leading-relaxed text-slate-500">
+                  {reviewedFieldsCount} of {totalFieldsCount} fields reviewed. The claim data will be exported to the ASC system for further processing.
+                </p>
+              </div>
+            </div>
+            <div className="mt-5 flex items-center justify-end gap-2">
+              <button
+                type="button"
+                onClick={() => setShowExportDialog(false)}
+                className="inline-flex items-center rounded-lg border border-slate-200 bg-white px-3.5 py-1.5 text-[13px] font-medium text-slate-600 transition-all hover:bg-slate-50"
+              >
+                Cancel
+              </button>
+              <button
+                type="button"
+                onClick={() => setShowExportDialog(false)}
+                className="btn-primary inline-flex items-center rounded-lg px-3.5 py-1.5 text-[13px] font-medium text-white shadow-sm transition-all"
+              >
+                Confirm Export
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </main>
   );
 }
