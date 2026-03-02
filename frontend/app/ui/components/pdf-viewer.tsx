@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useLayoutEffect, useRef, useState } from 'react'
+import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react'
 import type { ChangeEvent, DragEvent } from 'react'
 import { Document, Page, pdfjs } from 'react-pdf'
 import axios from 'axios'
@@ -91,12 +91,22 @@ export default function AppPdfViewer({
     const [selectedForm, setSelectedForm] = useState('FL:FL__form_dg_POL123456789.pdf')
     const [containerWidth, setContainerWidth] = useState(0)
     const [numPages, setNumPages] = useState<number | null>(null)
-    const [zoom, setZoom] = useState(1.5)
+    const [zoomOffset, setZoomOffset] = useState(0)
     const [pageSizes, setPageSizes] = useState<Record<number, {
         width: number
         height: number
         viewBox?: [number, number, number, number]
     }>>({})
+
+    const autoFitZoom = useMemo(() => {
+        const firstPageWidth = pageSizes[1]?.width ?? 0
+        if (firstPageWidth > 0 && containerWidth > 0) {
+            return (containerWidth - 32) / firstPageWidth
+        }
+        return 1
+    }, [containerWidth, pageSizes])
+
+    const zoom = Math.max(0.25, autoFitZoom + zoomOffset)
 
     useEffect(() => {
         const target = scrollRef.current
@@ -135,11 +145,7 @@ export default function AppPdfViewer({
             return
         }
 
-        wheelAccumulatorRef.current = 0
-        if (wheelResetRef.current) {
-            clearTimeout(wheelResetRef.current)
-        }
-        setZoom(1.25)
+        setZoomOffset(0)
         setFile(nextFile)
         setFileName(nextFile.name)
         setSelectedForm('generic')
@@ -168,11 +174,7 @@ export default function AppPdfViewer({
         const defaultFilePath = '/forms/FL/form_dg_POL123456789.pdf'
         const isDefaultFile = file === defaultFilePath
         processAbortRef.current?.abort()
-        wheelAccumulatorRef.current = 0
-        if (wheelResetRef.current) {
-            clearTimeout(wheelResetRef.current)
-        }
-        setZoom(1.25)
+        setZoomOffset(0)
         setFileName(null)
         if (!isDefaultFile) {
             setNumPages(null)
@@ -385,10 +387,7 @@ export default function AppPdfViewer({
             if (steps !== 0) {
                 const stepCount = Math.max(-1, Math.min(1, steps))
                 wheelAccumulatorRef.current -= stepCount * threshold
-                setZoom((value) => {
-                    const next = value + stepCount * -0.05
-                    return Math.min(2.5, Math.max(0.5, Number(next.toFixed(2))))
-                })
+                setZoomOffset((value) => value + stepCount * -0.05)
             }
 
             if (wheelResetRef.current) {
@@ -450,20 +449,12 @@ export default function AppPdfViewer({
     return (
         <div className="flex h-full min-h-0 w-full flex-1 flex-col gap-2">
             {/* ── Toolbar ────────────────────────────── */}
-            <div className="flex flex-row items-center gap-2.5 rounded-xl border border-slate-200 bg-slate-50/60 px-3 py-2 w-full max-w-full overflow-x-auto flex-nowrap min-w-0">
-                <span className="text-[13px] font-semibold text-slate-700 shrink-0">
-                    Preview
-                </span>
-
-                <div className="h-5 w-px bg-slate-200 shrink-0" />
-
+            <div className="flex flex-row flex-wrap items-center gap-x-2.5 gap-y-2 rounded-xl border border-slate-200 bg-slate-50/60 px-3 py-2 w-full max-w-full min-w-0">
                 {/* Zoom controls */}
                 <div className="flex items-center gap-1.5 shrink-0">
                     <button
                         type="button"
-                        onClick={() =>
-                            setZoom((value) => Math.max(0.5, value - 0.05))
-                        }
+                        onClick={() => setZoomOffset((v) => v - 0.05)}
                         className="flex h-7 w-7 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-500 transition-all hover:border-slate-300 hover:text-slate-700"
                         aria-label="Zoom out"
                     >
@@ -471,14 +462,17 @@ export default function AppPdfViewer({
                             <path strokeLinecap="round" strokeLinejoin="round" d="M20 12H4" />
                         </svg>
                     </button>
-                    <span className="min-w-[44px] text-center text-[13px] font-medium tabular-nums text-slate-600">
-                        {Math.round(zoom * 100)}%
-                    </span>
                     <button
                         type="button"
-                        onClick={() =>
-                            setZoom((value) => Math.min(2.5, value + 0.05))
-                        }
+                        onClick={() => setZoomOffset(0)}
+                        className="min-w-[44px] text-center text-[13px] font-medium tabular-nums text-slate-600 hover:text-slate-800 transition-colors"
+                        title="Reset to fit width"
+                    >
+                        {Math.round(zoom * 100)}%
+                    </button>
+                    <button
+                        type="button"
+                        onClick={() => setZoomOffset((v) => v + 0.05)}
                         className="flex h-7 w-7 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-500 transition-all hover:border-slate-300 hover:text-slate-700"
                         aria-label="Zoom in"
                     >
@@ -516,7 +510,7 @@ export default function AppPdfViewer({
                         onChange={(event) =>
                             selectForm(event.target.value)
                         }
-                        className="w-full min-w-0 max-w-[12rem] truncate rounded-md border border-slate-200 bg-white px-2.5 pr-8 py-1.5 text-[13px] text-slate-600 transition-all hover:border-slate-300 focus:border-accent-light focus:ring-2 focus:ring-accent-subtle"
+                        className="w-full min-w-0 max-w-[10rem] truncate rounded-md border border-slate-200 bg-white px-2.5 pr-8 py-1.5 text-[13px] text-slate-600 transition-all hover:border-slate-300 focus:border-accent-light focus:ring-2 focus:ring-accent-subtle"
                         aria-label="Form"
                     >
                         <option value="FL:FL__form_dg_POL123456789.pdf">Florida digital</option>
@@ -529,10 +523,10 @@ export default function AppPdfViewer({
                     </select>
                 </div>
 
-                <div className="flex-1" />
+                <div className="flex-1 min-w-0" />
 
                 {/* Actions */}
-                <div className="flex items-center gap-2 shrink-0">
+                <div className="flex items-center gap-2 shrink-0 ml-auto">
                     <button
                         type="button"
                         onClick={handleReset}
@@ -625,7 +619,6 @@ export default function AppPdfViewer({
                                 file={file}
                                 onLoadSuccess={({ numPages }) => {
                                     setNumPages(numPages)
-                                    setZoom(1.25)
                                 }}
                                 onLoadError={() => {
                                     setError('Failed to load PDF preview.')
