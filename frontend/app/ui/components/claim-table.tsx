@@ -110,11 +110,11 @@ export default function ClaimTable({
                       ? 'bg-accent-subtle'
                       : 'hover:bg-slate-50/60'
                   }`}
-                  style={isActive ? { boxShadow: 'inset 3px 0 0 #0d9488' } : undefined}
+                  style={isActive ? { boxShadow: 'inset 5px 0 0 -3px #0d9488' } : undefined}
                   onMouseEnter={() => onHover?.(field.id)}
                   onMouseLeave={() => onHover?.(null)}
                 >
-                  <td className="py-2.5 pr-4 font-medium text-slate-700 w-56">
+                  <td className="py-2.5 pl-0.5 pr-4 font-medium text-slate-700 w-56">
                     {field.label}
                   </td>
                   <td className="py-2.5 pr-4 text-slate-600">
