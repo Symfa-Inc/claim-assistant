@@ -202,7 +202,7 @@ export default function Page() {
             </div>
           </div>
         ) : showTable ? (
-          <div className={`${rightPanelClassName} gap-4 overflow-y-auto pb-14 pr-1`}>
+          <div className={`${rightPanelClassName} gap-4 overflow-y-auto pb-14`} style={{ scrollbarGutter: 'stable' }}>
 
             {/* Executive Summary */}
             <div
