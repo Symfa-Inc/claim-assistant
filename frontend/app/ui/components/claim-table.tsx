@@ -65,10 +65,10 @@ export default function ClaimTable({
             <tr className="border-b border-slate-100">
               <th className="pb-2.5 pr-4 text-[10px] font-semibold uppercase tracking-wider text-slate-400 w-[40%]">Field</th>
               <th className="pb-2.5 pr-4 text-[10px] font-semibold uppercase tracking-wider text-slate-400">Value</th>
-              <th className="pb-2.5 text-right text-[10px] font-semibold uppercase tracking-wider text-slate-400 w-[18%]">
+              <th className="pb-2.5 pl-2 text-[10px] font-semibold uppercase tracking-wider text-slate-400 w-[12%]">
                 Confidence
               </th>
-              <th className="pb-2.5 pl-3 text-right text-[10px] font-semibold uppercase tracking-wider text-slate-400 w-[12%]">
+              <th className="pb-2.5 pl-3 text-right text-[10px] font-semibold uppercase tracking-wider text-slate-400 w-[16%]">
                 Actions
               </th>
             </tr>
@@ -142,17 +142,17 @@ export default function ClaimTable({
                         : field.value
                     )}
                   </td>
-                  <td className="py-2.5 text-right w-28">
-                    <div className="inline-flex h-5 items-center gap-2">
-                      <div className="h-[3px] w-10 overflow-hidden rounded-full bg-slate-100">
+                  <td className="py-2.5 pl-2 w-28">
+                    <div className="flex h-5 items-center gap-2">
+                      <div className="h-[3px] w-10 shrink-0 overflow-hidden rounded-full bg-slate-100">
                         <div
                           className={`h-full rounded-full transition-all ${barColor}`}
                           style={{ width: `${isValidated ? 100 : confidencePercent}%` }}
                         />
                       </div>
-                      <span className={`inline-flex h-5 items-center gap-0.5 text-xs font-medium tabular-nums ${textColor}`}>
+                      <span className={`inline-flex h-5 w-12 shrink-0 items-center justify-end gap-0.5 text-xs font-medium tabular-nums ${textColor}`}>
                         {isValidated && (
-                          <svg className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                          <svg className="h-3 w-3 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                             <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                           </svg>
                         )}
