@@ -450,12 +450,12 @@ export default function AppPdfViewer({
     return (
         <div className="flex h-full min-h-0 w-full flex-1 flex-col gap-2">
             {/* ── Toolbar ────────────────────────────── */}
-            <div className="flex flex-row items-center gap-2.5 rounded-xl border border-slate-200 bg-slate-50/60 px-3 py-2 w-full max-w-full overflow-x-auto flex-nowrap min-w-0">
-                <span className="text-[13px] font-semibold text-slate-700 shrink-0">
+            <div className="flex flex-row flex-wrap items-center gap-x-2.5 gap-y-2 rounded-xl border border-slate-200 bg-slate-50/60 px-3 py-2 w-full max-w-full min-w-0">
+                <span className="text-[13px] font-semibold text-slate-700 shrink-0 hidden lg:inline">
                     Preview
                 </span>
 
-                <div className="h-5 w-px bg-slate-200 shrink-0" />
+                <div className="h-5 w-px bg-slate-200 shrink-0 hidden lg:block" />
 
                 {/* Zoom controls */}
                 <div className="flex items-center gap-1.5 shrink-0">
@@ -516,7 +516,7 @@ export default function AppPdfViewer({
                         onChange={(event) =>
                             selectForm(event.target.value)
                         }
-                        className="w-full min-w-0 max-w-[12rem] truncate rounded-md border border-slate-200 bg-white px-2.5 pr-8 py-1.5 text-[13px] text-slate-600 transition-all hover:border-slate-300 focus:border-accent-light focus:ring-2 focus:ring-accent-subtle"
+                        className="w-full min-w-0 max-w-[10rem] truncate rounded-md border border-slate-200 bg-white px-2.5 pr-8 py-1.5 text-[13px] text-slate-600 transition-all hover:border-slate-300 focus:border-accent-light focus:ring-2 focus:ring-accent-subtle"
                         aria-label="Form"
                     >
                         <option value="FL:FL__form_dg_POL123456789.pdf">Florida digital</option>
@@ -529,10 +529,10 @@ export default function AppPdfViewer({
                     </select>
                 </div>
 
-                <div className="flex-1" />
+                <div className="flex-1 min-w-0" />
 
                 {/* Actions */}
-                <div className="flex items-center gap-2 shrink-0">
+                <div className="flex items-center gap-2 shrink-0 ml-auto">
                     <button
                         type="button"
                         onClick={handleReset}

@@ -55,7 +55,7 @@ export default function ClaimTable({
 
   const containerClassName =
     className ??
-    'flex min-h-0 flex-1 flex-col rounded-xl border border-slate-200 bg-white p-4 shadow-sm md:w-2/4 md:px-6';
+    'flex min-h-0 flex-1 flex-col rounded-xl border border-slate-200 bg-white p-4 shadow-sm lg:w-2/4 lg:px-6';
 
   return (
     <div className={containerClassName}>
@@ -63,12 +63,12 @@ export default function ClaimTable({
         <table className="w-full table-fixed text-left text-[13px] text-slate-600">
           <thead>
             <tr className="border-b border-slate-100">
-              <th className="pb-2.5 pr-4 text-[10px] font-semibold uppercase tracking-wider text-slate-400 w-64">Field</th>
+              <th className="pb-2.5 pr-4 text-[10px] font-semibold uppercase tracking-wider text-slate-400 w-[40%]">Field</th>
               <th className="pb-2.5 pr-4 text-[10px] font-semibold uppercase tracking-wider text-slate-400">Value</th>
-              <th className="pb-2.5 text-right text-[10px] font-semibold uppercase tracking-wider text-slate-400 w-28">
+              <th className="pb-2.5 text-right text-[10px] font-semibold uppercase tracking-wider text-slate-400 w-[18%]">
                 Confidence
               </th>
-              <th className="pb-2.5 pl-3 text-right text-[10px] font-semibold uppercase tracking-wider text-slate-400 w-20">
+              <th className="pb-2.5 pl-3 text-right text-[10px] font-semibold uppercase tracking-wider text-slate-400 w-[12%]">
                 Actions
               </th>
             </tr>

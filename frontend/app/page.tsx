@@ -145,7 +145,7 @@ export default function Page() {
   const hasUnreviewedLowConfidenceFields =
     lowConfidenceFieldsCount > 0 && reviewedLowConfidenceFieldsCount < lowConfidenceFieldsCount;
   const rightPanelClassName =
-    'flex self-start flex-col md:w-1/2 md:shrink-0 md:grow-0 md:sticky md:top-[4rem] md:max-h-[calc(100vh-5rem)]';
+    'flex self-start flex-col lg:w-1/2 lg:shrink-0 lg:grow-0 lg:sticky lg:top-[4rem] lg:max-h-[calc(100vh-5rem)]';
 
   const conclusionLower = summaryConclusion?.toLowerCase();
   const conclusionBadge =
@@ -178,9 +178,9 @@ export default function Page() {
         </div>
       </header>
 
-      <div className="mx-4 flex flex-1 flex-col items-start gap-5 py-5 md:mx-6 md:flex-row">
+      <div className="mx-4 flex flex-1 flex-col items-start gap-5 py-5 lg:mx-6 lg:flex-row">
         {/* ── Left panel – PDF Viewer ────────────── */}
-        <div className="flex min-w-0 items-stretch md:w-1/2 md:shrink-0 md:grow-0">
+        <div className="flex min-w-0 items-stretch lg:w-1/2 lg:shrink-0 lg:grow-0">
           <div className="card flex w-full min-w-0 flex-1 flex-col overflow-hidden p-2.5">
             <AppPdfViewer
               isProcessing={isProcessing}
@@ -370,7 +370,7 @@ export default function Page() {
                 <div className="mt-1 flex items-center text-[13px] text-slate-400">
                   <div className="flex items-center gap-1.5">
                     <span className="flex h-6 w-6 items-center justify-center rounded-full bg-accent-subtle text-[11px] font-semibold text-accent">1</span>
-                    <span>Choose a demo form or upload your own</span>
+                    <span>Choose a form</span>
                   </div>
                   <div className="mx-3 h-px w-6 bg-slate-200" />
                   <div className="flex items-center gap-1.5">
