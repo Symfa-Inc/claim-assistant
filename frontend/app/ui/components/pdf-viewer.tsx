@@ -422,26 +422,65 @@ export default function AppPdfViewer({
         ? highlightBoxes.filter((box) => box.fieldId === highlightFieldId)
         : []
 
+    /* ── Drag-to-pan (middle / right mouse button) ── */
+    const isPanningRef = useRef(false)
+    const panStartRef = useRef({ x: 0, y: 0, scrollLeft: 0, scrollTop: 0 })
+
     useEffect(() => {
-        if (!highlightFieldId) return
-        const firstMatch = highlightBoxes.find(
-            (box) => box.fieldId === highlightFieldId
-        )
-        if (!firstMatch) return
         const container = scrollRef.current
         if (!container) return
 
-        const pageElement = container.querySelector<HTMLElement>(
-            `[data-page-number="${firstMatch.page}"]`
-        )
-        if (!pageElement) return
+        const handlePointerDown = (e: PointerEvent) => {
+            // middle button (1) or right button (2)
+            if (e.button !== 1 && e.button !== 2) return
+            e.preventDefault()
+            isPanningRef.current = true
+            panStartRef.current = {
+                x: e.clientX,
+                y: e.clientY,
+                scrollLeft: container.scrollLeft,
+                scrollTop: container.scrollTop,
+            }
+            container.setPointerCapture(e.pointerId)
+            container.style.cursor = 'grabbing'
+        }
 
-        pageElement.scrollIntoView({
-            behavior: 'smooth',
-            block: 'center',
-            inline: 'nearest',
-        })
-    }, [highlightFieldId, highlightBoxes])
+        const handlePointerMove = (e: PointerEvent) => {
+            if (!isPanningRef.current) return
+            const dx = e.clientX - panStartRef.current.x
+            const dy = e.clientY - panStartRef.current.y
+            container.scrollLeft = panStartRef.current.scrollLeft - dx
+            container.scrollTop = panStartRef.current.scrollTop - dy
+        }
+
+        const handlePointerUp = (e: PointerEvent) => {
+            if (!isPanningRef.current) return
+            isPanningRef.current = false
+            container.releasePointerCapture(e.pointerId)
+            container.style.cursor = ''
+        }
+
+        const handleContextMenu = (e: MouseEvent) => {
+            // prevent context menu so right-click drag works
+            if (isPanningRef.current) {
+                e.preventDefault()
+            }
+        }
+
+        container.addEventListener('pointerdown', handlePointerDown)
+        container.addEventListener('pointermove', handlePointerMove)
+        container.addEventListener('pointerup', handlePointerUp)
+        container.addEventListener('pointercancel', handlePointerUp)
+        container.addEventListener('contextmenu', handleContextMenu)
+
+        return () => {
+            container.removeEventListener('pointerdown', handlePointerDown)
+            container.removeEventListener('pointermove', handlePointerMove)
+            container.removeEventListener('pointerup', handlePointerUp)
+            container.removeEventListener('pointercancel', handlePointerUp)
+            container.removeEventListener('contextmenu', handleContextMenu)
+        }
+    }, [])
 
     const buildPolygonPoints = (vertices: Array<{ x: number; y: number }>) =>
         vertices.map((point) => `${point.x},${point.y}`).join(' ')
