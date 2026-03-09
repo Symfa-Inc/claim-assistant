@@ -80,7 +80,7 @@ export default function AppPdfViewer({
     highlightBoxes = [],
 }: OwnProps) {
     const containerRef = useRef<HTMLDivElement | null>(null)
-    const lastWidthRef = useRef<number | null>(null)
+    const lastSizeRef = useRef<{ w: number; h: number } | null>(null)
     const scrollRef = useRef<HTMLDivElement | null>(null)
     const wheelAccumulatorRef = useRef(0)
     const wheelResetRef = useRef<ReturnType<typeof setTimeout> | null>(null)
@@ -90,6 +90,7 @@ export default function AppPdfViewer({
     const [fileName, setFileName] = useState<string | null>(null)
     const [selectedForm, setSelectedForm] = useState('FL:FL__form_dg_POL123456789.pdf')
     const [containerWidth, setContainerWidth] = useState(0)
+    const [containerHeight, setContainerHeight] = useState(0)
     const [numPages, setNumPages] = useState<number | null>(null)
     const [zoomOffset, setZoomOffset] = useState(0)
     const [pageSizes, setPageSizes] = useState<Record<number, {
@@ -99,27 +100,31 @@ export default function AppPdfViewer({
     }>>({})
 
     const autoFitZoom = useMemo(() => {
-        const firstPageWidth = pageSizes[1]?.width ?? 0
-        if (firstPageWidth > 0 && containerWidth > 0) {
-            return (containerWidth - 32) / firstPageWidth
-        }
-        return 1
-    }, [containerWidth, pageSizes])
+        const firstPage = pageSizes[1]
+        if (!firstPage || containerWidth <= 0 || containerHeight <= 0) return 1
+        const padding = 32
+        const fitW = (containerWidth - padding) / firstPage.width
+        const fitH = (containerHeight - padding) / firstPage.height
+        return Math.min(fitW, fitH)
+    }, [containerWidth, containerHeight, pageSizes])
 
     const zoom = Math.max(0.25, autoFitZoom + zoomOffset)
 
     useEffect(() => {
         const target = scrollRef.current
         if (!target) return
-        const updateWidth = () => {
+        const updateSize = () => {
             const nextWidth = target.clientWidth ?? 0
-            if (lastWidthRef.current !== nextWidth) {
-                lastWidthRef.current = nextWidth
+            const nextHeight = target.clientHeight ?? 0
+            const prev = lastSizeRef.current
+            if (!prev || prev.w !== nextWidth || prev.h !== nextHeight) {
+                lastSizeRef.current = { w: nextWidth, h: nextHeight }
                 setContainerWidth(nextWidth)
+                setContainerHeight(nextHeight)
             }
         }
-        updateWidth()
-        const observer = new ResizeObserver(updateWidth)
+        updateSize()
+        const observer = new ResizeObserver(updateSize)
         observer.observe(target)
         return () => observer.disconnect()
     }, [])
@@ -519,6 +524,34 @@ export default function AppPdfViewer({
                             <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
                         </svg>
                     </button>
+                    <button
+                        type="button"
+                        onClick={() => {
+                            const container = scrollRef.current
+                            const firstPage = pageSizes[1]
+                            if (container && firstPage) {
+                                const padding = 32
+                                const fitW = (container.clientWidth - padding) / firstPage.width
+                                const fitH = (container.clientHeight - padding) / firstPage.height
+                                const fitZoom = Math.min(fitW, fitH)
+                                setZoomOffset(fitZoom - autoFitZoom)
+                            } else {
+                                setZoomOffset(0)
+                            }
+                            if (container) {
+                                container.scrollTop = 0
+                                const maxScrollLeft = container.scrollWidth - container.clientWidth
+                                container.scrollLeft = maxScrollLeft > 0 ? maxScrollLeft / 2 : 0
+                            }
+                        }}
+                        className="flex h-7 w-7 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-500 transition-all hover:border-slate-300 hover:text-slate-700"
+                        aria-label="Fit to container"
+                        title="Fit to container"
+                    >
+                        <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5v-4m0 4h-4m4 0l-5-5" />
+                        </svg>
+                    </button>
                 </div>
 
                 <div className="h-5 w-px bg-slate-200 shrink-0" />
@@ -618,7 +651,7 @@ export default function AppPdfViewer({
             {/* ── PDF content area ───────────────────── */}
             <div
                 ref={scrollRef}
-                className="flex-1 min-h-[60vh] overflow-auto rounded-lg border border-slate-200 bg-white"
+                className="flex-1 min-h-0 overflow-auto rounded-lg border border-slate-200 bg-white"
             >
                 <div
                     ref={containerRef}
