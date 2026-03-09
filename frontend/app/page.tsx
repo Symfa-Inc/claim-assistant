@@ -178,9 +178,9 @@ export default function Page() {
         </div>
       </header>
 
-      <div className="mx-4 flex flex-1 flex-col items-start gap-5 py-5 lg:mx-6 lg:flex-row">
+      <div className="mx-4 flex flex-1 flex-col items-start gap-5 py-2 lg:mx-6 lg:flex-row">
         {/* ── Left panel – PDF Viewer ────────────── */}
-        <div className="flex w-full min-w-0 items-stretch lg:w-1/2 lg:shrink-0 lg:grow-0">
+        <div className="flex w-full min-w-0 items-stretch lg:w-1/2 lg:shrink-0 lg:grow-0 lg:sticky lg:top-[4rem] lg:h-[calc(100vh-4.5rem)]">
           <div className="card flex w-full min-w-0 flex-1 flex-col overflow-hidden p-2.5">
             <AppPdfViewer
               isProcessing={isProcessing}
