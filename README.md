@@ -46,7 +46,7 @@ Claims managers, operations teams, and analysts who need to process insurance cl
 ### Preview
 
 <p align="center">
-  <img src=".assets/claim-assistant-1.png" width="100%" alt="Claim Assistant – claim processing view with PDF preview, executive summary, and key fields">
+  <img src=".assets/claim-assistant.png" width="100%" alt="Claim Assistant – claim processing view with PDF preview, executive summary, and key fields">
 </p>
 
 ## Tech Stack
