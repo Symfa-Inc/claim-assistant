@@ -15,7 +15,7 @@
 
 **AI-powered automation tool that streamlines insurance claim handling by replacing repetitive adjuster tasks with intelligent LLM-based assistants.**
 
-🔗 **Live Demo**: [https://claim-assistant-demo.d11.symfa.com](https://claim-assistant-demo.d11.symfa.com/)
+🔗 **Live Demo**: [https://claim-assistant.ai.symfa.com](https://claim-assistant.ai.symfa.com/)
 
 💻 **GitHub**: [https://github.com/Symfa-Inc/claim-assistant](https://github.com/Symfa-Inc/claim-assistant)
 
@@ -46,7 +46,7 @@ Claims managers, operations teams, and analysts who need to process insurance cl
 ### Preview
 
 <p align="center">
-  <img src=".assets/claim-assistant-1.png" width="90%" alt="Claim Assistant – claim processing view with PDF preview, executive summary, and key fields">
+  <img src=".assets/claim-assistant-1.png" width="100%" alt="Claim Assistant – claim processing view with PDF preview, executive summary, and key fields">
 </p>
 
 ## Tech Stack
