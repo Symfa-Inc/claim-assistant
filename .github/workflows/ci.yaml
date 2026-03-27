@@ -87,7 +87,7 @@ jobs:
       uses: actions/checkout@v6
 
     - name: Build backend image
-      run: docker build -t claim-assistant-backend .
+      run: docker build -t claim-assistant-backend ./backend
 
     - name: Build frontend image
       run: docker build -t claim-assistant-frontend ./frontend
