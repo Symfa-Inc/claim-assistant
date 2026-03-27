@@ -17,7 +17,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 WORKDIR /app
 
 # Install Python dependencies
-COPY pyproject.toml uv.lock README.md ./
+COPY pyproject.toml README.md ./
 COPY src ./src
 RUN pip install --upgrade pip setuptools wheel \
     && pip install "uv>=0.4.20" \
