@@ -1,12 +1,11 @@
-'use client'
+"use client";
 
+import { useState } from "react";
+import dynamic from "next/dynamic";
+import ClaimTable, { type ClaimField } from "@/app/ui/components/claim-table";
+import type { HighlightBox } from "@/app/ui/components/pdf-viewer";
 
-import { useState } from 'react';
-import dynamic from 'next/dynamic';
-import ClaimTable, { type ClaimField } from '@/app/ui/components/claim-table';
-import type { HighlightBox } from '@/app/ui/components/pdf-viewer';
-
-const AppPdfViewer = dynamic(() => import('@/app/ui/components/pdf-viewer'), {
+const AppPdfViewer = dynamic(() => import("@/app/ui/components/pdf-viewer"), {
   ssr: false,
 });
 
@@ -18,8 +17,10 @@ export default function Page() {
   const [keyClaimFields, setKeyClaimFields] = useState<ClaimField[]>([]);
   const [highlightBoxes, setHighlightBoxes] = useState<HighlightBox[]>([]);
   const [executiveSummary, setExecutiveSummary] = useState<string | null>(null);
-  const [summaryConfidence, setSummaryConfidence] = useState<number | null>(null);
-  const [summaryConclusion, setSummaryConclusion] = useState<string | null>(null);
+  const [, setSummaryConfidence] = useState<number | null>(null);
+  const [summaryConclusion, setSummaryConclusion] = useState<string | null>(
+    null,
+  );
   const [initialFieldState, setInitialFieldState] = useState<
     Record<string, { value: string; confidence: string }>
   >({});
@@ -62,7 +63,7 @@ export default function Page() {
         return {
           ...field,
           validated: true,
-          confidence: '100%',
+          confidence: "100%",
         };
       }
       return {
@@ -73,8 +74,12 @@ export default function Page() {
       };
     };
 
-    setClaimFields((current) => mapAndUpdateFields(current, fieldId, updatedField));
-    setKeyClaimFields((current) => mapAndUpdateFields(current, fieldId, updatedField));
+    setClaimFields((current) =>
+      mapAndUpdateFields(current, fieldId, updatedField),
+    );
+    setKeyClaimFields((current) =>
+      mapAndUpdateFields(current, fieldId, updatedField),
+    );
   };
 
   const handleProcess = () => {
@@ -98,7 +103,9 @@ export default function Page() {
     } | null,
   ) => {
     setClaimFields(fields.map((field) => ({ ...field, validated: false })));
-    setKeyClaimFields(keyFields.map((field) => ({ ...field, validated: false })));
+    setKeyClaimFields(
+      keyFields.map((field) => ({ ...field, validated: false })),
+    );
     setInitialFieldState(
       fields.reduce<Record<string, { value: string; confidence: string }>>(
         (acc, field) => {
@@ -133,33 +140,41 @@ export default function Page() {
   };
 
   const lowConfidenceFields = claimFields.filter(
-    (field) => parseConfidence(initialFieldState[field.id]?.confidence ?? field.confidence) < 80,
+    (field) =>
+      parseConfidence(
+        initialFieldState[field.id]?.confidence ?? field.confidence,
+      ) < 80,
   );
-  const reviewedFieldsCount = claimFields.filter((field) => field.validated).length;
+  const reviewedFieldsCount = claimFields.filter(
+    (field) => field.validated,
+  ).length;
   const totalFieldsCount = claimFields.length;
-  const lowConfidenceFieldIds = new Set(lowConfidenceFields.map((field) => field.id));
+  const lowConfidenceFieldIds = new Set(
+    lowConfidenceFields.map((field) => field.id),
+  );
   const lowConfidenceFieldsCount = lowConfidenceFields.length;
   const reviewedLowConfidenceFieldsCount = claimFields.filter(
     (field) => lowConfidenceFieldIds.has(field.id) && field.validated,
   ).length;
   const hasUnreviewedLowConfidenceFields =
-    lowConfidenceFieldsCount > 0 && reviewedLowConfidenceFieldsCount < lowConfidenceFieldsCount;
+    lowConfidenceFieldsCount > 0 &&
+    reviewedLowConfidenceFieldsCount < lowConfidenceFieldsCount;
   const rightPanelClassName =
-    'flex w-full self-start flex-col lg:w-1/2 lg:shrink-0 lg:grow-0 lg:sticky lg:top-[4rem] lg:max-h-[calc(100vh-5rem)]';
+    "flex w-full self-start flex-col lg:w-1/2 lg:shrink-0 lg:grow-0 lg:sticky lg:top-[4rem] lg:max-h-[calc(100vh-5rem)]";
 
   const conclusionLower = summaryConclusion?.toLowerCase();
   const conclusionBadge =
-    conclusionLower === 'positive'
-      ? 'bg-emerald-50 text-emerald-700'
-      : conclusionLower === 'negative'
-        ? 'bg-rose-50 text-rose-700'
-        : 'bg-amber-50 text-amber-700';
+    conclusionLower === "positive"
+      ? "bg-emerald-50 text-emerald-700"
+      : conclusionLower === "negative"
+        ? "bg-rose-50 text-rose-700"
+        : "bg-amber-50 text-amber-700";
   const conclusionDot =
-    conclusionLower === 'positive'
-      ? 'bg-emerald-500'
-      : conclusionLower === 'negative'
-        ? 'bg-rose-500'
-        : 'bg-amber-500';
+    conclusionLower === "positive"
+      ? "bg-emerald-500"
+      : conclusionLower === "negative"
+        ? "bg-rose-500"
+        : "bg-amber-500";
 
   return (
     <main className="flex min-h-screen flex-col bg-[#f8fafb]">
@@ -172,7 +187,8 @@ export default function Page() {
               Claim Assistant
             </h1>
             <p className="text-[11px] leading-tight text-slate-400">
-              Automate insurance claim intake with intelligent field extraction and mapping
+              Automate insurance claim intake with intelligent field extraction
+              and mapping
             </p>
           </div>
         </div>
@@ -198,12 +214,16 @@ export default function Page() {
           <div className={rightPanelClassName}>
             <div className="card flex flex-1 flex-col items-center justify-center p-6">
               <div className="h-10 w-10 animate-spin rounded-full border-[2.5px] border-slate-200 border-t-accent" />
-              <span className="mt-4 text-[13px] text-slate-400">Analyzing document...</span>
+              <span className="mt-4 text-[13px] text-slate-400">
+                Analyzing document...
+              </span>
             </div>
           </div>
         ) : showTable ? (
-          <div className={`${rightPanelClassName} gap-4 overflow-y-auto pb-14`} style={{ scrollbarGutter: 'stable' }}>
-
+          <div
+            className={`${rightPanelClassName} gap-4 overflow-y-auto pb-14`}
+            style={{ scrollbarGutter: "stable" }}
+          >
             {/* Executive Summary */}
             <div
               className="card relative z-30 border-l-[3px] border-l-accent px-6 py-5 animate-fade-in"
@@ -214,24 +234,40 @@ export default function Page() {
                   <div className="ml-2 inline-flex w-[calc(100%-1.5rem)] items-center justify-between gap-3">
                     <span className="text-[15px] font-semibold text-slate-800 inline-flex items-center gap-2">
                       Executive Summary
-                      <span className="info-tip info-tip-down" data-tip="Automated analysis highlighting key findings, confidence levels, and an overall claim conclusion">i</span>
+                      <span
+                        className="info-tip info-tip-down"
+                        data-tip="Automated analysis highlighting key findings, confidence levels, and an overall claim conclusion"
+                      >
+                        i
+                      </span>
                     </span>
                     <button
                       type="button"
                       onClick={(e) => {
                         e.stopPropagation();
-                        if (!hasUnreviewedLowConfidenceFields) setShowExportDialog(true);
+                        if (!hasUnreviewedLowConfidenceFields)
+                          setShowExportDialog(true);
                       }}
                       disabled={hasUnreviewedLowConfidenceFields}
                       aria-disabled={hasUnreviewedLowConfidenceFields}
                       className={`inline-flex items-center gap-1.5 rounded-lg px-3.5 py-1.5 text-[13px] font-medium transition-all ${
                         hasUnreviewedLowConfidenceFields
-                          ? 'cursor-not-allowed bg-slate-100 text-slate-400'
-                          : 'btn-primary text-white shadow-sm'
+                          ? "cursor-not-allowed bg-slate-100 text-slate-400"
+                          : "btn-primary text-white shadow-sm"
                       }`}
                     >
-                      <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
+                      <svg
+                        className="h-3.5 w-3.5"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        strokeWidth={2}
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"
+                        />
                       </svg>
                       Export
                     </button>
@@ -242,8 +278,12 @@ export default function Page() {
                     {/* Conclusion – promoted to top */}
                     {summaryConclusion && (
                       <div className="mb-3">
-                        <span className={`inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-medium ${conclusionBadge}`}>
-                          <span className={`h-1.5 w-1.5 rounded-full ${conclusionDot}`} />
+                        <span
+                          className={`inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-medium ${conclusionBadge}`}
+                        >
+                          <span
+                            className={`h-1.5 w-1.5 rounded-full ${conclusionDot}`}
+                          />
                           {summaryConclusion}
                         </span>
                       </div>
@@ -276,14 +316,21 @@ export default function Page() {
             {/* Key Fields */}
             <div
               className="card relative z-20 px-6 py-5 animate-fade-in"
-              style={{ opacity: 0, animationDelay: '60ms' }}
+              style={{ opacity: 0, animationDelay: "60ms" }}
             >
               <details open>
                 <summary className="cursor-pointer select-none pl-5 text-[15px] font-semibold text-slate-800">
                   <span className="ml-2 inline-flex items-center gap-1.5">
                     Key Fields
-                    <span className="info-tip info-tip-down" data-tip="Important fields identified for quick review, such as policy number and incident details">i</span>
-                    <span className="inline-flex items-center rounded-full bg-accent-subtle px-2 py-0.5 text-xs font-medium text-accent">{keyClaimFields.length}</span>
+                    <span
+                      className="info-tip info-tip-down"
+                      data-tip="Important fields identified for quick review, such as policy number and incident details"
+                    >
+                      i
+                    </span>
+                    <span className="inline-flex items-center rounded-full bg-accent-subtle px-2 py-0.5 text-xs font-medium text-accent">
+                      {keyClaimFields.length}
+                    </span>
                   </span>
                 </summary>
                 <div className="mt-4 pl-5">
@@ -302,14 +349,21 @@ export default function Page() {
             {/* Low Confidence Fields */}
             <div
               className="card relative z-10 px-6 py-5 animate-fade-in"
-              style={{ opacity: 0, animationDelay: '120ms' }}
+              style={{ opacity: 0, animationDelay: "120ms" }}
             >
               <details>
                 <summary className="cursor-pointer select-none pl-5 text-[15px] font-semibold text-slate-800">
                   <span className="ml-2 inline-flex items-center gap-1.5">
                     Low Confidence Fields
-                    <span className="info-tip info-tip-down" data-tip="Fields with extraction confidence below 80%. Review and correct these fields before exporting">i</span>
-                    <span className="inline-flex items-center rounded-full bg-amber-50 px-2 py-0.5 text-xs font-medium text-amber-700">{lowConfidenceFields.length}</span>
+                    <span
+                      className="info-tip info-tip-down"
+                      data-tip="Fields with extraction confidence below 80%. Review and correct these fields before exporting"
+                    >
+                      i
+                    </span>
+                    <span className="inline-flex items-center rounded-full bg-amber-50 px-2 py-0.5 text-xs font-medium text-amber-700">
+                      {lowConfidenceFields.length}
+                    </span>
                   </span>
                 </summary>
                 <div className="mt-4 pl-5">
@@ -329,14 +383,21 @@ export default function Page() {
             {/* All Fields */}
             <div
               className="card relative px-6 py-5 animate-fade-in"
-              style={{ opacity: 0, animationDelay: '180ms' }}
+              style={{ opacity: 0, animationDelay: "180ms" }}
             >
               <details>
                 <summary className="cursor-pointer select-none pl-5 text-[15px] font-semibold text-slate-800">
                   <span className="ml-2 inline-flex items-center gap-1.5">
                     All Fields
-                    <span className="info-tip info-tip-down" data-tip="Complete list of every field extracted from the document">i</span>
-                    <span className="inline-flex items-center rounded-full bg-slate-100 px-2 py-0.5 text-xs font-medium text-slate-600">{claimFields.length}</span>
+                    <span
+                      className="info-tip info-tip-down"
+                      data-tip="Complete list of every field extracted from the document"
+                    >
+                      i
+                    </span>
+                    <span className="inline-flex items-center rounded-full bg-slate-100 px-2 py-0.5 text-xs font-medium text-slate-600">
+                      {claimFields.length}
+                    </span>
                   </span>
                 </summary>
                 <div className="mt-4 pl-5">
@@ -358,23 +419,45 @@ export default function Page() {
             <div className="flex flex-1 flex-col items-center justify-center rounded-xl border-2 border-dashed border-slate-200 bg-white p-8">
               <div className="flex flex-1 flex-col items-center justify-center gap-5">
                 <div className="rounded-2xl bg-accent-subtle p-5">
-                  <svg className="h-10 w-10 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
+                  <svg
+                    className="h-10 w-10 text-accent"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth={1.5}
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"
+                    />
                   </svg>
                 </div>
                 <div className="text-center">
-                  <p className="text-sm font-medium text-slate-700">No form processed yet</p>
-                  <p className="mt-1 text-[13px] text-slate-400">Choose a demo form or upload your own PDF, then click <span className="font-medium text-slate-600">&quot;Process Form&quot;</span>.</p>
+                  <p className="text-sm font-medium text-slate-700">
+                    No form processed yet
+                  </p>
+                  <p className="mt-1 text-[13px] text-slate-400">
+                    Choose a demo form or upload your own PDF, then click{" "}
+                    <span className="font-medium text-slate-600">
+                      &quot;Process Form&quot;
+                    </span>
+                    .
+                  </p>
                 </div>
                 {/* Connected step indicator */}
                 <div className="mt-1 flex items-center text-[13px] text-slate-400">
                   <div className="flex items-center gap-1.5">
-                    <span className="flex h-6 w-6 items-center justify-center rounded-full bg-accent-subtle text-[11px] font-semibold text-accent">1</span>
+                    <span className="flex h-6 w-6 items-center justify-center rounded-full bg-accent-subtle text-[11px] font-semibold text-accent">
+                      1
+                    </span>
                     <span>Choose a form</span>
                   </div>
                   <div className="mx-3 h-px w-6 bg-slate-200" />
                   <div className="flex items-center gap-1.5">
-                    <span className="flex h-6 w-6 items-center justify-center rounded-full bg-accent-subtle text-[11px] font-semibold text-accent">2</span>
+                    <span className="flex h-6 w-6 items-center justify-center rounded-full bg-accent-subtle text-[11px] font-semibold text-accent">
+                      2
+                    </span>
                     <span>Process</span>
                   </div>
                 </div>
@@ -386,18 +469,38 @@ export default function Page() {
 
       {/* ── Export dialog ────────────────────────── */}
       {showExportDialog && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/20 backdrop-blur-sm" onClick={() => setShowExportDialog(false)}>
-          <div className="card mx-4 w-full max-w-md animate-fade-in p-6" onClick={(e) => e.stopPropagation()}>
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/20 backdrop-blur-sm"
+          onClick={() => setShowExportDialog(false)}
+        >
+          <div
+            className="card mx-4 w-full max-w-md animate-fade-in p-6"
+            onClick={(e) => e.stopPropagation()}
+          >
             <div className="flex items-start gap-3">
               <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-accent-subtle">
-                <svg className="h-5 w-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                <svg
+                  className="h-5 w-5 text-accent"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M5 13l4 4L19 7"
+                  />
                 </svg>
               </div>
               <div>
-                <h2 className="text-[15px] font-semibold text-slate-800">Export Ready</h2>
+                <h2 className="text-[15px] font-semibold text-slate-800">
+                  Export Ready
+                </h2>
                 <p className="mt-1 text-[13px] leading-relaxed text-slate-500">
-                  {reviewedFieldsCount} of {totalFieldsCount} fields reviewed. The claim data will be exported to the ASC system for further processing.
+                  {reviewedFieldsCount} of {totalFieldsCount} fields reviewed.
+                  The claim data will be exported to the ASC system for further
+                  processing.
                 </p>
               </div>
             </div>

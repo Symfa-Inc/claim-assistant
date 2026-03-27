@@ -13,163 +13,73 @@
 [![Azure Doc Intelligence](https://img.shields.io/badge/Azure-Doc%20Intelligence-0078D4.svg)](https://azure.microsoft.com/en-us/products/ai-services/ai-document-intelligence)
 [![Docker](https://img.shields.io/badge/Docker-Ready-2496ED.svg)](https://www.docker.com/)
 
-**AI-powered automation tool that streamlines insurance claim handling by replacing repetitive adjuster tasks with intelligent LLM-based assistants.**
+AI-powered automation tool that streamlines insurance claim handling with LLM-based PDF processing, policy matching, and coverage analysis.
 
-🔗 **Live Demo**: [https://claim-assistant.ai.symfa.com](https://claim-assistant.ai.symfa.com/)
-
-💻 **GitHub**: [https://github.com/Symfa-Inc/claim-assistant](https://github.com/Symfa-Inc/claim-assistant)
-
-📘 **Confluence**: [https://symfa.atlassian.net/wiki/x/AQDaGgE](https://symfa.atlassian.net/wiki/x/AQDaGgE)
+**[Live Demo](https://claim-assistant.symfa.ai/)** · **[GitHub](https://github.com/Symfa-Inc/claim-assistant)** · **[Confluence](https://symfa.atlassian.net/wiki/spaces/SYMFA/pages/5012094982)**
 
 </div>
 
-
-## Overview
-
-Claim Assistant automates claim processing for insurance companies through a modular pipeline architecture. The service converts filled insurance claim forms (PDFs) into structured data, matches claims against policy records, and produces analytical outputs that support insurance adjusters in evaluating claims.
-
-### Key Features
-
-- **Automated PDF Processing** – Extract key fields from filled claim forms using LLM-based pipelines
-- **Policy Matching** – Map extracted claim data against policy records for validation
-- **Confidence Scoring** – Account for OCR/LLM uncertainty with built-in confidence classification
-- **Coverage Analysis** – Generate structured summaries with coverage status (covered / not covered)
-- **Report Generation** – Produce adjuster-facing PDF reports with analysis results
-- **Inline Field Review** – Edit extracted values inline and approve/revoke field validation during human review
-- **Low-Confidence Queue** – Auto-group fields with confidence below 80% for faster reviewer prioritization
-- **Review-Gated Export** – Keep ASC export disabled until every field is reviewed/approved
-
-### Target Audience
-
-Claims managers, operations teams, and analysts who need to process insurance claims efficiently without technical expertise.
-
-### Preview
+## Preview
 
 <p align="center">
-  <img src=".assets/claim-assistant.png" width="100%" alt="Claim Assistant – claim processing view with PDF preview, executive summary, and key fields">
+<img src=".assets/claim-assistant.png" width="100%" alt="Claim Assistant Preview">
 </p>
+
+## Features
+
+- **Automated PDF Processing** – Extract key fields from filled claim forms using Azure Document Intelligence and LLM pipelines
+- **Policy Matching** – Map extracted claim data against policy records for validation
+- **Confidence Scoring** – Per-field certainty scores with low-confidence queue for reviewer prioritization
+- **Coverage Analysis** – Structured summaries with coverage status (covered / not covered / uncertain)
+- **Report Generation** – Adjuster-facing PDF reports with analysis results
+- **Review Workflow** – Inline field editing, approval/revoke flow, and review-gated ASC export
+
+## How It Works
+
+The service converts filled insurance claim forms (PDFs) into structured data through a five-stage pipeline:
+
+1. **Data Preparation** – Handle scanned/image-based PDFs and extract text
+2. **Key Extraction** – Extract form fields using LLM-based structured extraction
+3. **Policy Mapping** – Retrieve relevant policy data based on extracted identifiers
+4. **Analysis Generation** – Evaluate coverage with deterministic checks and LLM reasoning
+5. **Report Generation** – Produce adjuster-facing PDF reports
 
 ## Tech Stack
 
 | Category | Technologies |
 |----------|-------------|
-| **Backend** | Python 3.13, FastAPI |
-| **Frontend** | TypeScript, Next.js, Node.js |
-| **AI/ML** | OpenAI API (GPT models), Azure Document Intelligence |
-| **PDF Processing** | PyPDF, FillPDF, ReportLab |
-| **Data Validation** | Pydantic |
-| **Package Management** | uv (backend), pnpm (frontend) |
-| **Deployment** | Docker |
-
-## Pipeline Architecture
-
-The claim processing pipeline consists of five modular stages:
-
-```
-┌─────────────────┐     ┌─────────────────┐     ┌─────────────────┐
-│  1. Data Prep   │ ──▶ │  2. Key         │ ──▶ │  3. Policy      │
-│  (PDF → Text)   │     │  Extraction     │     │  Mapping        │
-└─────────────────┘     └─────────────────┘     └─────────────────┘
-                                                        │
-                                                        │
-                                                        ▼
-                        ┌─────────────────┐     ┌─────────────────┐
-                        │  5. Report      │ ◀── │  4. Analysis    │
-                        │  Generation     │     │  Generation     │
-                        └─────────────────┘     └─────────────────┘
-```
-
-| Stage | Purpose |
-|-------|---------|
-| **Data Preparation** | Handle scanned/image-based PDFs and prepare textual input |
-| **Key Extraction** | Extract form fields using LLM-based structured extraction |
-| **Policy Mapping** | Retrieve relevant policy data based on extracted identifiers |
-| **Analysis Generation** | Evaluate coverage status with deterministic checks + LLM reasoning |
-| **Report Generation** | Create adjuster-facing PDF reports with analysis results |
-
-## UI Field Guide
-
-Some UI fields are intentionally concise. Here is a quick guide to how to interpret them:
-
-- **Conclusion** – The overall coverage outcome for the claim (covered / not covered / uncertain) based on policy checks and model reasoning.
-- **Confidence** – A per-field certainty score (0–100%) that reflects extraction reliability; lower scores should be reviewed first.
-- **Key Fields** – The subset of extracted fields mapped to ASC-required inputs.
-- **Low Confidence Fields** – A reviewer shortcut list of fields currently below 80% confidence.
-- **All Fields** – The full extraction output, including optional or unmapped values.
-- **Summary** – A short, adjuster-friendly explanation of the decision and any missing or conflicting data.
-- **Review Actions** – Use the pencil icon to edit a field and the check icon to approve; clicking an approved check reverts to the original extracted value/confidence and marks the field for review again.
-- **Export to ASC** – Enabled only when all fields are approved in the UI review flow.
-
-## Project Structure
-
-```
-claim-assistant/
-├── src/claim_assistant/    # Backend source code (FastAPI)
-├── frontend/               # Next.js frontend application
-├── data/                   # Sample forms, policies, and processing runs
-├── notebooks/              # Jupyter notebooks for experimentation
-├── metrics/                # Evaluation metrics and benchmarks
-├── Dockerfile              # Container configuration
-└── pyproject.toml          # Backend dependencies and metadata
-```
+| Backend | Python 3.13, FastAPI, Uvicorn |
+| Frontend | TypeScript, Next.js, React, Tailwind CSS |
+| AI/ML | OpenAI, Azure Document Intelligence |
+| PDF | PyPDF2, FillPDF, ReportLab |
+| Data | Pydantic, pandas |
+| Package Management | uv (backend), pnpm (frontend) |
+| Deployment | Docker, GitHub Actions, Google Artifact Registry |
 
 ## Getting Started
 
 ### Prerequisites
 
-- Python 3.13+
-- Node.js 18+
-- [uv](https://github.com/astral-sh/uv) package manager (backend)
-- [pnpm](https://pnpm.io/) package manager (frontend)
-- OpenAI API key
-- Azure Document Intelligence credentials
+- Python 3.13+ / [uv](https://docs.astral.sh/uv/)
+- Node.js 24+ / [pnpm](https://pnpm.io/)
 
-### Installation
+### Installation & Running
 
 ```bash
-# Clone the repository
-git clone https://github.com/Symfa-Inc/claim-assistant.git
-cd claim-assistant
-
-# Install backend dependencies
+# Backend
+cd backend
+cp .env.example src/claim_assistant/.env    # Add your API keys
 uv sync
+uv run uvicorn claim_assistant.web.main:app --reload
 
-# Install frontend dependencies
+# Frontend (in a separate terminal)
 cd frontend
 pnpm install
+pnpm dev
 ```
 
-### Configuration
-
-Provide your OpenAI API key using one of the following methods:
-
-**Option 1: Environment Variable**
-```bash
-export OPENAI_API_KEY="your_api_key_here"
-```
-
-**Option 2: .env File** (recommended for local development)
-
-Create `src/claim_assistant/.env` with:
-```
-OPENAI_API_KEY=your_api_key_here
-```
-
-### Running Locally
-
-**Backend:**
-```bash
-uvicorn claim_assistant.web.main:app --port 8000 --reload
-```
-
-**Frontend:**
-```bash
-cd frontend
-pnpm run dev
-```
-
-The backend API will be available at `http://localhost:8000` and the frontend at `http://localhost:3000`.
+Open [http://localhost:3000](http://localhost:3000) (frontend) and [http://localhost:8000/docs](http://localhost:8000/docs) (API docs).
 
 ## License
 
-This project is licensed under the Apache License 2.0 – see the [LICENSE](LICENSE) file for details.
+[MIT](LICENSE)
