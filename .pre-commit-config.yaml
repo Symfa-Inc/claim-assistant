@@ -6,7 +6,7 @@ repos:
   - id: check-yaml
   - id: check-toml
   - id: check-json
-    exclude: ^src/claim_assistant/web/frontend/node_modules/
+    exclude: ^frontend/node_modules/
   - id: check-ast
   - id: trailing-whitespace
   - id: end-of-file-fixer
@@ -29,7 +29,7 @@ repos:
   rev: v2.6.0
   hooks:
   - id: pycln
-    args: [--config, pyproject.toml]
+    args: [--config, backend/pyproject.toml]
 
 # import sorter
 - repo: https://github.com/timothycrosley/isort
@@ -37,7 +37,7 @@ repos:
   hooks:
   - id: isort
     files: \.(py)$
-    args: [--settings-path, pyproject.toml]
+    args: [--settings-path, backend/pyproject.toml]
 
 # ruff
 - repo: https://github.com/astral-sh/ruff-pre-commit
@@ -52,10 +52,10 @@ repos:
   rev: v1.19.1
   hooks:
   - id: mypy
-    args: [--config-file, pyproject.toml, --non-interactive]
+    args: [--config-file, backend/pyproject.toml, --non-interactive]
 
 # exclude given directories from checking
 exclude: |
   (?x)(
-      ^src/models/
+      ^backend/src/models/
   )
