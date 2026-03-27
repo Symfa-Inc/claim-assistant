@@ -15,7 +15,7 @@
 
 AI-powered automation tool that streamlines insurance claim handling with LLM-based PDF processing, policy matching, and coverage analysis.
 
-**[Live Demo](https://claim-assistant.symfa.ai/)** · **[GitHub](https://github.com/Symfa-Inc/claim-assistant)** · **[Confluence](https://symfa.atlassian.net/wiki/spaces/SYMFA/pages/5012094982)**
+**[Live Demo](https://claim-assistant.symfa.ai/)** · **[GitHub](https://github.com/Symfa-Inc/claim-assistant)** · **[Confluence](https://symfa.atlassian.net/wiki/x/AQDaGgE)**
 
 </div>
 
@@ -72,7 +72,7 @@ cp .env.example src/claim_assistant/.env    # Add your API keys
 uv sync
 uv run uvicorn claim_assistant.web.main:app --reload
 
-# Frontend (in a separate terminal)
+# Frontend
 cd frontend
 pnpm install
 pnpm dev
