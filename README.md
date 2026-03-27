@@ -16,6 +16,25 @@ AI-powered automation tool that streamlines insurance claim handling with LLM-ba
 <img src=".assets/claim-assistant.png" width="800" alt="Claim Assistant Preview">
 </div>
 
+## Features
+
+- **Automated PDF Processing** -- Extract key fields from filled claim forms using Azure Document Intelligence and LLM pipelines
+- **Policy Matching** -- Map extracted claim data against policy records for validation
+- **Confidence Scoring** -- Per-field certainty scores with low-confidence queue for reviewer prioritization
+- **Coverage Analysis** -- Structured summaries with coverage status (covered / not covered / uncertain)
+- **Report Generation** -- Adjuster-facing PDF reports with analysis results
+- **Review Workflow** -- Inline field editing, approval/revoke flow, and review-gated ASC export
+
+## How It Works
+
+The service converts filled insurance claim forms (PDFs) into structured data through a five-stage pipeline:
+
+1. **Data Preparation** -- Handle scanned/image-based PDFs and extract text
+2. **Key Extraction** -- Extract form fields using LLM-based structured extraction
+3. **Policy Mapping** -- Retrieve relevant policy data based on extracted identifiers
+4. **Analysis Generation** -- Evaluate coverage with deterministic checks and LLM reasoning
+5. **Report Generation** -- Produce adjuster-facing PDF reports
+
 ## Tech Stack
 
 | Category | Technologies |
