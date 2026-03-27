@@ -4,6 +4,8 @@ import time
 from datetime import datetime
 from pathlib import Path
 
+from openai import OpenAI
+
 from claim_assistant import PROJECT_DIR
 from claim_assistant.processors import (
     ClaimValidationProcessor,
@@ -16,7 +18,6 @@ from claim_assistant.schemas import CoverageAnalysisResponse
 from claim_assistant.schemas.form import Form
 from claim_assistant.schemas.mock_policy_record import MockPolicyRecord
 from claim_assistant.settings import AzureDocumentIntelligenceSettings, OpenAISettings
-from openai import OpenAI
 
 logger = logging.getLogger(__name__)
 

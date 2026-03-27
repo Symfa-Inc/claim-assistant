@@ -1,8 +1,9 @@
 from typing import Any, Literal
 
-from claim_assistant.schemas.bounding_region import BoundingRegion
 from pydantic import BaseModel, Field, create_model, field_validator
 from pydantic_core.core_schema import ValidationInfo
+
+from claim_assistant.schemas.bounding_region import BoundingRegion
 
 
 class FieldEvidence(BaseModel):

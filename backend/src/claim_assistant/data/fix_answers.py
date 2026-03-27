@@ -2,10 +2,11 @@ import json
 import logging
 from pathlib import Path
 
+from openai import OpenAI
+
 from claim_assistant import PROJECT_DIR
 from claim_assistant.data.settings import OpenAISettings
 from claim_assistant.schemas.form import Form
-from openai import OpenAI
 
 
 def process_form_from_json(

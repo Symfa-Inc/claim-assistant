@@ -3,9 +3,10 @@ import os
 import random
 from datetime import timedelta
 
+from openai import OpenAI
+
 from claim_assistant import PROJECT_DIR
 from claim_assistant.data.settings import OpenAISettings
-from openai import OpenAI
 
 # configure your OpenAI key
 settings = OpenAISettings()

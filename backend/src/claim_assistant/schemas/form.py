@@ -2,8 +2,9 @@ import json
 from pathlib import Path
 from typing import Any, get_type_hints
 
-from claim_assistant.schemas.form_field import FormField
 from pydantic import BaseModel, Field, create_model
+
+from claim_assistant.schemas.form_field import FormField
 
 
 class Form(BaseModel):

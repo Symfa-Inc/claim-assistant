@@ -3,10 +3,11 @@ import os
 import time
 from typing import Any
 
+from openai import OpenAI, OpenAIError
+
 from claim_assistant import PROJECT_DIR
 from claim_assistant.data.settings import OpenAISettings
 from claim_assistant.schemas.form import Form  # your validation class
-from openai import OpenAI, OpenAIError
 
 # -------------------------------
 # Configuration

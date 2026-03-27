@@ -1,7 +1,8 @@
 import os
 
-from claim_assistant import PROJECT_DIR
 from pydantic_settings import BaseSettings
+
+from claim_assistant import PROJECT_DIR
 
 
 class OpenAISettings(BaseSettings):

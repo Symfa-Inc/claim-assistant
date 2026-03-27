@@ -1,6 +1,7 @@
 from azure.ai.formrecognizer import AnalyzeResult
-from claim_assistant.schemas.bounding_region import BoundingRegion
 from pydantic import BaseModel, Field
+
+from claim_assistant.schemas.bounding_region import BoundingRegion
 
 
 class KeyValuePair(BaseModel):

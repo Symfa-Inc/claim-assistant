@@ -2,6 +2,7 @@ import json
 from collections import defaultdict
 
 import numpy as np
+
 from claim_assistant.metrics.moverscore.moverscore import word_mover_score
 
 

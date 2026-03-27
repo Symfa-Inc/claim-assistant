@@ -2,8 +2,9 @@ import json
 import logging
 from pathlib import Path
 
-from claim_assistant.schemas import Form, FormFieldAnswer, MockPolicyRecord
 from Levenshtein import ratio
+
+from claim_assistant.schemas import Form, FormFieldAnswer, MockPolicyRecord
 
 
 class PolicyDatabaseProcessor:

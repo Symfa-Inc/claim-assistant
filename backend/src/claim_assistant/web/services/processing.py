@@ -8,6 +8,8 @@ from datetime import datetime
 from pathlib import Path
 from typing import Callable
 
+from openai import OpenAI
+
 from claim_assistant.processors.claim_validation_processor import (
     ClaimValidationProcessor,
 )
@@ -22,7 +24,6 @@ from claim_assistant.schemas.coverage_analysis_response import CoverageAnalysisR
 from claim_assistant.schemas.form import Form
 from claim_assistant.schemas.mock_policy_record import MockPolicyRecord
 from claim_assistant.settings import AzureDocumentIntelligenceSettings, OpenAISettings
-from openai import OpenAI
 
 # If you already expose PROJECT_DIR somewhere central, prefer importing it.
 # This mirrors what you used in main.py.

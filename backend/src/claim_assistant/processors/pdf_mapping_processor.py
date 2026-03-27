@@ -4,13 +4,14 @@ from datetime import datetime
 from pathlib import Path
 from typing import Any
 
-from claim_assistant.schemas import CoverageAnalysisResponse
 from PyPDF2 import PdfReader, PdfWriter
 from reportlab.lib import colors
 from reportlab.lib.pagesizes import letter
 from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet
 from reportlab.lib.units import inch
 from reportlab.platypus import Paragraph, SimpleDocTemplate, Spacer, Table, TableStyle
+
+from claim_assistant.schemas import CoverageAnalysisResponse
 
 
 class PDFMappingProcessor:

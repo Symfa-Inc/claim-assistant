@@ -2,12 +2,13 @@ import logging
 from pathlib import Path
 from typing import Literal
 
+from openai import OpenAI
+from pydantic import BaseModel
+
 from claim_assistant.schemas import Form, FormFieldAnswer
 from claim_assistant.schemas.document_intelligence_response import (
     DocumentIntelligenceResponse,
 )
-from openai import OpenAI
-from pydantic import BaseModel
 
 
 class DIKVFormFillingProcessor:
@@ -168,13 +169,14 @@ if __name__ == "__main__":
     import logging
     import os
 
+    from openai import OpenAI
+
     from claim_assistant import PROJECT_DIR
     from claim_assistant.data.settings import OpenAISettings
     from claim_assistant.processors.di_key_value_extraction_processor import (
         DIKeyValueExtractionProcessor,
     )
     from claim_assistant.settings import AzureDocumentIntelligenceSettings
-    from openai import OpenAI
 
     # -------------------------------------------------
     # Inputs

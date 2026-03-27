@@ -2,14 +2,15 @@ import logging
 from datetime import datetime
 from typing import Literal
 
+from Levenshtein import ratio as levenshtein_ratio
+from openai import OpenAI
+
 from claim_assistant.schemas import (
     CoverageAnalysisLLM,
     CoverageAnalysisResponse,
     Form,
     MockPolicyRecord,
 )
-from Levenshtein import ratio as levenshtein_ratio
-from openai import OpenAI
 
 
 class ClaimValidationProcessor:

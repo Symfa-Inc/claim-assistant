@@ -4,6 +4,14 @@ import json
 from pathlib import Path
 from typing import Any
 
+from fastapi import Depends, FastAPI, File
+from fastapi import Form
+from fastapi import Form as FormField
+from fastapi import HTTPException, UploadFile
+from fastapi.responses import JSONResponse
+from fastapi.staticfiles import StaticFiles
+from starlette.responses import FileResponse
+
 from claim_assistant.schemas.coverage_analysis_response import CoverageAnalysisResponse
 from claim_assistant.web.deps import (
     get_logger,
@@ -12,13 +20,6 @@ from claim_assistant.web.deps import (
     get_registry,
 )
 from claim_assistant.web.services.processing import ProcessRequest
-from fastapi import Depends, FastAPI, File
-from fastapi import Form
-from fastapi import Form as FormField
-from fastapi import HTTPException, UploadFile
-from fastapi.responses import JSONResponse
-from fastapi.staticfiles import StaticFiles
-from starlette.responses import FileResponse
 
 
 def create_app() -> FastAPI:

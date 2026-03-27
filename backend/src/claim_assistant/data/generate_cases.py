@@ -2,10 +2,11 @@ import json
 import logging
 from pathlib import Path
 
-from claim_assistant import PROJECT_DIR
-from claim_assistant.data.settings import OpenAISettings
 from openai import OpenAI
 from pydantic import BaseModel, Field
+
+from claim_assistant import PROJECT_DIR
+from claim_assistant.data.settings import OpenAISettings
 
 
 # ----------------------------------------------------------------------

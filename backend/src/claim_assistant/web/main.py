@@ -6,6 +6,9 @@ from pathlib import Path
 from typing import Annotated
 
 import anyio
+from fastapi import Depends, FastAPI, File, Form, HTTPException, Request, UploadFile
+from fastapi.middleware.cors import CORSMiddleware
+
 from claim_assistant.web.deps import (
     get_logger,
     get_processing_service,
@@ -13,8 +16,6 @@ from claim_assistant.web.deps import (
     get_registry,
 )
 from claim_assistant.web.services.processing import ProcessRequest
-from fastapi import Depends, FastAPI, File, Form, HTTPException, Request, UploadFile
-from fastapi.middleware.cors import CORSMiddleware
 
 
 def _run_processing(

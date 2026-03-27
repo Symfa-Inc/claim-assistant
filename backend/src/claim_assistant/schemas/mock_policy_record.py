@@ -1,8 +1,9 @@
 from datetime import date
 from pathlib import Path
 
-from claim_assistant import PROJECT_DIR
 from pydantic import BaseModel, Field
+
+from claim_assistant import PROJECT_DIR
 
 
 class MockPolicyRecord(BaseModel):
