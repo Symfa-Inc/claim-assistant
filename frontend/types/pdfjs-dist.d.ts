@@ -1,4 +1,4 @@
-declare module 'pdfjs-dist/legacy/build/pdf' {
-    const pdfjsLib: any
-    export = pdfjsLib
+declare module "pdfjs-dist/legacy/build/pdf" {
+  const pdfjsLib: unknown;
+  export = pdfjsLib;
 }

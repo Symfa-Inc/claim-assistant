@@ -45,15 +45,25 @@ def _run_processing(
 
 app = FastAPI(debug=True)
 
-origins = [
-    # "http://localhost:3000",
-    os.getenv("FRONTEND_URL", "http://localhost:3000"),
-    # Add more origins here
-]
+
+def _load_frontend_origins() -> list[str]:
+    raw = os.getenv("CORS_ORIGINS") or os.getenv("FRONTEND_ORIGINS")
+    if raw:
+        return [origin.strip() for origin in raw.split(",") if origin.strip()]
+
+    default_origins = [
+        "http://localhost:3000",
+        "https://claim-assistant.symfa.ai",
+    ]
+    frontend_url = os.getenv("FRONTEND_URL")
+    if frontend_url and frontend_url not in default_origins:
+        default_origins.append(frontend_url)
+    return default_origins
+
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,
+    allow_origins=_load_frontend_origins(),
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

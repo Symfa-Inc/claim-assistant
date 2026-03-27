@@ -15,11 +15,11 @@
 
 **AI-powered automation tool that streamlines insurance claim handling by replacing repetitive adjuster tasks with intelligent LLM-based assistants.**
 
-🔗 **Live Demo**: [https://claim-assistant.ai.symfa.com](https://claim-assistant.ai.symfa.com/)
+🔗 **Live Demo**: [claim-assistant.symfa.ai](https://claim-assistant.symfa.ai/)
 
-💻 **GitHub**: [https://github.com/Symfa-Inc/claim-assistant](https://github.com/Symfa-Inc/claim-assistant)
+💻 **GitHub**: [Symfa-Inc/claim-assistant](https://github.com/Symfa-Inc/claim-assistant)
 
-📘 **Confluence**: [https://symfa.atlassian.net/wiki/x/AQDaGgE](https://symfa.atlassian.net/wiki/x/AQDaGgE)
+📘 **Confluence**: [Project Description](https://symfa.atlassian.net/wiki/x/AQDaGgE)
 
 </div>
 
@@ -104,13 +104,15 @@ Some UI fields are intentionally concise. Here is a quick guide to how to interp
 
 ```
 claim-assistant/
-├── src/claim_assistant/    # Backend source code (FastAPI)
-├── frontend/               # Next.js frontend application
-├── data/                   # Sample forms, policies, and processing runs
-├── notebooks/              # Jupyter notebooks for experimentation
-├── metrics/                # Evaluation metrics and benchmarks
-├── Dockerfile              # Container configuration
-└── pyproject.toml          # Backend dependencies and metadata
+├── src/claim_assistant/             # Backend source code (FastAPI)
+├── frontend/                        # Next.js frontend application
+├── data/                            # Sample forms, policies, and processing runs
+├── notebooks/                       # Jupyter notebooks for experimentation
+├── metrics/                         # Evaluation metrics and benchmarks
+├── Dockerfile                       # Backend container
+├── claim-assistant-portainer-stack.txt
+├── pyproject.toml                   # Backend dependencies and metadata
+└── README.md
 ```
 
 ## Getting Started
@@ -118,7 +120,7 @@ claim-assistant/
 ### Prerequisites
 
 - Python 3.13+
-- Node.js 18+
+- Node.js 24+
 - [uv](https://github.com/astral-sh/uv) package manager (backend)
 - [pnpm](https://pnpm.io/) package manager (frontend)
 - OpenAI API key
@@ -165,10 +167,39 @@ uvicorn claim_assistant.web.main:app --port 8000 --reload
 **Frontend:**
 ```bash
 cd frontend
-pnpm run dev
+pnpm dev
 ```
 
 The backend API will be available at `http://localhost:8000` and the frontend at `http://localhost:3000`.
+
+### Running with Docker
+
+**Backend** (from the repository root):
+```bash
+docker build -t claim-assistant-backend .
+docker run -p 8000:8000 \
+  -e OPENAI_API_KEY=your_api_key_here \
+  -e DOCUMENTINTELLIGENCE_ENDPOINT=your_endpoint_here \
+  -e DOCUMENTINTELLIGENCE_API_KEY=your_api_key_here \
+  -e CORS_ORIGINS=http://localhost:3000 \
+  claim-assistant-backend
+```
+
+**Frontend** (from `frontend/`):
+```bash
+cd frontend
+docker build -t claim-assistant-frontend .
+docker run -p 3000:3000 -e API_URL=http://localhost:8000 claim-assistant-frontend
+```
+
+Set `API_URL` to your backend URL when the frontend runs in a different host/container.
+
+## Deployment
+
+- GAR repository: `claim-assistant`
+- Frontend domain: `https://claim-assistant.symfa.ai`
+- Backend domain: `https://api-claim-assistant.symfa.ai`
+- Portainer stack template: `claim-assistant-portainer-stack.txt`
 
 ## License
 

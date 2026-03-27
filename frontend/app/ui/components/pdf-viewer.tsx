@@ -1,888 +1,904 @@
-'use client'
+"use client";
 
-import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react'
-import type { ChangeEvent, DragEvent } from 'react'
-import { Document, Page, pdfjs } from 'react-pdf'
-import axios from 'axios'
-import type { ClaimField } from '@/app/ui/components/claim-table'
-import api from '@/app/utils/api'
+import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
+import type { ChangeEvent, DragEvent } from "react";
+import { Document, Page, pdfjs } from "react-pdf";
+import axios from "axios";
+import type { ClaimField } from "@/app/ui/components/claim-table";
+import api from "@/app/utils/api";
 
-if (typeof window !== 'undefined') {
-    pdfjs.GlobalWorkerOptions.workerSrc = new URL(
-        'pdfjs-dist/build/pdf.worker.min.mjs',
-        import.meta.url
-    ).toString()
+if (typeof window !== "undefined") {
+  pdfjs.GlobalWorkerOptions.workerSrc = new URL(
+    "pdfjs-dist/build/pdf.worker.min.mjs",
+    import.meta.url,
+  ).toString();
 }
 
 export interface HighlightBox {
-    id: string
-    fieldId: string
-    page: number
-    vertices: Array<{ x: number; y: number }>
+  id: string;
+  fieldId: string;
+  page: number;
+  vertices: Array<{ x: number; y: number }>;
 }
 
 interface OwnProps {
-    src?: string
-    isProcessing?: boolean
-    onProcess?: () => void
-    onReset?: () => void
-    onProcessed?: (
-        fields: ClaimField[],
-        keyFields: ClaimField[],
-        boxes: HighlightBox[],
-        summary: BackendSummary | null
-    ) => void
-    highlightFieldId?: string | null
-    highlightBoxes?: HighlightBox[]
+  src?: string;
+  isProcessing?: boolean;
+  onProcess?: () => void;
+  onReset?: () => void;
+  onProcessed?: (
+    fields: ClaimField[],
+    keyFields: ClaimField[],
+    boxes: HighlightBox[],
+    summary: BackendSummary | null,
+  ) => void;
+  highlightFieldId?: string | null;
+  highlightBoxes?: HighlightBox[];
 }
 
 interface BackendBoundingRegion {
-    page: number
-    polygon: number[]
+  page: number;
+  polygon: number[];
 }
 
 interface BackendFormEvidence {
-    confidence?: number | null
-    bounding_region?: BackendBoundingRegion | null
+  confidence?: number | null;
+  bounding_region?: BackendBoundingRegion | null;
 }
 
 interface BackendFormAnswer {
-    value?: unknown
-    evidences?: BackendFormEvidence[]
+  value?: unknown;
+  evidences?: BackendFormEvidence[];
 }
 
 interface BackendFormField {
-    text: string
-    alias?: string | null
-    answer?: BackendFormAnswer
+  text: string;
+  alias?: string | null;
+  answer?: BackendFormAnswer;
 }
 
 interface BackendResponse {
-    form?: BackendFormField[]
-    executive_summary?: string
-    confidence?: number
-    conclusion?: string
+  form?: BackendFormField[];
+  executive_summary?: string;
+  confidence?: number;
+  conclusion?: string;
 }
 
 interface BackendSummary {
-    executiveSummary: string
-    confidence: number | null
-    conclusion: string | null
+  executiveSummary: string;
+  confidence: number | null;
+  conclusion: string | null;
+}
+
+const DEFAULT_FORM_ID = "FL:FL__form_dg_POL123456789.pdf";
+
+function getFormFilePath(formId: string): string | null {
+  if (!formId || formId === "generic") {
+    return null;
+  }
+
+  const [state, raw] = formId.split(":");
+  if (!state || !raw) {
+    return null;
+  }
+
+  const fileName = raw.split("__")[1];
+  return fileName ? `/forms/${state}/${fileName}` : null;
 }
 
 export default function AppPdfViewer({
-    src,
-    isProcessing = false,
-    onProcess,
-    onReset,
-    onProcessed,
-    highlightFieldId,
-    highlightBoxes = [],
+  src,
+  isProcessing = false,
+  onProcess,
+  onReset,
+  onProcessed,
+  highlightFieldId,
+  highlightBoxes = [],
 }: OwnProps) {
-    const containerRef = useRef<HTMLDivElement | null>(null)
-    const lastSizeRef = useRef<{ w: number; h: number } | null>(null)
-    const scrollRef = useRef<HTMLDivElement | null>(null)
-    const wheelAccumulatorRef = useRef(0)
-    const wheelResetRef = useRef<ReturnType<typeof setTimeout> | null>(null)
-    const processAbortRef = useRef<AbortController | null>(null)
-    const [error, setError] = useState<string | null>(null)
-    const [file, setFile] = useState<File | string | null>(src ?? null)
-    const [fileName, setFileName] = useState<string | null>(null)
-    const [selectedForm, setSelectedForm] = useState('FL:FL__form_dg_POL123456789.pdf')
-    const [containerWidth, setContainerWidth] = useState(0)
-    const [containerHeight, setContainerHeight] = useState(0)
-    const [numPages, setNumPages] = useState<number | null>(null)
-    const [zoomOffset, setZoomOffset] = useState(0)
-    const [pageSizes, setPageSizes] = useState<Record<number, {
-        width: number
-        height: number
-        viewBox?: [number, number, number, number]
-    }>>({})
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  const lastSizeRef = useRef<{ w: number; h: number } | null>(null);
+  const scrollRef = useRef<HTMLDivElement | null>(null);
+  const wheelAccumulatorRef = useRef(0);
+  const wheelResetRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const processAbortRef = useRef<AbortController | null>(null);
+  const [error, setError] = useState<string | null>(null);
+  const [file, setFile] = useState<File | string | null>(
+    src ?? getFormFilePath(DEFAULT_FORM_ID),
+  );
+  const [fileName, setFileName] = useState<string | null>(null);
+  const [selectedForm, setSelectedForm] = useState(DEFAULT_FORM_ID);
+  const [containerWidth, setContainerWidth] = useState(0);
+  const [containerHeight, setContainerHeight] = useState(0);
+  const [numPages, setNumPages] = useState<number | null>(null);
+  const [zoomOffset, setZoomOffset] = useState(0);
+  const [pageSizes, setPageSizes] = useState<
+    Record<
+      number,
+      {
+        width: number;
+        height: number;
+        viewBox?: [number, number, number, number];
+      }
+    >
+  >({});
 
-    const autoFitZoom = useMemo(() => {
-        const firstPage = pageSizes[1]
-        if (!firstPage || containerWidth <= 0 || containerHeight <= 0) return 1
-        const padding = 32
-        const fitW = (containerWidth - padding) / firstPage.width
-        const fitH = (containerHeight - padding) / firstPage.height
-        return Math.min(fitW, fitH)
-    }, [containerWidth, containerHeight, pageSizes])
+  const autoFitZoom = useMemo(() => {
+    const firstPage = pageSizes[1];
+    if (!firstPage || containerWidth <= 0 || containerHeight <= 0) return 1;
+    const padding = 32;
+    const fitW = (containerWidth - padding) / firstPage.width;
+    const fitH = (containerHeight - padding) / firstPage.height;
+    return Math.min(fitW, fitH);
+  }, [containerWidth, containerHeight, pageSizes]);
 
-    const zoom = Math.max(0.25, autoFitZoom + zoomOffset)
+  const zoom = Math.max(0.25, autoFitZoom + zoomOffset);
 
-    useEffect(() => {
-        const target = scrollRef.current
-        if (!target) return
-        const updateSize = () => {
-            const nextWidth = target.clientWidth ?? 0
-            const nextHeight = target.clientHeight ?? 0
-            const prev = lastSizeRef.current
-            if (!prev || prev.w !== nextWidth || prev.h !== nextHeight) {
-                lastSizeRef.current = { w: nextWidth, h: nextHeight }
-                setContainerWidth(nextWidth)
-                setContainerHeight(nextHeight)
-            }
-        }
-        updateSize()
-        const observer = new ResizeObserver(updateSize)
-        observer.observe(target)
-        return () => observer.disconnect()
-    }, [])
+  useEffect(() => {
+    const target = scrollRef.current;
+    if (!target) return;
+    const updateSize = () => {
+      const nextWidth = target.clientWidth ?? 0;
+      const nextHeight = target.clientHeight ?? 0;
+      const prev = lastSizeRef.current;
+      if (!prev || prev.w !== nextWidth || prev.h !== nextHeight) {
+        lastSizeRef.current = { w: nextWidth, h: nextHeight };
+        setContainerWidth(nextWidth);
+        setContainerHeight(nextHeight);
+      }
+    };
+    updateSize();
+    const observer = new ResizeObserver(updateSize);
+    observer.observe(target);
+    return () => observer.disconnect();
+  }, []);
 
-    useEffect(() => {
-        if (!src) return
-        setFile(src)
-    }, [src])
-
-    useEffect(() => {
-        const [state, raw] = 'FL:FL__form_dg_POL123456789.pdf'.split(':')
-        const fileName = raw.split('__')[1]
-        setFile(`/forms/${state}/${fileName}`)
-    }, [])
-
-    const handleFile = (nextFile: File) => {
-        const isPdf =
-            nextFile.type === 'application/pdf' ||
-            !nextFile.type ||
-            nextFile.name.toLowerCase().endsWith('.pdf')
-        if (!isPdf) {
-            setError('Please choose a valid PDF file.')
-            return
-        }
-
-        setZoomOffset(0)
-        setFile(nextFile)
-        setFileName(nextFile.name)
-        setSelectedForm('generic')
-        setError(null)
+  const handleFile = (nextFile: File) => {
+    const isPdf =
+      nextFile.type === "application/pdf" ||
+      !nextFile.type ||
+      nextFile.name.toLowerCase().endsWith(".pdf");
+    if (!isPdf) {
+      setError("Please choose a valid PDF file.");
+      return;
     }
 
-    const handleFileChange = (event: ChangeEvent<HTMLInputElement>) => {
-        const input = event.target
-        const nextFile = input.files?.[0]
-        if (nextFile) {
-            handleFile(nextFile)
-        }
-        input.value = ''
+    setZoomOffset(0);
+    setFile(nextFile);
+    setFileName(nextFile.name);
+    setSelectedForm("generic");
+    setError(null);
+  };
+
+  const handleFileChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const input = event.target;
+    const nextFile = input.files?.[0];
+    if (nextFile) {
+      handleFile(nextFile);
+    }
+    input.value = "";
+  };
+
+  const handleDrop = (event: DragEvent<HTMLDivElement>) => {
+    event.preventDefault();
+    const nextFile = event.dataTransfer.files?.[0];
+    if (nextFile) {
+      handleFile(nextFile);
+    }
+  };
+
+  const handleReset = () => {
+    const defaultFormId = DEFAULT_FORM_ID;
+    const defaultFilePath = getFormFilePath(defaultFormId);
+    const isDefaultFile = file === defaultFilePath;
+    processAbortRef.current?.abort();
+    setZoomOffset(0);
+    setFileName(null);
+    if (!isDefaultFile) {
+      setNumPages(null);
+      setPageSizes({});
+    }
+    setError(null);
+    setSelectedForm(defaultFormId);
+    if (!isDefaultFile && defaultFilePath) {
+      setFile(defaultFilePath);
+    }
+    onReset?.();
+  };
+
+  const handleProcessPdf = async () => {
+    if (!file) return;
+    onProcess?.();
+    processAbortRef.current?.abort();
+    const abortController = new AbortController();
+    processAbortRef.current = abortController;
+
+    let pdfFile: File;
+
+    if (file instanceof File) {
+      pdfFile = file;
+    } else {
+      const res = await fetch(file);
+      const blob = await res.blob();
+      pdfFile = new File([blob], file.split("/").pop() ?? "form.pdf", {
+        type: "application/pdf",
+      });
     }
 
-    const handleDrop = (event: DragEvent<HTMLDivElement>) => {
-        event.preventDefault()
-        const nextFile = event.dataTransfer.files?.[0]
-        if (nextFile) {
-            handleFile(nextFile)
+    const formData = new FormData();
+    formData.append("file", pdfFile);
+    formData.append("form_id", selectedForm);
+
+    try {
+      const response = await api.post<BackendResponse>("/process", formData, {
+        signal: abortController.signal,
+      });
+      const aliasLabels: Record<string, string> = {
+        policy_id: "Policy Number",
+        first_name: "First Name",
+        last_name: "Last Name",
+        date_of_incident: "Incident Date",
+        report_date: "Report Date",
+        loss_type: "Type of Loss",
+        loss_description: "Loss Description",
+        loss_location: "Loss Location",
+      };
+      const keyFieldOrder = [
+        "policy_id",
+        "first_name",
+        "last_name",
+        "date_of_incident",
+        "report_date",
+        "loss_type",
+        "loss_description",
+        "loss_location",
+      ];
+      const keyFieldOrderIndex = new Map(
+        keyFieldOrder.map((alias, index) => [alias, index]),
+      );
+      console.log(response);
+      const fields: ClaimField[] = [];
+      const keyFields: ClaimField[] = [];
+      const keyFieldFallbackIndex = new Map<string, number>();
+      const boxes: HighlightBox[] = [];
+      (response.data?.form ?? []).forEach((field, index) => {
+        const fieldId = field.alias ?? `field_${index}`;
+        const rawValue = field.answer?.value;
+        const value =
+          rawValue === null || rawValue === undefined
+            ? ""
+            : typeof rawValue === "string"
+              ? rawValue
+              : JSON.stringify(rawValue);
+        const confidence = field.answer?.evidences?.[0]?.confidence;
+        const allFieldsLabel = field.text;
+        const keyFieldLabel = field.alias
+          ? (aliasLabels[field.alias] ?? field.text)
+          : field.text;
+        const mappedField: ClaimField = {
+          id: fieldId,
+          label: allFieldsLabel,
+          value,
+          confidence:
+            typeof confidence === "number"
+              ? `${Math.round(confidence * 100)}%`
+              : "",
+        };
+        fields.push(mappedField);
+        if (field.alias) {
+          const keyField: ClaimField = {
+            id: fieldId,
+            label: keyFieldLabel,
+            value,
+            confidence: mappedField.confidence,
+          };
+          keyFieldFallbackIndex.set(fieldId, keyFields.length);
+          keyFields.push(keyField);
         }
+
+        (field.answer?.evidences ?? []).forEach((evidence, evidenceIndex) => {
+          const region = evidence.bounding_region;
+          if (!region || !Array.isArray(region.polygon)) return;
+          if (region.polygon.length < 8) return;
+
+          const points: Array<{ x: number; y: number }> = [];
+          for (let i = 0; i + 1 < region.polygon.length; i += 2) {
+            const x = Number(region.polygon[i]);
+            const y = Number(region.polygon[i + 1]);
+            if (Number.isNaN(x) || Number.isNaN(y)) continue;
+            points.push({ x, y });
+          }
+          if (points.length < 4) return;
+
+          const xs = points.map((point) => point.x);
+          const ys = points.map((point) => point.y);
+          const minX = Math.min(...xs);
+          const maxX = Math.max(...xs);
+          const minY = Math.min(...ys);
+          const maxY = Math.max(...ys);
+
+          boxes.push({
+            id: `${fieldId}_${evidenceIndex}`,
+            fieldId,
+            page: region.page,
+            vertices: [
+              { x: minX, y: minY },
+              { x: maxX, y: minY },
+              { x: maxX, y: maxY },
+              { x: minX, y: maxY },
+            ],
+          });
+        });
+      });
+      const orderedKeyFields = [...keyFields].sort((a, b) => {
+        const aOrder = keyFieldOrderIndex.get(a.id);
+        const bOrder = keyFieldOrderIndex.get(b.id);
+        if (aOrder !== undefined && bOrder !== undefined) {
+          return aOrder - bOrder;
+        }
+        if (aOrder !== undefined) return -1;
+        if (bOrder !== undefined) return 1;
+        const aFallback = keyFieldFallbackIndex.get(a.id) ?? 0;
+        const bFallback = keyFieldFallbackIndex.get(b.id) ?? 0;
+        return aFallback - bFallback;
+      });
+      const summary: BackendSummary | null = response.data?.executive_summary
+        ? {
+            executiveSummary: response.data.executive_summary,
+            confidence:
+              typeof response.data.confidence === "number"
+                ? response.data.confidence
+                : null,
+            conclusion: response.data.conclusion ?? null,
+          }
+        : null;
+      onProcessed?.(fields, orderedKeyFields, boxes, summary);
+    } catch (error) {
+      if (
+        axios.isCancel(error) ||
+        (error as { code?: string })?.code === "ERR_CANCELED"
+      ) {
+        return;
+      }
+      setError("Failed to process PDF.");
+      onProcessed?.([], [], [], null);
+    }
+  };
+
+  const selectForm = (formId: string) => {
+    if (!formId) return;
+    if (formId === "generic") {
+      setFile(null);
+      setFileName(null);
+      setError(null);
+      setSelectedForm(formId);
+      return;
     }
 
-    const handleReset = () => {
-        const defaultFormId = 'FL:FL__form_dg_POL123456789.pdf'
-        const defaultFilePath = '/forms/FL/form_dg_POL123456789.pdf'
-        const isDefaultFile = file === defaultFilePath
-        processAbortRef.current?.abort()
-        setZoomOffset(0)
-        setFileName(null)
-        if (!isDefaultFile) {
-            setNumPages(null)
-            setPageSizes({})
-        }
-        setError(null)
-        setSelectedForm(defaultFormId)
-        if (!isDefaultFile) {
-            setFile(defaultFilePath)
-        }
-        onReset?.()
-    }
+    const [state, raw] = formId.split(":");
+    const fileName = raw.split("__")[1];
 
-    const handleProcessPdf = async () => {
-        if (!file) return
-        onProcess?.()
-        processAbortRef.current?.abort()
-        const abortController = new AbortController()
-        processAbortRef.current = abortController
+    setFile(`/forms/${state}/${fileName}`);
+    setSelectedForm(formId);
+  };
 
-        let pdfFile: File
+  useEffect(() => {
+    const container = scrollRef.current;
+    if (!container) return;
 
-        if (file instanceof File) {
-            pdfFile = file
-        } else {
-            const res = await fetch(file)
-            const blob = await res.blob()
-            pdfFile = new File([blob], file.split('/').pop() ?? 'form.pdf', {
-                type: 'application/pdf',
-            })
-        }
+    const handleWheelZoom = (event: WheelEvent) => {
+      if (!event.ctrlKey) return;
+      event.preventDefault();
+      event.stopPropagation();
+      wheelAccumulatorRef.current += event.deltaY;
+      const threshold = 40;
+      const steps = Math.trunc(wheelAccumulatorRef.current / threshold);
+      if (steps !== 0) {
+        const stepCount = Math.max(-1, Math.min(1, steps));
+        wheelAccumulatorRef.current -= stepCount * threshold;
+        setZoomOffset((value) => value + stepCount * -0.05);
+      }
 
-        const formData = new FormData()
-        formData.append('file', pdfFile)
-        formData.append('form_id', selectedForm)
+      if (wheelResetRef.current) {
+        clearTimeout(wheelResetRef.current);
+      }
+      wheelResetRef.current = setTimeout(() => {
+        wheelAccumulatorRef.current = 0;
+      }, 120);
+    };
 
-        try {
-            const response = await api.post<BackendResponse>('/process', formData, {
-                signal: abortController.signal,
-            })
-            const aliasLabels: Record<string, string> = {
-                policy_id: 'Policy Number',
-                first_name: 'First Name',
-                last_name: 'Last Name',
-                date_of_incident: 'Incident Date',
-                report_date: 'Report Date',
-                loss_type: 'Type of Loss',
-                loss_description: 'Loss Description',
-                loss_location: 'Loss Location',
-            }
-            const keyFieldOrder = [
-                'policy_id',
-                'first_name',
-                'last_name',
-                'date_of_incident',
-                'report_date',
-                'loss_type',
-                'loss_description',
-                'loss_location',
-            ]
-            const keyFieldOrderIndex = new Map(
-                keyFieldOrder.map((alias, index) => [alias, index])
-            )
-            console.log(response)
-            const fields: ClaimField[] = []
-            const keyFields: ClaimField[] = []
-            const keyFieldFallbackIndex = new Map<string, number>()
-            const boxes: HighlightBox[] = []
-                ; (response.data?.form ?? []).forEach((field, index) => {
-                    const fieldId = field.alias ?? `field_${index}`
-                    const rawValue = field.answer?.value
-                    const value =
-                        rawValue === null || rawValue === undefined
-                            ? ''
-                            : typeof rawValue === 'string'
-                                ? rawValue
-                                : JSON.stringify(rawValue)
-                    const confidence = field.answer?.evidences?.[0]?.confidence
-                    const allFieldsLabel = field.text
-                    const keyFieldLabel = field.alias
-                        ? aliasLabels[field.alias] ?? field.text
-                        : field.text
-                    const mappedField: ClaimField = {
-                        id: fieldId,
-                        label: allFieldsLabel,
-                        value,
-                        confidence:
-                            typeof confidence === 'number'
-                                ? `${Math.round(confidence * 100)}%`
-                                : '',
-                    }
-                    fields.push(mappedField)
-                    if (field.alias) {
-                        const keyField: ClaimField = {
-                            id: fieldId,
-                            label: keyFieldLabel,
-                            value,
-                            confidence: mappedField.confidence,
-                        }
-                        keyFieldFallbackIndex.set(fieldId, keyFields.length)
-                        keyFields.push(keyField)
-                    }
+    container.addEventListener("wheel", handleWheelZoom, {
+      passive: false,
+    });
 
-                    ; (field.answer?.evidences ?? []).forEach(
-                        (evidence, evidenceIndex) => {
-                            const region = evidence.bounding_region
-                            if (!region || !Array.isArray(region.polygon)) return
-                            if (region.polygon.length < 8) return
+    return () => {
+      container.removeEventListener("wheel", handleWheelZoom);
+      if (wheelResetRef.current) {
+        clearTimeout(wheelResetRef.current);
+      }
+    };
+  }, []);
 
-                            const points: Array<{ x: number; y: number }> = []
-                            for (
-                                let i = 0;
-                                i + 1 < region.polygon.length;
-                                i += 2
-                            ) {
-                                const x = Number(region.polygon[i])
-                                const y = Number(region.polygon[i + 1])
-                                if (Number.isNaN(x) || Number.isNaN(y)) continue
-                                points.push({ x, y })
-                            }
-                            if (points.length < 4) return
+  useLayoutEffect(() => {
+    const container = scrollRef.current;
+    if (!container) return;
+    const maxScrollLeft = container.scrollWidth - container.clientWidth;
+    container.scrollLeft = maxScrollLeft > 0 ? maxScrollLeft / 2 : 0;
+  }, [zoom, containerWidth, pageSizes, numPages]);
 
-                            const xs = points.map((point) => point.x)
-                            const ys = points.map((point) => point.y)
-                            const minX = Math.min(...xs)
-                            const maxX = Math.max(...xs)
-                            const minY = Math.min(...ys)
-                            const maxY = Math.max(...ys)
+  const canProcess = Boolean(file) && !isProcessing;
+  const activeBoxes = highlightFieldId
+    ? highlightBoxes.filter((box) => box.fieldId === highlightFieldId)
+    : [];
 
-                            boxes.push({
-                                id: `${fieldId}_${evidenceIndex}`,
-                                fieldId,
-                                page: region.page,
-                                vertices: [
-                                    { x: minX, y: minY },
-                                    { x: maxX, y: minY },
-                                    { x: maxX, y: maxY },
-                                    { x: minX, y: maxY },
-                                ],
-                            })
-                        }
-                    )
-                })
-            const orderedKeyFields = [...keyFields].sort((a, b) => {
-                const aOrder = keyFieldOrderIndex.get(a.id)
-                const bOrder = keyFieldOrderIndex.get(b.id)
-                if (aOrder !== undefined && bOrder !== undefined) {
-                    return aOrder - bOrder
-                }
-                if (aOrder !== undefined) return -1
-                if (bOrder !== undefined) return 1
-                const aFallback = keyFieldFallbackIndex.get(a.id) ?? 0
-                const bFallback = keyFieldFallbackIndex.get(b.id) ?? 0
-                return aFallback - bFallback
-            })
-            const summary: BackendSummary | null =
-                response.data?.executive_summary
-                    ? {
-                        executiveSummary: response.data.executive_summary,
-                        confidence:
-                            typeof response.data.confidence === 'number'
-                                ? response.data.confidence
-                                : null,
-                        conclusion: response.data.conclusion ?? null,
-                    }
-                    : null
-            onProcessed?.(fields, orderedKeyFields, boxes, summary)
-        } catch (error) {
-            if (
-                axios.isCancel(error) ||
-                (error as { code?: string })?.code === 'ERR_CANCELED'
-            ) {
-                return
-            }
-            setError('Failed to process PDF.')
-            onProcessed?.([], [], [], null)
-        }
-    }
+  /* ── Drag-to-pan (middle / right mouse button) ── */
+  const isPanningRef = useRef(false);
+  const panStartRef = useRef({ x: 0, y: 0, scrollLeft: 0, scrollTop: 0 });
 
-    const selectForm = (formId: string) => {
-        if (!formId) return
-        if (formId === 'generic') {
-            setFile(null)
-            setFileName(null)
-            setError(null)
-            setSelectedForm(formId)
-            return
-        }
+  useEffect(() => {
+    const container = scrollRef.current;
+    if (!container) return;
 
+    const handlePointerDown = (e: PointerEvent) => {
+      // middle button (1) or right button (2)
+      if (e.button !== 1 && e.button !== 2) return;
+      e.preventDefault();
+      isPanningRef.current = true;
+      panStartRef.current = {
+        x: e.clientX,
+        y: e.clientY,
+        scrollLeft: container.scrollLeft,
+        scrollTop: container.scrollTop,
+      };
+      container.setPointerCapture(e.pointerId);
+      container.style.cursor = "grabbing";
+    };
 
-        const [state, raw] = formId.split(':')
-        const fileName = raw.split('__')[1]
+    const handlePointerMove = (e: PointerEvent) => {
+      if (!isPanningRef.current) return;
+      const dx = e.clientX - panStartRef.current.x;
+      const dy = e.clientY - panStartRef.current.y;
+      container.scrollLeft = panStartRef.current.scrollLeft - dx;
+      container.scrollTop = panStartRef.current.scrollTop - dy;
+    };
 
-        setFile(`/forms/${state}/${fileName}`)
-        setSelectedForm(formId)
-    }
+    const handlePointerUp = (e: PointerEvent) => {
+      if (!isPanningRef.current) return;
+      isPanningRef.current = false;
+      container.releasePointerCapture(e.pointerId);
+      container.style.cursor = "";
+    };
 
+    const handleContextMenu = (e: MouseEvent) => {
+      // prevent context menu so right-click drag works
+      if (isPanningRef.current) {
+        e.preventDefault();
+      }
+    };
 
-    useEffect(() => {
-        const container = scrollRef.current
-        if (!container) return
+    container.addEventListener("pointerdown", handlePointerDown);
+    container.addEventListener("pointermove", handlePointerMove);
+    container.addEventListener("pointerup", handlePointerUp);
+    container.addEventListener("pointercancel", handlePointerUp);
+    container.addEventListener("contextmenu", handleContextMenu);
 
-        const handleWheelZoom = (event: WheelEvent) => {
-            if (!event.ctrlKey) return
-            event.preventDefault()
-            event.stopPropagation()
-            wheelAccumulatorRef.current += event.deltaY
-            const threshold = 40
-            const steps = Math.trunc(wheelAccumulatorRef.current / threshold)
-            if (steps !== 0) {
-                const stepCount = Math.max(-1, Math.min(1, steps))
-                wheelAccumulatorRef.current -= stepCount * threshold
-                setZoomOffset((value) => value + stepCount * -0.05)
-            }
+    return () => {
+      container.removeEventListener("pointerdown", handlePointerDown);
+      container.removeEventListener("pointermove", handlePointerMove);
+      container.removeEventListener("pointerup", handlePointerUp);
+      container.removeEventListener("pointercancel", handlePointerUp);
+      container.removeEventListener("contextmenu", handleContextMenu);
+    };
+  }, []);
 
-            if (wheelResetRef.current) {
-                clearTimeout(wheelResetRef.current)
-            }
-            wheelResetRef.current = setTimeout(() => {
-                wheelAccumulatorRef.current = 0
-            }, 120)
-        }
+  const buildPolygonPoints = (vertices: Array<{ x: number; y: number }>) =>
+    vertices.map((point) => `${point.x},${point.y}`).join(" ");
 
-        container.addEventListener('wheel', handleWheelZoom, {
-            passive: false,
-        })
-
-        return () => {
-            container.removeEventListener('wheel', handleWheelZoom)
-            if (wheelResetRef.current) {
-                clearTimeout(wheelResetRef.current)
-            }
-        }
-    }, [])
-
-    useLayoutEffect(() => {
-        const container = scrollRef.current
-        if (!container) return
-        const maxScrollLeft = container.scrollWidth - container.clientWidth
-        container.scrollLeft = maxScrollLeft > 0 ? maxScrollLeft / 2 : 0
-    }, [zoom, containerWidth, pageSizes, numPages])
-
-    const canProcess = Boolean(file) && !isProcessing
-    const activeBoxes = highlightFieldId
-        ? highlightBoxes.filter((box) => box.fieldId === highlightFieldId)
-        : []
-
-    /* ── Drag-to-pan (middle / right mouse button) ── */
-    const isPanningRef = useRef(false)
-    const panStartRef = useRef({ x: 0, y: 0, scrollLeft: 0, scrollTop: 0 })
-
-    useEffect(() => {
-        const container = scrollRef.current
-        if (!container) return
-
-        const handlePointerDown = (e: PointerEvent) => {
-            // middle button (1) or right button (2)
-            if (e.button !== 1 && e.button !== 2) return
-            e.preventDefault()
-            isPanningRef.current = true
-            panStartRef.current = {
-                x: e.clientX,
-                y: e.clientY,
-                scrollLeft: container.scrollLeft,
-                scrollTop: container.scrollTop,
-            }
-            container.setPointerCapture(e.pointerId)
-            container.style.cursor = 'grabbing'
-        }
-
-        const handlePointerMove = (e: PointerEvent) => {
-            if (!isPanningRef.current) return
-            const dx = e.clientX - panStartRef.current.x
-            const dy = e.clientY - panStartRef.current.y
-            container.scrollLeft = panStartRef.current.scrollLeft - dx
-            container.scrollTop = panStartRef.current.scrollTop - dy
-        }
-
-        const handlePointerUp = (e: PointerEvent) => {
-            if (!isPanningRef.current) return
-            isPanningRef.current = false
-            container.releasePointerCapture(e.pointerId)
-            container.style.cursor = ''
-        }
-
-        const handleContextMenu = (e: MouseEvent) => {
-            // prevent context menu so right-click drag works
-            if (isPanningRef.current) {
-                e.preventDefault()
-            }
-        }
-
-        container.addEventListener('pointerdown', handlePointerDown)
-        container.addEventListener('pointermove', handlePointerMove)
-        container.addEventListener('pointerup', handlePointerUp)
-        container.addEventListener('pointercancel', handlePointerUp)
-        container.addEventListener('contextmenu', handleContextMenu)
-
-        return () => {
-            container.removeEventListener('pointerdown', handlePointerDown)
-            container.removeEventListener('pointermove', handlePointerMove)
-            container.removeEventListener('pointerup', handlePointerUp)
-            container.removeEventListener('pointercancel', handlePointerUp)
-            container.removeEventListener('contextmenu', handleContextMenu)
-        }
-    }, [])
-
-    const buildPolygonPoints = (vertices: Array<{ x: number; y: number }>) =>
-        vertices.map((point) => `${point.x},${point.y}`).join(' ')
-
-    return (
-        <div className="flex h-full min-h-0 w-full flex-1 flex-col gap-2">
-            {/* ── Toolbar ────────────────────────────── */}
-            <div className="flex flex-row flex-wrap items-center gap-x-2.5 gap-y-2 rounded-xl border border-slate-200 bg-slate-50/60 px-3 py-2 w-full max-w-full min-w-0">
-                {/* Zoom controls */}
-                <div className="flex items-center gap-1.5 shrink-0">
-                    <button
-                        type="button"
-                        onClick={() => setZoomOffset((v) => v - 0.05)}
-                        className="flex h-7 w-7 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-500 transition-all hover:border-slate-300 hover:text-slate-700"
-                        aria-label="Zoom out"
-                    >
-                        <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M20 12H4" />
-                        </svg>
-                    </button>
-                    <button
-                        type="button"
-                        onClick={() => setZoomOffset(0)}
-                        className="min-w-[44px] text-center text-[13px] font-medium tabular-nums text-slate-600 hover:text-slate-800 transition-colors"
-                        title="Reset to fit width"
-                    >
-                        {Math.round(zoom * 100)}%
-                    </button>
-                    <button
-                        type="button"
-                        onClick={() => setZoomOffset((v) => v + 0.05)}
-                        className="flex h-7 w-7 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-500 transition-all hover:border-slate-300 hover:text-slate-700"
-                        aria-label="Zoom in"
-                    >
-                        <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
-                        </svg>
-                    </button>
-                    <button
-                        type="button"
-                        onClick={() => {
-                            const container = scrollRef.current
-                            const firstPage = pageSizes[1]
-                            if (container && firstPage) {
-                                const padding = 32
-                                const fitW = (container.clientWidth - padding) / firstPage.width
-                                const fitH = (container.clientHeight - padding) / firstPage.height
-                                const fitZoom = Math.min(fitW, fitH)
-                                setZoomOffset(fitZoom - autoFitZoom)
-                            } else {
-                                setZoomOffset(0)
-                            }
-                            if (container) {
-                                container.scrollTop = 0
-                                const maxScrollLeft = container.scrollWidth - container.clientWidth
-                                container.scrollLeft = maxScrollLeft > 0 ? maxScrollLeft / 2 : 0
-                            }
-                        }}
-                        className="flex h-7 w-7 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-500 transition-all hover:border-slate-300 hover:text-slate-700"
-                        aria-label="Fit to container"
-                        title="Fit to container"
-                    >
-                        <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5v-4m0 4h-4m4 0l-5-5" />
-                        </svg>
-                    </button>
-                </div>
-
-                <div className="h-5 w-px bg-slate-200 shrink-0" />
-
-                {/* Upload button */}
-                <label className="cursor-pointer inline-flex items-center gap-1.5 rounded-md border border-slate-200 bg-white px-2.5 py-1.5 text-[13px] font-medium text-slate-600 transition-all hover:border-slate-300 hover:text-slate-700 shrink-0">
-                    <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                    </svg>
-                    Select
-                    <input
-                        type="file"
-                        accept="application/pdf"
-                        className="hidden"
-                        onChange={handleFileChange}
-                    />
-                </label>
-
-                <div className="h-5 w-px bg-slate-200 shrink-0" />
-
-                {/* Form selector */}
-                <div className="flex min-w-0 items-center gap-2">
-                    <span className="shrink-0 text-[13px] font-medium text-slate-500">
-                        Form
-                    </span>
-                    <select
-                        value={selectedForm}
-                        onChange={(event) =>
-                            selectForm(event.target.value)
-                        }
-                        className="w-full min-w-0 max-w-[10rem] truncate rounded-md border border-slate-200 bg-white px-2.5 pr-8 py-1.5 text-[13px] text-slate-600 transition-all hover:border-slate-300 focus:border-accent-light focus:ring-2 focus:ring-accent-subtle"
-                        aria-label="Form"
-                    >
-                        <option value="FL:FL__form_dg_POL123456789.pdf">Florida digital</option>
-                        <option value="FL:FL__form_hw_POL987654321.pdf">Florida handwritten</option>
-                        <option value="NH:NH__form_dg_SIC123456789.pdf">New Hampshire digital</option>
-                        <option value="NH:NH__form_hw_POL123456789.pdf">New Hampshire handwritten</option>
-                        <option value="WI:WI__form_dg_POL987654321.pdf">Wisconsin digital</option>
-                        <option value="WI:WI__form_hw_POL123456789.pdf">Wisconsin handwritten</option>
-                        <option value="generic">Custom</option>
-                    </select>
-                </div>
-
-                <div className="flex-1 min-w-0" />
-
-                {/* Actions */}
-                <div className="flex items-center gap-2 shrink-0 ml-auto">
-                    <button
-                        type="button"
-                        onClick={handleReset}
-                        disabled={!isProcessing}
-                        aria-disabled={!isProcessing}
-                        className={`inline-flex items-center gap-1.5 whitespace-nowrap rounded-lg px-3.5 py-1.5 text-[13px] font-medium transition-all ${
-                            isProcessing
-                                ? 'btn-danger text-white shadow-sm'
-                                : 'cursor-not-allowed bg-slate-100 text-slate-400'
-                        }`}
-                    >
-                        <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12a7.5 7.5 0 0112.728-5.303l1.772 1.773M19.5 12a7.5 7.5 0 01-12.728 5.303L5 15.53M5 8.25V5.25h3" />
-                        </svg>
-                        Reset
-                    </button>
-                    <button
-                        type="button"
-                        onClick={() => {
-                            if (canProcess) {
-                                handleProcessPdf()
-                            }
-                        }}
-                        className={`inline-flex items-center gap-1.5 whitespace-nowrap rounded-lg px-3.5 py-1.5 text-[13px] font-medium text-white transition-all ${canProcess
-                            ? 'btn-primary shadow-sm'
-                            : 'cursor-not-allowed bg-slate-300'
-                            }`}
-                        aria-disabled={!canProcess}
-                    >
-                        {isProcessing ? (
-                            <>
-                                <svg className="h-3.5 w-3.5 animate-spin" fill="none" viewBox="0 0 24 24">
-                                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
-                                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
-                                </svg>
-                                Processing...
-                            </>
-                        ) : (
-                            <>
-                                <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                                </svg>
-                                Process Form
-                            </>
-                        )}
-                    </button>
-                </div>
-            </div>
-
-            {/* ── PDF content area ───────────────────── */}
-            <div
-                ref={scrollRef}
-                className="flex-1 min-h-0 overflow-auto rounded-lg border border-slate-200 bg-white"
+  return (
+    <div className="flex h-full min-h-0 w-full flex-1 flex-col gap-2">
+      {/* ── Toolbar ────────────────────────────── */}
+      <div className="flex flex-row flex-wrap items-center gap-x-2.5 gap-y-2 rounded-xl border border-slate-200 bg-slate-50/60 px-3 py-2 w-full max-w-full min-w-0">
+        {/* Zoom controls */}
+        <div className="flex items-center gap-1.5 shrink-0">
+          <button
+            type="button"
+            onClick={() => setZoomOffset((v) => v - 0.05)}
+            className="flex h-7 w-7 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-500 transition-all hover:border-slate-300 hover:text-slate-700"
+            aria-label="Zoom out"
+          >
+            <svg
+              className="h-3.5 w-3.5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2}
             >
-                <div
-                    ref={containerRef}
-                    onDrop={handleDrop}
-                    onDragOver={(event) => event.preventDefault()}
-                    className="flex min-h-full min-w-max flex-col items-center gap-2 text-[13px] text-slate-500"
-                >
-                    {error && (
-                        <p className="text-[13px] text-red-500">{error}</p>
-                    )}
-                    {!file ? (
-                        <div className="flex w-full flex-1 flex-col items-center justify-center text-center">
-                            <p className="text-[13px] text-slate-500">
-                                Drop a PDF here or upload one to preview.
-                            </p>
-                            <p className="mt-1 text-xs text-slate-400">
-                                Supported: PDF files only
-                            </p>
-                        </div>
-                    ) : (
-                        <div className="flex w-max flex-col items-center">
-                            {(() => {
-                                const displayName =
-                                    fileName ??
-                                    (typeof file === 'string'
-                                        ? file.split('/').pop()
-                                        : null)
-                                return (
-                                    <p
-                                        className={`text-xs text-slate-400 ${displayName ? '' : 'invisible'}`}
-                                    >
-                                        {displayName ?? 'placeholder'}
-                                    </p>
-                                )
-                            })()}
-                            <Document
-                                file={file}
-                                onLoadSuccess={({ numPages }) => {
-                                    setNumPages(numPages)
-                                }}
-                                onLoadError={() => {
-                                    setError('Failed to load PDF preview.')
-                                }}
-                                loading=""
-                                error=""
-                            >
-                                {numPages &&
-                                    Array.from({ length: numPages }).map(
-                                        (_, index) => {
-                                            const pageNumber = index + 1
-                                            const size = pageSizes[pageNumber]
-                                            const baseScale = 1
-                                            const renderedHeight = undefined
-                                            const baseGap = 24
-                                            const scaledHeight = size
-                                                ? size.height * zoom
-                                                : undefined
-                                            const scaledWidth = size
-                                                ? size.width * zoom
-                                                : undefined
-                                            const displayScale =
-                                                baseScale * zoom
-                                            return (
-                                                <div
-                                                    key={`page_${pageNumber}`}
-                                                    className="relative mx-auto"
-                                                    data-page-number={pageNumber}
-                                                    style={
-                                                        scaledHeight || scaledWidth
-                                                            ? {
-                                                                width: scaledWidth,
-                                                                height:
-                                                                    scaledHeight,
-                                                                marginBottom:
-                                                                    pageNumber ===
-                                                                        numPages
-                                                                        ? 0
-                                                                        : baseGap *
-                                                                        Math.max(
-                                                                            1,
-                                                                            zoom
-                                                                        ),
-                                                            }
-                                                            : undefined
-                                                    }
-                                                >
-                                                    <div
-                                                        className="relative"
-                                                    >
-                                                        <Page
-                                                            pageNumber={pageNumber}
-                                                            scale={displayScale}
-                                                            renderTextLayer={false}
-                                                            renderAnnotationLayer={
-                                                                false
-                                                            }
-                                                            onLoadSuccess={(
-                                                                page
-                                                            ) => {
-                                                                const viewport =
-                                                                    page.getViewport(
-                                                                        {
-                                                                            scale: 1,
-                                                                        }
-                                                                    )
-                                                                setPageSizes(
-                                                                    (prev) => ({
-                                                                        ...prev,
-                                                                        [pageNumber]:
-                                                                        {
-                                                                            width:
-                                                                                viewport.width,
-                                                                            height:
-                                                                                viewport.height,
-                                                                            viewBox:
-                                                                                viewport.viewBox as [
-                                                                                    number,
-                                                                                    number,
-                                                                                    number,
-                                                                                    number
-                                                                                ],
-                                                                        },
-                                                                    })
-                                                                )
-                                                            }}
-                                                        />
-                                                        {activeBoxes
-                                                            .filter(
-                                                                (box) =>
-                                                                    box.page ===
-                                                                    pageNumber
-                                                            )
-                                                            .map((box) => {
-                                                                const maxX = Math.max(
-                                                                    ...box.vertices.map(
-                                                                        (point) =>
-                                                                            point.x
-                                                                    )
-                                                                )
-                                                                const maxY = Math.max(
-                                                                    ...box.vertices.map(
-                                                                        (point) =>
-                                                                            point.y
-                                                                    )
-                                                                )
-                                                                const isNormalized =
-                                                                    maxX <= 1.5 &&
-                                                                    maxY <= 1.5
-                                                                const isInches =
-                                                                    maxX <= 30 &&
-                                                                    maxY <= 30
-                                                                const isOversized =
-                                                                    size &&
-                                                                    (maxX >
-                                                                        size.width *
-                                                                        1.2 ||
-                                                                        maxY >
-                                                                        size.height *
-                                                                        1.2)
-                                                                const scaleX =
-                                                                    size && isNormalized
-                                                                        ? size.width
-                                                                        : isInches
-                                                                            ? 72
-                                                                            : isOversized
-                                                                                ? size.width /
-                                                                                maxX
-                                                                                : 1
-                                                                const scaleY =
-                                                                    size && isNormalized
-                                                                        ? size.height
-                                                                        : isInches
-                                                                            ? 72
-                                                                            : isOversized
-                                                                                ? size.height /
-                                                                                maxY
-                                                                                : 1
-                                                                const viewBox =
-                                                                    size?.viewBox
-                                                                const offsetX = viewBox
-                                                                    ? -viewBox[0]
-                                                                    : 0
-                                                                const offsetY = viewBox
-                                                                    ? -viewBox[1]
-                                                                    : 0
-                                                                const adjustedPoints =
-                                                                    buildPolygonPoints(
-                                                                        box.vertices.map(
-                                                                            (
-                                                                                point
-                                                                            ) => ({
-                                                                                x:
-                                                                                    (point.x *
-                                                                                        scaleX +
-                                                                                        offsetX) *
-                                                                                    displayScale,
-                                                                                y:
-                                                                                    (point.y *
-                                                                                        scaleY +
-                                                                                        offsetY) *
-                                                                                    displayScale,
-                                                                            })
-                                                                        )
-                                                                    )
-                                                                return (
-                                                                    <svg
-                                                                        key={box.id}
-                                                                        className="pointer-events-none absolute inset-0 h-full w-full"
-                                                                    >
-                                                                    <polygon
-                                                                            points={
-                                                                                adjustedPoints
-                                                                            }
-                                                                            className="fill-teal-200/25 stroke-teal-600"
-                                                                            strokeWidth={
-                                                                                2
-                                                                            }
-                                                                        />
-                                                                    </svg>
-                                                                )
-                                                            })}
-                                                    </div>
-                                                </div>
-                                            )
-                                        }
-                                    )}
-                            </Document>
-                        </div>
-                    )}
-                </div>
-            </div>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M20 12H4" />
+            </svg>
+          </button>
+          <button
+            type="button"
+            onClick={() => setZoomOffset(0)}
+            className="min-w-[44px] text-center text-[13px] font-medium tabular-nums text-slate-600 hover:text-slate-800 transition-colors"
+            title="Reset to fit width"
+          >
+            {Math.round(zoom * 100)}%
+          </button>
+          <button
+            type="button"
+            onClick={() => setZoomOffset((v) => v + 0.05)}
+            className="flex h-7 w-7 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-500 transition-all hover:border-slate-300 hover:text-slate-700"
+            aria-label="Zoom in"
+          >
+            <svg
+              className="h-3.5 w-3.5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2}
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M12 4v16m8-8H4"
+              />
+            </svg>
+          </button>
+          <button
+            type="button"
+            onClick={() => {
+              const container = scrollRef.current;
+              const firstPage = pageSizes[1];
+              if (container && firstPage) {
+                const padding = 32;
+                const fitW =
+                  (container.clientWidth - padding) / firstPage.width;
+                const fitH =
+                  (container.clientHeight - padding) / firstPage.height;
+                const fitZoom = Math.min(fitW, fitH);
+                setZoomOffset(fitZoom - autoFitZoom);
+              } else {
+                setZoomOffset(0);
+              }
+              if (container) {
+                container.scrollTop = 0;
+                const maxScrollLeft =
+                  container.scrollWidth - container.clientWidth;
+                container.scrollLeft =
+                  maxScrollLeft > 0 ? maxScrollLeft / 2 : 0;
+              }
+            }}
+            className="flex h-7 w-7 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-500 transition-all hover:border-slate-300 hover:text-slate-700"
+            aria-label="Fit to container"
+            title="Fit to container"
+          >
+            <svg
+              className="h-3.5 w-3.5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2}
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5v-4m0 4h-4m4 0l-5-5"
+              />
+            </svg>
+          </button>
         </div>
-    )
+
+        <div className="h-5 w-px bg-slate-200 shrink-0" />
+
+        {/* Upload button */}
+        <label className="cursor-pointer inline-flex items-center gap-1.5 rounded-md border border-slate-200 bg-white px-2.5 py-1.5 text-[13px] font-medium text-slate-600 transition-all hover:border-slate-300 hover:text-slate-700 shrink-0">
+          <svg
+            className="h-3.5 w-3.5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth={2}
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+            />
+          </svg>
+          Select
+          <input
+            type="file"
+            accept="application/pdf"
+            className="hidden"
+            onChange={handleFileChange}
+          />
+        </label>
+
+        <div className="h-5 w-px bg-slate-200 shrink-0" />
+
+        {/* Form selector */}
+        <div className="flex min-w-0 items-center gap-2">
+          <span className="shrink-0 text-[13px] font-medium text-slate-500">
+            Form
+          </span>
+          <select
+            value={selectedForm}
+            onChange={(event) => selectForm(event.target.value)}
+            className="w-full min-w-0 max-w-[10rem] truncate rounded-md border border-slate-200 bg-white px-2.5 pr-8 py-1.5 text-[13px] text-slate-600 transition-all hover:border-slate-300 focus:border-accent-light focus:ring-2 focus:ring-accent-subtle"
+            aria-label="Form"
+          >
+            <option value="FL:FL__form_dg_POL123456789.pdf">
+              Florida digital
+            </option>
+            <option value="FL:FL__form_hw_POL987654321.pdf">
+              Florida handwritten
+            </option>
+            <option value="NH:NH__form_dg_SIC123456789.pdf">
+              New Hampshire digital
+            </option>
+            <option value="NH:NH__form_hw_POL123456789.pdf">
+              New Hampshire handwritten
+            </option>
+            <option value="WI:WI__form_dg_POL987654321.pdf">
+              Wisconsin digital
+            </option>
+            <option value="WI:WI__form_hw_POL123456789.pdf">
+              Wisconsin handwritten
+            </option>
+            <option value="generic">Custom</option>
+          </select>
+        </div>
+
+        <div className="flex-1 min-w-0" />
+
+        {/* Actions */}
+        <div className="flex items-center gap-2 shrink-0 ml-auto">
+          <button
+            type="button"
+            onClick={handleReset}
+            disabled={!isProcessing}
+            aria-disabled={!isProcessing}
+            className={`inline-flex items-center gap-1.5 whitespace-nowrap rounded-lg px-3.5 py-1.5 text-[13px] font-medium transition-all ${
+              isProcessing
+                ? "btn-danger text-white shadow-sm"
+                : "cursor-not-allowed bg-slate-100 text-slate-400"
+            }`}
+          >
+            <svg
+              className="h-3.5 w-3.5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2}
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M4.5 12a7.5 7.5 0 0112.728-5.303l1.772 1.773M19.5 12a7.5 7.5 0 01-12.728 5.303L5 15.53M5 8.25V5.25h3"
+              />
+            </svg>
+            Reset
+          </button>
+          <button
+            type="button"
+            onClick={() => {
+              if (canProcess) {
+                handleProcessPdf();
+              }
+            }}
+            className={`inline-flex items-center gap-1.5 whitespace-nowrap rounded-lg px-3.5 py-1.5 text-[13px] font-medium text-white transition-all ${
+              canProcess
+                ? "btn-primary shadow-sm"
+                : "cursor-not-allowed bg-slate-300"
+            }`}
+            aria-disabled={!canProcess}
+          >
+            {isProcessing ? (
+              <>
+                <svg
+                  className="h-3.5 w-3.5 animate-spin"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <circle
+                    className="opacity-25"
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    stroke="currentColor"
+                    strokeWidth="4"
+                  />
+                  <path
+                    className="opacity-75"
+                    fill="currentColor"
+                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                  />
+                </svg>
+                Processing...
+              </>
+            ) : (
+              <>
+                <svg
+                  className="h-3.5 w-3.5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+                  />
+                </svg>
+                Process Form
+              </>
+            )}
+          </button>
+        </div>
+      </div>
+
+      {/* ── PDF content area ───────────────────── */}
+      <div
+        ref={scrollRef}
+        className="flex-1 min-h-0 overflow-auto rounded-lg border border-slate-200 bg-white"
+      >
+        <div
+          ref={containerRef}
+          onDrop={handleDrop}
+          onDragOver={(event) => event.preventDefault()}
+          className="flex min-h-full min-w-max flex-col items-center gap-2 text-[13px] text-slate-500"
+        >
+          {error && <p className="text-[13px] text-red-500">{error}</p>}
+          {!file ? (
+            <div className="flex w-full flex-1 flex-col items-center justify-center text-center">
+              <p className="text-[13px] text-slate-500">
+                Drop a PDF here or upload one to preview.
+              </p>
+              <p className="mt-1 text-xs text-slate-400">
+                Supported: PDF files only
+              </p>
+            </div>
+          ) : (
+            <div className="flex w-max flex-col items-center">
+              {(() => {
+                const displayName =
+                  fileName ??
+                  (typeof file === "string" ? file.split("/").pop() : null);
+                return (
+                  <p
+                    className={`text-xs text-slate-400 ${displayName ? "" : "invisible"}`}
+                  >
+                    {displayName ?? "placeholder"}
+                  </p>
+                );
+              })()}
+              <Document
+                file={file}
+                onLoadSuccess={({ numPages }) => {
+                  setNumPages(numPages);
+                }}
+                onLoadError={() => {
+                  setError("Failed to load PDF preview.");
+                }}
+                loading=""
+                error=""
+              >
+                {numPages &&
+                  Array.from({ length: numPages }).map((_, index) => {
+                    const pageNumber = index + 1;
+                    const size = pageSizes[pageNumber];
+                    const baseScale = 1;
+                    const baseGap = 24;
+                    const scaledHeight = size ? size.height * zoom : undefined;
+                    const scaledWidth = size ? size.width * zoom : undefined;
+                    const displayScale = baseScale * zoom;
+                    return (
+                      <div
+                        key={`page_${pageNumber}`}
+                        className="relative mx-auto"
+                        data-page-number={pageNumber}
+                        style={
+                          scaledHeight || scaledWidth
+                            ? {
+                                width: scaledWidth,
+                                height: scaledHeight,
+                                marginBottom:
+                                  pageNumber === numPages
+                                    ? 0
+                                    : baseGap * Math.max(1, zoom),
+                              }
+                            : undefined
+                        }
+                      >
+                        <div className="relative">
+                          <Page
+                            pageNumber={pageNumber}
+                            scale={displayScale}
+                            renderTextLayer={false}
+                            renderAnnotationLayer={false}
+                            onLoadSuccess={(page) => {
+                              const viewport = page.getViewport({
+                                scale: 1,
+                              });
+                              setPageSizes((prev) => ({
+                                ...prev,
+                                [pageNumber]: {
+                                  width: viewport.width,
+                                  height: viewport.height,
+                                  viewBox: viewport.viewBox as [
+                                    number,
+                                    number,
+                                    number,
+                                    number,
+                                  ],
+                                },
+                              }));
+                            }}
+                          />
+                          {activeBoxes
+                            .filter((box) => box.page === pageNumber)
+                            .map((box) => {
+                              const maxX = Math.max(
+                                ...box.vertices.map((point) => point.x),
+                              );
+                              const maxY = Math.max(
+                                ...box.vertices.map((point) => point.y),
+                              );
+                              const isNormalized = maxX <= 1.5 && maxY <= 1.5;
+                              const isInches = maxX <= 30 && maxY <= 30;
+                              const isOversized =
+                                size &&
+                                (maxX > size.width * 1.2 ||
+                                  maxY > size.height * 1.2);
+                              const scaleX =
+                                size && isNormalized
+                                  ? size.width
+                                  : isInches
+                                    ? 72
+                                    : isOversized
+                                      ? size.width / maxX
+                                      : 1;
+                              const scaleY =
+                                size && isNormalized
+                                  ? size.height
+                                  : isInches
+                                    ? 72
+                                    : isOversized
+                                      ? size.height / maxY
+                                      : 1;
+                              const viewBox = size?.viewBox;
+                              const offsetX = viewBox ? -viewBox[0] : 0;
+                              const offsetY = viewBox ? -viewBox[1] : 0;
+                              const adjustedPoints = buildPolygonPoints(
+                                box.vertices.map((point) => ({
+                                  x:
+                                    (point.x * scaleX + offsetX) * displayScale,
+                                  y:
+                                    (point.y * scaleY + offsetY) * displayScale,
+                                })),
+                              );
+                              return (
+                                <svg
+                                  key={box.id}
+                                  className="pointer-events-none absolute inset-0 h-full w-full"
+                                >
+                                  <polygon
+                                    points={adjustedPoints}
+                                    className="fill-teal-200/25 stroke-teal-600"
+                                    strokeWidth={2}
+                                  />
+                                </svg>
+                              );
+                            })}
+                        </div>
+                      </div>
+                    );
+                  })}
+              </Document>
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  );
 }
