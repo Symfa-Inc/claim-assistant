@@ -20,7 +20,7 @@
     "next": "16.1.7",
     "next-auth": "5.0.0-beta.25",
     "pdfjs-dist": "5.4.296",
-    "postcss": "8.5.1",
+    "postcss": "8.5.10",
     "postgres": "^3.4.6",
     "react": "latest",
     "react-dom": "latest",
