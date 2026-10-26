@@ -1,0 +1,51 @@
+<template>
+<style>
+@font-face { font-family: "Plus Jakarta Sans"; font-style: normal; font-weight: 200 800; src: url("assets/fonts/PlusJakartaSans-latin.woff2") format("woff2"); }
+#root { position: absolute; inset: 0; overflow: hidden; }
+#sheet-3-sheet { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; background: #f8fafb; }
+#sheet-3-text { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; display: flex; align-items: center; justify-content: center;
+  font-family: "Plus Jakarta Sans", sans-serif; font-weight: 700; font-size: 104px; line-height: 1; letter-spacing: -0.035em; color: #0f172a;
+  -webkit-font-smoothing: antialiased; white-space: pre; }
+#sheet-3-line { display: block; padding-left: 0.035em; }
+#sheet-3-text .acc { color: #0d9488; }
+#sheet-3-bar { position: absolute; left: 0; top: 0; width: 16px; height: 1080px; background: #0d9488; }
+</style>
+<div id="root" data-composition-id="sheet-3" data-width="1920" data-height="1080">
+  <div id="sheet-3-sheet"><div id="sheet-3-text"><span id="sheet-3-line"><span id="sheet-3-w0" class="sheet-3-w">Fix</span> <span id="sheet-3-w1" class="sheet-3-w">what</span> <span id="sheet-3-w2" class="sheet-3-w">the</span> <span id="sheet-3-w3" class="sheet-3-w">model</span> <span id="sheet-3-w4" class="sheet-3-w acc">doubts</span></span></div></div>
+  <div id="sheet-3-bar"></div>
+</div>
+<script>
+(function () {
+  gsap.config({ force3D: false });
+  var tl = gsap.timeline({ paused: true });
+  var D = 3;
+  var NI = { immediateRender: false };
+  gsap.set("#sheet-3-sheet", { clipPath: "inset(0% 100% 0% 0%)" });
+  gsap.set("#sheet-3-bar", { x: -16 });
+  gsap.set("#sheet-3-w0", { opacity: 0 });
+  gsap.set("#sheet-3-w1", { opacity: 0 });
+  gsap.set("#sheet-3-w2", { opacity: 0 });
+  gsap.set("#sheet-3-w3", { opacity: 0 });
+  gsap.set("#sheet-3-w4", { opacity: 0 });
+  // in: bar sweeps, sheet follows it (same duration and ease, so the edge stays on the bar)
+  tl.fromTo("#sheet-3-bar", { x: -16 }, { x: 1920, duration: 0.5, ease: "power2.inOut", immediateRender: false }, 0);
+  tl.fromTo("#sheet-3-sheet", { clipPath: "inset(0% 100% 0% 0%)" }, { clipPath: "inset(0% 0% 0% 0%)", duration: 0.5, ease: "power2.inOut", immediateRender: false }, 0);
+  // words: blur 8 -> 0 and opacity, 0.16 s each, 0.08 s apart, no translate; landed words do not move
+  tl.fromTo("#sheet-3-w0", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, ease: "power2.out", immediateRender: false }, 0.42);
+  tl.set("#sheet-3-w0", { filter: "none" }, 0.59);
+  tl.fromTo("#sheet-3-w1", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, ease: "power2.out", immediateRender: false }, 0.50);
+  tl.set("#sheet-3-w1", { filter: "none" }, 0.67);
+  tl.fromTo("#sheet-3-w2", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, ease: "power2.out", immediateRender: false }, 0.58);
+  tl.set("#sheet-3-w2", { filter: "none" }, 0.75);
+  tl.fromTo("#sheet-3-w3", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, ease: "power2.out", immediateRender: false }, 0.66);
+  tl.set("#sheet-3-w3", { filter: "none" }, 0.83);
+  tl.fromTo("#sheet-3-w4", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, ease: "power2.out", immediateRender: false }, 0.74);
+  tl.set("#sheet-3-w4", { filter: "none" }, 0.91);
+  // out: the bar sweeps again and the sheet is cut away behind it
+  tl.fromTo("#sheet-3-bar", { x: -16 }, { x: 1920, duration: 0.5, ease: "power2.inOut", immediateRender: false }, D - 0.5);
+  tl.fromTo("#sheet-3-sheet", { clipPath: "inset(0% 0% 0% 0%)" }, { clipPath: "inset(0% 0% 0% 100%)", duration: 0.5, ease: "power2.inOut", immediateRender: false }, D - 0.5);
+  window.__timelines = window.__timelines || {};
+  window.__timelines["sheet-3"] = tl;
+})();
+</script>
+</template>
