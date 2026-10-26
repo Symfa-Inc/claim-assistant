@@ -11,7 +11,7 @@ dependencies = [
     "fillpdf>=0.7.3",
     "numpy>=1.26.4",
     "openai>=2.3.0",
-    "pydantic-settings>=2.10.1",
+    "pydantic-settings>=2.14.2",
     "python-Levenshtein",
     "pyemd>=1.0.0",
     "reportlab>=4.4.4",
