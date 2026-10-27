@@ -122,3 +122,73 @@ static holds 0 changed pixels, layout and timing unchanged.
 **Rebuild (v2):** as above, then
 `npx hyperframes render --quality delivery --resolution landscape-4k --crf 8 --output <4k.mp4>` and the ffmpeg
 line above to `../demo-claim-assistant.mp4`.
+
+## House style alignment (2026-10-27) -> `../demo-claim-assistant.mp4` (replaced v2)
+
+Applies the cross-repo house style spec (`DEMO_VIDEO_AUDIT.md` sections B and C-CA). Scenario, copy and app
+timing are unchanged.
+
+**Changes.**
+- P1 render pipeline: one lossy encode instead of two (`tools/render.sh`): `hyperframes render --format
+  png-sequence --resolution landscape-4k` (lossless 3840x2160 PNGs + audio mix), then lanczos to 1920x1080,
+  libx264 High CRF 14 preset slow, yuv420p, 30 fps, AAC 192k, +faststart, no `-tune`, no sharpening, and
+  `-force_key_frames` at the end card start (58.9 s) so no I-frame lands inside the still hold.
+- P1 poster: frame 115 (t = 3.8 s) of the same 4K sequence, 3840x2160 RGB.
+- P2 chapter transition: the clip-path bar wipe is replaced by the house sheet whip (x 2050 -> 0, 0.45 s
+  power3.inOut, 10 px blur clearing 0.25-0.45 s; out from +1.95 s, 0.45 s, blur to 10 px). The 16 px teal bar
+  rides the sheet's leading edge in and its trailing edge out. Cards 3.0 -> 2.4 s, words from +0.40 s. The
+  end card enters with the same whip.
+  Decision: the app timeline is NOT re-timed. Each 2.4 s card is placed so the sheet still fully covers on the
+  same downbeat as before (4.95, 19.80, 29.70 s; sheets now 4.50, 19.35, 29.25 s), so every app beat, click
+  and the music stay in sync; the app host starts at 6.4 s (was 6.9) so the first whip-out reveals it. The
+  0.6 s per card goes to the app's still framing after each reveal (0.6-0.85 s before the cursor appears).
+- P2 cards: `padding-left: 0.035em` and `white-space: pre` removed; `white-space: nowrap`, word-spacing
+  0.11em, and a measured per-card translate (-3/-2, -0.5/-2.5, -3.5/-2 px). Size kept at 104 px: Plus Jakarta
+  Sans gives 78-79 px cap-to-baseline ink there (spec 82 +/- 4 allows 78); 112 px would give ~85 px.
+- P2 Export dialog: the push to the dialog starts at 54.2 s (after the press recovers) and the dialog fades
+  in at 54.58 s, when the push has brought its left edge inside the frame (was: fade-in at 54.06 s under the
+  summary framing, clipped at the left edge until 54.4 s).
+- P2 end card: mark 176 -> 220 px; name 120 -> 144 px (111 px ink: 150 px would give ~117 px, over the 108-114
+  ink range, so the ink rule wins); tagline 44 -> 46 px, one 0.3 s blur-in at 1.75 s; URL 34/600 -> 36/500,
+  blur-in at 2.15 s; mark fill 0.55-1.30 s, name wipe 0.95-1.60 s; measured translates per row. Clip 7.6 ->
+  7.5 s (58.9-66.4 s), root 66.49 -> 66.4 s (1992 frames).
+- P2 music: the bed's baked fade (62.5-65.5 s) is replaced (`tools/recut-bed.py`): the tail from 62.3 s is
+  taken from two bars earlier (the bed repeats bar to bar; lag 4.948 s by cross-correlation, 50 ms
+  equal-power join), then a linear fade 62.8-65.7 s (end card +3.9 s for 2.9 s) and digital silence to 66.4 s.
+- P2 hook poster: lockup out of the centred column to (160, 120), mark 84 -> 90 px, name 40 -> 48 px, gap 20 px;
+  headline 92 -> 104 px at left 160; sub-line 30 -> 32 px; hero column 900 -> 807 px wide, ink right edge 1764.
+- P3: the 0.75 s camera pull-back at 26.6 s is now 0.9 s (callout e moved 27.4 -> 27.5 s, held 1.6 s so it
+  still leaves before the sheet); cursor press scale 0.84 -> 0.86.
+- P3 Confirm Export hover: already present (56.4 s, 0.12 s to #0f766e, press at 56.65 s); measured on the
+  decoded video: button teal (18,149,136) at 56.3 s -> (17,119,111) at 56.6 s. No change.
+
+**Verified on the delivered file** (tools from the audit, run on decoded 1080p frames unless noted).
+- ffprobe: h264 High 1920x1080 30/1 yuv420p, 1992 frames, 66.40 s; aac LC 48 kHz stereo 193 kb/s;
+  30.1 MB (video 3.43 Mb/s). x264 SEI: crf=14.0 ref=5 subme=8 trellis=2 rc_lookahead=50 bframes=3 direct=3
+  b_adapt=1 (this ffmpeg 8.0.1 / x264 core 165 reports b_adapt=1 for `-preset slow`; the spec command was used
+  unchanged). moov before mdat. I-frames at 0, 6.7, 12.47, 19.7, 21.43, 24.1, 31.4, 38.73, 46.0, 51.63, 54.77,
+  58.9 s: none inside the end card hold.
+- Cards (glyph ink, cap top to baseline): "Pick the claim form" dH +0.0 dV +0.0; "Values, traced back to the
+  page" dH +0.0 dV -0.5; "Fix what the model doubts" dH +0.0 dV +0.0 (same on the 4K frames, <= 0.25 px). Ink
+  height 78-79 px. Word gaps 26/30/30, 35/34/26/29/32, 25/29/32/32 px (min 25 >= 24).
+- End card (t = 64.0 s): mark 193x220, wordmark ink 111 px, mark->word gap 60, lockup dH -0.5, tagline dH 0.0,
+  URL dH 0.0; lockup->tagline 95 px; tagline baseline->URL top 54 px (47 px ink to ink, the comma descends);
+  group 320-759, centre 539.5. Elements landed by +2.45 s; frame-to-frame mean |diff| over the hold
+  (61.4-66.37 s) max 0.000 (v2 encode before the key-frame fix: a 0.049 step at 63.1 s).
+- Audio: -17.0 LUFS integrated, true peak -1.5 dBTP, LRA 2.2 LU; fade 62.8-65.7 s; peak < -60 dBFS from 65.7 s
+  (last 0.71 s); music from 0.0 s.
+- Poster: PNG 3840x2160 RGB; on a half-scale copy the mark ink is at (159, 120), 90 px high; headline ink left
+  162, first cap top 295; sub-line 550-627; hero ink right 1764 / 1754; lowest ink 859; all ink in x 159-1764.
+- Dips (`blink.py`, 5 levels): 28 tile hits at 11.2, 33.6, 39.9, 40.47, 41.13, 46.8, 47.2, 47.6, 50.47, 53.63,
+  56.23 s; the v2 file gives the identical list (same times, same tiles, same depths): cursor passes, presses,
+  the typed text and the approve buttons, not fade-ins. None at the cards, the end card, the hook or the dialog.
+- Export dialog: decoded frames at 54.0, 54.2 and 54.4 s show no dialog (backdrop only); at 54.6 s its left
+  edge is at x = 44 and it is whole from then on.
+- Zoom peaks (Laplacian variance, new vs v2): 13.2 s 2002/2004, 26.0 s (3.0x PDF) 6503/6486, 37.0 s 3490/3493,
+  42.0 s 531/529: no softening.
+- `hyperframes check`: lint 0 errors, runtime 0 errors, motion 0, audio 0; layout and contrast findings are the
+  same kept-on-purpose ones listed above (sheet over the app, callout g, dialog over the summary; the app's own
+  slate-400 UI text).
+
+**Rebuild:** `node tools/build-sheets.mjs && node tools/build-app.mjs && python3 tools/build-sfx.py`, then
+`sh tools/render.sh <work_dir>` (video, poster).
