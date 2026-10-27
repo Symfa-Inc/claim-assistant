@@ -5,7 +5,7 @@
   // at 1x and stretches (soft zooms, text flipping between a crisp and a soft copy).
   gsap.config({ force3D: false });
   var tl = gsap.timeline({ paused: true });
-  var APP0 = 6.9; // this scene's host data-start in index.html; every time below is a GLOBAL second
+  var APP0 = 6.4; // this scene's host data-start in index.html; every time below is a GLOBAL second
   var T = function (g) { return Math.max(0, +(g - APP0).toFixed(4)); };
   var FPS = 30;
   var $ = function (id) { return document.getElementById(id); };
@@ -53,7 +53,7 @@
   function curShow(g) { fromTo(CUR, { opacity: 0 }, { opacity: 1, duration: 0.2, ease: "power1.out" }, g); }
   function curHide(g) { to(CUR, { opacity: 0, duration: 0.25, ease: "power1.in" }, g); }
   function click(g, fast) {
-    to(CUR, { scale: 0.84, duration: fast ? 0.035 : 0.07, ease: "power2.out" }, g);
+    to(CUR, { scale: 0.86, duration: fast ? 0.035 : 0.07, ease: "power2.out" }, g);
     to(CUR, { scale: 1, duration: fast ? 0.06 : 0.14, ease: "power2.out" }, g + (fast ? 0.04 : 0.09));
   }
   function press(sel, g, fast) {
@@ -203,7 +203,7 @@
   callout("b", 15.95, 2.0, B.x + B.w, B.y + B.h / 2, 80, -6, "r", "Coverage call, with its reasons");
   var CR0 = G["chip-rev"];
   callout("c", 16.9, 2.2, CR0.x + CR0.w + 8, CR0.y + CR0.h / 2, 44, 0, "r", "54 fields read, 31 flagged");
-  // (sheet "Values, traced back to the page" covers 19.8-21.8)
+  // (sheet "Values, traced back to the page" covers 19.8-21.3)
 
   // =============== 3. every value traced to the page ===============
   var KEY = G["card-key"];
@@ -216,13 +216,13 @@
   var BX0 = G.boxes["box-key-0"];
   cam(23.6, [410, BX0.y + BX0.h / 2 + 24, 3.0], 1.0); // right edge of the view stays in the gutter before the results panel
   callout("d", 24.75, 1.8, BX0.x + BX0.w / 2, BX0.y + BX0.h + 2, -60, 150, "l", "Policy Number, read from here");
-  cam(26.6, F_TRACE, 0.75);
+  cam(26.6, F_TRACE, 0.9); // house minimum 0.9 s; callout e waits for it to settle
   curMove(26.65, 1060, cy(KR[6]) - 40, 0.55);
   rowOff("key", 0, 26.8); boxOff("box-key-0", 26.8);
   rowOn("key", 6, 27.2); boxOn("box-key-6", 27.21);
   var BX6 = G.boxes["box-key-6"];
-  callout("e", 27.4, 1.8, BX6.x + BX6.w * 0.42, BX6.y - 2, 50, -118, "r", "Values link back to their source");
-  // (sheet "Fix what the model doubts" covers 29.7-31.7)
+  callout("e", 27.5, 1.6, BX6.x + BX6.w * 0.42, BX6.y - 2, 50, -118, "r", "Values link back to their source");
+  // (sheet "Fix what the model doubts" covers 29.7-31.2)
 
   // =============== 4. fix what the model doubts ===============
   rowOff("key", 6, 29.95); boxOff("box-key-6", 29.95);
@@ -334,9 +334,11 @@
   click(53.95); press("#btn-export", 53.95);
   set("#dlg-overlay", { backdropFilter: "blur(4px)", webkitBackdropFilter: "blur(4px)" }, 54.0);
   fromTo("#dlg-overlay", { opacity: 0 }, { opacity: 1, duration: 0.3, ease: "power1.out" }, 54.02);
-  fromTo("#dlg", { opacity: 0, y: 6 }, { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" }, 54.06);
   var DL = G["dlg"], CF = G["dlg-confirm"];
-  cam(54.3, [DL.x + DL.w / 2, DL.y + DL.h / 2, 2.4], 0.95);
+  // the push starts once the press has recovered; the dialog fades in only after the push has brought its
+  // left edge inside the frame (0.33 s into the move at the summary framing), so it never enters clipped
+  cam(54.2, [DL.x + DL.w / 2, DL.y + DL.h / 2, 2.4], 0.95);
+  fromTo("#dlg", { opacity: 0, y: 6 }, { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" }, 54.58);
   curMove(55.8, CF.x + CF.w * 0.5, CF.y + CF.h / 2 + 3, 0.6);
   to("#dlg-confirm", { backgroundColor: "#0f766e", duration: 0.12 }, 56.4);
   click(56.65); press("#dlg-confirm", 56.65);

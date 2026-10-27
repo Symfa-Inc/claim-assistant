@@ -3,41 +3,45 @@
 @font-face { font-family: "Plus Jakarta Sans"; font-style: normal; font-weight: 200 800; src: url("assets/fonts/PlusJakartaSans-latin.woff2") format("woff2"); }
 #root { position: absolute; inset: 0; overflow: hidden; font-family: "Plus Jakarta Sans", sans-serif; -webkit-font-smoothing: antialiased; }
 #out-sheet { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; background: #f8fafb; }
-#out-bar { position: absolute; left: 0; top: 0; width: 16px; height: 1080px; background: #0d9488; }
-#out-lock { position: absolute; left: 0; top: 330px; width: 1920px; display: flex; align-items: center; justify-content: center; gap: 40px; }
-#out-mark { width: 176px; height: 176px; display: block; }
-#out-name { font-size: 120px; font-weight: 700; letter-spacing: -0.04em; color: #0f172a; line-height: 1; padding-right: 8px; }
-#out-tag { position: absolute; left: 0; top: 590px; width: 1920px; text-align: center; font-size: 44px; font-weight: 500; color: #475569; letter-spacing: -0.01em; }
-#out-url { position: absolute; left: 0; top: 676px; width: 1920px; text-align: center; font-size: 34px; font-weight: 600; color: #0d9488; }
+#out-bar { position: absolute; left: -16px; top: 0; width: 16px; height: 1080px; background: #0d9488; }
+/* house end card (B2): mark 220 px ink, wordmark ink 108-114 px, gaps 60 / 96 / 50 px of ink, rows centred;
+   the translate values are measured corrections (REVIEW.md "House style alignment") */
+#out-lock { position: absolute; left: 0; top: 322px; width: 1920px; height: 220px; display: flex; align-items: center; justify-content: center; gap: 40px; transform: translate(-3.5px, -2px); }
+#out-mark { width: 220px; height: 220px; display: block; }
+#out-name { font-size: 144px; font-weight: 700; letter-spacing: -0.04em; color: #0f172a; line-height: 1; padding-right: 8px; }
+#out-tag { position: absolute; left: 0; top: 630px; width: 1920px; text-align: center; font-size: 46px; line-height: 1; font-weight: 500; color: #475569; letter-spacing: -0.015em; transform: translate(1px, -2px); }
+#out-url { position: absolute; left: 0; top: 720px; width: 1920px; text-align: center; font-size: 36px; line-height: 1; font-weight: 500; color: #0d9488; transform: translate(0.5px, 0px); }
 </style>
 <div id="root" data-composition-id="outro" data-width="1920" data-height="1080">
-  <div id="out-sheet">
+  <div id="out-sheet" data-layout-allow-overflow>
     <div id="out-lock"><img id="out-mark" src="assets/brand/claim-assistant-mark.png" alt=""><div id="out-name">Claim Assistant</div></div>
-    <div id="out-tag"><span id="out-t0">Claim</span> <span id="out-t1">intake,</span> <span id="out-t2">read</span> <span id="out-t3">and</span> <span id="out-t4">reviewed.</span></div>
+    <div id="out-tag">Claim intake, read and reviewed.</div>
     <div id="out-url">claim-assistant.symfa.ai</div>
+    <div id="out-bar"></div>
   </div>
-  <div id="out-bar"></div>
 </div>
 <script>
 (function () {
   gsap.config({ force3D: false });
   var tl = gsap.timeline({ paused: true });
-  gsap.set("#out-sheet", { clipPath: "inset(0% 100% 0% 0%)" });
-  gsap.set("#out-bar", { x: -16 });
+  // start states from frame 0
+  gsap.set("#out-sheet", { x: 2050, filter: "blur(10px)" });
   gsap.set("#out-mark", { clipPath: "inset(100% 0% 0% 0%)" });
   gsap.set("#out-name", { clipPath: "inset(0% 100% 0% 0%)" });
-  gsap.set(["#out-t0", "#out-t1", "#out-t2", "#out-t3", "#out-t4", "#out-url"], { opacity: 0 });
-  tl.fromTo("#out-bar", { x: -16 }, { x: 1920, duration: 0.5, ease: "power2.inOut", immediateRender: false }, 0);
-  tl.fromTo("#out-sheet", { clipPath: "inset(0% 100% 0% 0%)" }, { clipPath: "inset(0% 0% 0% 0%)", duration: 0.5, ease: "power2.inOut", immediateRender: false }, 0);
-  // the mark fills from the bottom, then the name wipes in beside it
-  tl.fromTo("#out-mark", { clipPath: "inset(100% 0% 0% 0%)" }, { clipPath: "inset(0% 0% 0% 0%)", duration: 0.7, ease: "power3.out", immediateRender: false }, 0.5);
-  tl.fromTo("#out-name", { clipPath: "inset(0% 100% 0% 0%)" }, { clipPath: "inset(0% 0% 0% 0%)", duration: 0.65, ease: "power3.out", immediateRender: false }, 0.85);
-  ["#out-t0", "#out-t1", "#out-t2", "#out-t3", "#out-t4"].forEach(function (w, i) {
-    tl.fromTo(w, { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, ease: "power2.out", immediateRender: false }, 1.45 + i * 0.08);
-    tl.set(w, { filter: "none" }, 1.45 + i * 0.08 + 0.17);
-  });
-  tl.fromTo("#out-url", { opacity: 0 }, { opacity: 1, duration: 0.3, ease: "power1.out", immediateRender: false }, 2.0);
-  tl.set("#out-url", { opacity: 1 }, 7.5);
+  gsap.set(["#out-tag", "#out-url"], { opacity: 0, filter: "blur(6px)" });
+  // in: the house sheet whip (same as the chapter sheets), the teal bar on its leading edge
+  tl.fromTo("#out-sheet", { x: 2050 }, { x: 0, duration: 0.45, ease: "power3.inOut", immediateRender: false }, 0);
+  tl.fromTo("#out-sheet", { filter: "blur(10px)" }, { filter: "blur(0px)", duration: 0.2, ease: "power2.out", immediateRender: false }, 0.25);
+  tl.set("#out-sheet", { filter: "none" }, 0.46);
+  // the mark fills from the bottom (0.55-1.30 s), then the name wipes in beside it (0.95-1.60 s)
+  tl.fromTo("#out-mark", { clipPath: "inset(100% 0% 0% 0%)" }, { clipPath: "inset(0% 0% 0% 0%)", duration: 0.75, ease: "power3.out", immediateRender: false }, 0.55);
+  tl.fromTo("#out-name", { clipPath: "inset(0% 100% 0% 0%)" }, { clipPath: "inset(0% 0% 0% 0%)", duration: 0.65, ease: "power3.out", immediateRender: false }, 0.95);
+  // tagline at 1.75 s, URL at 2.15 s (0.3 s blur-in each); everything has landed by 2.45 s
+  tl.fromTo("#out-tag", { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.3, ease: "power2.out", immediateRender: false }, 1.75);
+  tl.set("#out-tag", { filter: "none" }, 2.06);
+  tl.fromTo("#out-url", { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.3, ease: "power2.out", immediateRender: false }, 2.15);
+  tl.set("#out-url", { filter: "none" }, 2.46);
+  tl.set("#out-url", { opacity: 1 }, 7.49);
   window.__timelines = window.__timelines || {};
   window.__timelines["outro"] = tl;
 })();

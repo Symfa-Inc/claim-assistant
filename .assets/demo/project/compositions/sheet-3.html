@@ -4,46 +4,46 @@
 #root { position: absolute; inset: 0; overflow: hidden; }
 #sheet-3-sheet { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; background: #f8fafb; }
 #sheet-3-text { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; display: flex; align-items: center; justify-content: center;
-  font-family: "Plus Jakarta Sans", sans-serif; font-weight: 700; font-size: 104px; line-height: 1; letter-spacing: -0.035em; color: #0f172a;
-  -webkit-font-smoothing: antialiased; white-space: pre; }
-#sheet-3-line { display: block; padding-left: 0.035em; }
+  font-family: "Plus Jakarta Sans", sans-serif; font-weight: 700; font-size: 104px; line-height: 1; letter-spacing: -0.035em; word-spacing: 0.11em; color: #0f172a;
+  -webkit-font-smoothing: antialiased; white-space: nowrap; }
+#sheet-3-line { display: block; transform: translate(-3.5px, -2px); }
 #sheet-3-text .acc { color: #0d9488; }
-#sheet-3-bar { position: absolute; left: 0; top: 0; width: 16px; height: 1080px; background: #0d9488; }
+.sheet-3-bar { position: absolute; top: 0; width: 16px; height: 1080px; background: #0d9488; }
+#sheet-3-bar-l { left: -16px; }
+#sheet-3-bar-r { left: 1920px; }
 </style>
 <div id="root" data-composition-id="sheet-3" data-width="1920" data-height="1080">
-  <div id="sheet-3-sheet"><div id="sheet-3-text"><span id="sheet-3-line"><span id="sheet-3-w0" class="sheet-3-w">Fix</span> <span id="sheet-3-w1" class="sheet-3-w">what</span> <span id="sheet-3-w2" class="sheet-3-w">the</span> <span id="sheet-3-w3" class="sheet-3-w">model</span> <span id="sheet-3-w4" class="sheet-3-w acc">doubts</span></span></div></div>
-  <div id="sheet-3-bar"></div>
+  <div id="sheet-3-sheet" data-layout-allow-overflow><div id="sheet-3-text"><span id="sheet-3-line"><span id="sheet-3-w0" class="sheet-3-w">Fix</span> <span id="sheet-3-w1" class="sheet-3-w">what</span> <span id="sheet-3-w2" class="sheet-3-w">the</span> <span id="sheet-3-w3" class="sheet-3-w">model</span> <span id="sheet-3-w4" class="sheet-3-w acc">doubts</span></span></div><div id="sheet-3-bar-l" class="sheet-3-bar"></div><div id="sheet-3-bar-r" class="sheet-3-bar"></div></div>
 </div>
 <script>
 (function () {
   gsap.config({ force3D: false });
   var tl = gsap.timeline({ paused: true });
-  var D = 3;
-  var NI = { immediateRender: false };
-  gsap.set("#sheet-3-sheet", { clipPath: "inset(0% 100% 0% 0%)" });
-  gsap.set("#sheet-3-bar", { x: -16 });
-  gsap.set("#sheet-3-w0", { opacity: 0 });
-  gsap.set("#sheet-3-w1", { opacity: 0 });
-  gsap.set("#sheet-3-w2", { opacity: 0 });
-  gsap.set("#sheet-3-w3", { opacity: 0 });
-  gsap.set("#sheet-3-w4", { opacity: 0 });
-  // in: bar sweeps, sheet follows it (same duration and ease, so the edge stays on the bar)
-  tl.fromTo("#sheet-3-bar", { x: -16 }, { x: 1920, duration: 0.5, ease: "power2.inOut", immediateRender: false }, 0);
-  tl.fromTo("#sheet-3-sheet", { clipPath: "inset(0% 100% 0% 0%)" }, { clipPath: "inset(0% 0% 0% 0%)", duration: 0.5, ease: "power2.inOut", immediateRender: false }, 0);
-  // words: blur 8 -> 0 and opacity, 0.16 s each, 0.08 s apart, no translate; landed words do not move
-  tl.fromTo("#sheet-3-w0", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, ease: "power2.out", immediateRender: false }, 0.42);
-  tl.set("#sheet-3-w0", { filter: "none" }, 0.59);
-  tl.fromTo("#sheet-3-w1", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, ease: "power2.out", immediateRender: false }, 0.50);
-  tl.set("#sheet-3-w1", { filter: "none" }, 0.67);
-  tl.fromTo("#sheet-3-w2", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, ease: "power2.out", immediateRender: false }, 0.58);
-  tl.set("#sheet-3-w2", { filter: "none" }, 0.75);
-  tl.fromTo("#sheet-3-w3", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, ease: "power2.out", immediateRender: false }, 0.66);
-  tl.set("#sheet-3-w3", { filter: "none" }, 0.83);
-  tl.fromTo("#sheet-3-w4", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, ease: "power2.out", immediateRender: false }, 0.74);
-  tl.set("#sheet-3-w4", { filter: "none" }, 0.91);
-  // out: the bar sweeps again and the sheet is cut away behind it
-  tl.fromTo("#sheet-3-bar", { x: -16 }, { x: 1920, duration: 0.5, ease: "power2.inOut", immediateRender: false }, D - 0.5);
-  tl.fromTo("#sheet-3-sheet", { clipPath: "inset(0% 0% 0% 0%)" }, { clipPath: "inset(0% 0% 0% 100%)", duration: 0.5, ease: "power2.inOut", immediateRender: false }, D - 0.5);
+  // start states from frame 0: the sheet off-screen right and blurred, every word hidden
+  gsap.set("#sheet-3-sheet", { x: 2050, filter: "blur(10px)" });
+  gsap.set("#sheet-3-w0", { opacity: 0, filter: "blur(8px)" });
+  gsap.set("#sheet-3-w1", { opacity: 0, filter: "blur(8px)" });
+  gsap.set("#sheet-3-w2", { opacity: 0, filter: "blur(8px)" });
+  gsap.set("#sheet-3-w3", { opacity: 0, filter: "blur(8px)" });
+  gsap.set("#sheet-3-w4", { opacity: 0, filter: "blur(8px)" });
+  // in: the whip, blur clears over its last 0.2 s
+  tl.fromTo("#sheet-3-sheet", { x: 2050 }, { x: 0, duration: 0.45, ease: "power3.inOut", immediateRender: false }, 0);
+  tl.fromTo("#sheet-3-sheet", { filter: "blur(10px)" }, { filter: "blur(0px)", duration: 0.2, ease: "power2.out", immediateRender: false }, 0.25);
+  tl.set("#sheet-3-sheet", { filter: "none" }, 0.46);
+  // words: blur 8 -> 0 and opacity, 0.16 s each, 0.08 s apart from +0.40 s, no translate; landed words do not move
+  tl.fromTo("#sheet-3-w0", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, ease: "power2.out", immediateRender: false }, 0.40);
+  tl.set("#sheet-3-w0", { filter: "none" }, 0.57);
+  tl.fromTo("#sheet-3-w1", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, ease: "power2.out", immediateRender: false }, 0.48);
+  tl.set("#sheet-3-w1", { filter: "none" }, 0.65);
+  tl.fromTo("#sheet-3-w2", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, ease: "power2.out", immediateRender: false }, 0.56);
+  tl.set("#sheet-3-w2", { filter: "none" }, 0.73);
+  tl.fromTo("#sheet-3-w3", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, ease: "power2.out", immediateRender: false }, 0.64);
+  tl.set("#sheet-3-w3", { filter: "none" }, 0.81);
+  tl.fromTo("#sheet-3-w4", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, ease: "power2.out", immediateRender: false }, 0.72);
+  tl.set("#sheet-3-w4", { filter: "none" }, 0.89);
+  // out: the whip continues to the left, blurring as it goes
+  tl.fromTo("#sheet-3-sheet", { x: 0 }, { x: -2050, duration: 0.45, ease: "power3.inOut", immediateRender: false }, 1.95);
+  tl.fromTo("#sheet-3-sheet", { filter: "blur(0px)" }, { filter: "blur(10px)", duration: 0.22, ease: "power2.in", immediateRender: false }, 1.95);
   window.__timelines = window.__timelines || {};
   window.__timelines["sheet-3"] = tl;
 })();

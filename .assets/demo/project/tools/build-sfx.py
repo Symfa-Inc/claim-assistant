@@ -8,13 +8,13 @@ idx = root / "index.html"
 clicks = [8.6, 9.75, 11.62, 33.45, 39.85, 40.55, 43.35, 46.7, 47.1, 47.5, 53.95, 56.65]
 fast = [round(47.9 + i * 0.1, 2) for i in range(27)]
 wipes = [
-    (4.45, "whoosh"),
-    (6.95, "whoosh-b"),
-    (19.3, "whoosh"),
-    (21.8, "whoosh-b"),
-    (29.2, "whoosh"),
-    (31.7, "whoosh-b"),
-    (58.89, "whoosh"),
+    (4.5, "whoosh"),
+    (6.45, "whoosh-b"),
+    (19.35, "whoosh"),
+    (21.3, "whoosh-b"),
+    (29.25, "whoosh"),
+    (31.2, "whoosh-b"),
+    (58.9, "whoosh"),
 ]
 dur = {"whoosh": 0.575, "whoosh-b": 0.75}
 tags = []
