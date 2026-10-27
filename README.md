@@ -21,7 +21,7 @@ AI-powered automation tool that streamlines insurance claim handling with LLM-ba
 
 ## Preview
 
-https://github.com/user-attachments/assets/825d191a-ebed-4906-92f9-f8415b3f05b7
+https://github.com/user-attachments/assets/4de80202-c955-431f-941f-5efa18ce5986
 
 ## Features
 
