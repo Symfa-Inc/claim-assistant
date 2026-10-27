@@ -1,0 +1,97 @@
+<template>
+<style>
+@font-face { font-family: "Plus Jakarta Sans"; font-style: normal; font-weight: 200 800; src: url("assets/fonts/PlusJakartaSans-latin.woff2") format("woff2"); }
+#root { position: absolute; inset: 0; background: #f8fafb; overflow: hidden; font-family: "Plus Jakarta Sans", sans-serif; color: #0f172a; -webkit-font-smoothing: antialiased; }
+/* house poster layout (B3): lockup top-left (mark ink at 160,120), headline ink left 160 with its first cap
+   top at y 298, sub-line below it, the hero column's ink right edge at 1760 */
+#in-brand { position: absolute; left: 154.4px; top: 120px; display: flex; align-items: center; gap: 12px; }
+#in-mark { width: 90px; height: 90px; display: block; }
+#in-name { font-size: 48px; font-weight: 700; letter-spacing: -0.02em; color: #0f172a; line-height: 1; }
+#in-head { position: absolute; left: 160px; top: 280px; font-size: 104px; line-height: 1.02; font-weight: 700; letter-spacing: -0.035em; white-space: nowrap; }
+#in-head .acc { color: #0d9488; }
+#in-sub { position: absolute; left: 160px; top: 540px; font-size: 32px; line-height: 1.4; font-weight: 500; color: #64748b; width: 640px; }
+.in-card { position: absolute; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 18px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.03), 0 12px 40px rgba(15,23,42,0.08); }
+#in-form { left: 983px; top: 240px; width: 807px; padding: 16px; box-sizing: border-box; }
+#in-form-img { display: block; width: 775px; height: 269.8px; }
+#in-boxes { position: absolute; left: 16px; top: 16px; width: 775px; height: 269.8px; overflow: visible; }
+#in-boxes rect { fill: rgba(153, 246, 228, 0); stroke: #0d9488; stroke-width: 3; }
+#in-keys { left: 983px; top: 574px; width: 807px; padding: 26px 34px 18px; box-sizing: border-box; }
+#in-keys-title { display: flex; align-items: center; gap: 12px; font-size: 26px; font-weight: 600; color: #1e293b; }
+#in-keys-title .n { font-size: 20px; font-weight: 500; color: #0d9488; background: #f0fdfa; border-radius: 999px; padding: 2px 12px; }
+.in-th { display: grid; grid-template-columns: 300px 1fr 190px; margin-top: 18px; padding-bottom: 12px; border-bottom: 1px solid #f1f5f9;
+  font-size: 16px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #94a3b8; }
+.in-tr { position: relative; display: grid; grid-template-columns: 300px 1fr 190px; align-items: center; height: 64px; border-bottom: 1px solid #f1f5f9;
+  font-size: 28px; }
+.in-tr:last-child { border-bottom: 0; }
+.in-hl { position: absolute; left: -12px; right: -12px; top: 0; bottom: 0; background: #f0fdfa; box-shadow: inset 5px 0 0 0 #0d9488; opacity: 0; border-radius: 4px; }
+.in-l { position: relative; font-weight: 500; color: #334155; }
+.in-v { position: relative; color: #475569; opacity: 0; }
+.in-c { position: relative; display: flex; align-items: center; justify-content: flex-end; gap: 14px; }
+.in-bar { position: relative; width: 72px; height: 5px; border-radius: 999px; background: #f1f5f9; overflow: hidden; }
+.in-bar i { position: absolute; left: 0; top: 0; height: 100%; width: 100%; border-radius: 999px; }
+.in-pct { opacity: 0; width: 70px; text-align: right; font-size: 24px; font-weight: 500; font-variant-numeric: tabular-nums; }
+.em { color: #059669; } .am { color: #d97706; }
+.em-bg { background: #34d399; } .am-bg { background: #fbbf24; }
+</style>
+<div id="root" data-composition-id="intro" data-width="1920" data-height="1080">
+  <div id="in-brand"><img id="in-mark" src="assets/brand/claim-assistant-mark.png" alt=""><div id="in-name">Claim Assistant</div></div>
+  <div id="in-head">From claim form<br>to <span class="acc">coverage call</span></div>
+  <div id="in-sub">Reads the form, checks it against the policy, flags what needs review.</div>
+  <div id="in-form" class="in-card">
+    <img id="in-form-img" src="assets/brand/hook-form-crop.png" alt="">
+    <svg id="in-boxes" viewBox="0 0 868 302.2">
+      <rect id="in-b0" x="0" y="0" width="1" height="1" rx="2"></rect>
+      <rect id="in-b1" x="0" y="0" width="1" height="1" rx="2"></rect>
+      <rect id="in-b2" x="0" y="0" width="1" height="1" rx="2"></rect>
+    </svg>
+  </div>
+  <div id="in-keys" class="in-card">
+    <div id="in-keys-title">Key Fields <span class="n">8</span></div>
+    <div class="in-th"><span>Field</span><span>Value</span><span style="text-align:right">Confidence</span></div>
+    <div class="in-tr" id="in-r0"><div class="in-hl" id="in-h0"></div><span class="in-l">Policy Number</span><span class="in-v" id="in-v0">POL 987654321</span><span class="in-c"><span class="in-bar"><i id="in-i0" class="em-bg"></i></span><span class="in-pct em" id="in-p0">83%</span></span></div>
+    <div class="in-tr" id="in-r1"><div class="in-hl" id="in-h1"></div><span class="in-l">First Name</span><span class="in-v" id="in-v1">Emily</span><span class="in-c"><span class="in-bar"><i id="in-i1" class="am-bg"></i></span><span class="in-pct am" id="in-p1">79%</span></span></div>
+    <div class="in-tr" id="in-r2"><div class="in-hl" id="in-h2"></div><span class="in-l">Incident Date</span><span class="in-v" id="in-v2">2024-09-18</span><span class="in-c"><span class="in-bar"><i id="in-i2" class="em-bg"></i></span><span class="in-pct em" id="in-p2">81%</span></span></div>
+  </div>
+</div>
+<script>
+(function () {
+  gsap.config({ force3D: false });
+  var tl = gsap.timeline({ paused: true });
+  // real evidence boxes from the /process response (inches on the page), in this crop's pixels
+  var PX = 216 * 868 / 1706, OX = 0.3, OY = 1.55;
+  var B = [
+    [5.934, 3.9439, 6.8733, 4.1414, 0.83],   // Policy Number
+    [0.5587, 1.7233, 2.6025, 1.8906, 0.79],  // First Name (name field)
+    [5.2719, 1.7378, 5.9643, 1.8763, 0.81]   // Date of Accident
+  ];
+  B.forEach(function (b, i) {
+    var pad = 4, x = (b[0] - OX) * PX - pad, y = (b[1] - OY) * PX - pad, w = (b[2] - b[0]) * PX + 2 * pad, h = (b[3] - b[1]) * PX + 2 * pad;
+    var r = document.getElementById("in-b" + i);
+    r.setAttribute("x", x.toFixed(1)); r.setAttribute("y", y.toFixed(1)); r.setAttribute("width", w.toFixed(1)); r.setAttribute("height", h.toFixed(1));
+    var per = 2 * (w + h);
+    gsap.set(r, { attr: { "stroke-dasharray": per.toFixed(1), "stroke-dashoffset": per.toFixed(1) } });
+    gsap.set("#in-i" + i, { scaleX: 0, transformOrigin: "0% 50%" });
+    var g = 0.35 + i * 0.75;
+    tl.to(r, { attr: { "stroke-dashoffset": 0 }, duration: 0.55, ease: "power2.inOut" }, g);
+    tl.to(r, { fill: "rgba(153, 246, 228, 0.25)", duration: 0.3, ease: "power1.out" }, g + 0.4);
+    tl.fromTo("#in-h" + i, { opacity: 0 }, { opacity: 1, duration: 0.18, ease: "power1.out", immediateRender: false }, g + 0.45);
+    tl.fromTo("#in-v" + i, { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.22, ease: "power2.out", immediateRender: false }, g + 0.5);
+    tl.set("#in-v" + i, { filter: "none" }, g + 0.75);
+    tl.fromTo("#in-i" + i, { scaleX: 0 }, { scaleX: b[4], duration: 0.5, ease: "power2.out", immediateRender: false }, g + 0.5);
+    tl.fromTo("#in-p" + i, { opacity: 0 }, { opacity: 1, duration: 0.15, ease: "power1.out", immediateRender: false }, g + 0.5);
+    var pe = document.getElementById("in-p" + i), target = Math.round(b[4] * 100), last = null;
+    for (var f = 0; f <= 15; f++) {
+      var v = String(Math.round(target * gsap.parseEase("power2.out")(f / 15))) + "%";
+      if (v !== last) { tl.set(pe, { textContent: v }, g + 0.5 + f / 30); last = v; }
+    }
+    tl.to("#in-h" + i, { opacity: 0, duration: 0.3, ease: "power1.in" }, g + 1.1);
+  });
+  // poster frame: every value already shown except the counts (set before the first tween)
+  tl.set(["#in-p0", "#in-p1", "#in-p2"], { textContent: "0%" }, 0);
+  tl.to("#root", { opacity: 1, duration: 0.01 }, 4.94);
+  window.__timelines = window.__timelines || {};
+  window.__timelines["intro"] = tl;
+})();
+</script>
+</template>

@@ -212,3 +212,6 @@ __marimo__/
 # Runs directory
 data/runs/*
 !data/runs/.gitkeep
+
+# HyperFrames local state
+.hyperframes/

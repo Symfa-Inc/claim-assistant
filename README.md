@@ -21,9 +21,7 @@ AI-powered automation tool that streamlines insurance claim handling with LLM-ba
 
 ## Preview
 
-<p align="center">
-<img src=".assets/claim-assistant.png" width="100%" alt="Claim Assistant Preview">
-</p>
+https://github.com/user-attachments/assets/4de80202-c955-431f-941f-5efa18ce5986
 
 ## Features
 

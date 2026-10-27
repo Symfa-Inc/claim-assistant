@@ -1,0 +1,44 @@
+<template>
+<style>
+@font-face { font-family: "Plus Jakarta Sans"; font-style: normal; font-weight: 200 800; src: url("assets/fonts/PlusJakartaSans-latin.woff2") format("woff2"); }
+#root { position: absolute; inset: 0; overflow: hidden; }
+#sheet-1-sheet { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; background: #f8fafb; }
+#sheet-1-text { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; display: flex; align-items: center; justify-content: center;
+  font-family: "Plus Jakarta Sans", sans-serif; font-weight: 700; font-size: 104px; line-height: 1; letter-spacing: -0.035em; word-spacing: 0.11em; color: #e2e8f0;
+  -webkit-font-smoothing: antialiased; white-space: nowrap; }
+#sheet-1-line { display: block; transform: translate(-3px, -2px); }
+#sheet-1-text .sheet-1-w { color: #e2e8f0; }
+.sheet-1-bar { position: absolute; top: 0; width: 16px; height: 1080px; background: #0d9488; }
+#sheet-1-bar-l { left: -16px; }
+#sheet-1-bar-r { left: 1920px; }
+</style>
+<div id="root" data-composition-id="sheet-1" data-width="1920" data-height="1080">
+  <div id="sheet-1-sheet" data-layout-allow-overflow><div id="sheet-1-text"><span id="sheet-1-line"><span id="sheet-1-w0" class="sheet-1-w">Pick</span> <span id="sheet-1-w1" class="sheet-1-w">the</span> <span id="sheet-1-w2" class="sheet-1-w">claim</span> <span id="sheet-1-w3" class="sheet-1-w">form</span></span></div><div id="sheet-1-bar-l" class="sheet-1-bar"></div><div id="sheet-1-bar-r" class="sheet-1-bar"></div></div>
+</div>
+<script>
+(function () {
+  gsap.config({ force3D: false });
+  var tl = gsap.timeline({ paused: true });
+  // start states from frame 0: the sheet off-screen right and blurred, every word in ghost type
+  gsap.set("#sheet-1-sheet", { x: 2050, filter: "blur(10px)" });
+  gsap.set("#sheet-1-w0", { color: "#e2e8f0" });
+  gsap.set("#sheet-1-w1", { color: "#e2e8f0" });
+  gsap.set("#sheet-1-w2", { color: "#e2e8f0" });
+  gsap.set("#sheet-1-w3", { color: "#e2e8f0" });
+  // in: the whip, blur clears over its last 0.2 s
+  tl.fromTo("#sheet-1-sheet", { x: 2050 }, { x: 0, duration: 0.45, ease: "power3.inOut", immediateRender: false }, 0);
+  tl.fromTo("#sheet-1-sheet", { filter: "blur(10px)" }, { filter: "blur(0px)", duration: 0.2, ease: "power2.out", immediateRender: false }, 0.25);
+  tl.set("#sheet-1-sheet", { filter: "none" }, 0.46);
+  // words: ghost -> ink, 0.2 s each, 0.09 s apart from +0.40 s (fully inked by +0.87 s); colour only
+  tl.fromTo("#sheet-1-w0", { color: "#e2e8f0" }, { color: "#0f172a", duration: 0.2, ease: "power1.out", immediateRender: false }, 0.40);
+  tl.fromTo("#sheet-1-w1", { color: "#e2e8f0" }, { color: "#0f172a", duration: 0.2, ease: "power1.out", immediateRender: false }, 0.49);
+  tl.fromTo("#sheet-1-w2", { color: "#e2e8f0" }, { color: "#0f172a", duration: 0.2, ease: "power1.out", immediateRender: false }, 0.58);
+  tl.fromTo("#sheet-1-w3", { color: "#e2e8f0" }, { color: "#0d9488", duration: 0.2, ease: "power1.out", immediateRender: false }, 0.67);
+  // out: the whip continues to the left, blurring as it goes
+  tl.fromTo("#sheet-1-sheet", { x: 0 }, { x: -2050, duration: 0.45, ease: "power3.inOut", immediateRender: false }, 1.95);
+  tl.fromTo("#sheet-1-sheet", { filter: "blur(0px)" }, { filter: "blur(10px)", duration: 0.22, ease: "power2.in", immediateRender: false }, 1.95);
+  window.__timelines = window.__timelines || {};
+  window.__timelines["sheet-1"] = tl;
+})();
+</script>
+</template>

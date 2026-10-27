@@ -1,0 +1,1157 @@
+<template>
+<style>
+*, ::before, ::after, ::backdrop { --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: #3b82f680; --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; --tw-contain-size: ; --tw-contain-layout: ; --tw-contain-paint: ; --tw-contain-style: ; }
+*, ::before, ::after { box-sizing: border-box; border: 0px solid rgb(229, 231, 235); }
+::before, ::after { --tw-content: ""; }
+html, :host { text-size-adjust: 100%; tab-size: 4; font-feature-settings: normal; font-variation-settings: normal; -webkit-tap-highlight-color: transparent; font-family: "Plus Jakarta Sans", sans-serif; line-height: 1.5; }
+body { line-height: inherit; margin: 0px; }
+hr { height: 0px; color: inherit; border-top-width: 1px; }
+abbr:where([title]) { text-decoration: underline dotted; }
+h1, h2, h3, h4, h5, h6 { font-size: inherit; font-weight: inherit; }
+a { color: inherit; text-decoration: inherit; }
+b, strong { font-weight: bolder; }
+code, kbd, samp, pre { font-feature-settings: normal; font-variation-settings: normal; font-family: monospace; font-size: 1em; }
+small { font-size: 80%; }
+sub, sup { vertical-align: baseline; font-size: 75%; line-height: 0; position: relative; }
+sub { bottom: -0.25em; }
+sup { top: -0.5em; }
+table { text-indent: 0px; border-color: inherit; border-collapse: collapse; }
+button, input, optgroup, select, textarea { font-feature-settings: inherit; font-variation-settings: inherit; font-family: inherit; font-size: 100%; font-weight: inherit; line-height: inherit; letter-spacing: inherit; color: inherit; margin: 0px; padding: 0px; }
+button, select { text-transform: none; }
+button, input:where([type="button"]), input:where([type="reset"]), input:where([type="submit"]) { appearance: button; background-color: rgba(0, 0, 0, 0); background-image: none; }
+progress { vertical-align: baseline; }
+::-webkit-inner-spin-button { height: auto; }
+::-webkit-outer-spin-button { height: auto; }
+[type="search"] { appearance: textfield; outline-offset: -2px; }
+::-webkit-search-decoration { appearance: none; }
+::-webkit-file-upload-button { appearance: button; font: inherit; }
+summary { display: list-item; }
+blockquote, dl, dd, h1, h2, h3, h4, h5, h6, hr, figure, p, pre { margin: 0px; }
+fieldset { margin: 0px; padding: 0px; }
+legend { padding: 0px; }
+ol, ul, menu { margin: 0px; padding: 0px; list-style: none; }
+dialog { padding: 0px; }
+textarea { resize: vertical; }
+input::placeholder, textarea::placeholder { opacity: 1; color: rgb(156, 163, 175); }
+button, [role="button"] { cursor: pointer; }
+:disabled { cursor: default; }
+img, svg, video, canvas, audio, iframe, embed, object { vertical-align: middle; display: block; }
+img, video { max-width: 100%; height: auto; }
+[hidden]:where(:not([hidden="until-found"])) { display: none; }
+input:where([type="text"]), input:where(:not([type])), input:where([type="email"]), input:where([type="url"]), input:where([type="password"]), input:where([type="number"]), input:where([type="date"]), input:where([type="datetime-local"]), input:where([type="month"]), input:where([type="search"]), input:where([type="tel"]), input:where([type="time"]), input:where([type="week"]), select:where([multiple]), textarea, select { appearance: none; --tw-shadow: 0 0 #0000; background-color: rgb(255, 255, 255); border-width: 1px; border-color: rgb(107, 114, 128); border-radius: 0px; padding: 0.5rem 0.75rem; font-size: 1rem; line-height: 1.5rem; }
+input::placeholder, textarea::placeholder { color: rgb(107, 114, 128); opacity: 1; }
+::-webkit-datetime-edit-fields-wrapper { padding: 0px; }
+::-webkit-date-and-time-value { min-height: 1.5em; text-align: inherit; }
+::-webkit-datetime-edit { display: inline-flex; }
+::-webkit-datetime-edit { padding-top: 0px; padding-bottom: 0px; }
+::-webkit-datetime-edit-year-field { padding-top: 0px; padding-bottom: 0px; }
+::-webkit-datetime-edit-month-field { padding-top: 0px; padding-bottom: 0px; }
+::-webkit-datetime-edit-day-field { padding-top: 0px; padding-bottom: 0px; }
+::-webkit-datetime-edit-hour-field { padding-top: 0px; padding-bottom: 0px; }
+::-webkit-datetime-edit-minute-field { padding-top: 0px; padding-bottom: 0px; }
+::-webkit-datetime-edit-second-field { padding-top: 0px; padding-bottom: 0px; }
+::-webkit-datetime-edit-millisecond-field { padding-top: 0px; padding-bottom: 0px; }
+::-webkit-datetime-edit-meridiem-field { padding-top: 0px; padding-bottom: 0px; }
+select { print-color-adjust: exact; background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e"); background-position: right 0.5rem center; background-repeat: no-repeat; background-size: 1.5em 1.5em; padding-right: 2.5rem; }
+select:where([multiple]), select:where([size]:not([size="1"])) { background-image: initial; background-position: initial; background-repeat: unset; background-size: initial; print-color-adjust: unset; padding-right: 0.75rem; }
+input:where([type="checkbox"]), input:where([type="radio"]) { appearance: none; print-color-adjust: exact; vertical-align: middle; user-select: none; color: rgb(37, 99, 235); --tw-shadow: 0 0 #0000; background-color: rgb(255, 255, 255); background-origin: border-box; border-width: 1px; border-color: rgb(107, 114, 128); flex-shrink: 0; width: 1rem; height: 1rem; padding: 0px; display: inline-block; }
+input:where([type="checkbox"]) { border-radius: 0px; }
+input:where([type="radio"]) { border-radius: 100%; }
+input:where([type="checkbox"]):checked, input:where([type="radio"]):checked { background-color: currentcolor; background-position: center center; background-repeat: no-repeat; background-size: 100% 100%; border-color: rgba(0, 0, 0, 0); }
+input:where([type="checkbox"]):checked { background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e"); }
+@media (forced-colors: active) {
+  input:where([type="checkbox"]):checked { appearance: auto; }
+}
+input:where([type="radio"]):checked { background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='8' cy='8' r='3'/%3e%3c/svg%3e"); }
+@media (forced-colors: active) {
+  input:where([type="radio"]):checked { appearance: auto; }
+}
+input:where([type="checkbox"]):indeterminate { background-color: currentcolor; background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 16 16'%3e%3cpath stroke='white' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M4 8h8'/%3e%3c/svg%3e"); background-position: center center; background-repeat: no-repeat; background-size: 100% 100%; border-color: rgba(0, 0, 0, 0); }
+@media (forced-colors: active) {
+  input:where([type="checkbox"]):indeterminate { appearance: auto; }
+}
+input:where([type="file"]) { background: unset; border-color: inherit; font-size: unset; line-height: inherit; border-width: 0px; border-radius: 0px; padding: 0px; }
+.\!container { width: 100% !important; }
+.container { width: 100%; }
+@media (min-width: 640px) {
+  .\!container { max-width: 640px !important; }
+  .container { max-width: 640px; }
+}
+@media (min-width: 768px) {
+  .\!container { max-width: 768px !important; }
+  .container { max-width: 768px; }
+}
+@media (min-width: 1024px) {
+  .\!container { max-width: 1024px !important; }
+  .container { max-width: 1024px; }
+}
+@media (min-width: 1280px) {
+  .\!container { max-width: 1280px !important; }
+  .container { max-width: 1280px; }
+}
+@media (min-width: 1536px) {
+  .\!container { max-width: 1536px !important; }
+  .container { max-width: 1536px; }
+}
+.pointer-events-none { pointer-events: none; }
+.invisible { visibility: hidden; }
+.fixed { position: fixed; }
+.absolute { position: absolute; }
+.relative { position: relative; }
+.sticky { position: sticky; }
+.inset-0 { inset: 0px; }
+.top-0 { top: 0px; }
+.z-10 { z-index: 10; }
+.z-20 { z-index: 20; }
+.z-30 { z-index: 30; }
+.z-50 { z-index: 50; }
+.mx-3 { margin-left: 0.75rem; margin-right: 0.75rem; }
+.mx-4 { margin-left: 1rem; margin-right: 1rem; }
+.mx-auto { margin-left: auto; margin-right: auto; }
+.mb-3 { margin-bottom: 0.75rem; }
+.ml-2 { margin-left: 0.5rem; }
+.ml-auto { margin-left: auto; }
+.mt-1 { margin-top: 0.25rem; }
+.mt-2 { margin-top: 0.5rem; }
+.mt-4 { margin-top: 1rem; }
+.mt-5 { margin-top: 1.25rem; }
+.flex { display: flex; }
+.inline-flex { display: inline-flex; }
+.table { display: table; }
+.hidden { display: none; }
+.h-1\.5 { height: 0.375rem; }
+.h-10 { height: 2.5rem; }
+.h-3 { height: 0.75rem; }
+.h-3\.5 { height: 0.875rem; }
+.h-5 { height: 1.25rem; }
+.h-6 { height: 1.5rem; }
+.h-7 { height: 1.75rem; }
+.h-8 { height: 2rem; }
+.h-9 { height: 2.25rem; }
+.h-\[3px\] { height: 3px; }
+.h-full { height: 100%; }
+.h-px { height: 1px; }
+.min-h-0 { min-height: 0px; }
+.min-h-full { min-height: 100%; }
+.min-h-screen { min-height: 100vh; }
+.w-1 { width: 0.25rem; }
+.w-1\.5 { width: 0.375rem; }
+.w-10 { width: 2.5rem; }
+.w-12 { width: 3rem; }
+.w-28 { width: 7rem; }
+.w-3 { width: 0.75rem; }
+.w-3\.5 { width: 0.875rem; }
+.w-5 { width: 1.25rem; }
+.w-56 { width: 14rem; }
+.w-6 { width: 1.5rem; }
+.w-7 { width: 1.75rem; }
+.w-9 { width: 2.25rem; }
+.w-\[12\%\] { width: 12%; }
+.w-\[16\%\] { width: 16%; }
+.w-\[40\%\] { width: 40%; }
+.w-\[calc\(100\%-1\.5rem\)\] { width: calc(100% - 1.5rem); }
+.w-full { width: 100%; }
+.w-max { width: max-content; }
+.w-px { width: 1px; }
+.min-w-0 { min-width: 0px; }
+.min-w-\[44px\] { min-width: 44px; }
+.min-w-max { min-width: max-content; }
+.max-w-\[10rem\] { max-width: 10rem; }
+.max-w-full { max-width: 100%; }
+.max-w-md { max-width: 28rem; }
+.flex-1 { flex: 1 1 0%; }
+.shrink-0 { flex-shrink: 0; }
+.table-fixed { table-layout: fixed; }
+@keyframes fade-in {
+  0% { opacity: 0; transform: translateY(6px); }
+  100% { opacity: 1; transform: translateY(0px); }
+}
+.animate-fade-in { }
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}
+.animate-spin { }
+.cursor-not-allowed { cursor: not-allowed; }
+.cursor-pointer { cursor: pointer; }
+.select-none { user-select: none; }
+.flex-row { flex-direction: row; }
+.flex-col { flex-direction: column; }
+.flex-wrap { flex-wrap: wrap; }
+.items-start { align-items: flex-start; }
+.items-center { align-items: center; }
+.items-stretch { align-items: stretch; }
+.justify-end { justify-content: flex-end; }
+.justify-center { justify-content: center; }
+.justify-between { justify-content: space-between; }
+.gap-0\.5 { gap: 0.125rem; }
+.gap-1 { gap: 0.25rem; }
+.gap-1\.5 { gap: 0.375rem; }
+.gap-2 { gap: 0.5rem; }
+.gap-3 { gap: 0.75rem; }
+.gap-3\.5 { gap: 0.875rem; }
+.gap-4 { gap: 1rem; }
+.gap-5 { gap: 1.25rem; }
+.gap-x-2\.5 { column-gap: 0.625rem; }
+.gap-y-2 { row-gap: 0.5rem; }
+.divide-y > :not([hidden]) ~ :not([hidden]) { --tw-divide-y-reverse: 0; border-top-width: calc(1px * calc(1 - var(--tw-divide-y-reverse))); border-bottom-width: calc(1px * var(--tw-divide-y-reverse)); }
+.divide-slate-100\/80 > :not([hidden]) ~ :not([hidden]) { border-color: rgba(241, 245, 249, 0.8); }
+.self-start { align-self: flex-start; }
+.overflow-auto { overflow: auto; }
+.overflow-hidden { overflow: hidden; }
+.overflow-y-auto { overflow-y: auto; }
+.truncate { text-overflow: ellipsis; white-space: nowrap; overflow: hidden; }
+.whitespace-nowrap { white-space: nowrap; }
+.rounded-2xl { border-radius: 1rem; }
+.rounded-full { border-radius: 9999px; }
+.rounded-lg { border-radius: 0.5rem; }
+.rounded-md { border-radius: 0.375rem; }
+.rounded-xl { border-radius: 0.75rem; }
+.border { border-width: 1px; }
+.border-2 { border-width: 2px; }
+.border-\[2\.5px\] { border-width: 2.5px; }
+.border-b { border-bottom-width: 1px; }
+.border-l-\[3px\] { border-left-width: 3px; }
+.border-dashed { border-style: dashed; }
+.border-emerald-200 { --tw-border-opacity: 1; border-color: rgb(167 243 208 / var(--tw-border-opacity, 1)); }
+.border-slate-100 { --tw-border-opacity: 1; border-color: rgb(241 245 249 / var(--tw-border-opacity, 1)); }
+.border-slate-200 { --tw-border-opacity: 1; border-color: rgb(226 232 240 / var(--tw-border-opacity, 1)); }
+.border-slate-200\/80 { border-color: rgba(226, 232, 240, 0.8); }
+.border-l-accent { --tw-border-opacity: 1; border-left-color: rgb(13 148 136 / var(--tw-border-opacity, 1)); }
+.border-t-accent { --tw-border-opacity: 1; border-top-color: rgb(13 148 136 / var(--tw-border-opacity, 1)); }
+.bg-\[\#f8fafb\] { --tw-bg-opacity: 1; background-color: rgb(248 250 251 / var(--tw-bg-opacity, 1)); }
+.bg-accent { --tw-bg-opacity: 1; background-color: rgb(13 148 136 / var(--tw-bg-opacity, 1)); }
+.bg-accent-subtle { --tw-bg-opacity: 1; background-color: rgb(240 253 250 / var(--tw-bg-opacity, 1)); }
+.bg-amber-400 { --tw-bg-opacity: 1; background-color: rgb(251 191 36 / var(--tw-bg-opacity, 1)); }
+.bg-amber-50 { --tw-bg-opacity: 1; background-color: rgb(255 251 235 / var(--tw-bg-opacity, 1)); }
+.bg-amber-500 { --tw-bg-opacity: 1; background-color: rgb(245 158 11 / var(--tw-bg-opacity, 1)); }
+.bg-black\/20 { background-color: rgba(0, 0, 0, 0.2); }
+.bg-emerald-400 { --tw-bg-opacity: 1; background-color: rgb(52 211 153 / var(--tw-bg-opacity, 1)); }
+.bg-emerald-50 { --tw-bg-opacity: 1; background-color: rgb(236 253 245 / var(--tw-bg-opacity, 1)); }
+.bg-emerald-500 { --tw-bg-opacity: 1; background-color: rgb(16 185 129 / var(--tw-bg-opacity, 1)); }
+.bg-rose-400 { --tw-bg-opacity: 1; background-color: rgb(251 113 133 / var(--tw-bg-opacity, 1)); }
+.bg-rose-50 { --tw-bg-opacity: 1; background-color: rgb(255 241 242 / var(--tw-bg-opacity, 1)); }
+.bg-rose-500 { --tw-bg-opacity: 1; background-color: rgb(244 63 94 / var(--tw-bg-opacity, 1)); }
+.bg-slate-100 { --tw-bg-opacity: 1; background-color: rgb(241 245 249 / var(--tw-bg-opacity, 1)); }
+.bg-slate-200 { --tw-bg-opacity: 1; background-color: rgb(226 232 240 / var(--tw-bg-opacity, 1)); }
+.bg-slate-300 { --tw-bg-opacity: 1; background-color: rgb(203 213 225 / var(--tw-bg-opacity, 1)); }
+.bg-slate-50\/60 { background-color: rgba(248, 250, 252, 0.6); }
+.bg-transparent { background-color: rgba(0, 0, 0, 0); }
+.bg-white { --tw-bg-opacity: 1; background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1)); }
+.bg-white\/80 { background-color: rgba(255, 255, 255, 0.8); }
+.fill-teal-200\/25 { fill: rgba(153, 246, 228, 0.25); }
+.stroke-teal-600 { stroke: rgb(13, 148, 136); }
+.p-0 { padding: 0px; }
+.p-2\.5 { padding: 0.625rem; }
+.p-4 { padding: 1rem; }
+.p-5 { padding: 1.25rem; }
+.p-6 { padding: 1.5rem; }
+.p-8 { padding: 2rem; }
+.px-2 { padding-left: 0.5rem; padding-right: 0.5rem; }
+.px-2\.5 { padding-left: 0.625rem; padding-right: 0.625rem; }
+.px-3 { padding-left: 0.75rem; padding-right: 0.75rem; }
+.px-3\.5 { padding-left: 0.875rem; padding-right: 0.875rem; }
+.px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
+.py-0\.5 { padding-top: 0.125rem; padding-bottom: 0.125rem; }
+.py-1 { padding-top: 0.25rem; padding-bottom: 0.25rem; }
+.py-1\.5 { padding-top: 0.375rem; padding-bottom: 0.375rem; }
+.py-2 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+.py-2\.5 { padding-top: 0.625rem; padding-bottom: 0.625rem; }
+.py-4 { padding-top: 1rem; padding-bottom: 1rem; }
+.py-5 { padding-top: 1.25rem; padding-bottom: 1.25rem; }
+.pb-14 { padding-bottom: 3.5rem; }
+.pb-2\.5 { padding-bottom: 0.625rem; }
+.pl-0\.5 { padding-left: 0.125rem; }
+.pl-2 { padding-left: 0.5rem; }
+.pl-3 { padding-left: 0.75rem; }
+.pl-5 { padding-left: 1.25rem; }
+.pr-4 { padding-right: 1rem; }
+.pr-8 { padding-right: 2rem; }
+.text-left { text-align: left; }
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+.text-justify { text-align: justify; }
+.text-\[10px\] { font-size: 10px; }
+.text-\[11px\] { font-size: 11px; }
+.text-\[13px\] { font-size: 13px; }
+.text-\[15px\] { font-size: 15px; }
+.text-\[17px\] { font-size: 17px; }
+.text-sm { font-size: 0.875rem; line-height: 1.25rem; }
+.text-xs { font-size: 0.75rem; line-height: 1rem; }
+.font-bold { font-weight: 700; }
+.font-medium { font-weight: 500; }
+.font-semibold { font-weight: 600; }
+.uppercase { text-transform: uppercase; }
+.tabular-nums { --tw-numeric-spacing: tabular-nums; font-variant-numeric: var(--tw-ordinal) var(--tw-slashed-zero) var(--tw-numeric-figure) var(--tw-numeric-spacing) var(--tw-numeric-fraction); }
+.leading-relaxed { line-height: 1.625; }
+.leading-tight { line-height: 1.25; }
+.tracking-tight { letter-spacing: -0.025em; }
+.tracking-wider { letter-spacing: 0.05em; }
+.text-accent { --tw-text-opacity: 1; color: rgb(13 148 136 / var(--tw-text-opacity, 1)); }
+.text-amber-600 { --tw-text-opacity: 1; color: rgb(217 119 6 / var(--tw-text-opacity, 1)); }
+.text-amber-700 { --tw-text-opacity: 1; color: rgb(180 83 9 / var(--tw-text-opacity, 1)); }
+.text-emerald-600 { --tw-text-opacity: 1; color: rgb(5 150 105 / var(--tw-text-opacity, 1)); }
+.text-emerald-700 { --tw-text-opacity: 1; color: rgb(4 120 87 / var(--tw-text-opacity, 1)); }
+.text-red-500 { --tw-text-opacity: 1; color: rgb(239 68 68 / var(--tw-text-opacity, 1)); }
+.text-rose-500 { --tw-text-opacity: 1; color: rgb(244 63 94 / var(--tw-text-opacity, 1)); }
+.text-rose-700 { --tw-text-opacity: 1; color: rgb(190 18 60 / var(--tw-text-opacity, 1)); }
+.text-slate-300 { --tw-text-opacity: 1; color: rgb(203 213 225 / var(--tw-text-opacity, 1)); }
+.text-slate-400 { --tw-text-opacity: 1; color: rgb(148 163 184 / var(--tw-text-opacity, 1)); }
+.text-slate-500 { --tw-text-opacity: 1; color: rgb(100 116 139 / var(--tw-text-opacity, 1)); }
+.text-slate-600 { --tw-text-opacity: 1; color: rgb(71 85 105 / var(--tw-text-opacity, 1)); }
+.text-slate-700 { --tw-text-opacity: 1; color: rgb(51 65 85 / var(--tw-text-opacity, 1)); }
+.text-slate-800 { --tw-text-opacity: 1; color: rgb(30 41 59 / var(--tw-text-opacity, 1)); }
+.text-slate-900 { --tw-text-opacity: 1; color: rgb(15 23 42 / var(--tw-text-opacity, 1)); }
+.text-white { --tw-text-opacity: 1; color: rgb(255 255 255 / var(--tw-text-opacity, 1)); }
+.antialiased { -webkit-font-smoothing: antialiased; }
+.opacity-25 { opacity: 0.25; }
+.opacity-75 { opacity: 0.75; }
+.shadow-sm { --tw-shadow: 0 1px 2px 0 #0000000d; --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color); box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow); }
+.filter { filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow); }
+.backdrop-blur-md { --tw-backdrop-blur: blur(12px); backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia); }
+.backdrop-blur-sm { --tw-backdrop-blur: blur(4px); backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia); }
+.transition-all { }
+.transition-colors { }
+:root { --accent: #0d9488; --accent-hover: #0f766e; --accent-subtle: #f0fdfa; }
+input[type="number"] { appearance: textfield; }
+input[type="number"]::-webkit-inner-spin-button { appearance: none; margin: 0px; }
+input[type="number"]::-webkit-outer-spin-button { appearance: none; margin: 0px; }
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: none; }
+::-webkit-scrollbar-thumb { background: rgba(148, 163, 184, 0.3); border-radius: 9999px; }
+details summary { list-style: none; position: relative; }
+details summary::-webkit-details-marker { display: none; }
+details summary::before { content: ""; opacity: 0.35; border-top: 4px solid rgba(0, 0, 0, 0); border-bottom: 4px solid rgba(0, 0, 0, 0); border-left: 5px solid; width: 0px; height: 0px; position: absolute; top: 50%; left: 0px; transform: translateY(-50%); }
+details[open] summary::before { transform: translateY(-50%) rotate(90deg); }
+button, a, select, input { }
+.btn-primary { background-color: var(--accent); }
+.btn-danger { background-color: rgb(239, 68, 68); }
+.card { background: rgb(255, 255, 255); border: 1px solid rgb(226, 232, 240); border-radius: 14px; overflow: visible; box-shadow: rgba(0, 0, 0, 0.03) 0px 1px 2px, rgba(0, 0, 0, 0.02) 0px 2px 8px; }
+tr { }
+.info-tip { color: rgb(148, 163, 184); cursor: help; background: rgb(241, 245, 249); border-radius: 9999px; flex-shrink: 0; justify-content: center; align-items: center; width: 15px; height: 15px; font-size: 9px; font-style: normal; font-weight: 700; display: inline-flex; position: relative; }
+.info-tip::after { content: attr(data-tip); color: rgb(71, 85, 105); letter-spacing: 0px; text-transform: none; white-space: normal; text-align: left; pointer-events: none; opacity: 0; z-index: 50; background: rgb(255, 255, 255); border: 1px solid rgb(226, 232, 240); border-radius: 8px; min-width: 200px; max-width: 320px; padding: 8px 12px; font-size: 12px; font-weight: 400; line-height: 1.5; position: absolute; bottom: calc(100% + 8px); left: 50%; transform: translateX(-50%); box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 16px; }
+.info-tip-down::after { top: calc(100% + 8px); bottom: auto; }
+html {   }
+@media (min-width: 768px) {
+  .md\:w-full { width: 100%; }
+}
+@media (min-width: 1024px) {
+  .lg\:sticky { position: sticky; }
+  .lg\:top-\[4rem\] { top: 4rem; }
+  .lg\:mx-6 { margin-left: 1.5rem; margin-right: 1.5rem; }
+  .lg\:h-\[calc\(100vh-4\.5rem\)\] { height: calc(-4.5rem + 100vh); }
+  .lg\:max-h-\[calc\(100vh-5rem\)\] { max-height: calc(-5rem + 100vh); }
+  .lg\:w-1\/2, .lg\:w-2\/4 { width: 50%; }
+  .lg\:shrink-0 { flex-shrink: 0; }
+  .lg\:grow-0 { flex-grow: 0; }
+  .lg\:flex-row { flex-direction: row; }
+  .lg\:px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
+}
+
+
+
+@font-face { font-family: "Plus Jakarta Sans"; font-style: normal; font-weight: 200 800; font-display: swap; src: url("assets/fonts/PlusJakartaSans-latin.woff2") format("woff2"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+
+.plus_jakarta_sans_db09a954-module__HJK8EW__className { font-family: "Plus Jakarta Sans", sans-serif; font-style: normal; }
+.plus_jakarta_sans_db09a954-module__HJK8EW__variable { --font-body: "Plus Jakarta Sans", "Plus Jakarta Sans Fallback"; }
+
+
+
+
+/* ---- film-only styles for the rebuilt Claim Assistant UI (the app's own CSS sits above) ---- */
+#root { position: absolute; inset: 0; background: #f8fafb; overflow: hidden; }
+/* camera: no will-change, 2D transforms only (see REVIEW.md); the app is painted at its final zoom */
+#ca-cam { position: absolute; left: 0; top: 0; width: 1440px; height: 810px; transform-origin: 0 0; }
+/* the html/body preflight rules do not reach a scene inside the render page: restate them on the app box */
+#ca-app { line-height: 1.5; -webkit-text-size-adjust: 100%; tab-size: 4; font-feature-settings: normal; font-variation-settings: normal;
+  position: relative; width: 1440px; height: 810px; overflow: hidden; background: #f8fafb;
+  font-family: "Plus Jakarta Sans", sans-serif; -webkit-font-smoothing: antialiased; }
+#ca-app button { cursor: default; }
+.ca-abs { position: absolute; left: 0; top: 0; width: 100%; height: 100%; }
+.ca-center { display: inline-flex; align-items: center; justify-content: center; }
+.ca-zoomwrap { display: inline-block; }
+.ca-zoom { display: block; }
+#zoom-b { opacity: 0; }
+.ca-selwrap { display: block; }
+.ca-sel-el { display: block; }
+#sel-form-b { opacity: 0; }
+#btn-process-b { opacity: 0; }
+#ca-pdfarea > div { position: relative; }
+#pdf-b { position: absolute; top: 0; left: 0; right: 0; width: auto; opacity: 0; }
+.ca-page { display: block; width: 100%; height: 100%; }
+.ca-box { opacity: 0; }
+.ca-rstate { position: absolute; left: 0; top: 0; width: 100%; }
+#r-proc { opacity: 0; }
+#r-res { opacity: 1; }
+#card-sum, #card-key, #card-low, #card-all { opacity: 0; }
+#card-low details summary::before { transform: translateY(-50%) rotate(var(--rot, 0deg)); }
+#low-details { --rot: 0deg; }
+.ca-lowbody { overflow: hidden; height: 0; }
+.ca-tr { background-color: rgba(240, 253, 250, 0); box-shadow: inset 0 0 0 0 rgba(13, 148, 136, 0); }
+.ca-bar2 { position: absolute; left: 0; top: 0; width: 100%; }
+.ca-conf { position: relative; }
+.ca-c1 { position: absolute; right: 0; top: 0; opacity: 0; }
+.ca-vwrap { position: relative; height: 19.5px; }
+.ca-v0, .ca-v1, .ca-input { position: absolute; left: 0; top: 0; width: 100%; }
+.ca-v0, .ca-v1 { display: block; }
+.ca-v1, .ca-input { opacity: 0; }
+.ca-input { display: flex; justify-content: flex-end; overflow: hidden; white-space: nowrap; line-height: 17px; }
+.ca-itext { flex: 0 0 auto; display: inline-flex; align-items: center; }
+.ca-ispace { flex: 1 0 0; }
+.ca-caret { display: inline-block; width: 1px; height: 15px; margin-left: 1px; background: #334155; opacity: 0; }
+.ca-sel { display: none; }
+/* export dialog (fixed inset-0 in the app; absolute here because the app is a 1440 x 810 box) */
+/* backdrop-blur-sm is switched on only while the dialog is open (a permanent backdrop filter over the whole app
+   forces extra compositing surfaces for every frame) */
+.ca-overlay { position: absolute; left: 0; top: 0; width: 100%; height: 100%; opacity: 0; }
+/* nothing scrolls under the sticky header in the film, so its backdrop blur is visually a no-op: drop the layer */
+#ca-app header { -webkit-backdrop-filter: none; backdrop-filter: none; }
+.ca-dlgwrap { position: absolute; left: 0; top: 0; width: 100%; height: 100%; z-index: 51; display: flex;
+  align-items: center; justify-content: center; pointer-events: none; }
+#dlg { opacity: 0; }
+/* the Form select's popup, in the app's popover style */
+.ca-menu { position: absolute; left: 0; top: 0; z-index: 60; width: 214px; padding: 4px; background: #ffffff;
+  border: 1px solid #e2e8f0; border-radius: 10px; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.12), 0 2px 6px rgba(15, 23, 42, 0.05);
+  transform-origin: 50% 0; opacity: 0; }
+.ca-menu-i { position: relative; z-index: 1; height: 30px; padding: 0 10px; display: flex; align-items: center;
+  justify-content: space-between; font-size: 13px; color: #475569; border-radius: 6px; }
+.ca-menu-check { color: #0d9488; display: inline-flex; }
+.ca-menu-hl { position: absolute; left: 4px; right: 4px; top: 4px; height: 30px; border-radius: 6px; background: #f0fdfa; opacity: 0; }
+#ca-cursor { position: absolute; left: 0; top: 0; z-index: 100; opacity: 0; overflow: visible; }
+/* callouts: screen space, 30 px type */
+#ca-callouts { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; z-index: 10; pointer-events: none; }
+.ca-call { position: absolute; left: 0; top: 0; width: 0; height: 0; opacity: 0; }
+.ca-call-dot { position: absolute; left: -8px; top: -8px; width: 16px; height: 16px; border-radius: 50%;
+  background: #0d9488; box-shadow: 0 0 0 4px #ffffff, 0 2px 8px rgba(15, 23, 42, 0.2); }
+.ca-call-line { position: absolute; left: 0; top: -1px; height: 2px; background: #0d9488; transform-origin: 0 50%; }
+.ca-call-box { position: absolute; left: 0; top: 0; white-space: nowrap; background: #ffffff; color: #0f172a;
+  font: 600 30px/1.2 "Plus Jakarta Sans", sans-serif; letter-spacing: -0.01em; padding: 16px 24px 17px 22px;
+  border: 1px solid #e2e8f0; border-left: 4px solid #0d9488; border-radius: 14px;
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.14); }
+
+</style>
+<div id="root" data-composition-id="app" data-width="1920" data-height="1080" data-layout-allow-overflow>
+
+<div id="ca-cam">
+<div id="ca-app" class="antialiased">
+<main class="flex flex-col bg-[#f8fafb]" style="min-height:810px">
+  <header class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/80 backdrop-blur-md"><div class="mx-auto flex items-center gap-3.5 px-6 py-2.5"><div class="h-8 w-1 rounded-full bg-accent"></div><div><h1 class="text-[17px] font-bold tracking-tight text-slate-900">Claim Assistant</h1><p class="text-[11px] leading-tight text-slate-400">Automate insurance claim intake with intelligent field extraction and mapping</p></div></div></header>
+  <div class="mx-4 flex flex-1 flex-col items-start gap-5 py-2 lg:mx-6 lg:flex-row">
+    <!-- left: PDF viewer -->
+    <div class="flex w-full min-w-0 items-stretch lg:w-1/2 lg:shrink-0 lg:grow-0" style="height:738px">
+      <div class="card flex w-full min-w-0 flex-1 flex-col overflow-hidden p-2.5">
+        <div class="flex h-full min-h-0 w-full flex-1 flex-col gap-2">
+          <div id="ca-toolbar" class="flex flex-row flex-wrap items-center gap-x-2.5 gap-y-2 rounded-xl border border-slate-200 bg-slate-50/60 px-3 py-2 w-full max-w-full min-w-0">
+            <div class="flex items-center gap-1.5 shrink-0">
+              <button type="button" class="flex h-7 w-7 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-500"><svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M20 12H4"></path></svg></button>
+              <span class="ca-zoomwrap relative min-w-[44px] text-center text-[13px] font-medium tabular-nums text-slate-600"><span id="zoom-a" class="ca-zoom">69%</span><span id="zoom-b" class="ca-zoom ca-abs">73%</span></span>
+              <button type="button" class="flex h-7 w-7 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-500"><svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"></path></svg></button>
+              <button type="button" class="flex h-7 w-7 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-500"><svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5v-4m0 4h-4m4 0l-5-5"></path></svg></button>
+            </div>
+            <div class="h-5 w-px bg-slate-200 shrink-0"></div>
+            <label class="cursor-pointer inline-flex items-center gap-1.5 rounded-md border border-slate-200 bg-white px-2.5 py-1.5 text-[13px] font-medium text-slate-600 shrink-0"><svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>Select</label>
+            <div class="h-5 w-px bg-slate-200 shrink-0"></div>
+            <div class="flex min-w-0 items-center gap-2"><span class="shrink-0 text-[13px] font-medium text-slate-500">Form</span>
+              <div id="sel-form" class="ca-selwrap relative" style="width:160px">
+                <select id="sel-form-a" class="ca-sel-el w-full min-w-0 max-w-[10rem] truncate rounded-md border border-slate-200 bg-white px-2.5 pr-8 py-1.5 text-[13px] text-slate-600"><option>Florida digital</option></select>
+                <select id="sel-form-b" class="ca-sel-el ca-abs w-full min-w-0 max-w-[10rem] truncate rounded-md border border-slate-200 bg-white px-2.5 pr-8 py-1.5 text-[13px] text-slate-600"><option>Florida handwritten</option></select>
+              </div>
+            </div>
+            <div class="flex-1 min-w-0"></div>
+            <div class="flex items-center gap-2 shrink-0 ml-auto">
+              <button id="btn-reset" type="button" class="relative inline-flex items-center gap-1.5 whitespace-nowrap rounded-lg px-3.5 py-1.5 text-[13px] font-medium bg-slate-100 text-slate-400"><svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12a7.5 7.5 0 0112.728-5.303l1.772 1.773M19.5 12a7.5 7.5 0 01-12.728 5.303L5 15.53M5 8.25V5.25h3"></path></svg>Reset</button>
+              <button id="btn-process" type="button" class="relative inline-flex items-center gap-1.5 whitespace-nowrap rounded-lg px-3.5 py-1.5 text-[13px] font-medium text-white btn-primary shadow-sm"><span id="btn-process-a" class="inline-flex items-center gap-1.5"><svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>Process Form</span><span id="btn-process-b" class="ca-abs ca-center inline-flex items-center gap-1.5"><svg id="proc-spin" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>Processing...</span></button>
+            </div>
+          </div>
+          <div id="ca-pdfarea" class="flex-1 min-h-0 overflow-hidden rounded-lg border border-slate-200 bg-white">
+            <div class="flex min-h-full min-w-max flex-col items-center gap-2 text-[13px] text-slate-500">
+              <div id="pdf-a" class="ca-pdf flex w-max flex-col items-center"><p class="text-xs text-slate-400">form_dg_POL123456789.pdf</p><div class="relative mx-auto" style="width:409.151px;height:579px"><img class="ca-page" src="assets/pdf/form-fl-digital.png" width="409" height="579" alt=""></div></div>
+              <div id="pdf-b" class="ca-pdf ca-abs-top flex w-max flex-col items-center"><p class="text-xs text-slate-400">form_hw_POL987654321.pdf</p><div id="ca-page-hw" class="relative mx-auto" style="width:447.409px;height:579px"><img class="ca-page" src="assets/pdf/form-fl-handwritten.png" width="447" height="579" alt=""><svg class="pointer-events-none absolute inset-0 h-full w-full ca-boxes"><polygon id="box-key-0" class="ca-box fill-teal-200/25 stroke-teal-600" stroke-width="2" points="312.34,207.59 361.79,207.59 361.79,217.99 312.34,217.99"></polygon><polygon id="box-key-1" class="ca-box fill-teal-200/25 stroke-teal-600" stroke-width="2" points="29.41,90.71 136.99,90.71 136.99,99.51 29.41,99.51"></polygon><polygon id="box-key-2" class="ca-box fill-teal-200/25 stroke-teal-600" stroke-width="2" points="29.41,90.71 136.99,90.71 136.99,99.51 29.41,99.51"></polygon><polygon id="box-key-3" class="ca-box fill-teal-200/25 stroke-teal-600" stroke-width="2" points="277.49,91.47 313.94,91.47 313.94,98.76 277.49,98.76"></polygon><polygon id="box-key-4" class="ca-box fill-teal-200/25 stroke-teal-600" stroke-width="2" points="338.57,189.48 375.52,189.48 375.52,197.27 338.57,197.27"></polygon><polygon id="box-key-5" class="ca-box fill-teal-200/25 stroke-teal-600" stroke-width="2" points="185.49,160.81 285.37,160.81 285.37,170.44 185.49,170.44"></polygon><polygon id="box-key-6" class="ca-box fill-teal-200/25 stroke-teal-600" stroke-width="2" points="148.19,108.89 422.52,108.89 422.52,142.46 148.19,142.46"></polygon><polygon id="box-key-7" class="ca-box fill-teal-200/25 stroke-teal-600" stroke-width="2" points="41.86,297.04 179.10,297.04 179.10,310.67 41.86,310.67"></polygon><polygon id="box-low-9" class="ca-box fill-teal-200/25 stroke-teal-600" stroke-width="2" points="45.67,191.74 104.38,191.74 104.38,200.82 45.67,200.82"></polygon></svg></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- right: results -->
+    <div id="ca-right" class="relative flex w-full self-start flex-col lg:w-1/2 lg:shrink-0 lg:grow-0" style="height:730px">
+      <!-- empty state (initial) -->
+      <div id="r-empty" class="ca-rstate flex flex-1 flex-col items-center justify-center rounded-xl border-2 border-dashed border-slate-200 bg-white p-8">
+        <div class="flex flex-1 flex-col items-center justify-center gap-5">
+          <div class="rounded-2xl bg-accent-subtle p-5"><svg class="h-10 w-10 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"></path></svg></div>
+          <div class="text-center"><p class="text-sm font-medium text-slate-700">No form processed yet</p><p class="mt-1 text-[13px] text-slate-400">Choose a demo form or upload your own PDF, then click <span class="font-medium text-slate-600">"Process Form"</span>.</p></div>
+        </div>
+      </div>
+      <!-- processing -->
+      <div id="r-proc" class="ca-rstate card flex flex-1 flex-col items-center justify-center p-6">
+        <div id="r-proc-spin" class="h-10 w-10 rounded-full border-[2.5px] border-slate-200 border-t-accent"></div>
+        <span class="mt-4 text-[13px] text-slate-400">Analyzing document...</span>
+      </div>
+      <!-- results -->
+      <div id="r-res" class="ca-rstate" style="height:730px;overflow:hidden">
+        <div id="ca-rscroll" class="flex flex-col gap-4 pb-14">
+          <div id="card-sum" class="card relative z-30 border-l-[3px] border-l-accent px-6 py-5">
+            <details open=""><summary class="cursor-pointer select-none pl-5"><div class="ml-2 inline-flex w-[calc(100%-1.5rem)] items-center justify-between gap-3"><span class="text-[15px] font-semibold text-slate-800 inline-flex items-center gap-2">Executive Summary<span class="info-tip info-tip-down">i</span></span>
+              <button id="btn-export" type="button" class="relative inline-flex items-center gap-1.5 rounded-lg px-3.5 py-1.5 text-[13px] font-medium bg-slate-100 text-slate-400"><svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path></svg>Export</button></div></summary>
+              <div class="mt-4 pl-5">
+                <div class="mb-3"><span id="sum-badge" class="inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-medium bg-amber-50 text-amber-700"><span class="h-1.5 w-1.5 rounded-full bg-amber-500"></span>uncertain</span></div>
+                <p id="sum-text" class="text-[13px] leading-relaxed text-slate-600 text-justify">The incident appears to be a work-related slip-and-fall at the employer's loading dock (Portland, OR) while performing job duties (lifting a carton). The employee twisted her knee and sprained her wrist after stepping on a wet spot, with immediate supervisor notice and first aid provided. The claim aligns with a bodily injury by accident arising out of employment, which is covered under Part One (Workers' Compensation) of the policy. There is no evident exclusion applicability (no penalties, intentional misconduct, or violations of law indicated), and payment for the date of injury is recorded. The employer authorized treatment, and the accident occurred on the employer's premises within the policy period. Therefore, the claim is plausibly covered under the workers' compensation coverage. Possible denial considerations include (if later determined): the injury not arising out of or in the course of employment (e.g., off-duty activity), evidence of a pre-existing condition or non-work-related causation, or failure to meet any reporting/cooperation requirements; however, the provided data supports coverage.
+
+Low overall OCR match confidence (0.98). Form fields (policy ID, first name, last name) show partial similarity to the policy record. Claim likely corresponds to the correct policyholder but cannot be verified with high certainty due to extraction inconsistencies.</p>
+                <div id="sum-chips" class="mt-4 flex flex-wrap items-center gap-2 text-xs">
+                  <span id="chip-all" class="inline-flex items-center rounded-full bg-slate-100 px-2.5 py-1 font-medium text-slate-600">All:&nbsp;<span id="chip-all-n" class="ca-num">54</span></span>
+                  <span id="chip-low" class="inline-flex items-center rounded-full bg-amber-50 px-2.5 py-1 font-medium text-amber-700">Low confidence:&nbsp;<span id="chip-low-n" class="ca-num">31</span></span>
+                  <span id="chip-rev" class="inline-flex items-center rounded-full bg-emerald-50 px-2.5 py-1 font-medium text-emerald-700">Reviewed:&nbsp;<span id="chip-rev-n" class="ca-num">0</span></span>
+                </div>
+              </div>
+            </details>
+          </div>
+          <div id="card-key" class="card relative z-20 px-6 py-5">
+            <details open=""><summary class="cursor-pointer select-none pl-5 text-[15px] font-semibold text-slate-800"><span class="ml-2 inline-flex items-center gap-1.5">Key Fields<span class="info-tip info-tip-down">i</span><span class="inline-flex items-center rounded-full bg-accent-subtle px-2 py-0.5 text-xs font-medium text-accent">8</span></span></summary>
+              <div class="mt-4 pl-5"><div class="flex min-h-0 flex-1 flex-col bg-transparent p-0 md:w-full"><div class="mt-2 overflow-auto"><table id="key-table" class="w-full table-fixed text-left text-[13px] text-slate-600"><thead><tr class="border-b border-slate-100">
+<th class="pb-2.5 pr-4 text-[10px] font-semibold uppercase tracking-wider text-slate-400 w-[40%]">Field</th>
+<th class="pb-2.5 pr-4 text-[10px] font-semibold uppercase tracking-wider text-slate-400">Value</th>
+<th class="pb-2.5 pl-2 text-[10px] font-semibold uppercase tracking-wider text-slate-400 w-[12%]">Confidence</th>
+<th class="pb-2.5 pl-3 text-right text-[10px] font-semibold uppercase tracking-wider text-slate-400 w-[16%]">Actions</th>
+</tr></thead><tbody class="divide-y divide-slate-100/80"><tr id="key-r0" class="ca-tr">
+<td class="py-2.5 pl-0.5 pr-4 font-medium text-slate-700 w-56">Policy Number</td>
+<td class="py-2.5 pr-4 text-slate-600">POL 987654321</td>
+<td class="py-2.5 pl-2 w-28"><div class="flex h-5 items-center gap-2"><div class="relative h-[3px] w-10 shrink-0 overflow-hidden rounded-full bg-slate-100"><div id="key-r0-bar" class="ca-bar h-full rounded-full bg-emerald-400" style="width:83%"></div><div id="key-r0-bar2" class="ca-bar2 h-full rounded-full bg-emerald-400"></div></div>
+<span class="ca-conf relative inline-flex h-5 w-12 shrink-0 items-center justify-end"><span id="key-r0-c0" class="ca-c0 inline-flex h-5 w-12 shrink-0 items-center justify-end gap-0.5 text-xs font-medium tabular-nums text-emerald-600">83%</span><span id="key-r0-c1" class="ca-c1 inline-flex h-5 w-12 shrink-0 items-center justify-end gap-0.5 text-xs font-medium tabular-nums text-emerald-600"><svg class="h-3 w-3 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>100%</span></span></div></td>
+<td class="py-2.5 pl-3 text-right"><div class="inline-flex items-center gap-1"><button id="key-r0-ed" type="button" class="inline-flex h-7 w-7 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-500"><svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536M9 11l6.232-6.232a2.5 2.5 0 113.536 3.536L12.536 14.536a4 4 0 01-1.414.94L8 16l.524-3.122A4 4 0 019 11z"></path></svg></button><button id="key-r0-ok" type="button" class="inline-flex h-7 w-7 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-500"><svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg></button></div></td>
+</tr><tr id="key-r1" class="ca-tr">
+<td class="py-2.5 pl-0.5 pr-4 font-medium text-slate-700 w-56">First Name</td>
+<td class="py-2.5 pr-4 text-slate-600">Emily</td>
+<td class="py-2.5 pl-2 w-28"><div class="flex h-5 items-center gap-2"><div class="relative h-[3px] w-10 shrink-0 overflow-hidden rounded-full bg-slate-100"><div id="key-r1-bar" class="ca-bar h-full rounded-full bg-amber-400" style="width:79%"></div><div id="key-r1-bar2" class="ca-bar2 h-full rounded-full bg-emerald-400"></div></div>
+<span class="ca-conf relative inline-flex h-5 w-12 shrink-0 items-center justify-end"><span id="key-r1-c0" class="ca-c0 inline-flex h-5 w-12 shrink-0 items-center justify-end gap-0.5 text-xs font-medium tabular-nums text-amber-600">79%</span><span id="key-r1-c1" class="ca-c1 inline-flex h-5 w-12 shrink-0 items-center justify-end gap-0.5 text-xs font-medium tabular-nums text-emerald-600"><svg class="h-3 w-3 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>100%</span></span></div></td>
+<td class="py-2.5 pl-3 text-right"><div class="inline-flex items-center gap-1"><button id="key-r1-ed" type="button" class="inline-flex h-7 w-7 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-500"><svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536M9 11l6.232-6.232a2.5 2.5 0 113.536 3.536L12.536 14.536a4 4 0 01-1.414.94L8 16l.524-3.122A4 4 0 019 11z"></path></svg></button><button id="key-r1-ok" type="button" class="inline-flex h-7 w-7 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-500"><svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg></button></div></td>
+</tr><tr id="key-r2" class="ca-tr">
+<td class="py-2.5 pl-0.5 pr-4 font-medium text-slate-700 w-56">Last Name</td>
+<td class="py-2.5 pr-4 text-slate-600">Johnson</td>
+<td class="py-2.5 pl-2 w-28"><div class="flex h-5 items-center gap-2"><div class="relative h-[3px] w-10 shrink-0 overflow-hidden rounded-full bg-slate-100"><div id="key-r2-bar" class="ca-bar h-full rounded-full bg-amber-400" style="width:79%"></div><div id="key-r2-bar2" class="ca-bar2 h-full rounded-full bg-emerald-400"></div></div>
+<span class="ca-conf relative inline-flex h-5 w-12 shrink-0 items-center justify-end"><span id="key-r2-c0" class="ca-c0 inline-flex h-5 w-12 shrink-0 items-center justify-end gap-0.5 text-xs font-medium tabular-nums text-amber-600">79%</span><span id="key-r2-c1" class="ca-c1 inline-flex h-5 w-12 shrink-0 items-center justify-end gap-0.5 text-xs font-medium tabular-nums text-emerald-600"><svg class="h-3 w-3 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>100%</span></span></div></td>
+<td class="py-2.5 pl-3 text-right"><div class="inline-flex items-center gap-1"><button id="key-r2-ed" type="button" class="inline-flex h-7 w-7 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-500"><svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536M9 11l6.232-6.232a2.5 2.5 0 113.536 3.536L12.536 14.536a4 4 0 01-1.414.94L8 16l.524-3.122A4 4 0 019 11z"></path></svg></button><button id="key-r2-ok" type="button" class="inline-flex h-7 w-7 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-500"><svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg></button></div></td>
+</tr><tr id="key-r3" class="ca-tr">
+<td class="py-2.5 pl-0.5 pr-4 font-medium text-slate-700 w-56">Incident Date</td>
+<td class="py-2.5 pr-4 text-slate-600">2024-09-18</td>
+<td class="py-2.5 pl-2 w-28"><div class="flex h-5 items-center gap-2"><div class="relative h-[3px] w-10 shrink-0 overflow-hidden rounded-full bg-slate-100"><div id="key-r3-bar" class="ca-bar h-full rounded-full bg-emerald-400" style="width:81%"></div><div id="key-r3-bar2" class="ca-bar2 h-full rounded-full bg-emerald-400"></div></div>
+<span class="ca-conf relative inline-flex h-5 w-12 shrink-0 items-center justify-end"><span id="key-r3-c0" class="ca-c0 inline-flex h-5 w-12 shrink-0 items-center justify-end gap-0.5 text-xs font-medium tabular-nums text-emerald-600">81%</span><span id="key-r3-c1" class="ca-c1 inline-flex h-5 w-12 shrink-0 items-center justify-end gap-0.5 text-xs font-medium tabular-nums text-emerald-600"><svg class="h-3 w-3 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>100%</span></span></div></td>
+<td class="py-2.5 pl-3 text-right"><div class="inline-flex items-center gap-1"><button id="key-r3-ed" type="button" class="inline-flex h-7 w-7 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-500"><svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536M9 11l6.232-6.232a2.5 2.5 0 113.536 3.536L12.536 14.536a4 4 0 01-1.414.94L8 16l.524-3.122A4 4 0 019 11z"></path></svg></button><button id="key-r3-ok" type="button" class="inline-flex h-7 w-7 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-500"><svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg></button></div></td>
+</tr><tr id="key-r4" class="ca-tr">
+<td class="py-2.5 pl-0.5 pr-4 font-medium text-slate-700 w-56">Report Date</td>
+<td class="py-2.5 pr-4 text-slate-600">2024-09-18</td>
+<td class="py-2.5 pl-2 w-28"><div class="flex h-5 items-center gap-2"><div class="relative h-[3px] w-10 shrink-0 overflow-hidden rounded-full bg-slate-100"><div id="key-r4-bar" class="ca-bar h-full rounded-full bg-emerald-400" style="width:81%"></div><div id="key-r4-bar2" class="ca-bar2 h-full rounded-full bg-emerald-400"></div></div>
+<span class="ca-conf relative inline-flex h-5 w-12 shrink-0 items-center justify-end"><span id="key-r4-c0" class="ca-c0 inline-flex h-5 w-12 shrink-0 items-center justify-end gap-0.5 text-xs font-medium tabular-nums text-emerald-600">81%</span><span id="key-r4-c1" class="ca-c1 inline-flex h-5 w-12 shrink-0 items-center justify-end gap-0.5 text-xs font-medium tabular-nums text-emerald-600"><svg class="h-3 w-3 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>100%</span></span></div></td>
+<td class="py-2.5 pl-3 text-right"><div class="inline-flex items-center gap-1"><button id="key-r4-ed" type="button" class="inline-flex h-7 w-7 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-500"><svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536M9 11l6.232-6.232a2.5 2.5 0 113.536 3.536L12.536 14.536a4 4 0 01-1.414.94L8 16l.524-3.122A4 4 0 019 11z"></path></svg></button><button id="key-r4-ok" type="button" class="inline-flex h-7 w-7 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-500"><svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg></button></div></td>
+</tr><tr id="key-r5" class="ca-tr">
+<td class="py-2.5 pl-0.5 pr-4 font-medium text-slate-700 w-56">Type of Loss</td>
+<td class="py-2.5 pr-4 text-slate-600">49-Sprain or Tear</td>
+<td class="py-2.5 pl-2 w-28"><div class="flex h-5 items-center gap-2"><div class="relative h-[3px] w-10 shrink-0 overflow-hidden rounded-full bg-slate-100"><div id="key-r5-bar" class="ca-bar h-full rounded-full bg-amber-400" style="width:76%"></div><div id="key-r5-bar2" class="ca-bar2 h-full rounded-full bg-emerald-400"></div></div>
+<span class="ca-conf relative inline-flex h-5 w-12 shrink-0 items-center justify-end"><span id="key-r5-c0" class="ca-c0 inline-flex h-5 w-12 shrink-0 items-center justify-end gap-0.5 text-xs font-medium tabular-nums text-amber-600">76%</span><span id="key-r5-c1" class="ca-c1 inline-flex h-5 w-12 shrink-0 items-center justify-end gap-0.5 text-xs font-medium tabular-nums text-emerald-600"><svg class="h-3 w-3 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>100%</span></span></div></td>
+<td class="py-2.5 pl-3 text-right"><div class="inline-flex items-center gap-1"><button id="key-r5-ed" type="button" class="inline-flex h-7 w-7 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-500"><svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536M9 11l6.232-6.232a2.5 2.5 0 113.536 3.536L12.536 14.536a4 4 0 01-1.414.94L8 16l.524-3.122A4 4 0 019 11z"></path></svg></button><button id="key-r5-ok" type="button" class="inline-flex h-7 w-7 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-500"><svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg></button></div></td>
+</tr><tr id="key-r6" class="ca-tr">
+<td class="py-2.5 pl-0.5 pr-4 font-medium text-slate-700 w-56">Loss Description</td>
+<td class="py-2.5 pr-4 text-slate-600">97214
+While lifting a 35- 16 carton from a lower pallet at the loading dock, I steppe on a wet spot near Bay 3 and slipped. I twisted my right knee and fell forward, bracing my fall with my left hand, causing a wrist sprain. Spill appeared to be water tracked in from the dock area. Incident was reported to my supervisor immediately and first aid was provided.</td>
+<td class="py-2.5 pl-2 w-28"><div class="flex h-5 items-center gap-2"><div class="relative h-[3px] w-10 shrink-0 overflow-hidden rounded-full bg-slate-100"><div id="key-r6-bar" class="ca-bar h-full rounded-full bg-rose-400" style="width:36%"></div><div id="key-r6-bar2" class="ca-bar2 h-full rounded-full bg-emerald-400"></div></div>
+<span class="ca-conf relative inline-flex h-5 w-12 shrink-0 items-center justify-end"><span id="key-r6-c0" class="ca-c0 inline-flex h-5 w-12 shrink-0 items-center justify-end gap-0.5 text-xs font-medium tabular-nums text-rose-500">36%</span><span id="key-r6-c1" class="ca-c1 inline-flex h-5 w-12 shrink-0 items-center justify-end gap-0.5 text-xs font-medium tabular-nums text-emerald-600"><svg class="h-3 w-3 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>100%</span></span></div></td>
+<td class="py-2.5 pl-3 text-right"><div class="inline-flex items-center gap-1"><button id="key-r6-ed" type="button" class="inline-flex h-7 w-7 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-500"><svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536M9 11l6.232-6.232a2.5 2.5 0 113.536 3.536L12.536 14.536a4 4 0 01-1.414.94L8 16l.524-3.122A4 4 0 019 11z"></path></svg></button><button id="key-r6-ok" type="button" class="inline-flex h-7 w-7 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-500"><svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg></button></div></td>
+</tr><tr id="key-r7" class="ca-tr">
+<td class="py-2.5 pl-0.5 pr-4 font-medium text-slate-700 w-56">Loss Location</td>
+<td class="py-2.5 pr-4 text-slate-600">1250 NE Rivergate St, Loading Dock Bay 3</td>
+<td class="py-2.5 pl-2 w-28"><div class="flex h-5 items-center gap-2"><div class="relative h-[3px] w-10 shrink-0 overflow-hidden rounded-full bg-slate-100"><div id="key-r7-bar" class="ca-bar h-full rounded-full bg-amber-400" style="width:74%"></div><div id="key-r7-bar2" class="ca-bar2 h-full rounded-full bg-emerald-400"></div></div>
+<span class="ca-conf relative inline-flex h-5 w-12 shrink-0 items-center justify-end"><span id="key-r7-c0" class="ca-c0 inline-flex h-5 w-12 shrink-0 items-center justify-end gap-0.5 text-xs font-medium tabular-nums text-amber-600">74%</span><span id="key-r7-c1" class="ca-c1 inline-flex h-5 w-12 shrink-0 items-center justify-end gap-0.5 text-xs font-medium tabular-nums text-emerald-600"><svg class="h-3 w-3 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>100%</span></span></div></td>
+<td class="py-2.5 pl-3 text-right"><div class="inline-flex items-center gap-1"><button id="key-r7-ed" type="button" class="inline-flex h-7 w-7 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-500"><svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536M9 11l6.232-6.232a2.5 2.5 0 113.536 3.536L12.536 14.536a4 4 0 01-1.414.94L8 16l.524-3.122A4 4 0 019 11z"></path></svg></button><button id="key-r7-ok" type="button" class="inline-flex h-7 w-7 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-500"><svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg></button></div></td>
+</tr></tbody></table></div></div></div></details>
+          </div>
+          <div id="card-low" class="card relative z-10 px-6 py-5">
+            <details id="low-details" class="ca-det" open=""><summary id="low-summary" class="cursor-pointer select-none pl-5 text-[15px] font-semibold text-slate-800"><span class="ml-2 inline-flex items-center gap-1.5">Low Confidence Fields<span class="info-tip info-tip-down">i</span><span class="inline-flex items-center rounded-full bg-amber-50 px-2 py-0.5 text-xs font-medium text-amber-700">31</span></span></summary>
+              <div id="low-body" class="ca-lowbody"><div id="low-inner" class="mt-4 pl-5"><div class="flex min-h-0 flex-1 flex-col bg-transparent p-0 md:w-full"><div class="mt-2 overflow-auto"><table id="low-table" class="w-full table-fixed text-left text-[13px] text-slate-600"><thead><tr class="border-b border-slate-100">
+<th class="pb-2.5 pr-4 text-[10px] font-semibold uppercase tracking-wider text-slate-400 w-[40%]">Field</th>
+<th class="pb-2.5 pr-4 text-[10px] font-semibold uppercase tracking-wider text-slate-400">Value</th>
+<th class="pb-2.5 pl-2 text-[10px] font-semibold uppercase tracking-wider text-slate-400 w-[12%]">Confidence</th>
+<th class="pb-2.5 pl-3 text-right text-[10px] font-semibold uppercase tracking-wider text-slate-400 w-[16%]">Actions</th>
+</tr></thead><tbody class="divide-y divide-slate-100/80"><tr id="low-r0" class="ca-tr">
+<td class="py-2.5 pl-0.5 pr-4 font-medium text-slate-700 w-56">NAME (First, Middle, Last) - First</td>
+<td class="py-2.5 pr-4 text-slate-600">Emily</td>
+<td class="py-2.5 pl-2 w-28"><div class="flex h-5 items-center gap-2"><div class="relative h-[3px] w-10 shrink-0 overflow-hidden rounded-full bg-slate-100"><div id="low-r0-bar" class="ca-bar h-full rounded-full bg-amber-400" style="width:79%"></div><div id="low-r0-bar2" class="ca-bar2 h-full rounded-full bg-emerald-400"></div></div>
+<span class="ca-conf relative inline-flex h-5 w-12 shrink-0 items-center justify-end"><span id="low-r0-c0" class="ca-c0 inline-flex h-5 w-12 shrink-0 items-center justify-end gap-0.5 text-xs font-medium tabular-nums text-amber-600">79%</span><span id="low-r0-c1" class="ca-c1 inline-flex h-5 w-12 shrink-0 items-center justify-end gap-0.5 text-xs font-medium tabular-nums text-emerald-600"><svg class="h-3 w-3 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>100%</span></span></div></td>
+<td class="py-2.5 pl-3 text-right"><div class="inline-flex items-center gap-1"><button id="low-r0-ed" type="button" class="inline-flex h-7 w-7 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-500"><svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536M9 11l6.232-6.232a2.5 2.5 0 113.536 3.536L12.536 14.536a4 4 0 01-1.414.94L8 16l.524-3.122A4 4 0 019 11z"></path></svg></button><button id="low-r0-ok" type="button" class="inline-flex h-7 w-7 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-500"><svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg></button></div></td>
+</tr><tr id="low-r1" class="ca-tr">
+<td class="py-2.5 pl-0.5 pr-4 font-medium text-slate-700 w-56">NAME (First, Middle, Last) - Middle</td>
+<td class="py-2.5 pr-4 text-slate-600"><span class="text-slate-300">&mdash;</span></td>
+<td class="py-2.5 pl-2 w-28"><div class="flex h-5 items-center gap-2"><div class="relative h-[3px] w-10 shrink-0 overflow-hidden rounded-full bg-slate-100"><div id="low-r1-bar" class="ca-bar h-full rounded-full bg-amber-400" style="width:79%"></div><div id="low-r1-bar2" class="ca-bar2 h-full rounded-full bg-emerald-400"></div></div>
+<span class="ca-conf relative inline-flex h-5 w-12 shrink-0 items-center justify-end"><span id="low-r1-c0" class="ca-c0 inline-flex h-5 w-12 shrink-0 items-center justify-end gap-0.5 text-xs font-medium tabular-nums text-amber-600">79%</span><span id="low-r1-c1" class="ca-c1 inline-flex h-5 w-12 shrink-0 items-center justify-end gap-0.5 text-xs font-medium tabular-nums text-emerald-600"><svg class="h-3 w-3 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>100%</span></span></div></td>
+<td class="py-2.5 pl-3 text-right"><div class="inline-flex items-center gap-1"><button id="low-r1-ed" type="button" class="inline-flex h-7 w-7 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-500"><svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536M9 11l6.232-6.232a2.5 2.5 0 113.536 3.536L12.536 14.536a4 4 0 01-1.414.94L8 16l.524-3.122A4 4 0 019 11z"></path></svg></button><button id="low-r1-ok" type="button" class="inline-flex h-7 w-7 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-500"><svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg></button></div></td>
+</tr><tr id="low-r2" class="ca-tr">
+<td class="py-2.5 pl-0.5 pr-4 font-medium text-slate-700 w-56">NAME (First, Middle, Last) - Last</td>
+<td class="py-2.5 pr-4 text-slate-600">Johnson</td>
+<td class="py-2.5 pl-2 w-28"><div class="flex h-5 items-center gap-2"><div class="relative h-[3px] w-10 shrink-0 overflow-hidden rounded-full bg-slate-100"><div id="low-r2-bar" class="ca-bar h-full rounded-full bg-amber-400" style="width:79%"></div><div id="low-r2-bar2" class="ca-bar2 h-full rounded-full bg-emerald-400"></div></div>
+<span class="ca-conf relative inline-flex h-5 w-12 shrink-0 items-center justify-end"><span id="low-r2-c0" class="ca-c0 inline-flex h-5 w-12 shrink-0 items-center justify-end gap-0.5 text-xs font-medium tabular-nums text-amber-600">79%</span><span id="low-r2-c1" class="ca-c1 inline-flex h-5 w-12 shrink-0 items-center justify-end gap-0.5 text-xs font-medium tabular-nums text-emerald-600"><svg class="h-3 w-3 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>100%</span></span></div></td>
+<td class="py-2.5 pl-3 text-right"><div class="inline-flex items-center gap-1"><button id="low-r2-ed" type="button" class="inline-flex h-7 w-7 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-500"><svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536M9 11l6.232-6.232a2.5 2.5 0 113.536 3.536L12.536 14.536a4 4 0 01-1.414.94L8 16l.524-3.122A4 4 0 019 11z"></path></svg></button><button id="low-r2-ok" type="button" class="inline-flex h-7 w-7 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-500"><svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg></button></div></td>
+</tr><tr id="low-r3" class="ca-tr">
+<td class="py-2.5 pl-0.5 pr-4 font-medium text-slate-700 w-56">HOME ADDRESS Street/Apt #</td>
+<td class="py-2.5 pr-4 text-slate-600">742 Maple Ave Apt 3B</td>
+<td class="py-2.5 pl-2 w-28"><div class="flex h-5 items-center gap-2"><div class="relative h-[3px] w-10 shrink-0 overflow-hidden rounded-full bg-slate-100"><div id="low-r3-bar" class="ca-bar h-full rounded-full bg-amber-400" style="width:78%"></div><div id="low-r3-bar2" class="ca-bar2 h-full rounded-full bg-emerald-400"></div></div>
+<span class="ca-conf relative inline-flex h-5 w-12 shrink-0 items-center justify-end"><span id="low-r3-c0" class="ca-c0 inline-flex h-5 w-12 shrink-0 items-center justify-end gap-0.5 text-xs font-medium tabular-nums text-amber-600">78%</span><span id="low-r3-c1" class="ca-c1 inline-flex h-5 w-12 shrink-0 items-center justify-end gap-0.5 text-xs font-medium tabular-nums text-emerald-600"><svg class="h-3 w-3 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>100%</span></span></div></td>
+<td class="py-2.5 pl-3 text-right"><div class="inline-flex items-center gap-1"><button id="low-r3-ed" type="button" class="inline-flex h-7 w-7 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-500"><svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536M9 11l6.232-6.232a2.5 2.5 0 113.536 3.536L12.536 14.536a4 4 0 01-1.414.94L8 16l.524-3.122A4 4 0 019 11z"></path></svg></button><button id="low-r3-ok" type="button" class="inline-flex h-7 w-7 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-500"><svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg></button></div></td>
+</tr><tr id="low-r4" class="ca-tr">
+<td class="py-2.5 pl-0.5 pr-4 font-medium text-slate-700 w-56">HOME ADDRESS Zip</td>
+<td class="py-2.5 pr-4 text-slate-600"><span class="text-slate-300">&mdash;</span></td>
+<td class="py-2.5 pl-2 w-28"><div class="flex h-5 items-center gap-2"><div class="relative h-[3px] w-10 shrink-0 overflow-hidden rounded-full bg-slate-100"><div id="low-r4-bar" class="ca-bar h-full rounded-full bg-rose-400" style="width:0%"></div><div id="low-r4-bar2" class="ca-bar2 h-full rounded-full bg-emerald-400"></div></div>
+<span class="ca-conf relative inline-flex h-5 w-12 shrink-0 items-center justify-end"><span id="low-r4-c0" class="ca-c0 inline-flex h-5 w-12 shrink-0 items-center justify-end gap-0.5 text-xs font-medium tabular-nums text-rose-500"></span><span id="low-r4-c1" class="ca-c1 inline-flex h-5 w-12 shrink-0 items-center justify-end gap-0.5 text-xs font-medium tabular-nums text-emerald-600"><svg class="h-3 w-3 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>100%</span></span></div></td>
+<td class="py-2.5 pl-3 text-right"><div class="inline-flex items-center gap-1"><button id="low-r4-ed" type="button" class="inline-flex h-7 w-7 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-500"><svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536M9 11l6.232-6.232a2.5 2.5 0 113.536 3.536L12.536 14.536a4 4 0 01-1.414.94L8 16l.524-3.122A4 4 0 019 11z"></path></svg></button><button id="low-r4-ok" type="button" class="inline-flex h-7 w-7 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-500"><svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg></button></div></td>
+</tr><tr id="low-r5" class="ca-tr">
+<td class="py-2.5 pl-0.5 pr-4 font-medium text-slate-700 w-56">EMPLOYEE'S DESCRIPTION OF ACCIDENT (Include Cause of Injury)</td>
+<td class="py-2.5 pr-4 text-slate-600">97214
+While lifting a 35- 16 carton from a lower pallet at the loading dock, I steppe on a wet spot near Bay 3 and slipped. I twisted my right knee and fell forward, bracing my fall with my left hand, causing a wrist sprain. Spill appeared to be water tracked in from the dock area. Incident was reported to my supervisor immediately and first aid was provided.</td>
+<td class="py-2.5 pl-2 w-28"><div class="flex h-5 items-center gap-2"><div class="relative h-[3px] w-10 shrink-0 overflow-hidden rounded-full bg-slate-100"><div id="low-r5-bar" class="ca-bar h-full rounded-full bg-rose-400" style="width:36%"></div><div id="low-r5-bar2" class="ca-bar2 h-full rounded-full bg-emerald-400"></div></div>
+<span class="ca-conf relative inline-flex h-5 w-12 shrink-0 items-center justify-end"><span id="low-r5-c0" class="ca-c0 inline-flex h-5 w-12 shrink-0 items-center justify-end gap-0.5 text-xs font-medium tabular-nums text-rose-500">36%</span><span id="low-r5-c1" class="ca-c1 inline-flex h-5 w-12 shrink-0 items-center justify-end gap-0.5 text-xs font-medium tabular-nums text-emerald-600"><svg class="h-3 w-3 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>100%</span></span></div></td>
+<td class="py-2.5 pl-3 text-right"><div class="inline-flex items-center gap-1"><button id="low-r5-ed" type="button" class="inline-flex h-7 w-7 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-500"><svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536M9 11l6.232-6.232a2.5 2.5 0 113.536 3.536L12.536 14.536a4 4 0 01-1.414.94L8 16l.524-3.122A4 4 0 019 11z"></path></svg></button><button id="low-r5-ok" type="button" class="inline-flex h-7 w-7 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-500"><svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg></button></div></td>
+</tr><tr id="low-r6" class="ca-tr">
+<td class="py-2.5 pl-0.5 pr-4 font-medium text-slate-700 w-56">TELEPHONE</td>
+<td class="py-2.5 pr-4 text-slate-600">5035550198</td>
+<td class="py-2.5 pl-2 w-28"><div class="flex h-5 items-center gap-2"><div class="relative h-[3px] w-10 shrink-0 overflow-hidden rounded-full bg-slate-100"><div id="low-r6-bar" class="ca-bar h-full rounded-full bg-rose-400" style="width:26%"></div><div id="low-r6-bar2" class="ca-bar2 h-full rounded-full bg-emerald-400"></div></div>
+<span class="ca-conf relative inline-flex h-5 w-12 shrink-0 items-center justify-end"><span id="low-r6-c0" class="ca-c0 inline-flex h-5 w-12 shrink-0 items-center justify-end gap-0.5 text-xs font-medium tabular-nums text-rose-500">26%</span><span id="low-r6-c1" class="ca-c1 inline-flex h-5 w-12 shrink-0 items-center justify-end gap-0.5 text-xs font-medium tabular-nums text-emerald-600"><svg class="h-3 w-3 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>100%</span></span></div></td>
+<td class="py-2.5 pl-3 text-right"><div class="inline-flex items-center gap-1"><button id="low-r6-ed" type="button" class="inline-flex h-7 w-7 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-500"><svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536M9 11l6.232-6.232a2.5 2.5 0 113.536 3.536L12.536 14.536a4 4 0 01-1.414.94L8 16l.524-3.122A4 4 0 019 11z"></path></svg></button><button id="low-r6-ok" type="button" class="inline-flex h-7 w-7 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-500"><svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg></button></div></td>
+</tr><tr id="low-r7" class="ca-tr">
+<td class="py-2.5 pl-0.5 pr-4 font-medium text-slate-700 w-56">INJURY/ILLNESS THAT OCCURRED</td>
+<td class="py-2.5 pr-4 text-slate-600">49-Sprain or Tear</td>
+<td class="py-2.5 pl-2 w-28"><div class="flex h-5 items-center gap-2"><div class="relative h-[3px] w-10 shrink-0 overflow-hidden rounded-full bg-slate-100"><div id="low-r7-bar" class="ca-bar h-full rounded-full bg-amber-400" style="width:76%"></div><div id="low-r7-bar2" class="ca-bar2 h-full rounded-full bg-emerald-400"></div></div>
+<span class="ca-conf relative inline-flex h-5 w-12 shrink-0 items-center justify-end"><span id="low-r7-c0" class="ca-c0 inline-flex h-5 w-12 shrink-0 items-center justify-end gap-0.5 text-xs font-medium tabular-nums text-amber-600">76%</span><span id="low-r7-c1" class="ca-c1 inline-flex h-5 w-12 shrink-0 items-center justify-end gap-0.5 text-xs font-medium tabular-nums text-emerald-600"><svg class="h-3 w-3 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>100%</span></span></div></td>
+<td class="py-2.5 pl-3 text-right"><div class="inline-flex items-center gap-1"><button id="low-r7-ed" type="button" class="inline-flex h-7 w-7 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-500"><svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536M9 11l6.232-6.232a2.5 2.5 0 113.536 3.536L12.536 14.536a4 4 0 01-1.414.94L8 16l.524-3.122A4 4 0 019 11z"></path></svg></button><button id="low-r7-ok" type="button" class="inline-flex h-7 w-7 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-500"><svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg></button></div></td>
+</tr><tr id="low-r8" class="ca-tr">
+<td class="py-2.5 pl-0.5 pr-4 font-medium text-slate-700 w-56">PART OF BODY AFFECTED</td>
+<td class="py-2.5 pr-4 text-slate-600">90-Multiple Body Parts</td>
+<td class="py-2.5 pl-2 w-28"><div class="flex h-5 items-center gap-2"><div class="relative h-[3px] w-10 shrink-0 overflow-hidden rounded-full bg-slate-100"><div id="low-r8-bar" class="ca-bar h-full rounded-full bg-amber-400" style="width:76%"></div><div id="low-r8-bar2" class="ca-bar2 h-full rounded-full bg-emerald-400"></div></div>
+<span class="ca-conf relative inline-flex h-5 w-12 shrink-0 items-center justify-end"><span id="low-r8-c0" class="ca-c0 inline-flex h-5 w-12 shrink-0 items-center justify-end gap-0.5 text-xs font-medium tabular-nums text-amber-600">76%</span><span id="low-r8-c1" class="ca-c1 inline-flex h-5 w-12 shrink-0 items-center justify-end gap-0.5 text-xs font-medium tabular-nums text-emerald-600"><svg class="h-3 w-3 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>100%</span></span></div></td>
+<td class="py-2.5 pl-3 text-right"><div class="inline-flex items-center gap-1"><button id="low-r8-ed" type="button" class="inline-flex h-7 w-7 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-500"><svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536M9 11l6.232-6.232a2.5 2.5 0 113.536 3.536L12.536 14.536a4 4 0 01-1.414.94L8 16l.524-3.122A4 4 0 019 11z"></path></svg></button><button id="low-r8-ok" type="button" class="inline-flex h-7 w-7 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-500"><svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg></button></div></td>
+</tr><tr id="low-r9" class="ca-tr">
+<td class="py-2.5 pl-0.5 pr-4 font-medium text-slate-700 w-56">COMPANY NAME</td>
+<td class="py-2.5 pr-4 text-slate-600"><div id="low-r9-vwrap" class="ca-vwrap"><span id="low-r9-v0" class="ca-v0">Pac Ecom Logistics</span><div id="low-r9-inp" class="ca-input w-full rounded-md border border-slate-200 bg-white px-2 py-1 text-[13px] text-slate-700"><span id="low-r9-sel" class="ca-sel"></span><span class="ca-itext"><span id="low-r9-txt">Pac Ecom Logistics</span><span id="low-r9-caret" class="ca-caret"></span></span><span class="ca-ispace"></span></div><span id="low-r9-v1" class="ca-v1">Pacific E-Commerce Logistics, Inc.</span></div></td>
+<td class="py-2.5 pl-2 w-28"><div class="flex h-5 items-center gap-2"><div class="relative h-[3px] w-10 shrink-0 overflow-hidden rounded-full bg-slate-100"><div id="low-r9-bar" class="ca-bar h-full rounded-full bg-rose-400" style="width:36%"></div><div id="low-r9-bar2" class="ca-bar2 h-full rounded-full bg-emerald-400"></div></div>
+<span class="ca-conf relative inline-flex h-5 w-12 shrink-0 items-center justify-end"><span id="low-r9-c0" class="ca-c0 inline-flex h-5 w-12 shrink-0 items-center justify-end gap-0.5 text-xs font-medium tabular-nums text-rose-500">36%</span><span id="low-r9-c1" class="ca-c1 inline-flex h-5 w-12 shrink-0 items-center justify-end gap-0.5 text-xs font-medium tabular-nums text-emerald-600"><svg class="h-3 w-3 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>100%</span></span></div></td>
+<td class="py-2.5 pl-3 text-right"><div class="inline-flex items-center gap-1"><button id="low-r9-ed" type="button" class="inline-flex h-7 w-7 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-500"><svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536M9 11l6.232-6.232a2.5 2.5 0 113.536 3.536L12.536 14.536a4 4 0 01-1.414.94L8 16l.524-3.122A4 4 0 019 11z"></path></svg></button><button id="low-r9-ok" type="button" class="inline-flex h-7 w-7 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-500"><svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg></button></div></td>
+</tr><tr id="low-r10" class="ca-tr">
+<td class="py-2.5 pl-0.5 pr-4 font-medium text-slate-700 w-56">D. B. A.</td>
+<td class="py-2.5 pr-4 text-slate-600">1250 NE Rivergate St</td>
+<td class="py-2.5 pl-2 w-28"><div class="flex h-5 items-center gap-2"><div class="relative h-[3px] w-10 shrink-0 overflow-hidden rounded-full bg-slate-100"><div id="low-r10-bar" class="ca-bar h-full rounded-full bg-rose-400" style="width:28%"></div><div id="low-r10-bar2" class="ca-bar2 h-full rounded-full bg-emerald-400"></div></div>
+<span class="ca-conf relative inline-flex h-5 w-12 shrink-0 items-center justify-end"><span id="low-r10-c0" class="ca-c0 inline-flex h-5 w-12 shrink-0 items-center justify-end gap-0.5 text-xs font-medium tabular-nums text-rose-500">28%</span><span id="low-r10-c1" class="ca-c1 inline-flex h-5 w-12 shrink-0 items-center justify-end gap-0.5 text-xs font-medium tabular-nums text-emerald-600"><svg class="h-3 w-3 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>100%</span></span></div></td>
+<td class="py-2.5 pl-3 text-right"><div class="inline-flex items-center gap-1"><button id="low-r10-ed" type="button" class="inline-flex h-7 w-7 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-500"><svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536M9 11l6.232-6.232a2.5 2.5 0 113.536 3.536L12.536 14.536a4 4 0 01-1.414.94L8 16l.524-3.122A4 4 0 019 11z"></path></svg></button><button id="low-r10-ok" type="button" class="inline-flex h-7 w-7 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-500"><svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg></button></div></td>
+</tr><tr id="low-r11" class="ca-tr">
+<td class="py-2.5 pl-0.5 pr-4 font-medium text-slate-700 w-56">Street (Employer)</td>
+<td class="py-2.5 pr-4 text-slate-600"><span class="text-slate-300">&mdash;</span></td>
+<td class="py-2.5 pl-2 w-28"><div class="flex h-5 items-center gap-2"><div class="relative h-[3px] w-10 shrink-0 overflow-hidden rounded-full bg-slate-100"><div id="low-r11-bar" class="ca-bar h-full rounded-full bg-rose-400" style="width:0%"></div><div id="low-r11-bar2" class="ca-bar2 h-full rounded-full bg-emerald-400"></div></div>
+<span class="ca-conf relative inline-flex h-5 w-12 shrink-0 items-center justify-end"><span id="low-r11-c0" class="ca-c0 inline-flex h-5 w-12 shrink-0 items-center justify-end gap-0.5 text-xs font-medium tabular-nums text-rose-500"></span><span id="low-r11-c1" class="ca-c1 inline-flex h-5 w-12 shrink-0 items-center justify-end gap-0.5 text-xs font-medium tabular-nums text-emerald-600"><svg class="h-3 w-3 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>100%</span></span></div></td>
+<td class="py-2.5 pl-3 text-right"><div class="inline-flex items-center gap-1"><button id="low-r11-ed" type="button" class="inline-flex h-7 w-7 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-500"><svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536M9 11l6.232-6.232a2.5 2.5 0 113.536 3.536L12.536 14.536a4 4 0 01-1.414.94L8 16l.524-3.122A4 4 0 019 11z"></path></svg></button><button id="low-r11-ok" type="button" class="inline-flex h-7 w-7 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-500"><svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg></button></div></td>
+</tr><tr id="low-r12" class="ca-tr">
+<td class="py-2.5 pl-0.5 pr-4 font-medium text-slate-700 w-56">State (Employer)</td>
+<td class="py-2.5 pr-4 text-slate-600">OR</td>
+<td class="py-2.5 pl-2 w-28"><div class="flex h-5 items-center gap-2"><div class="relative h-[3px] w-10 shrink-0 overflow-hidden rounded-full bg-slate-100"><div id="low-r12-bar" class="ca-bar h-full rounded-full bg-rose-400" style="width:54%"></div><div id="low-r12-bar2" class="ca-bar2 h-full rounded-full bg-emerald-400"></div></div>
+<span class="ca-conf relative inline-flex h-5 w-12 shrink-0 items-center justify-end"><span id="low-r12-c0" class="ca-c0 inline-flex h-5 w-12 shrink-0 items-center justify-end gap-0.5 text-xs font-medium tabular-nums text-rose-500">54%</span><span id="low-r12-c1" class="ca-c1 inline-flex h-5 w-12 shrink-0 items-center justify-end gap-0.5 text-xs font-medium tabular-nums text-emerald-600"><svg class="h-3 w-3 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>100%</span></span></div></td>
+<td class="py-2.5 pl-3 text-right"><div class="inline-flex items-center gap-1"><button id="low-r12-ed" type="button" class="inline-flex h-7 w-7 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-500"><svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536M9 11l6.232-6.232a2.5 2.5 0 113.536 3.536L12.536 14.536a4 4 0 01-1.414.94L8 16l.524-3.122A4 4 0 019 11z"></path></svg></button><button id="low-r12-ok" type="button" class="inline-flex h-7 w-7 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-500"><svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg></button></div></td>
+</tr><tr id="low-r13" class="ca-tr">
+<td class="py-2.5 pl-0.5 pr-4 font-medium text-slate-700 w-56">Zip (Employer)</td>
+<td class="py-2.5 pr-4 text-slate-600">97203</td>
+<td class="py-2.5 pl-2 w-28"><div class="flex h-5 items-center gap-2"><div class="relative h-[3px] w-10 shrink-0 overflow-hidden rounded-full bg-slate-100"><div id="low-r13-bar" class="ca-bar h-full rounded-full bg-rose-400" style="width:49%"></div><div id="low-r13-bar2" class="ca-bar2 h-full rounded-full bg-emerald-400"></div></div>
+<span class="ca-conf relative inline-flex h-5 w-12 shrink-0 items-center justify-end"><span id="low-r13-c0" class="ca-c0 inline-flex h-5 w-12 shrink-0 items-center justify-end gap-0.5 text-xs font-medium tabular-nums text-rose-500">49%</span><span id="low-r13-c1" class="ca-c1 inline-flex h-5 w-12 shrink-0 items-center justify-end gap-0.5 text-xs font-medium tabular-nums text-emerald-600"><svg class="h-3 w-3 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>100%</span></span></div></td>
+<td class="py-2.5 pl-3 text-right"><div class="inline-flex items-center gap-1"><button id="low-r13-ed" type="button" class="inline-flex h-7 w-7 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-500"><svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536M9 11l6.232-6.232a2.5 2.5 0 113.536 3.536L12.536 14.536a4 4 0 01-1.414.94L8 16l.524-3.122A4 4 0 019 11z"></path></svg></button><button id="low-r13-ok" type="button" class="inline-flex h-7 w-7 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-500"><svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg></button></div></td>
+</tr><tr id="low-r14" class="ca-tr">
+<td class="py-2.5 pl-0.5 pr-4 font-medium text-slate-700 w-56">NATURE OF BUSINESS</td>
+<td class="py-2.5 pr-4 text-slate-600">Third- party logistics and e-commerce</td>
+<td class="py-2.5 pl-2 w-28"><div class="flex h-5 items-center gap-2"><div class="relative h-[3px] w-10 shrink-0 overflow-hidden rounded-full bg-slate-100"><div id="low-r14-bar" class="ca-bar h-full rounded-full bg-amber-400" style="width:77%"></div><div id="low-r14-bar2" class="ca-bar2 h-full rounded-full bg-emerald-400"></div></div>
+<span class="ca-conf relative inline-flex h-5 w-12 shrink-0 items-center justify-end"><span id="low-r14-c0" class="ca-c0 inline-flex h-5 w-12 shrink-0 items-center justify-end gap-0.5 text-xs font-medium tabular-nums text-amber-600">77%</span><span id="low-r14-c1" class="ca-c1 inline-flex h-5 w-12 shrink-0 items-center justify-end gap-0.5 text-xs font-medium tabular-nums text-emerald-600"><svg class="h-3 w-3 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>100%</span></span></div></td>
+<td class="py-2.5 pl-3 text-right"><div class="inline-flex items-center gap-1"><button id="low-r14-ed" type="button" class="inline-flex h-7 w-7 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-500"><svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536M9 11l6.232-6.232a2.5 2.5 0 113.536 3.536L12.536 14.536a4 4 0 01-1.414.94L8 16l.524-3.122A4 4 0 019 11z"></path></svg></button><button id="low-r14-ok" type="button" class="inline-flex h-7 w-7 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-500"><svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg></button></div></td>
+</tr><tr id="low-r15" class="ca-tr">
+<td class="py-2.5 pl-0.5 pr-4 font-medium text-slate-700 w-56">TELEPHONE</td>
+<td class="py-2.5 pr-4 text-slate-600">(503) 555-0120</td>
+<td class="py-2.5 pl-2 w-28"><div class="flex h-5 items-center gap-2"><div class="relative h-[3px] w-10 shrink-0 overflow-hidden rounded-full bg-slate-100"><div id="low-r15-bar" class="ca-bar h-full rounded-full bg-amber-400" style="width:76%"></div><div id="low-r15-bar2" class="ca-bar2 h-full rounded-full bg-emerald-400"></div></div>
+<span class="ca-conf relative inline-flex h-5 w-12 shrink-0 items-center justify-end"><span id="low-r15-c0" class="ca-c0 inline-flex h-5 w-12 shrink-0 items-center justify-end gap-0.5 text-xs font-medium tabular-nums text-amber-600">76%</span><span id="low-r15-c1" class="ca-c1 inline-flex h-5 w-12 shrink-0 items-center justify-end gap-0.5 text-xs font-medium tabular-nums text-emerald-600"><svg class="h-3 w-3 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>100%</span></span></div></td>
+<td class="py-2.5 pl-3 text-right"><div class="inline-flex items-center gap-1"><button id="low-r15-ed" type="button" class="inline-flex h-7 w-7 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-500"><svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536M9 11l6.232-6.232a2.5 2.5 0 113.536 3.536L12.536 14.536a4 4 0 01-1.414.94L8 16l.524-3.122A4 4 0 019 11z"></path></svg></button><button id="low-r15-ok" type="button" class="inline-flex h-7 w-7 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-500"><svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg></button></div></td>
+</tr><tr id="low-r16" class="ca-tr">
+<td class="py-2.5 pl-0.5 pr-4 font-medium text-slate-700 w-56">EMPLOYER'S LOCATION ADDRESS Street (If different)</td>
+<td class="py-2.5 pr-4 text-slate-600">1250 NE Rivergate St</td>
+<td class="py-2.5 pl-2 w-28"><div class="flex h-5 items-center gap-2"><div class="relative h-[3px] w-10 shrink-0 overflow-hidden rounded-full bg-slate-100"><div id="low-r16-bar" class="ca-bar h-full rounded-full bg-amber-400" style="width:75%"></div><div id="low-r16-bar2" class="ca-bar2 h-full rounded-full bg-emerald-400"></div></div>
+<span class="ca-conf relative inline-flex h-5 w-12 shrink-0 items-center justify-end"><span id="low-r16-c0" class="ca-c0 inline-flex h-5 w-12 shrink-0 items-center justify-end gap-0.5 text-xs font-medium tabular-nums text-amber-600">75%</span><span id="low-r16-c1" class="ca-c1 inline-flex h-5 w-12 shrink-0 items-center justify-end gap-0.5 text-xs font-medium tabular-nums text-emerald-600"><svg class="h-3 w-3 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>100%</span></span></div></td>
+<td class="py-2.5 pl-3 text-right"><div class="inline-flex items-center gap-1"><button id="low-r16-ed" type="button" class="inline-flex h-7 w-7 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-500"><svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536M9 11l6.232-6.232a2.5 2.5 0 113.536 3.536L12.536 14.536a4 4 0 01-1.414.94L8 16l.524-3.122A4 4 0 019 11z"></path></svg></button><button id="low-r16-ok" type="button" class="inline-flex h-7 w-7 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-500"><svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg></button></div></td>
+</tr><tr id="low-r17" class="ca-tr">
+<td class="py-2.5 pl-0.5 pr-4 font-medium text-slate-700 w-56">EMPLOYER'S LOCATION ADDRESS City</td>
+<td class="py-2.5 pr-4 text-slate-600">Portland</td>
+<td class="py-2.5 pl-2 w-28"><div class="flex h-5 items-center gap-2"><div class="relative h-[3px] w-10 shrink-0 overflow-hidden rounded-full bg-slate-100"><div id="low-r17-bar" class="ca-bar h-full rounded-full bg-amber-400" style="width:61%"></div><div id="low-r17-bar2" class="ca-bar2 h-full rounded-full bg-emerald-400"></div></div>
+<span class="ca-conf relative inline-flex h-5 w-12 shrink-0 items-center justify-end"><span id="low-r17-c0" class="ca-c0 inline-flex h-5 w-12 shrink-0 items-center justify-end gap-0.5 text-xs font-medium tabular-nums text-amber-600">61%</span><span id="low-r17-c1" class="ca-c1 inline-flex h-5 w-12 shrink-0 items-center justify-end gap-0.5 text-xs font-medium tabular-nums text-emerald-600"><svg class="h-3 w-3 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>100%</span></span></div></td>
+<td class="py-2.5 pl-3 text-right"><div class="inline-flex items-center gap-1"><button id="low-r17-ed" type="button" class="inline-flex h-7 w-7 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-500"><svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536M9 11l6.232-6.232a2.5 2.5 0 113.536 3.536L12.536 14.536a4 4 0 01-1.414.94L8 16l.524-3.122A4 4 0 019 11z"></path></svg></button><button id="low-r17-ok" type="button" class="inline-flex h-7 w-7 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-500"><svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg></button></div></td>
+</tr><tr id="low-r18" class="ca-tr">
+<td class="py-2.5 pl-0.5 pr-4 font-medium text-slate-700 w-56">LAST DATE EMPLOYEE WORKED</td>
+<td class="py-2.5 pr-4 text-slate-600">2024-09-18</td>
+<td class="py-2.5 pl-2 w-28"><div class="flex h-5 items-center gap-2"><div class="relative h-[3px] w-10 shrink-0 overflow-hidden rounded-full bg-slate-100"><div id="low-r18-bar" class="ca-bar h-full rounded-full bg-amber-400" style="width:75%"></div><div id="low-r18-bar2" class="ca-bar2 h-full rounded-full bg-emerald-400"></div></div>
+<span class="ca-conf relative inline-flex h-5 w-12 shrink-0 items-center justify-end"><span id="low-r18-c0" class="ca-c0 inline-flex h-5 w-12 shrink-0 items-center justify-end gap-0.5 text-xs font-medium tabular-nums text-amber-600">75%</span><span id="low-r18-c1" class="ca-c1 inline-flex h-5 w-12 shrink-0 items-center justify-end gap-0.5 text-xs font-medium tabular-nums text-emerald-600"><svg class="h-3 w-3 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>100%</span></span></div></td>
+<td class="py-2.5 pl-3 text-right"><div class="inline-flex items-center gap-1"><button id="low-r18-ed" type="button" class="inline-flex h-7 w-7 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-500"><svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536M9 11l6.232-6.232a2.5 2.5 0 113.536 3.536L12.536 14.536a4 4 0 01-1.414.94L8 16l.524-3.122A4 4 0 019 11z"></path></svg></button><button id="low-r18-ok" type="button" class="inline-flex h-7 w-7 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-500"><svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg></button></div></td>
+</tr><tr id="low-r19" class="ca-tr">
+<td class="py-2.5 pl-0.5 pr-4 font-medium text-slate-700 w-56">IF YES, GIVE DATE (Returned to work)</td>
+<td class="py-2.5 pr-4 text-slate-600"><span class="text-slate-300">&mdash;</span></td>
+<td class="py-2.5 pl-2 w-28"><div class="flex h-5 items-center gap-2"><div class="relative h-[3px] w-10 shrink-0 overflow-hidden rounded-full bg-slate-100"><div id="low-r19-bar" class="ca-bar h-full rounded-full bg-rose-400" style="width:0%"></div><div id="low-r19-bar2" class="ca-bar2 h-full rounded-full bg-emerald-400"></div></div>
+<span class="ca-conf relative inline-flex h-5 w-12 shrink-0 items-center justify-end"><span id="low-r19-c0" class="ca-c0 inline-flex h-5 w-12 shrink-0 items-center justify-end gap-0.5 text-xs font-medium tabular-nums text-rose-500"></span><span id="low-r19-c1" class="ca-c1 inline-flex h-5 w-12 shrink-0 items-center justify-end gap-0.5 text-xs font-medium tabular-nums text-emerald-600"><svg class="h-3 w-3 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>100%</span></span></div></td>
+<td class="py-2.5 pl-3 text-right"><div class="inline-flex items-center gap-1"><button id="low-r19-ed" type="button" class="inline-flex h-7 w-7 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-500"><svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536M9 11l6.232-6.232a2.5 2.5 0 113.536 3.536L12.536 14.536a4 4 0 01-1.414.94L8 16l.524-3.122A4 4 0 019 11z"></path></svg></button><button id="low-r19-ok" type="button" class="inline-flex h-7 w-7 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-500"><svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg></button></div></td>
+</tr><tr id="low-r20" class="ca-tr">
+<td class="py-2.5 pl-0.5 pr-4 font-medium text-slate-700 w-56">LAST DAY WAGES WILL BE PAID INSTEAD OF WORKERS' COMP</td>
+<td class="py-2.5 pr-4 text-slate-600"><span class="text-slate-300">&mdash;</span></td>
+<td class="py-2.5 pl-2 w-28"><div class="flex h-5 items-center gap-2"><div class="relative h-[3px] w-10 shrink-0 overflow-hidden rounded-full bg-slate-100"><div id="low-r20-bar" class="ca-bar h-full rounded-full bg-rose-400" style="width:0%"></div><div id="low-r20-bar2" class="ca-bar2 h-full rounded-full bg-emerald-400"></div></div>
+<span class="ca-conf relative inline-flex h-5 w-12 shrink-0 items-center justify-end"><span id="low-r20-c0" class="ca-c0 inline-flex h-5 w-12 shrink-0 items-center justify-end gap-0.5 text-xs font-medium tabular-nums text-rose-500"></span><span id="low-r20-c1" class="ca-c1 inline-flex h-5 w-12 shrink-0 items-center justify-end gap-0.5 text-xs font-medium tabular-nums text-emerald-600"><svg class="h-3 w-3 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>100%</span></span></div></td>
+<td class="py-2.5 pl-3 text-right"><div class="inline-flex items-center gap-1"><button id="low-r20-ed" type="button" class="inline-flex h-7 w-7 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-500"><svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536M9 11l6.232-6.232a2.5 2.5 0 113.536 3.536L12.536 14.536a4 4 0 01-1.414.94L8 16l.524-3.122A4 4 0 019 11z"></path></svg></button><button id="low-r20-ok" type="button" class="inline-flex h-7 w-7 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-500"><svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg></button></div></td>
+</tr><tr id="low-r21" class="ca-tr">
+<td class="py-2.5 pl-0.5 pr-4 font-medium text-slate-700 w-56">PLACE OF ACCIDENT Street</td>
+<td class="py-2.5 pr-4 text-slate-600">1250 NE Rivergate St, Loading Dock Bay 3</td>
+<td class="py-2.5 pl-2 w-28"><div class="flex h-5 items-center gap-2"><div class="relative h-[3px] w-10 shrink-0 overflow-hidden rounded-full bg-slate-100"><div id="low-r21-bar" class="ca-bar h-full rounded-full bg-amber-400" style="width:74%"></div><div id="low-r21-bar2" class="ca-bar2 h-full rounded-full bg-emerald-400"></div></div>
+<span class="ca-conf relative inline-flex h-5 w-12 shrink-0 items-center justify-end"><span id="low-r21-c0" class="ca-c0 inline-flex h-5 w-12 shrink-0 items-center justify-end gap-0.5 text-xs font-medium tabular-nums text-amber-600">74%</span><span id="low-r21-c1" class="ca-c1 inline-flex h-5 w-12 shrink-0 items-center justify-end gap-0.5 text-xs font-medium tabular-nums text-emerald-600"><svg class="h-3 w-3 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>100%</span></span></div></td>
+<td class="py-2.5 pl-3 text-right"><div class="inline-flex items-center gap-1"><button id="low-r21-ed" type="button" class="inline-flex h-7 w-7 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-500"><svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536M9 11l6.232-6.232a2.5 2.5 0 113.536 3.536L12.536 14.536a4 4 0 01-1.414.94L8 16l.524-3.122A4 4 0 019 11z"></path></svg></button><button id="low-r21-ok" type="button" class="inline-flex h-7 w-7 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-500"><svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg></button></div></td>
+</tr><tr id="low-r22" class="ca-tr">
+<td class="py-2.5 pl-0.5 pr-4 font-medium text-slate-700 w-56">PLACE OF ACCIDENT City</td>
+<td class="py-2.5 pr-4 text-slate-600"><span class="text-slate-300">&mdash;</span></td>
+<td class="py-2.5 pl-2 w-28"><div class="flex h-5 items-center gap-2"><div class="relative h-[3px] w-10 shrink-0 overflow-hidden rounded-full bg-slate-100"><div id="low-r22-bar" class="ca-bar h-full rounded-full bg-rose-400" style="width:0%"></div><div id="low-r22-bar2" class="ca-bar2 h-full rounded-full bg-emerald-400"></div></div>
+<span class="ca-conf relative inline-flex h-5 w-12 shrink-0 items-center justify-end"><span id="low-r22-c0" class="ca-c0 inline-flex h-5 w-12 shrink-0 items-center justify-end gap-0.5 text-xs font-medium tabular-nums text-rose-500"></span><span id="low-r22-c1" class="ca-c1 inline-flex h-5 w-12 shrink-0 items-center justify-end gap-0.5 text-xs font-medium tabular-nums text-emerald-600"><svg class="h-3 w-3 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>100%</span></span></div></td>
+<td class="py-2.5 pl-3 text-right"><div class="inline-flex items-center gap-1"><button id="low-r22-ed" type="button" class="inline-flex h-7 w-7 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-500"><svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536M9 11l6.232-6.232a2.5 2.5 0 113.536 3.536L12.536 14.536a4 4 0 01-1.414.94L8 16l.524-3.122A4 4 0 019 11z"></path></svg></button><button id="low-r22-ok" type="button" class="inline-flex h-7 w-7 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-500"><svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg></button></div></td>
+</tr><tr id="low-r23" class="ca-tr">
+<td class="py-2.5 pl-0.5 pr-4 font-medium text-slate-700 w-56">PLACE OF ACCIDENT State</td>
+<td class="py-2.5 pr-4 text-slate-600"><span class="text-slate-300">&mdash;</span></td>
+<td class="py-2.5 pl-2 w-28"><div class="flex h-5 items-center gap-2"><div class="relative h-[3px] w-10 shrink-0 overflow-hidden rounded-full bg-slate-100"><div id="low-r23-bar" class="ca-bar h-full rounded-full bg-rose-400" style="width:0%"></div><div id="low-r23-bar2" class="ca-bar2 h-full rounded-full bg-emerald-400"></div></div>
+<span class="ca-conf relative inline-flex h-5 w-12 shrink-0 items-center justify-end"><span id="low-r23-c0" class="ca-c0 inline-flex h-5 w-12 shrink-0 items-center justify-end gap-0.5 text-xs font-medium tabular-nums text-rose-500"></span><span id="low-r23-c1" class="ca-c1 inline-flex h-5 w-12 shrink-0 items-center justify-end gap-0.5 text-xs font-medium tabular-nums text-emerald-600"><svg class="h-3 w-3 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>100%</span></span></div></td>
+<td class="py-2.5 pl-3 text-right"><div class="inline-flex items-center gap-1"><button id="low-r23-ed" type="button" class="inline-flex h-7 w-7 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-500"><svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536M9 11l6.232-6.232a2.5 2.5 0 113.536 3.536L12.536 14.536a4 4 0 01-1.414.94L8 16l.524-3.122A4 4 0 019 11z"></path></svg></button><button id="low-r23-ok" type="button" class="inline-flex h-7 w-7 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-500"><svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg></button></div></td>
+</tr><tr id="low-r24" class="ca-tr">
+<td class="py-2.5 pl-0.5 pr-4 font-medium text-slate-700 w-56">COUNTY OF ACCIDENT</td>
+<td class="py-2.5 pr-4 text-slate-600">Multnomah</td>
+<td class="py-2.5 pl-2 w-28"><div class="flex h-5 items-center gap-2"><div class="relative h-[3px] w-10 shrink-0 overflow-hidden rounded-full bg-slate-100"><div id="low-r24-bar" class="ca-bar h-full rounded-full bg-rose-400" style="width:38%"></div><div id="low-r24-bar2" class="ca-bar2 h-full rounded-full bg-emerald-400"></div></div>
+<span class="ca-conf relative inline-flex h-5 w-12 shrink-0 items-center justify-end"><span id="low-r24-c0" class="ca-c0 inline-flex h-5 w-12 shrink-0 items-center justify-end gap-0.5 text-xs font-medium tabular-nums text-rose-500">38%</span><span id="low-r24-c1" class="ca-c1 inline-flex h-5 w-12 shrink-0 items-center justify-end gap-0.5 text-xs font-medium tabular-nums text-emerald-600"><svg class="h-3 w-3 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>100%</span></span></div></td>
+<td class="py-2.5 pl-3 text-right"><div class="inline-flex items-center gap-1"><button id="low-r24-ed" type="button" class="inline-flex h-7 w-7 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-500"><svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536M9 11l6.232-6.232a2.5 2.5 0 113.536 3.536L12.536 14.536a4 4 0 01-1.414.94L8 16l.524-3.122A4 4 0 019 11z"></path></svg></button><button id="low-r24-ok" type="button" class="inline-flex h-7 w-7 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-500"><svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg></button></div></td>
+</tr><tr id="low-r25" class="ca-tr">
+<td class="py-2.5 pl-0.5 pr-4 font-medium text-slate-700 w-56">DATE OF DEATH (If applicable)</td>
+<td class="py-2.5 pr-4 text-slate-600">2024-09-23</td>
+<td class="py-2.5 pl-2 w-28"><div class="flex h-5 items-center gap-2"><div class="relative h-[3px] w-10 shrink-0 overflow-hidden rounded-full bg-slate-100"><div id="low-r25-bar" class="ca-bar h-full rounded-full bg-rose-400" style="width:20%"></div><div id="low-r25-bar2" class="ca-bar2 h-full rounded-full bg-emerald-400"></div></div>
+<span class="ca-conf relative inline-flex h-5 w-12 shrink-0 items-center justify-end"><span id="low-r25-c0" class="ca-c0 inline-flex h-5 w-12 shrink-0 items-center justify-end gap-0.5 text-xs font-medium tabular-nums text-rose-500">20%</span><span id="low-r25-c1" class="ca-c1 inline-flex h-5 w-12 shrink-0 items-center justify-end gap-0.5 text-xs font-medium tabular-nums text-emerald-600"><svg class="h-3 w-3 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>100%</span></span></div></td>
+<td class="py-2.5 pl-3 text-right"><div class="inline-flex items-center gap-1"><button id="low-r25-ed" type="button" class="inline-flex h-7 w-7 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-500"><svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536M9 11l6.232-6.232a2.5 2.5 0 113.536 3.536L12.536 14.536a4 4 0 01-1.414.94L8 16l.524-3.122A4 4 0 019 11z"></path></svg></button><button id="low-r25-ok" type="button" class="inline-flex h-7 w-7 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-500"><svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg></button></div></td>
+</tr><tr id="low-r26" class="ca-tr">
+<td class="py-2.5 pl-0.5 pr-4 font-medium text-slate-700 w-56">RATE OF PAY $</td>
+<td class="py-2.5 pr-4 text-slate-600">22.75</td>
+<td class="py-2.5 pl-2 w-28"><div class="flex h-5 items-center gap-2"><div class="relative h-[3px] w-10 shrink-0 overflow-hidden rounded-full bg-slate-100"><div id="low-r26-bar" class="ca-bar h-full rounded-full bg-rose-400" style="width:17%"></div><div id="low-r26-bar2" class="ca-bar2 h-full rounded-full bg-emerald-400"></div></div>
+<span class="ca-conf relative inline-flex h-5 w-12 shrink-0 items-center justify-end"><span id="low-r26-c0" class="ca-c0 inline-flex h-5 w-12 shrink-0 items-center justify-end gap-0.5 text-xs font-medium tabular-nums text-rose-500">17%</span><span id="low-r26-c1" class="ca-c1 inline-flex h-5 w-12 shrink-0 items-center justify-end gap-0.5 text-xs font-medium tabular-nums text-emerald-600"><svg class="h-3 w-3 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>100%</span></span></div></td>
+<td class="py-2.5 pl-3 text-right"><div class="inline-flex items-center gap-1"><button id="low-r26-ed" type="button" class="inline-flex h-7 w-7 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-500"><svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536M9 11l6.232-6.232a2.5 2.5 0 113.536 3.536L12.536 14.536a4 4 0 01-1.414.94L8 16l.524-3.122A4 4 0 019 11z"></path></svg></button><button id="low-r26-ok" type="button" class="inline-flex h-7 w-7 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-500"><svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg></button></div></td>
+</tr><tr id="low-r27" class="ca-tr">
+<td class="py-2.5 pl-0.5 pr-4 font-medium text-slate-700 w-56">Number of hours per day</td>
+<td class="py-2.5 pr-4 text-slate-600">8</td>
+<td class="py-2.5 pl-2 w-28"><div class="flex h-5 items-center gap-2"><div class="relative h-[3px] w-10 shrink-0 overflow-hidden rounded-full bg-slate-100"><div id="low-r27-bar" class="ca-bar h-full rounded-full bg-amber-400" style="width:78%"></div><div id="low-r27-bar2" class="ca-bar2 h-full rounded-full bg-emerald-400"></div></div>
+<span class="ca-conf relative inline-flex h-5 w-12 shrink-0 items-center justify-end"><span id="low-r27-c0" class="ca-c0 inline-flex h-5 w-12 shrink-0 items-center justify-end gap-0.5 text-xs font-medium tabular-nums text-amber-600">78%</span><span id="low-r27-c1" class="ca-c1 inline-flex h-5 w-12 shrink-0 items-center justify-end gap-0.5 text-xs font-medium tabular-nums text-emerald-600"><svg class="h-3 w-3 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>100%</span></span></div></td>
+<td class="py-2.5 pl-3 text-right"><div class="inline-flex items-center gap-1"><button id="low-r27-ed" type="button" class="inline-flex h-7 w-7 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-500"><svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536M9 11l6.232-6.232a2.5 2.5 0 113.536 3.536L12.536 14.536a4 4 0 01-1.414.94L8 16l.524-3.122A4 4 0 019 11z"></path></svg></button><button id="low-r27-ok" type="button" class="inline-flex h-7 w-7 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-500"><svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg></button></div></td>
+</tr><tr id="low-r28" class="ca-tr">
+<td class="py-2.5 pl-0.5 pr-4 font-medium text-slate-700 w-56">Number of hours per week</td>
+<td class="py-2.5 pr-4 text-slate-600">40</td>
+<td class="py-2.5 pl-2 w-28"><div class="flex h-5 items-center gap-2"><div class="relative h-[3px] w-10 shrink-0 overflow-hidden rounded-full bg-slate-100"><div id="low-r28-bar" class="ca-bar h-full rounded-full bg-amber-400" style="width:76%"></div><div id="low-r28-bar2" class="ca-bar2 h-full rounded-full bg-emerald-400"></div></div>
+<span class="ca-conf relative inline-flex h-5 w-12 shrink-0 items-center justify-end"><span id="low-r28-c0" class="ca-c0 inline-flex h-5 w-12 shrink-0 items-center justify-end gap-0.5 text-xs font-medium tabular-nums text-amber-600">76%</span><span id="low-r28-c1" class="ca-c1 inline-flex h-5 w-12 shrink-0 items-center justify-end gap-0.5 text-xs font-medium tabular-nums text-emerald-600"><svg class="h-3 w-3 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>100%</span></span></div></td>
+<td class="py-2.5 pl-3 text-right"><div class="inline-flex items-center gap-1"><button id="low-r28-ed" type="button" class="inline-flex h-7 w-7 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-500"><svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536M9 11l6.232-6.232a2.5 2.5 0 113.536 3.536L12.536 14.536a4 4 0 01-1.414.94L8 16l.524-3.122A4 4 0 019 11z"></path></svg></button><button id="low-r28-ok" type="button" class="inline-flex h-7 w-7 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-500"><svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg></button></div></td>
+</tr><tr id="low-r29" class="ca-tr">
+<td class="py-2.5 pl-0.5 pr-4 font-medium text-slate-700 w-56">Number of days per week</td>
+<td class="py-2.5 pr-4 text-slate-600">5</td>
+<td class="py-2.5 pl-2 w-28"><div class="flex h-5 items-center gap-2"><div class="relative h-[3px] w-10 shrink-0 overflow-hidden rounded-full bg-slate-100"><div id="low-r29-bar" class="ca-bar h-full rounded-full bg-rose-400" style="width:58%"></div><div id="low-r29-bar2" class="ca-bar2 h-full rounded-full bg-emerald-400"></div></div>
+<span class="ca-conf relative inline-flex h-5 w-12 shrink-0 items-center justify-end"><span id="low-r29-c0" class="ca-c0 inline-flex h-5 w-12 shrink-0 items-center justify-end gap-0.5 text-xs font-medium tabular-nums text-rose-500">58%</span><span id="low-r29-c1" class="ca-c1 inline-flex h-5 w-12 shrink-0 items-center justify-end gap-0.5 text-xs font-medium tabular-nums text-emerald-600"><svg class="h-3 w-3 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>100%</span></span></div></td>
+<td class="py-2.5 pl-3 text-right"><div class="inline-flex items-center gap-1"><button id="low-r29-ed" type="button" class="inline-flex h-7 w-7 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-500"><svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536M9 11l6.232-6.232a2.5 2.5 0 113.536 3.536L12.536 14.536a4 4 0 01-1.414.94L8 16l.524-3.122A4 4 0 019 11z"></path></svg></button><button id="low-r29-ok" type="button" class="inline-flex h-7 w-7 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-500"><svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg></button></div></td>
+</tr><tr id="low-r30" class="ca-tr">
+<td class="py-2.5 pl-0.5 pr-4 font-medium text-slate-700 w-56">NAME, ADDRESS AND TELEPHONE OF PHYSICIAN OR HOSPITAL</td>
+<td class="py-2.5 pr-4 text-slate-600">Providence Occupational Health, North Portland, 4925N Basin Ave,
+97217</td>
+<td class="py-2.5 pl-2 w-28"><div class="flex h-5 items-center gap-2"><div class="relative h-[3px] w-10 shrink-0 overflow-hidden rounded-full bg-slate-100"><div id="low-r30-bar" class="ca-bar h-full rounded-full bg-rose-400" style="width:35%"></div><div id="low-r30-bar2" class="ca-bar2 h-full rounded-full bg-emerald-400"></div></div>
+<span class="ca-conf relative inline-flex h-5 w-12 shrink-0 items-center justify-end"><span id="low-r30-c0" class="ca-c0 inline-flex h-5 w-12 shrink-0 items-center justify-end gap-0.5 text-xs font-medium tabular-nums text-rose-500">35%</span><span id="low-r30-c1" class="ca-c1 inline-flex h-5 w-12 shrink-0 items-center justify-end gap-0.5 text-xs font-medium tabular-nums text-emerald-600"><svg class="h-3 w-3 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>100%</span></span></div></td>
+<td class="py-2.5 pl-3 text-right"><div class="inline-flex items-center gap-1"><button id="low-r30-ed" type="button" class="inline-flex h-7 w-7 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-500"><svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536M9 11l6.232-6.232a2.5 2.5 0 113.536 3.536L12.536 14.536a4 4 0 01-1.414.94L8 16l.524-3.122A4 4 0 019 11z"></path></svg></button><button id="low-r30-ok" type="button" class="inline-flex h-7 w-7 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-500"><svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg></button></div></td>
+</tr></tbody></table></div></div></div></div></details>
+          </div>
+          <div id="card-all" class="card relative px-6 py-5">
+            <details class="ca-det ca-closed"><summary class="cursor-pointer select-none pl-5 text-[15px] font-semibold text-slate-800"><span class="ml-2 inline-flex items-center gap-1.5">All Fields<span class="info-tip info-tip-down">i</span><span class="inline-flex items-center rounded-full bg-slate-100 px-2 py-0.5 text-xs font-medium text-slate-600">54</span></span></summary></details>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<!-- export dialog -->
+<div id="dlg-overlay" class="ca-overlay fixed-like inset-0 z-50 bg-black/20"></div>
+<div id="dlg-wrap" class="ca-dlgwrap"><div id="dlg" class="card mx-4 w-full max-w-md p-6">
+  <div class="flex items-start gap-3"><div class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-accent-subtle"><svg class="h-5 w-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg></div>
+  <div><h2 class="text-[15px] font-semibold text-slate-800">Export Ready</h2><p class="mt-1 text-[13px] leading-relaxed text-slate-500">31 of 54 fields reviewed. The claim data will be exported to the ASC system for further processing.</p></div></div>
+  <div class="mt-5 flex items-center justify-end gap-2"><button id="dlg-cancel" type="button" class="inline-flex items-center rounded-lg border border-slate-200 bg-white px-3.5 py-1.5 text-[13px] font-medium text-slate-600">Cancel</button><button id="dlg-confirm" type="button" class="btn-primary inline-flex items-center rounded-lg px-3.5 py-1.5 text-[13px] font-medium text-white shadow-sm">Confirm Export</button></div>
+</div></div>
+<!-- form menu (the native select popup, drawn in the app's popover style) -->
+<div id="menu-form" class="ca-menu">
+  <div id="menu-form-hl" class="ca-menu-hl"></div>
+  <div id="menu-form-i0" class="ca-menu-i">Florida digital<span class="ca-menu-check"><svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg></span></div><div id="menu-form-i1" class="ca-menu-i">Florida handwritten</div><div id="menu-form-i2" class="ca-menu-i">New Hampshire digital</div><div id="menu-form-i3" class="ca-menu-i">New Hampshire handwritten</div><div id="menu-form-i4" class="ca-menu-i">Wisconsin digital</div><div id="menu-form-i5" class="ca-menu-i">Wisconsin handwritten</div><div id="menu-form-i6" class="ca-menu-i">Custom</div>
+</div>
+<!-- cursor -->
+<svg id="ca-cursor" width="24" height="24" viewBox="0 0 24 24"><path d="M5.5 2.5 L5.5 19.2 L9.6 15.4 L12.3 21.4 L15.1 20.2 L12.4 14.3 L18 14.3 Z" fill="#111827" stroke="#ffffff" stroke-width="1.5" stroke-linejoin="round"/></svg>
+</div>
+</div>
+<!-- callouts live in screen space, above the camera -->
+<div id="ca-callouts">
+  <div id="call-a" class="ca-call"><div id="call-a-line" class="ca-call-line"></div><div class="ca-call-dot"></div><div id="call-a-box" class="ca-call-box"><span id="call-a-t"></span></div></div>
+  <div id="call-b" class="ca-call"><div id="call-b-line" class="ca-call-line"></div><div class="ca-call-dot"></div><div id="call-b-box" class="ca-call-box"><span id="call-b-t"></span></div></div>
+  <div id="call-c" class="ca-call"><div id="call-c-line" class="ca-call-line"></div><div class="ca-call-dot"></div><div id="call-c-box" class="ca-call-box"><span id="call-c-t"></span></div></div>
+  <div id="call-d" class="ca-call"><div id="call-d-line" class="ca-call-line"></div><div class="ca-call-dot"></div><div id="call-d-box" class="ca-call-box"><span id="call-d-t"></span></div></div>
+  <div id="call-e" class="ca-call"><div id="call-e-line" class="ca-call-line"></div><div class="ca-call-dot"></div><div id="call-e-box" class="ca-call-box"><span id="call-e-t"></span></div></div>
+  <div id="call-f" class="ca-call"><div id="call-f-line" class="ca-call-line"></div><div class="ca-call-dot"></div><div id="call-f-box" class="ca-call-box"><span id="call-f-t"></span></div></div>
+  <div id="call-g" class="ca-call"><div id="call-g-line" class="ca-call-line"></div><div class="ca-call-dot"></div><div id="call-g-box" class="ca-call-box"><span id="call-g-t"></span></div></div>
+</div>
+
+</div>
+<script>
+window.__CA_DATA = {"geom":{"chip-low":{"x":847.7,"y":487.5,"w":130,"h":24},"chip-all":{"x":785,"y":487.5,"w":54.7,"h":24},"ca-toolbar":{"x":35,"y":79.3,"w":674,"h":95.5},"sel-form":{"x":358.7,"y":88.3,"w":160,"h":38},"btn-process":{"x":563,"y":134.3,"w":133,"h":31.5},"btn-reset":{"x":471.2,"y":134.3,"w":83.8,"h":31.5},"ca-page-hw":{"x":148.3,"y":199.8,"w":447.4,"h":579},"ca-right":{"x":740,"y":68.3,"w":696,"h":730},"r-res":{"x":740,"y":68.3,"w":696,"h":730},"r-proc":{"x":740,"y":68.3,"w":696,"h":125.5},"r-empty":{"x":740,"y":68.3,"w":696,"h":211.5},"ca-rscroll":{"x":740,"y":68.3,"w":696,"h":3320.3},"card-sum":{"x":740,"y":68.3,"w":696,"h":464.3},"sum-badge":{"x":785,"y":139.8,"w":92.1,"h":24},"sum-text":{"x":785,"y":175.8,"w":626,"h":295.8},"sum-chips":{"x":785,"y":487.5,"w":626,"h":24},"chip-rev":{"x":985.7,"y":487.5,"w":91,"h":24},"btn-export":{"x":1305.5,"y":89.3,"w":89.5,"h":31.5},"card-key":{"x":740,"y":548.5,"w":696,"h":743},"card-low":{"x":740,"y":1307.5,"w":696,"h":1944.5},"low-summary":{"x":765,"y":1328.5,"w":646,"h":22.5},"low-inner":{"x":765,"y":1367,"w":646,"h":1864},"card-all":{"x":740,"y":3268,"w":696,"h":64.5},"dlg":{"x":496,"y":318.9,"w":448,"h":172.3},"dlg-confirm":{"x":797.1,"y":433.6,"w":121.9,"h":31.5},"dlg-cancel":{"x":715.2,"y":432.6,"w":73.9,"h":33.5},"keyRows":[{"x":785,"y":642.5,"w":626,"h":49},{"x":785,"y":691.5,"w":626,"h":49},{"x":785,"y":740.5,"w":626,"h":49},{"x":785,"y":789.5,"w":626,"h":49},{"x":785,"y":838.5,"w":626,"h":49},{"x":785,"y":887.5,"w":626,"h":49},{"x":785,"y":936.5,"w":626,"h":274.5},{"x":785,"y":1211,"w":626,"h":59.5}],"lowRows":[{"row":{"x":785,"y":1401.5,"w":626,"h":49},"ok":{"x":1382,"y":1412,"w":28,"h":28},"ed":{"x":1350,"y":1412,"w":28,"h":28},"c":{"x":1291.7,"y":1416,"w":48,"h":20}},{"row":{"x":785,"y":1450.5,"w":626,"h":49},"ok":{"x":1382,"y":1461,"w":28,"h":28},"ed":{"x":1350,"y":1461,"w":28,"h":28},"c":{"x":1291.7,"y":1465,"w":48,"h":20}},{"row":{"x":785,"y":1499.5,"w":626,"h":49},"ok":{"x":1382,"y":1510,"w":28,"h":28},"ed":{"x":1350,"y":1510,"w":28,"h":28},"c":{"x":1291.7,"y":1514,"w":48,"h":20}},{"row":{"x":785,"y":1548.5,"w":626,"h":49},"ok":{"x":1382,"y":1559,"w":28,"h":28},"ed":{"x":1350,"y":1559,"w":28,"h":28},"c":{"x":1291.7,"y":1563,"w":48,"h":20}},{"row":{"x":785,"y":1597.5,"w":626,"h":49},"ok":{"x":1382,"y":1608,"w":28,"h":28},"ed":{"x":1350,"y":1608,"w":28,"h":28},"c":{"x":1291.7,"y":1612,"w":48,"h":20}},{"row":{"x":785,"y":1646.5,"w":626,"h":274.5},"ok":{"x":1382,"y":1769.8,"w":28,"h":28},"ed":{"x":1350,"y":1769.8,"w":28,"h":28},"c":{"x":1291.7,"y":1773.8,"w":48,"h":20}},{"row":{"x":785,"y":1921,"w":626,"h":49},"ok":{"x":1382,"y":1931.5,"w":28,"h":28},"ed":{"x":1350,"y":1931.5,"w":28,"h":28},"c":{"x":1291.7,"y":1935.5,"w":48,"h":20}},{"row":{"x":785,"y":1970,"w":626,"h":49},"ok":{"x":1382,"y":1980.5,"w":28,"h":28},"ed":{"x":1350,"y":1980.5,"w":28,"h":28},"c":{"x":1291.7,"y":1984.5,"w":48,"h":20}},{"row":{"x":785,"y":2019,"w":626,"h":49},"ok":{"x":1382,"y":2029.5,"w":28,"h":28},"ed":{"x":1350,"y":2029.5,"w":28,"h":28},"c":{"x":1291.7,"y":2033.5,"w":48,"h":20}},{"row":{"x":785,"y":2068,"w":626,"h":49},"ok":{"x":1382,"y":2078.5,"w":28,"h":28},"ed":{"x":1350,"y":2078.5,"w":28,"h":28},"c":{"x":1291.7,"y":2082.5,"w":48,"h":20}},{"row":{"x":785,"y":2117,"w":626,"h":49},"ok":{"x":1382,"y":2127.5,"w":28,"h":28},"ed":{"x":1350,"y":2127.5,"w":28,"h":28},"c":{"x":1291.7,"y":2131.5,"w":48,"h":20}},{"row":{"x":785,"y":2166,"w":626,"h":49},"ok":{"x":1382,"y":2176.5,"w":28,"h":28},"ed":{"x":1350,"y":2176.5,"w":28,"h":28},"c":{"x":1291.7,"y":2180.5,"w":48,"h":20}},{"row":{"x":785,"y":2215,"w":626,"h":49},"ok":{"x":1382,"y":2225.5,"w":28,"h":28},"ed":{"x":1350,"y":2225.5,"w":28,"h":28},"c":{"x":1291.7,"y":2229.5,"w":48,"h":20}},{"row":{"x":785,"y":2264,"w":626,"h":49},"ok":{"x":1382,"y":2274.5,"w":28,"h":28},"ed":{"x":1350,"y":2274.5,"w":28,"h":28},"c":{"x":1291.7,"y":2278.5,"w":48,"h":20}},{"row":{"x":785,"y":2313,"w":626,"h":60},"ok":{"x":1382,"y":2329,"w":28,"h":28},"ed":{"x":1350,"y":2329,"w":28,"h":28},"c":{"x":1291.7,"y":2333,"w":48,"h":20}},{"row":{"x":785,"y":2373,"w":626,"h":49},"ok":{"x":1382,"y":2383.5,"w":28,"h":28},"ed":{"x":1350,"y":2383.5,"w":28,"h":28},"c":{"x":1291.7,"y":2387.5,"w":48,"h":20}},{"row":{"x":785,"y":2422,"w":626,"h":60},"ok":{"x":1382,"y":2438,"w":28,"h":28},"ed":{"x":1350,"y":2438,"w":28,"h":28},"c":{"x":1291.7,"y":2442,"w":48,"h":20}},{"row":{"x":785,"y":2482,"w":626,"h":60},"ok":{"x":1382,"y":2498,"w":28,"h":28},"ed":{"x":1350,"y":2498,"w":28,"h":28},"c":{"x":1291.7,"y":2502,"w":48,"h":20}},{"row":{"x":785,"y":2542,"w":626,"h":49},"ok":{"x":1382,"y":2552.5,"w":28,"h":28},"ed":{"x":1350,"y":2552.5,"w":28,"h":28},"c":{"x":1291.7,"y":2556.5,"w":48,"h":20}},{"row":{"x":785,"y":2591,"w":626,"h":49},"ok":{"x":1382,"y":2601.5,"w":28,"h":28},"ed":{"x":1350,"y":2601.5,"w":28,"h":28},"c":{"x":1291.7,"y":2605.5,"w":48,"h":20}},{"row":{"x":785,"y":2640,"w":626,"h":60},"ok":{"x":1382,"y":2656,"w":28,"h":28},"ed":{"x":1350,"y":2656,"w":28,"h":28},"c":{"x":1291.7,"y":2660,"w":48,"h":20}},{"row":{"x":785,"y":2700,"w":626,"h":60},"ok":{"x":1382,"y":2716,"w":28,"h":28},"ed":{"x":1350,"y":2716,"w":28,"h":28},"c":{"x":1291.7,"y":2720,"w":48,"h":20}},{"row":{"x":785,"y":2760,"w":626,"h":49},"ok":{"x":1382,"y":2770.5,"w":28,"h":28},"ed":{"x":1350,"y":2770.5,"w":28,"h":28},"c":{"x":1291.7,"y":2774.5,"w":48,"h":20}},{"row":{"x":785,"y":2809,"w":626,"h":49},"ok":{"x":1382,"y":2819.5,"w":28,"h":28},"ed":{"x":1350,"y":2819.5,"w":28,"h":28},"c":{"x":1291.7,"y":2823.5,"w":48,"h":20}},{"row":{"x":785,"y":2858,"w":626,"h":49},"ok":{"x":1382,"y":2868.5,"w":28,"h":28},"ed":{"x":1350,"y":2868.5,"w":28,"h":28},"c":{"x":1291.7,"y":2872.5,"w":48,"h":20}},{"row":{"x":785,"y":2907,"w":626,"h":49},"ok":{"x":1382,"y":2917.5,"w":28,"h":28},"ed":{"x":1350,"y":2917.5,"w":28,"h":28},"c":{"x":1291.7,"y":2921.5,"w":48,"h":20}},{"row":{"x":785,"y":2956,"w":626,"h":49},"ok":{"x":1382,"y":2966.5,"w":28,"h":28},"ed":{"x":1350,"y":2966.5,"w":28,"h":28},"c":{"x":1291.7,"y":2970.5,"w":48,"h":20}},{"row":{"x":785,"y":3005,"w":626,"h":49},"ok":{"x":1382,"y":3015.5,"w":28,"h":28},"ed":{"x":1350,"y":3015.5,"w":28,"h":28},"c":{"x":1291.7,"y":3019.5,"w":48,"h":20}},{"row":{"x":785,"y":3054,"w":626,"h":49},"ok":{"x":1382,"y":3064.5,"w":28,"h":28},"ed":{"x":1350,"y":3064.5,"w":28,"h":28},"c":{"x":1291.7,"y":3068.5,"w":48,"h":20}},{"row":{"x":785,"y":3103,"w":626,"h":49},"ok":{"x":1382,"y":3113.5,"w":28,"h":28},"ed":{"x":1350,"y":3113.5,"w":28,"h":28},"c":{"x":1291.7,"y":3117.5,"w":48,"h":20}},{"row":{"x":785,"y":3152,"w":626,"h":79},"ok":{"x":1382,"y":3177.8,"w":28,"h":28},"ed":{"x":1350,"y":3177.8,"w":28,"h":28},"c":{"x":1291.7,"y":3181.8,"w":48,"h":20}}],"boxes":{"box-key-0":{"x":460.6,"y":407.3,"w":49.5,"h":10.4},"box-key-1":{"x":177.7,"y":290.5,"w":107.6,"h":8.8},"box-key-2":{"x":177.7,"y":290.5,"w":107.6,"h":8.8},"box-key-3":{"x":425.8,"y":291.2,"w":36.5,"h":7.3},"box-key-4":{"x":486.9,"y":389.2,"w":37,"h":7.8},"box-key-5":{"x":333.8,"y":360.6,"w":99.9,"h":9.6},"box-key-6":{"x":296.5,"y":308.6,"w":274.3,"h":33.6},"box-key-7":{"x":190.2,"y":496.8,"w":137.2,"h":13.6},"box-low-9":{"x":194,"y":391.5,"w":58.7,"h":9.1}},"company":{"row":{"x":785,"y":2068,"w":626,"h":49},"vwrap":{"x":1036.4,"y":2082.8,"w":183.3,"h":19.5},"td":{"x":1035.4,"y":2068,"w":200.3,"h":49}},"lowBodyH":1864,"scrollH":3320.25,"vstates":{"v0":19.5,"v1":39,"inp":27}},"nKey":8,"nLow":31,"total":54,"companyIdx":9,"lowLabels":["NAME (First, Middle, Last) - First","NAME (First, Middle, Last) - Middle","NAME (First, Middle, Last) - Last","HOME ADDRESS Street/Apt #","HOME ADDRESS Zip","EMPLOYEE'S DESCRIPTION OF ACCIDENT (Include Cause of Injury)","TELEPHONE","INJURY/ILLNESS THAT OCCURRED","PART OF BODY AFFECTED","COMPANY NAME","D. B. A.","Street (Employer)","State (Employer)","Zip (Employer)","NATURE OF BUSINESS","TELEPHONE","EMPLOYER'S LOCATION ADDRESS Street (If different)","EMPLOYER'S LOCATION ADDRESS City","LAST DATE EMPLOYEE WORKED","IF YES, GIVE DATE (Returned to work)","LAST DAY WAGES WILL BE PAID INSTEAD OF WORKERS' COMP","PLACE OF ACCIDENT Street","PLACE OF ACCIDENT City","PLACE OF ACCIDENT State","COUNTY OF ACCIDENT","DATE OF DEATH (If applicable)","RATE OF PAY $","Number of hours per day","Number of hours per week","Number of days per week","NAME, ADDRESS AND TELEPHONE OF PHYSICIAN OR HOSPITAL"],"keyLabels":["Policy Number","First Name","Last Name","Incident Date","Report Date","Type of Loss","Loss Description","Loss Location"]};
+(function () {
+  "use strict";
+  var D = window.__CA_DATA, G = D.geom;
+  // Keep every transform 2D: force3D "auto" promotes the camera to a compositor layer that Chrome rasterizes
+  // at 1x and stretches (soft zooms, text flipping between a crisp and a soft copy).
+  gsap.config({ force3D: false });
+  var tl = gsap.timeline({ paused: true });
+  var APP0 = 6.4; // this scene's host data-start in index.html; every time below is a GLOBAL second
+  var T = function (g) { return Math.max(0, +(g - APP0).toFixed(4)); };
+  var FPS = 30;
+  var $ = function (id) { return document.getElementById(id); };
+  function fromTo(t, a, b, g) {
+    b.immediateRender = false;
+    tl.fromTo(t, a, b, T(g));
+    if (b.filter === "blur(0px)") tl.set(t, { filter: "none" }, T(g + (b.duration || 0.5) + 0.001));
+  }
+  function to(t, v, g) { tl.to(t, v, T(g)); }
+  function set(t, v, g) { tl.set(t, v, T(g)); }
+
+  // ---------------- camera (app space 1440 x 810, frame 1920 x 1080) ----------------
+  var CAM = "#ca-cam";
+  var camNow = null;
+  function camAt(cx, cy, s) {
+    var hw = 960 / s, hh = 540 / s;
+    cx = Math.min(Math.max(cx, hw), 1440 - hw);
+    cy = Math.min(Math.max(cy, hh), 810 - hh);
+    return { x: +(960 - cx * s).toFixed(3), y: +(540 - cy * s).toFixed(3), scale: s };
+  }
+  function camSet(g, f) { camNow = camAt(f[0], f[1], f[2]); set(CAM, camNow, g); }
+  function cam(g, f, d) {
+    var v = camAt(f[0], f[1], f[2]); camNow = v;
+    to(CAM, { x: v.x, y: v.y, scale: v.scale, duration: d || 1.0, ease: "power2.inOut" }, g);
+  }
+  function scr(ax, ay) { return { x: ax * camNow.scale + camNow.x, y: ay * camNow.scale + camNow.y }; }
+
+  // ---------------- right-panel scroll ----------------
+  var RTOP = G["r-res"].y;
+  var scrollNow = 0;
+  function scrollSet(g, s) { scrollNow = s; set("#ca-rscroll", { y: -s }, g); }
+  function scrollTo(g, s, d, ease) { scrollNow = s; to("#ca-rscroll", { y: -s, duration: d || 1.0, ease: ease || "power2.inOut" }, g); }
+  function cy(el) { return el.y + el.h / 2 - scrollNow; } // app-space y of a right-panel element at the current scroll
+  function cxm(el) { return el.x + el.w / 2; }
+
+  // ---------------- cursor ----------------
+  var CUR = "#ca-cursor", HX = 5.5, HY = 2.5;
+  var cur = { x: 0, y: 0 };
+  function curSet(g, x, y, op) { cur = { x: x, y: y }; set(CUR, { x: x - HX, y: y - HY, opacity: op == null ? 1 : op }, g); }
+  function curMove(g, x, y, d, ease) {
+    var from = cur; cur = { x: x, y: y };
+    to(CUR, { x: x - HX, y: y - HY, duration: d || 0.7, ease: ease || "power3.inOut" }, g);
+    return { from: from, to: cur, g: g, d: d || 0.7, ease: ease || "power3.inOut" };
+  }
+  function curShow(g) { fromTo(CUR, { opacity: 0 }, { opacity: 1, duration: 0.2, ease: "power1.out" }, g); }
+  function curHide(g) { to(CUR, { opacity: 0, duration: 0.25, ease: "power1.in" }, g); }
+  function click(g, fast) {
+    to(CUR, { scale: 0.86, duration: fast ? 0.035 : 0.07, ease: "power2.out" }, g);
+    to(CUR, { scale: 1, duration: fast ? 0.06 : 0.14, ease: "power2.out" }, g + (fast ? 0.04 : 0.09));
+  }
+  function press(sel, g, fast) {
+    to(sel, { scale: 0.96, duration: fast ? 0.035 : 0.07, ease: "power2.out" }, g);
+    to(sel, { scale: 1, duration: fast ? 0.07 : 0.16, ease: "power2.out" }, g + (fast ? 0.04 : 0.09));
+  }
+
+  // per-frame text sets (seek-safe counters)
+  function countText(el, g, d, fn, ease) {
+    var e = gsap.parseEase(ease || "power2.out");
+    var n = Math.max(1, Math.round(d * FPS));
+    var last = null;
+    for (var f = 0; f <= n; f++) {
+      var s = fn(e(f / n));
+      if (s !== last) { set(el, { textContent: s }, g + f / FPS); last = s; }
+    }
+  }
+  function swap(a, b, g, d) {
+    d = d || 0.16;
+    fromTo(a, { opacity: 1 }, { opacity: 0, duration: d * 0.8, ease: "power2.in" }, g);
+    fromTo(b, { opacity: 0 }, { opacity: 1, duration: d, ease: "power2.out" }, g + d * 0.35);
+  }
+
+  // ---------------- callouts (screen space) ----------------
+  // k: id letter; anchor in app space; dx/dy: where the leader line ends, in screen px; side "r" box right of
+  // that point, "l" box left of it.
+  function callout(k, g, hold, ax, ay, dx, dy, side, text) {
+    var el = "#call-" + k, a = scr(ax, ay);
+    var box = $("call-" + k + "-box"), line = $("call-" + k + "-line");
+    $("call-" + k + "-t").textContent = text;
+    var len = Math.sqrt(dx * dx + dy * dy), ang = Math.atan2(dy, dx) * 180 / Math.PI;
+    line.style.width = len.toFixed(1) + "px";
+    box.style.top = dy + "px";
+    box.style.transform = "translateY(-50%)";
+    if (side === "l") { box.style.left = "auto"; box.style.right = (-dx) + "px"; } else { box.style.left = dx + "px"; }
+    set(el, { x: a.x, y: a.y }, g);
+    set(el + "-line", { rotation: ang, scaleX: 0 }, g);
+    set(el + " .ca-call-dot", { scale: 0 }, g);
+    set(el + "-box", { opacity: 0, filter: "blur(6px)" }, g);
+    set(el, { opacity: 1 }, g);
+    fromTo(el + " .ca-call-dot", { scale: 0 }, { scale: 1, duration: 0.24, ease: "back.out(2)" }, g);
+    fromTo(el + "-line", { scaleX: 0 }, { scaleX: 1, duration: 0.28, ease: "power3.out" }, g + 0.08);
+    fromTo(el + "-box", { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.22, ease: "power2.out" }, g + 0.2);
+    to(el, { opacity: 0, duration: 0.2, ease: "power2.in" }, g + hold);
+  }
+
+  // ---------------- rows ----------------
+  function rowOn(pfx, i, g) {
+    to("#" + pfx + "-r" + i, { backgroundColor: "rgba(240,253,250,1)", boxShadow: "inset 5px 0 0 -3px rgba(13,148,136,1)", duration: 0.1, ease: "power1.out" }, g);
+  }
+  function rowOff(pfx, i, g) {
+    to("#" + pfx + "-r" + i, { backgroundColor: "rgba(240,253,250,0)", boxShadow: "inset 0px 0 0 0px rgba(13,148,136,0)", duration: 0.14, ease: "power1.in" }, g);
+  }
+  function boxOn(id, g) { fromTo("#" + id, { opacity: 0 }, { opacity: 1, duration: 0.12, ease: "power1.out" }, g); }
+  function boxOff(id, g) { to("#" + id, { opacity: 0, duration: 0.12, ease: "power1.in" }, g); }
+  var reviewed = 0;
+  function approve(i, g, fast) {
+    var r = "#low-r" + i;
+    to(r + "-ok", { borderColor: "#a7f3d0", backgroundColor: "#ecfdf5", color: "#059669", duration: fast ? 0.06 : 0.12, ease: "power1.out" }, g);
+    fromTo(r + "-bar2", { scaleX: 0 }, { scaleX: 1, duration: fast ? 0.2 : 0.4, ease: "power2.out" }, g + 0.02);
+    // out, then in: the two labels never sit on top of each other
+    fromTo(r + "-c0", { opacity: 1 }, { opacity: 0, duration: fast ? 0.05 : 0.08, ease: "power1.in" }, g + 0.02);
+    fromTo(r + "-c1", { opacity: 0 }, { opacity: 1, duration: fast ? 0.08 : 0.14, ease: "power2.out" }, g + (fast ? 0.07 : 0.1));
+    reviewed += 1;
+    set("#chip-rev-n", { textContent: String(reviewed) }, g + 0.02);
+  }
+
+  // =============== initial state ===============
+  gsap.set(CUR, { x: 700, y: 400, opacity: 0, scale: 1, transformOrigin: "5.5px 2.5px" });
+  gsap.set(".ca-bar2", { scaleX: 0, transformOrigin: "0% 50%" });
+  gsap.set("#ca-rscroll", { y: 0 });
+  gsap.set("#menu-form", { x: G["sel-form"].x, y: G["sel-form"].y + G["sel-form"].h + 4, opacity: 0 });
+  set(CUR, { opacity: 0, scale: 1 }, APP0);
+  set(".ca-bar2", { scaleX: 0 }, APP0);
+  set("#low-details", { "--rot": "0deg" }, APP0);
+  set("#low-body", { height: 0 }, APP0);
+  set("#chip-rev-n", { textContent: "0" }, APP0);
+  ["a", "b", "c", "d", "e", "f", "g"].forEach(function (k) { set("#call-" + k, { opacity: 0 }, APP0); });
+
+  // camera presets [cx, cy, scale]
+  var F_TOOL = [400, 225, 2.4];
+  var F0 = [720, 405, 4 / 3];
+  var SUM = G["card-sum"];
+  var F_SUM = [SUM.x + SUM.w / 2, SUM.y + SUM.h / 2, Math.min(1920 / (SUM.w + 64), 1080 / (SUM.h + 36))];
+  var F_TRACE = [780, 405, 1.5];
+  camSet(APP0, F_TOOL);
+
+  // =============== 1. pick the form, process it ===============
+  var SEL = G["sel-form"], PR = G["btn-process"];
+  curSet(7.5, 760, 360, 0); curShow(7.5);
+  curMove(7.55, SEL.x + SEL.w * 0.42, SEL.y + SEL.h / 2 + 3, 0.8);
+  to("#sel-form-a", { borderColor: "#cbd5e1", duration: 0.12 }, 8.33);
+  click(8.6); to("#sel-form-a", { backgroundColor: "#f8fafc", duration: 0.06 }, 8.6); to("#sel-form-a", { backgroundColor: "#ffffff", duration: 0.18 }, 8.7);
+  fromTo("#menu-form", { opacity: 0, scaleY: 0.96 }, { opacity: 1, scaleY: 1, duration: 0.2, ease: "power2.out" }, 8.66);
+  var MTOP = SEL.y + SEL.h + 4 + 4; // first row top (menu y + padding)
+  // the highlight follows the cursor tip across the rows
+  (function (mv) {
+    var e = gsap.parseEase(mv.ease), n = Math.round(mv.d * FPS), prev = -1;
+    for (var f = 0; f <= n; f++) {
+      var yy = mv.from.y + (mv.to.y - mv.from.y) * e(f / n);
+      var idx = Math.floor((yy - MTOP) / 30);
+      if (idx < 0 || idx > 6) idx = -1;
+      if (idx !== prev) {
+        var g = mv.g + f / FPS;
+        if (prev >= 0) set("#menu-form-i" + prev, { color: "#475569" }, g);
+        if (idx >= 0) { set("#menu-form-i" + idx, { color: "#0f766e" }, g); set("#menu-form-hl", { y: idx * 30, opacity: 1 }, g); }
+        else set("#menu-form-hl", { opacity: 0 }, g);
+        prev = idx;
+      }
+    }
+  })(curMove(8.95, SEL.x + 70, MTOP + 30 + 16, 0.55, "power2.inOut"));
+  click(9.75); to("#menu-form-hl", { backgroundColor: "#ccfbf1", duration: 0.06 }, 9.75);
+  to("#menu-form", { opacity: 0, scaleY: 0.98, duration: 0.14, ease: "power2.in" }, 9.86);
+  to("#sel-form-a", { borderColor: "#e2e8f0", duration: 0.2 }, 9.86);
+  swap("#sel-form-a", "#sel-form-b", 9.9);
+  // the PDF preview changes to the handwritten form
+  fromTo("#pdf-a", { opacity: 1 }, { opacity: 0, duration: 0.4, ease: "power2.inOut" }, 10.0);
+  fromTo("#pdf-b", { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power2.inOut" }, 10.05);
+  swap("#zoom-a", "#zoom-b", 10.1);
+
+  curMove(10.7, PR.x + PR.w * 0.55, PR.y + PR.h / 2 + 3, 0.65);
+  to("#btn-process", { backgroundColor: "#0f766e", duration: 0.12 }, 11.33);
+  click(11.62); press("#btn-process", 11.62);
+  // processing: Process Form -> Processing..., Reset becomes the red cancel
+  to("#btn-process", { backgroundColor: "#cbd5e1", boxShadow: "0 0 0 0 rgba(0,0,0,0)", duration: 0.15 }, 11.7);
+  swap("#btn-process-a", "#btn-process-b", 11.7, 0.14);
+  to("#btn-reset", { backgroundColor: "#ef4444", color: "#ffffff", duration: 0.15 }, 11.7);
+  fromTo("#proc-spin", { rotation: 0 }, { rotation: 360 * 2.4, duration: 2.4, ease: "none" }, 11.7);
+  swap("#r-empty", "#r-proc", 11.75, 0.22);
+  fromTo("#r-proc-spin", { rotation: 0 }, { rotation: 360 * 3, duration: 2.4, ease: "none" }, 11.75);
+  cam(11.95, F0, 1.0);
+  curHide(12.3);
+  // results arrive (the app's own fade-in: 0.4 s ease-out, 6 px rise, 60 ms stagger)
+  to("#r-proc", { opacity: 0, duration: 0.15, ease: "power1.in" }, 14.1);
+  swap("#btn-process-b", "#btn-process-a", 14.1, 0.14);
+  to("#btn-process", { backgroundColor: "#0d9488", boxShadow: "0 1px 2px 0 rgba(0,0,0,0.05)", duration: 0.15 }, 14.1);
+  to("#btn-reset", { backgroundColor: "#f1f5f9", color: "#94a3b8", duration: 0.15 }, 14.1);
+  ["#card-sum", "#card-key", "#card-low", "#card-all"].forEach(function (c, i) {
+    fromTo(c, { opacity: 0, y: 6 }, { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" }, 14.15 + i * 0.06);
+  });
+  countText("#chip-all-n", 14.3, 1.0, function (p) { return String(Math.round(p * D.total)); });
+  countText("#chip-low-n", 14.3, 1.0, function (p) { return String(Math.round(p * D.nLow)); });
+
+  // =============== 2. the coverage call ===============
+  cam(14.9, F_SUM, 1.0);
+  var B = G["sum-badge"];
+  callout("b", 15.95, 2.0, B.x + B.w, B.y + B.h / 2, 80, -6, "r", "Coverage call, with its reasons");
+  var CR0 = G["chip-rev"];
+  callout("c", 16.9, 2.2, CR0.x + CR0.w + 8, CR0.y + CR0.h / 2, 44, 0, "r", "54 fields read, 31 flagged");
+  // (sheet "Values, traced back to the page" covers 19.8-21.3)
+
+  // =============== 3. every value traced to the page ===============
+  var KEY = G["card-key"];
+  scrollSet(20.2, Math.round(KEY.y - RTOP - 12));
+  camSet(20.2, F_TRACE);
+  var KR = G.keyRows;
+  curSet(22.5, 1240, 760, 0); curShow(22.5);
+  curMove(22.55, 1060, cy(KR[0]) + 3, 0.7);
+  rowOn("key", 0, 23.24); boxOn("box-key-0", 23.25);
+  var BX0 = G.boxes["box-key-0"];
+  cam(23.6, [410, BX0.y + BX0.h / 2 + 24, 3.0], 1.0); // right edge of the view stays in the gutter before the results panel
+  callout("d", 24.75, 1.8, BX0.x + BX0.w / 2, BX0.y + BX0.h + 2, -60, 150, "l", "Policy Number, read from here");
+  cam(26.6, F_TRACE, 0.9); // house minimum 0.9 s; callout e waits for it to settle
+  curMove(26.65, 1060, cy(KR[6]) - 40, 0.55);
+  rowOff("key", 0, 26.8); boxOff("box-key-0", 26.8);
+  rowOn("key", 6, 27.2); boxOn("box-key-6", 27.21);
+  var BX6 = G.boxes["box-key-6"];
+  callout("e", 27.5, 1.6, BX6.x + BX6.w * 0.42, BX6.y - 2, 50, -118, "r", "Values link back to their source");
+  // (sheet "Fix what the model doubts" covers 29.7-31.2)
+
+  // =============== 4. fix what the model doubts ===============
+  rowOff("key", 6, 29.95); boxOff("box-key-6", 29.95);
+  curHide(29.95);
+  var maxClosed = Math.round(G.scrollH - G.lowBodyH - 730);
+  scrollSet(30.0, maxClosed);
+  var LS = G["low-summary"];
+  curSet(32.5, 1180, 470, 0); curShow(32.5);
+  curMove(32.55, LS.x + 120, cy(LS) + 2, 0.65);
+  click(33.45);
+  to("#low-details", { "--rot": "90deg", duration: 0.2, ease: "power2.out" }, 33.47);
+  to("#low-body", { height: G.lowBodyH, duration: 0.6, ease: "power2.inOut" }, 33.5);
+  set("#low-body", { height: "auto" }, 34.15);
+  for (var i = 0; i < 7; i++) fromTo("#low-r" + i, { opacity: 0 }, { opacity: 1, duration: 0.25, ease: "power1.out" }, 33.55 + i * 0.05);
+  // scroll the company-name row to the middle of the view (cursor parked on the scrollbar side)
+  curMove(33.85, 1428, 470, 0.4, "power2.inOut");
+  var CI = D.companyIdx, LR = G.lowRows, CR = LR[CI];
+  var scrollC = Math.round(CR.row.y + CR.row.h / 2 - 430);
+  scrollTo(34.0, scrollC, 1.0);
+  curMove(35.05, 1100, 430 + 3, 0.55);
+  rowOn("low", CI, 35.58); boxOn("box-low-" + CI, 35.6);
+  var BXC = G.boxes["box-low-" + CI];
+  callout("f", 35.55, 2.55, BXC.x + BXC.w, BXC.y + BXC.h / 2, 60, 120, "r", "Company read from the D.B.A. line");
+  var F_ROW = [CR.row.x + CR.row.w / 2, 430, 2.4];
+  cam(38.2, F_ROW, 0.95);
+  // edit
+  var ED = CR.ed, OK = CR.ok, VS = G.vstates;
+  curMove(39.15, ED.x + ED.w / 2 + 1, cy(ED) + 3, 0.5);
+  to("#low-r" + CI + "-ed", { borderColor: "#cbd5e1", color: "#334155", duration: 0.12 }, 39.65);
+  click(39.85); press("#low-r" + CI + "-ed", 39.85);
+  to("#low-r" + CI + "-ed", { borderColor: "#e2e8f0", color: "#64748b", duration: 0.2 }, 40.1);
+  to("#low-r" + CI + "-vwrap", { height: VS.inp, duration: 0.16, ease: "power2.out" }, 39.9);
+  swap("#low-r" + CI + "-v0", "#low-r" + CI + "-inp", 39.9, 0.16);
+  var VW = G.company.vwrap;
+  curMove(40.1, VW.x + VW.w * 0.6, VW.y - scrollNow + VS.inp / 2 + 2, 0.4);
+  click(40.55);
+  to("#low-r" + CI + "-inp", { borderColor: "#14b8a6", boxShadow: "0 0 0 2px #ccfbf1", duration: 0.12 }, 40.58);
+  set("#low-r" + CI + "-caret", { opacity: 1 }, 40.6);
+  set("#low-r" + CI + "-txt", { backgroundColor: "#b3d4fc" }, 40.82);
+  // type the right name, one key at a time
+  var NEW = "Pacific E-Commerce Logistics, Inc.";
+  var tk = 41.1;
+  set("#low-r" + CI + "-txt", { backgroundColor: "rgba(0,0,0,0)", textContent: NEW.slice(0, 1) }, tk);
+  for (var c = 2; c <= NEW.length; c++) {
+    tk += (NEW[c - 1] === " " ? 0.06 : 0.04) + ((c * 7) % 5) * 0.004;
+    set("#low-r" + CI + "-txt", { textContent: NEW.slice(0, c) }, tk);
+  }
+  var typedEnd = tk; // ~42.6
+  set("#low-r" + CI + "-caret", { opacity: 0 }, typedEnd + 0.5);
+  set("#low-r" + CI + "-caret", { opacity: 1 }, typedEnd + 0.75);
+  // approve
+  curMove(42.7, OK.x + OK.w / 2 + 1, cy(OK) + 3, 0.45);
+  to("#low-r" + CI + "-ok", { borderColor: "#6ee7b7", backgroundColor: "#ecfdf5", color: "#059669", duration: 0.12 }, 43.15);
+  click(43.35); press("#low-r" + CI + "-ok", 43.35);
+  set("#low-r" + CI + "-caret", { opacity: 0 }, 43.4);
+  swap("#low-r" + CI + "-inp", "#low-r" + CI + "-v1", 43.4, 0.18);
+  to("#low-r" + CI + "-vwrap", { height: VS.v1, duration: 0.22, ease: "power2.out" }, 43.42);
+  approve(CI, 43.4, false);
+  callout("g", 43.65, 1.6, CR.c.x + CR.c.w / 2, cy(CR.c) - 10, 95, -212, "l", "Fixed, approved, now 100%");
+
+  // =============== 5. clear the queue ===============
+  var dH = VS.v1 - VS.v0; // the edited row grew by this much; rows below it moved down
+  function okAbs(i) { return LR[i].ok.y + LR[i].ok.h / 2 + (i > CI ? dH : 0); }
+  var maxOpen = Math.round(G.scrollH + dH - 730);
+  cam(45.35, F_TRACE, 0.9);
+  rowOff("low", CI, 45.4);
+  var Y0 = 300;
+  var s0 = Math.round(okAbs(0) - Y0);
+  scrollTo(45.45, s0, 0.9);
+  curMove(45.9, LR[0].ok.x + LR[0].ok.w / 2 + 1, Y0 + 3, 0.7);
+  var OKX = LR[0].ok.x + LR[0].ok.w / 2 + 1;
+  var order = [];
+  for (var j = 0; j < LR.length; j++) if (j !== CI) order.push(j);
+  var tclick = 46.7, clicks = [];
+  order.forEach(function (ri, n) {
+    var target, sc = scrollNow;
+    if (n < 3) {
+      target = okAbs(ri) - sc;
+      if (n > 0) curMove(tclick - 0.3, OKX, target + 3, 0.26, "power2.inOut");
+      click(tclick); approve(ri, tclick, false);
+      clicks.push({ t: tclick, fast: false });
+      tclick += 0.4;
+    } else {
+      // fast-forward: the list scrolls under the cursor, one approval every 0.1 s
+      var want = okAbs(ri) - (Y0 + 3 * 49);
+      var nsc = Math.min(Math.max(want, sc), maxOpen);
+      if (nsc !== sc) { to("#ca-rscroll", { y: -nsc, duration: 0.1, ease: "none" }, tclick - 0.1); scrollNow = nsc; }
+      target = okAbs(ri) - nsc;
+      if (Math.abs(target - cur.y + 3) > 0.5) curMove(tclick - 0.1, OKX, target + 3, 0.1, "none");
+      click(tclick, true); approve(ri, tclick, true);
+      clicks.push({ t: tclick, fast: true });
+      tclick += 0.1;
+    }
+  });
+  var lastClick = tclick - 0.1; // ~50.3
+  // the queue is reviewed: Export unlocks (btn-primary)
+  to("#btn-export", { backgroundColor: "#0d9488", color: "#ffffff", boxShadow: "0 1px 2px 0 rgba(0,0,0,0.05)", duration: 0.2 }, lastClick + 0.05);
+  window.__CA_CLICKS = clicks;
+
+  // =============== 6. export ===============
+  curMove(50.55, 1428, cur.y, 0.25, "power2.out");
+  scrollTo(50.75, 0, 1.0);
+  cam(50.85, F_SUM, 1.0);
+  scrollNow = 0;
+  var EX = G["btn-export"];
+  callout("a", 52, 1.55, EX.x, EX.y + EX.h / 2, -60, 96, "l", "Export unlocks after review");
+  curMove(53.05, EX.x + EX.w * 0.55, EX.y + EX.h / 2 + 3, 0.65);
+  to("#btn-export", { backgroundColor: "#0f766e", duration: 0.12 }, 53.7);
+  click(53.95); press("#btn-export", 53.95);
+  set("#dlg-overlay", { backdropFilter: "blur(4px)", webkitBackdropFilter: "blur(4px)" }, 54.0);
+  fromTo("#dlg-overlay", { opacity: 0 }, { opacity: 1, duration: 0.3, ease: "power1.out" }, 54.02);
+  var DL = G["dlg"], CF = G["dlg-confirm"];
+  // the push starts once the press has recovered; the dialog fades in only after the push has brought its
+  // left edge inside the frame (0.33 s into the move at the summary framing), so it never enters clipped
+  cam(54.2, [DL.x + DL.w / 2, DL.y + DL.h / 2, 2.4], 0.95);
+  fromTo("#dlg", { opacity: 0, y: 6 }, { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" }, 54.58);
+  curMove(55.8, CF.x + CF.w * 0.5, CF.y + CF.h / 2 + 3, 0.6);
+  to("#dlg-confirm", { backgroundColor: "#0f766e", duration: 0.12 }, 56.4);
+  click(56.65); press("#dlg-confirm", 56.65);
+  to("#dlg", { opacity: 0, y: 4, duration: 0.2, ease: "power2.in" }, 56.75);
+  to("#dlg-overlay", { opacity: 0, duration: 0.25, ease: "power1.in" }, 56.8);
+  set("#dlg-overlay", { backdropFilter: "none", webkitBackdropFilter: "none" }, 57.1);
+  to("#btn-export", { backgroundColor: "#0d9488", duration: 0.15 }, 56.8);
+  curHide(57.1);
+  cam(57.15, F0, 1.0);
+  set("#ca-cam", { x: camNow.x }, 59.49); // hold
+
+  window.__timelines = window.__timelines || {};
+  window.__timelines["app"] = tl;
+})();
+
+</script>
+</template>

@@ -1,0 +1,70 @@
+/* ---- film-only styles for the rebuilt Claim Assistant UI (the app's own CSS sits above) ---- */
+#root { position: absolute; inset: 0; background: #f8fafb; overflow: hidden; }
+/* camera: no will-change, 2D transforms only (see REVIEW.md); the app is painted at its final zoom */
+#ca-cam { position: absolute; left: 0; top: 0; width: 1440px; height: 810px; transform-origin: 0 0; }
+/* the html/body preflight rules do not reach a scene inside the render page: restate them on the app box */
+#ca-app { line-height: 1.5; -webkit-text-size-adjust: 100%; tab-size: 4; font-feature-settings: normal; font-variation-settings: normal;
+  position: relative; width: 1440px; height: 810px; overflow: hidden; background: #f8fafb;
+  font-family: "Plus Jakarta Sans", sans-serif; -webkit-font-smoothing: antialiased; }
+#ca-app button { cursor: default; }
+.ca-abs { position: absolute; left: 0; top: 0; width: 100%; height: 100%; }
+.ca-center { display: inline-flex; align-items: center; justify-content: center; }
+.ca-zoomwrap { display: inline-block; }
+.ca-zoom { display: block; }
+#zoom-b { opacity: 0; }
+.ca-selwrap { display: block; }
+.ca-sel-el { display: block; }
+#sel-form-b { opacity: 0; }
+#btn-process-b { opacity: 0; }
+#ca-pdfarea > div { position: relative; }
+#pdf-b { position: absolute; top: 0; left: 0; right: 0; width: auto; opacity: 0; }
+.ca-page { display: block; width: 100%; height: 100%; }
+.ca-box { opacity: 0; }
+.ca-rstate { position: absolute; left: 0; top: 0; width: 100%; }
+#r-proc { opacity: 0; }
+#r-res { opacity: 1; }
+#card-sum, #card-key, #card-low, #card-all { opacity: 0; }
+#card-low details summary::before { transform: translateY(-50%) rotate(var(--rot, 0deg)); }
+#low-details { --rot: 0deg; }
+.ca-lowbody { overflow: hidden; height: 0; }
+.ca-tr { background-color: rgba(240, 253, 250, 0); box-shadow: inset 0 0 0 0 rgba(13, 148, 136, 0); }
+.ca-bar2 { position: absolute; left: 0; top: 0; width: 100%; }
+.ca-conf { position: relative; }
+.ca-c1 { position: absolute; right: 0; top: 0; opacity: 0; }
+.ca-vwrap { position: relative; height: 19.5px; }
+.ca-v0, .ca-v1, .ca-input { position: absolute; left: 0; top: 0; width: 100%; }
+.ca-v0, .ca-v1 { display: block; }
+.ca-v1, .ca-input { opacity: 0; }
+.ca-input { display: flex; justify-content: flex-end; overflow: hidden; white-space: nowrap; line-height: 17px; }
+.ca-itext { flex: 0 0 auto; display: inline-flex; align-items: center; }
+.ca-ispace { flex: 1 0 0; }
+.ca-caret { display: inline-block; width: 1px; height: 15px; margin-left: 1px; background: #334155; opacity: 0; }
+.ca-sel { display: none; }
+/* export dialog (fixed inset-0 in the app; absolute here because the app is a 1440 x 810 box) */
+/* backdrop-blur-sm is switched on only while the dialog is open (a permanent backdrop filter over the whole app
+   forces extra compositing surfaces for every frame) */
+.ca-overlay { position: absolute; left: 0; top: 0; width: 100%; height: 100%; opacity: 0; }
+/* nothing scrolls under the sticky header in the film, so its backdrop blur is visually a no-op: drop the layer */
+#ca-app header { -webkit-backdrop-filter: none; backdrop-filter: none; }
+.ca-dlgwrap { position: absolute; left: 0; top: 0; width: 100%; height: 100%; z-index: 51; display: flex;
+  align-items: center; justify-content: center; pointer-events: none; }
+#dlg { opacity: 0; }
+/* the Form select's popup, in the app's popover style */
+.ca-menu { position: absolute; left: 0; top: 0; z-index: 60; width: 214px; padding: 4px; background: #ffffff;
+  border: 1px solid #e2e8f0; border-radius: 10px; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.12), 0 2px 6px rgba(15, 23, 42, 0.05);
+  transform-origin: 50% 0; opacity: 0; }
+.ca-menu-i { position: relative; z-index: 1; height: 30px; padding: 0 10px; display: flex; align-items: center;
+  justify-content: space-between; font-size: 13px; color: #475569; border-radius: 6px; }
+.ca-menu-check { color: #0d9488; display: inline-flex; }
+.ca-menu-hl { position: absolute; left: 4px; right: 4px; top: 4px; height: 30px; border-radius: 6px; background: #f0fdfa; opacity: 0; }
+#ca-cursor { position: absolute; left: 0; top: 0; z-index: 100; opacity: 0; overflow: visible; }
+/* callouts: screen space, 30 px type */
+#ca-callouts { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; z-index: 10; pointer-events: none; }
+.ca-call { position: absolute; left: 0; top: 0; width: 0; height: 0; opacity: 0; }
+.ca-call-dot { position: absolute; left: -8px; top: -8px; width: 16px; height: 16px; border-radius: 50%;
+  background: #0d9488; box-shadow: 0 0 0 4px #ffffff, 0 2px 8px rgba(15, 23, 42, 0.2); }
+.ca-call-line { position: absolute; left: 0; top: -1px; height: 2px; background: #0d9488; transform-origin: 0 50%; }
+.ca-call-box { position: absolute; left: 0; top: 0; white-space: nowrap; background: #ffffff; color: #0f172a;
+  font: 600 30px/1.2 "Plus Jakarta Sans", sans-serif; letter-spacing: -0.01em; padding: 16px 24px 17px 22px;
+  border: 1px solid #e2e8f0; border-left: 4px solid #0d9488; border-radius: 14px;
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.14); }
