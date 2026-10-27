@@ -192,3 +192,25 @@ timing are unchanged.
 
 **Rebuild:** `node tools/build-sheets.mjs && node tools/build-app.mjs && python3 tools/build-sfx.py`, then
 `sh tools/render.sh <work_dir>` (video, poster).
+
+## Ghost -> ink card entrance (2026-10-27) -> `../demo-claim-assistant.mp4` (replaced the house style render)
+
+**Change.** The three headline sheets ("Pick the claim form", "Values, traced back to the page", "Fix what the
+model doubts") move from the blur 8 -> 0 word entrance (spec B1.7b, retired) to ghost -> ink (B1.7a), the
+entrance now shared by all four demo films. Each word is set to ghost type in the app's border tint #e2e8f0 from
+clip frame 0 (`gsap.set` plus CSS) and rides in with the sheet; from +0.40 s each word tweens colour only to ink
+#0f172a (accent word to teal #0d9488), 0.2 s `power1.out`, 0.09 s apart, fully inked by +0.67 / +1.05 / +0.96 s.
+No opacity, filter or transform on the words, one colour tween per word. Unchanged: the whip, card timing, texts,
+size, word spacing and per-card translates, end card, music, poster (no card in it; the re-rendered poster
+differed by at most 1 level, so the committed one was kept), root 66.4 s.
+
+**Verified on the delivered file** (decoded 1080p frames; `sweep.py` per card, `card.py`, `audiotail.py`).
+- Ghost: on the first in-place frames each not-yet-inked word sits 22.6-23.1 levels off the ground (#e2e8f0
+  is 22), so the line reads as faint type before it inks; the old file measured 3.0 there (hidden words).
+- Order: 50 % ink at +0.47/0.57/0.63/0.73 s; +0.48/0.55/0.65/0.75/0.82/0.92 s; +0.48/0.55/0.65/0.75/0.82 s,
+  strictly left to right. No dip: the largest frame-to-frame drop in any word's level from +0.47 to +1.94 s is
+  0.08 levels. Hold: max mean |frame diff| over the inked line 0.006-0.012 until the exit.
+- Centering (glyph ink, cap top to baseline): dH +0.00 / +0.00 / +0.00, dV +0.00 / -0.50 / +0.00 (4K frames
+  within 0.25 px). Ink height 78-79 px. Word gaps 26/30/31, 35/34/26/29/32, 25/28/32/32 px (min 25 >= 24).
+- File: h264 High 1920x1080 30/1 yuv420p, 1992 frames, 66.40 s, aac LC 48 kHz 193 kb/s, 30.2 MB; x264 SEI
+  crf=14.0; key frames end at 58.9 s (end card start). Audio: silence (peak < -60 dBFS) from 65.7 s, last 0.71 s.

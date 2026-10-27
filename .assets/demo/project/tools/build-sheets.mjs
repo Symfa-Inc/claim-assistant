@@ -2,6 +2,9 @@
 // house sheet whip: the full-frame #f8fafb sheet slides in from the right (x 2050 -> 0, 0.45 s power3.inOut,
 // 10 px blur that clears 0.25-0.45 s) and leaves to the left at clip end - 0.45 s. A 16 px teal bar (the app
 // header's accent bar) rides the sheet's leading edge on the way in and its trailing edge on the way out.
+// Words: ghost -> ink (house spec B1.7a). The line is on the sheet from clip frame 0 as ghost type in the
+// app's border tint (#e2e8f0); from +0.40 s each word sweeps to ink, 0.2 s per word, 0.09 s apart; the accent
+// word lands in teal. Colour only: no opacity, blur or translate, so landed text is dead still.
 // Usage: node tools/build-sheets.mjs
 import fs from "node:fs";
 import path from "node:path";
@@ -16,20 +19,21 @@ export const SHEETS = [
 ];
 const DUR = 2.4; // house clip length
 const OUT = DUR - 0.45; // exit starts at clip end - 0.45 s (1.95 s)
+const GHOST = "#e2e8f0", INK = "#0f172a", ACCENT = "#0d9488";
 
 for (const s of SHEETS) {
   const p = s.id;
-  const words = s.words.map((w, i) => `<span id="${p}-w${i}" class="${p}-w${i === s.accent ? " acc" : ""}">${w}</span>`).join(" ");
+  const words = s.words.map((w, i) => `<span id="${p}-w${i}" class="${p}-w">${w}</span>`).join(" ");
   const html = `<template>
 <style>
 @font-face { font-family: "Plus Jakarta Sans"; font-style: normal; font-weight: 200 800; src: url("assets/fonts/PlusJakartaSans-latin.woff2") format("woff2"); }
 #root { position: absolute; inset: 0; overflow: hidden; }
 #${p}-sheet { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; background: #f8fafb; }
 #${p}-text { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; display: flex; align-items: center; justify-content: center;
-  font-family: "Plus Jakarta Sans", sans-serif; font-weight: 700; font-size: 104px; line-height: 1; letter-spacing: -0.035em; word-spacing: 0.11em; color: #0f172a;
+  font-family: "Plus Jakarta Sans", sans-serif; font-weight: 700; font-size: 104px; line-height: 1; letter-spacing: -0.035em; word-spacing: 0.11em; color: ${GHOST};
   -webkit-font-smoothing: antialiased; white-space: nowrap; }
 #${p}-line { display: block; transform: translate(${s.dx}px, ${s.dy}px); }
-#${p}-text .acc { color: #0d9488; }
+#${p}-text .${p}-w { color: ${GHOST}; }
 .${p}-bar { position: absolute; top: 0; width: 16px; height: 1080px; background: #0d9488; }
 #${p}-bar-l { left: -16px; }
 #${p}-bar-r { left: 1920px; }
@@ -41,16 +45,15 @@ for (const s of SHEETS) {
 (function () {
   gsap.config({ force3D: false });
   var tl = gsap.timeline({ paused: true });
-  // start states from frame 0: the sheet off-screen right and blurred, every word hidden
+  // start states from frame 0: the sheet off-screen right and blurred, every word in ghost type
   gsap.set("#${p}-sheet", { x: 2050, filter: "blur(10px)" });
-  ${s.words.map((_, i) => `gsap.set("#${p}-w${i}", { opacity: 0, filter: "blur(8px)" });`).join("\n  ")}
+  ${s.words.map((_, i) => `gsap.set("#${p}-w${i}", { color: "${GHOST}" });`).join("\n  ")}
   // in: the whip, blur clears over its last 0.2 s
   tl.fromTo("#${p}-sheet", { x: 2050 }, { x: 0, duration: 0.45, ease: "power3.inOut", immediateRender: false }, 0);
   tl.fromTo("#${p}-sheet", { filter: "blur(10px)" }, { filter: "blur(0px)", duration: 0.2, ease: "power2.out", immediateRender: false }, 0.25);
   tl.set("#${p}-sheet", { filter: "none" }, 0.46);
-  // words: blur 8 -> 0 and opacity, 0.16 s each, 0.08 s apart from +0.40 s, no translate; landed words do not move
-  ${s.words.map((_, i) => `tl.fromTo("#${p}-w${i}", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, ease: "power2.out", immediateRender: false }, ${(0.4 + i * 0.08).toFixed(2)});
-  tl.set("#${p}-w${i}", { filter: "none" }, ${(0.4 + i * 0.08 + 0.17).toFixed(2)});`).join("\n  ")}
+  // words: ghost -> ink, 0.2 s each, 0.09 s apart from +0.40 s (fully inked by +${(0.4 + (s.words.length - 1) * 0.09 + 0.2).toFixed(2)} s); colour only
+  ${s.words.map((_, i) => `tl.fromTo("#${p}-w${i}", { color: "${GHOST}" }, { color: "${i === s.accent ? ACCENT : INK}", duration: 0.2, ease: "power1.out", immediateRender: false }, ${(0.4 + i * 0.09).toFixed(2)});`).join("\n  ")}
   // out: the whip continues to the left, blurring as it goes
   tl.fromTo("#${p}-sheet", { x: 0 }, { x: -2050, duration: 0.45, ease: "power3.inOut", immediateRender: false }, ${OUT.toFixed(2)});
   tl.fromTo("#${p}-sheet", { filter: "blur(0px)" }, { filter: "blur(10px)", duration: 0.22, ease: "power2.in", immediateRender: false }, ${OUT.toFixed(2)});

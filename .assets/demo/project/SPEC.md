@@ -35,8 +35,9 @@ MOTION:  camera moves power2.inOut 0.9-1.0 s, one at a time, never while a callo
          10 px blur clearing 0.25-0.45 s; it leaves to the left from clip end - 0.45 s with a 10 px blur.
          A 16 px teal bar rides its leading edge in and its trailing edge out. Clip 2.4 s.
          This is the only transition between chapters; inside chapters the camera does the work.
-         headline words: blur 8 -> 0 px + opacity, 0.16 s each, 0.08 s apart from +0.40 s, no translate; landed
-         words hold until the exit at +1.95 s.
+         headline words: ghost -> ink. The line rides in as ghost type in the app's border tint (#e2e8f0); from
+         +0.40 s each word sweeps to ink (#0f172a, the accent word to teal #0d9488), 0.2 s each, 0.09 s apart,
+         colour only, no translate; landed words hold until the exit at +1.95 s.
 SHOTS (global seconds):
   0.00-4.95   HOOK poster: mark + "Claim Assistant", "From claim form / to coverage call", a crop of the real
               handwritten form; teal boxes draw around Policy Number, name and accident date while a Key Fields
